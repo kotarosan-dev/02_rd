@@ -36,4 +36,4 @@ credentials.json
 temp_*
 *.tmp
 .claude/settings.local.json
-*/temp/
+**/temp/
