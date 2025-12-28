@@ -1,0 +1,6 @@
+import supabase from '@/lib/supabase';
+// ... other existing imports ...
+
+export default function CustomerForm() {
+  // ... rest of the component code ...
+}

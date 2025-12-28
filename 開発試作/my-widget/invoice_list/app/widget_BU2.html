@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <script src="https://live.zwidgets.com/js-sdk/1.2/ZohoEmbededAppSDK.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+  <style>
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th,
+    td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: left;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+
+    .lookup-field {
+      cursor: pointer;
+      color: blue;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="app">
+    <h1>現金取引リスト</h1>
+    <table id="transaction-table">
+      <thead>
+        <tr>
+          <th>処理日</th>
+          <th>コード</th>
+          <th>摘要</th>
+          <th>取引先</th>
+          <th>出金</th>
+          <th>入金</th>
+          <th>残高</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- freeeから取得したデータを表示 -->
+        <tr v-for="(row, index) in rows" :key="index">
+          <td>
+            <input type="date" v-model="row.date" class="w-full px-2 py-1 text-sm border border-gray-300 rounded">
+          </td>
+          <td>
+            <input type="text" v-model="row.code" class="w-full px-2 py-1 text-sm border border-gray-300 rounded">
+          </td>
+          <td>
+            <input type="text" v-model="row.description"
+              class="w-full px-2 py-1 text-sm border border-gray-300 rounded">
+          </td>
+          <td>
+            <a href="#" @click="openAccountPopup(index)">{{ row.customer || '取引先を選択' }}</a>
+          </td>
+          <td class="text-right">
+            <input type="number" v-model.number="row.withdrawal"
+              class="w-full px-2 py-1 text-sm text-right border border-gray-300 rounded">
+          </td>
+          <td class="text-right">
+            <input type="number" v-model.number="row.deposit"
+              class="w-full px-2 py-1 text-sm text-right border border-gray-300 rounded">
+          </td>
+          <td class="text-right">{{ formatCurrency(row.balance) }}</td>
+          <td class="text-center">
+            <button type="button" @click="deleteRow(index)" class="text-sm text-red-500 hover:text-red-700"
+              v-if="index > 0">
+              <i class="fas fa-trash"></i>
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <button type="button" @click="addRow"
+      class="mt-4 px-4 py-2 text-sm font-medium text-white bg-blue-500 rounded hover:bg-blue-600">
+      <i class="fas fa-plus mr-2"></i>行を追加
+    </button>
+  </div>
+
+  <script>
+    /* * Initialize the widget. */
+    ZOHO.embeddedApp.init();
+
+    new Vue({
+      el: '#app',
+      data: {
+        rows: []
+      },
+      methods: {
+        fetchTransactionsFromFreee() {
+          const accessToken = '77b8bb28af309e3f8a693a0dfae8a25c5d40fb4071b354d7bb5cfdb93cfc758d';
+          const companyId = 10908938;
+          const url = `https://api.freee.co.jp/api/1/wallet_txns?company_id=${companyId}&walletable_type=wallet&limit=100`;
+
+          fetch(url, {
+            headers: {
+              'Authorization': `Bearer ${accessToken}`
+            }
+          })
+            .then(response => {
+              if (!response.ok) {
+                throw new Error('APIリクエストが失敗しました。');
+              }
+              return response.json();
+            })
+            .then(data => {
+              console.log('APIレスポンス:', data);
+              this.rows = data.wallet_txns.map(txn => ({
+                date: txn.date,
+                code: '',
+                description: txn.description,
+                customer: '',
+                accountId: '',
+                withdrawal: txn.entry_side === 'expense' ? txn.amount : 0,
+                deposit: txn.entry_side === 'income' ? txn.amount : 0,
+                balance: txn.balance
+              }));
+
+              // 日付の昇順にソート
+              this.rows.sort((a, b) => new Date(a.date) - new Date(b.date));
+            })
+            .catch(error => {
+              console.error('Error:', error);
+            });
+        },
+        addRow() {
+          this.rows.push({
+            date: '',
+            code: '',
+            description: '',
+            customer: '',
+            accountId: '',
+            withdrawal: 0,
+            deposit: 0,
+            balance: this.rows.length > 0 ? this.rows[this.rows.length - 1].balance : 0
+          });
+        },
+        deleteRow(index) {
+          this.rows.splice(index, 1);
+        },
+        formatCurrency(value) {
+          return value.toLocaleString();
+        },
+        openAccountPopup(index) {
+          const self = this;
+          ZOHO.CRM.UI.Popup.open({
+            title: "取引先を選択",
+            module: "Accounts",
+            search_term: "",
+            criteria: {},
+            on_select: function(data) {
+              self.fetchAccountDetails(index, data.id);
+            }
+          });
+        },
+        fetchAccountDetails(index, accountId) {
+          const self = this;
+          ZOHO.CRM.API.getRecord({
+            Entity: "Accounts",
+            RecordID: accountId
+          }).then(function(response) {
+            const account = response.data[0];
+            self.$set(self.rows[index], 'customer', account.Account_Name);
+            self.$set(self.rows[index], 'accountId', account.id);
+          });
+        },
+        getAccountLink(accountId) {
+          return `https://crm.zoho.com/crm/EntityInfo.do?module=Accounts&id=${accountId}`;
+        }
+      },
+      mounted() {
+        this.fetchTransactionsFromFreee();
+      }
+    });
+  </script>
+</body>
+
+</html>

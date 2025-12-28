@@ -1,0 +1,9 @@
+import supabase from '@/lib/supabase';
+// ... existing imports ...
+
+// ... existing code ...
+
+// Remove any getBrowserClient() calls and null checks
+// Use supabase directly in the code
+
+// ... rest of the code ...

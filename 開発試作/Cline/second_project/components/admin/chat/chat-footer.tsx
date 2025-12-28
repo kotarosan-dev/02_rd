@@ -1,0 +1,9 @@
+import supabase from '@/lib/supabase';
+// ... existing code imports ...
+
+// Component definition and rest of the code
+// ... existing code ...
+
+// Remove any getBrowserClient() calls and null checks
+// Use supabase directly in the code
+// ... existing code ...

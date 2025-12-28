@@ -1,0 +1,98 @@
+@startuml KindleAutoCap Activity Diagram
+title Python Function: capture_kindle_pages (アクティビティ図)
+
+start
+
+partition "初期化" {
+  :設定ファイル (YAML) 読み込み;
+  note right
+    - paths (working_dir, output_dir, log_file)
+    - capture (region, delay, max_pages)
+    - controls (key, title, start_delay, end_marker)
+    - postprocess (pdf, ocr, cleanup)
+    - logging (level, rotation)
+  end note
+  :ログ設定;
+  :出力ディレクトリ作成;
+  note right: `${output_dir}` がなければ作成
+  :ページカウンター初期化 (page_count = 1);
+}
+
+partition "実行準備" {
+  :開始待機 (start_delay);
+  note left: ユーザーがKindleを準備する時間
+  :Kindleウィンドウ検索・フォーカス;
+  note right
+    `pyautogui.getWindowsWithTitle(window_title)`
+    `window.activate()`
+    **潜在的課題**: ウィンドウが見つからない/アクティブ化できない場合
+  end note
+}
+
+partition "キャプチャループ" {
+  while (page_count <= max_pages ?) is (yes)
+    :終了マーカー確認;
+    note right
+      method = `end_marker.method`
+      if method == "image":
+        `pyautogui.locateOnScreen(end_marker.file, confidence)`
+        **ハードコード**: `end_marker.file` (画像パス)
+        移行先: 設定ファイル
+      elif method == "pixel":
+        (未実装)
+      endif
+    end note
+    if (マーカー検出？) then (yes)
+      break
+    else (no)
+      :スクリーンショット取得;
+      note right
+        `ImageGrab.grab(bbox=capture_region)`
+        region = null (フルスクリーン) または [x, y, x+w, y+h]
+      end note
+      :画像保存;
+      note right
+        path = `${output_dir}/page_%04d.png` % page_count
+        **ハードコード**: `file_pattern`
+        移行先: 設定ファイル
+      end note
+      :ログ記録 (保存成功);
+      :次ページへ;
+      note right
+        `pyautogui.press(next_page_key)`
+        **ハードコード**: `next_page_key`
+        移行先: 設定ファイル
+      end note
+      :ページめくり後待機 (delay_after_page);
+      note right
+       `time.sleep(delay_after_page)`
+       **ハードコード**: `delay_after_page`
+       移行先: 設定ファイル
+      end note
+      :ページカウンター増加 (page_count++);
+    endif
+  endwhile (no, max_pages超過)
+  -> [ループ終了];
+
+  :ループ終了ログ記録;
+}
+
+partition "後処理" {
+  if (PDF結合有効？) then (yes)
+    :PDF結合実行 (未実装);
+    note right
+     **ハードコード**: `pdf_tool`
+     移行先: 設定ファイル
+    end note
+  endif
+  if (OCR有効？) then (yes)
+    :OCR実行 (未実装);
+  endif
+  if (PNG削除有効？) then (yes)
+    :PNGファイル削除 (未実装);
+  endif
+}
+
+stop
+
+@enduml 

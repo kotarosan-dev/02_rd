@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <script src="https://live.zwidgets.com/js-sdk/1.2/ZohoEmbededAppSDK.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <style>
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th,
+    td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: left;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+
+    .lookup-field {
+      cursor: pointer;
+      color: blue;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+
+<body>
+  <div>
+    <h1>現金取引リスト</h1>
+    <table id="transaction-table">
+      <thead>
+        <tr>
+          <th>処理日</th>
+          <th>コード</th>
+          <th>摘要</th>
+          <th>取引先</th>
+          <th>出金</th>
+          <th>入金</th>
+          <th>残高</th>
+        </tr>
+      </thead>
+      <tbody> <!-- freeeから取得したデータを表示 --> </tbody>
+      <tfoot>
+        <tr>
+          <td><input type="date" id="new-date"></td>
+          <td><input type="text" id="new-code"></td>
+          <td><input type="text" id="new-description"></td>
+          <td><span id="new-partner" class="lookup-field">取引先を選択</span></td>
+          <td><input type="number" id="new-withdrawal"></td>
+          <td><input type="number" id="new-deposit"></td>
+          <td></td>
+        </tr>
+      </tfoot>
+    </table>
+  </div>
+  <script> /* * Initialize the widget. */ ZOHO.embeddedApp.init();
+
+    // freeeから現金取引データを取得する関数
+    function fetchTransactionsFromFreee() {
+      var url = "https://api.freee.co.jp/api/1/deals";
+      var accessToken = "YOUR_ACCESS_TOKEN";
+      var companyId = "YOUR_COMPANY_ID";
+
+      var headers = {
+        "Authorization": "Bearer " + accessToken,
+        "Accept": "application/json",
+        "Content-Type": "application/json"
+      };
+
+      var data = {
+        "company_id": companyId,
+        "start_date": "2023-01-01",
+        "end_date": "2023-12-31",
+        "entry_side": "all",
+        "account_item_id": [
+          "758175904", // 現金
+          "758175903", // 研究開発費
+          "759170964"  // 十八親和（普通）
+        ]
+      };
+
+      $.ajax({
+        url: url,
+        type: "GET",
+        headers: headers,
+        data: data,
+        success: function (response) {
+          var deals = response.deals;
+          var tableBody = $("#transaction-table tbody");
+          tableBody.empty();
+
+          deals.forEach(function (deal) {
+            var row = $("<tr>");
+            row.append($("<td>").text(deal.issue_date));
+            row.append($("<td>").text(deal.ref_number));
+            row.append($("<td>").text(deal.details[0].description));
+
+            var partnerCell = $("<td>").addClass("lookup-field").text(deal.partner_name);
+            partnerCell.click(function () {
+              showPartnerLookupPopup();
+            });
+            row.append(partnerCell);
+
+            var withdrawal = deal.details.find(function (detail) {
+              return detail.entry_side === "debit";
+            });
+            var deposit = deal.details.find(function (detail) {
+              return detail.entry_side === "credit";
+            });
+
+            row.append($("<td>").text(withdrawal ? withdrawal.amount : ""));
+            row.append($("<td>").text(deposit ? deposit.amount : ""));
+            row.append($("<td>").text(deal.balance));
+            tableBody.append(row);
+          });
+        },
+        error: function (xhr, status, error) {
+          console.error("Error fetching transactions from freee:", error);
+        }
+      });
+    }
+
+    // 取引先参照ポップアップを表示する関数
+    function showPartnerLookupPopup() {
+      ZOHO.CRM.UI.Popup.showLookupPopup({
+        title: "取引先を選択",
+        module: "Accounts",
+        fields: ["Account_Name", "Account_Code"],
+        callback: function (data) {
+          if (data && data.length > 0) {
+            var partner = data[0];
+            $("#new-partner").text(partner.Account_Name);
+            $("#new-partner").data("partner-id", partner.id);
+          }
+        }
+      });
+    }
+
+    // 新しい取引を追加する関数
+    function addNewTransaction() {
+      var date = $("#new-date").val();
+      var code = $("#new-code").val();
+      var description = $("#new-description").val();
+      var partnerId = $("#new-partner").data("partner-id");
+      var withdrawal = $("#new-withdrawal").val();
+      var deposit = $("#new-deposit").val();
+
+      var url = "https://api.freee.co.jp/api/1/deals";
+      var accessToken = "YOUR_ACCESS_TOKEN";
+      var companyId = "YOUR_COMPANY_ID";
+
+      var headers = {
+        "Authorization": "Bearer " + accessToken,
+        "Accept": "application/json",
+        "Content-Type": "application/json"
+      };
+
+      var data = {
+        "company_id": companyId,
+        "issue_date": date,
+        "type": "income",
+        "partner_id": partnerId,
+        "ref_number": code,
+        "details": [
+          {
+            "account_item_id": "CASH_ID",
+            "amount": deposit,
+            "description": description
+          }
+        ]
+      };
+
+      $.ajax({
+        url: url,
+        type: "POST",
+        headers: headers,
+        data: JSON.stringify(data),
+        success: function (response) {
+          fetchTransactionsFromFreee();
+          clearForm();
+        },
+        error: function (xhr, status, error) {
+          console.error("Error adding new transaction:", error);
+        }
+      });
+    }
+
+    // フォームをクリアする関数
+    function clearForm() {
+      $("#new-date").val("");
+      $("#new-code").val("");
+      $("#new-description").val("");
+      $("#new-partner").text("取引先を選択");
+      $("#new-partner").removeData("partner-id");
+      $("#new-withdrawal").val("");
+      $("#new-deposit").val("");
+    }
+
+    $(document).ready(function () {
+      fetchTransactionsFromFreee();
+      $("#transaction-table tbody").on("click", ".lookup-field", showPartnerLookupPopup);
+      $("#transaction-table tfoot").on("click", "td:last-child", function () {
+        addNewTransaction();
+      });
+    });
+  </script>
+</body>
+
+</html>

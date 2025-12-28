@@ -1,0 +1,3 @@
+import supabase from '@/lib/supabase';  // Changed from getBrowserClient import
+
+// ... existing code ...

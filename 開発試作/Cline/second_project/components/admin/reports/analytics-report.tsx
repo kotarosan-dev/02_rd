@@ -1,0 +1,3 @@
+import supabase from '@/lib/supabase'
+
+// Rest of the code...

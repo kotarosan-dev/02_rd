@@ -1,0 +1,21 @@
+{
+  "name": "美容室予約アプリ",
+  "short_name": "美容室予約",
+  "description": "美容室の予約管理アプリケーション",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#000000",
+  "scope": "/",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "64x64",
+      "type": "image/x-icon",
+      "purpose": "any maskable"
+    }
+  ],
+  "orientation": "portrait",
+  "categories": ["business", "productivity"],
+  "prefer_related_applications": false
+} 

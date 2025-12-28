@@ -1,0 +1,6 @@
+# Supabase Edge Functions の設定
+project_id = "upegeprmcxapdsvqtzey"
+
+[functions]
+[functions.line-webhook]
+verify_jwt = false 

@@ -1,0 +1,200 @@
+# kindle_autocap.yaml
+# Kindle for PC を自動操作してスクリーンショットを取得するバッチの設計書
+
+project:
+  name: KindleAutoCap
+  version: 0.1.0
+  description: >
+    Kindle for PC をページ送りしながら PNG 連番でキャプチャ。
+    取得ファイルを後処理（PDF 連結・OCR 等）に渡すための基盤スクリプト。
+
+environment:
+  os: Windows 10 以降
+  python: ">=3.10"
+  dependencies:
+    - pyautogui
+    - pillow
+    - opencv-python   # ← 拡張用（ページ終端検知など）
+  fonts: "Noto Sans JP"   # OCR 時の日本語描画確認用
+
+paths:
+  working_dir: "C:/KindleAutoCap" # プロジェクトのルートディレクトリ (絶対パス推奨)
+  output_dir: "${working_dir}/captures" # キャプチャ画像の保存先
+  log_file: "${working_dir}/logs/autocap.log" # ログファイルのパス (logsディレクトリ推奨)
+  config_file: "${working_dir}/kindle_autocap.yaml"   # ★自身を再読込して設定変更可能
+
+capture:
+  region: null        # 例: [x, y, width, height]; null=フルスクリーン
+  delay_after_page: 0.8   # 秒。ページめくり後の待機時間。環境でチューニング
+  file_pattern: "page_%04d.png" # 保存ファイル名のパターン
+  max_pages: 2000     # 安全のための最大取得ページ数上限
+
+controls:
+  next_page_key: "pagedown" # ページ送りに使用するキー
+  window_title: "Kindle"      # 操作対象のウィンドウタイトル (部分一致可、正規表現可の場合あり)
+  start_delay: 3              # 秒。スクリプト開始後、手動で Kindle を最前面に用意する時間
+  end_marker:
+    method: "image"           # 終了検知方法: "image" (画像), "pixel" (特定ピクセル色), "none" (なし)
+    file: "${working_dir}/res/end_marker.png" # 終了マーカー画像のパス (method=image の場合)
+    # pixel_coords: [x, y] # 監視するピクセルの座標 (method=pixel の場合)
+    # pixel_color: [r, g, b] # 終了と判断するピクセルの色 (method=pixel の場合)
+    confidence: 0.9         # 画像一致の信頼度 (0.0-1.0) (method=image の場合)
+
+postprocess:
+  assemble_pdf: false          # キャプチャ後にPDFに結合するかどうか
+  pdf_tool: "img2pdf"         # PDF結合に使用するツール (外部CLIまたはPythonライブラリ想定)
+  ocr: false                  # キャプチャ画像に対してOCRを実行するかどうか (tesserocr等を想定)
+  cleanup_png: false          # PDF化またはOCR処理後に元のPNGファイルを削除するかどうか
+
+logging:
+  level: "INFO"             # ログレベル (DEBUG, INFO, WARNING, ERROR, CRITICAL)
+  rotation: "10 MB"         # ログローテーションサイズ (例: "10 MB", "1 week")
+
+# --- 以下、処理フロー定義 (YAML駆動開発用) ---
+# これは設計書の一部であり、現時点では capture.py はこのフローを直接読み込みません。
+# 将来的に、より複雑な処理を実装する際の設計ガイドとして使用します。
+function:
+  name: capture_kindle_pages
+  description: Kindle for PC のページを自動でめくり、スクリーンショットを保存する
+  version: 0.1.0
+  entry_point: step-010-init
+  steps:
+    - id: step-010-init
+      name: 初期化
+      type: data_processing
+      description: 設定読み込み、出力ディレクトリ作成、ログ設定、ページカウンター初期化
+      output_variables:
+        - config
+        - logger
+        - page_count
+        - output_path
+      next_step: step-020-wait-start
+
+    - id: step-020-wait-start
+      name: 開始待機
+      type: system_wait
+      description: ユーザーがKindleウィンドウを準備するための待機 (start_delay)
+      details:
+        duration_seconds: config.controls.start_delay
+      next_step: step-030-focus-window
+
+    - id: step-030-focus-window
+      name: ウィンドウフォーカス
+      type: gui_automation
+      description: 指定されたタイトルを持つKindleウィンドウを検索し、アクティブにする
+      details:
+        target_window_title: config.controls.window_title
+      output_variables:
+        - kindle_window
+      potential_issues:
+        - ウィンドウが見つからない場合のエラー処理が必要
+      next_step: step-040-capture-loop-start
+
+    - id: step-040-capture-loop-start
+      name: キャプチャループ開始
+      type: loop_start
+      description: 最大ページ数まで、または終了マーカーが検出されるまでループ
+      details:
+        loop_variable: page_count
+        max_iterations: config.capture.max_pages
+      next_step: step-050-check-end-marker
+      # ループ終了時の遷移先は loop_end で定義
+
+    - id: step-050-check-end-marker
+      name: 終了マーカー確認
+      type: conditional_logic
+      description: 設定に基づき、画面上に終了マーカー (画像 or ピクセル) が存在するか確認
+      details:
+        condition: is_end_marker_found(config.controls.end_marker)
+        if_true: step-900-loop-end # マーカーが見つかったらループ終了
+        if_false: step-060-take-screenshot # 見つからなければキャプチャへ
+      potential_issues:
+        - 検出方法(image/pixel)に応じた実装が必要
+        - 画像検出の信頼度(confidence)調整が必要
+
+    - id: step-060-take-screenshot
+      name: スクリーンショット取得
+      type: gui_automation
+      description: 現在の画面を指定された領域(region)でキャプチャする
+      details:
+        capture_region: config.capture.region
+      output_variables:
+        - screenshot_image
+      next_step: step-070-save-image
+
+    - id: step-070-save-image
+      name: 画像保存
+      type: file_io
+      description: キャプチャした画像を連番ファイル名で保存
+      details:
+        output_directory: config.paths.output_dir
+        file_pattern: config.capture.file_pattern
+        current_page: page_count
+      input_variables:
+        - screenshot_image
+      next_step: step-080-log-capture
+
+    - id: step-080-log-capture
+      name: ログ記録
+      type: logging
+      description: キャプチャ成功のログを記録
+      details:
+        log_level: INFO
+        message: "ページ {page_count} を {filename} として保存しました。"
+      next_step: step-090-next-page
+
+    - id: step-090-next-page
+      name: 次ページへ
+      type: gui_automation
+      description: 指定されたキー(next_page_key)を押してKindleのページをめくる
+      details:
+        key_to_press: config.controls.next_page_key
+      next_step: step-100-wait-after-page
+
+    - id: step-100-wait-after-page
+      name: ページめくり後待機
+      type: system_wait
+      description: ページ描画のための待機 (delay_after_page)
+      details:
+        duration_seconds: config.capture.delay_after_page
+      next_step: step-110-increment-counter
+
+    - id: step-110-increment-counter
+      name: カウンター増加
+      type: data_processing
+      description: ページカウンターをインクリメント
+      input_variables:
+        - page_count
+      output_variables:
+        - page_count
+      next_step: step-040-capture-loop-start # ループの先頭へ戻る
+
+    - id: step-900-loop-end
+      name: キャプチャループ終了
+      type: loop_end
+      description: ループ終了条件 (マーカー検出 or 最大ページ数超過) をログ記録
+      next_step: step-910-postprocess
+
+    - id: step-910-postprocess
+      name: 後処理実行確認
+      type: conditional_logic
+      description: 設定に基づき、PDF結合やOCR処理を実行するか判断
+      details:
+        condition: config.postprocess.assemble_pdf or config.postprocess.ocr
+        if_true: step-920-run-postprocess # 後処理が必要なら実行へ
+        if_false: step-999-terminate # 不要なら終了
+
+    - id: step-920-run-postprocess
+      name: 後処理実行 (未実装)
+      type: function_call # or external_process
+      description: PDF結合やOCR処理を呼び出す (この設計書では詳細は未定義)
+      details:
+        function_to_call: run_post_processing(config.postprocess, config.paths.output_dir)
+      potential_issues:
+        - 後処理機能(PDF結合, OCR, PNG削除)は別途実装が必要
+      next_step: step-999-terminate
+
+    - id: step-999-terminate
+      name: 終了
+      type: termination
+      description: スクリプト処理完了 

@@ -1,0 +1,13 @@
+<svg width="300" height="50" viewBox="0 0 300 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M10 25 H140 M160 25 H290" stroke="#9CA3AF" stroke-width="1"/>
+  <path d="M140 25 Q150 15, 160 25" stroke="#9CA3AF" stroke-width="1" fill="none"/>
+  <path d="M140 25 Q150 35, 160 25" stroke="#9CA3AF" stroke-width="1" fill="none"/>
+  
+  <!-- 左側の葉 -->
+  <path d="M70 25 Q80 15, 90 25" stroke="#9CA3AF" stroke-width="1" fill="none"/>
+  <path d="M70 25 Q80 35, 90 25" stroke="#9CA3AF" stroke-width="1" fill="none"/>
+  
+  <!-- 右側の葉 -->
+  <path d="M210 25 Q220 15, 230 25" stroke="#9CA3AF" stroke-width="1" fill="none"/>
+  <path d="M210 25 Q220 35, 230 25" stroke="#9CA3AF" stroke-width="1" fill="none"/>
+</svg> 
