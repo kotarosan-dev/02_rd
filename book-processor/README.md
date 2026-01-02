@@ -2,24 +2,13 @@
 
 VFlatScanで作成した書籍テキストをGmail経由で自動処理し、note記事やClaude Code Skillsを生成します。
 
-## 方式の選択
-
-| 方式 | 難易度 | 依存関係 |
-|------|--------|---------|
-| **方式A: Google Apps Script + Drive同期** | ★☆☆ 簡単 | Google Drive for Desktop |
-| 方式B: Python IMAP直接取得 | ★★☆ 中級 | Python環境のみ |
-
----
-
-# 方式A: Google Apps Script + Drive同期（推奨）
-
 ## アーキテクチャ
 
 ```
 VFlatScan（スマホ）
     ↓ Gmail送信
 Gmail（添付ファイル）
-    ↓ Google Apps Script（自動）
+    ↓ Google Apps Script（1分ごと自動）
 Google Drive（VFlatScan_Booksフォルダ）
     ↓ Google Drive for Desktop（自動同期）
 ローカルフォルダ
@@ -69,58 +58,6 @@ $Config = @{
 # ポーリング間隔変更（2分）
 .\Watch-BookFiles.ps1 -Daemon -Interval 120
 ```
-
----
-
-# 方式B: Python IMAP直接取得
-
-## アーキテクチャ
-
-```
-VFlatScan（スマホ）
-    ↓ Gmail送信
-Gmail（添付ファイル）
-    ↓ Python IMAP直接取得
-ローカル処理
-    ↓ Claude Code CLI
-出力ファイル
-```
-
-**特徴**: Google Drive for Desktop **不要**
-
-## セットアップ
-
-### 1. Gmailアプリパスワードの取得
-
-1. [Google アカウント](https://myaccount.google.com/) にアクセス
-2. セキュリティ → 2段階認証プロセス を有効化
-3. セキュリティ → アプリパスワード で新規作成
-4. 生成された16文字のパスワードを保存
-
-### 2. 環境変数の設定
-
-```powershell
-.\setup.ps1
-```
-
-または手動で:
-
-```powershell
-[Environment]::SetEnvironmentVariable("GMAIL_ADDRESS", "your@gmail.com", "User")
-[Environment]::SetEnvironmentVariable("GMAIL_APP_PASSWORD", "xxxx xxxx xxxx xxxx", "User")
-```
-
-### 3. 実行
-
-```powershell
-# 1回だけ実行
-python gmail_book_processor.py
-
-# デーモンモード（常駐）
-python gmail_book_processor.py --daemon
-```
-
----
 
 ## 出力ファイル構造
 
