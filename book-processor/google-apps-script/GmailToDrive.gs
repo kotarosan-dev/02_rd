@@ -15,8 +15,8 @@ const CONFIG = {
   // 処理済みラベル名
   PROCESSED_LABEL: "BookProcessed",
 
-  // VFlatScanメール識別用キーワード
-  KEYWORDS: ["vflat", "スキャン", "scan", "書籍", "book"],
+  // VFlatScan送信元アドレス（自分のアドレス）
+  SENDER_EMAIL: "info@kotarosan-nocode.com",
 
   // 対象拡張子
   EXTENSIONS: [".txt", ".text", ".md"]
@@ -40,13 +40,10 @@ function saveToDrive() {
     for (const message of messages) {
       if (!message.isUnread()) continue;
 
-      const subject = message.getSubject().toLowerCase();
+      // 送信元が自分（VFlatScan経由）か確認
       const from = message.getFrom().toLowerCase();
-      const searchText = subject + " " + from;
-
-      // VFlatScanからのメールか確認
-      const isVFlatScan = CONFIG.KEYWORDS.some(kw => searchText.includes(kw));
-      if (!isVFlatScan) continue;
+      const isFromSelf = from.includes(CONFIG.SENDER_EMAIL.toLowerCase());
+      if (!isFromSelf) continue;
 
       // 添付ファイルを処理
       const attachments = message.getAttachments();
@@ -59,17 +56,9 @@ function saveToDrive() {
         );
 
         if (isTextFile) {
-          // タイムスタンプ付きファイル名
-          const timestamp = Utilities.formatDate(
-            new Date(),
-            Session.getScriptTimeZone(),
-            "yyyyMMdd_HHmmss"
-          );
-          const newFilename = timestamp + "_" + filename;
-
-          // Driveに保存
-          folder.createFile(attachment.copyBlob().setName(newFilename));
-          Logger.log("保存: " + newFilename);
+          // 元のファイル名のままDriveに保存
+          folder.createFile(attachment.copyBlob().setName(filename));
+          Logger.log("保存: " + filename);
 
           hasTextFile = true;
           savedCount++;
