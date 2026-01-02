@@ -122,7 +122,7 @@ class GmailBookProcessor:
             logger.warning("メール検索に失敗しました")
             return []
 
-        email_ids = messages[0].split()
+        email_ids = messages[0].decode().split()
         logger.info(f"未読メール: {len(email_ids)}件")
 
         book_emails = []
@@ -249,7 +249,7 @@ class GmailBookProcessor:
                         "claude",
                         "-p",
                         task["prompt"],
-                        "--allowedTools", "Read,Write,Edit,Glob,Grep,Bash"
+                        "--allowedTools", "Read", "Write", "Edit", "Glob", "Grep", "Bash"
                     ],
                     capture_output=True,
                     text=True,
@@ -300,6 +300,7 @@ class GmailBookProcessor:
 
         if not attachments:
             logger.warning(f"テキスト添付ファイルがありません: {subject}")
+            self.mark_as_processed(email_id)
             return
 
         for attachment in attachments:
