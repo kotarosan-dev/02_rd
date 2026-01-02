@@ -2,31 +2,95 @@
 
 VFlatScanで作成した書籍テキストをGmail経由で自動処理し、note記事やClaude Code Skillsを生成します。
 
+## 方式の選択
+
+| 方式 | 難易度 | 依存関係 |
+|------|--------|---------|
+| **方式A: Google Apps Script + Drive同期** | ★☆☆ 簡単 | Google Drive for Desktop |
+| 方式B: Python IMAP直接取得 | ★★☆ 中級 | Python環境のみ |
+
+---
+
+# 方式A: Google Apps Script + Drive同期（推奨）
+
 ## アーキテクチャ
 
 ```
 VFlatScan（スマホ）
     ↓ Gmail送信
 Gmail（添付ファイル）
-    ↓ IMAP直接取得
-Pythonスクリプト（ローカル常駐）
-    ↓ Claude Code CLI呼び出し
-出力ファイル
-    ├── article.md（note記事）
-    ├── summary.md（要約）
-    └── skill/（抽出したSkill）
+    ↓ Google Apps Script（自動）
+Google Drive（VFlatScan_Booksフォルダ）
+    ↓ Google Drive for Desktop（自動同期）
+ローカルフォルダ
+    ↓ PowerShellスクリプト
+Claude Code CLI → 出力ファイル
 ```
 
-**特徴:**
-- Google Drive for Desktop **不要**
-- 外部サービス（Zapier/Make等）**不要**
-- 完全無料（¥0）
+## セットアップ
+
+### Step 1: Google Apps Script設定
+
+1. [script.google.com](https://script.google.com) にアクセス
+2. 「新しいプロジェクト」を作成
+3. `google-apps-script/GmailToDrive.gs` の内容を貼り付け
+4. `setup()` を1回実行（フォルダ・ラベル作成）
+5. トリガー設定:
+   - 「トリガー」→「トリガーを追加」
+   - 関数: `saveToDrive`
+   - イベント: 時間主導型 → 分ベース → 1分
+
+### Step 2: Google Drive for Desktop設定
+
+1. [Google Drive for Desktop](https://www.google.com/drive/download/) をインストール
+2. 同期オプションで「VFlatScan_Books」フォルダを選択
+3. ローカルパスを確認（通常: `G:\マイドライブ\VFlatScan_Books`）
+
+### Step 3: PowerShellスクリプト設定
+
+`Watch-BookFiles.ps1` を編集して同期フォルダパスを設定:
+
+```powershell
+$Config = @{
+    WatchFolder = "G:\マイドライブ\VFlatScan_Books"  # 環境に合わせて変更
+    ...
+}
+```
+
+### Step 4: 実行
+
+```powershell
+# 1回だけ実行
+.\Watch-BookFiles.ps1
+
+# デーモンモード（常駐）
+.\Watch-BookFiles.ps1 -Daemon
+
+# ポーリング間隔変更（2分）
+.\Watch-BookFiles.ps1 -Daemon -Interval 120
+```
+
+---
+
+# 方式B: Python IMAP直接取得
+
+## アーキテクチャ
+
+```
+VFlatScan（スマホ）
+    ↓ Gmail送信
+Gmail（添付ファイル）
+    ↓ Python IMAP直接取得
+ローカル処理
+    ↓ Claude Code CLI
+出力ファイル
+```
+
+**特徴**: Google Drive for Desktop **不要**
 
 ## セットアップ
 
 ### 1. Gmailアプリパスワードの取得
-
-Googleアカウントで2段階認証を有効化し、アプリパスワードを作成:
 
 1. [Google アカウント](https://myaccount.google.com/) にアクセス
 2. セキュリティ → 2段階認証プロセス を有効化
@@ -35,22 +99,18 @@ Googleアカウントで2段階認証を有効化し、アプリパスワード�
 
 ### 2. 環境変数の設定
 
-PowerShellの場合:
 ```powershell
-# 一時的な設定
-$env:GMAIL_ADDRESS = "your@gmail.com"
-$env:GMAIL_APP_PASSWORD = "xxxx xxxx xxxx xxxx"
+.\setup.ps1
+```
 
-# 永続的な設定（ユーザー環境変数）
+または手動で:
+
+```powershell
 [Environment]::SetEnvironmentVariable("GMAIL_ADDRESS", "your@gmail.com", "User")
 [Environment]::SetEnvironmentVariable("GMAIL_APP_PASSWORD", "xxxx xxxx xxxx xxxx", "User")
 ```
 
-### 3. Gmailでラベル作成
-
-Gmailで「BookProcessed」ラベルを作成しておく（処理済みメールの管理用）
-
-### 4. 実行
+### 3. 実行
 
 ```powershell
 # 1回だけ実行
@@ -58,23 +118,11 @@ python gmail_book_processor.py
 
 # デーモンモード（常駐）
 python gmail_book_processor.py --daemon
-
-# ポーリング間隔を変更（デフォルト60秒）
-python gmail_book_processor.py --daemon --interval 120
 ```
 
-## 使い方
+---
 
-### VFlatScanからの送信
-
-1. VFlatScanで書籍をスキャン
-2. テキストファイルとしてエクスポート
-3. Gmail経由で自分宛に送信
-   - 件名に「書籍」「スキャン」「book」「vflat」等を含める
-
-### 処理結果の確認
-
-出力先: `C:\Users\user\Desktop\kotarosan\03_Internal\02_R&D\books\`
+## 出力ファイル構造
 
 ```
 books/
@@ -89,63 +137,11 @@ books/
     └── processing_log.md   # 処理結果ログ
 ```
 
-## タスクスケジューラでの自動起動（オプション）
-
-Windows起動時に自動実行する場合:
-
-1. タスクスケジューラを開く
-2. 「基本タスクの作成」
-3. トリガー: 「ログオン時」
-4. 操作: 「プログラムの開始」
-   - プログラム: `pythonw.exe`
-   - 引数: `C:\Users\user\Desktop\kotarosan\03_Internal\02_R&D\book-processor\gmail_book_processor.py --daemon`
-   - 開始: `C:\Users\user\Desktop\kotarosan\03_Internal\02_R&D\book-processor`
-
-## トラブルシューティング
-
-### 「Login failed」エラー
-
-- アプリパスワードを使用しているか確認
-- 通常のGmailパスワードではIMAP接続できません
-
-### 添付ファイルが検出されない
-
-- VFlatScanからの送信時、件名に識別キーワードを含めてください
-- 対応拡張子: `.txt`, `.text`, `.md`
-
-### Claude Code処理が失敗する
-
-- Claude Code CLIがインストールされているか確認
-- `claude --version` で動作確認
-- Skills（/book-article-generator等）が設定されているか確認
-
-## 設定のカスタマイズ
-
-`gmail_book_processor.py` 内の以下を編集:
-
-```python
-# VFlatScanメールの識別パターン
-self.vflatscan_patterns = [
-    "vflat",
-    "スキャン",
-    "scan",
-    "書籍",
-    "book"
-]
-
-# 出力ディレクトリ
-self.output_base = Path(
-    r"C:\Users\user\Desktop\kotarosan\03_Internal\02_R&D\books"
-)
-```
-
 ## 関連Skills
-
-このツールは以下のSkillsと連携します:
 
 - `/book-article-generator` - 書籍からnote記事を生成
 - `/skill-extraction-template` - 書籍からSkillを抽出
 
-## ログ
+## 費用
 
-実行ログは `book_processor.log` に保存されます。
+**¥0** - すべて無料サービスのみ使用
