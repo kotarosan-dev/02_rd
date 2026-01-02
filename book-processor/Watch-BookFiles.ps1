@@ -3,8 +3,13 @@
 
 param(
     [switch]$Daemon,
-    [int]$Interval = 60
+    [int]$Interval = 900
 )
+
+# UTF-8エンコーディング設定（日本語パス対応）
+[Console]::OutputEncoding = [System.Text.Encoding]::UTF8
+$OutputEncoding = [System.Text.Encoding]::UTF8
+chcp 65001 | Out-Null
 
 $driveRoot = "G:\マイドライブ"
 $Config = @{
@@ -46,7 +51,6 @@ function Invoke-BookProcessing {
     param([string]$FilePath)
 
     $rawFileName = [System.IO.Path]::GetFileNameWithoutExtension($FilePath)
-    # レガシー対応: 旧形式のタイムスタンプ接頭辞があれば除去
     $bookTitle = $rawFileName -replace '^\d{8}_\d{6}_', ''
     $ts = Get-Date -Format "yyyyMMdd"
     $outputDir = Join-Path $Config.OutputFolder "$ts`_$bookTitle"
@@ -80,11 +84,11 @@ function Invoke-BookProcessing {
 
 ## 要約の構成（必須）
 
-1. **一言で言うと**（1行で本の核心）
-2. **主要なポイント**（3-5個の箇条書き）
-3. **実践への示唆**（読者が明日から使える3つのアクション）
-4. **印象に残った引用**（2-3個、ページ番号があれば記載）
-5. **こんな人におすすめ**（ターゲット読者像）
+1. 一言で言うと（1行で本の核心）
+2. 主要なポイント（3-5個の箇条書き）
+3. 実践への示唆（読者が明日から使える3つのアクション）
+4. 印象に残った引用（2-3個、ページ番号があれば記載）
+5. こんな人におすすめ（ターゲット読者像）
 
 Markdown形式で出力してください。
 "@
@@ -98,12 +102,12 @@ Markdown形式で出力してください。
 上記の書籍からClaude Code用のSkillを抽出してください。
 skill-extraction-templateスキルに従い、以下の構造で出力してください：
 
-$skillOut/[skill-name]/
+出力先/[skill-name]/
 ├── SKILL.md
 ├── agents/
 └── references/
 
-[skill-name]は書籍の内容から適切な英語のスラッグ名を決定してください（例: science-communication, negotiation-tactics）。
+skill-nameは書籍の内容から適切な英語のスラッグ名を決定してください（例: science-communication, negotiation-tactics）。
 このディレクトリはClaude Codeのグローバルスキルとして登録されます。
 "@
 
@@ -145,7 +149,6 @@ $skillOut/[skill-name]/
 
     Write-Log "Completed: $outputDir"
 
-    # Send notification
     $successCount = ($results.Values | Where-Object { $_ -eq "success" }).Count
     Send-Notification "Book Processing Complete" "$bookTitle - $successCount/3 tasks succeeded"
 }
