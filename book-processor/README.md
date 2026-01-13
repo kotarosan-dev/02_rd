@@ -1,6 +1,7 @@
 # Gmail書籍テキスト自動処理ツール
 
-VFlatScanで作成した書籍テキストをGmail経由で自動処理し、棚橋スタイル書評やClaude Code Skillsを生成します。
+VFlatScanで作成した書籍テキストをGmail経由で取得し、処理用フォルダを自動作成します。
+書評・スキル生成はCursorチャットで手動実行します。
 
 ## アーキテクチャ
 
@@ -12,8 +13,10 @@ Gmail（添付ファイル）
 Google Drive（VFlatScan_Booksフォルダ）
     ↓ Google Drive for Desktop（自動同期）
 ローカルフォルダ
-    ↓ PowerShellスクリプト
-Claude Code CLI → 出力ファイル
+    ↓ PowerShellスクリプト（フォルダ作成・ファイルコピー）
+Books/YYYYMMDD_書籍名/source.txt
+    ↓ Cursorチャットで手動実行
+article.md, summary.md, skill.md
 ```
 
 ## セットアップ
@@ -64,49 +67,48 @@ $Config = @{
 ```
 Books/
 └── 20260102_書籍名/
-    ├── source.txt          # 元のテキスト
-    ├── article.md          # 棚橋スタイル書評（95点以上品質）
-    ├── summary.md          # 要約
-    ├── skill/              # Claude Code Skill
-    │   ├── SKILL.md
-    │   ├── agents/
-    │   └── references/
-    └── processing_log.md   # 処理結果ログ
+    └── source.txt          # 元のテキスト（自動コピー）
+```
+
+## 手動処理の実行方法
+
+PowerShellスクリプトでフォルダ作成後、Cursorチャットで以下のように依頼：
+
+### 書評生成
+
+```
+C:\Users\user\Desktop\kotarosan\03_Internal\02_R&D\Books\20260110_書籍名
+このフォルダのsource.txtを読み込んで、/book-review-chef スキルで書評を生成してください。
+出力: article.md
+```
+
+### 要約生成
+
+```
+C:\Users\user\Desktop\kotarosan\03_Internal\02_R&D\Books\20260110_書籍名
+このフォルダのsource.txtを読み込んで、要約を作成してください。
+出力: summary.md
+
+## 要約の構成
+1. 一言で言うと（1行で本の核心）
+2. 主要なポイント（3-5個の箇条書き）
+3. 実践への示唆（読者が明日から使える3つのアクション）
+4. 印象に残った引用（2-3個）
+5. こんな人におすすめ（ターゲット読者像）
+```
+
+### スキル抽出
+
+```
+C:\Users\user\Desktop\kotarosan\03_Internal\02_R&D\Books\20260110_書籍名
+このフォルダのsource.txtを読み込んで、/skill-extraction-template スキルでClaude Code用スキルを抽出してください。
+出力先: C:\Users\user\.claude\skills\
 ```
 
 ## 関連Skills
 
-- `/book-review-chef` - 書籍から棚橋スタイル書評を生成（95点以上の品質）
+- `/book-review-chef` - 書籍から棚橋スタイル書評を生成
 - `/skill-extraction-template` - 書籍からSkillを抽出
-
-## 生成される書評の構成と品質基準
-
-book-review-chefスキルは「紹介記事」ではなく「書評」を生成します。
-
-### 9セクション構成
-
-| # | セクション | 目的 |
-|---|-----------|------|
-| 1 | タイトル | 思想的・学術的な問いを含む |
-| 2 | 思想的系譜への位置づけ | 先行思想家から始動（冒頭） |
-| 3 | 書誌情報 | 書名、著者、出版社、Amazonリンク |
-| 4 | 本書の核心 | 先行理論との共鳴・対話 |
-| 5 | 批判的検討 | 前提・価値観自体への問い |
-| 6 | 時代的意義 | なぜ今この本か |
-| 7 | 残された問い | 読者への問いで終わる |
-| 8 | 結語 | メタ構造への言及 |
-| 9 | 参考文献 | 学術的書誌情報（3-5件） |
-
-### 品質要件（すべて満たすこと）
-
-| 要件 | 説明 |
-|-----|------|
-| 思想史から始動 | 冒頭は先行思想家から始める（「こんな経験はないだろうか」は禁止） |
-| 批評家の声 | 「私が注目したのは」「私は〜として読む」 |
-| 思想的系譜 | 先行思想家2名以上への接続 |
-| 構造的批判 | 本書の前提・価値観自体への問い |
-| メタ構造 | 「この書評自体が〜」への言及 |
-| 問いを残す | 読者への問いで終わる |
 
 ## 費用
 
