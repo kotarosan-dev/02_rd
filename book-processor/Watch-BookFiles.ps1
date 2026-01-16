@@ -6,10 +6,9 @@ param(
     [int]$Interval = 900
 )
 
-# UTF-8エンコーディング設定（日本語パス対応）
+# UTF-8 encoding settings
 [Console]::OutputEncoding = [System.Text.Encoding]::UTF8
 $OutputEncoding = [System.Text.Encoding]::UTF8
-chcp 65001 | Out-Null
 
 $driveRoot = "G:\マイドライブ"
 $Config = @{
@@ -38,7 +37,7 @@ function Invoke-BookProcessing {
     $rawFileName = [System.IO.Path]::GetFileNameWithoutExtension($FilePath)
     $bookTitle = $rawFileName -replace '^\d{8}_\d{6}_', ''
     $ts = Get-Date -Format "yyyyMMdd"
-    $outputDir = Join-Path $Config.OutputFolder "$ts`_$bookTitle"
+    $outputDir = Join-Path $Config.OutputFolder "${ts}_${bookTitle}"
 
     Write-Log "Processing: $bookTitle"
 
@@ -80,7 +79,7 @@ Write-Log "Watch: $($Config.WatchFolder)"
 Write-Log "Output: $($Config.OutputFolder)"
 
 if ($Daemon) {
-    Write-Log "Daemon mode ($Interval sec). Ctrl+C to stop"
+    Write-Log "Daemon mode (${Interval} sec). Ctrl+C to stop"
     while ($true) {
         try { Start-Processing } catch { Write-Log "Error: $_" }
         Start-Sleep -Seconds $Interval
