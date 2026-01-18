@@ -78,16 +78,6 @@
 
 ---
 
-**本記事について**: この記事は書籍『35歳の教科書 今から始める戦略的人生計画』(藤原和博著、幻冬舎文庫)の書評・批評を目的としています。書籍の詳細な内容は原著をご参照ください。
+**本記事について**: この記事は書籍『35歳の教科書 今から始める戦略的人生計画』の書評・批評を目的としています。書籍の詳細な内容は原著をご参照ください。
 
----
-
-## Sources
-
-本書評の執筆にあたり、以下の情報源を参照しました。
-
-- [藤原和博 - Wikipedia](https://ja.wikipedia.org/wiki/%E8%97%A4%E5%8E%9F%E5%92%8C%E5%8D%9A)
-- [日本における成熟社会論の知的起源 - J-STAGE](https://www.jstage.jst.go.jp/article/nenpouseijigaku/70/2/70_2_143/_article/-char/ja/)
-- [RIETI - 「脱工業社会」再論](https://www.rieti.go.jp/jp/columns/a01_0157.html)
-- [エドガー・シャイン ポータルサイト - キャリア・アンカー入門](https://www.edgarschein.jp/20141112/169.html)
-- [人生100年時代、働き方はマルチステージへ | WORKSIGHT](https://www.worksight.jp/issues/863.html)
+※本記事にはアフィリエイトリンクが含まれています。
