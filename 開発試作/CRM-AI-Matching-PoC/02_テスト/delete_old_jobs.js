@@ -2,7 +2,13 @@
  * 古いテストデータを削除するスクリプト
  */
 
-const PINECONE_API_KEY = 'pcsk_69Ftgv_87rKSRSB49CtVmoLhuqaZhqk931M5ciMCbZ3i2HUTaipsXqgRcWAdmn346ZR4gr';
+// API Keyは環境変数から取得（.envファイルに設定）
+const PINECONE_API_KEY = process.env.PINECONE_API_KEY;
+if (!PINECONE_API_KEY) {
+  console.error('ERROR: PINECONE_API_KEY environment variable is not set');
+  console.error('Set it with: $env:PINECONE_API_KEY="your-api-key"');
+  process.exit(1);
+}
 const PINECONE_HOST = 'https://firstprpjects-x0dk0o2.svc.aped-4627-b74a.pinecone.io';
 const NAMESPACE = 'jobs';
 
