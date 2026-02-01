@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Matching Widget</title>
+  <!-- SDK v1.5（最新） -->
+  <script src="https://live.zwidgets.com/js-sdk/1.5/ZohoEmbededAppSDK.min.js"></script>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div id="app">
+    <div id="loading" class="loading">
+      <div class="spinner"></div>
+      <p>マッチング候補を検索中...</p>
+    </div>
+    
+    <div id="error" class="error hidden">
+      <p class="error-message"></p>
+      <button onclick="retrySearch()">再試行</button>
+    </div>
+    
+    <div id="results" class="results hidden">
+      <h2>おすすめマッチング</h2>
+      <div id="match-list" class="match-list"></div>
+    </div>
+    
+    <div id="empty" class="empty hidden">
+      <p>マッチング候補が見つかりませんでした</p>
+    </div>
+  </div>
+  
+  <script>
+    // ★重要：イベント登録を先に行う（init()の前）
+    ZOHO.embeddedApp.on("PageLoad", function(data) {
+      console.log("PageLoad event received:", data);
+      window.currentContext = data;
+      handlePageLoad(data);
+    });
+
+    // 初期化は最後
+    ZOHO.embeddedApp.init().then(function() {
+      console.log("Widget initialized successfully");
+    }).catch(function(error) {
+      console.error("Widget initialization failed:", error);
+    });
+  </script>
+  <script src="js/widget.js"></script>
+</body>
+</html>

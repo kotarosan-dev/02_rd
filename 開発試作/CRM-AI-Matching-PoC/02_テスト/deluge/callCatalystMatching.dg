@@ -1,0 +1,35 @@
+// Catalyst AI Matching API呼び出し関数
+// 関数名: callCatalystMatching
+// カテゴリ: スタンドアロン
+// 戻り値の型: String
+// 引数: record_id (String), record_data (String), record_type (String), top_k (int)
+
+string callCatalystMatching(string record_id, string record_data, string record_type, int top_k)
+{
+    // Catalyst API URL
+    catalystUrl = "https://ai-matching-poc-90002038385.development.catalystserverless.jp/server/ai_matching/search";
+    
+    // リクエストボディを構築
+    requestMap = Map();
+    requestMap.put("record_id", record_id);
+    requestMap.put("record", record_data.toJSON());
+    requestMap.put("record_type", record_type);
+    requestMap.put("top_k", top_k);
+    
+    // ヘッダー設定
+    headers = Map();
+    headers.put("Content-Type", "application/json");
+    
+    // APIを呼び出し
+    response = invokeurl
+    [
+        url: catalystUrl
+        type: POST
+        parameters: requestMap.toString()
+        headers: headers
+    ];
+    
+    info "Catalyst API Response: " + response;
+    
+    return response.toString();
+}

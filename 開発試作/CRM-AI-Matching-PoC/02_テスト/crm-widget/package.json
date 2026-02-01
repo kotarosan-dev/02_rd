@@ -1,0 +1,6 @@
+{
+  "name": "ai-matching-widget",
+  "version": "1.0.0",
+  "description": "AI Matching Widget for Zoho CRM",
+  "main": "app/widget.html"
+}

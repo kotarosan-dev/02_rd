@@ -1,0 +1,22 @@
+{
+  "name": "zoho-creator-automation",
+  "version": "1.0.0",
+  "description": "Zoho Creator GUI自動化実験プロジェクト",
+  "scripts": {
+    "login": "node scripts/zoho-login.js",
+    "test": "npx playwright test",
+    "test:headed": "npx playwright test --headed",
+    "test:ui": "npx playwright test --ui",
+    "test:debug": "npx playwright test --debug",
+    "test:login": "npx playwright test --project=setup --headed",
+    "report": "npx playwright show-report"
+  },
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "playwright": "^1.58.1"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.40.0",
+    "@types/node": "^20.10.0"
+  }
+}

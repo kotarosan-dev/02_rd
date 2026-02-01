@@ -1,0 +1,23 @@
+{
+  "service": "CRM",
+  "name": "AI Matching Widget",
+  "description": "求職者・求人のAIマッチングを表示するウィジェット",
+  "version": "1.5.2",
+  "scopes": [
+    "ZohoCRM.modules.ALL",
+    "ZohoCRM.settings.ALL",
+    "ZohoCRM.coql.READ",
+    "ZohoCRM.functions.execute.READ",
+    "ZohoCRM.functions.execute.CREATE"
+  ],
+  "components": {
+    "widgets": [
+      {
+        "name": "AI Matching Recommendations",
+        "location": "crm.record.detail.related_list",
+        "url": "/app/widget.html",
+        "modules": ["JobSeekers", "Jobs"]
+      }
+    ]
+  }
+}

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Matching Widget - Test</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div id="app">
+    <div id="loading" class="loading hidden">
+      <div class="spinner"></div>
+      <p>マッチング候補を検索中...</p>
+    </div>
+    
+    <div id="error" class="error hidden">
+      <p class="error-message"></p>
+      <button onclick="retrySearch()">再試行</button>
+    </div>
+    
+    <div id="results" class="results">
+      <h2>おすすめマッチング</h2>
+      <div id="match-list" class="match-list"></div>
+    </div>
+    
+    <div id="empty" class="empty hidden">
+      <p>マッチング候補が見つかりませんでした</p>
+    </div>
+  </div>
+  
+  <script>
+    // モックデータ
+    const mockMatches = [
+      {
+        id: 'job_001',
+        score: 92.5,
+        metadata: {
+          title: 'シニアバックエンドエンジニア',
+          location: '東京（リモート可）',
+          salary_min: '500',
+          salary_max: '800',
+          required_skills: 'Python, AWS, Kubernetes'
+        }
+      },
+      {
+        id: 'job_002',
+        score: 85.3,
+        metadata: {
+          title: 'Webアプリケーションエンジニア',
+          location: '東京',
+          salary_min: '450',
+          salary_max: '650',
+          required_skills: 'Python, JavaScript, Docker'
+        }
+      },
+      {
+        id: 'job_003',
+        score: 78.1,
+        metadata: {
+          title: 'フルスタックエンジニア',
+          location: '大阪',
+          salary_min: '400',
+          salary_max: '600',
+          required_skills: 'Python, React, AWS'
+        }
+      }
+    ];
+
+    function escapeHtml(text) {
+      const div = document.createElement('div');
+      div.textContent = text || '';
+      return div.innerHTML;
+    }
+
+    function renderMatches() {
+      const matchList = document.getElementById('match-list');
+      matchList.innerHTML = '';
+      
+      mockMatches.forEach(match => {
+        const scoreClass = match.score >= 80 ? 'high' : match.score >= 60 ? 'medium' : 'low';
+        const metadata = match.metadata || {};
+        
+        const card = document.createElement('div');
+        card.className = 'match-card';
+        card.innerHTML = `
+          <div class="match-header">
+            <span class="match-title">${escapeHtml(metadata.title || '求人')}</span>
+            <div class="match-score ${scoreClass === 'high' ? 'score-high' : scoreClass === 'medium' ? 'score-medium' : 'score-low'}">
+              ${match.score}%
+            </div>
+          </div>
+          <div class="score-bar">
+            <div class="score-fill ${scoreClass}" style="width: ${match.score}%"></div>
+          </div>
+          <div class="match-details">
+            ${metadata.location ? `<span class="detail-tag location">${escapeHtml(metadata.location)}</span>` : ''}
+            ${metadata.salary_min && metadata.salary_max ? `<span class="detail-tag salary">${metadata.salary_min}-${metadata.salary_max}万円</span>` : ''}
+            ${metadata.required_skills ? `<span class="detail-tag">${escapeHtml(metadata.required_skills.substring(0, 30))}...</span>` : ''}
+          </div>
+        `;
+        matchList.appendChild(card);
+      });
+    }
+
+    // 初期化
+    document.addEventListener('DOMContentLoaded', renderMatches);
+  </script>
+</body>
+</html>

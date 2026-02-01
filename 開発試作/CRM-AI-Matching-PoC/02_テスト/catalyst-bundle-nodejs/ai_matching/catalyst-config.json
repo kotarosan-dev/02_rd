@@ -1,0 +1,10 @@
+{
+  "deployment": {
+    "name": "ai_matching",
+    "stack": "node18",
+    "type": "advancedio"
+  },
+  "execution": {
+    "main_function": "index.handler"
+  }
+}

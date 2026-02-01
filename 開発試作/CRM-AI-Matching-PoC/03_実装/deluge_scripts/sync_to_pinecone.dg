@@ -1,0 +1,97 @@
+/**
+ * Pinecone同期関数
+ * CRMレコード作成・更新時にPineconeへ自動登録
+ * 
+ * 使用方法:
+ * 1. CRM設定 > 開発者スペース > 関数 > 新しい関数
+ * 2. この関数を作成
+ * 3. ワークフロー > 新しいルール > トリガー：作成/編集時
+ * 4. アクション：関数を呼び出す > この関数を選択
+ */
+
+// === 求人(Jobs)モジュール用 ===
+// 関数名: syncJobToPinecone
+// 引数: jobId (String)
+void syncJobToPinecone(String jobId)
+{
+    // レコード取得
+    jobRecord = zoho.crm.getRecordById("Jobs", jobId);
+    
+    if(jobRecord != null)
+    {
+        // Catalyst API用のペイロード作成
+        payload = Map();
+        payload.put("record_id", jobId);
+        
+        recordData = Map();
+        recordData.put("title", ifnull(jobRecord.get("Name"), ""));
+        recordData.put("required_skills", ifnull(jobRecord.get("Required_Skills"), ""));
+        recordData.put("required_experience", ifnull(jobRecord.get("Required_Experience"), 0));
+        recordData.put("position", ifnull(jobRecord.get("Position"), ""));
+        recordData.put("location", ifnull(jobRecord.get("Location"), ""));
+        recordData.put("salary_min", ifnull(jobRecord.get("Salary_Min"), 0));
+        recordData.put("salary_max", ifnull(jobRecord.get("Salary_Max"), 0));
+        recordData.put("description", ifnull(jobRecord.get("Description"), ""));
+        
+        payload.put("record", recordData);
+        payload.put("record_type", "job");
+        
+        // Catalyst API呼び出し（Connection使用）
+        headers = Map();
+        headers.put("Content-Type", "application/json");
+        
+        response = invokeurl
+        [
+            url: "https://ai-matching-poc-90002038385.development.catalystserverless.jp/server/ai_matching/upsert"
+            type: POST
+            parameters: payload.toString()
+            headers: headers
+            connection: "catalyst_matching_api"
+        ];
+        
+        info "Pinecone sync response for Job " + jobId + ": " + response;
+    }
+}
+
+// === 求職者(JobSeekers)モジュール用 ===
+// 関数名: syncJobSeekerToPinecone
+// 引数: seekerId (String)
+void syncJobSeekerToPinecone(String seekerId)
+{
+    // レコード取得
+    seekerRecord = zoho.crm.getRecordById("JobSeekers", seekerId);
+    
+    if(seekerRecord != null)
+    {
+        // Catalyst API用のペイロード作成
+        payload = Map();
+        payload.put("record_id", seekerId);
+        
+        recordData = Map();
+        recordData.put("name", ifnull(seekerRecord.get("Name"), ""));
+        recordData.put("skills", ifnull(seekerRecord.get("Skills"), ""));
+        recordData.put("experience_years", ifnull(seekerRecord.get("Experience_Years"), 0));
+        recordData.put("desired_position", ifnull(seekerRecord.get("Desired_Position"), ""));
+        recordData.put("desired_location", ifnull(seekerRecord.get("Desired_Location"), ""));
+        recordData.put("desired_salary", ifnull(seekerRecord.get("Desired_Salary"), 0));
+        recordData.put("self_pr", ifnull(seekerRecord.get("Self_PR"), ""));
+        
+        payload.put("record", recordData);
+        payload.put("record_type", "jobseeker");
+        
+        // Catalyst API呼び出し（Connection使用）
+        headers = Map();
+        headers.put("Content-Type", "application/json");
+        
+        response = invokeurl
+        [
+            url: "https://ai-matching-poc-90002038385.development.catalystserverless.jp/server/ai_matching/upsert"
+            type: POST
+            parameters: payload.toString()
+            headers: headers
+            connection: "catalyst_matching_api"
+        ];
+        
+        info "Pinecone sync response for JobSeeker " + seekerId + ": " + response;
+    }
+}

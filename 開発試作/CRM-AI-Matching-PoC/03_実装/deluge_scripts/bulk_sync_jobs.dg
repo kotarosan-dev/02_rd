@@ -1,0 +1,63 @@
+/**
+ * 一括同期関数
+ * 既存のすべての求人レコードをPineconeに登録
+ * 
+ * 使用方法:
+ * CRM設定 > 開発者スペース > 関数 > この関数を作成
+ * 「実行」ボタンで手動実行
+ */
+
+// 関数名: bulkSyncJobsToPinecone
+// 引数: なし
+void bulkSyncJobsToPinecone()
+{
+    // Jobsモジュールの全レコードを取得（最大200件）
+    jobRecords = zoho.crm.getRecords("Jobs", 1, 200);
+    
+    successCount = 0;
+    errorCount = 0;
+    
+    for each job in jobRecords
+    {
+        try
+        {
+            jobId = job.get("id").toString();
+            
+            payload = Map();
+            payload.put("record_id", jobId);
+            
+            recordData = Map();
+            recordData.put("title", ifnull(job.get("Name"), ""));
+            recordData.put("required_skills", ifnull(job.get("Required_Skills"), ""));
+            recordData.put("position", ifnull(job.get("Position"), ""));
+            recordData.put("location", ifnull(job.get("Location"), ""));
+            recordData.put("salary_min", ifnull(job.get("Salary_Min"), 0));
+            recordData.put("salary_max", ifnull(job.get("Salary_Max"), 0));
+            
+            payload.put("record", recordData);
+            payload.put("record_type", "job");
+            
+            headers = Map();
+            headers.put("Content-Type", "application/json");
+            
+            response = invokeurl
+            [
+                url: "https://ai-matching-poc-90002038385.development.catalystserverless.jp/server/ai_matching/upsert"
+                type: POST
+                parameters: payload.toString()
+                headers: headers
+            ];
+            
+            info "Synced Job " + jobId + ": " + job.get("Name");
+            successCount = successCount + 1;
+        }
+        catch(e)
+        {
+            info "Error syncing job: " + e;
+            errorCount = errorCount + 1;
+        }
+    }
+    
+    info "Bulk sync completed. Success: " + successCount + ", Errors: " + errorCount;
+    return "Synced " + successCount + " jobs, " + errorCount + " errors";
+}

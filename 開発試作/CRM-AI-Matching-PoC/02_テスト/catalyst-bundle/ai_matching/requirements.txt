@@ -1,0 +1,2 @@
+flask>=2.0.0
+pinecone>=5.0.0

@@ -1,0 +1,205 @@
+/* AI Matching Widget Styles */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-size: 14px;
+  color: #333;
+  background: #fff;
+  padding: 16px;
+}
+
+#app {
+  max-width: 100%;
+}
+
+/* Loading */
+.loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid #f3f3f3;
+  border-top: 3px solid #0073ea;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.loading p {
+  margin-top: 16px;
+  color: #666;
+}
+
+/* Error */
+.error {
+  padding: 20px;
+  text-align: center;
+}
+
+.error-message {
+  color: #d32f2f;
+  margin-bottom: 16px;
+}
+
+.error button {
+  padding: 8px 16px;
+  background: #0073ea;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.error button:hover {
+  background: #005bb5;
+}
+
+/* Results */
+.results h2 {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: #333;
+  padding-bottom: 8px;
+  border-bottom: 2px solid #0073ea;
+}
+
+.match-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.match-card {
+  background: #f8f9fa;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 16px;
+  transition: box-shadow 0.2s, border-color 0.2s;
+  cursor: pointer;
+}
+
+.match-card:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-color: #0073ea;
+}
+
+.match-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 8px;
+}
+
+.match-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: #0073ea;
+}
+
+.match-score {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.score-high {
+  color: #4caf50;
+}
+
+.score-medium {
+  color: #ff9800;
+}
+
+.score-low {
+  color: #9e9e9e;
+}
+
+.match-details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.detail-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 8px;
+  background: #e3f2fd;
+  color: #1976d2;
+  border-radius: 4px;
+  font-size: 12px;
+}
+
+.detail-tag.location {
+  background: #e8f5e9;
+  color: #388e3c;
+}
+
+.detail-tag.salary {
+  background: #fff3e0;
+  color: #f57c00;
+}
+
+.detail-tag.experience {
+  background: #f3e5f5;
+  color: #7b1fa2;
+}
+
+/* Empty */
+.empty {
+  padding: 40px;
+  text-align: center;
+  color: #666;
+}
+
+/* Utility */
+.hidden {
+  display: none !important;
+}
+
+/* Score Bar */
+.score-bar {
+  width: 60px;
+  height: 6px;
+  background: #e0e0e0;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.score-fill {
+  height: 100%;
+  border-radius: 3px;
+  transition: width 0.3s ease;
+}
+
+.score-fill.high {
+  background: linear-gradient(90deg, #4caf50, #81c784);
+}
+
+.score-fill.medium {
+  background: linear-gradient(90deg, #ff9800, #ffb74d);
+}
+
+.score-fill.low {
+  background: linear-gradient(90deg, #9e9e9e, #bdbdbd);
+}

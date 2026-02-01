@@ -1,0 +1,28 @@
+# 認証状態ファイル（機密情報を含む）
+03_実装/auth-state/*.json
+
+# 環境変数
+.env
+.env.local
+.env.*.local
+
+# Playwright
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
+
+# Node
+node_modules/
+package-lock.json
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# ログ
+*.log

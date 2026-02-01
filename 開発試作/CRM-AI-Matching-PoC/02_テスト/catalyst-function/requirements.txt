@@ -1,0 +1,5 @@
+zcatalyst-sdk
+openai
+pinecone
+python-dotenv
+requests
