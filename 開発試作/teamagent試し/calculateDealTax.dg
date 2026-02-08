@@ -1,0 +1,60 @@
+void automation.calculateDealTax()
+{
+    /*
+    function_name   : calculateDealTax
+    label_name      : 商談税額自動計算
+    motivation      : 商談の金額から税額・税込合計を自動計算する
+    processing_flow :
+      - 1. トリガーされた商談IDを取得
+      - 2. 組織変数から税率を取得
+      - 3. 税額を計算（金額 × 税率）
+      - 4. 税込合計を計算（金額 + 税額）
+      - 5. 商談レコードを更新
+    related_functions: なし
+    */
+
+    // 1. トリガーされた商談IDを取得
+    dealId = deal.get("id");
+    info "処理開始: 商談ID = " + dealId;
+
+    // 2. 商談の金額を取得
+    amount = ifnull(deal.get("Amount_Custom"), 0.0);
+    info "金額: " + amount;
+
+    // 金額が0以下の場合はスキップ
+    if(amount <= 0)
+    {
+        info "金額が0以下のため処理をスキップ";
+        return;
+    }
+
+    // 3. 組織変数から税率を取得
+    taxRateStr = zoho.crm.getOrgVariable("DEFAULT_TAX_RATE");
+    info "税率（文字列）: " + taxRateStr;
+
+    // 文字列を数値に変換
+    taxRate = 0.10;
+    if(taxRateStr != null && taxRateStr != "")
+    {
+        taxRate = taxRateStr.toDecimal();
+    }
+    info "税率（数値）: " + taxRate;
+
+    // 4. 税額を計算
+    taxAmount = amount * taxRate;
+    info "税額: " + taxAmount;
+
+    // 5. 税込合計を計算
+    totalAmount = amount + taxAmount;
+    info "税込合計: " + totalAmount;
+
+    // 6. 商談レコードを更新
+    updateData = Map();
+    updateData.put("Tax_Amount", taxAmount);
+    updateData.put("Total_Amount", totalAmount);
+
+    updateResp = zoho.crm.updateRecord("Deals", dealId, updateData);
+    info "更新結果: " + updateResp;
+
+    info "処理完了: 商談ID = " + dealId;
+}
