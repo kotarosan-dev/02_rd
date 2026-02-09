@@ -75,6 +75,10 @@ const elements = {
   results: document.getElementById('results'),
   empty: document.getElementById('empty'),
   matchList: document.getElementById('match-list'),
+  summaryBlock: document.getElementById('summary-block'),
+  summaryContent: document.getElementById('summary-content'),
+  summaryBody: document.getElementById('summary-body'),
+  summaryToggle: document.getElementById('summary-toggle'),
   errorMessage: document.querySelector('.error-message')
 };
 
@@ -108,9 +112,10 @@ async function handlePageLoad(context) {
     const recordType = getRecordType(context.Entity);
     console.log("Record type:", recordType);
     
-    const matches = await searchMatches(context.EntityId, record, recordType);
+    const { matches, summary } = await searchMatches(context.EntityId, record, recordType);
     
     if (matches && matches.length > 0) {
+      renderSummary(summary);
       renderMatches(matches, recordType);
       showResults();
     } else {
@@ -175,7 +180,8 @@ function getRecordType(entity) {
 async function searchMatches(recordId, record, recordType) {
   if (CONFIG.MOCK_MODE) {
     console.log("Mock mode: calculating matches for record:", recordId);
-    return calculateMockMatches(recordId, record, recordType);
+    const mockMatches = calculateMockMatches(recordId, record, recordType);
+    return { matches: mockMatches, summary: null };
   }
   
   try {
@@ -184,12 +190,13 @@ async function searchMatches(recordId, record, recordType) {
     const recordData = transformRecordForAPI(record, recordType);
     console.log("Record data:", JSON.stringify(recordData));
     
-    // リクエストボディを構築
+    // 総合評価1本化（トークン節約）：generate_summary: true で1回だけ要約を取得
     const requestBody = {
       record_id: recordId,
       record: recordData,
       record_type: recordType,
-      top_k: 5
+      top_k: 5,
+      generate_summary: true
     };
     
     console.log("Request body:", JSON.stringify(requestBody));
@@ -218,7 +225,8 @@ async function searchMatches(recordId, record, recordType) {
           data = JSON.parse(data);
         } catch (e) {
           console.error("JSON parse error:", e);
-          return calculateMockMatches(recordId, record, recordType);
+          const mockMatches = calculateMockMatches(recordId, record, recordType);
+          return { matches: mockMatches, summary: null };
         }
       }
       
@@ -231,22 +239,25 @@ async function searchMatches(recordId, record, recordType) {
       }
       
       if (matchData.matches && matchData.matches.length > 0) {
-        console.log("Matches found:", matchData.matches.length);
-        return matchData.matches;
+        console.log("Matches found:", matchData.matches.length, "Summary:", !!matchData.summary);
+        return { matches: matchData.matches, summary: matchData.summary || null };
       }
       
       console.log("No matches in response, using mock data");
-      return calculateMockMatches(recordId, record, recordType);
+      const mockMatches = calculateMockMatches(recordId, record, recordType);
+      return { matches: mockMatches, summary: null };
       
     } else {
       console.error("Connection error:", response);
-      return calculateMockMatches(recordId, record, recordType);
+      const mockMatches = calculateMockMatches(recordId, record, recordType);
+      return { matches: mockMatches, summary: null };
     }
     
   } catch (error) {
     console.error('Error searching matches:', error);
     console.log("Falling back to mock matches");
-    return calculateMockMatches(recordId, record, recordType);
+    const mockMatches = calculateMockMatches(recordId, record, recordType);
+    return { matches: mockMatches, summary: null };
   }
 }
 
@@ -385,81 +396,138 @@ function transformRecordForAPI(record, recordType) {
 }
 
 /**
- * マッチング結果を表示
+ * 総合評価ブロックを表示（1本化・折りたたみ可能）
+ */
+function renderSummary(summary) {
+  if (!elements.summaryBlock) return;
+  if (!summary || !summary.trim()) {
+    elements.summaryBlock.classList.add('hidden');
+    return;
+  }
+  elements.summaryBlock.classList.remove('hidden');
+  if (elements.summaryBody) elements.summaryBody.textContent = summary.trim();
+  if (elements.summaryToggle) {
+    elements.summaryBlock.classList.remove('summary--collapsed');
+    elements.summaryToggle.textContent = '閉じる';
+    elements.summaryToggle.onclick = function () {
+      const block = elements.summaryBlock;
+      const isCollapsed = block.classList.toggle('summary--collapsed');
+      elements.summaryToggle.textContent = isCollapsed ? '開く' : '閉じる';
+    };
+  }
+}
+
+/**
+ * マッチング結果を表示（ランク付き・カード内理由なし）
  */
 function renderMatches(matches, recordType) {
   elements.matchList.innerHTML = '';
-  
-  matches.forEach(match => {
-    const card = createMatchCard(match, recordType);
+  matches.forEach((match, index) => {
+    const card = createMatchCard(match, recordType, index + 1);
     elements.matchList.appendChild(card);
   });
 }
 
 /**
- * マッチングカードを作成
+ * スコア帯に応じた色（75+ 緑 / 50-74 黄・琥珀 / 0-49 赤）
+ */
+function getScoreColor(score) {
+  if (score >= 75) return '#4CAF50';
+  if (score >= 50) return '#F59E0B';
+  return '#9e9e9e';
+}
+
+/**
+ * 円形スコアリング（SVG）のHTMLを生成（依存ゼロ・分析ガイド準拠）
+ */
+function renderScoreRing(score) {
+  const pct = Math.min(100, Math.max(0, Number(score)));
+  const strokeColor = getScoreColor(pct);
+  const circumference = 100;
+  const dash = (pct / 100) * circumference;
+  const gap = circumference - dash;
+  return `<span class="score-ring" aria-label="マッチ度 ${pct}%">
+    <svg viewBox="0 0 40 40" width="48" height="48" class="score-ring-svg">
+      <circle cx="20" cy="20" r="15.9" fill="none" stroke="#e8e8e8" stroke-width="3"/>
+      <circle cx="20" cy="20" r="15.9" fill="none" stroke="${strokeColor}" stroke-width="3"
+        stroke-dasharray="${dash} ${gap}" stroke-dashoffset="25" stroke-linecap="round" class="score-ring-fill"/>
+      <text x="20" y="22" text-anchor="middle" font-size="8" font-weight="bold" fill="#333">${Math.round(pct)}%</text>
+    </svg>
+  </span>`;
+}
+
+/**
+ * ランク表示ラベル（1→① 2→② 3→③ 4→4 …）
+ */
+function getRankLabel(rank) {
+  if (rank === 1) return '①';
+  if (rank === 2) return '②';
+  if (rank === 3) return '③';
+  return String(rank);
+}
+
+/**
+ * マッチングカードを作成（ランク・円形スコア・トップ3メダル。理由は総合評価に集約）
  * Pineconeから返されるフィールド: name, skills, location, salary, position
  */
-function createMatchCard(match, recordType) {
+function createMatchCard(match, recordType, rank) {
   const card = document.createElement('div');
-  card.className = 'match-card';
+  let cardClass = 'match-card ranking-card';
+  if (rank === 1) cardClass += ' ranking-card--gold';
+  else if (rank === 2) cardClass += ' ranking-card--silver';
+  else if (rank === 3) cardClass += ' ranking-card--bronze';
+  card.className = cardClass;
   card.onclick = () => openRecord(match.id, recordType);
   card.style.cursor = 'pointer';
-  
-  const scoreClass = match.score >= 80 ? 'high' : match.score >= 60 ? 'medium' : 'low';
+
   const metadata = match.metadata || {};
-  
-  // Pineconeのフィールド名に対応
   const name = metadata.name || '';
-  const skills = metadata.skills || '';
+  const title = metadata.title || '';
+  const skills = metadata.skills || metadata.required_skills || '';
   const location = metadata.location || '';
-  const salary = metadata.salary || '';
+  const salary = metadata.salary || metadata.salary_min || '';
   const position = metadata.position || '';
-  
+
+  const scoreRingHtml = renderScoreRing(match.score);
+  const rankLabel = getRankLabel(rank);
+
   if (recordType === 'jobseeker') {
-    // 求職者が見ている → 求人を表示
-    const displayTitle = name || position || '求人';
+    const displayTitle = title || name || position || '求人';
     const displaySalary = salary ? `${salary}万円` : '';
-    
     card.innerHTML = `
-      <div class="match-header">
-        <span class="match-title">${escapeHtml(displayTitle)}</span>
-        <div class="match-score ${scoreClass === 'high' ? 'score-high' : scoreClass === 'medium' ? 'score-medium' : 'score-low'}">
-          ${match.score}%
+      <div class="ranking-row">
+        <span class="ranking-badge">${rankLabel}</span>
+        <div class="match-card-inner">
+          <div class="match-header">
+            <span class="match-title">${escapeHtml(displayTitle)}</span>
+            ${scoreRingHtml}
+          </div>
+          <div class="match-details">
+            ${location ? `<span class="detail-tag location">${escapeHtml(location)}</span>` : ''}
+            ${displaySalary ? `<span class="detail-tag salary">${displaySalary}</span>` : ''}
+            ${skills ? `<span class="detail-tag">${escapeHtml(skills.length > 40 ? skills.substring(0, 40) + '…' : skills)}</span>` : ''}
+          </div>
         </div>
-      </div>
-      <div class="score-bar">
-        <div class="score-fill ${scoreClass}" style="width: ${match.score}%"></div>
-      </div>
-      <div class="match-details">
-        ${location ? `<span class="detail-tag location">${escapeHtml(location)}</span>` : ''}
-        ${displaySalary ? `<span class="detail-tag salary">${displaySalary}</span>` : ''}
-        ${skills ? `<span class="detail-tag">${escapeHtml(skills.length > 30 ? skills.substring(0, 30) + '...' : skills)}</span>` : ''}
-      </div>
-    `;
+      </div>`;
   } else {
-    // 求人が見ている → 求職者を表示
     const displayName = name || '候補者';
     const displaySalary = salary ? `希望${salary}万円` : '';
-    
     card.innerHTML = `
-      <div class="match-header">
-        <span class="match-title">${escapeHtml(displayName)}</span>
-        <div class="match-score ${scoreClass === 'high' ? 'score-high' : scoreClass === 'medium' ? 'score-medium' : 'score-low'}">
-          ${match.score}%
+      <div class="ranking-row">
+        <span class="ranking-badge">${rankLabel}</span>
+        <div class="match-card-inner">
+          <div class="match-header">
+            <span class="match-title">${escapeHtml(displayName)}</span>
+            ${scoreRingHtml}
+          </div>
+          <div class="match-details">
+            ${location ? `<span class="detail-tag location">${escapeHtml(location)}</span>` : ''}
+            ${displaySalary ? `<span class="detail-tag salary">${displaySalary}</span>` : ''}
+            ${skills ? `<span class="detail-tag">${escapeHtml(skills.length > 40 ? skills.substring(0, 40) + '…' : skills)}</span>` : ''}
+          </div>
         </div>
-      </div>
-      <div class="score-bar">
-        <div class="score-fill ${scoreClass}" style="width: ${match.score}%"></div>
-      </div>
-      <div class="match-details">
-        ${location ? `<span class="detail-tag location">${escapeHtml(location)}</span>` : ''}
-        ${displaySalary ? `<span class="detail-tag salary">${displaySalary}</span>` : ''}
-        ${skills ? `<span class="detail-tag">${escapeHtml(skills.length > 30 ? skills.substring(0, 30) + '...' : skills)}</span>` : ''}
-      </div>
-    `;
+      </div>`;
   }
-  
   return card;
 }
 
@@ -550,4 +618,4 @@ function escapeHtml(text) {
   return div.innerHTML;
 }
 
-console.log("Widget.js loaded - version 1.7.0 (Pinecone metadata fix)");
+console.log("Widget.js loaded - version 2.1.0 (総合評価1本化・カード内理由なし)");

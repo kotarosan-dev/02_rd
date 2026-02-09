@@ -1,0 +1,1 @@
+{"deployment":{"name":"ai_matching","stack":"python39","type":"advancedio"},"execution":{"main_function":"main.handler","memory":512,"timeout":30000}}

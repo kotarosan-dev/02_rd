@@ -80,6 +80,63 @@ body {
   border-bottom: 2px solid #0073ea;
 }
 
+/* 総合評価ブロック（1本化・折りたたみ） */
+.summary-block {
+  margin-bottom: 16px;
+  background: linear-gradient(135deg, #f5f3ff 0%, #ede9fe 100%);
+  border-left: 3px solid #6366f1;
+  border-radius: 0 8px 8px 0;
+  overflow: hidden;
+}
+
+.summary-block.hidden {
+  display: none !important;
+}
+
+.summary-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 12px;
+  gap: 8px;
+}
+
+.summary-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: #4338ca;
+}
+
+.summary-toggle {
+  flex-shrink: 0;
+  padding: 4px 10px;
+  font-size: 12px;
+  color: #6366f1;
+  background: transparent;
+  border: 1px solid #a5b4fc;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.summary-toggle:hover {
+  background: rgba(99, 102, 241, 0.1);
+}
+
+.summary-content {
+  padding: 0 12px 12px;
+}
+
+.summary-block.summary--collapsed .summary-content {
+  display: none;
+}
+
+.summary-body {
+  font-size: 12px;
+  line-height: 1.6;
+  color: #4338ca;
+  margin: 0;
+}
+
 .match-list {
   display: flex;
   flex-direction: column;
@@ -87,67 +144,113 @@ body {
 }
 
 .match-card {
-  background: #f8f9fa;
-  border: 1px solid #e0e0e0;
+  background: #fff;
+  border: 1px solid #e5e7eb;
   border-radius: 8px;
-  padding: 16px;
-  transition: box-shadow 0.2s, border-color 0.2s;
+  padding: 12px 14px;
+  transition: box-shadow 0.2s, border-color 0.2s, transform 0.15s ease;
   cursor: pointer;
+  content-visibility: auto;
+  contain-intrinsic-size: 0 140px;
 }
 
 .match-card:hover {
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   border-color: #0073ea;
+}
+
+.match-card.ranking-card--gold {
+  background: linear-gradient(135deg, #fffbeb 0%, #fff 100%);
+  border-color: #fcd34d;
+  box-shadow: 0 1px 3px rgba(252, 211, 77, 0.2);
+}
+
+.match-card.ranking-card--silver {
+  background: linear-gradient(135deg, #f8fafc 0%, #fff 100%);
+  border-color: #cbd5e1;
+  box-shadow: 0 1px 3px rgba(203, 213, 225, 0.3);
+}
+
+.match-card.ranking-card--bronze {
+  background: linear-gradient(135deg, #fff7ed 0%, #fff 100%);
+  border-color: #fdba74;
+  box-shadow: 0 1px 3px rgba(251, 146, 60, 0.2);
+}
+
+.ranking-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.ranking-badge {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 28px;
+  height: 28px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #374151;
+  background: #f3f4f6;
+  border-radius: 6px;
+}
+
+.ranking-card--gold .ranking-badge { background: #fef3c7; color: #b45309; }
+.ranking-card--silver .ranking-badge { background: #e2e8f0; color: #475569; }
+.ranking-card--bronze .ranking-badge { background: #ffedd5; color: #c2410c; }
+
+.match-card-inner {
+  flex: 1;
+  min-width: 0;
 }
 
 .match-header {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
+  gap: 10px;
   margin-bottom: 8px;
 }
 
 .match-title {
   font-size: 15px;
   font-weight: 600;
-  color: #0073ea;
+  color: #111827;
+  flex: 1;
+  min-width: 0;
 }
 
-.match-score {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  font-size: 14px;
-  font-weight: 600;
+.score-ring {
+  flex-shrink: 0;
+  display: inline-block;
+  line-height: 0;
 }
 
-.score-high {
-  color: #4caf50;
+.score-ring-svg {
+  display: block;
 }
 
-.score-medium {
-  color: #ff9800;
-}
-
-.score-low {
-  color: #9e9e9e;
+.score-ring-fill {
+  transition: stroke-dasharray 0.4s ease;
 }
 
 .match-details {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
-  margin-top: 8px;
+  gap: 6px;
+  margin-top: 6px;
 }
 
 .detail-tag {
   display: inline-flex;
   align-items: center;
-  padding: 4px 8px;
+  padding: 3px 8px;
   background: #e3f2fd;
   color: #1976d2;
   border-radius: 4px;
-  font-size: 12px;
+  font-size: 11px;
 }
 
 .detail-tag.location {
@@ -165,6 +268,21 @@ body {
   color: #7b1fa2;
 }
 
+.match-reason {
+  margin-top: 10px;
+  font-size: 12px;
+  color: #555;
+  line-height: 1.5;
+}
+
+.match-reason.ai-reason-panel {
+  padding: 8px 10px;
+  background: linear-gradient(90deg, #f5f3ff 0%, #ede9fe 100%);
+  border-left: 3px solid #6366f1;
+  border-radius: 0 6px 6px 0;
+  color: #4338ca;
+}
+
 /* Empty */
 .empty {
   padding: 40px;
@@ -177,29 +295,3 @@ body {
   display: none !important;
 }
 
-/* Score Bar */
-.score-bar {
-  width: 60px;
-  height: 6px;
-  background: #e0e0e0;
-  border-radius: 3px;
-  overflow: hidden;
-}
-
-.score-fill {
-  height: 100%;
-  border-radius: 3px;
-  transition: width 0.3s ease;
-}
-
-.score-fill.high {
-  background: linear-gradient(90deg, #4caf50, #81c784);
-}
-
-.score-fill.medium {
-  background: linear-gradient(90deg, #ff9800, #ffb74d);
-}
-
-.score-fill.low {
-  background: linear-gradient(90deg, #9e9e9e, #bdbdbd);
-}

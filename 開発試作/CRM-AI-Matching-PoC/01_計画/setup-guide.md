@@ -25,6 +25,18 @@
 
 ---
 
+## デプロイ方法の整理
+
+| 対象 | 方法 | 備考 |
+|------|------|------|
+| **Catalyst 関数** | **ZIP をアップロード** | Serverless > Functions > 該当関数 > コードを ZIP でアップロード。スクリプト `02_テスト/catalyst-function/pack-for-upload.ps1` で ZIP 作成可。 |
+| **CRM ウィジェット** | **ZET pack** | `zet pack` でパッケージ化し、`dist/` にできた ZIP を CRM の「ウィジェットを作成」からアップロード。 |
+
+- 関数は以前どおり ZIP でアップロードする運用で問題ありません。
+- ウィジェットは ZET CLI で `zet pack` した成果物をアップロードする必要があります。
+
+---
+
 ## 1. 事前準備
 
 ### 1.1 必要なもの
@@ -154,8 +166,19 @@ Matches for jobseeker_001: [...]
 
 ### 3.6 開発環境デプロイ
 
+**方法A: Catalyst CLI**
 ```powershell
 catalyst deploy
+```
+
+**方法B: ZIP をコンソールからアップロード（従来どおり）**
+```powershell
+# ZIP を作成（main.py, requirements.txt, catalyst-config.json のみ含む）
+.\pack-for-upload.ps1
+# → ai_matching_function.zip が同じフォルダにできる
+
+# Catalyst コンソール > Serverless > Functions > ai_matching
+# → Code タブ > 該当の「アップロード」から上記 ZIP をアップロード
 ```
 
 ---
@@ -184,13 +207,16 @@ const CONFIG = {
 };
 ```
 
-### 4.3 パッケージ化
+### 4.3 パッケージ化（ZET pack 必須）
+
+ウィジェットは **ZET CLI でパックする必要があります**。ZIP を手で作るだけでは不足です。
 
 ```powershell
+cd "C:\Users\user\Desktop\kotarosan\03_Internal\02_R&D\開発試作\CRM-AI-Matching-PoC\02_テスト\crm-widget"
 zet pack
 ```
 
-`dist/` フォルダにZIPファイルが生成される。
+`dist/` フォルダにZIPファイルが生成されます。このZIPをCRMにアップロードしてください。
 
 ### 4.4 CRMにアップロード
 

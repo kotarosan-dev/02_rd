@@ -1,0 +1,10 @@
+{
+  "execution": {
+    "main": "index.js"
+  },
+  "deployment": {
+    "name": "ai_matching",
+    "stack": "node20",
+    "type": "advancedio"
+  }
+}

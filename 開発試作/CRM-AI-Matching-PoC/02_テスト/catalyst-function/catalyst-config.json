@@ -1,7 +1,0 @@
-{
-  "name": "ai-matching-function",
-  "type": "advancedIO",
-  "stack": "python39",
-  "entry_point": "main.handler",
-  "description": "CRM×AI Matching PoC - 求職者と求人のマッチング処理"
-}

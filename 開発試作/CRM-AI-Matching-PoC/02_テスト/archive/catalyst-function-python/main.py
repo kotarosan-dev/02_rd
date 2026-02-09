@@ -8,10 +8,11 @@ import os
 import json
 import logging
 import time
-from typing import List, Dict, Any
+from typing import List, Dict, Any, Optional
 from pathlib import Path
 from dotenv import load_dotenv
 from pinecone import Pinecone
+import requests
 
 # ログ設定
 logging.basicConfig(level=logging.INFO)
@@ -108,6 +109,113 @@ def search_matches(record_id: str, record: Dict[str, Any], record_type: str, top
     return matches
 
 
+def _format_record_summary(record: Dict[str, Any], record_type: str) -> str:
+    """理由生成用にレコードを短いテキストにまとめる"""
+    if record_type == "jobseeker":
+        return (
+            f"求職者: {record.get('name', '')} | "
+            f"スキル: {record.get('skills', '')} | "
+            f"希望職種: {record.get('desired_position', '')} | "
+            f"希望勤務地: {record.get('desired_location', '')} | "
+            f"自己PR: {(record.get('self_pr', '') or '')[:100]}"
+        )
+    else:
+        return (
+            f"求人: {record.get('title', '')} | "
+            f"必要スキル: {record.get('required_skills', '')} | "
+            f"職種: {record.get('position', '')} | "
+            f"勤務地: {record.get('location', '')} | "
+            f"内容: {(record.get('description', '') or '')[:100]}"
+        )
+
+
+def _format_match_summary(metadata: Dict[str, Any], record_type: str) -> str:
+    """マッチ側のメタデータを短いテキストにまとめる（Pineconeのfields由来）"""
+    if record_type == "jobseeker":
+        return (
+            f"求人: {metadata.get('title', '')} | "
+            f"スキル: {metadata.get('required_skills', metadata.get('skills', ''))} | "
+            f"職種: {metadata.get('position', '')} | "
+            f"勤務地: {metadata.get('location', '')}"
+        )
+    else:
+        return (
+            f"求職者: {metadata.get('name', '')} | "
+            f"スキル: {metadata.get('skills', '')} | "
+            f"希望職種: {metadata.get('desired_position', '')} | "
+            f"希望勤務地: {metadata.get('desired_location', '')}"
+        )
+
+
+def generate_match_reason(
+    record: Dict[str, Any],
+    record_type: str,
+    match_metadata: Dict[str, Any],
+    score: float,
+) -> Optional[str]:
+    """
+    OpenAI API で「このマッチングが適している理由」を1文で生成する。
+    OPENAI_API_KEY が未設定の場合は None を返す。
+    """
+    api_key = os.environ.get("OPENAI_API_KEY")
+    if not api_key:
+        logger.info("OPENAI_API_KEY not set, skipping reason generation")
+        return None
+
+    source_summary = _format_record_summary(record, record_type)
+    match_summary = _format_match_summary(match_metadata, record_type)
+
+    prompt = f"""以下はマッチングした2件の情報です。このマッチングが適している理由を1文で述べてください（日本語・50字程度）。理由のみ出力し、敬語は不要です。
+
+【現在のレコード】
+{source_summary}
+
+【マッチした候補】
+{match_summary}
+
+マッチングスコア: {score}%
+理由:"""
+
+    try:
+        resp = requests.post(
+            "https://api.openai.com/v1/chat/completions",
+            headers={
+                "Authorization": f"Bearer {api_key}",
+                "Content-Type": "application/json",
+            },
+            json={
+                "model": os.environ.get("OPENAI_MODEL", "gpt-4o-mini"),
+                "messages": [{"role": "user", "content": prompt}],
+                "max_tokens": 150,
+                "temperature": 0.3,
+            },
+            timeout=15,
+        )
+        resp.raise_for_status()
+        data = resp.json()
+        content = (data.get("choices") or [{}])[0].get("message", {}).get("content", "")
+        return (content or "").strip() or None
+    except Exception as e:
+        logger.warning(f"Reason generation failed: {e}")
+        return None
+
+
+def add_reasons_to_matches(
+    matches: List[Dict],
+    record: Dict[str, Any],
+    record_type: str,
+    max_reasons: int = 3,
+) -> None:
+    """マッチング結果の上位 max_reasons 件に理由を付与する（matches を in-place で更新）"""
+    for i, match in enumerate(matches):
+        if i >= max_reasons:
+            match["reason"] = None
+            continue
+        meta = match.get("metadata") or {}
+        reason = generate_match_reason(record, record_type, meta, match.get("score", 0))
+        match["reason"] = reason
+
+
 def handler(context, request):
     """
     Catalyst Advanced I/O ハンドラー
@@ -156,6 +264,7 @@ def handler(context, request):
             record = body.get("record")
             record_type = body.get("record_type")
             top_k = body.get("top_k", 5)
+            generate_reasons = body.get("generate_reasons", False)
             
             if not all([record_id, record, record_type]):
                 return {
@@ -164,6 +273,9 @@ def handler(context, request):
                 }
             
             matches = search_matches(record_id, record, record_type, top_k)
+            
+            if generate_reasons and matches:
+                add_reasons_to_matches(matches, record, record_type, max_reasons=3)
             
             return {
                 "statusCode": 200,

@@ -2,7 +2,7 @@
   "service": "CRM",
   "name": "AI Matching Widget",
   "description": "求職者・求人のAIマッチングを表示するウィジェット",
-  "version": "1.5.2",
+  "version": "2.1.0",
   "scopes": [
     "ZohoCRM.modules.ALL",
     "ZohoCRM.settings.ALL",
