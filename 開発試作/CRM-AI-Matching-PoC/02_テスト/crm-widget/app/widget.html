@@ -4,56 +4,140 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AI Matching Widget</title>
-  <!-- SDK v1.5（最新） -->
   <script src="https://live.zwidgets.com/js-sdk/1.5/ZohoEmbededAppSDK.min.js"></script>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
   <div id="app">
-    <div id="loading" class="loading">
-      <div class="spinner"></div>
-      <p>マッチング候補を検索中...</p>
+    <!-- Toolbar -->
+    <div class="toolbar hidden" id="widget-header">
+      <div class="toolbar-title">
+        <span class="ai-dot" aria-hidden="true"></span>
+        AI マッチング
+        <span class="toolbar-count" id="match-count"></span>
+      </div>
+      <button type="button" class="tb-btn" onclick="openWeightModal()" title="重み付け調整">調整</button>
+      <button type="button" class="tb-btn" onclick="exportExcel()" title="Excel出力">Excel</button>
+      <button type="button" class="tb-btn" onclick="openEmailModal()" title="メール送信">メール</button>
+      <button type="button" class="tb-btn primary" onclick="retrySearch()" title="再検索">再検索</button>
     </div>
-    
-    <div id="error" class="error hidden">
-      <p class="error-message"></p>
-      <button onclick="retrySearch()">再試行</button>
+
+    <!-- Loading -->
+    <div id="loading" class="state-loading">
+      <div class="loader-ring"></div>
+      <div class="status" id="load-status">マッチング候補を検索中...</div>
     </div>
-    
+
+    <!-- Error -->
+    <div id="error" class="state-error hidden">
+      <p class="error-message" id="error-message"></p>
+      <button type="button" class="tb-btn primary" onclick="retrySearch()">再試行</button>
+    </div>
+
+    <!-- Results -->
     <div id="results" class="results hidden">
       <div id="summary-block" class="summary-block hidden">
         <div class="summary-header">
-          <span class="summary-title">✨ マッチングの総合評価</span>
+          <span class="summary-title">✦ マッチングの総合評価</span>
           <button type="button" id="summary-toggle" class="summary-toggle" aria-label="開閉">閉じる</button>
         </div>
         <div id="summary-content" class="summary-content">
           <p id="summary-body" class="summary-body"></p>
         </div>
       </div>
-      <h2>おすすめマッチング</h2>
-      <div id="match-list" class="match-list"></div>
+      <div id="match-list" class="card-list"></div>
     </div>
-    
-    <div id="empty" class="empty hidden">
-      <p>マッチング候補が見つかりませんでした</p>
+
+    <!-- Empty -->
+    <div id="empty" class="state-empty hidden">
+      マッチング候補が見つかりませんでした
+      <button type="button" class="tb-btn primary" onclick="retrySearch()" style="margin-top:10px">再検索</button>
     </div>
   </div>
-  
-  <script>
-    // ★重要：イベント登録を先に行う（init()の前）
-    ZOHO.embeddedApp.on("PageLoad", function(data) {
-      console.log("PageLoad event received:", data);
-      window.currentContext = data;
-      handlePageLoad(data);
-    });
 
-    // 初期化は最後
-    ZOHO.embeddedApp.init().then(function() {
-      console.log("Widget initialized successfully");
-    }).catch(function(error) {
-      console.error("Widget initialization failed:", error);
+  <!-- Detail Modal（カードクリックで表示） -->
+  <div class="modal-overlay" id="detail-modal">
+    <div class="modal">
+      <div class="modal-head">
+        <h3 id="dm-title">詳細</h3>
+        <button type="button" class="modal-close" onclick="closeModal('detail-modal')" aria-label="閉じる">&times;</button>
+      </div>
+      <div class="modal-body" id="dm-body"></div>
+      <div class="modal-actions">
+        <button type="button" class="tb-btn" onclick="closeModal('detail-modal')">閉じる</button>
+        <button type="button" class="tb-btn primary" id="dm-open-record">CRMで開く</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Weight Modal -->
+  <div class="modal-overlay" id="weight-modal">
+    <div class="modal">
+      <div class="modal-head">
+        <h3>🎚️ 重み付け調整</h3>
+        <button type="button" class="modal-close" onclick="closeModal('weight-modal')" aria-label="閉じる">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p class="weight-desc">各要素の重要度を調整すると、マッチスコアが再計算され並び順が変わります。</p>
+        <div class="weight-sliders" id="weight-sliders"></div>
+        <div class="weight-preview" id="weight-preview"></div>
+      </div>
+      <div class="modal-actions">
+        <button type="button" class="tb-btn" onclick="resetWeights()">リセット</button>
+        <button type="button" class="tb-btn primary" onclick="applyWeights()">適用して再計算</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Email Modal -->
+  <div class="modal-overlay" id="email-modal">
+    <div class="modal">
+      <div class="modal-head">
+        <h3>✉️ マッチング結果を送信</h3>
+        <button type="button" class="modal-close" onclick="closeModal('email-modal')" aria-label="閉じる">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="email-form">
+          <div class="email-field">
+            <label>宛先</label>
+            <input type="email" id="email-to" placeholder="メールアドレス">
+          </div>
+          <div class="email-field">
+            <label>件名</label>
+            <input type="text" id="email-subject" value="【AI分析】マッチング結果レポート">
+          </div>
+          <div class="email-field">
+            <label>メッセージ（任意）</label>
+            <textarea id="email-msg" rows="3" placeholder="追加メッセージがあれば入力..."></textarea>
+          </div>
+          <div class="email-field">
+            <label>送信内容プレビュー</label>
+            <div class="email-preview" id="email-preview"></div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-actions">
+        <button type="button" class="tb-btn" onclick="closeModal('email-modal')">キャンセル</button>
+        <button type="button" class="tb-btn primary" onclick="sendEmail()">送信</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- PageLoad を先に保存。widget.js 読み込み前に発火しても後から処理する -->
+  <script>
+    window._pendingPageLoad = null;
+    ZOHO.embeddedApp.on("PageLoad", function(data) {
+      window.currentContext = data;
+      if (typeof handlePageLoad === "function") {
+        handlePageLoad(data);
+      } else {
+        window._pendingPageLoad = data;
+      }
     });
+    ZOHO.embeddedApp.init().then(function() { }).catch(function(err) { console.error(err); });
   </script>
+  <script src="https://cdn.sheetjs.com/xlsx-0.20.3/package/dist/xlsx.full.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
   <script src="js/widget.js"></script>
 </body>
 </html>

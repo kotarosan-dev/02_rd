@@ -1,17 +1,14 @@
 /**
- * CRM×AI Matching Widget
- * 求職者・求人のAIマッチングを表示
+ * CRM×AI Matching Widget（テスト/スタンドアロン用エントリ）
+ * 本番ウィジェットは widget.html + widget.js を使用。
+ * 外部APIは CONNECTION.invoke 経由でのみ呼び出す（fetch は CORS でブロックされる）。
  */
 
-// グローバル変数
 let currentContext = null;
 
-// 設定 - Catalyst関数のURL（デプロイ後に更新）
 const CONFIG = {
-  // 開発環境: ローカルサーバー
-  // 本番環境: Catalyst関数URL
-  MATCHING_API_URL: 'https://your-catalyst-project.catalyst.zoho.com/server/ai-matching-function',
-  // モックモード（API未接続時のテスト用）
+  CONNECTION_NAME: 'catalyst_matching_api',
+  SEARCH_URL: 'https://ai-matching-poc-90002038385.development.catalystserverless.jp/server/ai_matching/search',
   MOCK_MODE: true
 };
 
@@ -120,39 +117,48 @@ function getRecordType(entity) {
 }
 
 /**
- * マッチング検索
+ * マッチング検索（CONNECTION.invoke 経由。CRM外ではモック）
  */
 async function searchMatches(recordId, record, recordType) {
-  // モックモードの場合はダミーデータを返す
   if (CONFIG.MOCK_MODE) {
     return getMockMatches(recordType);
   }
-  
+  if (typeof ZOHO === 'undefined' || !ZOHO.CRM || !ZOHO.CRM.CONNECTION || !ZOHO.CRM.CONNECTION.invoke) {
+    console.warn('ZOHO.CRM.CONNECTION not available, using mock');
+    return getMockMatches(recordType);
+  }
   try {
-    // Catalyst関数を呼び出し
-    const response = await fetch(CONFIG.MATCHING_API_URL + '/search', {
+    const requestBody = {
+      record_id: recordId,
+      record: transformRecordForAPI(record, recordType),
+      record_type: recordType,
+      top_k: 5,
+      generate_summary: false
+    };
+    const response = await ZOHO.CRM.CONNECTION.invoke(CONFIG.CONNECTION_NAME, {
+      url: CONFIG.SEARCH_URL,
       method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        record_id: recordId,
-        record: transformRecordForAPI(record, recordType),
-        record_type: recordType,
-        top_k: 5
-      })
+      headers: { 'Content-Type': 'application/json' },
+      parameters: requestBody,
+      param_type: 2
     });
-    
-    if (!response.ok) {
-      throw new Error('API request failed');
+    if (response && response.code === 'SUCCESS') {
+      let data = response.details;
+      if (typeof data === 'string') {
+        try {
+          data = JSON.parse(data);
+        } catch (e) {
+          return getMockMatches(recordType);
+        }
+      }
+      const payload = (data && data.statusMessage != null)
+        ? (typeof data.statusMessage === 'object' ? data.statusMessage : data)
+        : data;
+      return (payload && payload.matches) ? payload.matches : getMockMatches(recordType);
     }
-    
-    const data = await response.json();
-    return data.matches || [];
-    
+    return getMockMatches(recordType);
   } catch (error) {
     console.error('Error searching matches:', error);
-    // フォールバック: モックデータを返す
     return getMockMatches(recordType);
   }
 }
@@ -386,7 +392,7 @@ function showEmpty() {
  */
 function escapeHtml(text) {
   const div = document.createElement('div');
-  div.textContent = text;
+  div.textContent = text || '';
   return div.innerHTML;
 }
 
