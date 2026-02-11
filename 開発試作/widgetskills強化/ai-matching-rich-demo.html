@@ -1,0 +1,914 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Matching Widget — Rich UI Demo</title>
+
+<!-- Google Fonts: Noto Sans JP + IBM Plex Sans -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+
+<style>
+/* ================================================================
+   0. CSS CUSTOM PROPERTIES (Design Tokens)
+   ================================================================ */
+:root {
+  /* AI Palette: deep navy → violet → cyan */
+  --ai-purple: #7c3aed;
+  --ai-blue: #3b82f6;
+  --ai-cyan: #06b6d4;
+  --ai-pink: #ec4899;
+  --ai-gradient: linear-gradient(135deg, var(--ai-purple), var(--ai-blue), var(--ai-cyan));
+
+  /* Surface */
+  --bg-base: #0b0f1a;
+  --bg-card: rgba(255,255,255,0.04);
+  --bg-card-hover: rgba(255,255,255,0.07);
+  --bg-glass: rgba(255,255,255,0.06);
+
+  /* Text */
+  --text-primary: #e2e8f0;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+  --text-accent: #a78bfa;
+
+  /* Score Colors */
+  --score-high: #34d399;
+  --score-mid: #fbbf24;
+  --score-low: #f87171;
+
+  /* Borders */
+  --border-subtle: rgba(255,255,255,0.06);
+  --border-accent: rgba(124,58,237,0.3);
+
+  /* Radius */
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-full: 50%;
+
+  /* Font stacks */
+  --font-sans: 'IBM Plex Sans', 'Noto Sans JP', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  /* Spacing */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+}
+
+/* ================================================================
+   1. RESET & BASE
+   ================================================================ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--text-primary);
+  background: var(--bg-base);
+  padding: var(--space-md);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* Animated mesh background */
+body::before {
+  content: '';
+  position: fixed; inset: 0; z-index: -1;
+  background:
+    radial-gradient(ellipse 600px 400px at 20% 20%, rgba(124,58,237,0.08), transparent),
+    radial-gradient(ellipse 500px 500px at 80% 70%, rgba(6,182,212,0.06), transparent),
+    radial-gradient(ellipse 300px 300px at 50% 50%, rgba(59,130,246,0.04), transparent);
+  animation: meshDrift 20s ease-in-out infinite alternate;
+}
+@keyframes meshDrift {
+  0%   { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(-30px, 20px) scale(1.05); }
+}
+
+#app { max-width: 480px; margin: 0 auto; position: relative; }
+
+/* ================================================================
+   2. AI LOADER — Orbital Rings + Staged Status
+   ================================================================ */
+.ai-loader-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  gap: var(--space-lg);
+}
+
+.ai-orbit {
+  position: relative;
+  width: 80px; height: 80px;
+}
+
+.ai-orbit .ring {
+  position: absolute; inset: 0;
+  border: 2px solid transparent;
+  border-radius: var(--radius-full);
+}
+.ai-orbit .ring:nth-child(1) {
+  border-top-color: var(--ai-purple);
+  border-right-color: var(--ai-blue);
+  animation: orbitSpin 1.8s linear infinite;
+}
+.ai-orbit .ring:nth-child(2) {
+  inset: 8px;
+  border-bottom-color: var(--ai-blue);
+  border-left-color: var(--ai-cyan);
+  animation: orbitSpin 2.4s linear infinite reverse;
+}
+.ai-orbit .ring:nth-child(3) {
+  inset: 16px;
+  border-top-color: var(--ai-cyan);
+  border-right-color: var(--ai-pink);
+  animation: orbitSpin 1.2s linear infinite;
+}
+.ai-orbit .core {
+  position: absolute; inset: 24px;
+  border-radius: var(--radius-full);
+  background: var(--ai-gradient);
+  animation: corePulse 2s ease-in-out infinite;
+  box-shadow: 0 0 20px rgba(124,58,237,0.4), 0 0 40px rgba(59,130,246,0.2);
+}
+
+@keyframes orbitSpin { to { transform: rotate(360deg); } }
+@keyframes corePulse {
+  0%,100% { transform: scale(0.85); opacity: 0.7; }
+  50%     { transform: scale(1); opacity: 1; }
+}
+
+.ai-status {
+  font-size: 13px;
+  color: var(--text-secondary);
+  text-align: center;
+  min-height: 20px;
+}
+.ai-status .status-text {
+  display: inline-block;
+  animation: statusFade 0.4s ease;
+}
+@keyframes statusFade {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ================================================================
+   3. SKELETON SCREEN
+   ================================================================ */
+@keyframes shimmer {
+  0%   { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+.skeleton-wrap { display: flex; flex-direction: column; gap: 12px; padding: 16px 0; }
+
+.skel-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  display: flex; gap: 12px; align-items: flex-start;
+}
+.skel {
+  background: linear-gradient(90deg,
+    rgba(255,255,255,0.04) 25%,
+    rgba(255,255,255,0.08) 50%,
+    rgba(255,255,255,0.04) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s ease-in-out infinite;
+  border-radius: var(--radius-sm);
+}
+.skel-circle  { width: 48px; height: 48px; border-radius: var(--radius-full); flex-shrink: 0; }
+.skel-content { flex: 1; display: flex; flex-direction: column; gap: 8px; }
+.skel-line    { height: 12px; }
+.skel-line.w60 { width: 60%; }
+.skel-line.w80 { width: 80%; }
+.skel-line.w40 { width: 40%; }
+.skel-tags    { display: flex; gap: 6px; }
+.skel-tag     { width: 60px; height: 20px; border-radius: 10px; }
+
+/* ================================================================
+   4. RESULTS HEADER
+   ================================================================ */
+.results-header {
+  display: flex; align-items: center; gap: var(--space-sm);
+  margin-bottom: var(--space-lg);
+  padding-bottom: var(--space-md);
+  border-bottom: 1px solid var(--border-subtle);
+}
+.results-header h2 {
+  font-size: 15px; font-weight: 600;
+  background: var(--ai-gradient);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.results-count {
+  font-size: 11px;
+  color: var(--text-muted);
+  background: var(--bg-card);
+  padding: 2px 8px;
+  border-radius: 10px;
+}
+
+/* ================================================================
+   5. AI SUMMARY CARD — Streaming Text
+   ================================================================ */
+.ai-summary {
+  position: relative;
+  background: var(--bg-glass);
+  border: 1px solid var(--border-accent);
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+  margin-bottom: var(--space-lg);
+  overflow: hidden;
+}
+.ai-summary::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; height: 2px;
+  background: var(--ai-gradient);
+  background-size: 300% 100%;
+  animation: gradientSlide 4s ease infinite;
+}
+@keyframes gradientSlide {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.ai-summary-badge {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 11px; font-weight: 600;
+  color: var(--text-accent);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: var(--space-sm);
+}
+.ai-summary-badge .sparkle { animation: sparkle 2s ease-in-out infinite; }
+@keyframes sparkle {
+  0%,100% { transform: scale(1) rotate(0deg); }
+  50%     { transform: scale(1.3) rotate(15deg); }
+}
+
+.ai-summary-text {
+  font-size: 13px; line-height: 1.7;
+  color: var(--text-secondary);
+  min-height: 20px;
+}
+.blink-cursor {
+  display: inline-block; width: 2px; height: 1em;
+  background: var(--ai-purple);
+  margin-left: 2px; vertical-align: text-bottom;
+  animation: cursorBlink 0.8s step-end infinite;
+}
+@keyframes cursorBlink { 0%,100% { opacity: 1; } 50% { opacity: 0; } }
+
+.ai-summary-meta {
+  margin-top: var(--space-sm);
+  font-size: 10px; color: var(--text-muted);
+  font-family: var(--font-mono);
+}
+
+/* ================================================================
+   6. MATCH CARDS — Glassmorphism + Stagger
+   ================================================================ */
+.match-list { display: flex; flex-direction: column; gap: 12px; }
+
+.match-card {
+  position: relative;
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  /* Stagger animation */
+  opacity: 0;
+  transform: translateY(24px);
+  animation: cardReveal 0.55s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation-delay: calc(var(--i, 0) * 120ms + 300ms);
+}
+@keyframes cardReveal {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.match-card:hover {
+  background: var(--bg-card-hover);
+  border-color: rgba(124,58,237,0.25);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(124,58,237,0.08), 0 2px 8px rgba(0,0,0,0.2);
+}
+
+/* #1 Card — Gold Glow */
+.match-card.rank-1 {
+  background: rgba(255,255,255,0.06);
+  border-color: rgba(250,204,21,0.25);
+  box-shadow: 0 0 0 1px rgba(250,204,21,0.08);
+}
+.match-card.rank-1::after {
+  content: '';
+  position: absolute; inset: -1px;
+  border-radius: var(--radius-md);
+  background: linear-gradient(135deg, rgba(250,204,21,0.15), rgba(124,58,237,0.1), transparent);
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.match-card.rank-1:hover::after { opacity: 1; }
+
+/* #2 Card */
+.match-card.rank-2 { border-color: rgba(148,163,184,0.15); }
+/* #3 Card */
+.match-card.rank-3 { border-color: rgba(251,146,60,0.12); }
+
+/* Card layout */
+.card-row { display: flex; align-items: flex-start; gap: 12px; }
+
+/* Rank Badge */
+.rank-badge {
+  flex-shrink: 0;
+  width: 28px; height: 28px;
+  display: flex; align-items: center; justify-content: center;
+  border-radius: 8px;
+  font-size: 12px; font-weight: 700;
+  font-family: var(--font-mono);
+}
+.rank-1 .rank-badge {
+  background: linear-gradient(135deg, #fcd34d, #f59e0b);
+  color: #78350f;
+  box-shadow: 0 0 12px rgba(250,204,21,0.3);
+}
+.rank-2 .rank-badge {
+  background: linear-gradient(135deg, #e2e8f0, #94a3b8);
+  color: #1e293b;
+}
+.rank-3 .rank-badge {
+  background: linear-gradient(135deg, #fdba74, #f97316);
+  color: #fff;
+}
+.rank-other .rank-badge {
+  background: var(--bg-card);
+  color: var(--text-muted);
+  border: 1px solid var(--border-subtle);
+}
+
+.card-body { flex: 1; min-width: 0; }
+
+.card-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 10px; }
+.card-title {
+  font-size: 14px; font-weight: 600;
+  color: var(--text-primary);
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+
+/* ================================================================
+   7. SVG SCORE RING — Animated Stroke + Countup
+   ================================================================ */
+.score-ring-wrap {
+  flex-shrink: 0;
+  position: relative;
+  width: 52px; height: 52px;
+}
+.score-ring-wrap svg { display: block; }
+.score-ring-track {
+  fill: none; stroke: rgba(255,255,255,0.06); stroke-width: 3;
+}
+.score-ring-fill {
+  fill: none; stroke-width: 3; stroke-linecap: round;
+  transform: rotate(-90deg); transform-origin: center;
+  transition: stroke-dashoffset 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.score-ring-text {
+  position: absolute; inset: 0;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 13px; font-weight: 700;
+  font-family: var(--font-mono);
+  color: var(--text-primary);
+}
+
+/* ================================================================
+   8. SKILL TAGS — Match Status Colors
+   ================================================================ */
+.tag-row { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 10px; }
+
+.tag {
+  display: inline-flex; align-items: center; gap: 3px;
+  font-size: 11px; font-weight: 500;
+  padding: 3px 8px;
+  border-radius: 6px;
+  line-height: 1.3;
+}
+.tag-matched  { background: rgba(52,211,153,0.12); color: #6ee7b7; border: 1px solid rgba(52,211,153,0.2); }
+.tag-partial  { background: rgba(251,191,36,0.1);  color: #fcd34d; border: 1px solid rgba(251,191,36,0.15); }
+.tag-missing  { background: rgba(248,113,113,0.08); color: #fca5a5; border: 1px dashed rgba(248,113,113,0.2); }
+.tag-info     { background: rgba(59,130,246,0.08);  color: #93c5fd; border: 1px solid rgba(59,130,246,0.15); }
+.tag-salary   { background: rgba(251,191,36,0.08);  color: #fcd34d; border: 1px solid rgba(251,191,36,0.12); }
+
+/* ================================================================
+   9. EXPAND PANEL — Grid 0fr → 1fr trick
+   ================================================================ */
+.card-expand-trigger {
+  display: flex; align-items: center; gap: 4px;
+  margin-top: 10px;
+  font-size: 11px; color: var(--text-accent);
+  cursor: pointer; border: none; background: none;
+  padding: 0; font-family: var(--font-sans);
+  transition: color 0.2s;
+}
+.card-expand-trigger:hover { color: #c4b5fd; }
+.card-expand-trigger .chevron {
+  display: inline-block; transition: transform 0.3s;
+  font-size: 10px;
+}
+.card-expand-trigger.open .chevron { transform: rotate(180deg); }
+
+.card-expandable {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.card-expandable.expanded { grid-template-rows: 1fr; }
+.card-expand-inner {
+  overflow: hidden; min-height: 0;
+}
+
+/* Radar mini chart container */
+.radar-wrap {
+  padding: 12px 0 4px;
+}
+.radar-wrap canvas { max-width: 100%; }
+
+/* Reason text in expanded panel */
+.ai-reason {
+  font-size: 12px; line-height: 1.6;
+  color: var(--text-secondary);
+  padding: 10px 12px;
+  background: rgba(124,58,237,0.04);
+  border-left: 2px solid var(--ai-purple);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  margin-top: 8px;
+}
+
+/* ================================================================
+   10. CONFETTI CANVAS
+   ================================================================ */
+#confetti-canvas {
+  position: fixed; inset: 0; z-index: 9999;
+  pointer-events: none;
+}
+
+/* ================================================================
+   11. ERROR & EMPTY STATES
+   ================================================================ */
+.state-error, .state-empty {
+  text-align: center; padding: 48px 20px;
+  color: var(--text-secondary);
+}
+.state-error .err-icon, .state-empty .empty-icon {
+  font-size: 40px; margin-bottom: 12px;
+  opacity: 0.6;
+}
+.retry-btn {
+  margin-top: 16px;
+  padding: 8px 20px;
+  background: var(--ai-gradient);
+  color: #fff; border: none;
+  border-radius: var(--radius-sm);
+  font-size: 13px; font-weight: 600; cursor: pointer;
+  font-family: var(--font-sans);
+  transition: opacity 0.2s;
+}
+.retry-btn:hover { opacity: 0.85; }
+
+/* ================================================================
+   12. UTILITY
+   ================================================================ */
+.hidden { display: none !important; }
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+</style>
+</head>
+
+<body>
+<div id="app">
+  <!-- ===== LOADING STATE ===== -->
+  <div id="state-loading" class="ai-loader-wrap">
+    <div class="ai-orbit">
+      <div class="ring"></div>
+      <div class="ring"></div>
+      <div class="ring"></div>
+      <div class="core"></div>
+    </div>
+    <div class="ai-status">
+      <span class="status-text" id="ai-status-text">AIエンジンを起動中...</span>
+    </div>
+  </div>
+
+  <!-- ===== SKELETON (shown briefly between loader and results) ===== -->
+  <div id="state-skeleton" class="hidden">
+    <div class="results-header">
+      <h2>AI マッチング分析</h2>
+    </div>
+    <div class="skeleton-wrap">
+      <div class="skel-card"><div class="skel skel-circle"></div><div class="skel-content"><div class="skel skel-line w80"></div><div class="skel skel-line w60"></div><div class="skel-tags"><div class="skel skel-tag"></div><div class="skel skel-tag"></div><div class="skel skel-tag"></div></div></div></div>
+      <div class="skel-card"><div class="skel skel-circle"></div><div class="skel-content"><div class="skel skel-line w80"></div><div class="skel skel-line w40"></div><div class="skel-tags"><div class="skel skel-tag"></div><div class="skel skel-tag"></div></div></div></div>
+      <div class="skel-card"><div class="skel skel-circle"></div><div class="skel-content"><div class="skel skel-line w60"></div><div class="skel skel-line w40"></div><div class="skel-tags"><div class="skel skel-tag"></div><div class="skel skel-tag"></div></div></div></div>
+    </div>
+  </div>
+
+  <!-- ===== RESULTS ===== -->
+  <div id="state-results" class="hidden">
+    <div class="results-header">
+      <h2>AI マッチング分析</h2>
+      <span class="results-count" id="results-count"></span>
+    </div>
+    <div class="ai-summary" id="ai-summary-card">
+      <div class="ai-summary-badge">
+        <span class="sparkle">✦</span> AI Insight
+      </div>
+      <div class="ai-summary-text" id="ai-summary-text"></div>
+      <div class="ai-summary-meta" id="ai-summary-meta"></div>
+    </div>
+    <div class="match-list" id="match-list"></div>
+  </div>
+
+  <!-- ===== ERROR ===== -->
+  <div id="state-error" class="state-error hidden">
+    <div class="err-icon">⚠️</div>
+    <p id="error-msg">エラーが発生しました</p>
+    <button class="retry-btn" onclick="runDemo()">再試行</button>
+  </div>
+
+  <!-- ===== EMPTY ===== -->
+  <div id="state-empty" class="state-empty hidden">
+    <div class="empty-icon">🔍</div>
+    <p>マッチング候補が見つかりませんでした</p>
+  </div>
+</div>
+
+<!-- Chart.js (for radar) -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+<!-- canvas-confetti -->
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.4/dist/confetti.browser.min.js"></script>
+
+<script>
+/* ================================================================
+   MOCK DATA — mirrors real Catalyst/Pinecone response
+   ================================================================ */
+const MOCK_MATCHES = [
+  {
+    id: '13059000001662474',
+    score: 94.2,
+    metadata: {
+      title: 'シニアバックエンドエンジニア',
+      location: '東京（リモート可）',
+      salary_min: '500', salary_max: '800',
+      required_skills: 'Python, AWS, Kubernetes, Docker, CI/CD',
+      position: 'バックエンドエンジニア'
+    },
+    // enriched by AI
+    skill_match: { matched: ['Python','AWS','Kubernetes','Docker'], partial: ['CI/CD'], missing: [] },
+    axis_scores: { skill: 96, experience: 88, salary: 90, location: 100, culture: 92 },
+    ai_reason: 'Python・AWS・Kubernetes の3技術すべてが完全一致。リモート勤務対応で勤務地制約なし。年収レンジ内で上位寄りの提示が期待できます。'
+  },
+  {
+    id: '13059000001662475',
+    score: 82.7,
+    metadata: {
+      title: 'フロントエンドエンジニア',
+      location: '東京',
+      salary_min: '400', salary_max: '600',
+      required_skills: 'React, TypeScript, Next.js, CSS, Testing',
+      position: 'フロントエンドエンジニア'
+    },
+    skill_match: { matched: ['React','TypeScript'], partial: ['Next.js','CSS'], missing: ['Testing'] },
+    axis_scores: { skill: 78, experience: 85, salary: 88, location: 100, culture: 70 },
+    ai_reason: 'React・TypeScript のコア技術は一致。Next.js は学習中レベルで部分マッチ。テスト設計経験の強化がおすすめです。'
+  },
+  {
+    id: '13059000001662476',
+    score: 68.4,
+    metadata: {
+      title: 'テックリード',
+      location: '大阪（週2出社）',
+      salary_min: '700', salary_max: '1000',
+      required_skills: 'Java, マネジメント経験, システム設計, AWS, Kubernetes',
+      position: 'テックリード'
+    },
+    skill_match: { matched: ['AWS','Kubernetes'], partial: ['システム設計'], missing: ['Java','マネジメント経験'] },
+    axis_scores: { skill: 55, experience: 60, salary: 75, location: 50, culture: 80 },
+    ai_reason: 'インフラ技術（AWS/K8s）は高い親和性。ただし Java 実務経験とマネジメント実績が不足。勤務地（大阪）が希望と異なる点も要確認。'
+  }
+];
+
+const MOCK_SUMMARY = '候補求人3件を分析しました。スキルセット（Python/AWS/Kubernetes）との適合度が最も高いのは「シニアバックエンドエンジニア」（94.2%）で、全技術要件を満たしています。「フロントエンド」はReact経験を活かせますがNext.js習熟度の向上が鍵です。「テックリード」はキャリアアップの選択肢ですが、Java・マネジメント経験の補完と大阪勤務の許容が条件になります。';
+
+/* ================================================================
+   UTILITY
+   ================================================================ */
+function esc(text) {
+  const d = document.createElement('div');
+  d.textContent = text || '';
+  return d.innerHTML;
+}
+
+function sleep(ms) { return new Promise(r => setTimeout(r, ms)); }
+
+/* ================================================================
+   STATE MANAGEMENT
+   ================================================================ */
+const $ = id => document.getElementById(id);
+
+function showOnly(stateId) {
+  ['state-loading','state-skeleton','state-results','state-error','state-empty']
+    .forEach(id => $(id).classList.toggle('hidden', id !== stateId));
+}
+
+/* ================================================================
+   AI STATUS TICKER — staged messages during loading
+   ================================================================ */
+const STATUS_MESSAGES = [
+  'AIエンジンを起動中...',
+  'CRMデータを取得中...',
+  'スキルベクトルを生成中...',
+  'Pineconeで類似検索実行中...',
+  'マッチスコアを算出中...',
+  '結果を最適化中...'
+];
+
+let statusInterval = null;
+function startStatusTicker() {
+  let idx = 0;
+  const el = $('ai-status-text');
+  statusInterval = setInterval(() => {
+    idx = (idx + 1) % STATUS_MESSAGES.length;
+    el.style.animation = 'none';
+    void el.offsetHeight; // force reflow
+    el.textContent = STATUS_MESSAGES[idx];
+    el.style.animation = 'statusFade 0.4s ease';
+  }, 1200);
+}
+function stopStatusTicker() { clearInterval(statusInterval); }
+
+/* ================================================================
+   SVG SCORE RING — builder
+   ================================================================ */
+function buildScoreRing(score) {
+  const r = 22;
+  const circ = 2 * Math.PI * r;
+  const pct = Math.min(100, Math.max(0, score));
+  const offset = circ * (1 - pct / 100);
+
+  let color = 'var(--score-high)';
+  if (pct < 60)      color = 'var(--score-low)';
+  else if (pct < 80) color = 'var(--score-mid)';
+
+  return `
+    <div class="score-ring-wrap" data-score="${pct}">
+      <svg viewBox="0 0 52 52" width="52" height="52">
+        <circle class="score-ring-track" cx="26" cy="26" r="${r}"/>
+        <circle class="score-ring-fill" cx="26" cy="26" r="${r}"
+          stroke="${color}"
+          stroke-dasharray="${circ}"
+          stroke-dashoffset="${circ}"
+          data-target-offset="${offset}"/>
+      </svg>
+      <div class="score-ring-text">
+        <span class="score-num" data-target="${Math.round(pct)}">0</span><span style="font-size:9px">%</span>
+      </div>
+    </div>`;
+}
+
+/* Animate all score rings on screen */
+function animateScoreRings() {
+  document.querySelectorAll('.score-ring-fill[data-target-offset]').forEach(circle => {
+    requestAnimationFrame(() => {
+      circle.style.strokeDashoffset = circle.dataset.targetOffset;
+    });
+  });
+
+  document.querySelectorAll('.score-num[data-target]').forEach(el => {
+    const target = parseInt(el.dataset.target);
+    let current = 0;
+    const step = Math.max(1, Math.ceil(target / 45));
+    const timer = setInterval(() => {
+      current = Math.min(current + step, target);
+      el.textContent = current;
+      if (current >= target) clearInterval(timer);
+    }, 25);
+  });
+}
+
+/* ================================================================
+   SKILL TAGS — color coded
+   ================================================================ */
+function buildSkillTags(skillMatch) {
+  if (!skillMatch) return '';
+  let html = '<div class="tag-row">';
+  (skillMatch.matched || []).forEach(s => { html += `<span class="tag tag-matched">✓ ${esc(s)}</span>`; });
+  (skillMatch.partial || []).forEach(s => { html += `<span class="tag tag-partial">~ ${esc(s)}</span>`; });
+  (skillMatch.missing || []).forEach(s => { html += `<span class="tag tag-missing">✗ ${esc(s)}</span>`; });
+  html += '</div>';
+  return html;
+}
+
+/* ================================================================
+   CARD BUILDER
+   ================================================================ */
+function buildMatchCard(match, index) {
+  const rank = index + 1;
+  const m = match.metadata || {};
+  const rankClass = rank <= 3 ? `rank-${rank}` : 'rank-other';
+  const title = m.title || m.name || '求人';
+  const salary = (m.salary_min && m.salary_max) ? `${m.salary_min}〜${m.salary_max}万` : '';
+  const cardId = `card-${index}`;
+
+  return `
+  <div class="match-card ${rankClass}" style="--i:${index}">
+    <div class="card-row">
+      <div class="rank-badge">${rank}</div>
+      <div class="card-body">
+        <div class="card-top">
+          <div class="card-title">${esc(title)}</div>
+          ${buildScoreRing(match.score)}
+        </div>
+        ${buildSkillTags(match.skill_match)}
+        <div class="tag-row" style="margin-top:6px">
+          ${m.location ? `<span class="tag tag-info">📍 ${esc(m.location)}</span>` : ''}
+          ${salary ? `<span class="tag tag-salary">💰 ${salary}</span>` : ''}
+        </div>
+        <button class="card-expand-trigger" onclick="toggleExpand('${cardId}', this)">
+          詳細を見る <span class="chevron">▼</span>
+        </button>
+        <div class="card-expandable" id="${cardId}">
+          <div class="card-expand-inner">
+            ${match.ai_reason ? `<div class="ai-reason">💡 ${esc(match.ai_reason)}</div>` : ''}
+            ${match.axis_scores ? `<div class="radar-wrap"><canvas id="radar-${index}" height="200"></canvas></div>` : ''}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>`;
+}
+
+function toggleExpand(cardId, btn) {
+  const el = document.getElementById(cardId);
+  el.classList.toggle('expanded');
+  btn.classList.toggle('open');
+  btn.querySelector('.chevron').textContent = el.classList.contains('expanded') ? '▲' : '▼';
+  const firstWord = el.classList.contains('expanded') ? '閉じる' : '詳細を見る';
+  btn.childNodes[0].textContent = firstWord + ' ';
+
+  // Init radar chart on first expand
+  const idx = cardId.replace('card-', '');
+  const canvas = document.getElementById(`radar-${idx}`);
+  if (canvas && !canvas.dataset.init) {
+    canvas.dataset.init = '1';
+    const scores = MOCK_MATCHES[idx]?.axis_scores;
+    if (scores) renderRadarChart(canvas, scores);
+  }
+}
+
+/* ================================================================
+   RADAR CHART — Chart.js
+   ================================================================ */
+function renderRadarChart(canvas, scores) {
+  new Chart(canvas, {
+    type: 'radar',
+    data: {
+      labels: ['スキル', '経験', '給与', '勤務地', 'カルチャー'],
+      datasets: [{
+        label: 'マッチ度',
+        data: [scores.skill, scores.experience, scores.salary, scores.location, scores.culture],
+        backgroundColor: 'rgba(124,58,237,0.12)',
+        borderColor: 'rgba(124,58,237,0.7)',
+        borderWidth: 2,
+        pointBackgroundColor: 'rgba(124,58,237,0.9)',
+        pointRadius: 3
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      scales: {
+        r: {
+          beginAtZero: true, max: 100,
+          ticks: { stepSize: 25, color: '#64748b', backdropColor: 'transparent', font: { size: 9 } },
+          grid: { color: 'rgba(255,255,255,0.05)' },
+          pointLabels: { color: '#94a3b8', font: { size: 11, family: "'IBM Plex Sans','Noto Sans JP',sans-serif" } },
+          angleLines: { color: 'rgba(255,255,255,0.05)' }
+        }
+      },
+      plugins: { legend: { display: false } }
+    }
+  });
+}
+
+/* ================================================================
+   STREAMING TEXT — word by word AI summary
+   ================================================================ */
+async function streamText(element, text, speed = 35) {
+  element.innerHTML = '';
+  const cursor = document.createElement('span');
+  cursor.className = 'blink-cursor';
+  const words = text.split(' ');
+
+  // Japanese: split by characters/words more naturally
+  const chars = [];
+  for (const w of text) { chars.push(w); }
+
+  // Group into chunks of 2-4 chars for natural streaming
+  const chunks = [];
+  let buf = '';
+  for (let i = 0; i < chars.length; i++) {
+    buf += chars[i];
+    if (buf.length >= 3 || chars[i] === '。' || chars[i] === '、' || chars[i] === '）' || i === chars.length - 1) {
+      chunks.push(buf);
+      buf = '';
+    }
+  }
+
+  for (const chunk of chunks) {
+    element.textContent += chunk;
+    element.appendChild(cursor);
+    const delay = chunk.includes('。') ? speed * 6 : chunk.includes('、') ? speed * 3 : speed + Math.random() * 20;
+    await sleep(delay);
+  }
+  setTimeout(() => cursor.remove(), 2000);
+}
+
+/* ================================================================
+   CONFETTI — fire on top match > 90%
+   ================================================================ */
+function fireConfetti() {
+  const end = Date.now() + 800;
+  (function frame() {
+    confetti({ particleCount: 3, angle: 60, spread: 55, origin: { x: 0 }, colors: ['#7c3aed','#3b82f6','#06b6d4','#fcd34d'] });
+    confetti({ particleCount: 3, angle: 120, spread: 55, origin: { x: 1 }, colors: ['#7c3aed','#3b82f6','#06b6d4','#fcd34d'] });
+    if (Date.now() < end) requestAnimationFrame(frame);
+  })();
+}
+
+/* ================================================================
+   MAIN DEMO SEQUENCE
+   ================================================================ */
+async function runDemo() {
+  // Phase 1: AI Loader with status ticker
+  showOnly('state-loading');
+  startStatusTicker();
+  await sleep(2800);
+  stopStatusTicker();
+
+  // Phase 2: Skeleton transition
+  showOnly('state-skeleton');
+  await sleep(1000);
+
+  // Phase 3: Render results
+  const list = $('match-list');
+  list.innerHTML = MOCK_MATCHES.map((m, i) => buildMatchCard(m, i)).join('');
+  $('results-count').textContent = `${MOCK_MATCHES.length}件`;
+
+  showOnly('state-results');
+
+  // Phase 4: Animate score rings (after cards are visible)
+  await sleep(100);
+  animateScoreRings();
+
+  // Phase 5: Stream AI summary
+  const summaryText = $('ai-summary-text');
+  const summaryMeta = $('ai-summary-meta');
+  summaryMeta.textContent = '';
+  await sleep(600);
+  const t0 = performance.now();
+  await streamText(summaryText, MOCK_SUMMARY, 25);
+  const elapsed = ((performance.now() - t0) / 1000).toFixed(1);
+  summaryMeta.textContent = `分析完了: ${elapsed}s · 信頼度: 高 · モデル: gpt-4o-mini`;
+
+  // Phase 6: Confetti for top match > 90%
+  if (MOCK_MATCHES[0]?.score > 90) {
+    await sleep(300);
+    fireConfetti();
+  }
+}
+
+/* ================================================================
+   BOOT
+   ================================================================ */
+document.addEventListener('DOMContentLoaded', runDemo);
+</script>
+</body>
+</html>

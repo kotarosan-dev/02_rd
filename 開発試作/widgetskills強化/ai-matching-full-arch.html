@@ -1,0 +1,999 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Matching Widget — Full Architecture Demo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ================================================================
+   DESIGN TOKENS
+   ================================================================ */
+:root {
+  --font: 'Noto Sans JP', -apple-system, BlinkMacSystemFont, sans-serif;
+  --bg: #ffffff;
+  --bg-sub: #f8f9fb;
+  --bg-hover: #f1f3f7;
+  --text: #1a1a2e;
+  --text-sub: #5a6078;
+  --text-muted: #8c92a4;
+  --border: #e4e7ee;
+  --border-light: #eef0f4;
+  --accent: #4f46e5;
+  --accent-light: #eef2ff;
+  --accent-text: #3730a3;
+  --green: #059669;
+  --green-bg: #ecfdf5;
+  --yellow: #d97706;
+  --yellow-bg: #fffbeb;
+  --red: #dc2626;
+  --red-bg: #fef2f2;
+  --gold: #b45309;
+  --gold-bg: #fffbeb;
+  --gold-border: #fcd34d;
+  --silver: #475569;
+  --silver-bg: #f8fafc;
+  --silver-border: #cbd5e1;
+  --bronze: #c2410c;
+  --bronze-bg: #fff7ed;
+  --bronze-border: #fdba74;
+  --radius: 10px;
+  --radius-sm: 6px;
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.06);
+  --shadow-md: 0 4px 16px rgba(0,0,0,0.08);
+  --shadow-lg: 0 12px 40px rgba(0,0,0,0.12);
+  --transition: 0.2s cubic-bezier(0.4,0,0.2,1);
+}
+
+/* ================================================================
+   RESET & BASE
+   ================================================================ */
+*,*::before,*::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: var(--font);
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--text);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+}
+button { font-family: var(--font); cursor: pointer; }
+
+/* ================================================================
+   TOOLBAR (top action bar)
+   ================================================================ */
+.toolbar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+.toolbar-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text);
+  margin-right: auto;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.toolbar-title .ai-dot {
+  width: 6px; height: 6px;
+  background: var(--accent);
+  border-radius: 50%;
+  animation: pulse-dot 2s ease infinite;
+}
+@keyframes pulse-dot {
+  0%,100% { opacity: 1; box-shadow: 0 0 0 0 rgba(79,70,229,0.4); }
+  50% { opacity: 0.7; box-shadow: 0 0 0 4px rgba(79,70,229,0); }
+}
+.toolbar-count {
+  font-size: 11px;
+  color: var(--text-muted);
+  background: var(--bg-sub);
+  padding: 2px 8px;
+  border-radius: 10px;
+}
+.tb-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 5px 10px;
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--text-sub);
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  transition: all var(--transition);
+  white-space: nowrap;
+}
+.tb-btn:hover { background: var(--bg-sub); border-color: #ccc; }
+.tb-btn.primary {
+  color: #fff;
+  background: var(--accent);
+  border-color: var(--accent);
+}
+.tb-btn.primary:hover { opacity: 0.9; }
+.tb-btn svg { width: 14px; height: 14px; }
+
+/* ================================================================
+   COMPACT CARD LIST
+   ================================================================ */
+.card-list { padding: 8px 14px 14px; display: flex; flex-direction: column; gap: 6px; }
+
+.card {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius);
+  background: var(--bg);
+  cursor: pointer;
+  transition: all var(--transition);
+  /* stagger */
+  opacity: 0;
+  transform: translateY(12px);
+  animation: cardIn 0.4s ease forwards;
+  animation-delay: calc(var(--i,0) * 80ms + 200ms);
+}
+@keyframes cardIn { to { opacity: 1; transform: translateY(0); } }
+
+.card:hover {
+  border-color: var(--accent);
+  background: var(--accent-light);
+  box-shadow: var(--shadow-sm);
+}
+
+/* rank badge */
+.card .rank {
+  flex-shrink: 0;
+  width: 22px; height: 22px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 11px; font-weight: 700;
+  border-radius: 6px;
+}
+.rank-1 { background: var(--gold-bg); color: var(--gold); border: 1px solid var(--gold-border); }
+.rank-2 { background: var(--silver-bg); color: var(--silver); border: 1px solid var(--silver-border); }
+.rank-3 { background: var(--bronze-bg); color: var(--bronze); border: 1px solid var(--bronze-border); }
+.rank-n { background: var(--bg-sub); color: var(--text-muted); border: 1px solid var(--border); }
+
+/* card body */
+.card-info { flex: 1; min-width: 0; }
+.card-name {
+  font-size: 13px; font-weight: 600; color: var(--text);
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.card-meta {
+  display: flex; flex-wrap: wrap; gap: 4px; margin-top: 3px;
+}
+.chip {
+  font-size: 10px; font-weight: 500;
+  padding: 1px 6px;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+.chip-loc  { background: var(--green-bg); color: var(--green); }
+.chip-sal  { background: var(--yellow-bg); color: var(--yellow); }
+.chip-skill { background: var(--accent-light); color: var(--accent-text); }
+
+/* mini score ring */
+.mini-ring {
+  flex-shrink: 0;
+  position: relative;
+  width: 40px; height: 40px;
+}
+.mini-ring svg { display: block; }
+.mini-ring-track { fill: none; stroke: var(--border-light); stroke-width: 3; }
+.mini-ring-fill {
+  fill: none; stroke-width: 3; stroke-linecap: round;
+  transform: rotate(-90deg); transform-origin: center;
+  transition: stroke-dashoffset 1s ease;
+}
+.mini-ring-text {
+  position: absolute; inset: 0;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 10px; font-weight: 700; color: var(--text);
+}
+
+/* ================================================================
+   LOADING / EMPTY / ERROR
+   ================================================================ */
+.state-loading {
+  display: flex; flex-direction: column; align-items: center;
+  padding: 40px 20px; gap: 12px;
+}
+.loader-ring {
+  width: 36px; height: 36px;
+  border: 3px solid var(--border-light);
+  border-top-color: var(--accent);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+.state-loading .status { font-size: 12px; color: var(--text-muted); }
+
+.state-empty, .state-error {
+  text-align: center; padding: 40px 20px;
+  color: var(--text-muted); font-size: 13px;
+}
+
+/* ================================================================
+   MODAL OVERLAY (within iframe)
+   ================================================================ */
+.modal-overlay {
+  display: none;
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,0.35);
+  z-index: 100;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 20px;
+  overflow-y: auto;
+}
+.modal-overlay.open { display: flex; }
+
+.modal {
+  background: var(--bg);
+  border-radius: 14px;
+  box-shadow: var(--shadow-lg);
+  width: 100%;
+  max-width: 520px;
+  max-height: calc(100vh - 40px);
+  overflow-y: auto;
+  animation: modalIn 0.25s ease;
+}
+@keyframes modalIn {
+  from { opacity: 0; transform: translateY(16px) scale(0.97); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.modal-head {
+  display: flex; align-items: center; gap: 10px;
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--border-light);
+  position: sticky; top: 0;
+  background: var(--bg);
+  z-index: 1;
+}
+.modal-head h3 { flex: 1; font-size: 15px; font-weight: 600; }
+.modal-close {
+  width: 28px; height: 28px;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--bg-sub); border: none; border-radius: 6px;
+  color: var(--text-sub); font-size: 16px;
+  transition: background var(--transition);
+}
+.modal-close:hover { background: var(--bg-hover); }
+
+.modal-body { padding: 20px; }
+
+/* Detail modal sections */
+.detail-score-section {
+  display: flex; align-items: center; gap: 20px;
+  padding: 16px;
+  background: var(--bg-sub);
+  border-radius: var(--radius);
+  margin-bottom: 20px;
+}
+.big-ring { position: relative; width: 80px; height: 80px; flex-shrink: 0; }
+.big-ring svg { display: block; }
+.big-ring-track { fill: none; stroke: var(--border-light); stroke-width: 5; }
+.big-ring-fill {
+  fill: none; stroke-width: 5; stroke-linecap: round;
+  transform: rotate(-90deg); transform-origin: center;
+  transition: stroke-dashoffset 1.2s ease;
+}
+.big-ring-text {
+  position: absolute; inset: 0;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+}
+.big-ring-num { font-size: 22px; font-weight: 700; color: var(--text); line-height: 1; }
+.big-ring-label { font-size: 9px; color: var(--text-muted); }
+
+.detail-score-info { flex: 1; }
+.detail-score-info h4 { font-size: 15px; font-weight: 600; margin-bottom: 4px; }
+.detail-score-tags { display: flex; flex-wrap: wrap; gap: 4px; }
+
+/* AI Reason */
+.ai-reason-box {
+  padding: 12px 14px;
+  background: linear-gradient(135deg, var(--accent-light), #f5f3ff);
+  border-left: 3px solid var(--accent);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  margin-bottom: 16px;
+}
+.ai-reason-label {
+  font-size: 10px; font-weight: 600; color: var(--accent);
+  text-transform: uppercase; letter-spacing: 0.05em;
+  margin-bottom: 4px;
+  display: flex; align-items: center; gap: 4px;
+}
+.ai-reason-text { font-size: 12px; line-height: 1.7; color: var(--accent-text); }
+
+/* Skill match tags */
+.skill-section { margin-bottom: 16px; }
+.skill-section-label { font-size: 11px; font-weight: 600; color: var(--text-sub); margin-bottom: 6px; }
+.skill-tags { display: flex; flex-wrap: wrap; gap: 5px; }
+.stag {
+  font-size: 11px; font-weight: 500;
+  padding: 3px 8px;
+  border-radius: 5px;
+}
+.stag-ok   { background: var(--green-bg); color: var(--green); border: 1px solid #bbf7d0; }
+.stag-part { background: var(--yellow-bg); color: var(--yellow); border: 1px solid #fde68a; }
+.stag-miss { background: var(--red-bg); color: var(--red); border: 1px dashed #fca5a5; }
+
+/* Radar chart */
+.radar-section { margin-bottom: 16px; }
+.radar-section canvas { max-width: 100%; }
+
+/* Axis score bars */
+.axis-bars { display: flex; flex-direction: column; gap: 8px; margin-bottom: 16px; }
+.axis-row label { display: flex; justify-content: space-between; font-size: 11px; color: var(--text-sub); margin-bottom: 2px; }
+.axis-bar-bg { height: 6px; background: var(--border-light); border-radius: 3px; overflow: hidden; }
+.axis-bar-fill {
+  height: 100%; border-radius: 3px;
+  transition: width 0.8s ease;
+}
+
+/* Modal actions */
+.modal-actions {
+  display: flex; gap: 8px;
+  padding: 14px 20px;
+  border-top: 1px solid var(--border-light);
+}
+.modal-actions .tb-btn { flex: 1; justify-content: center; padding: 8px; }
+
+/* ================================================================
+   WEIGHT ADJUSTMENT PANEL (modal)
+   ================================================================ */
+.weight-sliders { display: flex; flex-direction: column; gap: 14px; }
+.weight-row label {
+  display: flex; justify-content: space-between;
+  font-size: 12px; font-weight: 500; color: var(--text-sub);
+  margin-bottom: 4px;
+}
+.weight-row input[type=range] {
+  width: 100%; height: 4px;
+  -webkit-appearance: none; appearance: none;
+  background: var(--border-light);
+  border-radius: 2px; outline: none;
+}
+.weight-row input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none; appearance: none;
+  width: 16px; height: 16px;
+  background: var(--accent);
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 1px 4px rgba(79,70,229,0.3);
+}
+.weight-preview {
+  font-size: 11px; color: var(--text-muted);
+  text-align: center;
+  padding: 8px;
+  background: var(--bg-sub);
+  border-radius: var(--radius-sm);
+}
+
+/* ================================================================
+   EMAIL COMPOSE (modal)
+   ================================================================ */
+.email-form { display: flex; flex-direction: column; gap: 12px; }
+.email-field label {
+  display: block;
+  font-size: 11px; font-weight: 600; color: var(--text-sub);
+  margin-bottom: 4px;
+}
+.email-field input, .email-field textarea {
+  width: 100%;
+  padding: 8px 10px;
+  font-size: 13px;
+  font-family: var(--font);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  outline: none;
+  transition: border-color var(--transition);
+}
+.email-field input:focus, .email-field textarea:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(79,70,229,0.08);
+}
+.email-field textarea { min-height: 120px; resize: vertical; }
+.email-preview {
+  padding: 10px;
+  background: var(--bg-sub);
+  border-radius: var(--radius-sm);
+  font-size: 11px;
+  color: var(--text-sub);
+  max-height: 160px;
+  overflow-y: auto;
+}
+.email-preview table {
+  width: 100%; border-collapse: collapse; margin-top: 6px;
+}
+.email-preview th {
+  background: var(--accent); color: #fff;
+  padding: 4px 8px; font-size: 10px; text-align: left;
+}
+.email-preview td {
+  padding: 4px 8px; font-size: 10px;
+  border-bottom: 1px solid var(--border-light);
+}
+
+/* ================================================================
+   TOAST
+   ================================================================ */
+.toast {
+  position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%);
+  padding: 10px 20px;
+  background: var(--text);
+  color: #fff;
+  border-radius: 8px;
+  font-size: 12px;
+  box-shadow: var(--shadow-md);
+  z-index: 200;
+  animation: toastIn 0.3s ease, toastOut 0.3s ease 2.2s forwards;
+}
+@keyframes toastIn { from { opacity: 0; transform: translateX(-50%) translateY(10px); } to { opacity: 1; transform: translateX(-50%) translateY(0); } }
+@keyframes toastOut { to { opacity: 0; transform: translateX(-50%) translateY(10px); } }
+
+/* ================================================================
+   UTILITY
+   ================================================================ */
+.hidden { display: none !important; }
+@media (prefers-reduced-motion: reduce) {
+  *,*::before,*::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}
+</style>
+</head>
+<body>
+
+<!-- ===== TOOLBAR ===== -->
+<div class="toolbar" id="toolbar">
+  <div class="toolbar-title">
+    <span class="ai-dot"></span>
+    AI マッチング
+    <span class="toolbar-count" id="tb-count"></span>
+  </div>
+  <button class="tb-btn" onclick="openWeightModal()" title="重み付け調整">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 21v-7M4 10V3M12 21v-9M12 8V3M20 21v-5M20 12V3M1 14h6M9 8h6M17 16h6"/></svg>
+    調整
+  </button>
+  <button class="tb-btn" onclick="exportExcel()" title="Excel出力">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+    Excel
+  </button>
+  <button class="tb-btn" onclick="openEmailModal()" title="メール送信">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+    メール
+  </button>
+</div>
+
+<!-- ===== LOADING ===== -->
+<div id="state-loading" class="state-loading">
+  <div class="loader-ring"></div>
+  <div class="status" id="load-status">マッチング候補を検索中...</div>
+</div>
+
+<!-- ===== CARD LIST ===== -->
+<div id="state-results" class="card-list hidden"></div>
+
+<!-- ===== EMPTY ===== -->
+<div id="state-empty" class="state-empty hidden">マッチング候補が見つかりませんでした</div>
+
+<!-- ===== DETAIL MODAL ===== -->
+<div class="modal-overlay" id="detail-modal">
+  <div class="modal">
+    <div class="modal-head">
+      <h3 id="dm-title">詳細</h3>
+      <button class="modal-close" onclick="closeModal('detail-modal')">&times;</button>
+    </div>
+    <div class="modal-body" id="dm-body"></div>
+    <div class="modal-actions">
+      <button class="tb-btn" onclick="closeModal('detail-modal')">閉じる</button>
+      <button class="tb-btn primary" id="dm-open-record">CRMで開く</button>
+    </div>
+  </div>
+</div>
+
+<!-- ===== WEIGHT ADJUSTMENT MODAL ===== -->
+<div class="modal-overlay" id="weight-modal">
+  <div class="modal">
+    <div class="modal-head">
+      <h3>🎚️ 重み付け調整</h3>
+      <button class="modal-close" onclick="closeModal('weight-modal')">&times;</button>
+    </div>
+    <div class="modal-body">
+      <p style="font-size:12px;color:var(--text-sub);margin-bottom:14px;">
+        各要素の重要度を調整すると、マッチスコアがリアルタイムで再計算されます。<br>
+        <em style="font-size:11px;color:var(--text-muted);">※ Pinecone再クエリ不要 — キャッシュ結果を即座にリランク</em>
+      </p>
+      <div class="weight-sliders" id="weight-sliders"></div>
+      <div class="weight-preview" id="weight-preview" style="margin-top:12px;"></div>
+    </div>
+    <div class="modal-actions">
+      <button class="tb-btn" onclick="resetWeights()">リセット</button>
+      <button class="tb-btn primary" onclick="applyWeights()">適用して再計算</button>
+    </div>
+  </div>
+</div>
+
+<!-- ===== EMAIL COMPOSE MODAL ===== -->
+<div class="modal-overlay" id="email-modal">
+  <div class="modal">
+    <div class="modal-head">
+      <h3>✉️ マッチング結果を送信</h3>
+      <button class="modal-close" onclick="closeModal('email-modal')">&times;</button>
+    </div>
+    <div class="modal-body">
+      <div class="email-form">
+        <div class="email-field">
+          <label>宛先</label>
+          <input type="email" id="email-to" value="manager@example.com" placeholder="メールアドレス">
+        </div>
+        <div class="email-field">
+          <label>件名</label>
+          <input type="text" id="email-subject" value="【AI分析】マッチング結果レポート">
+        </div>
+        <div class="email-field">
+          <label>メッセージ（任意）</label>
+          <textarea id="email-msg" rows="3" placeholder="追加メッセージがあれば入力..."></textarea>
+        </div>
+        <div class="email-field">
+          <label>添付されるマッチング結果プレビュー</label>
+          <div class="email-preview" id="email-preview"></div>
+        </div>
+      </div>
+    </div>
+    <div class="modal-actions">
+      <button class="tb-btn" onclick="closeModal('email-modal')">キャンセル</button>
+      <button class="tb-btn primary" onclick="sendEmail()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+        送信
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- SheetJS CDN -->
+<script src="https://cdn.sheetjs.com/xlsx-0.20.3/package/dist/xlsx.full.min.js"></script>
+<!-- Chart.js CDN -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+
+<script>
+/* ================================================================
+   MOCK DATA
+   ================================================================ */
+const RAW_MATCHES = [
+  {
+    id: '13059000001662474', score: 94.2,
+    metadata: { title: 'シニアバックエンドエンジニア', location: '東京（リモート可）', salary_min: '500', salary_max: '800', required_skills: 'Python, AWS, Kubernetes, Docker, CI/CD', position: 'バックエンド' },
+    skill_match: { matched: ['Python','AWS','Kubernetes','Docker'], partial: ['CI/CD'], missing: [] },
+    axis_scores: { skill: 96, experience: 88, salary: 90, location: 100, culture: 92 },
+    ai_reason: 'Python・AWS・Kubernetes の主要3技術が完全一致。リモート対応で勤務地制約なし。年収レンジの上位寄り提示が期待できます。'
+  },
+  {
+    id: '13059000001662475', score: 82.7,
+    metadata: { title: 'フロントエンドエンジニア', location: '東京', salary_min: '400', salary_max: '600', required_skills: 'React, TypeScript, Next.js, CSS, Testing', position: 'フロントエンド' },
+    skill_match: { matched: ['React','TypeScript'], partial: ['Next.js','CSS'], missing: ['Testing'] },
+    axis_scores: { skill: 78, experience: 85, salary: 88, location: 100, culture: 70 },
+    ai_reason: 'React・TypeScript のコア技術は一致。Next.js は学習中で部分マッチ。テスト設計経験の補強を推奨。'
+  },
+  {
+    id: '13059000001662476', score: 68.4,
+    metadata: { title: 'テックリード', location: '大阪（週2出社）', salary_min: '700', salary_max: '1000', required_skills: 'Java, マネジメント, 設計, AWS, K8s', position: 'テックリード' },
+    skill_match: { matched: ['AWS','K8s'], partial: ['設計'], missing: ['Java','マネジメント'] },
+    axis_scores: { skill: 55, experience: 60, salary: 75, location: 50, culture: 80 },
+    ai_reason: 'インフラ技術（AWS/K8s）は親和性高。Java 実務経験とマネジメント経験が不足。勤務地が大阪のため要確認。'
+  },
+  {
+    id: '13059000001662477', score: 61.2,
+    metadata: { title: 'SREエンジニア', location: '福岡（フルリモート）', salary_min: '500', salary_max: '750', required_skills: 'AWS, Terraform, Docker, 監視設計, Python', position: 'SRE' },
+    skill_match: { matched: ['AWS','Docker','Python'], partial: ['Terraform'], missing: ['監視設計'] },
+    axis_scores: { skill: 70, experience: 55, salary: 82, location: 90, culture: 60 },
+    ai_reason: 'クラウド・コンテナ技術は重複あり。Terraform は関連経験から短期キャッチアップ可能。監視設計の経験を補完する必要あり。'
+  },
+  {
+    id: '13059000001662478', score: 52.8,
+    metadata: { title: 'データエンジニア', location: '東京', salary_min: '450', salary_max: '700', required_skills: 'Python, SQL, Spark, Airflow, AWS', position: 'データ' },
+    skill_match: { matched: ['Python','AWS'], partial: ['SQL'], missing: ['Spark','Airflow'] },
+    axis_scores: { skill: 45, experience: 50, salary: 78, location: 100, culture: 55 },
+    ai_reason: 'Python・AWSの基盤スキルは共通。データパイプライン（Spark/Airflow）の専門性が不足しており、ポテンシャル採用向き。'
+  }
+];
+
+/* ================================================================
+   WEIGHT SYSTEM
+   ================================================================ */
+const WEIGHT_AXES = [
+  { key: 'skill',      label: 'スキル適合度',   icon: '🔧', default: 35 },
+  { key: 'experience', label: '経験年数',       icon: '📅', default: 20 },
+  { key: 'salary',     label: '給与マッチ度',   icon: '💰', default: 20 },
+  { key: 'location',   label: '勤務地',         icon: '📍', default: 15 },
+  { key: 'culture',    label: 'カルチャーフィット', icon: '🤝', default: 10 },
+];
+let currentWeights = {};
+WEIGHT_AXES.forEach(a => currentWeights[a.key] = a.default);
+
+// Recalculate final scores using weights
+function recalcScores(matches, weights) {
+  const total = Object.values(weights).reduce((s,v) => s+v, 0) || 1;
+  return matches.map(m => {
+    const ax = m.axis_scores;
+    let weighted = 0;
+    for (const k in weights) {
+      weighted += (weights[k] / total) * (ax[k] || 0);
+    }
+    return { ...m, displayScore: Math.round(weighted * 10) / 10 };
+  }).sort((a,b) => b.displayScore - a.displayScore);
+}
+
+let displayMatches = recalcScores(RAW_MATCHES, currentWeights);
+
+/* ================================================================
+   RENDERING — Compact Cards
+   ================================================================ */
+const $ = id => document.getElementById(id);
+
+function scoreColor(s) {
+  if (s >= 80) return 'var(--green)';
+  if (s >= 60) return 'var(--yellow)';
+  return 'var(--red)';
+}
+
+function miniRing(score) {
+  const r = 16, circ = 2 * Math.PI * r;
+  const offset = circ * (1 - score / 100);
+  return `<div class="mini-ring">
+    <svg viewBox="0 0 40 40" width="40" height="40">
+      <circle class="mini-ring-track" cx="20" cy="20" r="${r}"/>
+      <circle class="mini-ring-fill" cx="20" cy="20" r="${r}"
+        stroke="${scoreColor(score)}"
+        stroke-dasharray="${circ}"
+        stroke-dashoffset="${circ}"
+        data-target="${offset}"/>
+    </svg>
+    <div class="mini-ring-text"><span class="cnt-up" data-to="${Math.round(score)}">0</span></div>
+  </div>`;
+}
+
+function renderCards() {
+  const el = $('state-results');
+  $('tb-count').textContent = displayMatches.length + '件';
+  el.innerHTML = displayMatches.map((m, i) => {
+    const md = m.metadata;
+    const rk = i < 3 ? `rank-${i+1}` : 'rank-n';
+    const sal = (md.salary_min && md.salary_max) ? `${md.salary_min}〜${md.salary_max}万` : '';
+    return `<div class="card" style="--i:${i}" onclick="openDetail(${i})">
+      <div class="rank ${rk}">${i+1}</div>
+      <div class="card-info">
+        <div class="card-name">${esc(md.title || md.name || '求人')}</div>
+        <div class="card-meta">
+          ${md.location ? `<span class="chip chip-loc">📍 ${esc(md.location)}</span>` : ''}
+          ${sal ? `<span class="chip chip-sal">💰 ${sal}</span>` : ''}
+        </div>
+      </div>
+      ${miniRing(m.displayScore)}
+    </div>`;
+  }).join('');
+
+  // animate rings + countup after paint
+  requestAnimationFrame(() => {
+    el.querySelectorAll('.mini-ring-fill[data-target]').forEach(c => {
+      c.style.strokeDashoffset = c.dataset.target;
+    });
+    el.querySelectorAll('.cnt-up').forEach(el => {
+      const to = +el.dataset.to; let cur = 0;
+      const step = Math.max(1, Math.ceil(to / 30));
+      const t = setInterval(() => {
+        cur = Math.min(cur + step, to);
+        el.textContent = cur;
+        if (cur >= to) clearInterval(t);
+      }, 25);
+    });
+  });
+}
+
+/* ================================================================
+   DETAIL MODAL
+   ================================================================ */
+function openDetail(idx) {
+  const m = displayMatches[idx];
+  const md = m.metadata;
+  const ax = m.axis_scores;
+
+  $('dm-title').textContent = md.title || md.name || '詳細';
+
+  // Big score ring
+  const r = 34, circ = 2 * Math.PI * r;
+  const offset = circ * (1 - m.displayScore / 100);
+
+  let html = `
+    <div class="detail-score-section">
+      <div class="big-ring">
+        <svg viewBox="0 0 80 80" width="80" height="80">
+          <circle class="big-ring-track" cx="40" cy="40" r="${r}"/>
+          <circle class="big-ring-fill" cx="40" cy="40" r="${r}"
+            stroke="${scoreColor(m.displayScore)}"
+            stroke-dasharray="${circ}"
+            stroke-dashoffset="${circ}"
+            data-target="${offset}"/>
+        </svg>
+        <div class="big-ring-text">
+          <span class="big-ring-num cnt-up-d" data-to="${Math.round(m.displayScore)}">0</span>
+          <span class="big-ring-label">マッチ度</span>
+        </div>
+      </div>
+      <div class="detail-score-info">
+        <h4>${esc(md.title || '')}</h4>
+        <div class="detail-score-tags">
+          ${md.location ? `<span class="chip chip-loc">📍 ${esc(md.location)}</span>` : ''}
+          ${md.salary_min ? `<span class="chip chip-sal">💰 ${md.salary_min}〜${md.salary_max}万</span>` : ''}
+          ${md.position ? `<span class="chip chip-skill">${esc(md.position)}</span>` : ''}
+        </div>
+      </div>
+    </div>`;
+
+  // AI Reason
+  if (m.ai_reason) {
+    html += `<div class="ai-reason-box">
+      <div class="ai-reason-label">✦ AI 分析コメント</div>
+      <div class="ai-reason-text">${esc(m.ai_reason)}</div>
+    </div>`;
+  }
+
+  // Skill tags
+  if (m.skill_match) {
+    html += `<div class="skill-section">
+      <div class="skill-section-label">スキルマッチ状況</div>
+      <div class="skill-tags">
+        ${(m.skill_match.matched||[]).map(s=>`<span class="stag stag-ok">✓ ${esc(s)}</span>`).join('')}
+        ${(m.skill_match.partial||[]).map(s=>`<span class="stag stag-part">~ ${esc(s)}</span>`).join('')}
+        ${(m.skill_match.missing||[]).map(s=>`<span class="stag stag-miss">✗ ${esc(s)}</span>`).join('')}
+      </div>
+    </div>`;
+  }
+
+  // Axis score bars
+  html += `<div class="axis-bars">`;
+  WEIGHT_AXES.forEach(a => {
+    const v = ax[a.key] || 0;
+    html += `<div class="axis-row">
+      <label><span>${a.icon} ${a.label}</span><span>${v}%</span></label>
+      <div class="axis-bar-bg"><div class="axis-bar-fill" style="width:0;background:${scoreColor(v)}" data-w="${v}"></div></div>
+    </div>`;
+  });
+  html += `</div>`;
+
+  // Radar chart
+  html += `<div class="radar-section"><canvas id="detail-radar" height="220"></canvas></div>`;
+
+  $('dm-body').innerHTML = html;
+
+  // Open record button
+  $('dm-open-record').onclick = () => {
+    // In real widget: ZOHO.CRM.UI.Record.open(...)
+    toast('CRMレコード ' + m.id + ' を開きます（デモ）');
+    closeModal('detail-modal');
+  };
+
+  openModal('detail-modal');
+
+  // Animate
+  requestAnimationFrame(() => {
+    // Big ring
+    const fill = $('dm-body').querySelector('.big-ring-fill[data-target]');
+    if (fill) fill.style.strokeDashoffset = fill.dataset.target;
+    // Countup
+    const numEl = $('dm-body').querySelector('.cnt-up-d');
+    if (numEl) {
+      const to = +numEl.dataset.to; let cur = 0;
+      const step = Math.max(1, Math.ceil(to / 40));
+      const t = setInterval(() => { cur = Math.min(cur+step,to); numEl.textContent = cur; if(cur>=to) clearInterval(t); }, 20);
+    }
+    // Axis bars
+    setTimeout(() => {
+      $('dm-body').querySelectorAll('.axis-bar-fill[data-w]').forEach(b => { b.style.width = b.dataset.w + '%'; });
+    }, 100);
+    // Radar
+    const rc = document.getElementById('detail-radar');
+    if (rc) renderRadar(rc, ax);
+  });
+}
+
+function renderRadar(canvas, scores) {
+  new Chart(canvas, {
+    type: 'radar',
+    data: {
+      labels: WEIGHT_AXES.map(a => a.label),
+      datasets: [{
+        data: WEIGHT_AXES.map(a => scores[a.key] || 0),
+        backgroundColor: 'rgba(79,70,229,0.08)',
+        borderColor: 'rgba(79,70,229,0.6)',
+        borderWidth: 2,
+        pointBackgroundColor: 'rgba(79,70,229,0.8)',
+        pointRadius: 3
+      }]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      scales: { r: {
+        beginAtZero: true, max: 100,
+        ticks: { stepSize: 25, color: '#8c92a4', backdropColor: 'transparent', font: { size: 9 } },
+        grid: { color: '#e4e7ee' },
+        pointLabels: { color: '#5a6078', font: { size: 11, family: "'Noto Sans JP',sans-serif" } },
+        angleLines: { color: '#e4e7ee' }
+      }},
+      plugins: { legend: { display: false } }
+    }
+  });
+}
+
+/* ================================================================
+   WEIGHT ADJUSTMENT
+   ================================================================ */
+function openWeightModal() {
+  const el = $('weight-sliders');
+  el.innerHTML = WEIGHT_AXES.map(a => `
+    <div class="weight-row">
+      <label><span>${a.icon} ${a.label}</span><span id="wv-${a.key}">${currentWeights[a.key]}%</span></label>
+      <input type="range" min="0" max="100" value="${currentWeights[a.key]}"
+        oninput="document.getElementById('wv-${a.key}').textContent=this.value+'%'; updateWeightPreview();"
+        data-key="${a.key}">
+    </div>`).join('');
+  updateWeightPreview();
+  openModal('weight-modal');
+}
+
+function updateWeightPreview() {
+  const sliders = document.querySelectorAll('#weight-sliders input[type=range]');
+  let total = 0;
+  sliders.forEach(s => total += +s.value);
+  $('weight-preview').textContent = `合計: ${total}%（正規化して適用されます）`;
+}
+
+function resetWeights() {
+  WEIGHT_AXES.forEach(a => currentWeights[a.key] = a.default);
+  openWeightModal(); // re-render
+}
+
+function applyWeights() {
+  const sliders = document.querySelectorAll('#weight-sliders input[type=range]');
+  sliders.forEach(s => currentWeights[s.dataset.key] = +s.value);
+  displayMatches = recalcScores(RAW_MATCHES, currentWeights);
+  renderCards();
+  closeModal('weight-modal');
+  toast('✅ 重み付けを適用しました');
+}
+
+/* ================================================================
+   EXCEL EXPORT (SheetJS)
+   ================================================================ */
+function exportExcel() {
+  const rows = displayMatches.map((m, i) => ({
+    '順位': i + 1,
+    'ポジション': m.metadata.title || '',
+    'マッチ度(%)': m.displayScore,
+    '勤務地': m.metadata.location || '',
+    '給与(万円)': m.metadata.salary_min && m.metadata.salary_max ? `${m.metadata.salary_min}〜${m.metadata.salary_max}` : '',
+    'スキル': m.metadata.required_skills || '',
+    'AI分析': m.ai_reason || '',
+    'スキル適合': m.axis_scores.skill,
+    '経験': m.axis_scores.experience,
+    '給与マッチ': m.axis_scores.salary,
+    '勤務地マッチ': m.axis_scores.location,
+    'カルチャー': m.axis_scores.culture
+  }));
+
+  const ws = XLSX.utils.json_to_sheet(rows);
+  ws['!cols'] = [
+    {wch:5},{wch:25},{wch:10},{wch:18},{wch:14},{wch:35},{wch:50},
+    {wch:10},{wch:8},{wch:10},{wch:12},{wch:10}
+  ];
+  const wb = XLSX.utils.book_new();
+  XLSX.utils.book_append_sheet(wb, ws, 'マッチング結果');
+
+  // Weight info sheet
+  const wRows = WEIGHT_AXES.map(a => ({ '評価軸': a.label, '重み(%)': currentWeights[a.key] }));
+  const ws2 = XLSX.utils.json_to_sheet(wRows);
+  ws2['!cols'] = [{wch:20},{wch:10}];
+  XLSX.utils.book_append_sheet(wb, ws2, '重み設定');
+
+  XLSX.writeFile(wb, 'AI_Matching_Report.xlsx');
+  toast('📊 Excelファイルをダウンロードしました');
+}
+
+/* ================================================================
+   EMAIL COMPOSE
+   ================================================================ */
+function openEmailModal() {
+  // Build preview table
+  let html = '<strong>マッチング結果一覧</strong><table>';
+  html += '<tr><th>#</th><th>ポジション</th><th>スコア</th><th>勤務地</th></tr>';
+  displayMatches.forEach((m, i) => {
+    html += `<tr><td>${i+1}</td><td>${esc(m.metadata.title||'')}</td><td>${m.displayScore}%</td><td>${esc(m.metadata.location||'')}</td></tr>`;
+  });
+  html += '</table>';
+  $('email-preview').innerHTML = html;
+  openModal('email-modal');
+}
+
+function sendEmail() {
+  const to = $('email-to').value;
+  const subject = $('email-subject').value;
+  if (!to) { toast('⚠️ 宛先を入力してください'); return; }
+
+  // In real widget:
+  // ZOHO.CRM.FUNCTIONS.execute("send_email_function", {
+  //   arguments: JSON.stringify({ to_address: to, subject: subject, message: htmlBody })
+  // });
+  toast(`✉️ ${to} にメールを送信しました（デモ）`);
+  closeModal('email-modal');
+}
+
+/* ================================================================
+   MODAL HELPERS
+   ================================================================ */
+function openModal(id) {
+  $(id).classList.add('open');
+  // In real widget: ZOHO.CRM.UI.Resize({ height: "800", width: "1000" });
+}
+function closeModal(id) {
+  $(id).classList.remove('open');
+  // In real widget: ZOHO.CRM.UI.Resize({ height: "500", width: "1000" });
+}
+
+/* ================================================================
+   TOAST
+   ================================================================ */
+function toast(msg) {
+  const el = document.createElement('div');
+  el.className = 'toast';
+  el.textContent = msg;
+  document.body.appendChild(el);
+  setTimeout(() => el.remove(), 2600);
+}
+
+/* ================================================================
+   UTILITY
+   ================================================================ */
+function esc(t) { const d = document.createElement('div'); d.textContent = t||''; return d.innerHTML; }
+function sleep(ms) { return new Promise(r => setTimeout(r, ms)); }
+
+/* ================================================================
+   BOOT SEQUENCE
+   ================================================================ */
+async function boot() {
+  $('state-loading').classList.remove('hidden');
+  $('toolbar').style.opacity = '0.5';
+  $('toolbar').style.pointerEvents = 'none';
+
+  const msgs = ['スキルベクトルを生成中...', 'Pinecone検索実行中...', 'スコア算出中...'];
+  for (const msg of msgs) {
+    await sleep(600);
+    $('load-status').textContent = msg;
+  }
+  await sleep(400);
+
+  $('state-loading').classList.add('hidden');
+  $('state-results').classList.remove('hidden');
+  $('toolbar').style.opacity = '1';
+  $('toolbar').style.pointerEvents = 'auto';
+
+  renderCards();
+}
+
+document.addEventListener('DOMContentLoaded', boot);
+</script>
+</body>
+</html>
