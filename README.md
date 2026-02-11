@@ -7,17 +7,13 @@
 
 ```
 02_R&D/
-├── .claude/                    # Claude Code設定
-│   └── settings.local.json     # ローカル権限設定
-├── 開発試作/                    # 既存R&Dプロジェクト
-│   ├── Cline/                  # Cline関連
-│   ├── KindleAutoCap/          # Kindle自動キャプチャ
-│   ├── metal/                  # Metal関連
-│   ├── my-widget/              # Zohoウィジェット開発
-│   ├── nextjsとsupabaseテスト/  # Next.js + Supabaseテスト
-│   ├── project/                # プロジェクト
-│   ├── React-project-zipping/  # React圧縮プロジェクト
-│   └── RunwayAPI/              # Runway API
+├── .cursor/                    # Cursor IDE設定
+│   └── plans/                  # プラン・タスク管理
+├── book-processor/             # 書籍処理スクリプト（PowerShell / GAS）
+├── Books/                      # 読書・書評関連コンテンツ
+├── 開発試作/                    # R&D・試作プロジェクト
+│   ├── _archive/               # アーカイブ済み（Cline, KindleAutoCap, my-widget, nextjs+Supabase, RunwayAPI 等）
+│   └── CRM-AI-Matching-PoC/    # CRM AIマッチング PoC（Zoho Catalyst / Pinecone）
 └── README.md                   # このファイル
 ```
 

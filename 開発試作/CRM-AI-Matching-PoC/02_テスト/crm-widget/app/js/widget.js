@@ -1,12 +1,21 @@
 /**
  * CRM×AI Matching Widget
  * 求職者・求人のAIマッチングを表示
+ *
+ * 【必須】CRM側で「Custom Service」タイプのConnectionを作成すること。
+ * 設定 > 開発者スペース > 接続 > 接続を追加 > Custom Service
+ * - Service Name: catalyst_matching_api（下記 CONNECTION_NAME と一致させる）
+ * - Service URL: Catalyst 関数のベースURL（末尾スラッシュなし）
+ * 直接fetch()ではCORSエラーになるため、必ず CONNECTION.invoke 経由で呼び出す。
  */
 
-// 設定
+// 設定（Connection名と検索URLは1箇所に集約）
 const CONFIG = {
-  MATCHING_API_URL: 'https://ai-matching-poc-90002038385.development.catalystserverless.jp/server/ai_matching',
-  MOCK_MODE: false  // 実連携モード（Catalyst/Pinecone使用）
+  /** CRMで作成したCustom Serviceの接続名（「Zoho Catalyst」タイプは不可） */
+  CONNECTION_NAME: 'catalyst_matching_api',
+  /** Catalyst 検索APIのフルURL（ConnectionのService URLと合わせる） */
+  SEARCH_URL: 'https://ai-matching-poc-90002038385.development.catalystserverless.jp/server/ai_matching/search',
+  MOCK_MODE: false
 };
 
 // 実際のCRMレコードデータ（モック用）
@@ -84,6 +93,7 @@ const elements = {
 
 /**
  * ページ読み込み時の処理
+ * 関連リスト配置時は Resize で高さを指定（デフォルト高さが0に近いため必須）
  */
 async function handlePageLoad(context) {
   console.log("handlePageLoad called with context:", context);
@@ -95,6 +105,9 @@ async function handlePageLoad(context) {
   }
   
   try {
+    if (typeof ZOHO !== 'undefined' && ZOHO.CRM && ZOHO.CRM.UI && ZOHO.CRM.UI.Resize) {
+      ZOHO.CRM.UI.Resize({ height: '500', width: '1000' }).catch(function () {});
+    }
     showLoading();
     
     // レコード詳細取得
