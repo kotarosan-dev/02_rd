@@ -258,16 +258,29 @@ async function searchMatches(recordId, record, recordType) {
         }
       }
       console.log("Catalyst API response:", data);
-      const matchData = (data && data.statusMessage != null)
+      if (data) {
+        if (data.statusMessage && typeof data.statusMessage === "object" && data.statusMessage.error) {
+          console.error("Catalyst API error:", data.statusMessage.error);
+        }
+      }
+      var matchData = (data && data.statusMessage != null)
         ? (typeof data.statusMessage === 'object' ? data.statusMessage : data)
         : data;
-      
-      if (matchData.matches && matchData.matches.length > 0) {
-        console.log("Matches found:", matchData.matches.length, "Summary:", !!matchData.summary);
-        return { matches: matchData.matches, summary: matchData.summary || null };
+      var matches = (matchData && matchData.matches) ? matchData.matches
+        : (data && data.matches) ? data.matches
+        : (data && data.statusMessage && data.statusMessage.matches) ? data.statusMessage.matches
+        : (data && data.statusMessage && data.statusMessage.details && data.statusMessage.details.matches) ? data.statusMessage.details.matches
+        : null;
+
+      if (matches && matches.length > 0) {
+        console.log("Matches found:", matches.length, "Summary:", !!matchData.summary);
+        return { matches: matches, summary: (matchData && matchData.summary) || null };
       }
-      
-      console.log("No matches in response, using mock data");
+
+      if (Array.isArray(matches) && matches.length === 0)
+        console.log("Matches array is empty (Pinecone returned 0 hits). Check Catalyst PINECONE_HOST and index.");
+      else if (!matches)
+        console.log("No matches in response, using mock data");
       const mockMatches = calculateMockMatches(recordId, record, recordType);
       return { matches: mockMatches, summary: null };
       

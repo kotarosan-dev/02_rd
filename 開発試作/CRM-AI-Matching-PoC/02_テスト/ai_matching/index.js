@@ -27,10 +27,11 @@ app.use((req, res, next) => {
     next();
 });
 
-// 定数
+// 定数（Pinecone ホストは環境変数 PINECONE_HOST で指定。未設定時は旧インデックスにフォールバック）
 const NAMESPACE_JOBSEEKERS = 'jobseekers';
 const NAMESPACE_JOBS = 'jobs';
-const PINECONE_HOST = 'firstprpjects-x0dk0o2.svc.aped-4627-b74a.pinecone.io';
+const PINECONE_HOST = (process.env.PINECONE_HOST || 'firstprpjects-x0dk0o2.svc.aped-4627-b74a.pinecone.io')
+    .replace(/^https?:\/\//, '').replace(/\/+$/, '');
 
 async function callPineconeAPI(endpoint, method, body) {
     const apiKey = process.env.PINECONE_API_KEY;
@@ -38,6 +39,7 @@ async function callPineconeAPI(endpoint, method, body) {
         throw new Error('PINECONE_API_KEY must be set');
     }
     const url = `https://${PINECONE_HOST}${endpoint}`;
+    console.log('Pinecone request:', method, url);
     const response = await fetch(url, {
         method: method,
         headers: {

@@ -4,6 +4,10 @@
 03_実装/config/.env
 03_実装/config/.env.demo3
 
+# API keys / secrets (downloads, local)
+*apikey*.txt
+*_apikey*.txt
+
 # Python
 __pycache__/
 *.py[cod]
