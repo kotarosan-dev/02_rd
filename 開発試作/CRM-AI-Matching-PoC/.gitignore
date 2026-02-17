@@ -2,6 +2,7 @@
 .env
 *.env
 03_実装/config/.env
+03_実装/config/.env.demo3
 
 # Python
 __pycache__/

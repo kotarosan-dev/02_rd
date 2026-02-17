@@ -12,7 +12,7 @@
 // 設定（Connection名と検索URLは1箇所に集約）
 const CONFIG = {
   CONNECTION_NAME: 'catalyst_matching_api',
-  SEARCH_URL: 'https://ai-matching-poc-90002038385.development.catalystserverless.jp/server/ai_matching/search',
+  SEARCH_URL: 'https://ai-matching-poc-90002767876.development.catalystserverless.jp/server/ai_matching/search',
   MOCK_MODE: false
 };
 

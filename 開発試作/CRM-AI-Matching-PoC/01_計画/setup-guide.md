@@ -49,7 +49,18 @@
 | Node.js v18以上 | 要確認 |
 | Python 3.9以上 | 要確認 |
 
-### 1.2 ローカル環境確認
+### 1.2 .env の配置（環境の分離）
+
+- **デフォルト（その他組織）:** **`03_実装/config/.env`** に配置。`03_実装/config/.env.example` をコピーして作成し、`ZOHO_ORG_ID` など必要な値を記入する。
+- **demo3 専用:** **`03_実装/config/.env.demo3`** に配置。`03_実装/config/.env.demo3.example` をコピーして `.env.demo3` を作成し、demo3 用の Client ID / Client Secret を記入する（組織IDは 90001202404 で固定）。  
+  CRM モジュールセットアップを **demo3 向けに実行するとき**は、必ず次のように指定する。
+  ```powershell
+  cd "02_テスト\scripts"
+  python setup_crm_modules.py --env demo3
+  ```
+  `--env demo3` を付けない場合は `.env` が読み込まれ、別組織向けになる。
+
+### 1.3 ローカル環境確認
 
 ```powershell
 # Node.js確認
