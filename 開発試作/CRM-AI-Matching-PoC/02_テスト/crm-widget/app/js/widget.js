@@ -669,7 +669,7 @@ function openDetailModal(index0) {
       '</div>' +
     '</div>';
 
-  var aiReason = (m.ai_reason && m.ai_reason.trim()) ? m.ai_reason.trim() : (globalSummary && globalSummary.trim() ? globalSummary.trim() : '');
+  var aiReason = (m.reason && m.reason.trim()) ? m.reason.trim() : (m.ai_reason && m.ai_reason.trim()) ? m.ai_reason.trim() : (globalSummary && globalSummary.trim() ? globalSummary.trim() : '');
   if (aiReason) {
     html += '<div class="ai-reason-box">' +
       '<div class="ai-reason-label">✦ AI 分析コメント</div>' +

@@ -280,9 +280,11 @@ app.post('/search', async (req, res) => {
         }
         const matches = await searchMatches(record_id, record, record_type, top_k);
         let summary = null;
+        const wantReasons = generate_reasons || generate_summary;
         if (generate_summary && matches.length > 0) {
             summary = await generateOverallSummary(record, record_type, matches);
-        } else if (generate_reasons && matches.length > 0) {
+        }
+        if (wantReasons && matches.length > 0) {
             await addReasonsToMatches(matches, record, record_type, 3);
         }
         res.json({ success: true, record_id, matches, summary });
