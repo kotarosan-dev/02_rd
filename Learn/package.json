@@ -1,0 +1,9 @@
+{
+  "name": "zoho-learn-test",
+  "type": "module",
+  "private": true,
+  "dependencies": {
+    "dotenv": "^16.0.0",
+    "node-fetch": "^3.3.0"
+  }
+}
