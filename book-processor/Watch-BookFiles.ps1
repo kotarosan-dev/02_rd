@@ -1,12 +1,14 @@
 # Watch-BookFiles.ps1
-# Monitor Google Drive sync folder and prepare book folders for manual processing
+# VFlatScan_Books 直下のテキストを Books/YYYY/MM/YYYYMMDD_書名/source.txt にコピーする（補助用）
+# 既定: 元ファイルは INBOX に残す（書評完了後に processed へ移すのはエージェント／手動）
+# 旧挙動: -MoveToProcessedImmediately でコピー直後に processed へ移動
 
 param(
     [switch]$Daemon,
-    [int]$Interval = 900
+    [int]$Interval = 900,
+    [switch]$MoveToProcessedImmediately
 )
 
-# UTF-8 encoding settings
 [Console]::OutputEncoding = [System.Text.Encoding]::UTF8
 $OutputEncoding = [System.Text.Encoding]::UTF8
 
@@ -37,30 +39,35 @@ function Invoke-BookProcessing {
     $rawFileName = [System.IO.Path]::GetFileNameWithoutExtension($FilePath)
     $bookTitle = $rawFileName -replace '^\d{8}_\d{6}_', ''
     $ts = Get-Date -Format "yyyyMMdd"
-    $outputDir = Join-Path $Config.OutputFolder "${ts}_${bookTitle}"
+    $year = Get-Date -Format "yyyy"
+    $month = Get-Date -Format "MM"
+    $outputDir = Join-Path $Config.OutputFolder (Join-Path $year (Join-Path $month "${ts}_${bookTitle}"))
 
     Write-Log "Processing: $bookTitle"
 
     New-Item -ItemType Directory -Path $outputDir -Force | Out-Null
 
     $sourceCopy = Join-Path $outputDir "source.txt"
-    Copy-Item $FilePath $sourceCopy
+    Copy-Item -LiteralPath $FilePath -Destination $sourceCopy -Force
 
-    $processedPath = Join-Path $Config.ProcessedFolder ([System.IO.Path]::GetFileName($FilePath))
-    Move-Item $FilePath $processedPath -Force
+    if ($MoveToProcessedImmediately) {
+        $processedPath = Join-Path $Config.ProcessedFolder ([System.IO.Path]::GetFileName($FilePath))
+        Move-Item -LiteralPath $FilePath -Destination $processedPath -Force
+        Write-Log "Archived to processed: $processedPath"
+    }
 
     Write-Log "Completed: $outputDir"
 }
 
 function Start-Processing {
-    if (!(Test-Path $Config.WatchFolder)) {
+    if (!(Test-Path -LiteralPath $Config.WatchFolder)) {
         Write-Log "Watch folder not found: $($Config.WatchFolder)"
         return
     }
 
-    $files = Get-ChildItem -Path $Config.WatchFolder -File | Where-Object {
+    $files = @(Get-ChildItem -LiteralPath $Config.WatchFolder -File | Where-Object {
         $Config.Extensions -contains $_.Extension.ToLower()
-    }
+    })
 
     if ($files.Count -eq 0) {
         Write-Log "No files to process"
@@ -76,7 +83,8 @@ function Start-Processing {
 
 Write-Log "=== Book Processor (Google Drive) ==="
 Write-Log "Watch: $($Config.WatchFolder)"
-Write-Log "Output: $($Config.OutputFolder)"
+Write-Log "Output: $($Config.OutputFolder) (YYYY/MM/YYYYMMDD_title/)"
+Write-Log "MoveToProcessedImmediately: $MoveToProcessedImmediately"
 
 if ($Daemon) {
     Write-Log "Daemon mode (${Interval} sec). Ctrl+C to stop"

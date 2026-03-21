@@ -1,7 +1,7 @@
 # Gmail書籍テキスト自動処理ツール
 
-VFlatScanで作成した書籍テキストをGmail経由で取得し、処理用フォルダを自動作成します。
-書評・スキル生成はCursorチャットで手動実行します。
+VFlatScanで作成した書籍テキストをGmail経由で取得し、処理用フォルダを自動作成します。  
+**本番の一気通貫（未処理一覧 → 書評 → `processed` 移動 → git push）は Cursor/Claude の `book-to-note-pipeline` スキルが正**です。
 
 ## アーキテクチャ
 
@@ -12,12 +12,17 @@ Gmail（添付ファイル）
     ↓ Google Apps Script（1分ごと自動）
 Google Drive（VFlatScan_Booksフォルダ）
     ↓ Google Drive for Desktop（自動同期）
-ローカルフォルダ
-    ↓ PowerShellスクリプト（フォルダ作成・ファイルコピー）
-Books/YYYYMMDD_書籍名/source.txt
-    ↓ Cursorチャットで手動実行
-article.md, summary.md, skill.md
+G:\マイドライブ\VFlatScan_Books\*.txt
+    ↓ 【推奨】book-to-note-pipeline スキル（エージェント）
+       … 書評 article.md → 元ファイルを processed へ移動 → git commit & push
+    ↓ 【補助】Watch-BookFiles.ps1（任意）
+Books/YYYY/MM/YYYYMMDD_書籍名/source.txt へコピーのみ（既定では INBOX に元ファイルを残す）
 ```
+
+## `processed` フォルダの意味
+
+- **推奨**: 書評 `article.md` 作成が終わった**あと**に、取り込み元の `.txt` を `VFlatScan_Books\processed\` へ移す（スキルに手順あり）。
+- **例外**: `Watch-BookFiles.ps1 -MoveToProcessedImmediately` を付けたときだけ、コピー直後に移動（旧挙動・取り込み専用バッチ向け）。
 
 ## セットアップ
 
@@ -38,22 +43,16 @@ article.md, summary.md, skill.md
 2. 同期オプションで「VFlatScan_Books」フォルダを選択
 3. ローカルパスを確認（通常: `G:\マイドライブ\VFlatScan_Books`）
 
-### Step 3: PowerShellスクリプト設定
+### Step 3: PowerShellスクリプト（補助）
 
-`Watch-BookFiles.ps1` を編集して同期フォルダパスを設定:
-
-```powershell
-$Config = @{
-    WatchFolder = "G:\マイドライブ\VFlatScan_Books"  # 環境に合わせて変更
-    ...
-}
-```
-
-### Step 4: 実行
+`Watch-BookFiles.ps1` を編集して同期フォルダパスを設定（既定は `G:\マイドライブ` 基準）。
 
 ```powershell
-# 1回だけ実行
+# 1回だけ実行（Books にコピーのみ。元ファイルは INBOX に残る）
 .\Watch-BookFiles.ps1
+
+# 旧挙動：コピー後すぐ processed へ移動
+.\Watch-BookFiles.ps1 -MoveToProcessedImmediately
 
 # デーモンモード（常駐）
 .\Watch-BookFiles.ps1 -Daemon
@@ -62,53 +61,40 @@ $Config = @{
 .\Watch-BookFiles.ps1 -Daemon -Interval 120
 ```
 
-## 出力ファイル構造
+## 出力ファイル構造（現行）
 
 ```
 Books/
-└── 20260102_書籍名/
-    └── source.txt          # 元のテキスト（自動コピー）
+└── YYYY/
+    └── MM/
+        └── YYYYMMDD_書籍名/
+            ├── source.txt
+            └── article.md   ← エージェント（book-review-chef 等）が追加
 ```
 
-## 手動処理の実行方法
+## 手動処理の実行方法（Cursor チャット）
 
-PowerShellスクリプトでフォルダ作成後、Cursorチャットで以下のように依頼：
-
-### 書評生成
+**パスを指定しなくてよい。** 例:
 
 ```
-C:\Users\user\Desktop\kotarosan\03_Internal\02_R&D\Books\20260110_書籍名
-このフォルダのsource.txtを読み込んで、/book-review-chef スキルで書評を生成してください。
-出力: article.md
+書評を作って。溜まってる本、全部処理して。
 ```
 
-### 要約生成
+エージェントは `book-to-note-pipeline` スキルに従い、`G:\マイドライブ\VFlatScan_Books` の未処理 `.txt` を列挙し、各冊 `article.md` 作成後に `processed` へ移し、最後に `git commit` / `git push` まで行う。
+
+### 書評のみ明示する場合（フォルダが既にあるとき）
 
 ```
-C:\Users\user\Desktop\kotarosan\03_Internal\02_R&D\Books\20260110_書籍名
-このフォルダのsource.txtを読み込んで、要約を作成してください。
-出力: summary.md
-
-## 要約の構成
-1. 一言で言うと（1行で本の核心）
-2. 主要なポイント（3-5個の箇条書き）
-3. 実践への示唆（読者が明日から使える3つのアクション）
-4. 印象に残った引用（2-3個）
-5. こんな人におすすめ（ターゲット読者像）
-```
-
-### スキル抽出
-
-```
-C:\Users\user\Desktop\kotarosan\03_Internal\02_R&D\Books\20260110_書籍名
-このフォルダのsource.txtを読み込んで、/skill-extraction-template スキルでClaude Code用スキルを抽出してください。
-出力先: C:\Users\user\.claude\skills\
+C:\Users\user\Desktop\kotarosan\03_Internal\02_R&D\Books\2026\03\20260322_書籍名
+このフォルダのsource.txtを読み込んで、book-review-chef で書評を生成。出力: article.md
 ```
 
 ## 関連Skills
 
-- `/book-review-chef` - 書籍から棚橋スタイル書評を生成
-- `/skill-extraction-template` - 書籍からSkillを抽出
+- **`book-to-note-pipeline`** — 未処理一括・processed 移動・git まで一気通貫（**メイン**）
+- **`book-review-chef`** — 書評本文の品質・調査・参考文献検証
+- **`git-ssh-push`** — `git push` 失敗時の SSH ホスト修正
+- **`skill-extraction-template`** — 必要に応じてスキル抽出
 
 ## 費用
 
