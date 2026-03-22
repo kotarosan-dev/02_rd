@@ -1,0 +1,19 @@
+{
+  "book_title": "ぼくたちの「完全自殺マニュアル」",
+  "book_title_en": "OUR OPINIONS ABOUT \"THE COMPLETE MANUAL OF SUICIDE\"",
+  "author": "鶴見済",
+  "publisher": "太田出版",
+  "publication_year": 1994,
+  "genre": "F",
+  "genre_label": "エッセイ・随筆集（複声アンソロジー）",
+  "source_file": "source.txt",
+  "original_chars": 184527,
+  "compressed_chars_approx": 5936,
+  "compression_ratio": 0.032,
+  "estimated_reading_minutes": 25,
+  "strategy": "テーゼ＋声モード（F）＋試運転短縮",
+  "key_quotes_count": 6,
+  "chapters_covered": 5,
+  "chapters_total": 5,
+  "notes": "はじめに・第1〜3章・おわりにをブロックとして扱う。具体的な自殺手段は圧縮側で再掲しない方針。compression_ratioはcompressed-reading.md本文のおおよその文字数ベース。"
+}

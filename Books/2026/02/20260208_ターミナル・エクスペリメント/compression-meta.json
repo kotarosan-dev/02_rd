@@ -1,0 +1,20 @@
+{
+  "book_title": "ターミナル・エクスペリメント",
+  "book_title_en": "The Terminal Experiment",
+  "author": "ロバート・J・ソウヤー",
+  "translator": "内田昌之",
+  "publisher": "早川書房",
+  "publication_note": "ハヤカワ文庫SF（日本語版1997年頃・奥付参照）",
+  "original_title_year": 1995,
+  "genre": "B",
+  "genre_label": "ジャンルフィクション（SF・犯罪サスペンス）",
+  "source_file": "source.txt",
+  "original_chars": 437633,
+  "compressed_chars_approx": 63403,
+  "compression_ratio": 0.1449,
+  "estimated_reading_minutes": 159,
+  "strategy": "フル規模（ジャンルB目標15–20%）：解説＋自動拡張＋原著抜粋集＋merge_compressed.py 結合",
+  "key_quotes_count": 3,
+  "chapters_covered": "全編（cr_head〜cr_p15 分割＋原著断片集A/B）",
+  "notes": "2026-03-22: merge_compressed.py 出力UTF-8文字数。source.txt original_chars と照合。"
+}

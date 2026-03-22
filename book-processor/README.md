@@ -13,8 +13,9 @@ Gmail（添付ファイル）
 Google Drive（VFlatScan_Booksフォルダ）
     ↓ Google Drive for Desktop（自動同期）
 G:\マイドライブ\VFlatScan_Books\*.txt
-    ↓ 【推奨】book-to-note-pipeline スキル（エージェント）
-       … 書評 article.md → 元ファイルを processed へ移動 → git commit & push
+    ↓ 【推奨】book-to-note-pipeline スキル（オーケストレーター）
+       … 8冊／バッチ・サブエージェント最大4並列で article.md 執筆 → processed 移動
+       … バッチごと git commit & push（同一プロンプト内でキューが空になるまで継続）
     ↓ 【補助】Watch-BookFiles.ps1（任意）
 Books/YYYY/MM/YYYYMMDD_書籍名/source.txt へコピーのみ（既定では INBOX に元ファイルを残す）
 ```
