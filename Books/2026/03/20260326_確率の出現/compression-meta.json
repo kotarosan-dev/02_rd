@@ -1,0 +1,29 @@
+{
+  "book_title": "確率の出現",
+  "original_title": "The Emergence of Probability: A Philosophical Study of Early Ideas about Probability, Induction and Statistical Inference",
+  "author": "イアン・ハッキング",
+  "genre": "D",
+  "genre_label": "学術書・思想書",
+  "subject_hint": "数学・科学史・哲学",
+  "source_file": "C:/Users/user/Desktop/kotarosan/03_Internal/02_R&D/Books/2026/03/20260326_確率の出現/source.txt",
+  "output_files": {
+    "compressed_reading": "C:/Users/user/Desktop/kotarosan/03_Internal/02_R&D/Books/2026/03/20260326_確率の出現/compressed-reading.md",
+    "structure_map": "C:/Users/user/Desktop/kotarosan/03_Internal/02_R&D/Books/2026/03/20260326_確率の出現/structure-map.md"
+  },
+  "original_chars": 346475,
+  "compressed_chars": 6600,
+  "structure_map_chars": 3358,
+  "total_output_chars": 9958,
+  "compression_ratio_main": 0.0190,
+  "compression_ratio_total": 0.0287,
+  "estimated_reading_minutes": 75,
+  "compression_mode": "argument-map",
+  "language": "ja",
+  "encoding": "UTF-8",
+  "strategy_notes": [
+    "数学・科学系のためジャンルD（学術書・思想書）として処理。",
+    "確率の二元性、臆見、内的証拠、しるし、等可能性、精神的確実性、大数法則の定義を優先保持。",
+    "19章を3つの論証ブロックに再編し、論点間の因果連鎖が追えるよう圧縮。",
+    "2006年版序論と訳者あとがきの問題設定も反映し、単なる数学史ではなく確率概念の生成史として要約。"
+  ]
+}

@@ -1,0 +1,96 @@
+{
+  "title": "苦痛の心理学 なぜ人は自ら苦しみを求めるのか",
+  "author": "ポール・ブルーム",
+  "original_title": "The Sweet Spot",
+  "classification": {
+    "genre": "D",
+    "genre_label": "学術書・思想書",
+    "subgenre": "心理学・幸福研究・意味論",
+    "confidence": 0.95,
+    "reasoning": [
+      "全体が心理学・幸福研究・意味研究を横断する論証型の構成になっている",
+      "各章で概念定義、先行研究、実験知見、反証可能性の検討が行われている",
+      "実践示唆はあるが主目的はフレームワーク提示ではなく人間観の理論的再整理である"
+    ]
+  },
+  "compression": {
+    "mode": "argument-map",
+    "mode_label": "論証マップ",
+    "target_reading_time_minutes": 70,
+    "approx_compression_ratio": 0.16,
+    "preserved_elements": [
+      "中心テーゼ",
+      "章ごとの論証ステップ",
+      "主要概念の定義",
+      "論争点と留保",
+      "実践示唆"
+    ],
+    "omitted_elements": [
+      "個別研究の細部",
+      "具体例の反復",
+      "語り口のユーモアとエッセイ的な膨らみ",
+      "周辺的な逸話"
+    ]
+  },
+  "source": {
+    "path": "C:\\Users\\user\\Desktop\\kotarosan\\03_Internal\\02_R&D\\Books\\2026\\03\\20260326_苦痛の心理学\\source.txt",
+    "language": "ja",
+    "format": "plain-text"
+  },
+  "outputs": {
+    "compressed_reading": "C:\\Users\\user\\Desktop\\kotarosan\\03_Internal\\02_R&D\\Books\\2026\\03\\20260326_苦痛の心理学\\compressed-reading.md",
+    "structure_map": "C:\\Users\\user\\Desktop\\kotarosan\\03_Internal\\02_R&D\\Books\\2026\\03\\20260326_苦痛の心理学\\structure-map.md",
+    "metadata": "C:\\Users\\user\\Desktop\\kotarosan\\03_Internal\\02_R&D\\Books\\2026\\03\\20260326_苦痛の心理学\\compression-meta.json"
+  },
+  "core_thesis": "快楽主義だけでは人間を説明できず、選ばれた苦しみは喜び・意味・道徳・共同体形成に資することがある。ただし望まぬ苦痛の価値は限定的である。",
+  "chapter_roles": [
+    {
+      "chapter": "はじめに",
+      "role": "問題設定",
+      "importance": "high"
+    },
+    {
+      "chapter": "第1章 苦しみ",
+      "role": "概念定義",
+      "importance": "high"
+    },
+    {
+      "chapter": "第2章 無害なマゾヒズム",
+      "role": "中心概念の具体化",
+      "importance": "high"
+    },
+    {
+      "chapter": "第3章 説明のつかない楽しみ",
+      "role": "想像上の苦しみの分析",
+      "importance": "high"
+    },
+    {
+      "chapter": "第4章 労力",
+      "role": "努力と価値の接続",
+      "importance": "high"
+    },
+    {
+      "chapter": "第5章 意味",
+      "role": "中核命題",
+      "importance": "high"
+    },
+    {
+      "chapter": "第6章 苦しみの意味",
+      "role": "留保と限界の検討",
+      "importance": "high"
+    },
+    {
+      "chapter": "第7章 甘い毒",
+      "role": "総合結論",
+      "importance": "high"
+    }
+  ],
+  "quality_check": {
+    "full_source_read": true,
+    "genre_consistency_checked": true,
+    "argument_chain_preserved": true,
+    "practical_implications_checklisted": true,
+    "original_bridge_included": true
+  },
+  "created_at": "2026-03-26"
+}

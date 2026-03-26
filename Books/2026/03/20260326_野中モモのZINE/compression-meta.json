@@ -1,0 +1,20 @@
+{
+  "book_title": "野中モモの「ZINE」 小さなわたしのメディアを作る",
+  "author": "野中モモ",
+  "genre": "F",
+  "genre_label": "エッセイ・随筆集",
+  "original_chars": 94191,
+  "compressed_chars": 6592,
+  "compression_ratio": 0.0699854551,
+  "estimated_reading_minutes": 60,
+  "strategy": "テーゼ＋声モード（実践知はZINE制作フレームとして補助抽出）",
+  "key_quotes_count": 8,
+  "chapters_covered": 5,
+  "chapters_total": 5,
+  "source_format": "OCR text",
+  "notes": [
+    "本文はF判定を採用",
+    "ZINE制作の手順・思想はC的にフレーム化して併記",
+    "OCR由来の文字揺れを含むため、構造と主張の骨格優先で圧縮"
+  ]
+}

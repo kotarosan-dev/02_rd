@@ -1,0 +1,30 @@
+{
+  "book_title": "知性の未来 脳はいかに進化し、AIは何を変えるのか",
+  "original_title": "A Brief History of Intelligence",
+  "author": "マックス・ベネット",
+  "publisher_edition": "新潮社, 2025年, 邦訳",
+  "genre": "D",
+  "genre_label": "学術書・思想書 / 進化神経科学・AI論",
+  "compression_mode": "argument-map",
+  "source_file": "C:\\Users\\user\\Desktop\\kotarosan\\03_Internal\\02_R&D\\Books\\2026\\03\\20260326_知性の未来\\source.txt",
+  "output_files": {
+    "compressed_reading": "C:\\Users\\user\\Desktop\\kotarosan\\03_Internal\\02_R&D\\Books\\2026\\03\\20260326_知性の未来\\compressed-reading.md",
+    "structure_map": "C:\\Users\\user\\Desktop\\kotarosan\\03_Internal\\02_R&D\\Books\\2026\\03\\20260326_知性の未来\\structure-map.md"
+  },
+  "original_chars": 404995,
+  "compressed_chars": 11029,
+  "structure_map_chars": 3900,
+  "compression_ratio": "36.72:1",
+  "compression_percentage": 2.72,
+  "estimated_reading_minutes": 70,
+  "spoiler_policy": "full",
+  "strategy_notes": [
+    "本文全体を D（学術書・思想書）として判定した。理由は、中心が行動指針や自己啓発的訴求ではなく、進化神経科学・強化学習・生成モデル・言語進化を束ねる論証構造にあるため。",
+    "圧縮では五つのブレイクスルー（操縦・強化・シミュレーション・メンタライジング・発話）を主軸にし、各章をその進化系列の一段として再配置した。",
+    "特に第六章、第十一章、第十三章、第二十二章を背骨として保持し、TD学習、生成モデル、モデルベース強化学習、ChatGPT論を一本の線でつないだ。",
+    "人間独自性は単一能力ではなく、言語・模倣・共同注意・長期計画・累積文化の複合体として整理し、人間礼賛にもAI礼賛にも寄りすぎないよう原著のトーンを維持した。",
+    "原著の価値である比較実験と豊富な文献の厚みは大きく削られているため、圧縮版は結論把握と再読導線に特化させた。"
+  ],
+  "generated_at": "2026-03-26",
+  "encoding": "UTF-8"
+}
