@@ -1,0 +1,2279 @@
+Kindle Library
+
+<
+
+Back to 2
+
+THE AI COMPANION TO CRAFTING ENGINEERING STRATEGY
+
+QAa **
+
+Crafting Engineering Strategy
+
+AI Companion
+
+Will Larson
+
+O'REILLY®
+
+Learning reading speed..
+
+Page 1 of 70 0%
+
+... B
+
+Kindle Library
+
+THE AI COMPANION TO CRAFTING ENGINEERING STRATEGY
+
+Crafting Engineering
+
+Strategy: Al Companion
+
+by Will Larson
+
+Copyright ©2026 Will Larson. All rights reserved.
+
+Published by O'Reilly Media, Inc., 141 Stony Circle, Suite 195, Santa Rosa, CA 95401.
+
+O'Reilly books may be purchased for educational, business, or sales promotional use. Online editions are also available for most titles (http://oreilly.com). For more information, contact our corporate/institutional sales department: 800-998-9938 or corporate@oreilly.com.
+
+Acquisition Editor: David Michelson
+
+Development Editor: Sarah Grey
+
+Production Editor: Kristen Brown
+
+Copyeditor: Piper Content Partners
+
+Proofreader: Krsta Technology Solutions
+
+Cover Designer: Susan Thompson Cover Illustrator: Susan Thompson
+
+Interior Designer: Monica Kamsvaag
+
+Interior Illustrator: Kate Dullea
+
+October 2025: First Edition
+
+Revision History for the First Edition
+
+.2025-10-14: First Release
+
+...
+
+QAa %!
+
+See http://oreilly.com/catalog/errata.csp?isbn=9798341645523 for release details.
+
+The O'Reilly logo is a registered trademark of O'Reilly Media, Inc. Crafting Engineering Strategy, the cover image, and related trade dress are trademarks of O'Reilly Media, Inc.
+
+The views expressed in this work are those of the author and do not represent the publisher's views. While the publisher and the author have used good faith efforts to ensure that the information and instructions contained in this work are accurate, the publisher
+
+>
+
+☐
+
+Back to 2
+
+Learning reading speed...
+
+Page 2 of 70
+
+0%
+
+Back to 2
+
+THE AI COMPANION TO CRAFTING ENGINEERING STRATEGY
+
+Kindle Library and the author disclaim all responsibility for errors or omissions, including without limitation responsibility for damages resulting from the use of or reliance on this work. Use of the information and instructions contained in this work is at your own risk. If any code samples or other technology this work contains or describes is subject to open source licenses or the intellectual property rights
+
+of others, it is your responsibility to ensure that your use thereof complies with such licenses and/or rights.
+
+979-8-341-67023-5
+
+[LSI]
+
+Learning reading speed...
+
+Page 3 of 70
+
+29
+
+QAa ** :
+
+>
+
+Σ
+
+Kindle Library
+
+Preface
+
+THE AI COMPANION TO CRAFTING ENGINEERING STRATEGY
+
+QAa %*:
+
+>
+
+Back to 2
+
+As someone who writes books, I am continually grateful that there are people who buy a book and then actually read that book. It's equally clear to me that there's a second, large group who like the idea of books, but would much prefer a project-based approach to learning the book's content.
+
+As the technology sector applies large language models (LLMs) to everything, one very valid reaction for authors is to be concerned. Those concerns are merited: it is possible that fewer people will
+
+be reading books a decade from now than are reading them today. However, I also think that LLMs are a powerful tool for supporting project-based leaders.
+
+This companion to Crafting Engineering Strategy aims to do exactly that, showcasing a number of ways you can actively engage with this book as your guide and copilot in creating engineering strategy.
+
+Accessing the LLM-Optimized Edition
+
+You can download the LLM-optimized edition of this book at https:// craftingengstrategy.com/llm.md. That URL is also accessible via this
+
+QR code:
+
+Learning reading speed...
+
+Page 4 of 70 3%
+
+EX
+
+Figure P-1. Use this QR code to download the LLM-optimized edition
+
+Σ
+
+>
+
+Kindle Library
+
+Back to 2
+
+THE AI COMPANION TO CRAFTING ENGINEERING STRATEGY
+
+Once you have downloaded your copy, which we will subsequently refer to as ces_llm.md, you can find instructions for loading and utilizing it in Chapter 1 of this document.
+
+What This Book Is Not
+
+This is the companion to Crafting Engineering Strategy, with an LLM- optimized version of the book and instructions on how to use it. This is not the human-optimized digital version of Crafting Engineering Strategy, and it is certainly not a physical copy. If you want to read the book directly, you should buy one of those instead.
+
+Navigating This Book
+
+While Crafting Engineering Strategy is a few hundred pages long and there are different ways you might want to approach it, this companion is much shorter and intended to be read from front to back. It covers:
+
+Chapter 1, "The Foundations of Collaboration", covers concrete approaches to querying this book with an LLM effectively.
+
+Chapter 2, "Cowriting Strategy", shows how to write a new engineering strategy with an LLM as a copilot.
+
+QAa ☐
+
+口
+
+Chapter 3, "Reviewing an Existing Strategy", explains approaches for using an LLM to generate feedback on an existing strategy.
+
+Chapter 4, "Generating Systems Models", walks through several approaches to generating and running systems models with an LLM, from using an LLM to help install the systems library, to using a Model Context Protocol server to allow the LLM to run systems models directly.
+
+-Chapter 5, "Generating Wardley Maps", provides details on generating a Wardley map, experimenting with directly generating maps as images, and indirectly generating maps using a domain-specific language.
+
+-Chapter 6, "Next Steps", suggests additional ways you can experiment with using the LLM-optimized version of this book.
+
+It's absolutely not necessary to read Crafting Engineering Strategy before reading the companion, but if you are particularly passionate about strategy, you are likely to get more value from both books if you eventually read through the human-optimized version as well.
+
+>
+
+Learning reading speed...
+
+Page 5 of 70
+
+4%
+
+<
+
+Kindle Library
+
+THE AI COMPANION TO CRAFTING ENGINEERING STRATEGY
+
+Chapter 1. The Foundations
+
+of Collaboration
+
+There are many things that LLMs are not particularly good at, and generating a great engineering strategy is one of them. If you ask an LLM to generate your company's engineering strategy, I'm quite confident you are going to be disappointed with what it generates. However, I I am extremely confident that an LLM can be an excellent companion that can help you develop an effective engineering strategy. Used thoughtfully, an LLM can generate and analyze systems models, help with writing, and point out where you need to reinforce your strategy. This companion walks you through techniques to accomplish each of those things, starting with configuring an environment to collaborate with an LLM of your choice as you work through Crafting Engineering Strategy.
+
+This chapter covers:
+
+Effective prompting practices, including metaprompting and in-context learning
+
+QAa % :
+
+Q
+
+.Using LLMs to work with large corpuses like the Crafting Engineering Strategy book, with techniques ranging from Claude projects to the llm library
+
+.Providing tools to LLMs via the Model Context Protocol (MCP) servers to extend the LLM's capabilities to include web search and document retrieval
+
+After working through these foundations, you'll be ready for the following chapters, where you'll use Crafting Engineering Strategy as a copilot for creating strategies.
+
+Prompting LLMs Effectively
+
+If you want thorough coverage of working with LLMs, I recommend Chip Huyen's AI Engineering: Building Applications with Foundation Models (O'Reilly, 2024). However, most folks get started with LLMS by building their intuition chatting with them directly, which I've found rather effective. On the assumption that you've spent some time using LLMs already, I will limit myself to emphasizing three particularly valuable techniques: thinking of your LLM as a newly hired intern, improving prompts via metaprompting, and using in-context learning (such as Crafting Engineering Strategy example strategies) to improve output.
+
+>
+
+E
+
+Back to 2
+
+Learning reading speed...
+
+Page 8 of 70
+
+7%
+
+Kindle Library
+
+LLM as Intern
+
+THE AI COMPANION TO CRAFTING ENGINEERING STRATEGY
+
+The closest reference point most folks have for prompting is using a search engine like Google. Search indexes are powerful creatures, and generally you can get exactly what you want by typing in a few uncommon words related to your topic. Seasoned searchers might often know the resource they want to retrieve the content from: for example, reddit best restaurants sf.
+
+However, LLMs generally don't perform well with these sorts of terse prompts. For example, let's look at two prompts for creating a Python command-line tool that annotates a Markdown image by adding a description underneath it.
+
+The first prompt uses the "LLM as search" mental model, providing a very general prompt under the impression that you are retrieving the response from an existing data source:
+
+Prompt: I need a Python function to add image descriptions to Markdown. Description should be in a paragraph tag beneath the image.
+
+Using ChatGPT-40, this generates a Python script, but it doesn't really generate the right Python script. This is evident solely from the function definition:
+
+def add_image_descriptions(markdown text, description_func=None):
+
+QAa %!
+
+I wanted a script that used the existing image definition within the Markdown image specification, but because I made a general query -as if I were retrieving an existing answer-I got the wrong thing entirely.
+
+Now let's try a second, much more verbose prompt, taking an approach I would describe as the "LLM as intern" mental model. Here, you are providing very detailed instructions, as if you were writing a ticket for a newly hired intern starting their first job writing software:
+
+Prompt: Write a Python3 function with the definition: def add_image_descriptions(text: str) -> str:
+
+This function should use Python's re library to extract the description text for Markdown images, and add it as floating text beneath the image, for example it should replace this:
+
+[Initial sketch of API](/static/api-simple.png) With this:
+
+[Initial sketch of API](/static/api-simple.png) <p>Initial sketch of API</p>
+
+It should do that for every Markdown image in the text. It should not do that for any Markdown links that start with [, only images which start with ![.
+
+The second prompt took much longer to write, but it consistently generates exactly the output that I am looking for. Inexperience can lead an intern to make the wrong assumptions when they take on a new task, and it does the same for LLMs. The solution, in both cases, is being more explicit. Even for surprisingly complex tasks, my
+
+口
+
+Back to 2
+
+Learning reading speed...
+
+Page 9 of 70 9%
+
+Kindle Library
+
+THE AI COMPANION TO CRAFTING ENGINEERING STRATEGY
+
+recurring experience has been that LLMS can do it as long as I invest more effort into improving the prompt.
+
+Metaprompting
+
+While you should work at improving your prompts yourself, LLMs can also help here, through a technique called metaprompting. The idea here is to ask the LLM to improve your prompt rather than directly following the prompt's directions.
+
+For example, OpenAl's guide on metaprompting suggests this metaprompt to improve prompts that attempt to classify news, emphasizing that the improved prompt should create tags describing the content, provide sentiment analysis, and categorize the type of news included:
+
+Prompt: Improve the following prompt to generate a more detailed summary. Adhere to prompt engineering best practices. Make sure the structure is clear and intuitive and contains the type of news, tags and sentiment analysis. (simple_prompt}
+
+Only return the prompt.
+
+Replace (simple_prompt) with your own query; no need to enclose it in quotes or otherwise, and the metaprompt will work its magic. The most effective metaprompt will vary, depending on the sort of
+
+QAa ** !
+
+口
+
+project you are working on. For engineering-strategy prompts you might write while working with Crafting Engineering Strategy, here is a metaprompt that I have found effective:
+
+Prompt: Improve the following prompt to generate a better engineering strategy. Adhere to prompt engineering best practices. Make sure the structure is clear and intuitive. Use strategies from Crafting Engineering Strategy to provide multiple examples of the sort of desired output.
+
+(simple_prompt)
+
+Only return the prompt.
+
+Once you have a metaprompt, just use it with the LLM of your choice, replacing (simple_prompt) with your initial prompt that you want to improve. For example, here's a metaprompt and prompt pair to improve a prompt for diagnosing a strategy:
+
+Prompt: Improve the following prompt to generate a better engineering strategy. Adhere to prompt engineering best practices. Make sure the structure is clear and intuitive. Use strategies from Crafting Engineering Strategy_to provide multiple examples of the sort of desired output.
+
+How should I perform the exploration stage of a new strategy? Only return the prompt.
+
+The metaprompt takes that simple initial prompt and gives it significantly more detail. Writing out all of those steps by hand would have taken a while, but it takes no time at all with the
+
+Back to 2
+
+Learning reading speed...
+
+Page 11 of 70 13%
+
+>
+
+Kindle Library)
+
+THE AI COMPANION TO CRAFTING ENGINEERING STRATEGY
+
+appropriate metaprompt. For example, the output of the preceding metaprompt and prompt pair is:
+
+Response: Strategy Exploration Phase Prompt
+
+You will help me conduct the exploration phase for my engineering strategy on [TOPIC]. The exploration phase aims to collect broad perspective before anchoring on a particular approach.
+
+Instructions
+
+Please create a comprehensive exploration document for my engineering strategy that includes:
+
+Current Industry Practices: Summarize the most common approaches to this problem across the industry, citing 3-5 examples of how leading companies have tackled similar challenges.
+
+Alternative Approaches: Present at least 3 distinct potential approaches to addressing this problem, including their tradeoffs.
+
+Key Resources: Identify specific resources (papers, blog posts, books) that provide valuable perspectives on this topic.
+
+Internal Context: Suggest ways to gather relevant internal precedents and context that might inform this strategy.
+
+Network Leveraging: Provide a framework for how I might engage my professional network to gain additional insights.
+
+Format
+
+Your response should be organized as a strategy exploration document with clear section headings. Include specific questions I should consider when evaluating each potential approach. Emphasize breadth rather than evaluation at this stage.
+
+The metaprompt I developed here is an improvement, but still fairly basic. Take this example as a starting point and experiment with your own variations.
+
+In-Context Learning
+
+QAa:
+
+Д
+
+The final technique I'll discuss in this section is in-context learning (ICL), which is essentially providing examples of what you want the LLM to generate for you. Depending on the number of examples provided for ICL, it might be described as one-shot ICL (one example), few-shot ICL (roughly 10 or fewer examples), or many-shot ICL (many dozens to low hundreds of examples). These examples help prime the LLM to understand exactly the sort of response you want. The more examples you include, the better the prompt will typically perform. I've found that ICL solves most problems that metaprompting alone cannot solve.
+
+You can use this book to support generating ICL examples, then include those examples in your prompts to better generate your desired output. With the book in your context window, your prompt for generating examples can be straightforward. For example:
+
+Prompt: Provide 10 examples of diagnoses from Crafting Engineering Strategy's example strategies. Format them as a bulleted list of examples.
+
+The model will then generate a list of appropriate examples of diagnoses. Here are the first few generated examples:
+
+Response: Based on the document you've provided, here are 10 examples of diagnoses from the engineering strategies covered in "Drafting Strategy": "We're arguing a particularly large amount about adopting new technologies and rewrites. Most of our disagreements stem around adopting
+
+>
+
+Back to 2
+
+Learning reading speed...
+
+Page 13 of 70 16%
+
+>
+
+Back to 2
+
+Kindle Library
+
+THE AI COMPANION TO CRAFTING ENGINEERING STRATEGY
+
+QAa
+
+new technologies or rewriting existing components into new technology stacks." (Calm's product engineering strategy)
+
+"Based on general practice, it seems likely that our new Private Equity ownership will expect us to reduce R&D headcount costs through a reduction. However, we don't have any concrete details to make a structured decision on this." (Private equity strategy)
+
+* "Many product engineering teams are aiming to leave the centralized monolith, which is generating two to three service provisioning requests each week. We expect this rate to increase roughly linearly with the size of the product engineering organization." (Uber's service migration strategy)
+
+Once you have those examples, include them in your next prompt to improve the output it generates:
+
+Prompt: I am writing a diagnosis about onboarding as a new CTO at a small startup of 40 engineers. Here are my details from the exploration phase, please generate an initial diagnosis.
+
+Exploration:
+
+1... 2....
+
+These are examples of well-formatted diagnoses:
+
+"We're arguing a particularly large amount about adopting new technologies and rewrites. Most of our disagreements stem around adopting new technologies or rewriting existing components into new technology stacks." (Calm's product engineering strategy)
+
+I've used a sparse prompt here to improve the example's readability. In practice, you'd likely want to apply metaprompting to improve this prompt as well.
+
+Working with a Book in an LLM
+
+In order to follow along with the AI Companion's examples, you will need to set up an environment to prompt against the book. While there's no shortage of options, here I'll look at three setups: Anthropic's Claude.ai Projects, OpenAI ChatGPT Projects, and using the llm library with a model of your choosing.
+
+If you're indifferent to which approach to use, I encourage you to try using Claude.ai Projects-they work best with local Model Context Protocol (MCP) servers, which I'll discuss in the next section. Aside from the question of MCP support, all of your options are quite reasonable. (It's also reasonable to assume that MCP support will be widely available in the other environments relatively soon.)
+
+Claude.ai Projects
+
+In June 2024, Anthropic's Claude.ai introduced the concept of Projects, which allows you to associate files with a project. Each project has its own chats, which share a context window of 200,000 tokens that includes these files (and is large enough to support this book's 170,000 tokens).
+
+Get started by creating a Claude.ai account and navigating to the Projects page (Figure 1-1). Once there, use the "New project" button to create a new project.
+
+Learning reading speed...
+
+Page 14 of 70 20%
+
+>
+
+Σ
+
+Kindle Library
+
+Projects
+
+Q Search projects...
+
+THE AI COMPANION TO CRAFTING ENGINEERING STRATEGY
+
+New project
+
+Sort by
+
+Activity
+
+Create a personal project
+
+What are you working on?
+
+Crafting Eng Strat
+
+Figure 1-1. Claude.ai's project list page
+
+You will be asked to describe the project in a short form (Figure 1-2). Give it a memorable name, like "Crafting Eng Strat." Optionally, you can include a short description.
+
+What are you trying to achieve?
+
+Help me create engineering strategies!
+
+QAa * !
+
+...
+
+Cancel
+
+Create project
+
+Figure 1-2. Creating a new project in Claude.ai
+
+After creating your new project, you will be redirected to it. Use the plus button to add a new file to the project (Figure 1-3).
+
+Back to 2
+
+Learning reading speed...
+
+Page 16 of 70
+
+24%
+
+Project knowledge
+
+Upload from device
+
+Set project instructions O
+
+Add text content
+
+Figure 1-3. The file upload section for a Claude.ai project
+
+<
+
+Д
+
+Kindle Library
+
+Back to 2
+
+THE AI COMPANION TO CRAFTING ENGINEERING STRATEGY
+
+Select "Upload from device" and select the ces llm.md file, which you've already retrieved, following the Preface's instructions. After doing so, you'll see that about 80% of your project's capacity is taken up by the book (Figure 1-4).
+
+Project knowledge
+
+Set project instructions
+
+83% of project knowledge size used
+
+ces_llm.md
+
+10,284 lines
+
+MD
+
++
+
+Optional
+
+Figure 1-4. The file upload section after uploading Crafting Engineering Strategy to a project
+
+At this point, any prompt you run within the project will include the full context of the book in addition to the prompt you add. For example, here is an example of querying the book to extract relevant
+
+Learning reading speed...
+
+QAa
+
+content without needing to read through the book in its entirety:
+
+Prompt: What are the steps to write an engineering strategy?
+
+Response: Based on the document "Steps to build an engineering strategy" and related materials, here are the five key steps to writing an effective engineering strategy:
+
+# Steps to Build an Engineering Strategy
+
+## 1. Explore
+
+Start by exploring the problem space and existing solutions:
+
+*Research how other companies have approached similar problems *Talk to experts in your network and gather their experiences *Pull ideas from industry literature and published strategies *Document what you've found without evaluating it yet - the goal is to go broad
+
+## 2. Diagnose
+
+Analyze the specific context and challenges your strategy needs to address: *Talk to stakeholders to understand different...
+
+You're now ready to use this project to interact with the book! The subsequent chapters will show you how.
+
+It's valuable to recognize that these projects are not performing retrieval-augmented generation (RAG), a technique that often uses search algorithms to select a subset of a corpus to include with your prompt. Instead, it includes the entirety of the book. Anything
+
+Page 17 of 70
+
+24%
+
+>
+
+口
+
+<
+
+Kindle Library
+
+Back to 2
+
+THE AI COMPANION TO CRAFTING ENGINEERING STRATEGY
+
+included in the book ought to be accessible, even sections that might not semantically relate to your initial prompt.
+
+ChatGPT Projects
+
+Like Claude.ai, ChatGPT has introduced a Projects feature to allow users to interact with a corpus of resources. It functions quite similarly to Claude.ai's Projects.
+
+Get started by going to ChatGPT, creating an account (if necessary), and logging in. As I write this in mid-2025, ChatGPT Projects are available with any paid plan, but not on the free plan. After logging in, click the "New project" button (Figure 1-5).
+
+ED
+
+Q e
+
+ChatGPT 40 v
+
+ChatGPT
+
+Sora
+
+Explore GPTS
+
+Projects
+
+New project
+
+Wardley Mapping
+
+QAa **:
+
+Д
+
+Figure 1-5. Creating a new project in ChatGPT
+
+You'll be presented with a form to name your project (Figure 1-6).
+
+Learning reading speed....
+
+Page 19 of 70 26%
+
+Kindle Library
+
+Back to 2
+
+Project name
+
+Crafting Eng Strategy
+
+THE AI COMPANION TO CRAFTING ENGINEERING STRATEGY
+
+QAa **
+
+...
+
+Д
+
+What's a project?
+
+Projects keep chats, files, and custom instructions in one place. Use them for ongoing work, or just to keep things tidy.
+
+Crafting Eng Strategy
+
+New chat in this project
+
+Search...
+
+Tailor the way ChatGPT responds in this project
+
+Add files
+
+Add instructions
+
+Chats in this project can access file content
+
+Cancel
+
+Create project
+
+Figure 1-6. Naming a new ChatGPT Project
+
+After you click the "Create project" button, you'll be automatically redirected to the new project's page (Figure 1-7). There, click the "Add files" button to upload a copy of the book.
+
+Figure 1-7. Project page for new "Crafting Eng Strategy" project After clicking "Add files," you'll land on the "Project files" page, which lists all uploaded files (Figure 1-8). When there, you can use the "Add files" button or simply drag your copy of ces_llm.md into the project. (Downloading ces_llm.md is covered in the Preface.)
+
+Learning reading speed...
+
+Page 21 of 70
+
+27%
+
+<
+
+Kindle Library
+
+Back to 2
+
+Project files
+
+Files impacting responses
+
+THE AI COMPANION TO CRAFTING ENGINEERING STRATEGY
+
+Add files
+
+Responses may be lower quality due to the number of files this project is using.
+
+ces_llm.md
+
+File
+
+Figure 1-8. Project files with a warning about file size
+
+After uploading the file, you will get a warning that the large file may impact responses. This is a real concern. First, OpenAI models have token-window limitations, as described in their documentation. Second, OpenAI has rate limits for some models, which may restrict which models work for such a large project. You'll be fine working with either GPT-4.1 mini or GPT-40 mini. I used ChatGPT-4.1 mini for the following example.
+
+Your project is now fully configured. You can query it, including the entire uploaded book, in the context window.
+
+Ilm.py
+
+Now that you've seen the two UX-driven project interfaces, your third configuration option is to use the Ilm library via the command
+
+QAa !
+
+A
+
+line. Note that this option is restricted to models that accept at least 180,000 or so tokens in their input window. While the examples here use OpenAI's APIs, they would work equally well with most modern Gemini or Anthropic models, gpt-4.1-mini, or many self- hosted models. You would just have to specify slightly different parameters for the model and API keys in the command line. Start by downloading your copy of the LLM-optimized Crafting Engineering Strategy as discussed in the Preface. These instructions will assume you've moved the copy into a file in the current directory named ces_llm.md.
+
+Then follow the llm library setup instructions. I'll rely on uv to manage installation, but you're welcome to use pip or any other Python package management. Make sure you set your OpenAI API keys:
+
+uvx llm keys set openal
+
+Then run a short prompt to verify your setup:
+
+uvx llm-m gpt-4.1-mini \
+
+'what are the steps to write an engineering strategy?"
+
+Assuming that works, you're ready to work with the book. Try:
+
+>
+
+Learning reading speed...
+
+Page 22 of 70 28%
+
+Kindle Library
+
+Back to 2
+
+cat/ces_llm.md|\
+
+uvx llm-m gpt-4.1-mini \
+
+THE AI COMPANION TO CRAFTING ENGINEERING STRATEGY
+
+'what are the steps to write an engineering strategy?"
+
+This will include the entire book ahead of your prompt, and will provide a quite different response than the previous prompt without the book included.
+
+Using Tools via MCP
+
+In the rare scenarios where metaprompting and ICL are insufficient to make a prompt work effectively, you can try providing purpose- built tools to your LLM that allow it to do what it does best- manipulate textual representations-while avoiding the sorts of tasks it's worse at, such as math or rendering images with significant textual content.
+
+Chapters 4 and 5 of this companion dig into generating systems models and generating Wardley maps with LLMs. Both include approaches that rely on using Model Context Protocol servers to access additional tools. Although all major LLM providers intend to support MCP servers in the future, as things stand in mid-2025
+
+QAa **⠀
+
+as I write this, Claude Desktop is the only tool that provides straightforward support for allowing your project to interact with custom MCP servers. MCP's instructions for setting up your local Claude Desktop to use custom tools are the best available.
+
+If you are wholly uninterested in running Claude Desktop but do want to experiment with MCP servers, consider the OpenAI Agents SDK. Using it will require writing custom code-but the exact sort of code that an LLM is effective at writing, if you include the relevant documentation in your prompt.
+
+Summary
+
+In this chapter, you've learned three foundational techniques to make your prompts more effective: LLM as intern, metaprompting, and ICL. You've also seen three viable setups for interacting with large context windows, including the LLM-optimized format of Crafting Engineering Strategy.
+
+With your environment configured, you're now ready to move on and start improving strategy with your LLM copilot.
+
+口
+
+Learning reading speed...
+
+Page 24 of 70
+
+30%
+
+Kindle Library
+
+THE AI COMPANION TO CRAFTING ENGINEERING STRATEGY
+
+Chapter 2. Cowriting Strategy
+
+With your environment working, the obvious task to start with is cowriting a strategy document with an LLM. A good strategy document is not just readable, but also has a clear view of your current challenge and how to address it.
+
+This chapter will cover:
+
+. Using metaprompting to optimize your initial prompt for writing a strategy
+
+Incrementally building a strategy document by prompting each step with your metaprompt and the outputs of prior steps
+
+. Cleaning up and formatting your generated strategy Remembering that the quality of a strategy rests in your thinking, and that generating bad reasoning quickly won't solve real problems
+
+By the end of the chapter, you'll have written a reasonably good strategy document in a surprisingly short time.
+
+Developing Your Prompt
+
+QAa
+
+The five steps of building a strategy, as covered in Crafting Engineering Strategy, apply whether you're on your own or cowriting with an LLM: exploration, diagnosis, refinement, policy, and operations. Before you can do that, you need to develop the prompt you'll use for those sections.
+
+The simplest prompt I can imagine creating is along the lines of:
+
+Prompt: How should I explore a new engineering strategy that answers: How do we make software architecture decisions in our company?
+
+This prompt will elicit an answer, but my experience is that it will be a very general answer about the process of exploring a strategy theme. That's a useful reminder of the strategy process, but it doesn't really help you cowrite your strategy.
+
+You can improve this starter prompt in several ways. First, you can develop a problem statement that summarizes the problem your strategy needs to solve:
+
+Prompt: I want to write a 2-3 sentence problem statement for a new engineering strategy. Ask me one question at a time until you can write a complete statement for me.
+
+This will lead to a series of back-and-forth questions and answers until the LLM has collected enough information to write its problem
+
+Back to 2
+
+Learning reading speed...
+
+Page 26 of 70 33%
+
+>
+
+Σ
+
+Kindle Library
+
+THE AI COMPANION TO CRAFTING ENGINEERING STRATEGY
+
+statement. For example, your question-and-answer pairs might go along these lines:
+
+Prompt: I want to write a 2-3 sentence problem statement for a new engineering strategy. Ask me one question at a time until you can write a complete statement for me.
+
+Response: I'd be happy to help you craft a problem statement for your engineering strategy. Let me start with understanding the scope:
+
+What specific area or challenge is your engineering organization currently facing that needs strategic attention?
+
+For example, is it related to:
+
+*Technical debt and system scalability *Developer productivity and tooling *Team structure and collaboration *Technology adoption or migration *Quality and reliability issues
+
+Resource allocation and prioritization *Or something else entirely?
+
+Prompt: The topic is "how do we make software architecture decisions in our company?"
+
+Response: Great! Now I need to understand the current state and what's driving the need for this strategy...
+
+Excluding the initial prompt asking for the problem statement, it took three questions and answers to generate this more helpful problem statement:
+
+QAa
+
+Response: Our engineering organization lacks a clear, consistent process for making software architecture decisions, leading to friction between engineers who feel excluded from decisions versus those who feel slowed down by lengthy approval processes. This ambiguity around decision-making authority -particularly when a few highly opinionated engineers can effectively overrule others' work-is reducing overall engineering velocity and creating frustration across the team.
+
+Now you can enhance your initial prompt to include the problem statement, instead of the ad hoc one-line problem statement from before:
+
+Prompt: # Problem statement
+
+(text of problem statement)
+
+# Request
+
+How should I explore an engineering strategy to solve the above problem statement?
+
+This tends to generate more helpful output, like concrete
+
+suggestions about which book to read or what questions to ask peers, along these lines:
+
+Response: ## External Research & Network Exploration
+
+Leverage your professional network:
+
+*Ask peers at similar companies: "How do you handle architecture decisions when engineers disagree?"
+
+*Focus on companies with similar engineering culture and size *Look for both formal processes (architecture review boards) and informal mechanisms
+
+Back to 2
+
+Learning reading speed...
+
+Page 27 of 70 36%
+
+>
+
+Kindle Library
+
+Study public resources:
+
+THE AI COMPANION TO CRAFTING ENGINEERING STRATEGY
+
+*Read Andrew Harmel-Law's Facilitating Software Architecture (referenced in the strategy examples)
+
+*Research "advice process" vs "approval process" models
+
+*Look into Spotify's "advice process" and similar lightweight governance models
+
+## Understand the Ecosystem Context
+
+Map your current architecture landscape:
+
+*What types of decisions cause the most friction? (Technology choices, service boundaries, data models, etc.)
+
+*How distributed is your architecture? (Monolith vs services affects decision complexity)
+
+What's your team's risk tolerance and compliance requirements?
+
+While this generated response is already helpful, it could still be more helpful. Start by metaprompting to improve the output:
+
+Prompt: Improve the following prompt to generate a better engineering strategy.
+
+Adhere to prompt engineering best practices.
+
+Make sure the structure is clear and intuitive.
+
+Prompt should ask for explicit strategies from "Crafting Engineering Strategy", books, websites or other resources.
+
+# Problem Statement
+
+(problem statement)
+
+# Request (prompt)
+
+Only return the prompt.
+
+Response: ## Engineering Strategy Generation Prompt
+
+QAa **:
+
+You are an expert engineering strategist tasked with creating a comprehensive engineering strategy. Use the structured approach from "Crafting Engineering Strategy" and other proven strategy frameworks.
+
+Problem Statement (problem statement)
+
+Strategy Requirements
+
+Create a complete engineering strategy following this proven structure:
+
+The improved prompt is quite long, so I encourage you to create your own or retrieve it from this Gist. (Here's a version with the embedded problem statement.)
+
+Now that you have an improved prompt, you can get started with the first stage of strategy creation: exploration.
+
+Exploration
+
+The first step of exploration is to append these instructions to your prompt to specify exploration:
+
+Prompt: "Your request" Write an exploration section to address the above problem statement.
+
+This generates a surprisingly comprehensive summary, whose full text you can read in this Gist:
+
+>
+
+口
+
+Back to 2
+
+Learning reading speed...
+
+Page 29 of 70
+
+39%
+
+1
+
+Kindle Library
+
+Back to 2
+
+THE AI COMPANION TO CRAFTING ENGINEERING STRATEGY
+
+Response: #1. Advisory Architecture Process (Stripe/Netflix Model)
+
+Stripe's approach, as documented in their engineering strategy work, employs an advisory architecture review process where:
+
+*Architecture decisions are made by the implementing team
+
+*A group of senior engineers (Staff+) provides feedback and guidance *No formal approval is required, but teams are expected to incorporate feedback
+
+Escalations go to engineering leadership only for disagreements on critical decisions
+
+Netflix's "Freedom and Responsibility" model extends this further:
+
+*Engineers make decisions within their sphere of responsibility *Context is shared broadly through documentation and RFCs **Keeper test" ensures high-performing individuals drive decisions
+
+* Strong emphasis on documentation to enable distributed decision-making Documented outcomes: Both organizations report high engineering velocity and innovation, but require significant investment in hiring and retaining senior engineers capable of good judgment.
+
+#2. Federated Architecture Councils (Amazon/Google Model)
+
+Amazon's "Two-Pizza Team" architecture combines autonomy with coordination:
+
+*Each service team owns their architecture decisions *Architecture review required only for cross-team dependencies "Well-Architected Framework" provides consistent evaluation criteria *Bar raiser program ensures decision quality through peer review
+
+While this exploration is pretty interesting, there are a number of areas where the output sounds reasonable but is, to the best of my
+
+Learning reading speed...
+
+ง
+
+QAa %:
+
+knowledge, not particularly accurate. For example, I'm familiar with the general meaning of Amazon's concepts of "bar raiser" and "two-pizza teams," but either these are overloaded terms-which might well be the case-or they are only very abstractly relevant to technical decision making.
+
+So the next step is to edit this output down to only the parts that you actually agree with and can vouch for. If there's something I'm not sure is right, I do some quick research to prove or disprove it. My edit ended up being about half the length of the original output, but the remaining portions are useful. I particularly appreciate that the model synthesized the different approaches and created a reasonably good framing of the options.
+
+When you work with LLMs, it's easy to fall into the sunk-cost fallacy, where you accept the output as "good enough" even though you don't think it's that good because you've already sunk time and effort into generating it. Your defense against this trap is to maintain the same quality standard for an LLM that you'd impose on a peer, rather than degrading your standard to accept what the LLM has generated.
+
+Diagnosis Onward
+
+With exploration completed, the next step is to return to your optimized prompt, this time adding the exploration beneath the
+
+Page 31 of 70
+
+42%
+
+口
+
+Kindle Library
+
+Back to 2
+
+THE AI COMPANION TO CRAFTING ENGINEERING STRATEGY
+
+problem statement. That results in this prompt:
+
+Response: ## Diagnosis
+
+Based on our analysis of the current state and industry research, we've identified the following root causes and constraints:
+
+Technical Constraints
+
+*Decision Authority Ambiguity: There is no clear framework for determining who has final authority on architecture decisions, leading to inconsistent outcomes where the most persistent voices prevail rather than the most informed ones.
+
+*Inconsistent Technical Standards: Without coordinated decision-making, teams make incompatible technology choices that create integration challenges, operational overhead, and knowledge fragmentation across the organization.
+
+*Lack of Decision Documentation: Architecture decisions are made in meetings, Slack discussions, or informal conversations, leaving future engineers without context for why systems were designed as they were.
+
+Organizational Constraints
+
+*Staff+ Engineer Utilization: Senior engineers spend significant time in reactive architectural debates rather than proactive technical leadership, reducing their impact on strategic technical initiatives.
+
+Team Autonomy vs. Coordination Tension: Teams want sufficient autonomy to move quickly, but the absence of coordination mechanisms creates downstream problems that ultimately slow everyone down.
+
+Onboarding and Context Transfer: New engineers struggle to understand architectural patterns and decision-making precedents, leading to repeated debates about previously settled questions.
+
+Altogether, the full diagnosis is a surprisingly good set of factors most likely to come up when dealing with this problem. This is how
+
+Learning reading speed...
+
+QAa **:
+
+using ICL from relevant examples shapes better content. That's not to say the diagnosis is perfect, of course: once again, it requires a meaningful editing pass to make it accurate to your circumstances. From diagnosis onward through the other steps, the process remains the same: copy the edited contents of the prior step into your growing prompt-including the original optimized prompt and all the subsequent sections-and ask it to complete the next step. To speed things up a bit, I prompted it to generate both policy and operations in one step, which it did reasonably well:
+
+Response: ## Policy
+
+Our policies for engineering architecture decision-making are:
+
+1. Federated Decision Authority Framework
+
+*Team-Level Decisions: Product engineering teams have full authority over architecture decisions that affect only their services and don't create cross- team dependencies
+
+*Cross-Team Decisions: Architecture changes affecting multiple teams require input from our Architecture Advisory Group (AAG) - composed of Staff+ engineers representing each major domain
+
+*Organization-Level Decisions: Technology choices that impact company- wide standards (new programming languages, major infrastructure changes) require CTO approval with AAG recommendation
+
+This policy directly addresses our diagnosed "Decision Authority Ambiguity" by creating clear decision rights at each organizational level, following Google's Technical Lead Network model.
+
+Page 33 of 70
+
+45%
+
+☐
+
+Kindle Library
+
+>
+
+THE AI COMPANION TO CRAFTING ENGINEERING STRATEGY
+
+2. Mandatory Architecture Decision Records (ADRs)
+
+All significant architecture decisions must be documented using ADRs within 48 hours of the decision
+
+*ADRs must include: context, options considered, decision made, and rationale *ADRs are stored in a searchable, central repository accessible to all engineers *Teams cannot proceed with implementation until the ADR is published and reviewed
+
+This addresses our "Lack of Decision Documentation" constraint while providing the context transfer mechanism needed for onboarding and future decision-making.
+
+Overall, these policies and operational mechanisms are reasonable. They lean heavily on the approaches featured in Crafting Engineering Strategy, which is why I believe that including a text from an author whose approach you trust makes this sort of approach useful.
+
+Cleaning It Up
+
+At this point, you have all the individual sections of your strategy: I've collected my sections into one file. Now you need to clean it up a bit. To do that, attach the document as it stands now to this prompt within your working project:
+
+Prompt: Clean up this strategy document (structure it properly as a strategy writeup, make it read smoothly, remove duplication).
+
+This generated this output, which is remarkably good, in my
+
+QAa **:
+
+opinion, for less than an hour of effort. It's overall too long, though, so I took an editing pass to pare things down into something that I would actually recommend. The full response is 913 words, roughly three pages long, and you can read it here. It begins with:
+
+Response: Our engineering organization lacks a clear, consistent process for making software architecture decisions, leading to friction between engineers who feel excluded from decisions versus those who feel slowed down by lengthy approval processes. This ambiguity around decision-making authority -particularly when a few highly opinionated engineers can effectively overrule others' work-is reducing overall engineering velocity and creating frustration across the team.
+
+This strategy highlights the policies and operations we've adopted to improve how we make technical decisions in Engineering.
+
+## Policy & Operation
+
+Our policies for engineering architecture decision-making are:
+
+### **Federated Decision Authority Framework"
+
+We will implement clear decision rights at three organizational levels:
+
+Team-Level Decisions": Product engineering teams have full authority over architecture decisions that affect only their services and don't create cross- team dependencies
+
+***Cross-Team Decisions": Architecture changes affecting multiple teams require input from our Architecture Advisory Group (AAG) - composed of Staff+ engineers representing each major domain
+
+"Organization-Level Decisions**: Technology choices that impact company- wide standards (new programming languages, major infrastructure changes) require CTO approval with AAG recommendation
+
+Back to 2
+
+Learning reading speed...
+
+Page 35 of 70 50%
+
+Kindle Library
+
+Back to 2
+
+THE AI COMPANION TO CRAFTING ENGINEERING STRATEGY
+
+If you're still skeptical of the concept, it's worth reading through the entire response. It's good.
+
+Summary
+
+In this chapter, you've cowritten a valuable strategy with an LLM. To do this, you metaprompted an initial prompt into a more useful tool. You then used that optimized prompt to perform each step, supplementing the initial prompt with each step as you completed
+
+QAa **⠀
+
+it. In the end, you used the LLM to clean up your strategy document as well.
+
+Each step of a strategy builds on the prior steps. A great exploration creates a powerful diagnosis; a faulty diagnosis ruins the following policy and operations steps. Just because an LLM can help you write quickly doesn't mean it'll produce a quality document worth using. However, it's a powerful brainstorming tool, and-at least in this example-it's done a surprisingly good job at cowriting.
+
+Learning reading speed...
+
+Page 37 of 70 53%
+
+>
+
+Kindle Library
+
+THE AI COMPANION TO CRAFTING ENGINEERING STRATEGY
+
+Chapter 3. Reviewing an Existing Strategy
+
+Ideally, every organization would have an editor on staff, ready to provide feedback on your documents quickly. But since that editor is often busy-or simply doesn't exist-these techniques are a useful stand-in.
+
+This chapter will cover:
+
+.Identifying weaknesses in a strategy document using an LLM
+
+. Using an LLM to provide streamlined feedback in summary form to the strategy's author
+
+. Using an LLM to incorporate external feedback while rewriting an existing strategy
+
+By the chapter's end, you'll have identified issues in the last chapter's strategy, communicated those issues concisely to the LLM, and worked with the LLM to write a new iteration of the strategy addressing that feedback.
+
+Skimming for Flaws
+
+QAa ** :
+
+You'll start by using a reasoning model, such as OpenAl's 03 or Anthropic's Claude Opus 4 with extended thinking, to look for gaps in the text of the strategy. Use the prompt:
+
+Prompt: Look for reasoning errors and unsubstantiated claims in this strategy: (text of strategy document}
+
+Run this prompt in the project you set up in Chapter 1, and it should identify a number of reasoning errors, unsubstantiated claims, and missing elements. Let's review each category of identified issues.
+
+Reasoning Errors
+
+First, it found a number of reasoning errors: errors in the thinking underpinning the strategy. These range from a lack of causal analysis (for example, do the diagnoses actually tie to the policies?) to a survivorship bias in the exploration stage (for example, what about considering examples where the policies go poorly, in addition to those where they were successful?):
+
+Response: ## Reasoning Errors
+
+1. Missing causal analysis: The diagnosis identifies symptoms (friction, frustration, velocity issues) but doesn't establish clear causal links. Is the lack of decision-making clarity actually causing these problems, or are they correlated with other issues?
+
+2. No consideration of failure modes: The strategy doesn't explore what could
+
+>
+
+Σ
+
+Back to 2
+
+Learning reading speed...
+
+Page 38 of 70 55%
+
+Kindle Library
+
+THE AI COMPANION TO CRAFTING ENGINEERING STRATEGY
+
+go wrong with the proposed approach. What if the AAG becomes a bottleneck? What if teams game the system by redefining what counts as "affecting only their services"?
+
+3. Insufficient refinement: There's no evidence of testing, modeling, or piloting these ideas. The strategy jumps from diagnosis to a fully-formed solution without the refinement phase that would validate whether this approach actually addresses the root causes.
+
+4. False dichotomy: The strategy presents a tension between "team autonomy" and "coordination" as if these are the only two forces at play, ignoring other factors like technical debt, skill gaps, or resource constraints.
+
+5. Survivorship bias in exploration: The exploration only looks at successful companies' current states, not the failures or evolution of their approaches. It also doesn't examine companies that tried similar approaches and failed.
+
+Unsubstantiated Claims
+
+Next, it identified a number of unsubstantiated claims. It notes, for instance, a lack of evidence that senior engineers are spending significant time in architectural debates, and points out arbitrary goals in some of the suggested policies. Both are valid issues that ought to be addressed:
+
+Response: ## Unsubstantiated Claims
+
+1. Lack of quantitative evidence for the problem: The diagnosis states that "Senior engineers spend significant time in reactive architectural debates" and "New engineers struggle to understand architectural patterns" without providing any metrics, survey data, or concrete examples. How much time exactly? What percentage of engineers report these issues?
+
+QAa
+
+2. Arbitrary success metrics: The strategy sets specific targets like "90% ADR compliance" and "5% decision escalation rate" without explaining why these particular numbers are appropriate or how they were derived. Are these based on industry benchmarks or just guesses?
+
+3. Unsupported time estimates: The claim that AAG members need "2-3 hours per week" appears arbitrary. Without modeling the expected decision volume or complexity, this could be wildly inaccurate.
+
+4. Overly simplified company examples: The exploration section characterizes approaches at companies like Stripe, Netflix, and Google without citations or acknowledgment that these companies' practices likely evolved over time and vary by team.
+
+Missing Elements
+
+Most valuable of all is that the LLM also identifies a series of entirely missing elements. It notes that the strategy lacks a testing plan, which I agree is probably the most important gap in the entire plan: Response: ## Missing Critical Elements
+
+1. No strategy testing plan: How will you know if this is working before full rollout? Where's the pilot program?
+
+2. No operational details: How exactly will ADRs be reviewed? Who reviews them? What's the SLA for review? What constitutes "published and reviewed"?
+
+3. No connection to business outcomes: The strategy focuses on engineering satisfaction and process metrics but doesn't connect these to business outcomes like product delivery speed or system reliability.
+
+4. No consideration of existing culture: Will engineers actually use this system? What incentives exist for compliance beyond mandates?
+
+Back to 2
+
+Learning reading speed...
+
+Page 39 of 70 57%
+
+Σ
+
+<
+
+Kindle Library
+
+THE AI COMPANION TO CRAFTING ENGINEERING STRATEGY
+
+The strategy reads more like a theoretical framework than a tested approach grounded in your organization's specific reality. It would benefit significantly from the refinement techniques described in the book-particularly strategy testing with a small pilot group before broader rollout.
+
+This is genuinely useful feedback that identifies several potential improvements. The biggest weakness in this feedback is that there's simply too much of it. Fortunately, we can whittle down the volume to what's most useful to the author.
+
+Summarizing Feedback
+
+Imagine, for a moment, that someone else wrote this strategy and you want to provide feedback on it. You wouldn't want to provide all of your feedback-instead, you'd probably want to identify the top three to five issues and suggest ways to address them.
+
+Reading through the feedback, the three biggest issues, from my perspective, are:
+
+Identifying a metric to help us determine when the AAG becomes a bottleneck (for instance, the time from requesting the review to the review being performed)
+
+.Adding a four-week pilot phase to roll out the strategy within the Site Reliability Engineering (SRE) organization, with the
+
+QAa ** :
+
+goal of evaluating and refining that experience, and then expanding it to all of Engineering
+
+Eliminating all success metrics other than those related to elapsed time (for instance, 90% ADR compliance is not a great measure unless you're using that exclusively to understand why the other 10% isn't happening)
+
+Once you've identified your top issues, you can ask the LLM to summarize your feedback concisely, along with your suggestions on how the author(s) might address the feedback. To continue the conversation that generated the initial feedback from the LLM, try a prompt like this:
+
+Prompt: Rewrite the above feedback to focus on these three areas of feedback, eliminate most other feedback unless it seems essential, and make it as concise as possible:
+
+{Top three areas}
+
+The LLM then generates a more focused version of the prior feedback, available in Gist, which is much more along the lines of what I would provide to a strategy's author:
+
+Response: #1. Measure AAG Bottleneck Risk
+
+The strategy should include specific metrics to detect if the AAG becomes a bottleneck:
+
+*Time from ADR subinission to initial AAG feedback
+
+Σ
+
+Back to 2
+
+Learning reading speed...
+
+Page 41 of 70 62%
+
+Kindle Library
+
+THE AI COMPANION TO CRAFTING ENGINEERING STRATEGY
+
+*Time from ADR submission to final decision *Queue depth of pending reviews
+
+Percentage of decisions requiring escalation beyond AAG
+
+Without these measurements, you won't know if the AAG is helping or hindering velocity until it's too late.
+
+#2. Add 4-Week SRE Pilot Phase
+
+Before rolling out to all of Engineering, run a 4-week pilot with just the SRE organization to:
+
+*Test the ADR process and tooling at small scale
+
+*Validate the "2-3 hours per week" time estimate for AAG members *Identify process friction points and refine the approach *Gather concrete data on review turnaround times
+
+This pilot would provide evidence-based refinements before broader adoption.
+
+# 3. Replace Arbitrary Success Metrics
+
+Remove metrics like "90% ADR compliance" and "<5% decision escalation rate" unless you can explain why these specific numbers matter. Instead focus on:
+
+*Elapsed time metrics (as suggested above)
+
+If keeping compliance metrics, use them only to understand why noncompliance happens, not as targets
+
+You might want to rework the tone a bit with another pass, but generally I think the particulars make sense. This overall approach of using the LLM to brainstorm ideas and then focus down on the particulars is effective.
+
+Incorporating Feedback
+
+QAa !
+
+For this section, you can stop imagining you're the one providing feedback-we're going back to our original perspective, in which you are the strategy's author. You've just received the feedback from the previous section. Now what?
+
+Go back to your Crafting Engineering Strategy project and add both the original strategy document and the feedback to the chat. Start with a prompt explaining specifically how to address the feedback:
+
+Prompt: I want to incorporate the below feedback into our strategy document on engineering decision making. Follow this advice on how to incorporate the feedback:
+
+1. "Measure AAG Bottleneck Risk" - prioritize addressing this. We should measure using the time feedback is requested in a Slack channel until the AAG provides feedback, as measured by replying with a new document in the Slack
+
+thread
+
+2. "Add 4-Week SRE Pilot Phase" -- Yes, we should do this. Add this as a note below the policy/operations section rather than making a big deal about it. 3. "Replace Arbitrary Success Metrics" - Remove any instances of arbitrary success metrics. Don't try to suggest better ones.
+
+This should generate an explanation of how the feedback has been addressed, along with a fully revised strategy document:
+
+Response: I've incorporated your feedback into the strategy document:
+
+## 1. Measure AAG Bottleneck Risk (Prioritized)
+
+*Added a new "Bottleneck Prevention and Monitoring" section with specific
+
+metrics:
+
+口
+
+Back to 2
+
+Learning reading speed....
+
+Page 43 of 70
+
+65%
+
+Kindle Library
+
+*Time from ADR submission in Slack to AAG response
+
+*Time to final recommendation
+
+*Queue depth tracking
+
+Escalation percentage monitoring
+
+THE AI COMPANION TO CRAFTING ENGINEERING STRATEGY
+
+clear and you'll get the best possible output.
+
+Summary
+
+*Specified that response time is measured by AAG replying with feedback documents in Slack threads
+
+*Added weekly AAG review and monthly leadership review of these metrics
+
+## 2. Add 4-Week SRE Pilot Phase
+
+*Added as a note below the Policy & Operations section (not making it a big deal)
+
+*Includes testing ADR tooling, validating time estimates, identifying friction, and gathering concrete data
+
+*Positions it as informing broader rollout
+
+## 3. Replace Arbitrary Success Metrics
+
+*Removed "90% ADR compliance" and "<5% decision escalation rate" *Replaced with focus on "elapsed time metrics and bottleneck detection" *Changed language to "understanding where the process breaks down rather than hitting arbitrary targets"
+
+*Removed specific numerical targets that couldn't be justified
+
+The revised strategy now focuses on measurable process health rather than arbitrary compliance targets, includes concrete bottleneck prevention measures, and incorporates a sensible pilot approach before full rollout.
+
+This works well, and is a good reminder to apply the LLM-as-intern technique: frontier LLMs are fairly good at applying your explicitly stated direction, but they still don't have your good judgment. Be
+
+...
+
+QAa %:
+
+You started this chapter with a strategy draft, generated feedback on it, refined that feedback, and then decided how to incorporate it into a revised draft of the strategy. While the new strategy isn't perfect, it is significantly improved from the initial version, and you did it quickly, without needing to wait for anyone else to get around to providing feedback.
+
+If you work in an organization with significant senior engineering bandwidth, then I'm certain you could manually generate
+
+a document of this caliber quickly-but not this fast. More importantly, while I'm certain your organization could write a better strategy than this one, many organizations simply don't have the bandwidth or the staff to do that. Maybe you're the only Staff- plus engineer at your company, or maybe you're trying to iterate on a draft before the other knowledgeable engineer gets off a busy project. Writing and editing with an LLM can greatly speed up iterating on strategy, and the next chapter will show how LLMs can reduce the overhead of systems modeling as well.
+
+>
+
+Q
+
+Back to 2
+
+Learning reading speed...
+
+Page 45 of 70 68%
+
+Kindle Library
+
+THE AI COMPANION TO CRAFTING ENGINEERING STRATEGY
+
+Chapter 4. Generating Systems Models
+
+Crafting Engineering Strategy has a chapter on systems modeling along with a number of examples. Those examples focus on using the lethain/systems Python library to generate models using a Jupyter Notebook, with examples in lethain/eng-strategy-models. That's a reasonable approach, but it also requires learning the systems library's modeling syntax.
+
+This chapter looks at how to use an LLM to write the systems model syntax for you, without learning how to use that syntax in great detail. In addition to providing specific instructions for working with the systems library, this chapter also shows you a generalizable pattern for using LLMS to work with domain-specific languages. This chapter covers:
+
+Adding problem-specific resources to your context window to prime an LLM to solve a complex problem
+
+. Using an LLM to write a systems model in a proper systems specification
+
+QAa **:
+
+.Having an LLM walk you through running a script to run a systems model
+
+. Using an MCP server to simplify running a systems model, and using a Claude Artifact to explore the results
+
+The following instructions build on the Anthropic Claude.ai Project setup but should be adaptable to other approaches, especially when support for local MCP servers is more widely adapted to environments other than Claude Desktop.
+
+Adding Systems-Modeling Instructions
+
+In Chapter 1, you configured a project to include Crafting Engineering Strategy in its context window. In this chapter, you'll continue with that technique, adding more detailed instructions for creating systems models into your context window.
+
+Start by retrieving a text copy of README.md from lethain/systems. That file explains the library's syntax and usage in detail, and ought to be enough instruction for the LLM to specify systems models. Once you have the file, either upload it as a file or as text content into your project (Figure 4-1) with your LLM-optimized version of Crafting Engineering Strategy.
+
+Σ
+
+Back to 2
+
+Learning reading speed...
+
+Page 47 of 70
+
+71%
+
+Kindle Library
+
+Back to 2
+
+Add text content
+
+Title
+
+systems README
+
+Content
+
+THE AI COMPANION TO CRAFTING ENGINEERING STRATEGY
+
+the book's chapters (Figure 4-2). Crafting Eng Strategy Pat LLM-optimized version of Crafting Eng Strategy
+
+Project knowledge
+
+How can I help you today?
+
+QAa
+
+Q
+
+"You are a Chief Technology Office. Edit
+
+85% of knowledge capacity used
+
+о
+
+Claude 37 Sonnet
+
+systems README
+
+craftingangstrate
+
+#Systems
+
+'systems' is a set of tools for describing, running and visualizing [systems diagrams](https:/lethain.com/systems-thinking/).
+
+Installation directions are below, and then get started by (working through the tutorial] (/docs/tutorial.md)
+
+or reading through the (Jupyter notebook example)./notebooks/hiring.ipynb) example.
+
+For a more in-depth look at the system syntax, please read [the syntax specification] (/docs/spec.md).
+
+##Quickest start
+
+Follow the installation instructions below, then write a system definition such as:
+
+Start(10)
+
+=
+
+Start a chat to keep conversations organized and re-use project knowledge.
+
+Start >Middle @2 Middle > End
+
+Cancel
+
+Add Content
+
+Figure 4-1. Adding README.md to project's input context
+
+This will make the README's contents available in the context window, serving as in-context learning (ICL) examples for generating models. Your project now includes the README as well as
+
+TEXT
+
+Figure 4-2. Project overview with both book and README contents Now it's time to start writing a systems model. To see a human- generated version of this model, refer to my 2018 blog post "Modeling a hiring funnel with Systems library", where I built out a model of the same system. Note, however, that that model is not included in Crafting Engineering Strategy or the README, so the LLM is not directly recreating that prior work.
+
+Creating a Model
+
+Start by writing a general description of the system you want to create. For example, here's the prompt I started with:
+
+Learning reading speed...
+
+Page 49 of 70
+
+74%
+
+>
+
+>
+
+Kindle Library
+
+THE AI COMPANION TO CRAFTING ENGINEERING STRATEGY
+
+The generated model is:
+
+Prompt: Help me write a systems model specification for a systems library to model a hiring pipeline system where:
+
+1. First stock is infinite stock of "potential candidates"
+
+2. Second stock is "outreaches", with an inflow of 10 from "potential candidates'
+
+3. Third stock is "interested", with an inflow of 50% from "outreaches" 4. Fourth stock is "active", with an inflow of 50% from "interested"
+
+5. Fifth stock is "offers" with an inflow of 10% from "active"
+
+6. Sixth and final stock is "hires" with an inflow of 70% from "offers"
+
+All of these flows with percentages should be modeled using "Leak" flows, for example:
+
+Outreaches > Interested @ Leak(0.5)
+
+This is a detailed description, although only the last few sentences about leaks require specifically knowing the systems syntax. The biggest thing to take away is that, even if you don't need to know systems syntax, you absolutely do still need to understand how systems models work to write this specification, as covered in Chapter 14 of Crafting Engineering Strategy.
+
+From that prompt, Claude generates a complete, usable model, as well as links to a handful of examples of other systems models. If you run into a problem, those examples might be helpful to learn from, but you could also just convert them into Markdown and include them in your prompt to help the LLM better solve any errors it generates.
+
+QAa **⠀
+
+☐
+
+Response: I'd be happy to help you write a systems model specification for a hiring pipeline using the systems library. Based on your requirements, here's a clean, concise specification:
+
+## Hiring Pipeline Model
+
+[Potential Candidates] > Outreaches @ 10 Outreaches > Interested @Leak(0.5) Interested > Active @ Leak(0.5)
+
+Active Offers @Leak(0.1) Offers > Hires @Leak(0.7)
+
+This model creates:
+
+1. An infinite stock of potential candidates
+
+2. A flow of 10 candidates per cycle into the outreaches stage
+
+3. A 50% leak from outreaches to interested
+
+4. A 50% leak from interested to active
+
+5. A 10% leak from active to offers 6. A 70% leak from offers to hires
+
+You can run this model with the systems library and visualize how candidates flow through your hiring pipeline over time.
+
+For more examples of systems modeling in engineering contexts, I recommend checking out:
+
+1. Introduction to systems thinking - a primer on systems thinking concepts 2. Modeling Reliability-shows how systems modeling can be applied to engineering reliability
+
+3. Why limiting work-in-progress works - demonstrates how systems thinking can be applied to engineering workflows
+
+Back to 2
+
+Learning reading speed...
+
+Page 50 of 70
+
+75%
+
+Kindle Library
+
+THE AI COMPANION TO CRAFTING ENGINEERING STRATEGY
+
+Now that you have a working prompt, you may have recognized that the prior hint to use Leak doesn't really make that much sense. That's because, while Leaks model a portion of candidates progressing forward in the hiring pipeline, they model the candidates who don't progress as staying in the prior stock. That isn't quite right: candidates who don't move forward in a hiring funnel don't stay in the prior stock; they leave the hiring funnel. For example, a candidate who doesn't get an offer doesn't stay in Active. They are removed from the hiring process entirely.
+
+Let's fix this by asking the LLM to use a Conversion instead of a Leak:
+
+Prompt: OK, this is a good start. Could you change the leaks to be conversions, since the others are actually getting lost?
+
+The output of that prompt shows a fixed model:
+
+Response: You're absolutely right. Using Conversion flows instead of Leak flows makes more sense for your hiring pipeline since candidates who don't progress are actually lost from the process rather than staying in their current stage. Here's the updated specification:
+
+[Potential Candidates] > Outreaches @ 10 Outreaches > Interested @ Conversion (0.5) Interested > Active @ Conversion (0.5) Active > Offers @ Conversion (0.1) Offers > Hires @Conversion (0.7)
+
+With this change:
+
+QAa
+
+A
+
+1. Only 50% of outreaches convert to interested candidates, with the other 50% dropping out
+
+2. Only 50% of interested candidates convert to active candidates 3. Only 10% of active candidates receive offers 4.70% of offers are accepted, resulting in hires
+
+This model better reflects the reality that candidates who don't progress to the next stage exit the pipeline entirely, rather than remaining at their current stage as would happen with Leak flows.
+
+If you include enough appropriate documentation, LLMs are good at writing valid syntax. The challenge is understanding your goals well enough to provide that documentation.
+
+Running the Model
+
+Once you have the working syntax for a systems model, the next step is getting data out of that model. While I personally run models in a Jupyter Notebook, as demonstrated in lethain/eng-strategy- models, you can also rely on the LLM to walk you through running the models locally.
+
+Continuing the previous prompt, ask for instructions to run your new model:
+
+Response: OK, that seems like a good systems model. Please write me a Python script that uses the "systems" Python library to run that model and generate the output as a table.
+
+>
+
+Back to 2
+
+Learning reading speed...
+
+Page 52 of 70 79%
+
+Kindle Library
+
+THE AI COMPANION TO CRAFTING ENGINEERING STRATEGY
+
+This generates instructions for installing systems locally, along with a script to run the model. If you follow the steps to install and run the script, you'll get Table 4-1 as output.
+
+Table 4-1. Generated table of hiring-pipeline results from the systems model
+
+Back to 2
+
+Hiring Pipeline Results
+
+Outreaches Interested Active
+
+Offers
+
+Hires
+
+0
+
+0
+
+0
+
+0
+
+0
+
+0
+
+1
+
+10
+
+0
+
+0
+
+0
+
+2
+
+10
+
+5
+
+0
+
+0
+
+0
+
+3
+
+10
+
+5
+
+2
+
+0
+
+0
+
+4
+
+10
+
+5
+
+4
+
+0
+
+5
+
+10
+
+5
+
+6
+
+0
+
+°
+
+6
+
+10
+
+5
+
+8
+
+°
+
+0
+
+7
+
+10
+
+5
+
+10
+
+°
+
+°
+
+Learning reading speed...
+
+8
+
+10
+
+5
+
+2
+
+1
+
+°
+
+9
+
+10
+
+5
+
+4
+
+1
+
+0
+
+10
+
+10
+
+5
+
+6
+
+1
+
+0
+
+QAa
+
+You can now send that table back to Claude.ai, prefixed with a prompt asking it to create an artifact to explore the data:
+
+Response: This is the library output. Please produce an artifact that shows a chart of active candidates over time.
+
+Claude will then generate an artifact visualizing the dataset as a chart, shown in Figure 4-3.
+
+Page 54 of 70 82%
+
+*K
+
+...
+
+A
+
+<
+
+Kindle Library
+
+Back to 2
+
+Active Candid
+
+12
+
+9-
+
+3-
+
+Key Observations:
+
+THE AI COMPANION TO CRAFTING ENGINEERING STRATEGY
+
+Active Candidates Over Time
+
+2
+
+3
+
+4
+
+5
+
+6
+
+8
+
+9 10 Rounds
+
+Active Candidates
+
+Active candidates steadily increase from rounds 3 to 7, reaching a peak of 10
+
+candidates.
+
+There's a sharp drop after round 7, as candidates move to the "Offers" stage. The pattern suggests a cycle where active candidates accumulate and then progress in batches.
+
+Figure 4-3. A Claude.ai artifact showing a chart of systems-model output
+
+This approach works, but it requires you to move rather awkwardly between the chat interface and the terminal. What we really want is an approach that's better than a Jupyter Notebook, and this is decidedly worse. Fortunately, you can do better.
+
+Using a Model Context Protocol Server
+
+Learning reading speed...
+
+QAa :
+
+Now that you've experimented with relying on the LLM to guide you through every step of the model, run, and render pipeline, it's time to admit something important: some of this wasn't that useful. A better approach would be to run every step from within the chat interface.
+
+Fortunately, you can get that experience by creating an MCP server and exposing it to the LLM. MCP servers provide tools to LLMs, along with instructions on when and how to use those tools. A simple MCP server might offer a tool that retrieves the current weather, performs an API call against a service, or queries search index for results. This particular MCP server can use the systems library to run a systems model.
+
+Install
+
+The lethain/systems-mcp repository includes installation instructions to configure it to run with the Claude Desktop setup you configured in Chapter 1. Once you have it installed, you can run and render a model, as described in the following steps.
+
+Run and Render a Model
+
+This MCP server exposes two tools. The first tool, load systems_documentation, injects project-specific documentation and examples into the context window as ICL
+
+Page 56 of 70 83%
+
+ЯК
+
+>
+
+<
+
+...
+
+QAa #1
+
+Kindle Library
+
+THE AI COMPANION TO CRAFTING ENGINEERING STRATEGY
+
+to improve the quality of generated models. The other tool, run_systems_model, takes a model specification and runs it, returning the results in JSON format.
+
+Figure 4-4 shows an example of Claude.ai using both tools to generate a systems model for a social network. None of these examples relates to social networks, so this is a genuinely new creation, rather than a recreation of an explicit item within the loaded context.
+
+A
+
+WL Load systems modeling documentation and then generate a specification for a systems model of acquiring users in a social network
+
+I'll help you create a systems model for user acquisition in a social network. Let's first load the systems documentation to understand the capabilities better.
+
+Lload_systems documentation
+
+Request
+
+Back to 2
+
+Response
+
+{"type":"text", "text": "\n Systems\n\n' systems is a set of tools for describing, running and visualizing\n[systems diagrams)
+
+(https://lethain.com/systems-thinking/).\n\n\nInstallation directions are below, and then get started by Iworking through the tutorial] (./docs/tutorial.nd)\nor reading through the Dupyter notebook examplel(./notebooks/hiring.ipymb)
+
+Now that I understand the systems modeling syntax, I'll create a specification for a social
+
+network user acquisition model. This model will represent the flow of users through different stages in the social network-from initial discovery to becoming active contributors.
+
+R run systems model
+
+Request
+
+spec':
+
+Social Network User Acquisition Model
+
+This model represents how users flow through different stages of engagement
+
+Initial pool of potential users
+
+Figure 4-4. Claude.al using two tools to generate a systems model
+
+Explore the Data
+
+Now you're ready to explore your data. In a Jupyter Notebook, you'd
+
+Learning reading speed....
+
+Page 57 of 70
+
+85%
+
+<
+
+Kindle Library
+
+THE AI COMPANION TO CRAFTING ENGINEERING STRATEGY
+
+render different cuts in still charts. You can ask Claude.ai to generate an artifact to explore this dataset:
+
+Prompt: Create an artifact to render the output of the last systems model run in a chart. Allow me to select which columns to include.
+
+This will generate an artifact along the lines of the one shown in Figure 4-5, allowing you to select which columns to render.
+
+Tatto the social work
+
+I've created an interactive vision for the socia
+
+1. Select specific metrics to display hype
+
+The shift traspor
+
+Byed the migr
+
+450
+
+300-
+
+150-
+
+Social Network User Acquisition Model
+
+Figure 4-5. A Claude.ai artifact for exploring systems model results
+
+QAa
+
+At this point, you've created something more powerful than a Jupyter Notebook. It will generate the systems model for you and allow the same sort of exploratory scenarios. Applying a more critical eye, you can observe that this artifact only included 5 rounds of calculation of the systems model, rather than all 50. You can fix it by asking:
+
+Prompt: Include all 50 rounds in the artifact, not just 5.
+
+However, you really shouldn't need to ask.
+
+Generating systems models with an LLM is not quite perfect, but you can make it work fairly well. It's also easy to imagine a near future where tools and artifacts are directly connected, rather than requiring the LLM to indirectly connect them by replicating data.
+
+Summary
+
+In this chapter, you started with a complex problem and broke it down into components that an LLM can solve. You used documentation to prime the LLM to write correct syntax. You loaded an MCP server to push math-heavy work into software that knows how to quickly and accurately perform the math, and used a Claude artifact to chart and explore the resulting data.
+
+Back to 2
+
+Learning reading speed...
+
+Page 58 of 70
+
+86%
+
+>
+
+Kindle Library
+
+THE AI COMPANION TO CRAFTING ENGINEERING STRATEGY This combination of approaches solved the particular problem of generating and running systems models, but it's also a generalizable approach to making messy problems fit with LLM-driven approaches. What worked here will work elsewhere, including-let's hope for generating Wardley maps in the next chapter.
+
+...
+
+QAa ☐ #1
+
+口
+
+Back to 2
+
+Learning reading speed...
+
+Page 60 of 70
+
+88%
+
+THE AI COMPANION TO CRAFTING ENGINEERING STRATEGY
+
+Kindle Library
+
+Chapter 5. Generating Wardley Maps
+
+When I was drafting the first chapters of Crafting Engineering Strategy, I thought I might write a chapter on GitLab's strategy. GitLab has publicly shared so much of how the company operates that I figured it might be possible to write an interesting strategy document about them, even though I've never worked there.
+
+I decided not to write that chapter, but I did create a Wardley map exploring GitLab's strategy. We ended up not including that Wardley map in the final edition of the book or the LLM-optimized format. That makes it a perfect test case to use here to investigate whether an LLM can help generate an effective Wardley map.
+
+Naive Approach
+
+A key part of creating a Wardley map is creating the value chains, as discussed in Chapter 15 of Crafting Engineering Strategy. This is absolutely something an LLM can help with, but value chains are just text, so we've already covered effective patterns that apply to creating them.
+
+QAa **:
+
+However, that chapter doesn't cover creating an actual Wardley map image, so you'll start from the discarded chapter's user and value chains and work to convert them into a Wardley map.
+
+This time, rather than uploading the entire book, you'll upload just the Wardley mapping chapter, along with completed Wardley maps represented as images (Figure 5-1). This will create more space in the project's context window for the images. However, if you used Ilm.py and an LLM with a large context window, you should be able to include the entire book as normal.
+
+Project files
+
+wardley_map.png
+
+Image
+
+wardley_mapping.md
+
+File
+
+wardley-compute-v2.png
+
+Image
+
+Ilm-wardley-1.png
+
+Image
+
+Figure 5-1. Files uploaded for project
+
+Add files
+
+Σ
+
+Back to 2
+
+Learning reading speed...
+
+Page 61 of 70
+
+88%
+
+>
+
+Kindle Library
+
+Back to 2
+
+QAa :
+
+THE AI COMPANION TO CRAFTING ENGINEERING STRATEGY
+
+Once you've set up the project, provide the LLM with the user and value chains and a short prompt to generate a Wardley map:
+
+Prompt: Create a Wardley map image using the template in this project and these value chains:
+
+(user and value chains text)
+
+When I did this in ChatGPT-40, it generated a Wardley map. Well, sort of (see Figure 5-2).
+
+Image created
+
+13
+
+Developers
+
+Developer
+
+Security
+
+Finance
+
+Experience Team & Compliance
+
+Deploy software
+
+Debug failed deploys
+
+Vulnerability scanning
+
+Usage attribution
+
+Connclucitic
+
+Learning reading speed...
+
+Page 62 of 70 90%
+
+Oog colesreation
+
+Deployment automation
+
+Log collection & aggregation
+
+Seanning engine
+
+Usage attribution
+
+Optimize build & deploy speed
+
+Pipinee/stion
+
+Genesis
+
+Ownership graph
+
+Analytics platform
+
+Infrastructure
+
+Custom
+
+Product
+
+Commodity
+
+Figure 5-2. An aspirational Wardley map that went wrong
+
+>
+
+... B
+
+Kindle Library
+
+THE AI COMPANION TO CRAFTING ENGINEERING STRATEGY
+
+The image has a lot of superficially Wardley-map-like aspects, but it's just not at all a Wardley map. For each correctly spelled label on the x-axis, there's a nonsensical word in a box elsewhere on the map. I think we can conclude that direct image generation is not going to be the path forward for using an LLM to create a Wardley map.
+
+Shifting Complexity to a Tool
+
+OK, that worked surprisingly badly. Generally, when this happens, the secret is to shift complexity to a tool. Frequently the best way to do so is by creating a domain-specific language (DSL) that allows LLMs to work in a format they love-text!--and pushes the other work out of the LLM. That's what we did in the last chapter with the systems library and the systems-mcp server.
+
+Creating a DSL for Wardley maps would be a painful undertaking. Fortunately, Damon Skelhorn has already done it with Online WardleyMaps. (Many thanks to Ben Mosior, whose post introduced me to Online WardleyMaps.)
+
+I've created a file with several Wardley map DSL examples, which
+
+you can load into your project. After doing that, let's redo the previous prompt, this time prefacing it with:
+
+Prompt: Create a Wardley map for the below value, using the Online WardleyMaps syntax.
+
+QAa
+
+The LLM generated this output (which I added to OnlineWardleyMaps.com) and successfully generated a compelling Wardley map (Figure 5-3).
+
+GitLab DevSecOpe Platform
+
+H
+
+Figure 5-3. OnlineWardleyMap output from generated specification
+
+Back to 2
+
+Learning reading speed....
+
+Page 63 of 70
+
+91%
+
+>
+
+Σ
+
+Kindle Library
+
+THE AI COMPANION TO CRAFTING ENGINEERING STRATEGY
+
+To my eye, this is surprisingly good. There are absolutely pieces I would tweak, but that's the nature of any Wardley map. Getting a rough draft up and working is exceptionally valuable, because it's much easier to critique and iterate on something that already exists.
+
+Summary
+
+In this chapter, you experienced the push and pull of working with LLMS to solve messy problems. Our first attempt to create a Wardley
+
+QAa * :
+
+map by working with images resulted in an unusable mess. We then formulated a new approach, taking advantage of the existing OnlineWardleyMaps format, to translate the problem into a format that LLMs are adept at: DSLS.
+
+You can now create a complex Wardley map rapidly, in a format that you can share quickly, without having to learn the messy details of that format yourself. That's pretty remarkable.
+
+Д
+
+Back to 2
+
+Learning reading speed...
+
+Page 65 of 70
+
+93%
+
+Kindle Library
+
+Back to 2
+
+THE AI COMPANION TO CRAFTING ENGINEERING STRATEGY
+
+Chapter 6. Next Steps
+
+On your way to this final chapter of the AI Companion to Crafting Engineering Strategy, you've cowritten and revised a strategy with an LLM. You've also used both ICL examples and MCP servers to prime an LLM to work on complex, domain-specific problems like creating a systems model and a Wardley map.
+
+The two biggest questions remaining are:
+
+How should you actually use the LLM-optimized edition of Crafting Engineering Strategy now?
+
+.Are LLM-optimized books actually a valuable concept?
+
+These are really the key questions that will determine whether this format represents a meaningful advance in how books are released or merely a hacky concept to be forgotten.
+
+Using the LLM-Optimized Book in Practice
+
+One of the gifts of writing down what I've learned over the past two decades is that I can load that writing into the context window of any LLM to improve the model's generation. At this point, I do all
+
+QAa
+
+my LLM work in a context-rich project to improve the generated responses. For strategy-related topics, that means including this
+
+book.
+
+My best suggestion for getting long-term value out of this book is to ambiently include it in your context window when you do strategy work. Of course, that's in addition to utilizing the techniques and examples from Crafting Engineering Strategy and from this companion text when you are actively developing your next engineering strategy.
+
+A few other strategies worth experimenting with are:
+
+-Use the text as a strategy coach or mentor to guide your strategy practice, along the lines I describe in Chapter 24 of Crafting Engineering Strategy.
+
+Rewrite your existing strategies into consistent, readable formats.
+
+Identify recurring topics and themes in your organization's Architecture Decision Records that could be moved into a durable strategy document.
+
+Summarize your organization's current strategy altitudes (see Chapter 4 of Crafting Engineering Strategy), to facilitate
+
+Learning reading speed...
+
+Page 67 of 70
+
+94%
+
+☐
+
+Kindle Library
+
+THE AI COMPANION TO CRAFTING ENGINEERING STRATEGY
+
+a structured discussion about which kinds of decisions are being made where.
+
+Depending on the current writing culture in your organization, some of these will work better than others. That said, as you test them out, I'm confident you'll find more ways to use this tool.
+
+Are LLM-Optimized Books a Gimmick?
+
+Many authors are concerned about LLMs stealing their work and their livelihood. This is not an abstract concern, but a very real one: web traffic appears to be shifting toward LLMS and away from traditional web search, as folks get answers directly from LLMs that were trained on those sites' content without compensating the authors.
+
+As web search became pervasive in the 1990s, there were similar debates about fair use. Eventually the courts decided on the exact parameters of fair use laws in the context of web crawlers, and the debate faded as websites learned to take advantage of the reach created by search engines. The status quo was not preserved-the newspaper industry in particular was irrevocably changed-but a new status quo was eventually established. Today, LLMS are in a
+
+QAa **:
+
+similar moment, where authors need to discover the opportunity that LLMs represent while also grappling with the reality that they may significantly change how books are read and sold. Working with O'Reilly to release the LLM-optimized edition of Crafting Engineering Strategy, along with this AI Companion, is a joint experiment in figuring out what might work. The market for LLM- optimized books is essentially nonexistent today; however, figuring out how paid written content will coexist with LLMs is a problem that some of the most thoughtful people I know have mentioned struggling with, and that I think this approach solves well.
+
+The most extreme version of this future is one where your entire personal library is accessible to LLM agents running on your behalf. Another vision is that reading behavior doesn't change much, with humans mostly reading on our own behalf. Although I'm not sure which of those futures we'll be living in next year or next decade, my best guess is a bit of both.
+
+While this approach has its imperfections, I'm personally finding
+
+it useful today, and I hope it makes it easier to write effective engineering strategies for your organization.
+
+>
+
+Σ
+
+Back to 2
+
+Learning reading speed...
+
+Page 68 of 70 97%
+
+Kindle Library
+
+<
+
+About the Author
+
+THE AI COMPANION TO CRAFTING ENGINEERING STRATEGY
+
+QAa □
+
+Will Larson is the chief technology officer at Imprint, and has held senior engineering leadership roles at Carta, Calm, Stripe, and
+
+Uber. He's the author of An Elegant Puzzle, Staff Engineer, and The
+
+Engineering Executive's Primer, and is a prolific writer on his blog, Irrational Exuberance.
+
+Back to 2
+
+Learning reading speed...
+
+Page 70 of 70 100%
+
+...
+
+☐

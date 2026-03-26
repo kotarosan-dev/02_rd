@@ -1,0 +1,25 @@
+{
+  "book_title": "実践的データ基盤への処方箋",
+  "author": "ゆずたそ・渡部徹太郎・伊藤徹郎",
+  "genre": "G",
+  "genre_label": "技術書・リファレンス",
+  "original_chars": 198357,
+  "compressed_chars": 20102,
+  "compression_ratio": 0.10134252887470571,
+  "estimated_reading_minutes": 55,
+  "strategy": "判断基準抽出モード",
+  "key_quotes_count": 0,
+  "chapters_covered": 4,
+  "chapters_total": 4,
+  "source_file": "source.txt",
+  "outputs": [
+    "compressed-reading.md",
+    "structure-map.md",
+    "compression-meta.json"
+  ],
+  "notes": [
+    "構成は導入と第1章〜第3章を対象に再構成",
+    "G技術書モードに合わせて概念階層・判断基準・パターン/アンチパターンを強調",
+    "圧縮はやや強めで、原著の具体例より判断軸の保持を優先"
+  ]
+}

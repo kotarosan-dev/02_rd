@@ -1,0 +1,22 @@
+{
+  "book_title": "44のアンチパターンに学ぶDBシステム",
+  "author": "小田圭二",
+  "genre": "G",
+  "genre_label": "技術書・リファレンス",
+  "original_chars": 179064,
+  "compressed_chars": 11260,
+  "structure_map_chars": 5602,
+  "total_output_chars": 16862,
+  "compression_ratio": 0.06288254478845552,
+  "estimated_reading_minutes": 45,
+  "strategy": "判断基準抽出モード",
+  "key_quotes_count": 5,
+  "chapters_covered": 9,
+  "chapters_total": 9,
+  "source_file": "Books/2026/03/20260326_44のアンチパターンに学ぶDBシステム/source.txt",
+  "output_files": [
+    "Books/2026/03/20260326_44のアンチパターンに学ぶDBシステム/compressed-reading.md",
+    "Books/2026/03/20260326_44のアンチパターンに学ぶDBシステム/structure-map.md",
+    "Books/2026/03/20260326_44のアンチパターンに学ぶDBシステム/compression-meta.json"
+  ]
+}
