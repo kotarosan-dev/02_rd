@@ -1,0 +1,15 @@
+{
+  "book_title": "完全自殺マニュアル",
+  "author": "鶴見済",
+  "genre": "restricted_meta_only",
+  "genre_label": "安全制限付きメタ情報のみ（本文手法は圧縮・引用しない）",
+  "original_chars": 121857,
+  "compressed_chars": 1616,
+  "compression_ratio": 0.013261444480006892,
+  "estimated_reading_minutes": 15,
+  "strategy": "有害具体性を含む本文を除外したメタ要約（book-compressor 例外適用）",
+  "key_quotes_count": 0,
+  "chapters_covered": 0,
+  "chapters_total": null,
+  "notes": "source.txt はローカルにのみ保持。.gitignore でリポジトリから除外。VFlatScan 処理済み移動はユーザーの G ドライブ側で実施。"
+}
