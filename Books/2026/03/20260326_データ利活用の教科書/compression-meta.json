@@ -1,0 +1,70 @@
+{
+  "book_title": "データ利活用の教科書",
+  "author": [
+    "株式会社マクロミル",
+    "渋谷智之"
+  ],
+  "publisher": "翔泳社",
+  "publication_year": 2022,
+  "created_date": "2026-03-26",
+  "genre": "C",
+  "genre_label": "Business Book / Practical Framework",
+  "genre_rationale": "中心が技術実装や設計パターンではなく、ビジネス課題の定義、仮説構築、データ収集、分析、意思決定接続の順番と共通言語の整理にあるため。事例も個別再現より原則理解の補助として機能している。",
+  "source_file": "C:\\Users\\user\\Desktop\\kotarosan\\03_Internal\\02_R&D\\Books\\2026\\03\\20260326_データ利活用の教科書\\source.txt",
+  "output_files": {
+    "compressed_reading": "C:\\Users\\user\\Desktop\\kotarosan\\03_Internal\\02_R&D\\Books\\2026\\03\\20260326_データ利活用の教科書\\compressed-reading.md",
+    "structure_map": "C:\\Users\\user\\Desktop\\kotarosan\\03_Internal\\02_R&D\\Books\\2026\\03\\20260326_データ利活用の教科書\\structure-map.md",
+    "meta": "C:\\Users\\user\\Desktop\\kotarosan\\03_Internal\\02_R&D\\Books\\2026\\03\\20260326_データ利活用の教科書\\compression-meta.json"
+  },
+  "source_chars": 241841,
+  "compressed_reading_chars": 9537,
+  "structure_map_chars": 2870,
+  "overall_output_chars": 12407,
+  "compression_ratio_overall": 0.0513,
+  "estimated_reading_time_minutes": 60,
+  "chapters_covered": {
+    "count": 12,
+    "included": [
+      "はじめに",
+      "第1章",
+      "第2章",
+      "第3章",
+      "第4章",
+      "第5章",
+      "第6章",
+      "第7章",
+      "第8章",
+      "第9章",
+      "第10章",
+      "おわりに"
+    ]
+  },
+  "strategy_used": {
+    "mode": "book-compressor genre C",
+    "focus": [
+      "全章の核心命題の抽出",
+      "課題設定から伝達までのフレーム再構成",
+      "事例の1行要約化",
+      "原則対応表による再配置",
+      "実務判断基準とアンチパターンの保持"
+    ],
+    "case_handling": "事例は1行サマリー＋原則対応表で圧縮",
+    "omissions": [
+      "各図表の細かな読み方",
+      "事例の詳細な経緯",
+      "統計手法と機械学習の実装詳細",
+      "調査会社実務の細部オペレーション"
+    ]
+  },
+  "quality_check": {
+    "full_source_read": true,
+    "genre_decision_completed": true,
+    "utf8_outputs_created": true,
+    "key_claims_preserved": [
+      "課題が先、データは後",
+      "意識データでWHYを補う",
+      "分析は比較から始まる",
+      "レポートは意思決定接続で評価する"
+    ]
+  }
+}
