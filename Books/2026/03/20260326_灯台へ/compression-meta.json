@@ -1,0 +1,35 @@
+{
+  "book_title": "灯台へ",
+  "author": "ヴァージニア・ウルフ",
+  "genre": "A",
+  "genre_label": "文学フィクション",
+  "original_chars": 258756,
+  "compressed_chars": 5747,
+  "structure_map_chars": 2902,
+  "total_output_chars": 8649,
+  "compression_ratio": 0.033426434788759295,
+  "estimated_reading_minutes": 85,
+  "strategy": "体験の種モード",
+  "focus_points": [
+    "象徴体系",
+    "文体の肖像",
+    "キーシーンの短い原文引用",
+    "内面変容の弧"
+  ],
+  "key_quotes_count": 11,
+  "quote_chars_in_compressed_reading": 1119,
+  "quote_ratio_in_compressed_reading": 0.19471028362623977,
+  "chapters_covered": 3,
+  "chapters_total": 3,
+  "source_file": "Books/2026/03/20260326_灯台へ/source.txt",
+  "output_files": [
+    "Books/2026/03/20260326_灯台へ/compressed-reading.md",
+    "Books/2026/03/20260326_灯台へ/structure-map.md",
+    "Books/2026/03/20260326_灯台へ/compression-meta.json"
+  ],
+  "notes": [
+    "分析対象は小説本体の三部構成を中心とし、訳者あとがき等の周辺要素は主分析から外した。",
+    "入力テキストにはOCR由来と思われる表記揺れが一部含まれる。",
+    "原文引用の比率は compressed-reading.md 本文内で約19.5% となるよう調整した。"
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "book_title": "歴史修正ミュージアム",
+  "author": "小森真樹",
+  "publisher_edition": "太田出版, 2025年10月1日",
+  "genre": "F",
+  "genre_label": "エッセイ・随筆集",
+  "secondary_genre": "D",
+  "secondary_genre_label": "学術書・思想書",
+  "compression_mode": "テーゼ＋声モード",
+  "source_file": "C:\\Users\\user\\Desktop\\kotarosan\\03_Internal\\02_R&D\\Books\\2026\\03\\20260326_歴史修正ミュージアム\\source.txt",
+  "output_files": {
+    "compressed_reading": "C:\\Users\\user\\Desktop\\kotarosan\\03_Internal\\02_R&D\\Books\\2026\\03\\20260326_歴史修正ミュージアム\\compressed-reading.md",
+    "structure_map": "C:\\Users\\user\\Desktop\\kotarosan\\03_Internal\\02_R&D\\Books\\2026\\03\\20260326_歴史修正ミュージアム\\structure-map.md",
+    "meta": "C:\\Users\\user\\Desktop\\kotarosan\\03_Internal\\02_R&D\\Books\\2026\\03\\20260326_歴史修正ミュージアム\\compression-meta.json"
+  },
+  "original_chars": 193800,
+  "compressed_chars": 12800,
+  "structure_map_chars": 8400,
+  "compression_ratio": 0.066047,
+  "estimated_reading_minutes": 60,
+  "strategy": "テーゼ＋声モード",
+  "key_quotes_count": 4,
+  "chapters_covered": 22,
+  "chapters_total": 22,
+  "spoiler_policy": "全体主張・章構造・主要事例の結論まで明示",
+  "strategy_notes": [
+    "主判定はF。各篇が独立しつつ、著者の声と反復テーマで全体が束ねられているため",
+    "副判定にDを付与。ミュージアム研究、文化政治、脱植民地化論の論証密度が高いため",
+    "OCR由来の柱・頁番号・記号ノイズは構造理解に不要なため除去して把握",
+    "各エッセイの細部より、章ごとのテーゼと相互の共鳴関係を優先して圧縮"
+  ],
+  "generated_at": "2026-03-26",
+  "encoding": "UTF-8"
+}

@@ -1,0 +1,26 @@
+{
+  "book_title": "歴史は実験できるのか",
+  "author": "ジャレド・ダイアモンド / ジェイムズ・A・ロビンソン 編",
+  "genre": "D",
+  "genre_label": "学術・思想",
+  "mode": "argument-map",
+  "original_chars": 305665,
+  "compressed_chars": 7226,
+  "compression_ratio": 0.0236,
+  "estimated_reading_minutes": 70,
+  "strategy": "ジャンルD（学術・思想）の論証マップモード。各章の問い、比較設計、根拠、結論、方法論上の限界を優先保持し、個別事例の細部より因果推論の骨格を前面化した。",
+  "key_quotes_count": 3,
+  "chapters_covered": 7,
+  "chapters_total": 7,
+  "source_file": "C:\\Users\\user\\Desktop\\kotarosan\\03_Internal\\02_R&D\\Books\\2026\\03\\20260326_歴史は実験できるのか\\source.txt",
+  "outputs": [
+    "C:\\Users\\user\\Desktop\\kotarosan\\03_Internal\\02_R&D\\Books\\2026\\03\\20260326_歴史は実験できるのか\\compressed-reading.md",
+    "C:\\Users\\user\\Desktop\\kotarosan\\03_Internal\\02_R&D\\Books\\2026\\03\\20260326_歴史は実験できるのか\\structure-map.md",
+    "C:\\Users\\user\\Desktop\\kotarosan\\03_Internal\\02_R&D\\Books\\2026\\03\\20260326_歴史は実験できるのか\\compression-meta.json"
+  ],
+  "processing_notes": [
+    "source.txt を章単位で分割読解し、プロローグ・全7章・あとがきの論証骨格を抽出した。",
+    "方法論的射程が本書の核であるため、叙述の厚みよりも比較設計と因果推論の流れを保持した。",
+    "第4章はハイチ/ドミニカ比較とイースター島比較の二つの論証を含むため、圧縮読本では内部で二分して整理した。"
+  ]
+}

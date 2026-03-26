@@ -1,0 +1,30 @@
+{
+  "book_title": "焚殺 歴史の闇に隠されたあるゲイ・クラブの悲劇",
+  "original_title": "TINDERBOX: The Untold Story of the Up Stairs Lounge Fire and the Rise of Gay Liberation",
+  "author": "ロバート・W・フィーゼラー",
+  "publisher_edition": "国書刊行会, 2025年, 邦訳",
+  "genre": "E",
+  "genre_label": "伝記・ルポ / 歴史ノンフィクション",
+  "compression_mode": "turning-point-centric-timeline",
+  "source_file": "C:\\Users\\user\\Desktop\\kotarosan\\03_Internal\\02_R&D\\Books\\2026\\03\\20260326_焚殺\\source.txt",
+  "output_files": {
+    "compressed_reading": "C:\\Users\\user\\Desktop\\kotarosan\\03_Internal\\02_R&D\\Books\\2026\\03\\20260326_焚殺\\compressed-reading.md",
+    "structure_map": "C:\\Users\\user\\Desktop\\kotarosan\\03_Internal\\02_R&D\\Books\\2026\\03\\20260326_焚殺\\structure-map.md"
+  },
+  "original_chars": 494697,
+  "compressed_chars": 5692,
+  "structure_map_chars": 3672,
+  "compression_ratio": "86.91:1",
+  "compression_percentage": 1.15,
+  "estimated_reading_minutes": 65,
+  "spoiler_policy": "full",
+  "strategy_notes": [
+    "本書をE（伝記・ルポ）として扱い、1973年6月24日の火災を中心に前史・当夜・忘却・再記憶を転機で整理した。",
+    "D（学術・思想）ではなくEを選んだ理由は、理論展開よりも証言・人物史・現場描写・年代推移が骨格を成しているため。",
+    "要約では犯人断定を避けず、原著の積み上げに即してロジャー・デール・ヌニェズを最有力放火者として記述したが、公式捜査が未確定のまま終わった点も明記した。",
+    "火災直後の社会的反応を『二次被害』として重視し、警察・報道・教会・行政の不作為が事件の歴史的位置づけを歪めた因果を優先保持した。",
+    "犠牲者個々人の伝記的厚みは原著の重要価値であるため、圧縮版でも共同体・信仰・親密圏の文脈を残す設計にした。"
+  ],
+  "generated_at": "2026-03-26",
+  "encoding": "UTF-8"
+}
