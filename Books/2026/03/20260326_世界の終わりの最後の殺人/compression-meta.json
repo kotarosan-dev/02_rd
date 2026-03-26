@@ -1,0 +1,27 @@
+{
+  "book_title": "世界の終わりの最後の殺人",
+  "author": "スチュアート・タートン",
+  "publisher_edition": "文藝春秋, 2025年, 邦訳",
+  "genre": "B",
+  "genre_label": "ジャンルフィクション／ミステリ",
+  "compression_mode": "骨格＋ハイライト",
+  "source_file": "C:\\Users\\user\\Desktop\\kotarosan\\03_Internal\\02_R&D\\Books\\2026\\03\\20260326_世界の終わりの最後の殺人\\source.txt",
+  "output_files": {
+    "compressed_reading": "C:\\Users\\user\\Desktop\\kotarosan\\03_Internal\\02_R&D\\Books\\2026\\03\\20260326_世界の終わりの最後の殺人\\compressed-reading.md",
+    "structure_map": "C:\\Users\\user\\Desktop\\kotarosan\\03_Internal\\02_R&D\\Books\\2026\\03\\20260326_世界の終わりの最後の殺人\\structure-map.md"
+  },
+  "original_chars": 275740,
+  "compressed_chars": 5510,
+  "structure_map_chars": 3520,
+  "compression_ratio": 50.04,
+  "compression_percentage": 2.0,
+  "estimated_reading_minutes": 55,
+  "spoiler_policy": "真相・犯人・世界設定の核心まで明示",
+  "strategy_notes": [
+    "犯人当てよりも、真相の層状開示と因果再構成を優先",
+    "プロット因果連鎖、伏線マップ、終盤の短い原文引用を保持",
+    "移動・探索の細部より、世界設定反転と倫理テーマを優先"
+  ],
+  "generated_at": "2026-03-26",
+  "encoding": "UTF-8"
+}

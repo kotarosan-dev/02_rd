@@ -1,0 +1,25 @@
+{
+  "book_title": "ビジネスダッシュボード設計・実装ガイドブック 成果を生み出すデータと分析のデザイン",
+  "author": "トレジャーデータ（池田俊介・藤井温子・櫻井将允・花岡明）",
+  "genre": "C",
+  "genre_label": "ビジネス書・自己啓発",
+  "original_chars": 178072,
+  "compressed_chars": 8028,
+  "compression_ratio": 0.045081766468560186,
+  "estimated_reading_minutes": 55,
+  "strategy": "フレームワーク抽出モード",
+  "key_quotes_count": 0,
+  "chapters_covered": 7,
+  "chapters_total": 7,
+  "source_file": "source.txt",
+  "outputs": [
+    "compressed-reading.md",
+    "structure-map.md",
+    "compression-meta.json"
+  ],
+  "notes": [
+    "C/G判定はCを採用。技術要素はあるが、本書の重心はBIツール操作ではなく要求定義・分析設計・運用の方法論にあるため。",
+    "ユーザー要望に合わせて、ダッシュボード設計のフレームワークとチェックリストを通常より前面に出して圧縮した。",
+    "第1章から第7章までの連続フローを維持しつつ、付録のチェックシートも圧縮版に再統合した。"
+  ]
+}

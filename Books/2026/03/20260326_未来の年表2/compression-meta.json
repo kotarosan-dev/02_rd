@@ -1,0 +1,22 @@
+{
+  "book_title": "未来の年表2 人口減少日本であなたに起きること",
+  "author": "河合雅司",
+  "genre": "D",
+  "genre_label": "学術書・思想書",
+  "estimated_reading_minutes": 50,
+  "strategy": "論証マップモード",
+  "key_quotes_count": 0,
+  "chapters_covered": 4,
+  "chapters_total": 4,
+  "source_file": "source.txt",
+  "outputs": [
+    "compressed-reading.md",
+    "structure-map.md",
+    "compression-meta.json"
+  ],
+  "notes": [
+    "前作『未来の年表』が縦軸の年表であるのに対し、本作は生活場面ごとの横軸カタログとして整理した",
+    "第1部は危機の具体像、第2部は個人・企業・地域向けの8つのメニューとして再構成した",
+    "原著の強みである具体的な情景描写は要点保持を優先して圧縮した"
+  ]
+}
