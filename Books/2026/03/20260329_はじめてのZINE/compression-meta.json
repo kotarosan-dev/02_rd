@@ -1,0 +1,15 @@
+{
+  "book_title": "はじめてのZINE",
+  "author": "TJMOOK（編）／ライター：内田桃孔・みや・丸山亮平 ほか",
+  "genre": "G",
+  "genre_label": "技術書・リファレンス（実作・ハウツー系MOOK）",
+  "original_chars": 56955,
+  "compressed_chars": 7269,
+  "compression_ratio": 0.127627,
+  "estimated_reading_minutes": 35,
+  "strategy": "判断基準抽出モード（ZINE制作の実務フロー）",
+  "key_quotes_count": 2,
+  "chapters_covered": 2,
+  "chapters_total": 2,
+  "notes": "compressed_chars は compressed-reading.md 本文更新後に再計測して埋める"
+}

@@ -1,0 +1,15 @@
+{
+  "book_title": "［エンジニアのための］データ分析基盤〈基本編〉",
+  "author": "（技術評論社系／奥付要確認）",
+  "genre": "G",
+  "genre_label": "技術書・リファレンス",
+  "original_chars": 449482,
+  "compressed_chars": 1938,
+  "compression_ratio": 0.004312,
+  "estimated_reading_minutes": 55,
+  "strategy": "判断基準抽出モード（データ分析基盤）",
+  "key_quotes_count": 2,
+  "chapters_covered": 10,
+  "chapters_total": 10,
+  "notes": "2024年10月時点情報の注記あり（本文）。compressed_chars は再計測"
+}

@@ -1,0 +1,15 @@
+{
+  "book_title": "データエンジニアリングの基礎",
+  "author": "Joseph Reis, Matt Housley（原書）／日本語版オライリー・ジャパン",
+  "genre": "G",
+  "genre_label": "技術書・リファレンス",
+  "original_chars": 590043,
+  "compressed_chars": 1783,
+  "compression_ratio": 0.003022,
+  "estimated_reading_minutes": 60,
+  "strategy": "判断基準抽出モード（データエンジニアリングライフサイクル）",
+  "key_quotes_count": 2,
+  "chapters_covered": 11,
+  "chapters_total": 11,
+  "notes": "compressed_chars は再計測"
+}

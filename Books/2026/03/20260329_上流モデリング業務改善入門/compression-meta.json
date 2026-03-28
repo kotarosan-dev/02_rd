@@ -1,0 +1,15 @@
+{
+  "book_title": "上流モデリングによる業務改善手法入門",
+  "author": "世古雅人、渡邊清香",
+  "genre": "G",
+  "genre_label": "技術書・リファレンス",
+  "original_chars": 129501,
+  "compressed_chars": 1579,
+  "compression_ratio": 0.012193,
+  "estimated_reading_minutes": 42,
+  "strategy": "判断基準抽出モード（業務モデリング）",
+  "key_quotes_count": 1,
+  "chapters_covered": 8,
+  "chapters_total": 8,
+  "notes": "compressed_chars は compressed-reading.md 保存後に再計測"
+}

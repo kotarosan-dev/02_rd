@@ -1,0 +1,15 @@
+{
+  "book_title": "データビジュアライゼーションの基礎",
+  "author": "Claus O. Wilke（原書）／訳：小林 儀匡 ほか",
+  "genre": "G",
+  "genre_label": "技術書・リファレンス",
+  "original_chars": 322024,
+  "compressed_chars": 1792,
+  "compression_ratio": 0.005565,
+  "estimated_reading_minutes": 50,
+  "strategy": "判断基準抽出モード（データビジュアライゼーション）",
+  "key_quotes_count": 2,
+  "chapters_covered": 29,
+  "chapters_total": 29,
+  "notes": "compressed_chars は再計測"
+}

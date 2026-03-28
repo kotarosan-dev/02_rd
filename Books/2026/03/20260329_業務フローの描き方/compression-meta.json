@@ -1,0 +1,15 @@
+{
+  "book_title": "業務改革、見える化のための業務フローの描き方 プレミアムブックス版",
+  "author": "山原ほか（分担執筆／奥付要確認）",
+  "genre": "G",
+  "genre_label": "技術書・リファレンス",
+  "original_chars": 126393,
+  "compressed_chars": 1909,
+  "compression_ratio": 0.015104,
+  "estimated_reading_minutes": 40,
+  "strategy": "判断基準抽出モード（BPMN）",
+  "key_quotes_count": 1,
+  "chapters_covered": 6,
+  "chapters_total": 6,
+  "notes": "compressed_chars は compressed-reading.md 保存後に再計測"
+}
