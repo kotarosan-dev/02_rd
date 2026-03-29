@@ -1,15 +1,14 @@
 {
   "book_title": "はじめてのZINE",
-  "author": "TJMOOK（編）／ライター：内田桃孔・みや・丸山亮平 ほか",
+  "author": "TJMOOK（宝島社）／奥付・編集: 山崎准・山崎恵美・藪下秀樹・長步美・菊地孝・大谷幸雄 ほか",
   "genre": "G",
-  "genre_label": "技術書・リファレンス（実作・ハウツー系MOOK）",
+  "genre_label": "技術書・リファレンス",
   "original_chars": 56955,
-  "compressed_chars": 7269,
-  "compression_ratio": 0.127627,
-  "estimated_reading_minutes": 35,
-  "strategy": "判断基準抽出モード（ZINE制作の実務フロー）",
+  "compressed_chars": 8497,
+  "compression_ratio": 0.149,
+  "estimated_reading_minutes": 30,
+  "strategy": "判断基準抽出モード",
   "key_quotes_count": 2,
-  "chapters_covered": 2,
-  "chapters_total": 2,
-  "notes": "compressed_chars は compressed-reading.md 本文更新後に再計測して埋める"
+  "chapters_covered": 19,
+  "chapters_total": 19
 }

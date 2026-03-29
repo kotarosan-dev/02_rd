@@ -1,15 +1,15 @@
 {
   "book_title": "日本のZINEについて知ってることすべて",
   "author": "ばるぼら×野中モモ",
-  "genre": "D",
-  "genre_label": "学術書・思想書（文化史・メディア論）",
+  "genre": "F",
+  "genre_label": "エッセイ・雑録／文化史インタビュー",
   "original_chars": 408125,
-  "compressed_chars": 1970,
-  "compression_ratio": 0.004827,
-  "estimated_reading_minutes": 55,
-  "strategy": "論証マップモード（文化史・批評）",
-  "key_quotes_count": 3,
-  "chapters_covered": 6,
-  "chapters_total": 6,
-  "notes": "ジャンルはD/Fの境界。compressed_chars は再計測"
+  "compressed_chars": 4398,
+  "compression_ratio": 0.010776,
+  "estimated_reading_minutes": 20,
+  "strategy": "テーゼ+声モード（文化史・証言重視）",
+  "key_quotes_count": 10,
+  "chapters_covered": 8,
+  "chapters_total": 8,
+  "notes": "Chapter:0-7を対象に、年代別文化史と終盤インタビュー群の『声』を優先して圧縮。"
 }

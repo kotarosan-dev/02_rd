@@ -1,15 +1,19 @@
 {
   "book_title": "データエンジニアリングの基礎",
-  "author": "Joseph Reis, Matt Housley（原書）／日本語版オライリー・ジャパン",
+  "author": "Joe Reis, Matt Housley",
   "genre": "G",
   "genre_label": "技術書・リファレンス",
   "original_chars": 590043,
-  "compressed_chars": 1783,
-  "compression_ratio": 0.003022,
-  "estimated_reading_minutes": 60,
-  "strategy": "判断基準抽出モード（データエンジニアリングライフサイクル）",
-  "key_quotes_count": 2,
+  "compressed_chars": 11216,
+  "compression_ratio": 0.01900878410556519,
+  "estimated_reading_minutes": 35,
+  "strategy": "判断基準抽出モード（ライフサイクルと技術選定軸を優先抽出）",
+  "key_quotes_count": 4,
   "chapters_covered": 11,
   "chapters_total": 11,
-  "notes": "compressed_chars は再計測"
+  "notes": "source.txt を全件読了のうえ生成。compression_ratio は compressed-reading.md の実測文字数で計算。",
+  "warnings": [
+    "索引・参考資料・付録・著者紹介まで含む source.txt 総文字数を分母にしているため、章本文ベースで見るより圧縮率は低く出る。",
+    "技術書Gの理想レンジより短めの圧縮率になっているため、判断基準の抽出を優先した。"
+  ]
 }

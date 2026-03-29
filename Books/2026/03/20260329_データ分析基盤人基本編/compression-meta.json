@@ -1,15 +1,20 @@
 {
-  "book_title": "［エンジニアのための］データ分析基盤〈基本編〉",
-  "author": "（技術評論社系／奥付要確認）",
+  "book_title": "改訂新版［エンジニアのための］データ分析基盤入門〈基本編〉",
+  "author": "斎藤 友樹",
   "genre": "G",
   "genre_label": "技術書・リファレンス",
   "original_chars": 449482,
-  "compressed_chars": 1938,
-  "compression_ratio": 0.004312,
-  "estimated_reading_minutes": 55,
-  "strategy": "判断基準抽出モード（データ分析基盤）",
+  "compressed_chars": 12147,
+  "compression_ratio": 0.027024,
+  "estimated_reading_minutes": 60,
+  "strategy": "判断基準抽出モード（技術書主軸、C/G混合補正）",
   "key_quotes_count": 2,
-  "chapters_covered": 10,
-  "chapters_total": 10,
-  "notes": "2024年10月時点情報の注記あり（本文）。compressed_chars は再計測"
+  "chapters_covered": 11,
+  "chapters_total": 11,
+  "notes": [
+    "source.txt 全文を読み込み、章構造と主要概念をもとに再構成",
+    "内容はビジネス書的な原則抽出も含むが、主戦略は G: 技術書・リファレンス",
+    "compression_ratio は compressed-reading.md / source.txt の実測値",
+    "OCR由来のノイズと目次反復が多いため、圧縮は主要シグナル優先で再構成"
+  ]
 }

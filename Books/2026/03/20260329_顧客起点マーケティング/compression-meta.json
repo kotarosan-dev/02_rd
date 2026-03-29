@@ -1,15 +1,30 @@
 {
-  "book_title": "たった一人の分析から事業は成長する 実践 顧客起点マーケティング",
-  "author": "（スキャンソースより要確認）",
+  "book_title": "顧客起点マーケティング",
+  "book_subtitle": "たった一人の分析から事業は成長する 実践",
+  "author": "西口一希",
+  "publisher": "翔泳社",
+  "publication_year": 2019,
   "genre": "C",
-  "genre_label": "ビジネス書・自己啓発",
+  "genre_label": "ビジネス書・自己啓発（実務）",
   "original_chars": 150466,
-  "compressed_chars": 4735,
-  "compression_ratio": 0.031469,
-  "estimated_reading_minutes": 45,
+  "compressed_reading_chars": 13110,
+  "structure_map_chars": 1643,
+  "compressed_chars": 14753,
+  "compression_ratio_reading_only": 0.0871,
+  "compression_ratio_including_structure_map": 0.0981,
+  "estimated_reading_minutes": 42,
   "strategy": "フレームワーク抽出モード",
-  "key_quotes_count": 3,
+  "key_quotes_count": 2,
   "chapters_covered": 6,
   "chapters_total": 6,
-  "notes": "compressed_chars は compressed-reading.md 保存後に再計測"
+  "chapter_note": "序章＋第1章〜第5章（はじめに・コラム・おわりには圧縮読本内で横断処理）",
+  "source_file": "source.txt",
+  "output_files": [
+    "compressed-reading.md",
+    "structure-map.md",
+    "compression-meta.json"
+  ],
+  "generated_at": "2026-03-29",
+  "skill_version": "book-compressor v1",
+  "notes": "数値・図表の細部は原著・読者特典Excelを参照。圧縮比はskill目標10-15%に対し本文のみ約8.7%、structure-map含め約9.8%。"
 }
