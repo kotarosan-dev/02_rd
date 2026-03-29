@@ -1,0 +1,26 @@
+{
+  "created": "2026-03-29T03:59:43.657Z",
+  "key": "operation: \"geo\" enables map charts via API",
+  "results": [
+    {
+      "label": "世界地図: 国別売上バブル",
+      "viewId": "102896000000030369",
+      "url": "https://analytics.zoho.jp/workspace/102896000000028001/view/102896000000030369"
+    },
+    {
+      "label": "日本地図: 都道府県別パイプライン（漢字・コロプレス）",
+      "viewId": "102896000000029612",
+      "url": "https://analytics.zoho.jp/workspace/102896000000028001/view/102896000000029612"
+    },
+    {
+      "label": "日本地図: 都道府県別バブル（漢字）",
+      "viewId": "102896000000028373",
+      "url": "https://analytics.zoho.jp/workspace/102896000000028001/view/102896000000028373"
+    },
+    {
+      "label": "都道府県別パイプライン（メインテーブル・コロプレス）",
+      "viewId": "102896000000029620",
+      "url": "https://analytics.zoho.jp/workspace/102896000000028001/view/102896000000029620"
+    }
+  ]
+}

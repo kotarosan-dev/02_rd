@@ -1,0 +1,12 @@
+{
+  "created": "2026-03-29T03:18:14.239Z",
+  "table": {
+    "viewId": "102896000000028272",
+    "name": "CRM_Sales_by_Prefecture_GEO"
+  },
+  "maps": {
+    "area": "102896000000028347",
+    "bubble": "102896000000030297"
+  },
+  "notes": "autoIdentify=false, GEOROLE=2"
+}

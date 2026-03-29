@@ -1,0 +1,18 @@
+{
+  "created": "2026-03-29T03:21:35.110Z",
+  "results": {
+    "testA": {
+      "table": "102896000000029440",
+      "report": "102896000000030307"
+    },
+    "testB": {
+      "table": "102896000000029486",
+      "report": "102896000000030317"
+    },
+    "testC": {
+      "table": "102896000000029542",
+      "report": "102896000000030325"
+    }
+  },
+  "note": "Check each URL in browser to verify if map renders correctly"
+}

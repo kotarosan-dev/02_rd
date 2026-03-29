@@ -1,0 +1,12 @@
+{
+  "created": "2026-03-29T03:13:24.931Z",
+  "prefectureTable": {
+    "viewId": "102896000000029348",
+    "name": "CRM_Sales_by_Prefecture_v2"
+  },
+  "maps": {
+    "area": "102896000000030289",
+    "bubble": "102896000000029423"
+  },
+  "fix": "GEO型 GEOROLE:2 (State/Province) で再作成"
+}
