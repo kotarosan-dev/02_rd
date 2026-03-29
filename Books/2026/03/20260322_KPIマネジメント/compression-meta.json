@@ -1,0 +1,29 @@
+{
+  "book_title": "最高の結果を出すKPIマネジメント",
+  "author": "中尾隆一郎",
+  "genre": "C",
+  "genre_label": "ビジネス書・自己啓発",
+  "source_file": "source.txt",
+  "source_lines": 4672,
+  "original_chars": 76571,
+  "compressed_file": "compressed-reading.md",
+  "compressed_chars": 5910,
+  "structure_map_file": "structure-map.md",
+  "structure_map_chars": 2054,
+  "total_output_chars": 7964,
+  "compression_ratio": 0.07718,
+  "total_output_ratio": 0.10401,
+  "estimated_reading_minutes": 36,
+  "strategy": "C主判定。KGI→CSF→KPIの設計手順、PDDS、運用条件、ケース集をフレームワーク抽出モードで保持し、事例細部は原則レベルへ圧縮。",
+  "key_quotes_count": 2,
+  "chapters_covered": 9,
+  "chapters_total": 9,
+  "quote_policy": "原文引用は最小限",
+  "quality_checks": {
+    "chapter_coverage_complete": true,
+    "framework_extracted": true,
+    "action_guidance_retained": true,
+    "critical_view_included": true
+  },
+  "notes": "compressed_chars は compressed-reading.md 単体、total_output_chars は compressed-reading.md と structure-map.md の合計。文字数・比率は UTF-8 実測値。"
+}

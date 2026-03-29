@@ -1,0 +1,30 @@
+{
+  "book_title": "データ スチュワードシップ",
+  "book_subtitle": "データマネジメント＆ガバナンスの実践ガイド",
+  "author": "David Plotkin",
+  "publisher": "日経BP",
+  "publication_year": 2024,
+  "genre": "G",
+  "genre_label": "技術書・リファレンス",
+  "original_chars": 347805,
+  "compressed_reading_chars": 9238,
+  "structure_map_chars": 2592,
+  "compressed_chars": 11830,
+  "compression_ratio_reading_only": 0.0266,
+  "compression_ratio_including_structure_map": 0.034,
+  "estimated_reading_minutes": 32,
+  "strategy": "判断基準抽出モード",
+  "key_quotes_count": 0,
+  "chapters_covered": 12,
+  "chapters_total": 12,
+  "chapter_note": "序章＋第1章〜第11章を横断圧縮。付録・索引は structure-map 側で補助的に扱う。",
+  "source_file": "source.txt",
+  "output_files": [
+    "compressed-reading.md",
+    "structure-map.md",
+    "compression-meta.json"
+  ],
+  "generated_at": "2026-03-29",
+  "skill_version": "book-compressor v1",
+  "notes": "実測圧縮比は本文のみ約2.66%、structure-map込み約3.40%。Genre G の判断基準抽出を優先し、概念階層・責任設計・運用判断軸を中心に保持した強圧縮版。"
+}

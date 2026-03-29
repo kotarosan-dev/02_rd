@@ -1,0 +1,24 @@
+{
+  "book_title": "データマネジメント知識体系ガイド 第二版 改定新版",
+  "author": "DAMA International",
+  "genre": "G",
+  "genre_label": "技術書・リファレンス",
+  "genre_secondary": "D",
+  "genre_secondary_label": "学術・思想",
+  "original_chars": 810208,
+  "compressed_chars": 5430,
+  "structure_map_chars": 3759,
+  "total_output_chars": 9189,
+  "compression_ratio": 0.011342,
+  "compression_ratio_reading_only": 0.006702,
+  "estimated_reading_minutes": 75,
+  "strategy": "G寄りの判断基準抽出を主軸に、D要素として全社思想・統治原理・変革論を補助線として残す。",
+  "key_quotes_count": 1,
+  "chapters_covered": 17,
+  "chapters_total": 17,
+  "notes": [
+    "compression_ratio は compressed-reading.md と structure-map.md の合計文字数を source.txt の文字数で除算した値。",
+    "compression_ratio_reading_only は compressed-reading.md 単体の文字数比。",
+    "source.txt は UTF-8 として読み取り、改行を含む文字数を計測。"
+  ]
+}

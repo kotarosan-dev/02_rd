@@ -1,0 +1,29 @@
+{
+  "book_title": "外資系コンサルが実践する 図解作成の基本",
+  "author": "吉澤準特",
+  "publisher": "すばる舎",
+  "publication_year": 2018,
+  "genre": "C",
+  "genre_label": "ビジネス書・自己啓発（図解実務／G要素あり）",
+  "original_chars": 3333,
+  "compressed_reading_chars": 4011,
+  "structure_map_chars": 2494,
+  "compressed_chars": 6505,
+  "compression_ratio_reading_only": 1.2034,
+  "compression_ratio_including_structure_map": 1.9517,
+  "estimated_reading_minutes": 15,
+  "strategy": "フレームワーク抽出モード",
+  "key_quotes_count": 2,
+  "chapters_covered": 7,
+  "chapters_total": 7,
+  "chapter_note": "source.txt上の主要7セクション（基本原則、Level 1、Level 2、Level 3、事例集、よくある失敗、Quick Reference）を再構成",
+  "source_file": "source.txt",
+  "output_files": [
+    "compressed-reading.md",
+    "structure-map.md",
+    "compression-meta.json"
+  ],
+  "generated_at": "2026-03-29",
+  "skill_version": "book-compressor v1",
+  "notes": "入力source.txtは93行の高圧縮スキルシート型テキストで、章全文OCRではない。そのため通常の圧縮率指標は成立せず、比率は『入力ソース比でどれだけ再構造化したか』を示す参考値。主判定はCとしたが、図解パターン選択と判断基準の性格からG要素も強い。"
+}

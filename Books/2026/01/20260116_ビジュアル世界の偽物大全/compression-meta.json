@@ -1,0 +1,61 @@
+{
+  "book_title": "ビジュアル 世界の偽物大全",
+  "subtitle": "FAKES, SCAMS & FORGERIES",
+  "author": [
+    "ブライアン・インズ",
+    "クリス・マクナブ"
+  ],
+  "translator": [
+    "定木大介",
+    "竹花秀春",
+    "梅田智世"
+  ],
+  "publisher": "日経ナショナルジオグラフィック",
+  "publication_date": "2023-01-23",
+  "isbn": "978-4-86313-557-7",
+  "genre": "D",
+  "genre_label": "学術書・思想書",
+  "secondary_genre": "C",
+  "secondary_genre_label": "ビジネス書・一般教養",
+  "classification_rationale": "個別エピソード集の体裁だが、実質は真贋判定・視覚的信頼・制度の脆弱性を横断的に読む文化史／知識社会論として整理できるため、主判定をDとした。読みやすさとケース集としての性格を補うため副次的にCの整理も採用した。",
+  "source_file": "source.txt",
+  "article_file": "article.md",
+  "compressed_file": "compressed-reading.md",
+  "structure_map_file": "structure-map.md",
+  "original_lines": 5991,
+  "original_chars": 259500,
+  "compressed_chars": 6040,
+  "structure_map_chars": 1799,
+  "total_output_chars": 7839,
+  "compression_ratio": 0.023276,
+  "total_output_ratio": 0.030208,
+  "estimated_reading_minutes": 55,
+  "strategy": {
+    "primary": "論証の骨格保持",
+    "secondary": "一般読者向けの可読性補強",
+    "quote_policy": "minimal",
+    "key_quotes_target": 2,
+    "preserve": [
+      "視覚的欺瞞を支える制度と欲望という中心テーゼ",
+      "8章を貫く真贋判定の共通構造",
+      "専門家や制度が敗れるパターン",
+      "貨幣・芸術・文書・考古学・身分・信用・政治・科学の横断接続"
+    ],
+    "discard": [
+      "個別逸話の細部",
+      "図版依存の面白さの大半",
+      "同型反復の事例列挙",
+      "事件ごとの周辺ディテール"
+    ]
+  },
+  "key_quotes_count": 2,
+  "chapters_covered": 8,
+  "chapters_total": 8,
+  "quality_checks": {
+    "utf8_required": true,
+    "full_source_read": true,
+    "minimal_quotes": true,
+    "thesis_preserved": true,
+    "cross_chapter_structure_retained": true
+  }
+}

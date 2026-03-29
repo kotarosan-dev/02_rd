@@ -1,0 +1,25 @@
+{
+  "book_title": "ゼロから始める無敵のレポート・論文術",
+  "author": "尾崎俊介",
+  "genre": "C",
+  "genre_label": "ビジネス書・自己啓発",
+  "genre_note": "卒論・レポート作成の実践ガイド。調査手順や注記法などG寄りの実務要素を含む。",
+  "original_chars": 143950,
+  "compressed_chars": 7380,
+  "structure_map_chars": 1904,
+  "compressed_plus_structure_map_chars": 9284,
+  "compression_ratio": 0.051268,
+  "compression_ratio_including_structure_map": 0.064495,
+  "estimated_reading_minutes": 46,
+  "strategy": "フレームワーク抽出モード",
+  "key_quotes_count": 3,
+  "chapters_covered": 10,
+  "chapters_total": 10,
+  "source_file": "source.txt",
+  "outputs": [
+    "compressed-reading.md",
+    "structure-map.md",
+    "compression-meta.json"
+  ],
+  "generated_date": "2026-03-29"
+}
