@@ -1,0 +1,27 @@
+{
+  "book_title": "ブラック・スノウ 東京大空襲と原爆投下への道",
+  "author": "ジェームズ・M・スコット",
+  "genre": "D",
+  "genre_label": "学術書・思想書（叙述戦史）",
+  "source_file": "source.txt",
+  "original_chars": 494914,
+  "compressed_file": "compressed-reading.md",
+  "compressed_chars": 1516,
+  "structure_map_file": "structure-map.md",
+  "structure_map_chars": 411,
+  "total_output_chars": 1927,
+  "compression_ratio": 0.00306,
+  "total_output_ratio": 0.00389,
+  "estimated_reading_minutes": 12,
+  "strategy": "論証マップ＋時系列骨格（叙述史をD枠で要約）。倫理・戦略の二重焦点。",
+  "key_quotes_count": 1,
+  "chapters_covered": 3,
+  "chapters_total": 3,
+  "quote_policy": "日本語版に寄せての研究動機の引用",
+  "quality_checks": {
+    "chapter_coverage_complete": false,
+    "framework_extracted": true,
+    "critical_view_included": true
+  },
+  "notes": "惨禍描写の体感は原著。トリガー配慮。文字数実測 2026-03-31。"
+}

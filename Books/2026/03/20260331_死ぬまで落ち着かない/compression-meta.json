@@ -1,0 +1,27 @@
+{
+  "book_title": "死ぬまで落ち着かない 六十年生きてみてわかった人生のこと",
+  "author": "鶴見 済",
+  "genre": "F",
+  "genre_label": "エッセイ・随筆",
+  "source_file": "source.txt",
+  "original_chars": 84591,
+  "compressed_file": "compressed-reading.md",
+  "compressed_chars": 1473,
+  "structure_map_file": "structure-map.md",
+  "structure_map_chars": 362,
+  "total_output_chars": 1835,
+  "compression_ratio": 0.01741,
+  "total_output_ratio": 0.02169,
+  "estimated_reading_minutes": 11,
+  "strategy": "テーゼ＋声（F）。まえがき・3章構造を俯瞰。第3章は手段記載を避ける方針。",
+  "key_quotes_count": 1,
+  "chapters_covered": 3,
+  "chapters_total": 3,
+  "quote_policy": "キーワード宣言の引用のみ。死生観の細部は原著。",
+  "restricted_meta_only": false,
+  "quality_checks": {
+    "voice_retained": true,
+    "no_actionable_harm_content": true
+  },
+  "notes": "精神保健上の個別支援は専門窓口へ。文字数実測 2026-03-31。"
+}

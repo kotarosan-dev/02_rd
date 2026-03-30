@@ -1,0 +1,27 @@
+{
+  "book_title": "わたしたちの図書館旅団",
+  "author": "ジャネット・スケスリン・チャールズ",
+  "genre": "B",
+  "genre_label": "ジャンルフィクション（歴史小説）",
+  "source_file": "source.txt",
+  "original_chars": 273665,
+  "compressed_file": "compressed-reading.md",
+  "compressed_chars": 1703,
+  "structure_map_file": "structure-map.md",
+  "structure_map_chars": 335,
+  "total_output_chars": 2038,
+  "compression_ratio": 0.00622,
+  "total_output_ratio": 0.00745,
+  "estimated_reading_minutes": 12,
+  "strategy": "骨格＋ハイライト（B）。関係図・プロット因果・最小原文引用。",
+  "key_quotes_count": 1,
+  "chapters_covered": 6,
+  "chapters_total": 6,
+  "quote_policy": "プロローグ象徴シーンの1引用",
+  "quality_checks": {
+    "plot_chain_sketched": true,
+    "character_map_included": true,
+    "spoiler_minimized": false
+  },
+  "notes": "フィクションのため史実は訳者あとがき参照。文字数実測 2026-03-31。"
+}

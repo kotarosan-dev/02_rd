@@ -1,0 +1,26 @@
+{
+  "book_title": "禁じられた装丁 皮膚でつくられた本の歴史と倫理",
+  "author": "メーガン・ローゼンブルーム",
+  "genre": "D",
+  "genre_label": "学術書・思想書（科学史ルポ）",
+  "source_file": "source.txt",
+  "original_chars": 255598,
+  "compressed_file": "compressed-reading.md",
+  "compressed_chars": 1621,
+  "structure_map_file": "structure-map.md",
+  "structure_map_chars": 304,
+  "total_output_chars": 1925,
+  "compression_ratio": 0.00634,
+  "total_output_ratio": 0.00753,
+  "estimated_reading_minutes": 11,
+  "strategy": "論証マップ（D）。プロジェクト・概念・倫理論点を中心に保持。",
+  "key_quotes_count": 1,
+  "chapters_covered": 12,
+  "chapters_total": 12,
+  "quote_policy": "外観の欺瞞に関する著者からの引用",
+  "quality_checks": {
+    "concept_definitions_retained": true,
+    "ethical_dimension_included": true
+  },
+  "notes": "鑑定手順・個別来歴の細部は原著。文字数実測 2026-03-31。"
+}

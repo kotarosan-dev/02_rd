@@ -1,0 +1,28 @@
+{
+  "book_title": "ネクロポリティクス 死の政治学",
+  "author": "アキール・ンベンベ",
+  "genre": "D",
+  "genre_label": "学術書・思想書",
+  "source_file": "source.txt",
+  "original_chars": 316761,
+  "compressed_file": "compressed-reading.md",
+  "compressed_chars": 1962,
+  "structure_map_file": "structure-map.md",
+  "structure_map_chars": 439,
+  "total_output_chars": 2401,
+  "compression_ratio": 0.00619,
+  "total_output_ratio": 0.00758,
+  "estimated_reading_minutes": 14,
+  "strategy": "論証マップモード（D）。序章・第一章を軸に概念装置と位置づけを保持。",
+  "key_quotes_count": 1,
+  "chapters_covered": 8,
+  "chapters_total": 8,
+  "quote_policy": "文体メタ言明の最小引用",
+  "quality_checks": {
+    "chapter_coverage_complete": false,
+    "framework_extracted": true,
+    "concept_definitions_retained": true,
+    "critical_view_included": true
+  },
+  "notes": "原注・索引・中身の細部は原著必須。文字数実測 2026-03-31。"
+}

@@ -1,0 +1,28 @@
+{
+  "book_title": "KPI大全 重要経営指標100の読み方＆使い方",
+  "author": "嶋田 毅",
+  "genre": "C",
+  "genre_label": "ビジネス書・自己啓発",
+  "source_file": "source.txt",
+  "original_chars": 196721,
+  "compressed_file": "compressed-reading.md",
+  "compressed_chars": 2198,
+  "structure_map_file": "structure-map.md",
+  "structure_map_chars": 425,
+  "total_output_chars": 2623,
+  "compression_ratio": 0.01117,
+  "total_output_ratio": 0.01333,
+  "estimated_reading_minutes": 10,
+  "strategy": "フレームワーク抽出モード（C）。KPI概念→領域別100の地図化→批判的視座・チェックリスト。",
+  "key_quotes_count": 0,
+  "chapters_covered": 4,
+  "chapters_total": 4,
+  "quote_policy": "原文引用は最小（本出力では引用ブロックなし、要旨のみ）",
+  "quality_checks": {
+    "chapter_coverage_complete": false,
+    "framework_extracted": true,
+    "action_guidance_retained": true,
+    "critical_view_included": true
+  },
+  "notes": "100指標の個別解説は圧縮不能。文字数は UTF-8 読み込み後の .NET 文字列長（2026-03-31 実測）。PART2以降の章数はスキャン目次ノイズのため構造マップで要補正。"
+}

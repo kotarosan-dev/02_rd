@@ -1,0 +1,27 @@
+{
+  "book_title": "不安の世代",
+  "author": "ジョナサン・ハイト",
+  "genre": "C",
+  "genre_label": "ビジネス書・自己啓発（社会評論）",
+  "source_file": "source.txt",
+  "original_chars": 446747,
+  "compressed_file": "compressed-reading.md",
+  "compressed_chars": 1862,
+  "structure_map_file": "structure-map.md",
+  "structure_map_chars": 425,
+  "total_output_chars": 2287,
+  "compression_ratio": 0.00417,
+  "total_output_ratio": 0.00512,
+  "estimated_reading_minutes": 12,
+  "strategy": "フレームワーク抽出（C）。4部構造・集合行動提言・批判的視座。",
+  "key_quotes_count": 1,
+  "chapters_covered": 12,
+  "chapters_total": 12,
+  "quote_policy": "章題レベルの言及。自傷手段は記載なし。",
+  "quality_checks": {
+    "framework_extracted": true,
+    "critical_view_included": true,
+    "no_actionable_harm_content": true
+  },
+  "notes": "統計・政策の詳細は原著。若年メンタルは敏感領域。文字数実測 2026-03-31。"
+}
