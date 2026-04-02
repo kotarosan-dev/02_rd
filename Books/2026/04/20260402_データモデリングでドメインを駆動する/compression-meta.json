@@ -3,7 +3,7 @@
   "subtitle": "分散/疎結合な基幹系システムに向けて",
   "author": "杉本啓",
   "publisher": "技術評論社",
-  "source_path": "C:\\Users\\user\\Desktop\\kotarosan\\03_Internal\\02_R&D\\Books\\2026\\02\\20260204_データモデリングでドメインを駆動する\\source.txt",
+  "source_path": "C:\\Users\\user\\Desktop\\kotarosan\\03_Internal\\02_R&D\\Books\\2026\\04\\20260402_データモデリングでドメインを駆動する\\source.txt",
   "phase0": {
     "full_read_completed": true,
     "read_method": "chunked ReadFile",
@@ -17,7 +17,7 @@
   },
   "outputs": {
     "compressed_reading": {
-      "path": "C:\\Users\\user\\Desktop\\kotarosan\\03_Internal\\02_R&D\\Books\\2026\\02\\20260204_データモデリングでドメインを駆動する\\compressed-reading.md",
+      "path": "C:\\Users\\user\\Desktop\\kotarosan\\03_Internal\\02_R&D\\Books\\2026\\04\\20260402_データモデリングでドメインを駆動する\\compressed-reading.md",
       "lines": 300,
       "chars_no_crlf": 11903,
       "quotes_count": 4,
@@ -25,7 +25,7 @@
       "checklist_items": 19
     },
     "structure_map": {
-      "path": "C:\\Users\\user\\Desktop\\kotarosan\\03_Internal\\02_R&D\\Books\\2026\\02\\20260204_データモデリングでドメインを駆動する\\structure-map.md",
+      "path": "C:\\Users\\user\\Desktop\\kotarosan\\03_Internal\\02_R&D\\Books\\2026\\04\\20260402_データモデリングでドメインを駆動する\\structure-map.md",
       "lines": 43,
       "chars_no_crlf": 1138
     }
