@@ -1,0 +1,38 @@
+{
+  "title": "実践的データモデリング入門",
+  "author": "不明",
+  "genre": "G",
+  "genre_note": "技術書・リファレンス判定。実務方法論としてのC要素も併用。",
+  "source_file": "source.txt",
+  "original_chars": 254354,
+  "original_lines": 11541,
+  "compressed_chars": 13611,
+  "compressed_chars_no_newlines": 13192,
+  "compressed_lines": 419,
+  "structure_map_chars": 2692,
+  "structure_map_chars_no_newlines": 2551,
+  "structure_map_lines": 141,
+  "total_output_chars": 15743,
+  "required_min_chars": 10000,
+  "compression_ratio": 0.0519,
+  "estimated_reading_minutes": 60,
+  "quality_checks": {
+    "phase0_full_read_done": true,
+    "all_chapters_covered": true,
+    "quotes_included": true,
+    "glossary_included": true,
+    "checklist_included": true,
+    "pitfalls_included": true,
+    "critical_view_included": true,
+    "bridge_to_original_included": true,
+    "compressed_reading_min_lines_ok": true,
+    "compressed_reading_min_chars_ok": true,
+    "total_output_min_chars_ok": true,
+    "utf8_written": true
+  },
+  "notes": [
+    "original_chars は source.txt から改行コードを除いて数えた文字数です。",
+    "compressed_chars は compressed-reading.md の改行込み文字数、compressed_chars_no_newlines は改行除去後文字数です。",
+    "total_output_chars は compressed-reading.md と structure-map.md の改行除去後文字数の合計です。"
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "book_title": "<業務別> データベース設計のためのデータモデリング入門",
+  "author": "渡辺幸三",
+  "genre": "G",
+  "genre_label": "技術書・リファレンス",
+  "original_chars": 143723,
+  "compressed_chars_no_newlines": 14156,
+  "compressed_lines": 482,
+  "structure_map_chars": 3202,
+  "structure_map_chars_no_newlines": 3113,
+  "total_output": 17839,
+  "total_output_no_newlines": 17269,
+  "required_min_chars": 10000,
+  "required_min_chars_rule": "max(original_chars * 0.025, 10000) for genre G",
+  "compression_ratio": 0.0985,
+  "estimated_reading_minutes": 55,
+  "strategy": "判断基準抽出モード",
+  "quality_checks": {
+    "length_guard_passed": true,
+    "min_lines_300_passed": true,
+    "chapter_coverage_complete": true,
+    "quotes_two_or_more_passed": true,
+    "genre_g_sections_present": true,
+    "notes": [
+      "original_chars は source.txt の UTF-8 読み込み後、CR/LF を除去して数えた文字数。",
+      "compressed_chars_no_newlines は compressed-reading.md の CR/LF 除去後文字数。",
+      "structure_map_chars は structure-map.md の改行込み文字数。",
+      "total_output は compressed-reading.md と structure-map.md の改行込み合計文字数。",
+      "total_output_no_newlines は両 Markdown の CR/LF 除去後合計文字数。",
+      "source.txt 後半は OCR 密度に揺れがあるため、第5章・第6章は目次断片と索引語も使って論点を復元した。"
+    ]
+  }
+}

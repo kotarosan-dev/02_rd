@@ -1,0 +1,57 @@
+{
+  "title": "データモデリングでドメインを駆動する",
+  "subtitle": "分散/疎結合な基幹系システムに向けて",
+  "author": "杉本啓",
+  "publisher": "技術評論社",
+  "source_path": "C:\\Users\\user\\Desktop\\kotarosan\\03_Internal\\02_R&D\\Books\\2026\\02\\20260204_データモデリングでドメインを駆動する\\source.txt",
+  "phase0": {
+    "full_read_completed": true,
+    "read_method": "chunked ReadFile",
+    "source_lines": 9678,
+    "source_chars_no_crlf": 335323
+  },
+  "genre_detection": {
+    "primary_genre": "C",
+    "label": "business/management with technical systems density",
+    "rationale": "Framework-driven enterprise systems book centered on SoA/SoM, ledger design, loose coupling, and design principles rather than step-by-step implementation."
+  },
+  "outputs": {
+    "compressed_reading": {
+      "path": "C:\\Users\\user\\Desktop\\kotarosan\\03_Internal\\02_R&D\\Books\\2026\\02\\20260204_データモデリングでドメインを駆動する\\compressed-reading.md",
+      "lines": 300,
+      "chars_no_crlf": 11903,
+      "quotes_count": 4,
+      "chapter_heading_count": 15,
+      "checklist_items": 19
+    },
+    "structure_map": {
+      "path": "C:\\Users\\user\\Desktop\\kotarosan\\03_Internal\\02_R&D\\Books\\2026\\02\\20260204_データモデリングでドメインを駆動する\\structure-map.md",
+      "lines": 43,
+      "chars_no_crlf": 1138
+    }
+  },
+  "quality_gates": {
+    "min_300_lines_passed": true,
+    "min_10000_chars_no_crlf_passed": true,
+    "quotes_2_plus_passed": true,
+    "all_chapters_covered_passed": true,
+    "ddd_distributed_loose_coupling_terms_preserved": true,
+    "critical_perspective_included": true,
+    "checklist_included": true,
+    "utf8_output": true
+  },
+  "key_topics_preserved": [
+    "SoA and SoM separation",
+    "ledger design as data modeling",
+    "remaining work concept of 残",
+    "multi-dimensional model and versioning",
+    "software-side variability",
+    "eventual consistency between ledgers",
+    "entity and role master sharing",
+    "meta-model versus notation",
+    "accidental complexity",
+    "conceptual data model as the single center",
+    "critique and re-interpretation of DDD",
+    "domain-driving design"
+  ]
+}
