@@ -1,0 +1,71 @@
+{
+  "title": "火星の人［新版］〔下〕",
+  "genre": {
+    "specified": "B SF",
+    "applied_strategy": "genre-fiction-bone-and-highlight"
+  },
+  "source": {
+    "file": "source.txt",
+    "full_read_completed": true,
+    "read_method": "chunked",
+    "line_count": 6407,
+    "char_count_with_newlines": 164826,
+    "char_count_without_newlines": 158420
+  },
+  "outputs": {
+    "compressed_reading": {
+      "file": "compressed-reading.md",
+      "line_count": 867,
+      "char_count_with_newlines": 10958,
+      "char_count_without_newlines": 10091,
+      "quote_marker_count": 14,
+      "meets_min_lines_300": true,
+      "meets_min_chars_10000_without_newlines": true,
+      "meets_min_quotes_2": true
+    },
+    "structure_map": {
+      "file": "structure-map.md",
+      "line_count": 102,
+      "char_count_with_newlines": 1786,
+      "char_count_without_newlines": 1684
+    }
+  },
+  "compression": {
+    "required_min_chars_phase_3_5": 8000,
+    "actual_chars_without_newlines_total_outputs": 11775,
+    "compressed_reading_ratio_vs_source_no_newlines": 0.0637,
+    "total_outputs_ratio_vs_source_no_newlines": 0.0743
+  },
+  "phase_3_5_volume_calibration": {
+    "passed": true,
+    "checks": {
+      "genre_b_character_map_present": true,
+      "genre_b_world_setting_present": true,
+      "genre_b_plot_3_plus_acts_present": true,
+      "genre_b_foreshadowing_table_3_plus_lines_present": true,
+      "genre_b_quotes_2_plus_present": true,
+      "compressed_reading_lines_300_plus": true,
+      "compressed_reading_chars_10000_plus_no_newlines": true,
+      "total_outputs_meet_required_min_chars": true
+    }
+  },
+  "phase_5_quality_check": {
+    "passed": true,
+    "checks": {
+      "full_source_read_no_skip": true,
+      "chapter_arc_coverage": true,
+      "causal_chain_preserved": true,
+      "foreshadowing_and_payoff_preserved": true,
+      "character_relationships_preserved": true,
+      "technical_constraints_preserved": true,
+      "ending_reflection_preserved": true
+    }
+  },
+  "notes": [
+    "G drive was not accessed.",
+    "Compressed reading emphasizes causal chain, rescue architecture, and hard-SF engineering constraints.",
+    "Some repetitive travel and repair micro-steps were intentionally compressed."
+  ],
+  "estimated_reading_time_minutes": 60,
+  "generated_on": "2026-04-05"
+}

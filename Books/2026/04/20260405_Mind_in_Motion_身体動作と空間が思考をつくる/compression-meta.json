@@ -1,0 +1,43 @@
+{
+  "title": "MIND IN MOTION 身体動作と空間が思考をつくる",
+  "author": "Barbara Tversky",
+  "genre": "D",
+  "genre_label": "学術書・思想書",
+  "genre_confidence": 0.91,
+  "source_file": "C:\\Users\\user\\Desktop\\kotarosan\\03_Internal\\02_R&D\\Books\\2026\\04\\20260405_Mind_in_Motion_身体動作と空間が思考をつくる\\source.txt",
+  "output_files": {
+    "compressed_reading": "C:\\Users\\user\\Desktop\\kotarosan\\03_Internal\\02_R&D\\Books\\2026\\04\\20260405_Mind_in_Motion_身体動作と空間が思考をつくる\\compressed-reading.md",
+    "structure_map": "C:\\Users\\user\\Desktop\\kotarosan\\03_Internal\\02_R&D\\Books\\2026\\04\\20260405_Mind_in_Motion_身体動作と空間が思考をつくる\\structure-map.md",
+    "compression_meta": "C:\\Users\\user\\Desktop\\kotarosan\\03_Internal\\02_R&D\\Books\\2026\\04\\20260405_Mind_in_Motion_身体動作と空間が思考をつくる\\compression-meta.json"
+  },
+  "original_chars": 397731,
+  "compressed_lines": 351,
+  "compressed_chars_no_newlines": 12514,
+  "structure_map_chars_no_newlines": 2565,
+  "total_output_chars_no_newlines": 15079,
+  "required_min_chars": 10000,
+  "quotes_count": 8,
+  "chapter_coverage": [
+    "プロローグ",
+    "第1章",
+    "第2章",
+    "第3章",
+    "第4章",
+    "第5章",
+    "第6章",
+    "第7章",
+    "第8章",
+    "第9章",
+    "第10章",
+    "解説"
+  ],
+  "notes": [
+    "Phase 0: source.txt 全文読了済み。",
+    "Genre D を採用。理由: 論証構造、研究者名、概念定義、解説の学術的フレーミングが強い。",
+    "compressed-reading.md は D テンプレートに合わせて、知的位置づけ・概念装置・全章論証要約・論争点を保持。",
+    "OCR ノイズが一部あるため、引用は意味が明瞭な箇所を優先して採取。",
+    "compressed-reading.md は 300 行以上を満たす。",
+    "compressed-reading.md は 10000 字以上を満たす。",
+    "compressed-reading.md + structure-map.md 合計で required_min_chars を満たす。"
+  ]
+}

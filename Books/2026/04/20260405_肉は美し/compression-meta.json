@@ -1,0 +1,67 @@
+{
+  "book_title": "肉は美し",
+  "author": "アグスティナ・バステリカ",
+  "genre": "B",
+  "genre_label": "ジャンルフィクション",
+  "genre_reasoning": "ディストピアSF/ホラーとしての世界設定を持ちつつ、物語の主駆動が因果連鎖、制度の展開、主人公の逸脱、終盤の回収に強く依存しているため、AよりBで処理するのが妥当。",
+  "subgenre": [
+    "ディストピア",
+    "SF",
+    "ホラー",
+    "社会風刺"
+  ],
+  "original_chars": 133897,
+  "original_chars_with_newlines": 137597,
+  "compressed_chars": 10502,
+  "compressed_chars_no_newlines": 10045,
+  "compressed_lines": 457,
+  "structure_map_chars": 3921,
+  "structure_map_chars_no_newlines": 3804,
+  "structure_map_lines": 117,
+  "total_output_chars": 14423,
+  "total_output_chars_no_newlines": 13849,
+  "compression_ratio": 0.07502035146418516,
+  "total_output_ratio": 0.10343024862394229,
+  "estimated_reading_minutes": 65,
+  "strategy": "骨格＋ハイライト",
+  "strategy_details": [
+    "プロットの因果連鎖を保持",
+    "人物関係図を明示",
+    "世界設定を制度単位で圧縮",
+    "伏線と回収を表で整理",
+    "原文引用を3本採用"
+  ],
+  "key_quotes_count": 3,
+  "chapters_covered": 42,
+  "chapters_total": 42,
+  "parts_covered": 2,
+  "parts_total": 2,
+  "required_min_chars": 8000,
+  "required_min_chars_rule": "max(original_chars * 0.02, 8000) for genre B",
+  "book_compressor_full_work": true,
+  "book_compressor_full_work_date": "2026-04-05",
+  "restricted_meta_only": false,
+  "quality_checks": {
+    "phase0_full_read_completed": true,
+    "genre_strategy_read": true,
+    "chapter_coverage_complete": true,
+    "quotes_min_2_passed": true,
+    "min_lines_300_passed": true,
+    "compressed_min_10000_chars_no_newlines_passed": true,
+    "length_guard_passed": true,
+    "structure_map_created": true,
+    "meta_extended": true
+  },
+  "notes": "original_chars is counted without CR/LF. original_chars_with_newlines includes line breaks. compressed_chars and structure_map_chars include line breaks. compressed_chars_no_newlines, structure_map_chars_no_newlines, total_output_chars_no_newlines remove CR and LF and are the primary values for Phase 5 validation.",
+  "observations": [
+    "動物の不在が倫理の喪失を照らす構図が全編を貫く。",
+    "主人公は反体制の良心ではなく、制度を私有空間で再演する人物として終わる。",
+    "終盤の殺害はサプライズではなく、工場工程と父性欠落の論理的帰結として回収される。"
+  ],
+  "source_file": "source.txt",
+  "output_files": [
+    "compressed-reading.md",
+    "structure-map.md",
+    "compression-meta.json"
+  ]
+}

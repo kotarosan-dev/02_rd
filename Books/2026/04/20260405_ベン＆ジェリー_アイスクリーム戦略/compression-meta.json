@@ -1,0 +1,86 @@
+{
+  "book_title": "ベン＆ジェリー アイスクリーム戦略",
+  "source_dir": "C:\\Users\\user\\Desktop\\kotarosan\\03_Internal\\02_R&D\\Books\\2026\\04\\20260405_ベン＆ジェリー_アイスクリーム戦略",
+  "source_file": "C:\\Users\\user\\Desktop\\kotarosan\\03_Internal\\02_R&D\\Books\\2026\\04\\20260405_ベン＆ジェリー_アイスクリーム戦略\\source.txt",
+  "compressed_reading_file": "C:\\Users\\user\\Desktop\\kotarosan\\03_Internal\\02_R&D\\Books\\2026\\04\\20260405_ベン＆ジェリー_アイスクリーム戦略\\compressed-reading.md",
+  "structure_map_file": "C:\\Users\\user\\Desktop\\kotarosan\\03_Internal\\02_R&D\\Books\\2026\\04\\20260405_ベン＆ジェリー_アイスクリーム戦略\\structure-map.md",
+  "genre": "C",
+  "genre_label": "Business / Strategy / Social Enterprise",
+  "genre_confidence": 0.98,
+  "compression_mode": "framework-extraction",
+  "genre_rationale": [
+    "章構成が経営機能別で、概念定義→購買→財務→小売→マーケ→人事→政治→海外→未来の順で展開している",
+    "反復される主眼がフレームワーク、意思決定原則、実務事例、チェックリスト化に適している",
+    "読者価値の中心が物語没入より再利用可能な経営原則の抽出にある"
+  ],
+  "source_metrics": {
+    "lines": 7096,
+    "chars": 259296,
+    "chars_no_newlines": 252200
+  },
+  "output_metrics": {
+    "compressed_lines": 396,
+    "compressed_chars": 13693,
+    "compressed_chars_no_newlines": 13297,
+    "structure_lines": 109,
+    "structure_chars": 2852,
+    "structure_chars_no_newlines": 2743,
+    "total_output_lines": 505,
+    "total_output_chars": 16545,
+    "total_output_chars_no_newlines": 16040
+  },
+  "required_thresholds": {
+    "ratio_floor": 0.02,
+    "absolute_min_chars": 10000,
+    "required_min_chars": 10000,
+    "min_compressed_lines": 300,
+    "min_quotes": 2,
+    "min_checklist_items": 15
+  },
+  "quality_checks": {
+    "full_source_read_completed": true,
+    "genre_c_confirmed": true,
+    "min_lines_300_passed": true,
+    "compressed_chars_no_newlines_passed": true,
+    "required_min_chars_passed": true,
+    "quote_count_passed": true,
+    "framework_section_present": true,
+    "chapter_essence_present": true,
+    "checklist_present": true,
+    "pitfalls_present": true,
+    "structure_map_present": true,
+    "appendix_covered": true,
+    "translator_afterword_covered": true
+  },
+  "content_metrics": {
+    "quote_count": 3,
+    "checklist_count": 20,
+    "pitfall_count": 12,
+    "covered_sections": [
+      "序章",
+      "第1章",
+      "第2章",
+      "第3章",
+      "第4章",
+      "第5章",
+      "第6章",
+      "第7章",
+      "第8章",
+      "第9章",
+      "付録",
+      "訳者あとがき"
+    ]
+  },
+  "self_verification_notes": [
+    "source.txt は全文をチャンク読了済み",
+    "compressed-reading.md は章別エッセンス、コアフレームワーク、引用、批判的視座、チェックリスト、落とし穴を含む",
+    "structure-map.md は全体構造、章ごとの役割、中核命題の流れ、主要事例、反復対立軸を含む",
+    "合計出力文字数は required_min_chars を上回っている"
+  ],
+  "notes_on_counting": {
+    "chars": "UTF-8 テキストを Python で読み込み、改行を含む文字数",
+    "chars_no_newlines": "LF/CR を除去した文字数",
+    "line_count_method": "Python splitlines() による行数"
+  },
+  "created_at_local": "2026-04-05"
+}

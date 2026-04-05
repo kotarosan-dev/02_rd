@@ -1,0 +1,52 @@
+{
+  "book_title": "新版 財務3表一体理解法 発展編",
+  "author": "國貞克則",
+  "genre": "C",
+  "genre_label": "ビジネス書・自己啓発（会計・財務）",
+  "genre_secondary": "G-like finance/accounting decision support",
+  "original_chars": 113561,
+  "original_chars_no_newlines": 106911,
+  "compressed_chars": 15552,
+  "compressed_chars_no_newlines": 15174,
+  "compressed_lines": 378,
+  "structure_map_chars": 2909,
+  "structure_map_chars_no_newlines": 2774,
+  "total_output_chars": 18461,
+  "total_output_chars_no_newlines": 17948,
+  "compression_ratio": 0.1419,
+  "total_output_ratio": 0.1679,
+  "estimated_reading_minutes": 60,
+  "strategy": "Genre C framework extraction with G-style judgment aids for finance/accounting topics",
+  "key_quotes_count": 3,
+  "chapters_covered": 8,
+  "chapters_total": 8,
+  "required_min_chars": 10000,
+  "required_min_chars_rule": "max(original_chars_no_newlines * 0.02, 10000) for genre C",
+  "min_lines_300_passed": true,
+  "compressed_min_10000_chars_passed": true,
+  "book_compressor_full_work": true,
+  "book_compressor_full_work_date": "2026-04-05",
+  "phase_3_5_guards": {
+    "ratio_floor": 0.02,
+    "absolute_min_chars": 10000,
+    "total_output_chars_no_newlines": 17948,
+    "required_min_chars": 10000,
+    "passed": true
+  },
+  "phase_5_guards": {
+    "compressed_lines": 378,
+    "compressed_chars_no_newlines": 15174,
+    "quotes_count": 3,
+    "chapter_coverage_complete": true,
+    "minimum_chapter_block_lines_passed": true
+  },
+  "quality_checks": {
+    "chapter_coverage_complete": true,
+    "length_guard_passed": true,
+    "quotes_minimum_passed": true,
+    "required_min_chars_passed": true,
+    "self_verified": true
+  },
+  "source_file": "source.txt",
+  "notes": "original_chars includes newlines, original_chars_no_newlines removes CR/LF from source.txt. compressed_chars and structure_map_chars include newlines; *_no_newlines fields remove CR/LF and are the primary Phase 3.5/5 verification basis."
+}

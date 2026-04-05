@@ -1,0 +1,114 @@
+{
+  "book_title_ja": "それはあくまで偶然です 運と迷信の統計学",
+  "book_title_en": "Knock on Wood: Luck, Chance, and the Meaning of Everything",
+  "author": "Jeffrey S. Rosenthal",
+  "source_dir": "C:\\Users\\user\\Desktop\\kotarosan\\03_Internal\\02_R&D\\Books\\2026\\04\\20260405_それはあくまで偶然です_運と迷の統計学",
+  "source_file": "C:\\Users\\user\\Desktop\\kotarosan\\03_Internal\\02_R&D\\Books\\2026\\04\\20260405_それはあくまで偶然です_運と迷の統計学\\source.txt",
+  "genre": "D",
+  "genre_label": "学術書・思想書",
+  "genre_reason": [
+    "主目的が自己啓発やビジネス実務ではなく、統計的思考による概念整理と世界理解にある",
+    "全23章が一つの中心命題へ論証的に収束し、各章が逸話 -> 検証 -> 再解釈の構造を持つ",
+    "p値、再現性、サンプリング、代替仮説といった方法論的概念が骨格を成している"
+  ],
+  "phase0_full_read": true,
+  "phase0_read_method": "ReadFile chunked sequential pass",
+  "phase0_final_chunk": {
+    "offset": 6401,
+    "limit": 300,
+    "notes": "末尾は主に注と情報源、奥付"
+  },
+  "source_metrics": {
+    "original_lines": 6684,
+    "original_chars_with_newlines": 379208,
+    "original_chars": 372524
+  },
+  "phase_3_5": {
+    "ratio_floor": 0.02,
+    "absolute_min_chars": 10000,
+    "required_min_chars": 10000,
+    "formula": "max(original_chars * ratio_floor, absolute_min_chars)",
+    "calculation": {
+      "original_chars_times_ratio_floor": 7450.48,
+      "required_min_chars": 10000
+    }
+  },
+  "outputs": {
+    "compressed_reading": {
+      "path": "C:\\Users\\user\\Desktop\\kotarosan\\03_Internal\\02_R&D\\Books\\2026\\04\\20260405_それはあくまで偶然です_運と迷の統計学\\compressed-reading.md",
+      "lines": 511,
+      "chars_with_newlines": 19140,
+      "chars_no_newlines": 18629,
+      "blockquote_count": 13,
+      "chapter_heading_count": 23
+    },
+    "structure_map": {
+      "path": "C:\\Users\\user\\Desktop\\kotarosan\\03_Internal\\02_R&D\\Books\\2026\\04\\20260405_それはあくまで偶然です_運と迷の統計学\\structure-map.md",
+      "lines": 212,
+      "chars_with_newlines": 4096,
+      "chars_no_newlines": 3884
+    }
+  },
+  "aggregate_metrics": {
+    "total_output_lines": 723,
+    "total_output_chars_with_newlines": 23236,
+    "total_output_chars_no_newlines": 22513,
+    "compression_ratio_against_original_chars": 0.06043226794834797
+  },
+  "quality_checks": {
+    "compressed_reading_min_300_lines_passed": true,
+    "compressed_reading_min_10000_chars_no_newlines_passed": true,
+    "compressed_reading_min_2_quotes_passed": true,
+    "phase_3_5_required_min_chars_passed": true,
+    "all_23_chapters_covered_passed": true,
+    "structure_map_present_passed": true,
+    "genre_specific_sections_present_passed": true,
+    "self_verified": true
+  },
+  "genre_specific_sections": [
+    "読書ナビゲーション",
+    "知的位置づけ",
+    "概念装置",
+    "論証の構造",
+    "章別ディープノート",
+    "原文に近い核",
+    "論争点",
+    "批判的視座",
+    "用語・前提の整理",
+    "実践チェックリスト"
+  ],
+  "chapter_coverage": [
+    "第1章 あなたは運を信じていますか?",
+    "第2章 ラッキーな話",
+    "第3章 運の力",
+    "第4章 私が生まれた日",
+    "第5章 私たちは魔法好き",
+    "第6章 射撃手の運の罠",
+    "第7章 運にまつわる話、再び",
+    "第8章 ラッキーなニュース",
+    "第9章 この上ない類似",
+    "第10章 ここらでちょっとひと休み",
+    "第11章 運に守られて",
+    "第12章 統計学の運",
+    "第13章 繰り返される運",
+    "第14章 くじ運",
+    "第15章 ラッキーな私",
+    "第16章 ラッキーなスポーツ",
+    "第17章 ラッキーな世論調査",
+    "第18章 ここらでちょっとひと休み",
+    "第19章 正義の運",
+    "第20章 占星術の運",
+    "第21章 精神は物質に優る?",
+    "第22章 運の支配者",
+    "第23章 ラッキーな考察"
+  ],
+  "compression_notes": [
+    "注と情報源、奥付は論証の裏づけとして把握したが、compressed-reading では本文理解に必要な範囲へ縮約した",
+    "逸話の保存より、各逸話がどの運の罠を例証しているかを追える構造を優先した",
+    "原文の身体感覚的な語り口は一部保持しつつ、論証マップとして再配置した"
+  ],
+  "do_not_touch_paths_respected": [
+    "G:\\"
+  ],
+  "generated_at": "2026-04-05"
+}
