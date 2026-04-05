@@ -1,0 +1,116 @@
+{
+  "schema_version": "1.1",
+  "book": {
+    "title": "ジーン・マシン",
+    "subtitle": "細胞のタンパク質工場リボソームをめぐる競争",
+    "author": "ヴェンカトラマン・ラマクリシュナン",
+    "language": "ja",
+    "source_file": "source.txt"
+  },
+  "compression": {
+    "primary_genre": "D",
+    "secondary_genre": "C",
+    "genre_label": "学術書・思想書寄りの科学史回想録",
+    "strategy_reference": "book-compressor/references/genre-strategies.md",
+    "phase0_full_read_completed": true,
+    "phase0_chunk_style": "ReadFile offset/limit",
+    "phase0_chunk_size_lines": 450,
+    "core_retention_targets": [
+      "論証構造",
+      "技術史の因果線",
+      "研究競争の人物配置",
+      "RNAワールドと構造の意味",
+      "賞と評価制度への批判"
+    ],
+    "outputs": [
+      "compressed-reading.md",
+      "structure-map.md",
+      "compression-meta.json"
+    ]
+  },
+  "content_assessment": {
+    "dominant_mode": "科学史 + 回想録 + 制度批評",
+    "central_question": "リボソームの構造はどのように解明され、その過程で科学はどのように運営されたのか",
+    "core_claims": [
+      "リボソームは生命の中心機械であり、その中心的機能はRNAに深く依存している",
+      "構造解明は一人の天才ではなく、技術成熟と競争と共同作業の複合結果である",
+      "ノーベル賞を頂点とする評価制度は科学の実態を十分には表現できない"
+    ],
+    "must_keep_elements": [
+      "物理学から生物学への転向",
+      "アダ・ヨナットの先駆性",
+      "結晶学の位相問題とMAD",
+      "30S/50S/70Sの構造解明",
+      "解読センターと抗生物質結合",
+      "賞と政治",
+      "クライオ電顕以後の展開"
+    ],
+    "quote_requirement_target": 2
+  },
+  "structure": {
+    "major_arcs": [
+      {
+        "name": "起点形成",
+        "chapters": ["序文", "プロローグ", "第1章", "第2章"]
+      },
+      {
+        "name": "技術史の下地",
+        "chapters": ["第3章", "第4章", "第5章", "第6章", "第7章"]
+      },
+      {
+        "name": "レース本体",
+        "chapters": ["第8章", "第9章", "第10章", "第11章", "第12章", "第13章", "第14章"]
+      },
+      {
+        "name": "評価と制度",
+        "chapters": ["第15章", "第16章", "第18章", "第19章", "エピローグ"]
+      },
+      {
+        "name": "その先の展開",
+        "chapters": ["第17章", "第20章", "解説"]
+      }
+    ],
+    "chapter_coverage_policy": "全章言及",
+    "appendix_coverage": ["解説"]
+  },
+  "quality_targets": {
+    "compressed_reading_min_lines": 300,
+    "compressed_reading_min_chars_no_newlines": 10000,
+    "required_min_chars_formula": "max(floor(original_chars_no_newlines * 0.02), 10000)",
+    "all_output_density_goal": "固有名詞・因果線・概念定義を維持しつつ冗長説明を削減",
+    "faithfulness_rule": "要約ではなく読書体験の再構成"
+  },
+  "self_verification": {
+    "status": "pass",
+    "metrics": {
+      "source_chars_no_newlines": 242920,
+      "required_min_chars": 10000,
+      "compressed_reading_lines": 392,
+      "compressed_reading_chars_no_newlines": 14588,
+      "structure_map_lines": 170,
+      "structure_map_chars_no_newlines": 3539,
+      "total_output_chars_no_newlines": 18127,
+      "quote_lines_in_compressed_reading": 9,
+      "chapter_coverage": "序文・プロローグ・第1章-第20章・エピローグ・解説",
+      "requirements_met": {
+        "compressed_reading_min_lines": true,
+        "compressed_reading_min_chars_no_newlines": true,
+        "quote_requirement": true,
+        "required_min_chars": true,
+        "chapter_coverage": true
+      }
+    },
+    "checks": [
+      "compressed-reading.md line count verified",
+      "compressed-reading.md char count without newlines verified",
+      "quote count verified",
+      "required_min_chars verified",
+      "chapter coverage verified"
+    ]
+  },
+  "notes": [
+    "G:\\ には一切触れない方針を維持",
+    "OCRノイズを前提に章構造・論証・引用候補を抽出",
+    "原著の主観性を残すため、回想録としてのバイアスも明記"
+  ]
+}
