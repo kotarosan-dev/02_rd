@@ -1,0 +1,31 @@
+{
+  "book_title": "なぜか印象がよくなるすごい断り方",
+  "author": "津田卓也",
+  "genre": "C",
+  "genre_label": "ビジネス書・自己啓発",
+  "original_chars": 58519,
+  "original_chars_no_newlines": 54862,
+  "compressed_lines": 330,
+  "compressed_chars_no_newlines": 11444,
+  "structure_map_chars_no_newlines": 2337,
+  "total_output_chars_no_newlines": 13781,
+  "required_min_chars": 10000,
+  "required_min_chars_rule": "max(original_chars_no_newlines * 0.02, 10000) for genre C (ratio_floor 0.02, absolute 10000)",
+  "compression_ratio": 0.208597,
+  "total_output_ratio": 0.251194,
+  "estimated_reading_minutes": 50,
+  "strategy": "フレームワーク抽出モード（book-compressor / Genre C）",
+  "key_quotes_count": 2,
+  "chapters_covered": 7,
+  "chapters_total": 7,
+  "quality_checks": {
+    "chapter_coverage_complete": true,
+    "length_guard_passed": true,
+    "min_lines_300_passed": true,
+    "compressed_10000_nn_passed": true,
+    "total_output_meets_required_min": true
+  },
+  "book_compressor_full_work": true,
+  "book_compressor_full_work_date": "2026-04-09",
+  "notes": "original_chars は source.txt を UTF-8 で読み込んだバイト列長に相当する文字数（改行 LF を含む全文字）。original_chars_no_newlines・compressed_chars_no_newlines・structure_map_chars_no_newlines・total_output_chars_no_newlines はいずれも Python の len(text.replace('\\n','').replace('\\r',''))。compression_ratio は compressed_chars_no_newlines ÷ original_chars_no_newlines。total_output_ratio は total_output_chars_no_newlines ÷ original_chars_no_newlines。required_min_chars はジャンルCの Phase 3.5（max(nn*0.02, 10000)）で、今回は absolute 10000 が効いた。行数 compressed_lines は splitlines()（compressed-reading.md 末尾は改行で終端）。"
+}

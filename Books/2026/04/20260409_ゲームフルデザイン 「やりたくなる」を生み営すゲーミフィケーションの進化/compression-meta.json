@@ -1,0 +1,27 @@
+{
+  "book_title": "ゲームフルデザイン 「やりたくなる」を生み営すゲーミフィケーションの進化",
+  "author": "伊藤真人",
+  "genre": "C",
+  "genre_label": "ビジネス書・実務デザイン（ジャンルC）",
+  "original_chars": 170379,
+  "original_chars_no_newlines": 164835,
+  "compressed_chars": 10908,
+  "compressed_chars_no_newlines": 10593,
+  "compressed_lines": 315,
+  "structure_map_chars": 1484,
+  "structure_map_chars_no_newlines": 1454,
+  "total_output_chars": 12392,
+  "total_output_chars_no_newlines": 12047,
+  "compression_ratio": 0.06426426,
+  "required_min_chars": 10000,
+  "min_lines_300_passed": true,
+  "quality_checks": {
+    "compressed_lines_ge_300": true,
+    "compressed_no_newlines_ge_10000": true,
+    "block_quotes_from_source_ge_2": true,
+    "checklist_items_ge_15": true,
+    "genre_c_structure": true,
+    "total_output_no_newlines_ge_required_min": true
+  },
+  "notes": "original_chars は source.txt のバイト列長ではなく Python len(text)（Unicodeコードポイント数）。*_no_newlines は \\n と \\r を除去した後の len。compressed_lines は len(text.splitlines())（末尾改行のみの行は splitlines で空行として数えないが、本ファイルは各行末改行あり）。compression_ratio = compressed_chars_no_newlines / original_chars_no_newlines。required_min_chars = max(original_chars_no_newlines * 0.02, 10000) per genre C in book-compressor。total_output_* は compressed-reading.md + structure-map.md の合算。"
+}

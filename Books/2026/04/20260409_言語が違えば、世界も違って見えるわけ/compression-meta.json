@@ -1,0 +1,33 @@
+{
+  "book_title": "言語が違えば、世界も違って見えるわけ",
+  "author": "ガイ・ドイッチャー（椋田直子訳）",
+  "genre": "D",
+  "genre_label": "学術書・思想書",
+  "original_chars": 311091,
+  "original_chars_no_newlines": 305295,
+  "compressed_chars": 10534,
+  "compression_ratio": 0.034504,
+  "total_output_ratio": 0.043187,
+  "estimated_reading_minutes": 65,
+  "strategy": "論証チェーン再構成・概念装置表・先行研究対話（ジャンルD）",
+  "key_quotes_count": 3,
+  "chapters_covered": 11,
+  "chapters_total": 11,
+  "quality_checks": {
+    "chapter_coverage_complete": true,
+    "length_guard_passed": true,
+    "min_lines_300_passed": true,
+    "compressed_min_10000_chars_passed": true,
+    "quotes_min_2_passed": true
+  },
+  "compressed_lines": 303,
+  "compressed_chars_no_newlines": 10534,
+  "structure_map_chars_no_newlines": 2651,
+  "total_output_chars_no_newlines": 13185,
+  "required_min_chars": 10000,
+  "required_min_chars_rule": "genre D: max(original_chars_no_newlines * 0.02, 10000); original_chars_no_newlines=305295 → 10000。compression_ratio は compressed_chars_no_newlines ÷ original_chars_no_newlines。",
+  "min_lines_300_passed": true,
+  "book_compressor_full_work": true,
+  "book_compressor_full_work_date": "2026-04-09",
+  "notes": "original_chars は source.txt の len（改行・CR 含む）。original_chars_no_newlines は改行・CR 除去後。圧縮比は compressed_chars_no_newlines ÷ original_chars_no_newlines。total_output_chars_no_newlines は圧縮読本＋structure-map の改行・CR 除去合計。chapters_covered はプロローグ・第1〜9章・エピローグの11。付録の今井解説は圧縮読本内「付録」で要約。2026-04-09 親タスクで比率を再計測して修正。"
+}

@@ -1,0 +1,115 @@
+{
+  "schema_version": "2.0",
+  "book": {
+    "title": "あなたの体は9割が細菌 微生物の生態系が崩れはじめた",
+    "title_original": "10% Human: How Your Body's Microbes Hold the Key to Health and Happiness",
+    "author": "アランナ・コリン",
+    "author_original": "Alanna Collen",
+    "translator": "矢野真千子",
+    "publisher": "河出書房新社",
+    "year_original": 2015,
+    "year_japanese": 2016,
+    "isbn_hint": "河出文庫版"
+  },
+  "source": {
+    "file": "source.txt",
+    "encoding": "utf-8",
+    "total_lines": 4861,
+    "total_chars": 305284,
+    "total_chars_no_newlines": 296777,
+    "chapters": [
+      "プロローグ（回復はしたけれど）",
+      "序章（一〇%のヒト）",
+      "第1章（二一世紀の病気）",
+      "第2章（あらゆる病気は腸からはじまる）",
+      "第3章（心を操る微生物）",
+      "第4章（利己的な微生物）",
+      "第5章（微生物世界の果てしなき戦い）",
+      "第6章（あなたはあなたの微生物が食べたものでできている）",
+      "第7章（産声を上げたときから）",
+      "第8章（微生物生態系を修復する）",
+      "エピローグ（一〇〇%の世話をする）"
+    ]
+  },
+  "genre": {
+    "code": "D",
+    "label": "学術書・思想書",
+    "sub_type": "科学一般書（論証マップ型）",
+    "detection_rationale": "科学ジャーナリストが査読論文・疫学データ・著者自身の体験を統合し、マイクロバイオームという新パラダイムを論証する構造。チャプター毎に仮説→証拠→批判→展望の学術的フレームが存在する。"
+  },
+  "compression": {
+    "strategy": "論証マップ型（D型テンプレート）",
+    "ratio": 0.042,
+    "ratio_calculation": "12414 / 296777 = 0.0418",
+    "phase_0_completed": true,
+    "phase_0_chunks_read": 13,
+    "phase_0_note": "source.txtを約400行×13チャンクで全文読み込み完了（プロローグ〜エピローグ＋謝辞・参考文献）"
+  },
+  "outputs": {
+    "compressed_reading": {
+      "file": "compressed-reading.md",
+      "lines": 363,
+      "chars_no_newlines": 12414,
+      "ends_with_newline": true,
+      "quote_count": 5,
+      "quote_sources": [
+        "ジョージ・ブレイ（米国肥満協会）：肥満はロケット科学ではない",
+        "著者本文：母乳育児は哺乳類が何千万年も続けてきた行為",
+        "著者本文：廃墟となった庭をつくり直す比喩",
+        "著者本文：自分をとり戻した以上これからは微生物を優先",
+        "著者あとがき：科学はいつの時代も…"
+      ],
+      "chapter_line_counts": {
+        "プロローグ": 16,
+        "序章": 18,
+        "第1章": 22,
+        "第2章": 24,
+        "第3章": 22,
+        "第4章": 18,
+        "第5章": 22,
+        "第6章": 18,
+        "第7章": 24,
+        "第8章": 20,
+        "エピローグ": 12
+      },
+      "all_chapters_12plus_lines": true
+    },
+    "structure_map": {
+      "file": "structure-map.md",
+      "lines": 307,
+      "chars_no_newlines": 5955
+    }
+  },
+  "quality_gates": {
+    "cr_lines_300_passed": true,
+    "cr_lines_actual": 363,
+    "cr_lines_required": 300,
+    "cr_chars_10000_passed": true,
+    "cr_chars_actual": 12414,
+    "cr_chars_required": 10000,
+    "cr_quotes_2plus_passed": true,
+    "cr_quotes_actual": 5,
+    "cr_quotes_required": 2,
+    "cr_ends_newline_passed": true,
+    "all_chapters_12plus_lines_passed": true,
+    "total_output_chars_passed": true,
+    "total_output_chars_actual": 18369,
+    "required_min_chars": 10000
+  },
+  "required_min_chars": 10000,
+  "required_min_chars_calculation": "max(296777 * 0.02, 10000) = max(5936, 10000) = 10000",
+  "total_output_chars": 18369,
+  "compression_date": "2026-04-09",
+  "notes": {
+    "char_counting_method": "Python str.replace('\\n','').replace('\\r','') で改行文字を除去した後の len() で計測",
+    "encoding_issue": "source.txtはUTF-8エンコードだが、Windows PowerShellコンソール（CP932）でのcat/head出力が文字化けするため、Pythonスクリプト経由でpreviewファイルに出力して読み込む方法を採用",
+    "genre_note": "本書は科学一般書だが、章毎に仮説→証拠→展望という学術構造を持つためD型（学術書・思想書）テンプレートを適用した",
+    "compression_approach": "知的位置づけ・概念装置・章別論証マップ・批判的視座・実践指針・データ集・歴史的系譜を含む包括的な圧縮読本を生成",
+    "special_contents": [
+      "主要数値データ一覧表（二一世紀病統計・腸内細菌基本数値・母乳vs粉ミルク比較・抗生物質影響）",
+      "著者が提示する実践的行動指針15項目",
+      "知的系譜（ヒポクラテス→メチニコフ→ストラカン→ゴードン→ファサーノ→コリン）",
+      "2026年時点での研究進展（COVID後遺症・癌免疫療法との関連）"
+    ]
+  }
+}

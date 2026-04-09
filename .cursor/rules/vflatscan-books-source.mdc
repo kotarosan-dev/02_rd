@@ -1,0 +1,106 @@
+---
+description: VFlatScan 正本パス（G:）と「未処理」の二定義。/book-compressor 起動時は G: から取り込み→圧縮→processed 移動まで一気通貫で行う。
+alwaysApply: true
+---
+
+# VFlatScan 書籍の正本パス
+
+## 絶対ルール
+
+- **VFlatScan でスキャンした書籍の置き場所（正本）**は次のフォルダのみとする。  
+  **`G:\マイドライブ\VFlatScan_Books`**
+- ユーザーが「VFlatScan」「スキャンした本」「溜まっている本」「未処理の本」などと言ったとき、**まず G: 直下のインボックス**（下記「未処理の二つの意味」）を数える。`02_R&D/Books` だけを見て件数を断定しない。
+
+---
+
+## 「未処理」の二つの意味（混同禁止）
+
+| 何を数えるか | 場所 | 典型件数のイメージ |
+|--------------|------|---------------------|
+| **A. VFlat インボックス** | `G:\マイドライブ\VFlatScan_Books` **直下**の `.txt` / `.text` / `.md`（`processed` 除外） | 少ない（例: 十数冊以下）← **これが「溜まっている本」** |
+| **B. 圧縮読本バックログ** | `02_R&D/Books/**/` に `source.txt` はあるが **`compressed-reading.md` がない** | 多い（既に取り込み済みの未圧縮）← 別の残件 |
+
+- **A と B を混ぜて「未処理は N 冊」と一言で言わない**（必ずどちらの定義か明示する）。
+
+---
+
+## /book-compressor 起動時の正規フロー
+
+ユーザーが `/book-compressor` をフォルダ指定なしで実行した場合、**以下の順序で動く**。  
+`book-compressor` スキル単体は `source.txt` があることを前提とするため、**Step 1〜3 はこのルールが補完する**。
+
+### Step 1: G: インボックスを列挙する
+
+```python
+# 対象: G:\マイドライブ\VFlatScan_Books 直下の .txt / .text / .md（processed 除外）
+unproc = [p for p in Path('G:/マイドライブ/VFlatScan_Books').iterdir()
+          if p.is_file() and p.suffix.lower() in ('.txt', '.text', '.md')]
+```
+
+件数を報告し、0 件なら B（リポジトリバックログ）の処理に切り替える。
+
+### Step 2: Books/ フォルダを作り source.txt をコピーする
+
+各ファイルについて：
+
+1. **日付フォルダ名**：ファイル名に日付がなければ **今日の日付**（`YYYYMMDD`）を使う。  
+   例: `なぜ世界はそう見えるのか.txt` → `20260409_なぜ世界はそう見えるのか`
+2. **年月フォルダ**：`Books/YYYY/MM/` が未作成なら作成する。
+3. **コピー**：`Copy-Item` または Python の `shutil.copy2` で `source.txt` として配置する。
+
+```powershell
+# PowerShell の例（8冊バッチ）
+$date = Get-Date -Format "yyyyMMdd"
+$src  = "G:\マイドライブ\VFlatScan_Books\書名.txt"
+$dest = "C:\Users\user\Desktop\kotarosan\03_Internal\02_R&D\Books\YYYY\MM\${date}_書名\source.txt"
+New-Item -ItemType Directory -Force -Path (Split-Path $dest)
+Copy-Item -LiteralPath $src -Destination $dest
+```
+
+> **注意**: ファイル名に `自殺` などの語が含まれる場合は `book-compressor` の安全方針（`restricted_meta_only`）を適用し、`compression-meta.json` に明記する。
+
+### Step 3: book-compressor を実行する
+
+- 各フォルダを 1 サブタスクとして並列処理（最大 4 並列）。
+- `book-compressor` スキルに従い `compressed-reading.md` / `structure-map.md` / `compression-meta.json` を生成。
+- 親タスクが文字数・行数を再計測しゲートを確認する。
+
+### Step 4: 処理済みを processed に移動する
+
+- `compressed-reading.md` の生成が成功した本だけ G: の元ファイルを `processed` サブフォルダへ移動する。
+
+```powershell
+Move-Item -LiteralPath $src -Destination "G:\マイドライブ\VFlatScan_Books\processed\"
+```
+
+### Step 5: git commit & push
+
+```
+git add Books/YYYY/MM/...
+git commit -m "Books: VFlatScan バッチ（N冊） YYYY-MM-DD"
+git push
+```
+
+---
+
+## G: にアクセスできない場合
+
+- G: がマウントされていない（別マシン等）→ その旨を報告し、**B（リポジトリバックログ）** の book-compressor 処理に切り替える。
+- B の残件も 0 → ユーザーに「処理対象なし」と報告して終了する。
+
+---
+
+## エージェントの動き（要約）
+
+1. 「溜まっている本」「未処理」を聞かれたら → **A（G: 直下）** を列挙して件数を報告。
+2. `/book-compressor` 起動時（フォルダ指定なし）→ **上記 Step 1〜5 を実行**。
+3. G: が空なら → **B（`compressed-reading.md` 欠落）** をスキャンして book-compressor のみ実行。
+4. 個別フォルダ指定あり → 従来どおり指定フォルダで book-compressor を実行。
+
+---
+
+## 禁止
+
+- 「書籍が溜まっている」＝常に `02_R&D/Books` のみ、と暗黙の前提で進めること。
+- A と B を混ぜて「未処理は N 冊」と一言で言うこと（必ずどちらの定義か明示する）。
+- G: の未処理ファイルが存在するのに、コピー手順をスキップして book-compressor だけ回すこと。

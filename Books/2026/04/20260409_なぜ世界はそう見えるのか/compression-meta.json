@@ -1,0 +1,33 @@
+{
+  "book_title": "なぜ世界はそう見えるのか",
+  "author": "デニス・プロフィット、ドレイク・ベアー（原著・取材協力者含む）",
+  "genre": "D",
+  "genre_label": "学術書・思想書に近い一般向け科学ノンフィクション",
+  "original_chars": 292584,
+  "original_chars_no_newlines": 287170,
+  "compressed_chars": 12726,
+  "compressed_chars_no_newlines": 12360,
+  "compressed_lines": 366,
+  "structure_map_chars": 1312,
+  "structure_map_chars_no_newlines": 1272,
+  "total_output_chars": 14038,
+  "total_output_chars_no_newlines": 13632,
+  "compression_ratio": 0.04304,
+  "total_output_ratio": 0.04747,
+  "estimated_reading_minutes": 65,
+  "strategy": "論証マップモード（ジャンルD）",
+  "key_quotes_count": 3,
+  "chapters_covered": 11,
+  "chapters_total": 11,
+  "required_min_chars": 10000,
+  "required_min_chars_rule": "genre D: max(original_chars_no_newlines * 0.02, 10000); original_chars_no_newlines=287170 → 10000",
+  "min_lines_300_passed": true,
+  "book_compressor_full_work": true,
+  "book_compressor_full_work_date": "2026-04-09",
+  "quality_checks": {
+    "chapter_coverage_complete": true,
+    "length_guard_passed": true,
+    "compressed_min_10000_no_nl_passed": true
+  },
+  "notes": "original_chars は source.txt の全文字数（改行・CR含む）。original_chars_no_newlines は同ファイルから改行・CR除去。圧縮比 compression_ratio は compressed_chars_no_newlines ÷ original_chars_no_newlines。total_output_chars_no_newlines は compressed-reading.md と structure-map.md の改行・CR除去後の合計。数値は生成直後に Python で再計測。"
+}

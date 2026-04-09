@@ -1,0 +1,32 @@
+{
+  "book_title": "7日間で英語が聞き取れる本（5つの音声変化を完全マスター!）",
+  "author": "伴ブリュワー摩里（Mari Brewer Ban）",
+  "genre": "C",
+  "genre_label": "ビジネス書・自己啓発（英語学習法）",
+  "original_chars": 92835,
+  "original_chars_no_newlines": 86139,
+  "compressed_lines": 307,
+  "compressed_chars_no_newlines": 12665,
+  "structure_map_chars_no_newlines": 2185,
+  "total_output_chars_no_newlines": 14850,
+  "compressed_chars": null,
+  "compression_ratio": 0.147,
+  "total_output_ratio": 0.172,
+  "required_min_chars": 10000,
+  "required_min_chars_rule": "C: max(original_chars_no_newlines * 0.02, 10000) = max(1722, 10000)",
+  "estimated_reading_minutes": 50,
+  "strategy": "フレームワーク抽出モード（5ルール＋7日統合）",
+  "key_quotes_count": 2,
+  "chapters_covered": 16,
+  "chapters_total": 16,
+  "min_lines_300_passed": true,
+  "book_compressor_full_work": true,
+  "book_compressor_full_work_date": "2026-04-09",
+  "quality_checks": {
+    "chapter_coverage_complete": true,
+    "length_guard_passed": true,
+    "compressed_min_10000_nn": true,
+    "total_output_gte_required_min": true
+  },
+  "notes": "original_chars は source.txt の len(全文)（改行含む）。original_chars_no_newlines は \\n と \\r を除去後。compression_ratio は compressed_chars_no_newlines ÷ original_chars_no_newlines を小数第3位で四捨五入（0.147）。total_output_ratio は (compressed_chars_no_newlines + structure_map_chars_no_newlines) ÷ original_chars_no_newlines（0.172）。Phase 5 の splitlines 行数は compressed-reading.md の最終改行を含めて計測。"
+}

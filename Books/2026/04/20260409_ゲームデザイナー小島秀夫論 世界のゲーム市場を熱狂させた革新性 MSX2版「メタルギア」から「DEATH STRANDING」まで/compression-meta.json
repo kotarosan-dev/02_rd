@@ -1,0 +1,31 @@
+{
+  "book_title": "ゲームデザイナー小島秀夫論 世界のゲーム市場を熱狂させた革新性 MSX2版「メタルギア」から「DEATH STRANDING」まで",
+  "author": "ブライアン・ヒカリ・ハーツハイム（Bryan Hikari Hartzheim）",
+  "translator": "武藤陽生",
+  "publisher": "DU BOOKS",
+  "original_publisher": "Bloomsbury Academic",
+  "year": "2023",
+  "genre": "D",
+  "genre_label": "学術書・思想書（ゲームスタディーズ＋伝記的要素）",
+  "strategy": "論証マップ型（中心命題→章別論証→反論・限界→適用）",
+  "original_chars": 297846,
+  "compressed_chars": 11483,
+  "compression_ratio": 0.0386,
+  "total_output_ratio": 0.0537,
+  "estimated_reading_minutes": 45,
+  "key_quotes_count": 2,
+  "chapters_covered": 6,
+  "chapters_total": 6,
+  "quality_checks": {
+    "min_lines_met": true,
+    "min_chars_met": true,
+    "quotes_met": true,
+    "all_chapters_covered": true
+  },
+  "compressed_lines": 305,
+  "compressed_chars_no_newlines": 11483,
+  "structure_map_chars": 4501,
+  "total_output": 15984,
+  "required_min_chars": 10000,
+  "notes": "source.txt は本文（約200,000字）＋参考文献・索引（約100,000字）を含む。圧縮比は全体テキストに対する値。本文部分のみでは約0.057。ジャンルDとEの複合作品だが、学術的論証構造が主軸のためDで処理。解説（藤澤仁）も本書の論証を補強する実践者証言として重要。原文引用2本はいずれも本書解説章から。章別エッセンスは全6章で各12行以上を確認済み。"
+}

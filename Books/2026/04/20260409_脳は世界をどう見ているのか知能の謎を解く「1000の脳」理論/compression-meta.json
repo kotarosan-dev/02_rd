@@ -1,0 +1,40 @@
+{
+  "book_title": "脳は世界をどう見ているのか 知能の謎を解く「1000の脳」理論",
+  "author": "ジェフ・ホーキンス",
+  "translator": "垂水雄二",
+  "genre": "D",
+  "genre_label": "学術書・思想書（一般向け脳科学・AI論）",
+  "source_encoding": "utf-8",
+  "original_chars_with_newlines": 209860,
+  "original_chars_no_newlines": 206352,
+  "orig_nn_definition": "source.txt から \\n と \\r を除去した文字数",
+  "compressed_lines": 335,
+  "compressed_chars_no_newlines": 10597,
+  "structure_map_chars_no_newlines": 1460,
+  "total_output_chars_no_newlines": 12057,
+  "required_min_chars_rule": "D: max(floor(orig_nn * 0.02), 10000); G: max(floor(orig_nn * 0.025), 10000)",
+  "required_min_chars": 10000,
+  "required_min_chars_genre_D": 10000,
+  "required_min_chars_genre_G": 10000,
+  "meets_total_output_gate": true,
+  "meets_compressed_only_gate": true,
+  "blockquote_lines_in_compressed": 2,
+  "chapter_blocks_min_lines_required": 12,
+  "chapter_blocks_all_meet_min": true,
+  "compression_ratio_chars_no_nl": 0.0514,
+  "compression_ratio_definition": "compressed_chars_no_newlines / original_chars_no_newlines（圧縮率の目安）",
+  "quality_checks": {
+    "lines_gte_300": true,
+    "compressed_chars_no_nl_gte_10000": true,
+    "compressed_chars_no_nl_gte_required_min": true,
+    "total_output_gte_required_min": true,
+    "blockquotes_gte_2": true,
+    "full_chapter_coverage_lines_per_block_gte_12": true
+  },
+  "notes": "検証日: 2026-04-09。Python によるカウント。序文・第1〜16章・おわりにを ### ブロックで網羅。Books フォルダ内に .py は置いていない。",
+  "outputs": [
+    "compressed-reading.md",
+    "structure-map.md",
+    "compression-meta.json"
+  ]
+}

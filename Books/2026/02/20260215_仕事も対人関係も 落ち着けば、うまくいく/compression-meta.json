@@ -1,0 +1,29 @@
+{
+  "book_title": "仕事も対人関係も 落ち着けば、うまくいく 感情に振り回されないための37のコツ",
+  "author": "和田秀樹",
+  "genre": "C",
+  "genre_label": "ビジネス書・自己啓発",
+  "original_chars": 58078,
+  "original_chars_no_newlines": 54656,
+  "compressed_chars": 10813,
+  "compressed_chars_no_newlines": 10429,
+  "compression_ratio": 0.190812,
+  "structure_map_chars_no_newlines": 969,
+  "total_output_chars_no_newlines": 11398,
+  "total_output_ratio": 0.208541,
+  "estimated_reading_minutes": 45,
+  "strategy": "フレームワーク抽出モード（平常心・準備・自信・割り切り）",
+  "key_quotes_count": 4,
+  "chapters_covered": 6,
+  "chapters_total": 6,
+  "quality_checks": {
+    "chapter_coverage_complete": true,
+    "length_guard_passed": true
+  },
+  "compressed_lines": 384,
+  "required_min_chars": 10000,
+  "min_lines_300_passed": true,
+  "book_compressor_full_work": true,
+  "book_compressor_full_work_date": "2026-04-09",
+  "notes": "original_chars は source.txt UTF-8 全文字（改行含む）。compression_ratio = compressed_chars_no_newlines / original_chars_no_newlines。"
+}
