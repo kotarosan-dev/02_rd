@@ -1,0 +1,46 @@
+{
+  "title": "時の子供たち 上",
+  "author": "エイドリアン・チャイコフスキー",
+  "genre": "B",
+  "genre_label": "Genre Fiction",
+  "source_file": "source.txt",
+  "output_files": [
+    "compressed-reading.md",
+    "structure-map.md"
+  ],
+  "original_chars": 226293,
+  "compressed_chars": 11239,
+  "structure_map_chars": 3578,
+  "total_output_chars": 14817,
+  "compressed_ratio": 0.0655,
+  "estimated_reading_minutes": 37,
+  "key_quotes_count": 3,
+  "chapters_covered": 30,
+  "parts_covered": 4,
+  "quality_checks": {
+    "full_source_read_in_chunks": true,
+    "genre_decided_from_toc_and_style": true,
+    "has_plot": true,
+    "has_character_relationships": true,
+    "has_symbolism": true,
+    "has_direct_quotes_minimum_two_blocks": true,
+    "compressed_reading_min_300_lines": true,
+    "compressed_reading_min_10000_chars": true,
+    "later_half_not_thin": true,
+    "chapter_coverage_balanced": true
+  },
+  "strategy": {
+    "preserve": [
+      "dual narrative structure",
+      "human decline versus spider ascent",
+      "civilization-building milestones",
+      "religion-science overlap",
+      "first-contact setup"
+    ],
+    "compression_method": "chapter-wise genre-fiction compression with plot spine, symbolic motifs, and direct quote retention"
+  },
+  "notes": [
+    "上巻のため決着ではなく通信成立までを終点として扱う。",
+    "ポーシャ/ビアンカは世代継承的な名として圧縮した。"
+  ]
+}

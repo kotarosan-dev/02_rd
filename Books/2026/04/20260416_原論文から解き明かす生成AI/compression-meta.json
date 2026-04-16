@@ -1,0 +1,82 @@
+{
+  "title": "原論文から解き明かす生成AI",
+  "author": "菊田遥平",
+  "genre": "G",
+  "genre_label": "技術書・リファレンス",
+  "source_file": "source.txt",
+  "source_char_count": 386308,
+  "source_char_count_without_newlines": 378432,
+  "source_line_count": 7877,
+  "reading_method": "全文を400行ずつチャンク読み",
+  "output_files": {
+    "compressed-reading.md": {
+      "char_count": 14754,
+      "char_count_without_newlines": 14367,
+      "line_count": 388
+    },
+    "structure-map.md": {
+      "char_count": 4193,
+      "char_count_without_newlines": 3939,
+      "line_count": 255
+    }
+  },
+  "required_min_chars": 10000,
+  "required_min_chars_formula": "max(source_char_count * 0.025, 10000)",
+  "compressed_reading_min_requirement_met": true,
+  "compressed_reading_ratio": 0.03819,
+  "total_output_ratio_without_meta": 0.04905,
+  "focus": [
+    "判断基準",
+    "概念階層",
+    "手順例",
+    "論文読解",
+    "生成AI実務への接続",
+    "具体名・数値・固有名詞の保持",
+    "ベンチマーク結果の採用判断への翻訳"
+  ],
+  "chapter_coverage": [
+    "はじめに",
+    "第1章 本書の読み方と論文を読み解く技術",
+    "第2章 入力データの特徴量化",
+    "第3章 Transformer",
+    "第4章 GPTとテキスト生成",
+    "第5章 拡散モデルと画像生成",
+    "第6章 テキストと画像の融合",
+    "第7章 スケーリング則と推論時強化",
+    "第8章 生成AIモデルの評価",
+    "Appendix・おわりに"
+  ],
+  "quality_checks": {
+    "full_source_read": true,
+    "chunk_size_lines": 400,
+    "compressed_reading_lines_gte_300": true,
+    "compressed_reading_chars_gte_required_min": true,
+    "combined_output_chars_gte_required_min": true,
+    "structure_map_created": true,
+    "quotes_included_count": 3,
+    "numbers_and_named_entities_included": true,
+    "procedural_examples_included": true,
+    "judgment_criteria_emphasized": true,
+    "concept_hierarchy_emphasized": true
+  },
+  "notable_entities": [
+    "Attention Is All You Need",
+    "GPT-1",
+    "GPT-2",
+    "GPT-3",
+    "GPT-4",
+    "DDPM",
+    "DiT",
+    "CLIP",
+    "unCLIP",
+    "Imagic",
+    "BLIP",
+    "LLaVA",
+    "DeepSeek-V3",
+    "DeepSeek-R1",
+    "Chatbot Arena",
+    "Humanity's Last Exam"
+  ],
+  "created_at": "2026-04-16",
+  "notes": "compressed-reading.md に実務手順例を追加し、論文読解・障害切り分け・ベンチマーク解釈の導線を補強した。"
+}

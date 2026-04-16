@@ -1,0 +1,60 @@
+{
+  "title": "時の子供たち 下",
+  "author": "エイドリアン・チャイコフスキー",
+  "genre": "B",
+  "genre_label": "ジャンルフィクション",
+  "source_file": "source.txt",
+  "output_files": [
+    "compressed-reading.md",
+    "structure-map.md",
+    "compression-meta.json"
+  ],
+  "original_lines": 5517,
+  "original_chars_without_newlines": 213724,
+  "compressed_lines": 436,
+  "compressed_chars_without_newlines": 16410,
+  "structure_map_lines": 271,
+  "structure_map_chars_without_newlines": 4604,
+  "total_output_lines": 707,
+  "total_output_chars_without_newlines": 21014,
+  "compressed_ratio_markdown_only": 0.076781,
+  "total_output_ratio": 0.098322,
+  "estimated_reading_minutes": 54,
+  "key_quotes_count": 3,
+  "chapters_covered": 26,
+  "chapters_total": 26,
+  "parts_covered": 5,
+  "required_min_chars": 10000,
+  "required_min_lines": 300,
+  "book_compressor_full_work": true,
+  "book_compressor_full_work_date": "2026-04-16",
+  "quality_checks": {
+    "full_source_read_in_chunks": true,
+    "chapter_coverage_complete": true,
+    "each_chapter_essence_minimum_12_lines": true,
+    "plot_causality_retained": true,
+    "foreshadowing_retained": true,
+    "character_relationships_retained": true,
+    "has_direct_quotes": true,
+    "compressed_reading_min_300_lines": true,
+    "compressed_reading_min_10000_chars": true,
+    "later_half_not_thin": true,
+    "upper_volume_continuity_considered": true
+  },
+  "strategy": {
+    "mode": "骨格＋ハイライト",
+    "compression_method": "chapter-wise genre-fiction compression with causal spine, relationship mapping, foreshadowing retention, and thicker endgame coverage",
+    "preserve": [
+      "上巻からの連続性",
+      "誤認から共感改変へ至る因果線",
+      "伏線と回収の対応",
+      "人間と蜘蛛の関係変化",
+      "第7部後半から第8部の密度"
+    ]
+  },
+  "notes": [
+    "文字数は改行と CR を除去した実測値で統一した。",
+    "source.txt は全文をチャンク読みし、終盤の 7.7 から 7.10 と 8.1 を薄めない方針で確認済み。",
+    "compressed-reading.md と structure-map.md は既存ドラフトを全文再確認のうえ最終成果物として採用した。"
+  ]
+}
