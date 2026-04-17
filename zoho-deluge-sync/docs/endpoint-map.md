@@ -21,10 +21,39 @@ DevTools / HAR / probe スクリプトから発見したエンドポイントを
 |---|---|---|---|---|---|---|---|---|---|
 | Function (list) | GET | `/crm/v2/settings/functions` | `type=org&start=1&limit=50` | - | - | `{ functions: [{ id, api_name, display_name, language, category, workflow:{name,namespace,params,returnType}, tasks, rest_api[], modified_by, ... }] }` | 2026-04-17 | **High** | list 時の `workflow` は **オブジェクト**（メタ情報） |
 | Function (get) | GET | `/crm/v2/settings/functions/<id>` | **`source=crm`** （必須） | - | - | `{ functions: [{ id, name, nameSpace, api_name, display_name, language, category, return_type, script, workflow, tasks, rest_api[], description, ... }] }` | 2026-04-17 | **High** | `source` 無しだと 400 `PATTERN_NOT_MATCHED { api_name: "source" }`。detail 時の `script` は完全形 `void automation.<name>(){...}`、`workflow` は body のみ |
-| Function (update) | **PUT** | `/crm/v2/settings/functions/<id>` | **`language=deluge`** （必須） | **`text/plain;charset=UTF-8`** | `{"functions":[{"details":{"name":"<api>","description":null\|"...","display_name":"...","script":"void <ns>.<name>(){...}"}}]}` を文字列化 | `{"functions":[{"details":{"display_name":"..."},"message":"function updated successfully","status":"success"}]}` | 2026-04-17 | **High** | **重要**: JSON を `text/plain` で送る独特な形式。`source=crm` ではなく `language=deluge` クエリ。`script` には `void <namespace>.<name>(){...}` のフルラッパーが必要 |
-| Function (create) | POST | `/crm/v2/settings/functions` | TBD | `application/json; charset=UTF-8` | TBD（148 byte。要キャプチャ） | TBD | - | Med | UI で新規作成時に走る。`details` ラッパー想定だが要検証 |
-| Function (validate) | POST | TBD | TBD | TBD | TBD | TBD | - | Low | Save & Execute Script ボタン押下時 |
-| Function (delete) | DELETE | TBD | TBD | - | - | TBD | - | Low | UI の関数削除時に要キャプチャ |
+| Function (update) | **PUT** | `/crm/v2/settings/functions/<id>` | **`language=deluge`** （必須） | `application/json; charset=UTF-8` または `text/plain;charset=UTF-8` | フラット形式 (推奨): `{"functions":[{"name","display_name","description","return_type":"void","params":[],"workflow":"<body>","commit_message":"..."}]}` ／ details ラップ形式も受理: `{"functions":[{"details":{"name","description","display_name","script":"void <ns>.<name>(){...}"}}]}` | `{"functions":[{"details":{...},"message":"function updated successfully","status":"success"}]}` | 2026-04-17 | **High** | サーバは 2 形式を受理する。フラット形式は UI が使う正規形。`workflow` は body のみ、`script` はラッパー込み |
+| Function (create) | **POST** | `/crm/v2/settings/functions` | **`language=deluge`** （必須） | `application/json; charset=UTF-8` | フラット: `{"functions":[{"name","display_name","description":"","return_type":"void","params":[],"workflow":"<body>","commit_message":"...","category":"automation"}]}` | `{"functions":[{"code":"SUCCESS","details":{"id":"<new-id>","api_name","name","display_name","script":"{...}","return_type":"void",...},"message":"function created successfully","status":"success"}]}` | 2026-04-17 | **High** | **重要**: `api_name` は `name` から生成され、**先頭の `_` は自動削除される**（例 `_probe_x` → `probe_x`）。`workflow` を含めて POST しても response の `script` は空ラッパー `{\n\n}` となるケースあり（UI は POST→PUT の 2 段階で完成させている可能性）。`category` 省略時の挙動は未検証 |
+| Function (delete) | **DELETE** | `/crm/v2/settings/functions/<id>` | **不要** | - | - | `{"functions":[{"code":"SUCCESS","details":{"id":"<id>"},"message":"function deleted successfully","status":"success"}]}` | 2026-04-17 | **High** | クエリパラメータ不要。削除後の GET は **204 No Content** が返る |
+| Function (validate) | POST | TBD | TBD | TBD | TBD | TBD | - | Low | Save & Execute Script ボタン押下時。要 HAR キャプチャ |
+
+### Function create 検証済みの最小例
+
+```http
+POST /crm/v2/settings/functions?language=deluge
+Cookie: <ZOHO_COOKIE>
+X-ZCSRF-TOKEN: crmcsrfparam=<token>
+X-CRM-ORG: 90000792316
+X-Requested-With: XMLHttpRequest
+Referer: https://crm.zoho.jp/
+Content-Type: application/json; charset=UTF-8
+
+{"functions":[{"display_name":"my_func","description":"","name":"my_func","return_type":"void","params":[],"workflow":"\ninfo \"hello\";\n","commit_message":"create my_func","category":"automation"}]}
+```
+
+→ `200 OK` + `{"functions":[{"code":"SUCCESS","details":{"id":"<new-id>",...},"message":"function created successfully","status":"success"}]}`
+
+### Function delete 検証済みの最小例
+
+```http
+DELETE /crm/v2/settings/functions/2445000000056009
+Cookie: <ZOHO_COOKIE>
+X-ZCSRF-TOKEN: crmcsrfparam=<token>
+X-CRM-ORG: 90000792316
+X-Requested-With: XMLHttpRequest
+Referer: https://crm.zoho.jp/
+```
+
+→ `200 OK` + `{"functions":[{"code":"SUCCESS","details":{"id":"2445000000056009"},"message":"function deleted successfully","status":"success"}]}`
 
 ### Function update 検証済みの最小例
 
