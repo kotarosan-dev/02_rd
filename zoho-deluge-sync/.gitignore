@@ -1,0 +1,25 @@
+node_modules/
+dist/
+build/
+*.log
+
+# dotenvx
+.env
+.env.keys
+.env.local
+.env.*.local
+
+# 機微情報（zapikey, OAuth URL, Cookie の痕跡, 顧客データ等）を含む可能性が高いため、
+# request-captures は中身全部を除外（.gitkeep のみ commit）
+docs/request-captures/*
+!docs/request-captures/.gitkeep
+docs/dry-runs/*
+!docs/dry-runs/.gitkeep
+docs/error-log/*
+!docs/error-log/.gitkeep
+
+# OS / IDE
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

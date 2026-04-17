@@ -1,0 +1,65 @@
+---
+description: Zoho 内部 API（非公式）を扱う際の常時適用ルール
+alwaysApply: true
+---
+
+# Zoho 内部 API 取り扱いルール
+
+このリポジトリは **Zoho CRM の非公式内部 API**（ブラウザ UI が叩いている `/crm/v2/settings/...` 系エンドポイント）を扱う。
+公開 REST API ではないため、ToS 上グレーであることを常に念頭に置き、以下を厳守する。
+
+## 1. 認証ヘッダの 3 点セット（必須）
+
+すべての内部 API リクエストには以下を必ず付与する：
+
+- `Cookie`: `.env` の `ZOHO_COOKIE`（生 Cookie ヘッダ全文）
+- `X-ZCSRF-TOKEN`: `.env` の `ZOHO_CSRF_TOKEN`（`crmcsrfparam=<token>` 形式）
+- `X-CRM-ORG`: `.env` の `ZOHO_ORG_ID`（数値の org id）
+
+加えて、以下も常に付与する：
+
+- `X-Requested-With: XMLHttpRequest`
+- `Referer: <ZOHO_BASE_URL>/`
+- `User-Agent`: 普通の Chrome を装う
+
+CSRF token は Cookie の `_zcsr_tmp` / `crmcsr` と一致している必要がある。
+不整合だと 403 が返る。失効時は `ZOHO_CSRF_TOKEN` と `ZOHO_COOKIE` を**両方同時に**更新する。
+
+## 2. ノイズヘッダ（送らない）
+
+ブラウザは以下を送るが、サーバ動作には不要なので含めない（指紋を減らす意味でも）：
+
+- `x-murphy-session-id`, `x-murphy-span-id`, `x-murphy-tab-id`, `x-murphy-trace-id`
+- `X-Static-Version`, `X-Client-SubVersion`
+- `x-my-normurl`, `isFrom`
+- `sec-ch-ua-*`
+
+## 3. 書き込み系操作の鉄則
+
+- **必ず `dryRun: boolean` オプションをサポート**する
+- `dryRun: true` のときは HTTP リクエストを送らず、送信予定 request 全文を `docs/dry-runs/<timestamp>-<resource>-<verb>.json` に保存する
+- 本番環境（GHM 等）への書き込みは、明示的な `--prod` フラグまたは環境変数 `ZOHO_ALLOW_PROD_WRITE=1` がない限り実行しない
+- 削除系は更にもう一段ガード：`--allow-delete` フラグ必須
+
+## 4. レスポンスの記録と snapshot
+
+- 全レスポンスは（成功/失敗問わず）`docs/request-captures/<timestamp>-<endpoint>.json` に保存可能なオプションを実装
+- 安定的に使う endpoint は `tests/__snapshots__/` に response schema を snapshot として固定し、Zoho 側の仕様変更を CI で検知する
+
+## 5. シークレット管理
+
+- 認証情報は **dotenvx 経由でのみ** 読み込む（`.env.vault` を git 管理、`.env.keys` は gitignore）
+- ハードコード厳禁。ログ出力時も Cookie / CSRF token はマスクする
+- エラーログに request body を残す際も Cookie ヘッダは伏せる
+
+## 6. レート制御
+
+- 内部 API はレート制限が公開 API より厳しい可能性がある
+- list 系の pagination は最低 200ms 間隔を空ける
+- 連続失敗（5xx, 429）時は exponential backoff（1s → 2s → 4s → 8s、最大 5 回）
+
+## 7. コード生成時のスタンス
+
+- 「便利だから」で公式 REST API と内部 API を混在させない。混在させる場合は明示コメント
+- TypeScript で型を厳密に。internal API のレスポンスは `unknown` で受けて zod 等で narrow するのが望ましい
+- エンドポイントを新規発見したら必ず `docs/endpoint-map.md` に追記する

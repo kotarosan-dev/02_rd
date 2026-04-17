@@ -1,0 +1,24 @@
+{
+  "name": "zoho-deluge-sync",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "description": "Zoho CRM の Deluge Function / Client Script を内部 API 経由で git-ops 管理するツール",
+  "scripts": {
+    "smoke": "dotenvx run -- tsx scripts/smoke-test.ts",
+    "smoke:plain": "tsx scripts/smoke-test.ts",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "build": "tsc -p tsconfig.json"
+  },
+  "dependencies": {
+    "@dotenvx/dotenvx": "^1.0.0",
+    "axios": "^1.7.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.6.0",
+    "vitest": "^2.1.0"
+  }
+}
