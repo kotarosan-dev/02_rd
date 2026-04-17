@@ -1,0 +1,83 @@
+---
+description: Zoho Deluge 関数を pnpm run try でテスト駆動開発するためのループ規約
+globs:
+  - "deluge/**/*.dg"
+  - "src/**"
+alwaysApply: true
+---
+
+# Zoho Deluge エージェント・ループ運用ルール
+
+このリポジトリでは Zoho CRM の Deluge 関数を **テスト駆動 + 自動修正ループ** で開発する。
+Cursor の Agent モードはこの規約に従い、`pnpm run try` を信号として失敗→修正→再試行を自走する。
+
+## 1. ファイル運用
+
+- 1関数 = 1ファイル: `deluge/<api_name>.dg`
+- **body のみ**を書く（`void automation.NAME() { ... }` のラッパーは書かない）
+- 先頭に `//!` ディレクティブでメタデータ:
+
+  ```deluge
+  //! api_name: my_func          (省略時はファイル名)
+  //! return_type: void          (default void)
+  //! params: [{"name":"x","type":"STRING"}]   (省略時 [])
+  //! args: {"x":"hello"}        (execute 時の引数 / default {})
+  //! expect status: success     (success | failure)
+  //! expect log: 想定される info ログの部分一致文字列
+  ```
+
+- **新規関数は UI で先に作る**（API での新規作成は Phase 2 のスコープ外）。
+  作成後 `pnpm run pull -- <api_name>` でローカルに落としてから編集を始める。
+
+## 2. 編集サイクル
+
+エージェントが Deluge 関数を編集するときの **必須手順**:
+
+1. 既存関数なら `pnpm run pull -- <api_name>` で必ず最新を取得する
+2. `.dg` を編集する
+3. `pnpm run try -- deluge/<api_name>.dg` を実行する
+4. 出力の最終行を読む
+   - `[PASS] <name>` → 完了
+   - `[FAIL] <name>` → 続く `[ERR] L<n>...` または `- expected ...` を読み、修正して 3 へ戻る
+5. 5 回連続で FAIL したら**自動で続けず、ユーザーに状況を報告**する
+
+## 3. 出力契約 (Cursor がパースする前提)
+
+`pnpm run try` の出力は以下の行頭タグを安定して使う:
+
+- `[PASS] <api_name>` … 全 assert 通過
+- `[FAIL] <api_name>` … 何らかの失敗
+- `[ERR] L<line>[:<col>]: <message>` … 構文/ランタイムエラー（行番号は wrapped 後の行）
+- `[LOG] L<line>: <value>` … info ログ
+- `  - expected ...` … assert 違反の詳細
+
+`exit code` は **0 = PASS / 1 = FAIL / 2 = 致命**。
+
+## 4. 安全ガード
+
+- `push` / `try` は内部で `allowProdWrite: true` を渡しているため、`.env` の `ZOHO_ALLOW_PROD_WRITE=1` が必須。
+  外していたら client が throw する（`zohoClient.ts` の安全機構）。
+- **手動 push 時**は `pnpm run push -- <path>` を使い、まず remote → local の diff を表示。
+  反映するときだけ `--yes` を付ける。`try` は常に push する点に注意。
+- リモートにのみある関数を**ローカルから消すと連動して消える運用はしない**（delete は別 CLI）。
+
+## 5. 出てはいけないコメント
+
+- `// 実装した` / `// 修正した` のような変更経緯コメントは Deluge にも .dg にも残さない。
+  `git log` と `commit_message` で表現する。
+
+## 6. ループ無限化の防止
+
+- Cursor は同じ `[ERR]` メッセージを 2 回連続で見たら**別の修正方針**を試すこと。
+- `expect log:` の追加は実装側ではなくテスト側の意図的修正のみで行うこと
+  （テストを実装に合わせて緩めない）。
+
+## 7. 参考スクリプト
+
+| コマンド | 用途 |
+|---|---|
+| `pnpm run pull -- <api_name>` | リモート → `deluge/<api_name>.dg` |
+| `pnpm run push -- <path.dg> [--yes]` | ローカル → リモート（差分プレビュー） |
+| `pnpm run try -- <path.dg>` | push + execute + assert（**ループの主役**） |
+| `pnpm run exec -- <api_name>` | 1回だけ実行（push しない） |
+| `pnpm run logs -- <api_name>` | 過去実行履歴の一覧 |

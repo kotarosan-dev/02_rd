@@ -1,0 +1,26 @@
+//! api_name: lead_to_contact
+//! params: [{"name":"leadId","type":"STRING"}]
+//! args: {"leadId":"13059000001825001"}
+//! expect status: success
+//! expect log: lead fetched
+//! expect log: contact created id=
+
+leadIdStr = ifnull(input.leadId, "13059000001825001");
+info "input.leadId = " + leadIdStr;
+
+leadResp = zoho.crm.getRecordById("Leads", leadIdStr.toLong());
+info "lead fetched: " + leadResp.get("Full_Name");
+
+contactMap = Map();
+contactMap.put("Last_Name", ifnull(leadResp.get("Last_Name"), "(no name)"));
+contactMap.put("First_Name", leadResp.get("First_Name"));
+contactMap.put("Email", leadResp.get("Email"));
+contactMap.put("Phone", leadResp.get("Phone"));
+contactMap.put("Description", "Created from Lead " + leadIdStr + " by lead_to_contact()");
+contactMap.put("Lead_Source", leadResp.get("Lead_Source"));
+
+createResp = zoho.crm.createRecord("Contacts", contactMap);
+info "create response: " + createResp.toString();
+
+newId = createResp.get("id");
+info "contact created id=" + ifnull(newId, "(none)");

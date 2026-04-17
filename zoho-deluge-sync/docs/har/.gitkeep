@@ -1,0 +1,2 @@
+# UI から取得した HAR キャプチャを置く場所。
+# 中身に Cookie / X-ZCSRF-TOKEN が含まれるため、git にはこの .gitkeep のみ commit する。

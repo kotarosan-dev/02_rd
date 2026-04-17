@@ -17,6 +17,9 @@ docs/dry-runs/*
 !docs/dry-runs/.gitkeep
 docs/error-log/*
 !docs/error-log/.gitkeep
+# HAR ファイルは Cookie / X-ZCSRF-TOKEN を生で含むので絶対 commit しない
+docs/har/*
+!docs/har/.gitkeep
 
 # OS / IDE
 .DS_Store

@@ -7,6 +7,13 @@
   "scripts": {
     "smoke": "dotenvx run -- tsx scripts/smoke-test.ts",
     "smoke:plain": "tsx scripts/smoke-test.ts",
+    "exec": "dotenvx run -- tsx src/cli/exec.ts",
+    "logs": "dotenvx run -- tsx src/cli/logs.ts",
+    "pull": "dotenvx run -- tsx src/cli/pull.ts",
+    "push": "dotenvx run -- tsx src/cli/push.ts",
+    "try": "dotenvx run -- tsx src/cli/try.ts",
+    "create": "dotenvx run -- tsx src/cli/create.ts",
+    "delete": "dotenvx run -- tsx src/cli/delete.ts",
     "test": "vitest run",
     "test:watch": "vitest",
     "build": "tsc -p tsconfig.json"

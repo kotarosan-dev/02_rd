@@ -1,0 +1,7 @@
+//! api_name: aitest_ping
+//! expect status: success
+//! expect log: ping from aitest_ping
+//! expect log: second log line
+
+info "ping from aitest_ping";
+info "second log line";
