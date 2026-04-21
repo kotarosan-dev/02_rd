@@ -1,0 +1,123 @@
+{
+  "session_id": "harness_20260421_books",
+  "created_at": "2026-04-21",
+  "objective": "Zoho Books の自動化可能範囲を実機で確定する。T01: 公式 REST API の CRUD マトリクス。T02: 内部 API（Cookie + CSRF）で Workflow Function / Custom Button / Schedule の CRUD・実行・logs が可能か HAR で検証。",
+  "env": {
+    "target": "production",
+    "crm_org_id": "90000792316",
+    "books_org_id_candidate": "90000792806",
+    "dc": "jp",
+    "books_base_url": "https://www.zohoapis.jp/books/v3",
+    "books_app_url": "https://books.zoho.jp",
+    "note": "Books の組織IDは CRM と別。T01-A0 で /organizations を叩いて実際にどのIDで動くか検証してから他のテストへ進む。"
+  },
+  "tasks": [
+    {
+      "id": "T01-A0",
+      "title": "Books OAuth 疎通: token 取得 + GET /organizations で Books の正しい org_id を実証（CRM と異なる前提）",
+      "tool": "zoho-api-access",
+      "type": "api_ok",
+      "status": "pending",
+      "passes": [],
+      "depends_on": []
+    },
+    {
+      "id": "T01-A",
+      "title": "確定した Books org_id を tasks.json env に固定し、以降のテストで使用",
+      "tool": "manual-doc",
+      "type": "api_ok",
+      "status": "pending",
+      "passes": [],
+      "depends_on": ["T01-A0"]
+    },
+    {
+      "id": "T01-B",
+      "title": "Books 公式 API 読み取りマトリクス（GET: organizations / chartofaccounts / taxes / items / contacts / invoices / estimates / salesorders / bills / customerpayments / vendorpayments / paymentlinks / settings/preferences / users / currencies / banking / projects / expenses / journals / recurringinvoices）",
+      "tool": "zoho-api-access",
+      "type": "api_ok",
+      "status": "pending",
+      "passes": [],
+      "depends_on": ["T01-A"]
+    },
+    {
+      "id": "T01-C",
+      "title": "Books 公式 API 書き込みマトリクス（POST + DELETE: chartofaccounts / items / contacts / invoices）※テストデータ try/finally でクリーンアップ ※実行前にユーザー再承認必須",
+      "tool": "zoho-api-access",
+      "type": "api_ok",
+      "status": "blocked_pending_approval",
+      "depends_on": ["T01-B"]
+    },
+    {
+      "id": "T01-D",
+      "title": "Workflow Custom Function / Custom Button / Schedule の公式 API 経由 CRUD 可否を確認（→ 不可なら T02 へ）",
+      "tool": "zoho-api-access",
+      "type": "api_ok",
+      "status": "pending",
+      "depends_on": ["T01-A"]
+    },
+    {
+      "id": "T01-E",
+      "title": "qa-matrix.md §5 サマリーに集約（緑/黄/赤）。docs/books-api-capability.md に正本化",
+      "tool": "manual-doc",
+      "type": "api_ok",
+      "status": "pending",
+      "depends_on": ["T01-B", "T01-C", "T01-D"]
+    },
+    {
+      "id": "T02-A",
+      "title": "Books 内部 API HAR キャプチャ手順書作成（books.zoho.jp Settings → Automation → Workflow Rules / Custom Functions / Schedules で発生する全 XHR を採取する手順）",
+      "tool": "manual-doc",
+      "type": "gui_required",
+      "status": "pending",
+      "depends_on": []
+    },
+    {
+      "id": "T02-B",
+      "title": "ユーザーが HAR を docs/har/books_<日付>.har に配置（手動）",
+      "tool": "human",
+      "type": "gui_required",
+      "status": "pending",
+      "depends_on": ["T02-A"]
+    },
+    {
+      "id": "T02-C",
+      "title": "HAR 解析: Workflow Function の list / get / create / update / delete / execute / logs の内部エンドポイント・Method・Headers・Body 構造を抽出 → docs/books-internal-api-spec.md",
+      "tool": "manual-analysis",
+      "type": "api_ok",
+      "status": "pending",
+      "depends_on": ["T02-B"]
+    },
+    {
+      "id": "T02-D",
+      "title": "PoC スクリプト scripts/books-internal-list-functions.mjs で Cookie 認証疎通確認（読み取り 1 本）",
+      "tool": "node",
+      "type": "api_ok",
+      "status": "pending",
+      "depends_on": ["T02-C"]
+    },
+    {
+      "id": "T02-E",
+      "title": "PoC: 既存 Workflow Function 1 件の get → ローカル .dg 化 → 内容変更なし update（ノーオペ）が 200 で返ることを確認（破壊的変更は禁止）",
+      "tool": "node",
+      "type": "api_ok",
+      "status": "pending",
+      "depends_on": ["T02-D"]
+    },
+    {
+      "id": "T02-F",
+      "title": "PoC: テスト関数 _smoke_books_test を create → execute → logs 取得 → delete のフルサイクル",
+      "tool": "node",
+      "type": "api_ok",
+      "status": "pending",
+      "depends_on": ["T02-E"]
+    },
+    {
+      "id": "T02-G",
+      "title": "成果物: docs/books-internal-api-spec.md を完成させ、横展開実装（zoho-books-deluge-sync パッケージ）の要件を確定",
+      "tool": "manual-doc",
+      "type": "api_ok",
+      "status": "pending",
+      "depends_on": ["T02-F"]
+    }
+  ]
+}

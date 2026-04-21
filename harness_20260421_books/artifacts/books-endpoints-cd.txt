@@ -1,0 +1,234 @@
+
+========== books_c_function_create.har (entries=128) ==========
+
+  GET 200  /api/v3/integrations/customfunctions/editpage??entity=invoice&organization_id=90000792806
+
+  GET 200  /deluge/api/ui/settings/fetchTopBarEnhanceEnabledServices
+
+  GET 200  /deluge/api/ui/settings??service=ZohoBooks&scopeID=90000792806
+
+  GET 200  /deluge/api/ui/webinar-card??serviceName=zohobooks
+
+  POST 201  /api/v3/integrations/customfunctions
+    REQ-CT: application/x-www-form-urlencoded; charset=UTF-8
+    REQ JSONString:
+       {
+         "function_name": "_qa_books_test2",
+         "description": "",
+         "entity": "invoice",
+         "language": "deluge",
+         "script": "/*\nThis is a sample function. Uncomment to execute or make changes to this function.\ninvoiceID = invoice.get(\"invoice_id\");\ninvoicedate = invoice.get(\"date\").toDate();\norganizationID = organization.get(\"organization_id\");\n*/",
+         "include_orgvariables_params": false,
+         "return_type": "void"
+       }
+    REQ organization_id: 90000792806
+
+  GET 200  /api/v3/settings/automation/modulefilters??organization_id=90000792806
+
+  GET 200  /api/v3/integrations/customfunctions??page=1&per_page=50&filter_by=Entity.All&sort_column=created_time&sort_order=A&usestate=false&organization_id=90000792806
+
+  GET 200  /api/v3/integrations/customfunctions/editpage??customfunction_id=3092000000389009&entity=invoice&organization_id=90000792806
+
+  GET 200  /deluge/api/ui/settings/fetchTopBarEnhanceEnabledServices
+
+  GET 200  /deluge/api/ui/settings??service=ZohoBooks&scopeID=90000792806
+
+  GET 200  /deluge/api/ui/webinar-card??serviceName=zohobooks
+
+  GET 200  /api/v3/entitylist??entity=invoice&page=1&per_page=10&organization_id=90000792806
+
+  PUT 200  /api/v3/integrations/customfunctions/3092000000389009
+    REQ-CT: application/x-www-form-urlencoded; charset=UTF-8
+    REQ JSONString:
+       {
+         "function_name": "qa_books_test2",
+         "description": "",
+         "entity": "invoice",
+         "language": "deluge",
+         "script": "\n/*\nThis is a sample function. Uncomment to execute or make changes to this function.\ninvoiceID = invoice.get(\"invoice_id\");\ninvoicedate = invoice.get(\"date\").toDate();\norganizationID = organization.get(\"organization_id\");\n*/\n",
+         "is_execute": true,
+         "sample_param": {
+           "entity_id": "3092000000250001"
+         },
+         "include_orgvariables_params": false,
+         "return_type": "void"
+       }
+    REQ organization_id: 90000792806
+
+  PUT 200  /api/v3/integrations/customfunctions/3092000000389009
+    REQ-CT: application/x-www-form-urlencoded; charset=UTF-8
+    REQ JSONString:
+       {
+         "function_name": "qa_books_test2",
+         "description": "",
+         "entity": "invoice",
+         "language": "deluge",
+         "script": "\n/*\nThis is a sample function. Uncomment to execute or make changes to this function.\ninvoiceID = invoice.get(\"invoice_id\");\ninvoicedate = invoice.get(\"date\").toDate();\norganizationID = organization.get(\"organization_id\");\n*/\n",
+         "is_execute": false,
+         "sample_param": {
+           "entity_id": "3092000000250001"
+         },
+         "include_orgvariables_params": false,
+         "return_type": "void"
+       }
+    REQ organization_id: 90000792806
+
+  GET 200  /api/v3/settings/automation/modulefilters??organization_id=90000792806
+
+  GET 200  /api/v3/integrations/customfunctions??page=1&per_page=50&filter_by=Entity.All&sort_column=created_time&sort_order=A&usestate=false&organization_id=90000792806
+
+  GET 200  /api/v3/integrations/customfunctions/editpage??customfunction_id=3092000000389009&entity=invoice&organization_id=90000792806
+
+  GET 200  /deluge/api/ui/settings/fetchTopBarEnhanceEnabledServices
+
+  GET 200  /deluge/api/ui/settings??service=ZohoBooks&scopeID=90000792806
+
+  GET 200  /deluge/api/ui/webinar-card??serviceName=zohobooks
+
+  GET 200  /api/v3/entitylist??entity=invoice&page=1&per_page=10&organization_id=90000792806
+
+  PUT 200  /api/v3/integrations/customfunctions/3092000000389009
+    REQ-CT: application/x-www-form-urlencoded; charset=UTF-8
+    REQ JSONString:
+       {
+         "function_name": "qa_books_test2",
+         "description": "",
+         "entity": "invoice",
+         "language": "deluge",
+         "script": "\n/*\nThis is a sample function. Uncomment to execute or make changes to this function.\ninvoiceID = invoice.get(\"invoice_id\");\ninvoicedate = invoice.get(\"date\").toDate();\norganizationID = organization.get(\"organization_id\");\n*/\n",
+         "is_execute": true,
+         "sample_param": {
+           "entity_id": "3092000000250001"
+         },
+         "include_orgvariables_params": false,
+         "return_type": "void"
+       }
+    REQ organization_id: 90000792806
+
+  PUT 200  /api/v3/integrations/customfunctions/3092000000389009
+    REQ-CT: application/x-www-form-urlencoded; charset=UTF-8
+    REQ JSONString:
+       {
+         "function_name": "qa_books_test2",
+         "description": "",
+         "entity": "invoice",
+         "language": "deluge",
+         "script": "\n/*\nThis is a sample function. Uncomment to execute or make changes to this function.\ninvoiceID = invoice.get(\"invoice_id\");\ninvoicedate = invoice.get(\"date\").toDate();\norganizationID = organization.get(\"organization_id\");\n*/\n",
+         "is_execute": false,
+         "sample_param": {
+           "entity_id": "3092000000250001"
+         },
+         "include_orgvariables_params": false,
+         "return_type": "void"
+       }
+    REQ organization_id: 90000792806
+
+  GET 200  /api/v3/settings/automation/modulefilters??organization_id=90000792806
+
+  GET 200  /api/v3/integrations/customfunctions??page=1&per_page=50&filter_by=Entity.All&sort_column=created_time&sort_order=A&usestate=false&organization_id=90000792806
+
+========== books_d_function_execute.har (entries=112) ==========
+
+  GET 200  /api/v3/integrations/customfunctions/editpage??entity=invoice&organization_id=90000792806
+
+  GET 200  /deluge/api/ui/settings/fetchTopBarEnhanceEnabledServices
+
+  GET 200  /deluge/api/ui/settings??service=ZohoBooks&scopeID=90000792806
+
+  GET 200  /deluge/api/ui/webinar-card??serviceName=zohobooks
+
+  POST 201  /api/v3/integrations/customfunctions
+    REQ-CT: application/x-www-form-urlencoded; charset=UTF-8
+    REQ JSONString:
+       {
+         "function_name": "_qa_books_test2",
+         "description": "",
+         "entity": "invoice",
+         "language": "deluge",
+         "script": "/*\nThis is a sample function. Uncomment to execute or make changes to this function.\ninvoiceID = invoice.get(\"invoice_id\");\ninvoicedate = invoice.get(\"date\").toDate();\norganizationID = organization.get(\"organization_id\");\n*/",
+         "include_orgvariables_params": false,
+         "return_type": "void"
+       }
+    REQ organization_id: 90000792806
+
+  GET 200  /api/v3/settings/automation/modulefilters??organization_id=90000792806
+
+  GET 200  /api/v3/integrations/customfunctions??page=1&per_page=50&filter_by=Entity.All&sort_column=created_time&sort_order=A&usestate=false&organization_id=90000792806
+
+  GET 200  /api/v3/integrations/customfunctions/editpage??customfunction_id=3092000000389009&entity=invoice&organization_id=90000792806
+
+  GET 200  /deluge/api/ui/settings/fetchTopBarEnhanceEnabledServices
+
+  GET 200  /deluge/api/ui/settings??service=ZohoBooks&scopeID=90000792806
+
+  GET 200  /deluge/api/ui/webinar-card??serviceName=zohobooks
+
+  GET 200  /api/v3/entitylist??entity=invoice&page=1&per_page=10&organization_id=90000792806
+
+  PUT 200  /api/v3/integrations/customfunctions/3092000000389009
+    REQ-CT: application/x-www-form-urlencoded; charset=UTF-8
+    REQ JSONString:
+       {
+         "function_name": "qa_books_test2",
+         "description": "",
+         "entity": "invoice",
+         "language": "deluge",
+         "script": "\n/*\nThis is a sample function. Uncomment to execute or make changes to this function.\ninvoiceID = invoice.get(\"invoice_id\");\ninvoicedate = invoice.get(\"date\").toDate();\norganizationID = organization.get(\"organization_id\");\n*/\n",
+         "is_execute": true,
+         "sample_param": {
+           "entity_id": "3092000000250001"
+         },
+         "include_orgvariables_params": false,
+         "return_type": "void"
+       }
+    REQ organization_id: 90000792806
+
+  PUT 200  /api/v3/integrations/customfunctions/3092000000389009
+    REQ-CT: application/x-www-form-urlencoded; charset=UTF-8
+    REQ JSONString:
+       {
+         "function_name": "qa_books_test2",
+         "description": "",
+         "entity": "invoice",
+         "language": "deluge",
+         "script": "\n/*\nThis is a sample function. Uncomment to execute or make changes to this function.\ninvoiceID = invoice.get(\"invoice_id\");\ninvoicedate = invoice.get(\"date\").toDate();\norganizationID = organization.get(\"organization_id\");\n*/\n",
+         "is_execute": false,
+         "sample_param": {
+           "entity_id": "3092000000250001"
+         },
+         "include_orgvariables_params": false,
+         "return_type": "void"
+       }
+    REQ organization_id: 90000792806
+
+  GET 200  /api/v3/settings/automation/modulefilters??organization_id=90000792806
+
+  GET 200  /api/v3/integrations/customfunctions??page=1&per_page=50&filter_by=Entity.All&sort_column=created_time&sort_order=A&usestate=false&organization_id=90000792806
+
+  GET 200  /api/v3/integrations/customfunctions/editpage??customfunction_id=3092000000389009&entity=invoice&organization_id=90000792806
+
+  GET 200  /deluge/api/ui/settings/fetchTopBarEnhanceEnabledServices
+
+  GET 200  /deluge/api/ui/settings??service=ZohoBooks&scopeID=90000792806
+
+  GET 200  /deluge/api/ui/webinar-card??serviceName=zohobooks
+
+  GET 200  /api/v3/entitylist??entity=invoice&page=1&per_page=10&organization_id=90000792806
+
+  PUT 200  /api/v3/integrations/customfunctions/3092000000389009
+    REQ-CT: application/x-www-form-urlencoded; charset=UTF-8
+    REQ JSONString:
+       {
+         "function_name": "qa_books_test2",
+         "description": "",
+         "entity": "invoice",
+         "language": "deluge",
+         "script": "\n/*\nThis is a sample function. Uncomment to execute or make changes to this function.\ninvoiceID = invoice.get(\"invoice_id\");\ninvoicedate = invoice.get(\"date\").toDate();\norganizationID = organization.get(\"organization_id\");\n*/\n",
+         "is_execute": true,
+         "sample_param": {
+           "entity_id": "3092000000250001"
+         },
+         "include_orgvariables_params": false,
+         "return_type": "void"
+       }
+    REQ organization_id: 90000792806

@@ -1,0 +1,14 @@
+docs/har/*
+!docs/har/.gitkeep
+node_modules/
+.env
+.env.keys
+*.har
+artifacts/runs/*
+
+.env.books
+.env.books.encrypted
+
+.env.books
+.env.books.encrypted
+

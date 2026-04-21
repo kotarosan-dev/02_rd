@@ -1,0 +1,544 @@
+[
+  {
+    "label": "CREATE",
+    "status": 201,
+    "body": {
+      "code": 0,
+      "message": "カスタム関数を作成しました。",
+      "customfunction": {
+        "return_type": "void",
+        "entity_formatted": "請求書",
+        "function_param": [
+          {
+            "param_value": "${JSONString}",
+            "sample_value": "{}",
+            "is_additional_param": false,
+            "param_name": "invoice",
+            "param_order": 1,
+            "param_type": "map"
+          },
+          {
+            "param_value": "${JSONString}",
+            "sample_value": "{\"organization_id\":\"90000792806\",\"name\":\"kotarosan\",\"time_zone\":\"Asia/Tokyo\",\"time_zone_formatted\":\"( GMT 9:00 ) 日本標準時(Asia/Tokyo)\",\"language_code\":\"ja\",\"language_code_formatted\":\"Japanese\",\"date_format\":\"yyyy/MM/dd\",\"store_url\":\"\",\"currency_id\":\"3092000000000082\",\"currency_code\":\"JPY\",\"currency_symbol\":\"¥\",\"address\":{\"street_address1\":\"西郷町90-9\",\"street_address2\":\"アネックス辻丸203\",\"city\":\"諫早市\",\"state\":\"Nagasaki\",\"state_code\":\"42\",\"country\":\"Japan\",\"country_formatted\":\"日本\",\"zip\":\"8540044\",\"latitude\":\"\",\"longitude\":\"\"},\"phone\":\"\",\"fax\":\"\",\"website\":\"\",\"email\":\"kotarosannocode@gmail.com\",\"custom_fields\":[{\"index\":1,\"label\":\"\",\"value\":\"\"},{\"index\":2,\"label\":\"\",\"value\":\"\"},{\"index\":3,\"label\":\"\",\"value\":\"\"},{\"index\":4,\"label\":\"\",\"value\":\"\"},{\"index\":5,\"label\":\"\",\"value\":\"\"}],\"custom_field_hash\":{\"cf_1_unformatted\":\"\",\"cf_1\":\"\",\"cf_2_unformatted\":\"\",\"cf_2\":\"\",\"cf_3_unformatted\":\"\",\"cf_3\":\"\",\"cf_4_unformatted\":\"\",\"cf_4\":\"\",\"cf_5_unformatted\":\"\",\"cf_5\":\"\"},\"portal_name\":\"kotarosan2\",\"data_center_extension\":\".jp\",\"api_root_endpoint\":\"https://www.zohoapis.jp/books/v3\"}",
+            "is_additional_param": false,
+            "param_name": "organization",
+            "param_order": 2,
+            "param_type": "map"
+          },
+          {
+            "param_value": "${JSONString}",
+            "sample_value": "{\"user_id\":\"3092000000005001\",\"name\":\"Kotaro Izumida\",\"user_role\":\"admin\",\"user_role_formatted\":\"管理者\",\"role_id\":\"3092000000000837\",\"custom_fields\":[],\"custom_field_hash\":{},\"primary_email\":\"info@kotarosan-nocode.com\",\"is_from_delegate_view\":false}",
+            "is_additional_param": false,
+            "param_name": "user",
+            "param_order": 3,
+            "param_type": "map"
+          }
+        ],
+        "drefunction_id": "14892000000005013",
+        "function_name": "qa_books_smoke_mo874l6q",
+        "customfunction_id": "3092000000389019",
+        "description": "PoC by harness_20260421_books",
+        "include_orgvariables_params": false,
+        "language": "deluge",
+        "placeholder": "fn_qa_books_smoke_mo874l6q",
+        "entity": "invoice",
+        "script": "\n// PoC by zoho-deluge-sync (Books) — auto-generated\ninvoiceID = invoice.get(\"invoice_id\");\ninfo \"PoC OK invoiceID=\" + invoiceID;\nreturn;\n"
+      }
+    },
+    "text_preview": "{\"code\":0,\"message\":\"カスタム関数を作成しました。\",\"customfunction\":{\"return_type\":\"void\",\"entity_formatted\":\"請求書\",\"function_param\":[{\"param_value\":\"${JSONString}\",\"sample_value\":\"{}\",\"is_additional_param\":false,\"param_name\":\"invoice\",\"param_order\":1,\"param_type\":\"map\"},{\"param_value\":\"${JSONString}\",\"sample_value\":\"{\\\"organization_id\\\":\\\"90000792806\\\",\\\"name\\\":\\\"kotarosan\\\",\\\"time_zone\\\":\\\"Asia/Tokyo\\\",\\\"time_zone_formatted\\\":\\\"( GMT 9:00 ) 日本標準時(Asia/Tokyo)\\\",\\\"language_code\\\":\\\"ja\\\",\\\"language_code_formatted\\\":\\\"Japanese\\\",\\\"date_format\\\":\\\"yyyy/MM/dd\\\",\\\"store_url\\\":\\\"\\\",\\\"currency_id\\\":\\\"3092000000000082\\\",\\\"currency_code\\\":\\\"JPY\\\",\\\"currency_symbol\\\":\\\"¥\\\",\\\"address\\\":{\\\"street_address1\\\":\\\"西郷町90-9\\\",\\\"street_address2\\\":\\\"アネックス辻丸203\\\",\\\"city\\\":\\\"諫早市\\\",\\\"state\\\":\\\"Nagasaki\\\",\\\"state_code\\\":\\\"42\\\",\\\"country\\\":\\\"Japan\\\",\\\"country_formatted\\\":\\\"日本\\\",\\\"zip\\\":\\\"8540044\\\",\\\"latitude\\\":\\\"\\\",\\\"longitude\\\":\\\"\\\"},\\\"phone\\\":\\\"\\\",\\\"fax\\\":\\\"\\\",\\\"website\\\":\\\"\\\",\\\"email\\\":\\\"kotarosannocode@gmail.com\\\",\\\"custom_fields\\\":[{\\\"index\\\":1,\\\"label\\\":\\\"\\\",\\\"value\\\":\\\"\\\"},{\\\"index\\\":2,\\\"label\\\":\\\"\\\",\\\"value\\\":\\\"\\\"},{\\\"index\\\":3,\\\"label\\\":\\\"\\\",\\\"value\\\":\\\"\\\"},{\\\"index\\\":4,\\\"label\\\":\\\"\\\",\\\"value\\\":\\\"\\\"},{\\\"index\\\":5,\\\"label\\\":\\\"\\\",\\\"value\\\":\\\"\\\"}],\\\"custom_field_hash\\\":{\\\"cf_1_unformatted\\\":\\\"\\\",\\\"cf_1\\\":\\\"\\\",\\\"cf_2_unformatted\\\":\\\"\\\",\\\"cf_2\\\":\\\"\\\",\\\"cf_3_unformatted\\\":\\\"\\\",\\\"cf_3\\\":\\\"\\\",\\\"cf_4_unformatted\\\":\\\"\\\",\\\"cf_4\\\":\\\"\\\",\\\"cf_5_unformatted\\\":\\\"\\\",\\\"cf_5\\\":\\\"\\\"},\\\"portal_name\\\":\\\"kotarosan2\\\",\\\"data_cente"
+  },
+  {
+    "label": "GET editpage",
+    "status": 200,
+    "body": {
+      "code": 0,
+      "message": "success",
+      "entity_params": [
+        {
+          "param_value": "${JSONString}",
+          "sample_value": "{\"invoice_id\":\"3092000000250001\",\"invoice_number\":\"INV-000007\",\"date\":\"2025-02-28\",\"date_formatted\":\"2025/02/28\",\"due_date\":\"2025-02-28\",\"due_date_formatted\":\"2025/02/28\",\"customer_id\":\"3092000000206015\",\"customer_name\":\"kotarosan\",\"currency_id\":\"3092000000000082\",\"currency_code\":\"JPY\",\"currency_symbol\":\"¥\",\"status\":\"overdue\",\"status_formatted\":\"期限超過\",\"custom_fields\":[],\"custom_field_hash\":{},\"recurring_invoice_id\":\"\",\"payment_terms\":0,\"payment_terms_label\":\"即日\",\"invoice_installments\":[],\"zcrm_potential_id\":\"\",\"reference_number\":\"\",\"line_items\":[{\"line_item_id\":\"3092000000250003\",\"item_id\":\"3092000000034019\",\"sku\":\"\",\"item_order\":1,\"name\":\"サービスA\",\"internal_name\":\"\",\"description\":\"\",\"discount_account_id\":\"\",\"discount_account_name\":\"\",\"unit\":\"\",\"quantity\":1.0,\"discount_amount\":0,\"discount_amount_formatted\":\"¥0\",\"discount\":0,\"discounts\":[],\"bcy_rate\":100000,\"bcy_rate_formatted\":\"¥100,000\",\"rate\":100000,\"rate_formatted\":\"¥100,000\",\"account_id\":\"3092000000000290\",\"account_name\":\"売上\",\"header_id\":\"\",\"header_name\":\"\",\"pricebook_id\":\"\",\"tax_id\":\"3092000000034202\",\"tax_name\":\"10％\",\"tax_type\":\"tax\",\"tax_percentage\":10,\"item_total\":100000,\"item_total_formatted\":\"¥100,000\",\"item_custom_fields\":[],\"pricing_scheme\":\"unit\",\"tags\":[],\"documents\":[],\"image_document_id\":\"\",\"line_item_taxes\":[{\"tax_id\":\"3092000000034202\",\"tax_name\":\"10％ (10%)\",\"tax_amount\":10000,\"tax_amount_formatted\":\"¥10,000\",\"tax_percentage\":10,\"tax_specific_type\":\"tax\"}],\"bill_id\":\"\",\"bill_item_id\":\"\",\"stock_on_hand\":\"\",\"stock_on_hand_formatted\":\"\",\"available_stock\":\"\",\"available_stock_formatted\":\"\",\"committed_stock\":\"\",\"committed_stock_formatted\":\"\",\"available_for_sale_stock\":\"\",\"available_for_sale_stock_formatted\":\"\",\"project_id\":\"\",\"time_entry_ids\":[],\"expense_id\":\"\",\"item_type\":\"sales\",\"item_type_formatted\":\"販売項目 (サービス)\",\"expense_receipt_name\":\"\",\"sales_rate\":100000,\"sales_rate_formatted\":\"¥100,000\",\"salesorder_item_id\":\"\",\"cost_amount\":0,\"cost_amount_formatted\":\"¥0\",\"markup_percent\":0,\"markup_percent_formatted\":\"0.00%\",\"mapped_items\":[],\"is_modifier_item\":false,\"line_item_category\":\"line_item\"}],\"exchange_rate\":1,\"price_precision\":0,\"sub_total\":100000,\"sub_total_formatted\":\"¥100,000\",\"tax_total\":10000,\"tax_total_formatted\":\"¥10,000\",\"discount\":0,\"adjustment\":0,\"adjustment_formatted\":\"¥0\",\"shipping_charge_tax_id\":\"\",\"shipping_charge_tax_name\":\"\",\"shipping_charge_tax_type\":\"\",\"shipping_charge_tax_percentage\":\"\",\"shipping_charge_tax\":\"\",\"bcy_shipping_charge_tax\":\"\",\"shipping_charge_exclusive_of_tax\":0.0,\"shipping_charge_inclusive_of_tax\":0.0,\"shipping_charge_tax_formatted\":\"\",\"shipping_charge_exclusive_of_tax_formatted\":\"¥0\",\"shipping_charge_inclusive_of_tax_formatted\":\"¥0\",\"shipping_charge_account_id\":\"\",\"shipping_charge_account_name\":\"\",\"shipping_charge\":0,\"shipping_charge_formatted\":\"¥0\",\"total\":110000,\"total_formatted\":\"¥110,000\",\"balance\":55000,\"balance_formatted\":\"¥55,000\",\"payment_expected_date\":\"\",\"payment_expected_date_formatted\":\"\",\"ach_payment_initiated\":false,\"deliverychallans\":[],\"salesorders\":[],\"shipping_bills\":[],\"salesperson_id\":\"\",\"salesperson_name\":\"\",\"notes\":\"ご利用ありがとうございます。\",\"terms\":\"\",\"billing_address\":{\"street\":\"\",\"address\":\"\",\"street2\":\"\",\"city\":\"\",\"state\":\"\",\"zip\":\"\",\"country\":\"\",\"country_code\":\"\",\"fax\":\"\",\"phone\":\"\",\"attention\":\"\"},\"shipping_address\":{\"street\":\"\",\"address\":\"\",\"street2\":\"\",\"city\":\"\",\"state\":\"\",\"zip\":\"\",\"country\":\"\",\"country_code\":\"\",\"fax\":\"\",\"phone\":\"\",\"attention\":\"\"},\"invoice_url\":\"https://zohosecurepay.jp/books/kotarosan2/secure?CInvoiceID=2-0a9209d4a2f0dccc269fd5a6c62267e47b472e2b6118b365d147aaaadf47f7da3542442ebc9036bab6dba19374d0cdda35388ffa284ac2f448f40c85ed2af2f9198fad556c48795a \",\"created_time\":\"2025-02-28T10:33:46+0900\",\"created_time_formatted\":\"2025/02/28 10:33 午前\",\"estimate_id\":\"\",\"exchange_invoices\":[]}",
+          "param_name": "invoice",
+          "param_order": 1,
+          "param_type": "map"
+        },
+        {
+          "param_value": "${JSONString}",
+          "sample_value": "{\"organization_id\":\"90000792806\",\"name\":\"kotarosan\",\"time_zone\":\"Asia/Tokyo\",\"time_zone_formatted\":\"( GMT 9:00 ) 日本標準時(Asia/Tokyo)\",\"language_code\":\"ja\",\"language_code_formatted\":\"Japanese\",\"date_format\":\"yyyy/MM/dd\",\"store_url\":\"\",\"currency_id\":\"3092000000000082\",\"currency_code\":\"JPY\",\"currency_symbol\":\"¥\",\"address\":{\"street_address1\":\"西郷町90-9\",\"street_address2\":\"アネックス辻丸203\",\"city\":\"諫早市\",\"state\":\"Nagasaki\",\"state_code\":\"42\",\"country\":\"Japan\",\"country_formatted\":\"日本\",\"zip\":\"8540044\",\"latitude\":\"\",\"longitude\":\"\"},\"phone\":\"\",\"fax\":\"\",\"website\":\"\",\"email\":\"kotarosannocode@gmail.com\",\"custom_fields\":[{\"index\":1,\"label\":\"\",\"value\":\"\"},{\"index\":2,\"label\":\"\",\"value\":\"\"},{\"index\":3,\"label\":\"\",\"value\":\"\"},{\"index\":4,\"label\":\"\",\"value\":\"\"},{\"index\":5,\"label\":\"\",\"value\":\"\"}],\"custom_field_hash\":{\"cf_1_unformatted\":\"\",\"cf_1\":\"\",\"cf_2_unformatted\":\"\",\"cf_2\":\"\",\"cf_3_unformatted\":\"\",\"cf_3\":\"\",\"cf_4_unformatted\":\"\",\"cf_4\":\"\",\"cf_5_unformatted\":\"\",\"cf_5\":\"\"},\"portal_name\":\"kotarosan2\",\"data_center_extension\":\".jp\",\"api_root_endpoint\":\"https://www.zohoapis.jp/books/v3\"}",
+          "param_name": "organization",
+          "param_order": 2,
+          "param_type": "map"
+        },
+        {
+          "param_value": "${JSONString}",
+          "sample_value": "{\"user_id\":\"3092000000005001\",\"name\":\"Kotaro Izumida\",\"user_role\":\"admin\",\"user_role_formatted\":\"管理者\",\"role_id\":\"3092000000000837\",\"custom_fields\":[],\"custom_field_hash\":{},\"primary_email\":\"info@kotarosan-nocode.com\",\"is_from_delegate_view\":false}",
+          "param_name": "user",
+          "param_order": 3,
+          "param_type": "map"
+        }
+      ],
+      "customfunction": {
+        "return_type": "void",
+        "entity_formatted": "請求書",
+        "function_param": [
+          {
+            "param_value": "${JSONString}",
+            "sample_value": "{\"invoice_id\":\"3092000000250001\",\"invoice_number\":\"INV-000007\",\"date\":\"2025-02-28\",\"date_formatted\":\"2025/02/28\",\"due_date\":\"2025-02-28\",\"due_date_formatted\":\"2025/02/28\",\"customer_id\":\"3092000000206015\",\"customer_name\":\"kotarosan\",\"currency_id\":\"3092000000000082\",\"currency_code\":\"JPY\",\"currency_symbol\":\"¥\",\"status\":\"overdue\",\"status_formatted\":\"期限超過\",\"custom_fields\":[],\"custom_field_hash\":{},\"recurring_invoice_id\":\"\",\"payment_terms\":0,\"payment_terms_label\":\"即日\",\"invoice_installments\":[],\"zcrm_potential_id\":\"\",\"reference_number\":\"\",\"line_items\":[{\"line_item_id\":\"3092000000250003\",\"item_id\":\"3092000000034019\",\"sku\":\"\",\"item_order\":1,\"name\":\"サービスA\",\"internal_name\":\"\",\"description\":\"\",\"discount_account_id\":\"\",\"discount_account_name\":\"\",\"unit\":\"\",\"quantity\":1.0,\"discount_amount\":0,\"discount_amount_formatted\":\"¥0\",\"discount\":0,\"discounts\":[],\"bcy_rate\":100000,\"bcy_rate_formatted\":\"¥100,000\",\"rate\":100000,\"rate_formatted\":\"¥100,000\",\"account_id\":\"3092000000000290\",\"account_name\":\"売上\",\"header_id\":\"\",\"header_name\":\"\",\"pricebook_id\":\"\",\"tax_id\":\"3092000000034202\",\"tax_name\":\"10％\",\"tax_type\":\"tax\",\"tax_percentage\":10,\"item_total\":100000,\"item_total_formatted\":\"¥100,000\",\"item_custom_fields\":[],\"pricing_scheme\":\"unit\",\"tags\":[],\"documents\":[],\"image_document_id\":\"\",\"line_item_taxes\":[{\"tax_id\":\"3092000000034202\",\"tax_name\":\"10％ (10%)\",\"tax_amount\":10000,\"tax_amount_formatted\":\"¥10,000\",\"tax_percentage\":10,\"tax_specific_type\":\"tax\"}],\"bill_id\":\"\",\"bill_item_id\":\"\",\"stock_on_hand\":\"\",\"stock_on_hand_formatted\":\"\",\"available_stock\":\"\",\"available_stock_formatted\":\"\",\"committed_stock\":\"\",\"committed_stock_formatted\":\"\",\"available_for_sale_stock\":\"\",\"available_for_sale_stock_formatted\":\"\",\"project_id\":\"\",\"time_entry_ids\":[],\"expense_id\":\"\",\"item_type\":\"sales\",\"item_type_formatted\":\"販売項目 (サービス)\",\"expense_receipt_name\":\"\",\"sales_rate\":100000,\"sales_rate_formatted\":\"¥100,000\",\"salesorder_item_id\":\"\",\"cost_amount\":0,\"cost_amount_formatted\":\"¥0\",\"markup_percent\":0,\"markup_percent_formatted\":\"0.00%\",\"mapped_items\":[],\"is_modifier_item\":false,\"line_item_category\":\"line_item\"}],\"exchange_rate\":1,\"price_precision\":0,\"sub_total\":100000,\"sub_total_formatted\":\"¥100,000\",\"tax_total\":10000,\"tax_total_formatted\":\"¥10,000\",\"discount\":0,\"adjustment\":0,\"adjustment_formatted\":\"¥0\",\"shipping_charge_tax_id\":\"\",\"shipping_charge_tax_name\":\"\",\"shipping_charge_tax_type\":\"\",\"shipping_charge_tax_percentage\":\"\",\"shipping_charge_tax\":\"\",\"bcy_shipping_charge_tax\":\"\",\"shipping_charge_exclusive_of_tax\":0.0,\"shipping_charge_inclusive_of_tax\":0.0,\"shipping_charge_tax_formatted\":\"\",\"shipping_charge_exclusive_of_tax_formatted\":\"¥0\",\"shipping_charge_inclusive_of_tax_formatted\":\"¥0\",\"shipping_charge_account_id\":\"\",\"shipping_charge_account_name\":\"\",\"shipping_charge\":0,\"shipping_charge_formatted\":\"¥0\",\"total\":110000,\"total_formatted\":\"¥110,000\",\"balance\":55000,\"balance_formatted\":\"¥55,000\",\"payment_expected_date\":\"\",\"payment_expected_date_formatted\":\"\",\"ach_payment_initiated\":false,\"deliverychallans\":[],\"salesorders\":[],\"shipping_bills\":[],\"salesperson_id\":\"\",\"salesperson_name\":\"\",\"notes\":\"ご利用ありがとうございます。\",\"terms\":\"\",\"billing_address\":{\"street\":\"\",\"address\":\"\",\"street2\":\"\",\"city\":\"\",\"state\":\"\",\"zip\":\"\",\"country\":\"\",\"country_code\":\"\",\"fax\":\"\",\"phone\":\"\",\"attention\":\"\"},\"shipping_address\":{\"street\":\"\",\"address\":\"\",\"street2\":\"\",\"city\":\"\",\"state\":\"\",\"zip\":\"\",\"country\":\"\",\"country_code\":\"\",\"fax\":\"\",\"phone\":\"\",\"attention\":\"\"},\"invoice_url\":\"https://zohosecurepay.jp/books/kotarosan2/secure?CInvoiceID=2-0a9209d4a2f0dccc269fd5a6c62267e47b472e2b6118b3651c62f92f538a30b23542442ebc9036bab6dba19374d0cdda35388ffa284ac2f4ba3f9dcdd194b286f79891285d442e9e \",\"created_time\":\"2025-02-28T10:33:46+0900\",\"created_time_formatted\":\"2025/02/28 10:33 午前\",\"estimate_id\":\"\",\"exchange_invoices\":[]}",
+            "is_additional_param": false,
+            "param_name": "invoice",
+            "param_order": 1,
+            "param_type": "map"
+          },
+          {
+            "param_value": "${JSONString}",
+            "sample_value": "{\"organization_id\":\"90000792806\",\"name\":\"kotarosan\",\"time_zone\":\"Asia/Tokyo\",\"time_zone_formatted\":\"( GMT 9:00 ) 日本標準時(Asia/Tokyo)\",\"language_code\":\"ja\",\"language_code_formatted\":\"Japanese\",\"date_format\":\"yyyy/MM/dd\",\"store_url\":\"\",\"currency_id\":\"3092000000000082\",\"currency_code\":\"JPY\",\"currency_symbol\":\"¥\",\"address\":{\"street_address1\":\"西郷町90-9\",\"street_address2\":\"アネックス辻丸203\",\"city\":\"諫早市\",\"state\":\"Nagasaki\",\"state_code\":\"42\",\"country\":\"Japan\",\"country_formatted\":\"日本\",\"zip\":\"8540044\",\"latitude\":\"\",\"longitude\":\"\"},\"phone\":\"\",\"fax\":\"\",\"website\":\"\",\"email\":\"kotarosannocode@gmail.com\",\"custom_fields\":[{\"index\":1,\"label\":\"\",\"value\":\"\"},{\"index\":2,\"label\":\"\",\"value\":\"\"},{\"index\":3,\"label\":\"\",\"value\":\"\"},{\"index\":4,\"label\":\"\",\"value\":\"\"},{\"index\":5,\"label\":\"\",\"value\":\"\"}],\"custom_field_hash\":{\"cf_1_unformatted\":\"\",\"cf_1\":\"\",\"cf_2_unformatted\":\"\",\"cf_2\":\"\",\"cf_3_unformatted\":\"\",\"cf_3\":\"\",\"cf_4_unformatted\":\"\",\"cf_4\":\"\",\"cf_5_unformatted\":\"\",\"cf_5\":\"\"},\"portal_name\":\"kotarosan2\",\"data_center_extension\":\".jp\",\"api_root_endpoint\":\"https://www.zohoapis.jp/books/v3\"}",
+            "is_additional_param": false,
+            "param_name": "organization",
+            "param_order": 2,
+            "param_type": "map"
+          },
+          {
+            "param_value": "${JSONString}",
+            "sample_value": "{\"user_id\":\"3092000000005001\",\"name\":\"Kotaro Izumida\",\"user_role\":\"admin\",\"user_role_formatted\":\"管理者\",\"role_id\":\"3092000000000837\",\"custom_fields\":[],\"custom_field_hash\":{},\"primary_email\":\"info@kotarosan-nocode.com\",\"is_from_delegate_view\":false}",
+            "is_additional_param": false,
+            "param_name": "user",
+            "param_order": 3,
+            "param_type": "map"
+          }
+        ],
+        "lock_reason": "",
+        "drefunction_id": "14892000000005013",
+        "customfunction_id": "3092000000389019",
+        "description": "PoC by harness_20260421_books",
+        "language": "deluge",
+        "include_orgvariables_params": false,
+        "script": "\n// PoC by zoho-deluge-sync (Books) — auto-generated\ninvoiceID = invoice.get(\"invoice_id\");\ninfo \"PoC OK invoiceID=\" + invoiceID;\nreturn;\n",
+        "function_name": "qa_books_smoke_mo874l6q",
+        "language_formatted": "DELUGE",
+        "is_deployed": false,
+        "entity": "invoice"
+      },
+      "sample_script": "/*\nThis is a sample function. Uncomment to execute or make changes to this function.\ninvoiceID = invoice.get(\"invoice_id\");\ninvoicedate = invoice.get(\"date\").toDate();\norganizationID = organization.get(\"organization_id\");\n*/",
+      "custom_status": [
+        {
+          "code": 1000,
+          "status_formatted": "Missing Input Value"
+        },
+        {
+          "code": 1001,
+          "status_formatted": "Input Data Type Mismatch"
+        },
+        {
+          "code": 1002,
+          "status_formatted": "Invalid Input Format"
+        },
+        {
+          "code": 1003,
+          "status_formatted": "Rule Violation"
+        },
+        {
+          "code": 1004,
+          "status_formatted": "Duplicate Data Entry"
+        },
+        {
+          "code": 1005,
+          "status_formatted": "Third Party Failure"
+        },
+        {
+          "code": 1006,
+          "status_formatted": "External Timeout"
+        },
+        {
+          "code": 1007,
+          "status_formatted": "External Authorization Failure"
+        },
+        {
+          "code": 1008,
+          "status_formatted": "Parsing Error"
+        },
+        {
+          "code": 1009,
+          "status_formatted": "Unknown Error"
+        }
+      ]
+    },
+    "text_preview": "{\"code\":0,\"message\":\"success\",\"entity_params\":[{\"param_value\":\"${JSONString}\",\"sample_value\":\"{\\\"invoice_id\\\":\\\"3092000000250001\\\",\\\"invoice_number\\\":\\\"INV-000007\\\",\\\"date\\\":\\\"2025-02-28\\\",\\\"date_formatted\\\":\\\"2025/02/28\\\",\\\"due_date\\\":\\\"2025-02-28\\\",\\\"due_date_formatted\\\":\\\"2025/02/28\\\",\\\"customer_id\\\":\\\"3092000000206015\\\",\\\"customer_name\\\":\\\"kotarosan\\\",\\\"currency_id\\\":\\\"3092000000000082\\\",\\\"currency_code\\\":\\\"JPY\\\",\\\"currency_symbol\\\":\\\"¥\\\",\\\"status\\\":\\\"overdue\\\",\\\"status_formatted\\\":\\\"期限超過\\\",\\\"custom_fields\\\":[],\\\"custom_field_hash\\\":{},\\\"recurring_invoice_id\\\":\\\"\\\",\\\"payment_terms\\\":0,\\\"payment_terms_label\\\":\\\"即日\\\",\\\"invoice_installments\\\":[],\\\"zcrm_potential_id\\\":\\\"\\\",\\\"reference_number\\\":\\\"\\\",\\\"line_items\\\":[{\\\"line_item_id\\\":\\\"3092000000250003\\\",\\\"item_id\\\":\\\"3092000000034019\\\",\\\"sku\\\":\\\"\\\",\\\"item_order\\\":1,\\\"name\\\":\\\"サービスA\\\",\\\"internal_name\\\":\\\"\\\",\\\"description\\\":\\\"\\\",\\\"discount_account_id\\\":\\\"\\\",\\\"discount_account_name\\\":\\\"\\\",\\\"unit\\\":\\\"\\\",\\\"quantity\\\":1.0,\\\"discount_amount\\\":0,\\\"discount_amount_formatted\\\":\\\"¥0\\\",\\\"discount\\\":0,\\\"discounts\\\":[],\\\"bcy_rate\\\":100000,\\\"bcy_rate_formatted\\\":\\\"¥100,000\\\",\\\"rate\\\":100000,\\\"rate_formatted\\\":\\\"¥100,000\\\",\\\"account_id\\\":\\\"3092000000000290\\\",\\\"account_name\\\":\\\"売上\\\",\\\"header_id\\\":\\\"\\\",\\\"header_name\\\":\\\"\\\",\\\"pricebook_id\\\":\\\"\\\",\\\"tax_id\\\":\\\"3092000000034202\\\",\\\"tax_name\\\":\\\"10％\\\",\\\"tax_type\\\":\\\"tax\\\",\\\"tax_percentage\\\":10,\\\"item_total\\\":100000,\\\"item_total_formatted\\\":\\\"¥100,000\\\",\\\"item_custom_fields\\\":[],\\\"pricing_scheme\\\":\\\""
+  },
+  {
+    "label": "UPDATE (save only)",
+    "status": 200,
+    "body": {
+      "code": 0,
+      "message": "カスタム関数を更新しました。",
+      "customfunction": {
+        "return_type": "void",
+        "entity_formatted": "請求書",
+        "function_param": [
+          {
+            "param_value": "${JSONString}",
+            "sample_value": "{}",
+            "is_additional_param": false,
+            "param_name": "invoice",
+            "param_order": 1,
+            "param_type": "map"
+          },
+          {
+            "param_value": "${JSONString}",
+            "sample_value": "{\"organization_id\":\"90000792806\",\"name\":\"kotarosan\",\"time_zone\":\"Asia/Tokyo\",\"time_zone_formatted\":\"( GMT 9:00 ) 日本標準時(Asia/Tokyo)\",\"language_code\":\"ja\",\"language_code_formatted\":\"Japanese\",\"date_format\":\"yyyy/MM/dd\",\"store_url\":\"\",\"currency_id\":\"3092000000000082\",\"currency_code\":\"JPY\",\"currency_symbol\":\"¥\",\"address\":{\"street_address1\":\"西郷町90-9\",\"street_address2\":\"アネックス辻丸203\",\"city\":\"諫早市\",\"state\":\"Nagasaki\",\"state_code\":\"42\",\"country\":\"Japan\",\"country_formatted\":\"日本\",\"zip\":\"8540044\",\"latitude\":\"\",\"longitude\":\"\"},\"phone\":\"\",\"fax\":\"\",\"website\":\"\",\"email\":\"kotarosannocode@gmail.com\",\"custom_fields\":[{\"index\":1,\"label\":\"\",\"value\":\"\"},{\"index\":2,\"label\":\"\",\"value\":\"\"},{\"index\":3,\"label\":\"\",\"value\":\"\"},{\"index\":4,\"label\":\"\",\"value\":\"\"},{\"index\":5,\"label\":\"\",\"value\":\"\"}],\"custom_field_hash\":{\"cf_1_unformatted\":\"\",\"cf_1\":\"\",\"cf_2_unformatted\":\"\",\"cf_2\":\"\",\"cf_3_unformatted\":\"\",\"cf_3\":\"\",\"cf_4_unformatted\":\"\",\"cf_4\":\"\",\"cf_5_unformatted\":\"\",\"cf_5\":\"\"},\"portal_name\":\"kotarosan2\",\"data_center_extension\":\".jp\",\"api_root_endpoint\":\"https://www.zohoapis.jp/books/v3\"}",
+            "is_additional_param": false,
+            "param_name": "organization",
+            "param_order": 2,
+            "param_type": "map"
+          },
+          {
+            "param_value": "${JSONString}",
+            "sample_value": "{\"user_id\":\"3092000000005001\",\"name\":\"Kotaro Izumida\",\"user_role\":\"admin\",\"user_role_formatted\":\"管理者\",\"role_id\":\"3092000000000837\",\"custom_fields\":[],\"custom_field_hash\":{},\"primary_email\":\"info@kotarosan-nocode.com\",\"is_from_delegate_view\":false}",
+            "is_additional_param": false,
+            "param_name": "user",
+            "param_order": 3,
+            "param_type": "map"
+          }
+        ],
+        "drefunction_id": "14892000000005013",
+        "function_name": "qa_books_smoke_mo874l6q",
+        "customfunction_id": "3092000000389019",
+        "description": "PoC updated",
+        "include_orgvariables_params": false,
+        "language": "deluge",
+        "placeholder": "fn_qa_books_smoke_mo874l6q",
+        "entity": "invoice",
+        "script": "\n// PoC by zoho-deluge-sync (Books) — auto-generated\ninvoiceID = invoice.get(\"invoice_id\");\ninfo \"PoC OK invoiceID=\" + invoiceID;\nreturn;\n// updated\n"
+      }
+    },
+    "text_preview": "{\"code\":0,\"message\":\"カスタム関数を更新しました。\",\"customfunction\":{\"return_type\":\"void\",\"entity_formatted\":\"請求書\",\"function_param\":[{\"param_value\":\"${JSONString}\",\"sample_value\":\"{}\",\"is_additional_param\":false,\"param_name\":\"invoice\",\"param_order\":1,\"param_type\":\"map\"},{\"param_value\":\"${JSONString}\",\"sample_value\":\"{\\\"organization_id\\\":\\\"90000792806\\\",\\\"name\\\":\\\"kotarosan\\\",\\\"time_zone\\\":\\\"Asia/Tokyo\\\",\\\"time_zone_formatted\\\":\\\"( GMT 9:00 ) 日本標準時(Asia/Tokyo)\\\",\\\"language_code\\\":\\\"ja\\\",\\\"language_code_formatted\\\":\\\"Japanese\\\",\\\"date_format\\\":\\\"yyyy/MM/dd\\\",\\\"store_url\\\":\\\"\\\",\\\"currency_id\\\":\\\"3092000000000082\\\",\\\"currency_code\\\":\\\"JPY\\\",\\\"currency_symbol\\\":\\\"¥\\\",\\\"address\\\":{\\\"street_address1\\\":\\\"西郷町90-9\\\",\\\"street_address2\\\":\\\"アネックス辻丸203\\\",\\\"city\\\":\\\"諫早市\\\",\\\"state\\\":\\\"Nagasaki\\\",\\\"state_code\\\":\\\"42\\\",\\\"country\\\":\\\"Japan\\\",\\\"country_formatted\\\":\\\"日本\\\",\\\"zip\\\":\\\"8540044\\\",\\\"latitude\\\":\\\"\\\",\\\"longitude\\\":\\\"\\\"},\\\"phone\\\":\\\"\\\",\\\"fax\\\":\\\"\\\",\\\"website\\\":\\\"\\\",\\\"email\\\":\\\"kotarosannocode@gmail.com\\\",\\\"custom_fields\\\":[{\\\"index\\\":1,\\\"label\\\":\\\"\\\",\\\"value\\\":\\\"\\\"},{\\\"index\\\":2,\\\"label\\\":\\\"\\\",\\\"value\\\":\\\"\\\"},{\\\"index\\\":3,\\\"label\\\":\\\"\\\",\\\"value\\\":\\\"\\\"},{\\\"index\\\":4,\\\"label\\\":\\\"\\\",\\\"value\\\":\\\"\\\"},{\\\"index\\\":5,\\\"label\\\":\\\"\\\",\\\"value\\\":\\\"\\\"}],\\\"custom_field_hash\\\":{\\\"cf_1_unformatted\\\":\\\"\\\",\\\"cf_1\\\":\\\"\\\",\\\"cf_2_unformatted\\\":\\\"\\\",\\\"cf_2\\\":\\\"\\\",\\\"cf_3_unformatted\\\":\\\"\\\",\\\"cf_3\\\":\\\"\\\",\\\"cf_4_unformatted\\\":\\\"\\\",\\\"cf_4\\\":\\\"\\\",\\\"cf_5_unformatted\\\":\\\"\\\",\\\"cf_5\\\":\\\"\\\"},\\\"portal_name\\\":\\\"kotarosan2\\\",\\\"data_cente"
+  },
+  {
+    "label": "entitylist",
+    "status": 200,
+    "body": {
+      "code": 0,
+      "message": "success",
+      "data": [
+        {
+          "date": "2025-02-28",
+          "country": "",
+          "updated_time": "2025-02-28T10:35:10+0900",
+          "zcrm_potential_id": "",
+          "client_viewed_time": "",
+          "documents": "",
+          "ar_account_id": "3092000000000266",
+          "billing_address": {
+            "zipcode": "",
+            "country": "",
+            "address": "",
+            "city": "",
+            "phone": "",
+            "attention": "",
+            "street2": "",
+            "state": "",
+            "fax": ""
+          },
+          "has_attachment": false,
+          "project_name": "",
+          "payment_expected_date_formatted": "",
+          "issued_date": "",
+          "balance": 55000,
+          "write_off_amount_formatted": "¥0",
+          "created_time_formatted": "2025/02/28 10:33 午前",
+          "invoice_id": "3092000000250001",
+          "template_type": "standard_japanese",
+          "amount_due": 55000,
+          "invoice_number": "INV-000007",
+          "color_code": "",
+          "transaction_type_formatted": "更新",
+          "created_time": "2025-02-28T10:33:46+0900",
+          "last_payment_date_formatted": "2025/02/28",
+          "exchange_rate": 1,
+          "invoice_source_formatted": "Client",
+          "custom_fields": [],
+          "last_payment_date": "2025-02-28",
+          "sales_channel": "direct_sales",
+          "shipping_charge_formatted": "¥0",
+          "status_formatted": "期限超過",
+          "transaction_type": "renewal",
+          "reference_number": "",
+          "created_by": "Kotaro Izumida",
+          "tags": [],
+          "issued_date_formatted": "",
+          "due_days": "期限を417日超過",
+          "phone": "",
+          "company_name": "",
+          "unprocessed_payment_amount": 0,
+          "current_sub_status_formatted": "期限超過",
+          "zcrm_potential_name": "",
+          "adjustment": 0,
+          "ar_account_name": "売掛金",
+          "status": "overdue",
+          "current_sub_status": "overdue",
+          "unprocessed_payment_amount_formatted": "¥0",
+          "fcy_tds_balance_formatted": "¥0",
+          "schedule_time_formatted": "",
+          "due_date_formatted": "2025/02/28",
+          "balance_formatted": "¥55,000",
+          "adjustment_formatted": "¥0",
+          "is_viewed_by_client": false,
+          "write_off_amount": 0,
+          "ach_payment_initiated": false,
+          "last_reminder_sent_date": "",
+          "currency_code": "JPY",
+          "fcy_tds_balance": 0,
+          "invoice_source": "Client",
+          "total": 110000,
+          "last_reminder_sent_date_formatted": "",
+          "date_formatted": "2025/02/28",
+          "current_sub_status_id": "",
+          "custom_field_hash": {},
+          "shipping_address": {
+            "zipcode": "",
+            "country": "",
+            "address": "",
+            "city": "",
+            "phone": "",
+            "attention": "",
+            "street2": "",
+            "state": "",
+            "fax": ""
+          },
+          "client_viewed_time_formatted": "",
+          "email": "",
+          "last_modified_time": "2025-02-28T10:35:10+0900",
+          "currency_symbol": "¥",
+          "due_date": "2025-02-28",
+          "no_of_copies": 1,
+          "payment_expected_date": "",
+          "is_emailed": false,
+          "reminders_sent": 0,
+          "ach_payment_initiated_formatted": false,
+          "salesperson_name": "",
+          "salesperson_id": "",
+          "shipping_charge": 0,
+          "sales_channel_formatted": "その他",
+          "schedule_time": "",
+          "amount_due_formatted": "¥55,000",
+          "template_id": "3092000000034208",
+          "customer_name": "kotarosan",
+          "customer_id": "3092000000206015",
+          "total_formatted": "¥110,000",
+          "currency_id": "3092000000000082",
+          "show_no_of_copies": true
+        }
+      ],
+      "page_context": {
+        "page": 1,
+        "per_page": 5,
+        "has_more_page": false
+      },
+      "header_context": [
+        {
+          "is_mandatory": false,
+          "is_editable": true,
+          "is_custom_field": false,
+          "value": "created_time",
+          "key": "作成日時",
+          "is_sortable": true,
+          "is_header": false
+        },
+        {
+          "is_mandatory": false,
+          "is_editable": true,
+          "is_custom_field": false,
+          "value": "last_modified_time",
+          "key": "最終更新日時",
+          "is_sortable": true,
+          "is_header": false
+        },
+        {
+          "sort_column": "date",
+          "is_mandatory": true,
+          "is_editable": true,
+          "is_custom_field": false,
+          "value": "date",
+          "key": "日付",
+          "is_sortable": true,
+          "is_header": true
+        },
+        {
+          "sort_column": "invoice_number",
+          "is_mandatory": true,
+          "is_editable": true,
+          "is_custom_field": false,
+          "value": "invoice_number",
+          "key": "請求書番号",
+          "is_sortable": true,
+          "is_header": true
+        },
+        {
+          "is_mandatory": false,
+          "is_editable": true,
+          "is_custom_field": false,
+          "value": "reference_number",
+          "key": "注文番号",
+          "is_sortable": true,
+          "is_header": true
+        },
+        {
+          "sort_column": "customer_name",
+          "is_mandatory": false,
+          "is_editable": true,
+          "is_custom_field": false,
+          "value": "customer_name",
+          "key": "顧客名",
+          "is_sortable": true,
+          "is_header": true
+        },
+        {
+          "is_mandatory": true,
+          "is_editable": true,
+          "is_custom_field": false,
+          "value": "status",
+          "key": "ステータス",
+          "is_sortable": false,
+          "is_header": true
+        },
+        {
+          "sort_column": "due_date",
+          "is_mandatory": false,
+          "is_editable": true,
+          "is_custom_field": false,
+          "value": "due_date",
+          "key": "支払い期限",
+          "is_sortable": true,
+          "is_header": true
+        },
+        {
+          "sort_column": "total",
+          "is_mandatory": true,
+          "is_editable": true,
+          "is_custom_field": false,
+          "align": "right",
+          "value": "total",
+          "key": "総額",
+          "is_sortable": true,
+          "is_header": true
+        },
+        {
+          "sort_column": "balance",
+          "is_mandatory": false,
+          "is_editable": true,
+          "is_custom_field": false,
+          "align": "right",
+          "value": "balance",
+          "key": "残額",
+          "is_sortable": true,
+          "is_header": true
+        }
+      ]
+    },
+    "text_preview": "{\"code\":0,\"message\":\"success\",\"data\":[{\"date\":\"2025-02-28\",\"country\":\"\",\"updated_time\":\"2025-02-28T10:35:10+0900\",\"zcrm_potential_id\":\"\",\"client_viewed_time\":\"\",\"documents\":\"\",\"ar_account_id\":\"3092000000000266\",\"billing_address\":{\"zipcode\":\"\",\"country\":\"\",\"address\":\"\",\"city\":\"\",\"phone\":\"\",\"attention\":\"\",\"street2\":\"\",\"state\":\"\",\"fax\":\"\"},\"has_attachment\":false,\"project_name\":\"\",\"payment_expected_date_formatted\":\"\",\"issued_date\":\"\",\"balance\":55000,\"write_off_amount_formatted\":\"¥0\",\"created_time_formatted\":\"2025/02/28 10:33 午前\",\"invoice_id\":\"3092000000250001\",\"template_type\":\"standard_japanese\",\"amount_due\":55000,\"invoice_number\":\"INV-000007\",\"color_code\":\"\",\"transaction_type_formatted\":\"更新\",\"created_time\":\"2025-02-28T10:33:46+0900\",\"last_payment_date_formatted\":\"2025/02/28\",\"exchange_rate\":1,\"invoice_source_formatted\":\"Client\",\"custom_fields\":[],\"last_payment_date\":\"2025-02-28\",\"sales_channel\":\"direct_sales\",\"shipping_charge_formatted\":\"¥0\",\"status_formatted\":\"期限超過\",\"transaction_type\":\"renewal\",\"reference_number\":\"\",\"created_by\":\"Kotaro Izumida\",\"tags\":[],\"issued_date_formatted\":\"\",\"due_days\":\"期限を417日超過\",\"phone\":\"\",\"company_name\":\"\",\"unprocessed_payment_amount\":0,\"current_sub_status_formatted\":\"期限超過\",\"zcrm_potential_name\":\"\",\"adjustment\":0,\"ar_account_name\":\"売掛金\",\"status\":\"overdue\",\"current_sub_status\":\"overdue\",\"unprocessed_payment_amount_formatted\":\"¥0\",\"fcy_tds_balance_formatted\":\"¥0\",\"schedule_time_formatted\":\"\",\"due_date_formatted\":\"2025/02/28\",\"balance_formatted\":\"¥55,000"
+  },
+  {
+    "label": "EXECUTE (is_execute:true)",
+    "status": 200,
+    "body": {
+      "code": 0,
+      "message": "カスタム関数を更新しました。",
+      "customfunction": {
+        "return_type": "void",
+        "entity_formatted": "請求書",
+        "function_param": [
+          {
+            "param_value": "${JSONString}",
+            "sample_value": "{}",
+            "is_additional_param": false,
+            "param_name": "invoice",
+            "param_order": 1,
+            "param_type": "map"
+          },
+          {
+            "param_value": "${JSONString}",
+            "sample_value": "{\"organization_id\":\"90000792806\",\"name\":\"kotarosan\",\"time_zone\":\"Asia/Tokyo\",\"time_zone_formatted\":\"( GMT 9:00 ) 日本標準時(Asia/Tokyo)\",\"language_code\":\"ja\",\"language_code_formatted\":\"Japanese\",\"date_format\":\"yyyy/MM/dd\",\"store_url\":\"\",\"currency_id\":\"3092000000000082\",\"currency_code\":\"JPY\",\"currency_symbol\":\"¥\",\"address\":{\"street_address1\":\"西郷町90-9\",\"street_address2\":\"アネックス辻丸203\",\"city\":\"諫早市\",\"state\":\"Nagasaki\",\"state_code\":\"42\",\"country\":\"Japan\",\"country_formatted\":\"日本\",\"zip\":\"8540044\",\"latitude\":\"\",\"longitude\":\"\"},\"phone\":\"\",\"fax\":\"\",\"website\":\"\",\"email\":\"kotarosannocode@gmail.com\",\"custom_fields\":[{\"index\":1,\"label\":\"\",\"value\":\"\"},{\"index\":2,\"label\":\"\",\"value\":\"\"},{\"index\":3,\"label\":\"\",\"value\":\"\"},{\"index\":4,\"label\":\"\",\"value\":\"\"},{\"index\":5,\"label\":\"\",\"value\":\"\"}],\"custom_field_hash\":{\"cf_1_unformatted\":\"\",\"cf_1\":\"\",\"cf_2_unformatted\":\"\",\"cf_2\":\"\",\"cf_3_unformatted\":\"\",\"cf_3\":\"\",\"cf_4_unformatted\":\"\",\"cf_4\":\"\",\"cf_5_unformatted\":\"\",\"cf_5\":\"\"},\"portal_name\":\"kotarosan2\",\"data_center_extension\":\".jp\",\"api_root_endpoint\":\"https://www.zohoapis.jp/books/v3\"}",
+            "is_additional_param": false,
+            "param_name": "organization",
+            "param_order": 2,
+            "param_type": "map"
+          },
+          {
+            "param_value": "${JSONString}",
+            "sample_value": "{\"user_id\":\"3092000000005001\",\"name\":\"Kotaro Izumida\",\"user_role\":\"admin\",\"user_role_formatted\":\"管理者\",\"role_id\":\"3092000000000837\",\"custom_fields\":[],\"custom_field_hash\":{},\"primary_email\":\"info@kotarosan-nocode.com\",\"is_from_delegate_view\":false}",
+            "is_additional_param": false,
+            "param_name": "user",
+            "param_order": 3,
+            "param_type": "map"
+          }
+        ],
+        "drefunction_id": "14892000000005013",
+        "function_name": "qa_books_smoke_mo874l6q",
+        "customfunction_id": "3092000000389019",
+        "description": "PoC updated",
+        "include_orgvariables_params": false,
+        "language": "deluge",
+        "placeholder": "fn_qa_books_smoke_mo874l6q",
+        "entity": "invoice",
+        "script": "\n// PoC by zoho-deluge-sync (Books) — auto-generated\ninvoiceID = invoice.get(\"invoice_id\");\ninfo \"PoC OK invoiceID=\" + invoiceID;\nreturn;\n"
+      },
+      "execution_response": {
+        "args": {
+          "organization": "{\"portal_name\":\"kotarosan2\",\"website\":\"\",\"address\":\"{\\\"zip\\\":\\\"8540044\\\",\\\"country\\\":\\\"Japan\\\",\\\"country_formatted\\\":\\\"日本\\\",\\\"city\\\":\\\"諫早市\\\",\\\"latitude\\\":\\\"\\\",\\\"street_address2\\\":\\\"アネックス辻丸203\\\",\\\"street_address1\\\":\\\"西郷町90-9\\\",\\\"state\\\":\\\"Nagasaki\\\",\\\"state_code\\\":\\\"42\\\",\\\"longitude\\\":\\\"\\\"}\",\"language_code_formatted\":\"Japanese\",\"currency_symbol\":\"¥\",\"custom_fields\":\"[{\\\"index\\\":1,\\\"label\\\":\\\"\\\",\\\"value\\\":\\\"\\\"},{\\\"index\\\":2,\\\"label\\\":\\\"\\\",\\\"value\\\":\\\"\\\"},{\\\"index\\\":3,\\\"label\\\":\\\"\\\",\\\"value\\\":\\\"\\\"},{\\\"index\\\":4,\\\"label\\\":\\\"\\\",\\\"value\\\":\\\"\\\"},{\\\"index\\\":5,\\\"label\\\":\\\"\\\",\\\"value\\\":\\\"\\\"}]\",\"time_zone\":\"Asia/Tokyo\",\"data_center_extension\":\".jp\",\"currency_code\":\"JPY\",\"store_url\":\"\",\"language_code\":\"ja\",\"phone\":\"\",\"organization_id\":\"90000792806\",\"name\":\"kotarosan\",\"time_zone_formatted\":\"( GMT 9:00 ) 日本標準時(Asia/Tokyo)\",\"custom_field_hash\":\"{\\\"cf_3_unformatted\\\":\\\"\\\",\\\"cf_5_unformatted\\\":\\\"\\\",\\\"cf_4\\\":\\\"\\\",\\\"cf_4_unformatted\\\":\\\"\\\",\\\"cf_5\\\":\\\"\\\",\\\"cf_2\\\":\\\"\\\",\\\"cf_3\\\":\\\"\\\",\\\"cf_1_unformatted\\\":\\\"\\\",\\\"cf_1\\\":\\\"\\\",\\\"cf_2_unformatted\\\":\\\"\\\"}\",\"date_format\":\"yyyy/MM/dd\",\"api_root_endpoint\":\"https://www.zohoapis.jp/books/v3\",\"fax\":\"\",\"currency_id\":\"3092000000000082\",\"email\":\"kotarosannocode@gmail.com\"}",
+          "invoice": "{\"date\":\"2025-02-28\",\"notes\":\"ご利用ありがとうございます。\",\"zcrm_potential_id\":\"\",\"discount\":\"0\",\"billing_address\":\"{\\\"zip\\\":\\\"\\\",\\\"country\\\":\\\"\\\",\\\"country_code\\\":\\\"\\\",\\\"address\\\":\\\"\\\",\\\"city\\\":\\\"\\\",\\\"phone\\\":\\\"\\\",\\\"street\\\":\\\"\\\",\\\"attention\\\":\\\"\\\",\\\"street2\\\":\\\"\\\",\\\"state\\\":\\\"\\\",\\\"fax\\\":\\\"\\\"}\",\"line_items\":\"[{\\\"line_item_id\\\":\\\"3092000000250003\\\",\\\"documents\\\":[],\\\"discount_amount\\\":0,\\\"item_type\\\":\\\"sales\\\",\\\"item_type_formatted\\\":\\\"販売項目 (サービス)\\\",\\\"discount\\\":0,\\\"mapped_items\\\":[],\\\"available_stock_formatted\\\":\\\"\\\",\\\"committed_stock_formatted\\\":\\\"\\\",\\\"internal_name\\\":\\\"\\\",\\\"sales_rate_formatted\\\":\\\"¥100,000\\\",\\\"discounts\\\":[],\\\"project_id\\\":\\\"\\\",\\\"sku\\\":\\\"\\\",\\\"pricing_scheme\\\":\\\"unit\\\",\\\"pricebook_id\\\":\\\"\\\",\\\"bill_id\\\":\\\"\\\",\\\"bcy_rate_formatted\\\":\\\"¥100,000\\\",\\\"image_document_id\\\":\\\"\\\",\\\"expense_receipt_name\\\":\\\"\\\",\\\"item_total\\\":100000,\\\"tax_id\\\":\\\"3092000000034202\\\",\\\"tags\\\":[],\\\"stock_on_hand\\\":\\\"\\\",\\\"unit\\\":\\\"\\\",\\\"cost_amount\\\":0,\\\"tax_type\\\":\\\"tax\\\",\\\"available_for_sale_stock\\\":\\\"\\\",\\\"time_entry_ids\\\":[],\\\"cost_amount_formatted\\\":\\\"¥0\\\",\\\"name\\\":\\\"サービスA\\\",\\\"markup_percent_formatted\\\":\\\"0.00%\\\",\\\"discount_amount_formatted\\\":\\\"¥0\\\",\\\"bcy_rate\\\":100000,\\\"item_total_formatted\\\":\\\"¥100,000\\\",\\\"available_for_sale_stock_formatted\\\":\\\"\\\",\\\"salesorder_item_id\\\":\\\"\\\",\\\"discount_account_name\\\":\\\"\\\",\\\"rate_formatted\\\":\\\"¥100,000\\\",\\\"header_id\\\":\\\"\\\",\\\"is_modifier_item\\\":false,\\\"discount_account_id\\\":\\\"\\\",\\\"description\\\":\\\"\\\",\\\"item_order\\\":1,\\\"bill_item_id\\\":\\\"\\\",\\\"rate\\\":100000,\\\"account_name\\\":\\\"売上\\\",\\\"sales_rate\\\":100000,\\\"quantity\\\":1,\\\"item_id\\\":\\\"3092000000034019\\\",\\\"committed_stock\\\":\\\"\\\",\\\"tax_name\\\":\\\"10％\\\",\\\"stock_on_hand_formatted\\\":\\\"\\\",\\\"header_name\\\":\\\"\\\",\\\"item_custom_fields\\\":[],\\\"line_item_taxes\\\":[{\\\"tax_amount\\\":10000,\\\"tax_specific_type\\\":\\\"tax\\\",\\\"tax_name\\\":\\\"10％ (10%)\\\",\\\"tax_amount_formatted\\\":\\\"¥10,000\\\",\\\"tax_percentage\\\":10,\\\"tax_id\\\":\\\"3092000000034202\\\"}],\\\"markup_percent\\\":0,\\\"account_id\\\":\\\"3092000000000290\\\",\\\"tax_percentage\\\":10,\\\"line_item_category\\\":\\\"line_item\\\",\\\"available_stock\\\":\\\"\\\",\\\"expense_id\\\":\\\"\\\"}]\",\"payment_expected_date_formatted\":\"\",\"shipping_charge_inclusive_of_tax\":\"0.0\",\"balance\":\"55000\",\"bcy_shipping_charge_tax\":\"\",\"terms\":\"\",\"created_time_formatted\":\"2025/02/28 10:33 午前\",\"invoice_id\":\"3092000000250001\",\"invoice_number\":\"INV-000007\",\"recurring_invoice_id\":\"\",\"shipping_charge_tax\":\"\",\"created_time\":\"2025-02-28T10:33:46+0900\",\"exchange_rate\":\"1\",\"exchange_invoices\":\"[]\",\"custom_fields\":\"[]\",\"estimate_id\":\"\",\"shipping_charge_formatted\":\"¥0\",\"status_formatted\":\"期限超過\",\"reference_number\":\"\",\"shipping_charge_tax_id\":\"\",\"price_precision\":\"0\",\"shipping_charge_account_id\":\"\",\"invoice_installments\":\"[]\",\"shipping_charge_tax_percentage\":\"\",\"adjustment\":\"0\",\"shipping_charge_tax_name\":\"\",\"status\":\"overdue\",\"due_date_formatted\":\"2025/02/28\",\"tax_total\":\"10000\",\"adjustment_formatted\":\"¥0\",\"balance_formatted\":\"¥55,000\",\"shipping_charge_inclusive_of_tax_formatted\":\"¥0\",\"ach_payment_initiated\":\"false\",\"payment_terms\":\"0\",\"currency_code\":\"JPY\",\"shipping_charge_exclusive_of_tax\":\"0.0\",\"total\":\"110000\",\"shipping_charge_exclusive_of_tax_formatted\":\"¥0\",\"tax_total_formatted\":\"¥10,000\",\"date_formatted\":\"2025/02/28\",\"custom_field_hash\":\"{}\",\"sub_total_formatted\":\"¥100,000\",\"shipping_address\":\"{\\\"zip\\\":\\\"\\\",\\\"country\\\":\\\"\\\",\\\"country_code\\\":\\\"\\\",\\\"address\\\":\\\"\\\",\\\"city\\\":\\\"\\\",\\\"phone\\\":\\\"\\\",\\\"street\\\":\\\"\\\",\\\"attention\\\":\\\"\\\",\\\"street2\\\":\\\"\\\",\\\"state\\\":\\\"\\\",\\\"fax\\\":\\\"\\\"}\",\"salesorders\":\"[]\",\"shipping_charge_tax_formatted\":\"\",\"shipping_charge_tax_type\":\"\",\"currency_symbol\":\"¥\",\"due_date\":\"2025-02-28\",\"shipping_charge_account_name\":\"\",\"shipping_bills\":\"[]\",\"payment_expected_date\":\"\",\"salesperson_name\":\"\",\"salesperson_id\":\"\",\"shipping_charge\":\"0\",\"deliverychallans\":\"[]\",\"sub_total\":\"100000\",\"customer_name\":\"kotarosan\",\"customer_id\":\"3092000000206015\",\"total_formatted\":\"¥110,000\",\"currency_id\":\"3092000000000082\",\"invoice_url\":\"https://zohosecurepay.jp/books/kotarosan2/secure?CInvoiceID=2-0a9209d4a2f0dccc269fd5a6c62267e47b472e2b6118b365a820649e3b779d283542442ebc9036bab6dba19374d0cdda35388ffa284ac2f400ca344cd7f841380c879c55b6a67c63 \",\"payment_terms_label\":\"即日\"}",
+          "user": "{\"user_role\":\"admin\",\"is_from_delegate_view\":\"false\",\"user_id\":\"3092000000005001\",\"role_id\":\"3092000000000837\",\"custom_fields\":\"[]\",\"name\":\"Kotaro Izumida\",\"custom_field_hash\":\"{}\",\"primary_email\":\"info@kotarosan-nocode.com\",\"user_role_formatted\":\"管理者\"}"
+        },
+        "entityName": "invoice",
+        "entityType": 0,
+        "log_message": [
+          "PoC OK invoiceID=3092000000250001"
+        ],
+        "message": "Function Executed Successfully"
+      }
+    },
+    "text_preview": "{\"code\":0,\"message\":\"カスタム関数を更新しました。\",\"customfunction\":{\"return_type\":\"void\",\"entity_formatted\":\"請求書\",\"function_param\":[{\"param_value\":\"${JSONString}\",\"sample_value\":\"{}\",\"is_additional_param\":false,\"param_name\":\"invoice\",\"param_order\":1,\"param_type\":\"map\"},{\"param_value\":\"${JSONString}\",\"sample_value\":\"{\\\"organization_id\\\":\\\"90000792806\\\",\\\"name\\\":\\\"kotarosan\\\",\\\"time_zone\\\":\\\"Asia/Tokyo\\\",\\\"time_zone_formatted\\\":\\\"( GMT 9:00 ) 日本標準時(Asia/Tokyo)\\\",\\\"language_code\\\":\\\"ja\\\",\\\"language_code_formatted\\\":\\\"Japanese\\\",\\\"date_format\\\":\\\"yyyy/MM/dd\\\",\\\"store_url\\\":\\\"\\\",\\\"currency_id\\\":\\\"3092000000000082\\\",\\\"currency_code\\\":\\\"JPY\\\",\\\"currency_symbol\\\":\\\"¥\\\",\\\"address\\\":{\\\"street_address1\\\":\\\"西郷町90-9\\\",\\\"street_address2\\\":\\\"アネックス辻丸203\\\",\\\"city\\\":\\\"諫早市\\\",\\\"state\\\":\\\"Nagasaki\\\",\\\"state_code\\\":\\\"42\\\",\\\"country\\\":\\\"Japan\\\",\\\"country_formatted\\\":\\\"日本\\\",\\\"zip\\\":\\\"8540044\\\",\\\"latitude\\\":\\\"\\\",\\\"longitude\\\":\\\"\\\"},\\\"phone\\\":\\\"\\\",\\\"fax\\\":\\\"\\\",\\\"website\\\":\\\"\\\",\\\"email\\\":\\\"kotarosannocode@gmail.com\\\",\\\"custom_fields\\\":[{\\\"index\\\":1,\\\"label\\\":\\\"\\\",\\\"value\\\":\\\"\\\"},{\\\"index\\\":2,\\\"label\\\":\\\"\\\",\\\"value\\\":\\\"\\\"},{\\\"index\\\":3,\\\"label\\\":\\\"\\\",\\\"value\\\":\\\"\\\"},{\\\"index\\\":4,\\\"label\\\":\\\"\\\",\\\"value\\\":\\\"\\\"},{\\\"index\\\":5,\\\"label\\\":\\\"\\\",\\\"value\\\":\\\"\\\"}],\\\"custom_field_hash\\\":{\\\"cf_1_unformatted\\\":\\\"\\\",\\\"cf_1\\\":\\\"\\\",\\\"cf_2_unformatted\\\":\\\"\\\",\\\"cf_2\\\":\\\"\\\",\\\"cf_3_unformatted\\\":\\\"\\\",\\\"cf_3\\\":\\\"\\\",\\\"cf_4_unformatted\\\":\\\"\\\",\\\"cf_4\\\":\\\"\\\",\\\"cf_5_unformatted\\\":\\\"\\\",\\\"cf_5\\\":\\\"\\\"},\\\"portal_name\\\":\\\"kotarosan2\\\",\\\"data_cente"
+  },
+  {
+    "label": "LOGS try /api/v3/integrations/customfunctions/3092000000389019/logs",
+    "status": 404,
+    "body": {
+      "code": 5,
+      "message": "Invalid URL Passed"
+    },
+    "text_preview": "{\"code\":5,\"message\":\"Invalid URL Passed\"}"
+  },
+  {
+    "label": "LOGS try /api/v3/integrations/customfunctions/3092000000389019/executionhistory",
+    "status": 404,
+    "body": {
+      "code": 5,
+      "message": "Invalid URL Passed"
+    },
+    "text_preview": "{\"code\":5,\"message\":\"Invalid URL Passed\"}"
+  },
+  {
+    "label": "LOGS try /api/v3/integrations/customfunctions/3092000000389019/history",
+    "status": 404,
+    "body": {
+      "code": 5,
+      "message": "Invalid URL Passed"
+    },
+    "text_preview": "{\"code\":5,\"message\":\"Invalid URL Passed\"}"
+  },
+  {
+    "label": "LOGS try /api/v3/integrations/customfunctions/logs?customfunction_id=3092000000389019",
+    "status": 404,
+    "body": {
+      "code": 5,
+      "message": "Invalid URL Passed"
+    },
+    "text_preview": "{\"code\":5,\"message\":\"Invalid URL Passed\"}"
+  },
+  {
+    "label": "DELETE",
+    "status": 200,
+    "body": {
+      "code": 0,
+      "message": "カスタム関数を削除しました。"
+    },
+    "text_preview": "{\"code\":0,\"message\":\"カスタム関数を削除しました。\"}"
+  }
+]

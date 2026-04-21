@@ -1,0 +1,20 @@
+{
+  "name": "zoho-books-deluge-sync",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Zoho Books の Custom Function を内部 API 経由で git-ops 管理するツール（自社 Org 専用）",
+  "scripts": {
+    "ls":     "dotenvx run -f .env.books -- node src/cli/list.mjs",
+    "pull":   "dotenvx run -f .env.books -- node src/cli/pull.mjs",
+    "push":   "dotenvx run -f .env.books -- node src/cli/push.mjs",
+    "try":    "dotenvx run -f .env.books -- node src/cli/try.mjs",
+    "exec":   "dotenvx run -f .env.books -- node src/cli/exec.mjs",
+    "create": "dotenvx run -f .env.books -- node src/cli/create.mjs",
+    "delete": "dotenvx run -f .env.books -- node src/cli/delete.mjs",
+    "smoke":  "dotenvx run -f .env.books -- node src/cli/smoke.mjs"
+  },
+  "dependencies": {
+    "@dotenvx/dotenvx": "^1.0.0"
+  }
+}

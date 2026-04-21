@@ -1,0 +1,15 @@
+{
+  "name": "harness-20260421-books",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "t01a0": "dotenvx run -f ../.env -- node scripts/t01a0_books_probe.mjs",
+    "t01b":  "dotenvx run -f ../.env -- node scripts/t01b_read_matrix.mjs",
+    "t01c":  "dotenvx run -f ../.env -- node scripts/t01c_write_cycle.mjs",
+    "t01d":  "dotenvx run -f ../.env -- node scripts/t01d_function_api_probe.mjs",
+    "sweep": "dotenvx run -f ../.env -- node scripts/_sweep_qa_books.mjs",
+    "t02d":  "dotenvx run -f .env.books -- node scripts/t02d_cf_list.mjs",
+    "t02d2": "dotenvx run -f .env.books -- node scripts/t02d2_cookie_health.mjs",
+    "t02e":  "dotenvx run -f .env.books -- node scripts/t02e_cf_smoke.mjs"
+  }
+}
