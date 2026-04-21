@@ -10,6 +10,23 @@
 //   ZOHO_BOOKS_ROLE_ID=3092...        (任意)
 //   ZOHO_BOOKS_ASSET_VERSION=Apr_18_2026_23910 (任意)
 
+import { zohoFetch, setDefaultOpts } from './_zoho_fetch.mjs';
+
+// 既定: 429/5xx で指数バックオフ + ±20% ジッター。レート残量があればログ。
+// Books 内部 API のエラーコードは整数 (12, 5, ...) で OAuth REST と異なるため、
+// NON_RETRYABLE 判定は各呼び出し元で必要に応じて opts で上書きする。
+setDefaultOpts({
+  nonRetryableCodes: new Set(),
+  onRetry: ({ attempt, status, delay, url }) => {
+    console.warn(`[books-retry #${attempt}] status=${status} delay=${delay}ms url=${url.slice(0, 80)}...`);
+  },
+  tokenRefresher: () => {
+    throw new Error(
+      'Books Cookie/CSRF が失効しました。docs/har-capture-procedure-books.md に従い再採取して .env.books を更新してください。'
+    );
+  },
+});
+
 const need = (k) => {
   const v = process.env[k];
   if (!v) throw new Error(`環境変数 ${k} が未設定です（.env.books を確認）`);
@@ -50,7 +67,7 @@ function withOrg(p) {
 
 export async function bGet(p) {
   const url = withOrg(p);
-  const res = await fetch(url, { headers: commonHeaders() });
+  const res = await zohoFetch(url, { headers: commonHeaders() });
   const text = await res.text();
   return { status: res.status, ok: res.ok, body: tryJson(text), text, url };
 }
@@ -59,7 +76,7 @@ export async function bPost(p, jsonObj) {
   // HAR 観察: organization_id は body 側にだけ載せる（URL と body 両方に書くと code 12）
   const url = `${BASE}${p}`;
   const body = `JSONString=${encodeURIComponent(JSON.stringify(jsonObj))}&organization_id=${ORG_ID}`;
-  const res = await fetch(url, {
+  const res = await zohoFetch(url, {
     method: 'POST',
     headers: { ...commonHeaders(), 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' },
     body,
@@ -71,7 +88,7 @@ export async function bPost(p, jsonObj) {
 export async function bPut(p, jsonObj) {
   const url = `${BASE}${p}`;
   const body = `JSONString=${encodeURIComponent(JSON.stringify(jsonObj))}&organization_id=${ORG_ID}`;
-  const res = await fetch(url, {
+  const res = await zohoFetch(url, {
     method: 'PUT',
     headers: { ...commonHeaders(), 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' },
     body,
@@ -82,7 +99,7 @@ export async function bPut(p, jsonObj) {
 
 export async function bDelete(p) {
   const url = withOrg(p);
-  const res = await fetch(url, { method: 'DELETE', headers: commonHeaders() });
+  const res = await zohoFetch(url, { method: 'DELETE', headers: commonHeaders() });
   const text = await res.text();
   return { status: res.status, ok: res.ok, body: tryJson(text), text };
 }

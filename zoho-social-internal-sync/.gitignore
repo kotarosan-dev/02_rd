@@ -1,0 +1,11 @@
+docs/har/*
+!docs/har/.gitkeep
+node_modules/
+.env
+.env.keys
+*.har
+artifacts/runs/*
+
+.env.social
+.env.social.encrypted
+tmp_test.png

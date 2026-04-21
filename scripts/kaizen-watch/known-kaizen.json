@@ -1,0 +1,26 @@
+{
+  "snapshot_at": "2026-04-21T00:00:00.000Z",
+  "_note": "WebSearch / 手動収集による初期 seed。kaizen-watch.mjs で取得できなかった分はここに手動追記。",
+  "titles": {
+    "21": "Functions in Zoho CRM",
+    "99": "Render Widgets Using Client Script",
+    "120": "A Guide to API Calls in Zoho CRM Sandboxes",
+    "202": "Answering your Questions - Testing and Using REST APIs in Widgets",
+    "203": "Answering your Questions - Handling API Limits and Error Responses"
+  },
+  "_2025_topics_no_number": [
+    "Optimizing the Use of Record ID Variables in Zoho CRM Queries",
+    "Queries in Canvas List View",
+    "Queries in Custom Related Lists",
+    "Zoho CRM Queries - Best Practices",
+    "Displaying Related Purchase Orders from Zoho Books in CRM Deals using Queries",
+    "Validating, controlling, and protecting notes across modules (Client Script)",
+    "Answering your Questions - Functions, AI and Extensions"
+  ],
+  "_2026_topics_no_number": [
+    "Email-Deal Associations - Link/Unlink Deal API vs Associate Email API",
+    "Recycle Bin APIs - automating record restoration programmatically",
+    "GraphQL vs. COQL APIs - decision guide",
+    "Quote-driven Deal Reconciliation (Functions)"
+  ]
+}

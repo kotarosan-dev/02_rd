@@ -1,0 +1,19 @@
+{
+  "name": "zoho-social-internal-sync",
+  "private": true,
+  "type": "module",
+  "description": "Zoho Social の内部 API（公式 API 非提供領域）を Cookie + CSRF で叩くハーネス。LinkedIn 会社ページ向け CLI。",
+  "scripts": {
+    "extract:cookie": "node scripts/_extract_social_cookie.mjs",
+    "t01:probe": "dotenvx run -f .env.social -- node scripts/t01_probe.mjs",
+    "t02:har": "dotenvx run -f .env.social -- node scripts/t02_har_extract.mjs",
+    "t10:smoke": "dotenvx run -f .env.social -- node scripts/t10_smoke_post.mjs",
+    "post": "dotenvx run -f .env.social -- node scripts/cli/post.mjs",
+    "draft": "dotenvx run -f .env.social -- node scripts/cli/draft.mjs",
+    "schedule": "dotenvx run -f .env.social -- node scripts/cli/schedule.mjs",
+    "list": "dotenvx run -f .env.social -- node scripts/cli/list.mjs",
+    "media": "dotenvx run -f .env.social -- node scripts/cli/media.mjs",
+    "monitor": "dotenvx run -f .env.social -- node scripts/cli/monitor.mjs",
+    "reports": "dotenvx run -f .env.social -- node scripts/cli/reports.mjs"
+  }
+}
