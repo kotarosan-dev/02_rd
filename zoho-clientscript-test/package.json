@@ -1,0 +1,19 @@
+{
+  "name": "zoho-clientscript-test",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Zoho CRM Client Script E2E test harness (Playwright)",
+  "scripts": {
+    "auth": "playwright codegen --save-storage=auth.json https://crm.zoho.jp",
+    "test": "playwright test",
+    "test:ui": "playwright test --ui",
+    "test:headed": "playwright test --headed",
+    "test:debug": "playwright test --debug",
+    "report": "playwright show-report"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.49.0",
+    "dotenv": "^17.4.2",
+    "typescript": "^5.6.0"
+  }
+}
