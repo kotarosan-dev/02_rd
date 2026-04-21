@@ -1,0 +1,13 @@
+node_modules/
+.env
+.env.keys
+.env.local
+_har/
+*.har
+docs/_raw/
+dry-runs/
+request-captures/
+dist/
+*.log
+.DS_Store
+Thumbs.db

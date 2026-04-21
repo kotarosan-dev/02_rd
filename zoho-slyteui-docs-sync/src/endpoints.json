@@ -1,0 +1,3552 @@
+{
+  "manifest_version": "13163368",
+  "fetched_at": "2026-04-21T23:01:07.807Z",
+  "assets": [
+    {
+      "url": "/images/DOM_1fc03f69a31e07e63a08110512200bc7_.gif",
+      "logicalPath": "images/DOM.gif",
+      "fileName": "DOM.gif",
+      "ext": "gif",
+      "category": "images",
+      "subCategory": "",
+      "hash": "1fc03f69a31e07e63a08110512200bc7"
+    },
+    {
+      "url": "/images/LyteEditorIcons_LightMode_296cee6530084f9edee7f04413ab7502_.svg",
+      "logicalPath": "images/LyteEditorIcons_LightMode.svg",
+      "fileName": "LyteEditorIcons_LightMode.svg",
+      "ext": "svg",
+      "category": "images",
+      "subCategory": "",
+      "hash": "296cee6530084f9edee7f04413ab7502"
+    },
+    {
+      "url": "/images/action_1778a95d58e5a41c477b59c19e175285_.png",
+      "logicalPath": "images/action.png",
+      "fileName": "action.png",
+      "ext": "png",
+      "category": "images",
+      "subCategory": "",
+      "hash": "1778a95d58e5a41c477b59c19e175285"
+    },
+    {
+      "url": "/images/artboard_a1f26b8bd9ca7238b47f20ec7e935f88_.gif",
+      "logicalPath": "images/artboard.gif",
+      "fileName": "artboard.gif",
+      "ext": "gif",
+      "category": "images",
+      "subCategory": "",
+      "hash": "a1f26b8bd9ca7238b47f20ec7e935f88"
+    },
+    {
+      "url": "/images/center-banner-pattern_230897089bf16ceac3732c8ed978e834_.svg",
+      "logicalPath": "images/center-banner-pattern.svg",
+      "fileName": "center-banner-pattern.svg",
+      "ext": "svg",
+      "category": "images",
+      "subCategory": "",
+      "hash": "230897089bf16ceac3732c8ed978e834"
+    },
+    {
+      "url": "/images/cl-actions_9d11824ca5e157a2d836ad509ab77485_.png",
+      "logicalPath": "images/cl-actions.png",
+      "fileName": "cl-actions.png",
+      "ext": "png",
+      "category": "images",
+      "subCategory": "",
+      "hash": "9d11824ca5e157a2d836ad509ab77485"
+    },
+    {
+      "url": "/images/cl-attributes_ff61efe8c05af233a2cce677e709e0ba_.png",
+      "logicalPath": "images/cl-attributes.png",
+      "fileName": "cl-attributes.png",
+      "ext": "png",
+      "category": "images",
+      "subCategory": "",
+      "hash": "ff61efe8c05af233a2cce677e709e0ba"
+    },
+    {
+      "url": "/images/cl-methods_c02f86ec556624231849ce81e0b66227_.png",
+      "logicalPath": "images/cl-methods.png",
+      "fileName": "cl-methods.png",
+      "ext": "png",
+      "category": "images",
+      "subCategory": "",
+      "hash": "c02f86ec556624231849ce81e0b66227"
+    },
+    {
+      "url": "/images/community-links_ca6b9ea6d3309fb302399e58156cfeea_.svg",
+      "logicalPath": "images/community-links.svg",
+      "fileName": "community-links.svg",
+      "ext": "svg",
+      "category": "images",
+      "subCategory": "",
+      "hash": "ca6b9ea6d3309fb302399e58156cfeea"
+    },
+    {
+      "url": "/images/components-image_29d58c9360490296f3cf8cdfd418bf48_.png",
+      "logicalPath": "images/components-image.png",
+      "fileName": "components-image.png",
+      "ext": "png",
+      "category": "images",
+      "subCategory": "",
+      "hash": "29d58c9360490296f3cf8cdfd418bf48"
+    },
+    {
+      "url": "/images/crm-svgicons_9927eac27c26a2d6f2b1bbfb094e59c9_.svg",
+      "logicalPath": "images/crm-svgicons.svg",
+      "fileName": "crm-svgicons.svg",
+      "ext": "svg",
+      "category": "images",
+      "subCategory": "",
+      "hash": "9927eac27c26a2d6f2b1bbfb094e59c9"
+    },
+    {
+      "url": "/images/crm_logo_2ef898d140eabeff1dea49005d580238_.svg",
+      "logicalPath": "images/crm_logo.svg",
+      "fileName": "crm_logo.svg",
+      "ext": "svg",
+      "category": "images",
+      "subCategory": "",
+      "hash": "2ef898d140eabeff1dea49005d580238"
+    },
+    {
+      "url": "/images/crux-sprite-icons_6e2d86e565e698a4534a2f4a43441456_.svg",
+      "logicalPath": "images/crux-sprite-icons.svg",
+      "fileName": "crux-sprite-icons.svg",
+      "ext": "svg",
+      "category": "images",
+      "subCategory": "",
+      "hash": "6e2d86e565e698a4534a2f4a43441456"
+    },
+    {
+      "url": "/images/data_650ce17deff388d551451346eb23599a_.png",
+      "logicalPath": "images/data.png",
+      "fileName": "data.png",
+      "ext": "png",
+      "category": "images",
+      "subCategory": "",
+      "hash": "650ce17deff388d551451346eb23599a"
+    },
+    {
+      "url": "/images/design-control_78cd0b14cd5644fffd8c9123fa4b9b3c_.png",
+      "logicalPath": "images/design-control.png",
+      "fileName": "design-control.png",
+      "ext": "png",
+      "category": "images",
+      "subCategory": "",
+      "hash": "78cd0b14cd5644fffd8c9123fa4b9b3c"
+    },
+    {
+      "url": "/images/dom_2455c7cff19dbac4ee194f849ad1a3de_.png",
+      "logicalPath": "images/dom.png",
+      "fileName": "dom.png",
+      "ext": "png",
+      "category": "images",
+      "subCategory": "",
+      "hash": "2455c7cff19dbac4ee194f849ad1a3de"
+    },
+    {
+      "url": "/images/download_3f412ec21ff0bacea40d218dc16097de_.svg",
+      "logicalPath": "images/download.svg",
+      "fileName": "download.svg",
+      "ext": "svg",
+      "category": "images",
+      "subCategory": "",
+      "hash": "3f412ec21ff0bacea40d218dc16097de"
+    },
+    {
+      "url": "/images/dx-hub-color-icon_b417aaa1382014f0d1d44d2284a72482_.svg",
+      "logicalPath": "images/dx-hub-color-icon.svg",
+      "fileName": "dx-hub-color-icon.svg",
+      "ext": "svg",
+      "category": "images",
+      "subCategory": "",
+      "hash": "b417aaa1382014f0d1d44d2284a72482"
+    },
+    {
+      "url": "/images/dx-hub-css_42b12cc30234528a4857eebfda6eeb6b_.svg",
+      "logicalPath": "images/dx-hub-css.svg",
+      "fileName": "dx-hub-css.svg",
+      "ext": "svg",
+      "category": "images",
+      "subCategory": "",
+      "hash": "42b12cc30234528a4857eebfda6eeb6b"
+    },
+    {
+      "url": "/images/errorPage_2eb563c9ea6d989a69e2be6276245761_.png",
+      "logicalPath": "images/errorPage.png",
+      "fileName": "errorPage.png",
+      "ext": "png",
+      "category": "images",
+      "subCategory": "",
+      "hash": "2eb563c9ea6d989a69e2be6276245761"
+    },
+    {
+      "url": "/images/external-link_03a98c25d3dea9dc3c69c977c1b093bb_.png",
+      "logicalPath": "images/external-link.png",
+      "fileName": "external-link.png",
+      "ext": "png",
+      "category": "images",
+      "subCategory": "",
+      "hash": "03a98c25d3dea9dc3c69c977c1b093bb"
+    },
+    {
+      "url": "/images/get-started-bg_04f20abce705a27216c444cf922cf362_.png",
+      "logicalPath": "images/get-started-bg.png",
+      "fileName": "get-started-bg.png",
+      "ext": "png",
+      "category": "images",
+      "subCategory": "",
+      "hash": "04f20abce705a27216c444cf922cf362"
+    },
+    {
+      "url": "/images/helper_ccf6d02397ecc419a312af8c4bdb55f5_.png",
+      "logicalPath": "images/helper.png",
+      "fileName": "helper.png",
+      "ext": "png",
+      "category": "images",
+      "subCategory": "",
+      "hash": "ccf6d02397ecc419a312af8c4bdb55f5"
+    },
+    {
+      "url": "/images/helpers_0f6351ed9af58ab42c7954c28e20d3bc_.png",
+      "logicalPath": "images/helpers.png",
+      "fileName": "helpers.png",
+      "ext": "png",
+      "category": "images",
+      "subCategory": "",
+      "hash": "0f6351ed9af58ab42c7954c28e20d3bc"
+    },
+    {
+      "url": "/images/home-bg_5f36e67a3b17cd322a223c10d7edfbaf_.png",
+      "logicalPath": "images/home-bg.png",
+      "fileName": "home-bg.png",
+      "ext": "png",
+      "category": "images",
+      "subCategory": "",
+      "hash": "5f36e67a3b17cd322a223c10d7edfbaf"
+    },
+    {
+      "url": "/images/imagecopy_466fa9c434a7e7bb9e3a85bd8345aadb_.png",
+      "logicalPath": "images/imagecopy.png",
+      "fileName": "imagecopy.png",
+      "ext": "png",
+      "category": "images",
+      "subCategory": "",
+      "hash": "466fa9c434a7e7bb9e3a85bd8345aadb"
+    },
+    {
+      "url": "/images/landing-banner2_ae70a4168986a97c74391046f1bbe1ad_.svg",
+      "logicalPath": "images/landing-banner2.svg",
+      "fileName": "landing-banner2.svg",
+      "ext": "svg",
+      "category": "images",
+      "subCategory": "",
+      "hash": "ae70a4168986a97c74391046f1bbe1ad"
+    },
+    {
+      "url": "/images/landing-datamodel-illus_bd660d5338e3e102b0ffbc50174cc001_.svg",
+      "logicalPath": "images/landing-datamodel-illus.svg",
+      "fileName": "landing-datamodel-illus.svg",
+      "ext": "svg",
+      "category": "images",
+      "subCategory": "",
+      "hash": "bd660d5338e3e102b0ffbc50174cc001"
+    },
+    {
+      "url": "/images/landing-headbg-illustration_2acc42788eec194ff495a820a1a5ae08_.svg",
+      "logicalPath": "images/landing-headbg-illustration.svg",
+      "fileName": "landing-headbg-illustration.svg",
+      "ext": "svg",
+      "category": "images",
+      "subCategory": "",
+      "hash": "2acc42788eec194ff495a820a1a5ae08"
+    },
+    {
+      "url": "/images/left-content-banner_25866dc0f60381cce083839d72defe0e_.svg",
+      "logicalPath": "images/left-content-banner.svg",
+      "fileName": "left-content-banner.svg",
+      "ext": "svg",
+      "category": "images",
+      "subCategory": "",
+      "hash": "25866dc0f60381cce083839d72defe0e"
+    },
+    {
+      "url": "/images/life_cycle_hooks_11e76952ca22a27617f5e0355059b8f9_.png",
+      "logicalPath": "images/life_cycle_hooks.png",
+      "fileName": "life_cycle_hooks.png",
+      "ext": "png",
+      "category": "images",
+      "subCategory": "",
+      "hash": "11e76952ca22a27617f5e0355059b8f9"
+    },
+    {
+      "url": "/images/list-of-components_34afa653e7c6903ff594bbea34c2b6e6_.png",
+      "logicalPath": "images/list-of-components.png",
+      "fileName": "list-of-components.png",
+      "ext": "png",
+      "category": "images",
+      "subCategory": "",
+      "hash": "34afa653e7c6903ff594bbea34c2b6e6"
+    },
+    {
+      "url": "/images/lyteDocFontIcons_69f346ff3de9e81d1dccf55623124a62_.svg",
+      "logicalPath": "images/lyteDocFontIcons.svg",
+      "fileName": "lyteDocFontIcons.svg",
+      "ext": "svg",
+      "category": "images",
+      "subCategory": "",
+      "hash": "69f346ff3de9e81d1dccf55623124a62"
+    },
+    {
+      "url": "/images/lyte_ui_sprite_9bba3aff73b4e4b33572837875cfea8c_.svg",
+      "logicalPath": "images/lyte_ui_sprite.svg",
+      "fileName": "lyte_ui_sprite.svg",
+      "ext": "svg",
+      "category": "images",
+      "subCategory": "",
+      "hash": "9bba3aff73b4e4b33572837875cfea8c"
+    },
+    {
+      "url": "/images/method_b73c541afe9971995831c1c34d396685_.png",
+      "logicalPath": "images/method.png",
+      "fileName": "method.png",
+      "ext": "png",
+      "category": "images",
+      "subCategory": "",
+      "hash": "b73c541afe9971995831c1c34d396685"
+    },
+    {
+      "url": "/images/observers_3bd2317559bbd58d48f2acff9c05fcfe_.png",
+      "logicalPath": "images/observers.png",
+      "fileName": "observers.png",
+      "ext": "png",
+      "category": "images",
+      "subCategory": "",
+      "hash": "3bd2317559bbd58d48f2acff9c05fcfe"
+    },
+    {
+      "url": "/images/properties_990e2c74650c9a8409a99ec6fe8853d2_.png",
+      "logicalPath": "images/properties.png",
+      "fileName": "properties.png",
+      "ext": "png",
+      "category": "images",
+      "subCategory": "",
+      "hash": "990e2c74650c9a8409a99ec6fe8853d2"
+    },
+    {
+      "url": "/images/queries_aaaabb0459f3d45b78daa49c9c08aa5c_.png",
+      "logicalPath": "images/queries.png",
+      "fileName": "queries.png",
+      "ext": "png",
+      "category": "images",
+      "subCategory": "",
+      "hash": "aaaabb0459f3d45b78daa49c9c08aa5c"
+    },
+    {
+      "url": "/images/queriesold_e31e5ea8446637e30ccc00c77563ff65_.png",
+      "logicalPath": "images/queriesold.png",
+      "fileName": "queriesold.png",
+      "ext": "png",
+      "category": "images",
+      "subCategory": "",
+      "hash": "e31e5ea8446637e30ccc00c77563ff65"
+    },
+    {
+      "url": "/images/right-content-banner_2ae1b779148a09c7576387a67f16a51d_.svg",
+      "logicalPath": "images/right-content-banner.svg",
+      "fileName": "right-content-banner.svg",
+      "ext": "svg",
+      "category": "images",
+      "subCategory": "",
+      "hash": "2ae1b779148a09c7576387a67f16a51d"
+    },
+    {
+      "url": "/images/short-bg_08a08d2d4bde30097ac8554cb4bee240_.png",
+      "logicalPath": "images/short-bg.png",
+      "fileName": "short-bg.png",
+      "ext": "png",
+      "category": "images",
+      "subCategory": "",
+      "hash": "08a08d2d4bde30097ac8554cb4bee240"
+    },
+    {
+      "url": "/images/sprite_lyte_37ca6374cceba16b4e38c944f2468b0f_.svg",
+      "logicalPath": "images/sprite_lyte.svg",
+      "fileName": "sprite_lyte.svg",
+      "ext": "svg",
+      "category": "images",
+      "subCategory": "",
+      "hash": "37ca6374cceba16b4e38c944f2468b0f"
+    },
+    {
+      "url": "/images/sprite_lyte_video_42c970c02016e9c642ba3bc727283152_.svg",
+      "logicalPath": "images/sprite_lyte_video.svg",
+      "fileName": "sprite_lyte_video.svg",
+      "ext": "svg",
+      "category": "images",
+      "subCategory": "",
+      "hash": "42c970c02016e9c642ba3bc727283152"
+    },
+    {
+      "url": "/images/style_e7feb00840da229f86b457fb5c164d19_.png",
+      "logicalPath": "images/style.png",
+      "fileName": "style.png",
+      "ext": "png",
+      "category": "images",
+      "subCategory": "",
+      "hash": "e7feb00840da229f86b457fb5c164d19"
+    },
+    {
+      "url": "/images/svg_cssicons_8c3fedee86be5aa04217ed87a585edd4_.svg",
+      "logicalPath": "images/svg_cssicons.svg",
+      "fileName": "svg_cssicons.svg",
+      "ext": "svg",
+      "category": "images",
+      "subCategory": "",
+      "hash": "8c3fedee86be5aa04217ed87a585edd4"
+    },
+    {
+      "url": "/images/svgicons_cfbfa7cf315062566e70c9c0fb1d70be_.svg",
+      "logicalPath": "images/svgicons.svg",
+      "fileName": "svgicons.svg",
+      "ext": "svg",
+      "category": "images",
+      "subCategory": "",
+      "hash": "cfbfa7cf315062566e70c9c0fb1d70be"
+    },
+    {
+      "url": "/images/technical-doc-bg_aacf6d6324791f8c5c128bc97ec5e9c8_.png",
+      "logicalPath": "images/technical-doc-bg.png",
+      "fileName": "technical-doc-bg.png",
+      "ext": "png",
+      "category": "images",
+      "subCategory": "",
+      "hash": "aacf6d6324791f8c5c128bc97ec5e9c8"
+    },
+    {
+      "url": "/images/zohologo_d5f506dff5c12d381cca4a05000520c0_.svg",
+      "logicalPath": "images/zohologo.svg",
+      "fileName": "zohologo.svg",
+      "ext": "svg",
+      "category": "images",
+      "subCategory": "",
+      "hash": "d5f506dff5c12d381cca4a05000520c0"
+    },
+    {
+      "url": "/css/base_788822e4b645df19922c6bbcec221564_.css",
+      "logicalPath": "css/base.css",
+      "fileName": "base.css",
+      "ext": "css",
+      "category": "css",
+      "subCategory": "",
+      "hash": "788822e4b645df19922c6bbcec221564"
+    },
+    {
+      "url": "/css/base_e8ff10cf6ca8b900ef2fa897adaf3520_.less",
+      "logicalPath": "css/base.less",
+      "fileName": "base.less",
+      "ext": "less",
+      "category": "css",
+      "subCategory": "",
+      "hash": "e8ff10cf6ca8b900ef2fa897adaf3520"
+    },
+    {
+      "url": "/css/crm-styles/default_theme_018ab07da32fdf0823aec0a7c1d31ac0_.css",
+      "logicalPath": "css/crm-styles/default_theme.css",
+      "fileName": "default_theme.css",
+      "ext": "css",
+      "category": "css",
+      "subCategory": "crm-styles",
+      "hash": "018ab07da32fdf0823aec0a7c1d31ac0"
+    },
+    {
+      "url": "/css/crm-styles/lyte_ltr_dc358bbd2af1155113cee2d866b2dd67_.css",
+      "logicalPath": "css/crm-styles/lyte_ltr.css",
+      "fileName": "lyte_ltr.css",
+      "ext": "css",
+      "category": "css",
+      "subCategory": "crm-styles",
+      "hash": "dc358bbd2af1155113cee2d866b2dd67"
+    },
+    {
+      "url": "/css/crm-styles/theme-color_1b95c2c5d4708df5a7ca0f07b622f068_.css",
+      "logicalPath": "css/crm-styles/theme-color.css",
+      "fileName": "theme-color.css",
+      "ext": "css",
+      "category": "css",
+      "subCategory": "crm-styles",
+      "hash": "1b95c2c5d4708df5a7ca0f07b622f068"
+    },
+    {
+      "url": "/css/dxh-designlab_9571f8e1c913197a46a76fc3768beddc_.css",
+      "logicalPath": "css/dxh-designlab.css",
+      "fileName": "dxh-designlab.css",
+      "ext": "css",
+      "category": "css",
+      "subCategory": "",
+      "hash": "9571f8e1c913197a46a76fc3768beddc"
+    },
+    {
+      "url": "/css/font_7bcad4416f1affb7217e5fdfeef23e1f_.css",
+      "logicalPath": "css/font.css",
+      "fileName": "font.css",
+      "ext": "css",
+      "category": "css",
+      "subCategory": "",
+      "hash": "7bcad4416f1affb7217e5fdfeef23e1f"
+    },
+    {
+      "url": "/css/icon_aeb2856985c833418a84aa120b1fc7ac_.css",
+      "logicalPath": "css/icon.css",
+      "fileName": "icon.css",
+      "ext": "css",
+      "category": "css",
+      "subCategory": "",
+      "hash": "aeb2856985c833418a84aa120b1fc7ac"
+    },
+    {
+      "url": "/css/less-config/feature-less-files_99914b932bd37a50b983c5e7c90ae93b_.json",
+      "logicalPath": "css/less-config/feature-less-files.json",
+      "fileName": "feature-less-files.json",
+      "ext": "json",
+      "category": "css",
+      "subCategory": "less-config",
+      "hash": "99914b932bd37a50b983c5e7c90ae93b"
+    },
+    {
+      "url": "/css/less-config/less-css-config_8d6f18137554a3ca56679b4c4ac32178_.json",
+      "logicalPath": "css/less-config/less-css-config.json",
+      "fileName": "less-css-config.json",
+      "ext": "json",
+      "category": "css",
+      "subCategory": "less-config",
+      "hash": "8d6f18137554a3ca56679b4c4ac32178"
+    },
+    {
+      "url": "/css/reset_3e356996530ffdda07f00bbdd974d7ce_.css",
+      "logicalPath": "css/reset.css",
+      "fileName": "reset.css",
+      "ext": "css",
+      "category": "css",
+      "subCategory": "",
+      "hash": "3e356996530ffdda07f00bbdd974d7ce"
+    },
+    {
+      "url": "/css/style_4fac410cac85dc8bbf46c9fbe1d01c4e_.css",
+      "logicalPath": "css/style.css",
+      "fileName": "style.css",
+      "ext": "css",
+      "category": "css",
+      "subCategory": "",
+      "hash": "4fac410cac85dc8bbf46c9fbe1d01c4e"
+    },
+    {
+      "url": "/css/variable_1cc9a406e8402c58c7b6cfd2e973b3b6_.css",
+      "logicalPath": "css/variable.css",
+      "fileName": "variable.css",
+      "ext": "css",
+      "category": "css",
+      "subCategory": "",
+      "hash": "1cc9a406e8402c58c7b6cfd2e973b3b6"
+    },
+    {
+      "url": "/javascript/crux-component-resources_fd683e38878789ff1795437a6f52a976_.js",
+      "logicalPath": "javascript/crux-component-resources.js",
+      "fileName": "crux-component-resources.js",
+      "ext": "js",
+      "category": "javascript",
+      "subCategory": "",
+      "hash": "fd683e38878789ff1795437a6f52a976"
+    },
+    {
+      "url": "/javascript/doc-components_f7c3afd0a788ba77b4e56b60fc25a3d8_.js",
+      "logicalPath": "javascript/doc-components.js",
+      "fileName": "doc-components.js",
+      "ext": "js",
+      "category": "javascript",
+      "subCategory": "",
+      "hash": "f7c3afd0a788ba77b4e56b60fc25a3d8"
+    },
+    {
+      "url": "/javascript/doc-crux-component-resources_604717ebb935117c655102de208e986a_.js",
+      "logicalPath": "javascript/doc-crux-component-resources.js",
+      "fileName": "doc-crux-component-resources.js",
+      "ext": "js",
+      "category": "javascript",
+      "subCategory": "",
+      "hash": "604717ebb935117c655102de208e986a"
+    },
+    {
+      "url": "/javascript/dxh-code-sample_ce514893ffa308aae95baf3e28fe504d_.js",
+      "logicalPath": "javascript/dxh-code-sample.js",
+      "fileName": "dxh-code-sample.js",
+      "ext": "js",
+      "category": "javascript",
+      "subCategory": "",
+      "hash": "ce514893ffa308aae95baf3e28fe504d"
+    },
+    {
+      "url": "/javascript/dxh-core-component_67e7a4c10d98da9ae5970ab2bd0d221b_.js",
+      "logicalPath": "javascript/dxh-core-component.js",
+      "fileName": "dxh-core-component.js",
+      "ext": "js",
+      "category": "javascript",
+      "subCategory": "",
+      "hash": "67e7a4c10d98da9ae5970ab2bd0d221b"
+    },
+    {
+      "url": "/javascript/dxh-crmpack_ca31765e6cb135f825aaf42c02b9ac05_.js",
+      "logicalPath": "javascript/dxh-crmpack.js",
+      "fileName": "dxh-crmpack.js",
+      "ext": "js",
+      "category": "javascript",
+      "subCategory": "",
+      "hash": "ca31765e6cb135f825aaf42c02b9ac05"
+    },
+    {
+      "url": "/javascript/dxh-doctype_0de001c0fac662b981222daa0afb01f8_.js",
+      "logicalPath": "javascript/dxh-doctype.js",
+      "fileName": "dxh-doctype.js",
+      "ext": "js",
+      "category": "javascript",
+      "subCategory": "",
+      "hash": "0de001c0fac662b981222daa0afb01f8"
+    },
+    {
+      "url": "/javascript/dxh-event-dictionary_91794c91ab7e0cb78dd03649ea77c5b4_.js",
+      "logicalPath": "javascript/dxh-event-dictionary.js",
+      "fileName": "dxh-event-dictionary.js",
+      "ext": "js",
+      "category": "javascript",
+      "subCategory": "",
+      "hash": "91794c91ab7e0cb78dd03649ea77c5b4"
+    },
+    {
+      "url": "/javascript/dxh-faq_cf11bc47bd06c222977de6814ed820a3_.js",
+      "logicalPath": "javascript/dxh-faq.js",
+      "fileName": "dxh-faq.js",
+      "ext": "js",
+      "category": "javascript",
+      "subCategory": "",
+      "hash": "cf11bc47bd06c222977de6814ed820a3"
+    },
+    {
+      "url": "/javascript/dxh-iframe_bcd6ee9d885b38820cb99039bf56022a_.js",
+      "logicalPath": "javascript/dxh-iframe.js",
+      "fileName": "dxh-iframe.js",
+      "ext": "js",
+      "category": "javascript",
+      "subCategory": "",
+      "hash": "bcd6ee9d885b38820cb99039bf56022a"
+    },
+    {
+      "url": "/javascript/dxh-initial-resources_43b699bad53a4df341419c5d9299be42_.js",
+      "logicalPath": "javascript/dxh-initial-resources.js",
+      "fileName": "dxh-initial-resources.js",
+      "ext": "js",
+      "category": "javascript",
+      "subCategory": "",
+      "hash": "43b699bad53a4df341419c5d9299be42"
+    },
+    {
+      "url": "/javascript/dxh-landing_51e8cb50832599395eadb59c07c85f41_.js",
+      "logicalPath": "javascript/dxh-landing.js",
+      "fileName": "dxh-landing.js",
+      "ext": "js",
+      "category": "javascript",
+      "subCategory": "",
+      "hash": "51e8cb50832599395eadb59c07c85f41"
+    },
+    {
+      "url": "/javascript/dxh-slyte_fcddc7ab74d766607bd1c7fe6b71acb2_.js",
+      "logicalPath": "javascript/dxh-slyte.js",
+      "fileName": "dxh-slyte.js",
+      "ext": "js",
+      "category": "javascript",
+      "subCategory": "",
+      "hash": "fcddc7ab74d766607bd1c7fe6b71acb2"
+    },
+    {
+      "url": "/javascript/dxh-static-component_2bf001e1c0d53b109186879fbd38eca6_.js",
+      "logicalPath": "javascript/dxh-static-component.js",
+      "fileName": "dxh-static-component.js",
+      "ext": "js",
+      "category": "javascript",
+      "subCategory": "",
+      "hash": "2bf001e1c0d53b109186879fbd38eca6"
+    },
+    {
+      "url": "/javascript/dxh-zrc_db73feb8db046b1db4ccc0386b2954c7_.js",
+      "logicalPath": "javascript/dxh-zrc.js",
+      "fileName": "dxh-zrc.js",
+      "ext": "js",
+      "category": "javascript",
+      "subCategory": "",
+      "hash": "db73feb8db046b1db4ccc0386b2954c7"
+    },
+    {
+      "url": "/javascript/lyte-ui-component-resources_5d563d6b3fde89b0ff7de61ad67c1091_.js",
+      "logicalPath": "javascript/lyte-ui-component-resources.js",
+      "fileName": "lyte-ui-component-resources.js",
+      "ext": "js",
+      "category": "javascript",
+      "subCategory": "",
+      "hash": "5d563d6b3fde89b0ff7de61ad67c1091"
+    },
+    {
+      "url": "/javascript/missing-comp_deb88a39adc69792a23277eb9f2d8796_.js",
+      "logicalPath": "javascript/missing-comp.js",
+      "fileName": "missing-comp.js",
+      "ext": "js",
+      "category": "javascript",
+      "subCategory": "",
+      "hash": "deb88a39adc69792a23277eb9f2d8796"
+    },
+    {
+      "url": "/javascript/router_e236aeaac0b6b54bd272e8a17fc307b6_.js",
+      "logicalPath": "javascript/router.js",
+      "fileName": "router.js",
+      "ext": "js",
+      "category": "javascript",
+      "subCategory": "",
+      "hash": "e236aeaac0b6b54bd272e8a17fc307b6"
+    },
+    {
+      "url": "/style/codesamples_80655604b94ac071981b89878675bf1f_.css",
+      "logicalPath": "style/codesamples.css",
+      "fileName": "codesamples.css",
+      "ext": "css",
+      "category": "style",
+      "subCategory": "",
+      "hash": "80655604b94ac071981b89878675bf1f"
+    },
+    {
+      "url": "/style/component_5148c511e637c30ad4a992de70bab4fb_.css",
+      "logicalPath": "style/component.css",
+      "fileName": "component.css",
+      "ext": "css",
+      "category": "style",
+      "subCategory": "",
+      "hash": "5148c511e637c30ad4a992de70bab4fb"
+    },
+    {
+      "url": "/style/css-crux-component-resources_e3c5829f80f1651d4e941e8309043d11_.css",
+      "logicalPath": "style/css-crux-component-resources.css",
+      "fileName": "css-crux-component-resources.css",
+      "ext": "css",
+      "category": "style",
+      "subCategory": "",
+      "hash": "e3c5829f80f1651d4e941e8309043d11"
+    },
+    {
+      "url": "/style/css-crux-docs-resources_fbffa0841ecc386f31da112bea4df9aa_.css",
+      "logicalPath": "style/css-crux-docs-resources.css",
+      "fileName": "css-crux-docs-resources.css",
+      "ext": "css",
+      "category": "style",
+      "subCategory": "",
+      "hash": "fbffa0841ecc386f31da112bea4df9aa"
+    },
+    {
+      "url": "/style/css-dxh-crux-docs_05b4888d28dc28921373dbfad67c506a_.css",
+      "logicalPath": "style/css-dxh-crux-docs.css",
+      "fileName": "css-dxh-crux-docs.css",
+      "ext": "css",
+      "category": "style",
+      "subCategory": "",
+      "hash": "05b4888d28dc28921373dbfad67c506a"
+    },
+    {
+      "url": "/style/css-lyte-ui-component-resources_82b3c316beedd090d8648b27044419b6_.css",
+      "logicalPath": "style/css-lyte-ui-component-resources.css",
+      "fileName": "css-lyte-ui-component-resources.css",
+      "ext": "css",
+      "category": "style",
+      "subCategory": "",
+      "hash": "82b3c316beedd090d8648b27044419b6"
+    },
+    {
+      "url": "/style/doctype_7dc0333caca8e6bf26566a73c44758ff_.css",
+      "logicalPath": "style/doctype.css",
+      "fileName": "doctype.css",
+      "ext": "css",
+      "category": "style",
+      "subCategory": "",
+      "hash": "7dc0333caca8e6bf26566a73c44758ff"
+    },
+    {
+      "url": "/style/dxh-slyte_189c3cb882fbc63212e85b348619e08c_.css",
+      "logicalPath": "style/dxh-slyte.css",
+      "fileName": "dxh-slyte.css",
+      "ext": "css",
+      "category": "style",
+      "subCategory": "",
+      "hash": "189c3cb882fbc63212e85b348619e08c"
+    },
+    {
+      "url": "/style/error_821dcf7cbd76d1ee1cb21a42cb15b880_.css",
+      "logicalPath": "style/error.css",
+      "fileName": "error.css",
+      "ext": "css",
+      "category": "style",
+      "subCategory": "",
+      "hash": "821dcf7cbd76d1ee1cb21a42cb15b880"
+    },
+    {
+      "url": "/style/event-dictionary_f5a2cb530e2d0b5df5b5f8740e76b42b_.css",
+      "logicalPath": "style/event-dictionary.css",
+      "fileName": "event-dictionary.css",
+      "ext": "css",
+      "category": "style",
+      "subCategory": "",
+      "hash": "f5a2cb530e2d0b5df5b5f8740e76b42b"
+    },
+    {
+      "url": "/style/faq_31a86950b42ceba776df8c7d03dce889_.css",
+      "logicalPath": "style/faq.css",
+      "fileName": "faq.css",
+      "ext": "css",
+      "category": "style",
+      "subCategory": "",
+      "hash": "31a86950b42ceba776df8c7d03dce889"
+    },
+    {
+      "url": "/style/iframe-content_9c53bf0b850e1731e43f3c17a22b06a1_.css",
+      "logicalPath": "style/iframe-content.css",
+      "fileName": "iframe-content.css",
+      "ext": "css",
+      "category": "style",
+      "subCategory": "",
+      "hash": "9c53bf0b850e1731e43f3c17a22b06a1"
+    },
+    {
+      "url": "/style/landing-page_c6165ee37d9cb9cc6ba40a3d335ba65a_.css",
+      "logicalPath": "style/landing-page.css",
+      "fileName": "landing-page.css",
+      "ext": "css",
+      "category": "style",
+      "subCategory": "",
+      "hash": "c6165ee37d9cb9cc6ba40a3d335ba65a"
+    },
+    {
+      "url": "/style/lyte_75ccd8a7e1696e9b2c616a87741a5188_.css",
+      "logicalPath": "style/lyte.css",
+      "fileName": "lyte.css",
+      "ext": "css",
+      "category": "style",
+      "subCategory": "",
+      "hash": "75ccd8a7e1696e9b2c616a87741a5188"
+    },
+    {
+      "url": "/style/missing-comp_ad77fc9c4409ec490a8712fdccdea3fa_.css",
+      "logicalPath": "style/missing-comp.css",
+      "fileName": "missing-comp.css",
+      "ext": "css",
+      "category": "style",
+      "subCategory": "",
+      "hash": "ad77fc9c4409ec490a8712fdccdea3fa"
+    },
+    {
+      "url": "/style/static-component_8fe73335d3ff1143de97acb481a3bac8_.css",
+      "logicalPath": "style/static-component.css",
+      "fileName": "static-component.css",
+      "ext": "css",
+      "category": "style",
+      "subCategory": "",
+      "hash": "8fe73335d3ff1143de97acb481a3bac8"
+    },
+    {
+      "url": "/style/ui-components_62dc90052f4d9018129edb67d53356c9_.css",
+      "logicalPath": "style/ui-components.css",
+      "fileName": "ui-components.css",
+      "ext": "css",
+      "category": "style",
+      "subCategory": "",
+      "hash": "62dc90052f4d9018129edb67d53356c9"
+    },
+    {
+      "url": "/style/zrc_432424fd4dd605ecbdaee53c6017bd31_.css",
+      "logicalPath": "style/zrc.css",
+      "fileName": "zrc.css",
+      "ext": "css",
+      "category": "style",
+      "subCategory": "",
+      "hash": "432424fd4dd605ecbdaee53c6017bd31"
+    },
+    {
+      "url": "/dxh-data-store/README_d6e4e09053158dd228694f3e844e7db7_.md",
+      "logicalPath": "dxh-data-store/README.md",
+      "fileName": "README.md",
+      "ext": "md",
+      "category": "dxh-data-store",
+      "subCategory": "",
+      "hash": "d6e4e09053158dd228694f3e844e7db7"
+    },
+    {
+      "url": "/dxh-data-store/client-api_1f2fadb8c346c475c416086d50ab7323_.json",
+      "logicalPath": "dxh-data-store/client-api.json",
+      "fileName": "client-api.json",
+      "ext": "json",
+      "category": "dxh-data-store",
+      "subCategory": "",
+      "hash": "1f2fadb8c346c475c416086d50ab7323"
+    },
+    {
+      "url": "/dxh-data-store/code_samples_file_list_new_v1_201d522d5d4c19c51e09857861234ec9_.json",
+      "logicalPath": "dxh-data-store/code_samples_file_list_new_v1.json",
+      "fileName": "code_samples_file_list_new_v1.json",
+      "ext": "json",
+      "category": "dxh-data-store",
+      "subCategory": "",
+      "hash": "201d522d5d4c19c51e09857861234ec9"
+    },
+    {
+      "url": "/dxh-data-store/components-configuration_5e2c9ee87b1b5f31f87a543dd781728b_.json",
+      "logicalPath": "dxh-data-store/components-configuration.json",
+      "fileName": "components-configuration.json",
+      "ext": "json",
+      "category": "dxh-data-store",
+      "subCategory": "",
+      "hash": "5e2c9ee87b1b5f31f87a543dd781728b"
+    },
+    {
+      "url": "/dxh-data-store/event-dictionary-new_d851f736adb7d1bc9e1963bade5db773_.json",
+      "logicalPath": "dxh-data-store/event-dictionary-new.json",
+      "fileName": "event-dictionary-new.json",
+      "ext": "json",
+      "category": "dxh-data-store",
+      "subCategory": "",
+      "hash": "d851f736adb7d1bc9e1963bade5db773"
+    },
+    {
+      "url": "/dxh-data-store/event-dictionary_b1af35b09c21bc2d14d70b46d35e2b2c_.json",
+      "logicalPath": "dxh-data-store/event-dictionary.json",
+      "fileName": "event-dictionary.json",
+      "ext": "json",
+      "category": "dxh-data-store",
+      "subCategory": "",
+      "hash": "b1af35b09c21bc2d14d70b46d35e2b2c"
+    },
+    {
+      "url": "/dxh-data-store/explore-features_0b0c56a678f18b26064ade91f7a79217_.json",
+      "logicalPath": "dxh-data-store/explore-features.json",
+      "fileName": "explore-features.json",
+      "ext": "json",
+      "category": "dxh-data-store",
+      "subCategory": "",
+      "hash": "0b0c56a678f18b26064ade91f7a79217"
+    },
+    {
+      "url": "/dxh-data-store/faqs_file_list_451aab9e549a2b5a476acb64d2e622b6_.json",
+      "logicalPath": "dxh-data-store/faqs_file_list.json",
+      "fileName": "faqs_file_list.json",
+      "ext": "json",
+      "category": "dxh-data-store",
+      "subCategory": "",
+      "hash": "451aab9e549a2b5a476acb64d2e622b6"
+    },
+    {
+      "url": "/dxh-data-store/faqss_97d88bc57199dbb73ab720dc66f3001d_.json",
+      "logicalPath": "dxh-data-store/faqss.json",
+      "fileName": "faqss.json",
+      "ext": "json",
+      "category": "dxh-data-store",
+      "subCategory": "",
+      "hash": "97d88bc57199dbb73ab720dc66f3001d"
+    },
+    {
+      "url": "/dxh-data-store/filtered-widget-sdk_82434403965d39a99963912cf234a245_.json",
+      "logicalPath": "dxh-data-store/filtered-widget-sdk.json",
+      "fileName": "filtered-widget-sdk.json",
+      "ext": "json",
+      "category": "dxh-data-store",
+      "subCategory": "",
+      "hash": "82434403965d39a99963912cf234a245"
+    },
+    {
+      "url": "/dxh-data-store/jssdk_896018b382d2cbd961fe0375240cc63f_.json",
+      "logicalPath": "dxh-data-store/jssdk.json",
+      "fileName": "jssdk.json",
+      "ext": "json",
+      "category": "dxh-data-store",
+      "subCategory": "",
+      "hash": "896018b382d2cbd961fe0375240cc63f"
+    },
+    {
+      "url": "/dxh-data-store/modified_zdk_07c3ec222baecb5070906192b77839b3_.json",
+      "logicalPath": "dxh-data-store/modified_zdk.json",
+      "fileName": "modified_zdk.json",
+      "ext": "json",
+      "category": "dxh-data-store",
+      "subCategory": "",
+      "hash": "07c3ec222baecb5070906192b77839b3"
+    },
+    {
+      "url": "/dxh-data-store/slyte-components-configuration_ecf3f4bdcb7d416bffd2da5ba03fe7b1_.json",
+      "logicalPath": "dxh-data-store/slyte-components-configuration.json",
+      "fileName": "slyte-components-configuration.json",
+      "ext": "json",
+      "category": "dxh-data-store",
+      "subCategory": "",
+      "hash": "ecf3f4bdcb7d416bffd2da5ba03fe7b1"
+    },
+    {
+      "url": "/dxh-data-store/web-api-8.0-1_45ee4cac2ceb6d055baef51e90570748_.json",
+      "logicalPath": "dxh-data-store/web-api-8.0-1.json",
+      "fileName": "web-api-8.0-1.json",
+      "ext": "json",
+      "category": "dxh-data-store",
+      "subCategory": "",
+      "hash": "45ee4cac2ceb6d055baef51e90570748"
+    },
+    {
+      "url": "/dxh-data-store/web-api-8.0_11c22923ade4f90ac0826ba0ceeb0be7_.json",
+      "logicalPath": "dxh-data-store/web-api-8.0.json",
+      "fileName": "web-api-8.0.json",
+      "ext": "json",
+      "category": "dxh-data-store",
+      "subCategory": "",
+      "hash": "11c22923ade4f90ac0826ba0ceeb0be7"
+    },
+    {
+      "url": "/dxh-data-store/web-api_e435b6aaa1a63bbca2a88b11b608f976_.json",
+      "logicalPath": "dxh-data-store/web-api.json",
+      "fileName": "web-api.json",
+      "ext": "json",
+      "category": "dxh-data-store",
+      "subCategory": "",
+      "hash": "e435b6aaa1a63bbca2a88b11b608f976"
+    },
+    {
+      "url": "/dxh-data-store/widget-changelog_0c3b1e706ccbd137f18a752c5f7556c3_.json",
+      "logicalPath": "dxh-data-store/widget-changelog.json",
+      "fileName": "widget-changelog.json",
+      "ext": "json",
+      "category": "dxh-data-store",
+      "subCategory": "",
+      "hash": "0c3b1e706ccbd137f18a752c5f7556c3"
+    },
+    {
+      "url": "/dxh-data-store/widget-sdk-1.0.3.1_93b9d438fc72443c7e1cacad4094ebec_.json",
+      "logicalPath": "dxh-data-store/widget-sdk-1.0.3.1.json",
+      "fileName": "widget-sdk-1.0.3.1.json",
+      "ext": "json",
+      "category": "dxh-data-store",
+      "subCategory": "",
+      "hash": "93b9d438fc72443c7e1cacad4094ebec"
+    },
+    {
+      "url": "/dxh-data-store/widget-sdk-1.0.4_d5965eaaf18dac140b01acd7c4f1e4d2_.json",
+      "logicalPath": "dxh-data-store/widget-sdk-1.0.4.json",
+      "fileName": "widget-sdk-1.0.4.json",
+      "ext": "json",
+      "category": "dxh-data-store",
+      "subCategory": "",
+      "hash": "d5965eaaf18dac140b01acd7c4f1e4d2"
+    },
+    {
+      "url": "/dxh-data-store/widget-sdk-1.0.5_20ef70ce901c1babd9cc7005f6e3e8c7_.json",
+      "logicalPath": "dxh-data-store/widget-sdk-1.0.5.json",
+      "fileName": "widget-sdk-1.0.5.json",
+      "ext": "json",
+      "category": "dxh-data-store",
+      "subCategory": "",
+      "hash": "20ef70ce901c1babd9cc7005f6e3e8c7"
+    },
+    {
+      "url": "/dxh-data-store/widget-sdk-1.1_10df407b45358ed84ae3284cabb4b893_.json",
+      "logicalPath": "dxh-data-store/widget-sdk-1.1.json",
+      "fileName": "widget-sdk-1.1.json",
+      "ext": "json",
+      "category": "dxh-data-store",
+      "subCategory": "",
+      "hash": "10df407b45358ed84ae3284cabb4b893"
+    },
+    {
+      "url": "/dxh-data-store/widget-sdk-1.2_7cde0ef81a0dd1392eb1a45dd18aea86_.json",
+      "logicalPath": "dxh-data-store/widget-sdk-1.2.json",
+      "fileName": "widget-sdk-1.2.json",
+      "ext": "json",
+      "category": "dxh-data-store",
+      "subCategory": "",
+      "hash": "7cde0ef81a0dd1392eb1a45dd18aea86"
+    },
+    {
+      "url": "/dxh-data-store/widget-sdk-1.3_c794a7d7b368bd1f3f05c62b7012281e_.json",
+      "logicalPath": "dxh-data-store/widget-sdk-1.3.json",
+      "fileName": "widget-sdk-1.3.json",
+      "ext": "json",
+      "category": "dxh-data-store",
+      "subCategory": "",
+      "hash": "c794a7d7b368bd1f3f05c62b7012281e"
+    },
+    {
+      "url": "/dxh-data-store/widget-sdk-1.4_96178bad6dd91cbc027b0582f771fb62_.json",
+      "logicalPath": "dxh-data-store/widget-sdk-1.4.json",
+      "fileName": "widget-sdk-1.4.json",
+      "ext": "json",
+      "category": "dxh-data-store",
+      "subCategory": "",
+      "hash": "96178bad6dd91cbc027b0582f771fb62"
+    },
+    {
+      "url": "/dxh-data-store/widget-sdk-1.5_9a934dbb8cb53ae07b4a7f0e998a9294_.json",
+      "logicalPath": "dxh-data-store/widget-sdk-1.5.json",
+      "fileName": "widget-sdk-1.5.json",
+      "ext": "json",
+      "category": "dxh-data-store",
+      "subCategory": "",
+      "hash": "9a934dbb8cb53ae07b4a7f0e998a9294"
+    },
+    {
+      "url": "/dxh-data-store/zrc-widget_67453289e4c027b0e0b4d64a1f9155a5_.json",
+      "logicalPath": "dxh-data-store/zrc-widget.json",
+      "fileName": "zrc-widget.json",
+      "ext": "json",
+      "category": "dxh-data-store",
+      "subCategory": "",
+      "hash": "67453289e4c027b0e0b4d64a1f9155a5"
+    },
+    {
+      "url": "/dxh-data-store/zrc_fcf063408c61710e4d482d8375c88339_.json",
+      "logicalPath": "dxh-data-store/zrc.json",
+      "fileName": "zrc.json",
+      "ext": "json",
+      "category": "dxh-data-store",
+      "subCategory": "",
+      "hash": "fcf063408c61710e4d482d8375c88339"
+    },
+    {
+      "url": "/crm_dxhub_resources/check_68b329da9893e34099c7d8ad5cb9c940_.",
+      "logicalPath": "crm_dxhub_resources/check",
+      "fileName": "check",
+      "ext": "",
+      "category": "crm_dxhub_resources",
+      "subCategory": "",
+      "hash": "68b329da9893e34099c7d8ad5cb9c940"
+    },
+    {
+      "url": "/crm_dxhub_resources/client-script/Faqs/faq1_dcde4055602502198260e78e962dd03d_.json",
+      "logicalPath": "crm_dxhub_resources/client-script/Faqs/faq1.json",
+      "fileName": "faq1.json",
+      "ext": "json",
+      "category": "crm_dxhub_resources",
+      "subCategory": "client-script/Faqs",
+      "hash": "dcde4055602502198260e78e962dd03d"
+    },
+    {
+      "url": "/crm_dxhub_resources/client-script/Faqs/faq1_f496537560e0366b446b46fbd2a14f3d_.md",
+      "logicalPath": "crm_dxhub_resources/client-script/Faqs/faq1.md",
+      "fileName": "faq1.md",
+      "ext": "md",
+      "category": "crm_dxhub_resources",
+      "subCategory": "client-script/Faqs",
+      "hash": "f496537560e0366b446b46fbd2a14f3d"
+    },
+    {
+      "url": "/crm_dxhub_resources/client-script/Faqs/faq10_be2bcb056a8b37112f88c75679d9f907_.json",
+      "logicalPath": "crm_dxhub_resources/client-script/Faqs/faq10.json",
+      "fileName": "faq10.json",
+      "ext": "json",
+      "category": "crm_dxhub_resources",
+      "subCategory": "client-script/Faqs",
+      "hash": "be2bcb056a8b37112f88c75679d9f907"
+    },
+    {
+      "url": "/crm_dxhub_resources/client-script/Faqs/faq10_9e55136249e480cac31ccb60b16653ca_.md",
+      "logicalPath": "crm_dxhub_resources/client-script/Faqs/faq10.md",
+      "fileName": "faq10.md",
+      "ext": "md",
+      "category": "crm_dxhub_resources",
+      "subCategory": "client-script/Faqs",
+      "hash": "9e55136249e480cac31ccb60b16653ca"
+    },
+    {
+      "url": "/crm_dxhub_resources/client-script/Faqs/faq11_a7531e3b0fc5abf4af8238bf5ad83831_.json",
+      "logicalPath": "crm_dxhub_resources/client-script/Faqs/faq11.json",
+      "fileName": "faq11.json",
+      "ext": "json",
+      "category": "crm_dxhub_resources",
+      "subCategory": "client-script/Faqs",
+      "hash": "a7531e3b0fc5abf4af8238bf5ad83831"
+    },
+    {
+      "url": "/crm_dxhub_resources/client-script/Faqs/faq11_4a217ca7d371272f9a1e5864470e596b_.md",
+      "logicalPath": "crm_dxhub_resources/client-script/Faqs/faq11.md",
+      "fileName": "faq11.md",
+      "ext": "md",
+      "category": "crm_dxhub_resources",
+      "subCategory": "client-script/Faqs",
+      "hash": "4a217ca7d371272f9a1e5864470e596b"
+    },
+    {
+      "url": "/crm_dxhub_resources/client-script/Faqs/faq12_429c8707ef7c6be23dd135a3f9f3d279_.json",
+      "logicalPath": "crm_dxhub_resources/client-script/Faqs/faq12.json",
+      "fileName": "faq12.json",
+      "ext": "json",
+      "category": "crm_dxhub_resources",
+      "subCategory": "client-script/Faqs",
+      "hash": "429c8707ef7c6be23dd135a3f9f3d279"
+    },
+    {
+      "url": "/crm_dxhub_resources/client-script/Faqs/faq12_e606658f77b14b50512aed008dc65caa_.md",
+      "logicalPath": "crm_dxhub_resources/client-script/Faqs/faq12.md",
+      "fileName": "faq12.md",
+      "ext": "md",
+      "category": "crm_dxhub_resources",
+      "subCategory": "client-script/Faqs",
+      "hash": "e606658f77b14b50512aed008dc65caa"
+    },
+    {
+      "url": "/crm_dxhub_resources/client-script/Faqs/faq13_429c8707ef7c6be23dd135a3f9f3d279_.json",
+      "logicalPath": "crm_dxhub_resources/client-script/Faqs/faq13.json",
+      "fileName": "faq13.json",
+      "ext": "json",
+      "category": "crm_dxhub_resources",
+      "subCategory": "client-script/Faqs",
+      "hash": "429c8707ef7c6be23dd135a3f9f3d279"
+    },
+    {
+      "url": "/crm_dxhub_resources/client-script/Faqs/faq13_d2e6cbd963bee1cfc194a88271dd8c6c_.md",
+      "logicalPath": "crm_dxhub_resources/client-script/Faqs/faq13.md",
+      "fileName": "faq13.md",
+      "ext": "md",
+      "category": "crm_dxhub_resources",
+      "subCategory": "client-script/Faqs",
+      "hash": "d2e6cbd963bee1cfc194a88271dd8c6c"
+    },
+    {
+      "url": "/crm_dxhub_resources/client-script/Faqs/faq14_429c8707ef7c6be23dd135a3f9f3d279_.json",
+      "logicalPath": "crm_dxhub_resources/client-script/Faqs/faq14.json",
+      "fileName": "faq14.json",
+      "ext": "json",
+      "category": "crm_dxhub_resources",
+      "subCategory": "client-script/Faqs",
+      "hash": "429c8707ef7c6be23dd135a3f9f3d279"
+    },
+    {
+      "url": "/crm_dxhub_resources/client-script/Faqs/faq14_b6fa3a40905abbaaece482ab157326f3_.md",
+      "logicalPath": "crm_dxhub_resources/client-script/Faqs/faq14.md",
+      "fileName": "faq14.md",
+      "ext": "md",
+      "category": "crm_dxhub_resources",
+      "subCategory": "client-script/Faqs",
+      "hash": "b6fa3a40905abbaaece482ab157326f3"
+    },
+    {
+      "url": "/crm_dxhub_resources/client-script/Faqs/faq15_429c8707ef7c6be23dd135a3f9f3d279_.json",
+      "logicalPath": "crm_dxhub_resources/client-script/Faqs/faq15.json",
+      "fileName": "faq15.json",
+      "ext": "json",
+      "category": "crm_dxhub_resources",
+      "subCategory": "client-script/Faqs",
+      "hash": "429c8707ef7c6be23dd135a3f9f3d279"
+    },
+    {
+      "url": "/crm_dxhub_resources/client-script/Faqs/faq15_a652769ca689e5edcc14993cb1ac05d9_.md",
+      "logicalPath": "crm_dxhub_resources/client-script/Faqs/faq15.md",
+      "fileName": "faq15.md",
+      "ext": "md",
+      "category": "crm_dxhub_resources",
+      "subCategory": "client-script/Faqs",
+      "hash": "a652769ca689e5edcc14993cb1ac05d9"
+    },
+    {
+      "url": "/crm_dxhub_resources/client-script/Faqs/faq16_429c8707ef7c6be23dd135a3f9f3d279_.json",
+      "logicalPath": "crm_dxhub_resources/client-script/Faqs/faq16.json",
+      "fileName": "faq16.json",
+      "ext": "json",
+      "category": "crm_dxhub_resources",
+      "subCategory": "client-script/Faqs",
+      "hash": "429c8707ef7c6be23dd135a3f9f3d279"
+    },
+    {
+      "url": "/crm_dxhub_resources/client-script/Faqs/faq16_a8f386b280cfedc3d96944572e8be732_.md",
+      "logicalPath": "crm_dxhub_resources/client-script/Faqs/faq16.md",
+      "fileName": "faq16.md",
+      "ext": "md",
+      "category": "crm_dxhub_resources",
+      "subCategory": "client-script/Faqs",
+      "hash": "a8f386b280cfedc3d96944572e8be732"
+    },
+    {
+      "url": "/crm_dxhub_resources/client-script/Faqs/faq17_429c8707ef7c6be23dd135a3f9f3d279_.json",
+      "logicalPath": "crm_dxhub_resources/client-script/Faqs/faq17.json",
+      "fileName": "faq17.json",
+      "ext": "json",
+      "category": "crm_dxhub_resources",
+      "subCategory": "client-script/Faqs",
+      "hash": "429c8707ef7c6be23dd135a3f9f3d279"
+    },
+    {
+      "url": "/crm_dxhub_resources/client-script/Faqs/faq17_5dd56fccdf0c66add887ad1d2e7e3bcf_.md",
+      "logicalPath": "crm_dxhub_resources/client-script/Faqs/faq17.md",
+      "fileName": "faq17.md",
+      "ext": "md",
+      "category": "crm_dxhub_resources",
+      "subCategory": "client-script/Faqs",
+      "hash": "5dd56fccdf0c66add887ad1d2e7e3bcf"
+    },
+    {
+      "url": "/crm_dxhub_resources/client-script/Faqs/faq18_429c8707ef7c6be23dd135a3f9f3d279_.json",
+      "logicalPath": "crm_dxhub_resources/client-script/Faqs/faq18.json",
+      "fileName": "faq18.json",
+      "ext": "json",
+      "category": "crm_dxhub_resources",
+      "subCategory": "client-script/Faqs",
+      "hash": "429c8707ef7c6be23dd135a3f9f3d279"
+    },
+    {
+      "url": "/crm_dxhub_resources/client-script/Faqs/faq18_82cdf1f2e7d8f37d42f29bf77b57f8ee_.md",
+      "logicalPath": "crm_dxhub_resources/client-script/Faqs/faq18.md",
+      "fileName": "faq18.md",
+      "ext": "md",
+      "category": "crm_dxhub_resources",
+      "subCategory": "client-script/Faqs",
+      "hash": "82cdf1f2e7d8f37d42f29bf77b57f8ee"
+    },
+    {
+      "url": "/crm_dxhub_resources/client-script/Faqs/faq19_429c8707ef7c6be23dd135a3f9f3d279_.json",
+      "logicalPath": "crm_dxhub_resources/client-script/Faqs/faq19.json",
+      "fileName": "faq19.json",
+      "ext": "json",
+      "category": "crm_dxhub_resources",
+      "subCategory": "client-script/Faqs",
+      "hash": "429c8707ef7c6be23dd135a3f9f3d279"
+    },
+    {
+      "url": "/crm_dxhub_resources/client-script/Faqs/faq19_decbad7a0db799771585c5436d009d46_.md",
+      "logicalPath": "crm_dxhub_resources/client-script/Faqs/faq19.md",
+      "fileName": "faq19.md",
+      "ext": "md",
+      "category": "crm_dxhub_resources",
+      "subCategory": "client-script/Faqs",
+      "hash": "decbad7a0db799771585c5436d009d46"
+    },
+    {
+      "url": "/crm_dxhub_resources/client-script/Faqs/faq2_429c8707ef7c6be23dd135a3f9f3d279_.json",
+      "logicalPath": "crm_dxhub_resources/client-script/Faqs/faq2.json",
+      "fileName": "faq2.json",
+      "ext": "json",
+      "category": "crm_dxhub_resources",
+      "subCategory": "client-script/Faqs",
+      "hash": "429c8707ef7c6be23dd135a3f9f3d279"
+    },
+    {
+      "url": "/crm_dxhub_resources/client-script/Faqs/faq2_e014ace1fb523831a1b85c205d2c603c_.md",
+      "logicalPath": "crm_dxhub_resources/client-script/Faqs/faq2.md",
+      "fileName": "faq2.md",
+      "ext": "md",
+      "category": "crm_dxhub_resources",
+      "subCategory": "client-script/Faqs",
+      "hash": "e014ace1fb523831a1b85c205d2c603c"
+    },
+    {
+      "url": "/crm_dxhub_resources/client-script/Faqs/faq20_429c8707ef7c6be23dd135a3f9f3d279_.json",
+      "logicalPath": "crm_dxhub_resources/client-script/Faqs/faq20.json",
+      "fileName": "faq20.json",
+      "ext": "json",
+      "category": "crm_dxhub_resources",
+      "subCategory": "client-script/Faqs",
+      "hash": "429c8707ef7c6be23dd135a3f9f3d279"
+    },
+    {
+      "url": "/crm_dxhub_resources/client-script/Faqs/faq20_81795b1401c5a915bb5dae1487a6f13d_.md",
+      "logicalPath": "crm_dxhub_resources/client-script/Faqs/faq20.md",
+      "fileName": "faq20.md",
+      "ext": "md",
+      "category": "crm_dxhub_resources",
+      "subCategory": "client-script/Faqs",
+      "hash": "81795b1401c5a915bb5dae1487a6f13d"
+    },
+    {
+      "url": "/crm_dxhub_resources/client-script/Faqs/faq21_429c8707ef7c6be23dd135a3f9f3d279_.json",
+      "logicalPath": "crm_dxhub_resources/client-script/Faqs/faq21.json",
+      "fileName": "faq21.json",
+      "ext": "json",
+      "category": "crm_dxhub_resources",
+      "subCategory": "client-script/Faqs",
+      "hash": "429c8707ef7c6be23dd135a3f9f3d279"
+    },
+    {
+      "url": "/crm_dxhub_resources/client-script/Faqs/faq21_7f77a836bc71172bb1384d1a24b3b8db_.md",
+      "logicalPath": "crm_dxhub_resources/client-script/Faqs/faq21.md",
+      "fileName": "faq21.md",
+      "ext": "md",
+      "category": "crm_dxhub_resources",
+      "subCategory": "client-script/Faqs",
+      "hash": "7f77a836bc71172bb1384d1a24b3b8db"
+    },
+    {
+      "url": "/crm_dxhub_resources/client-script/Faqs/faq22_429c8707ef7c6be23dd135a3f9f3d279_.json",
+      "logicalPath": "crm_dxhub_resources/client-script/Faqs/faq22.json",
+      "fileName": "faq22.json",
+      "ext": "json",
+      "category": "crm_dxhub_resources",
+      "subCategory": "client-script/Faqs",
+      "hash": "429c8707ef7c6be23dd135a3f9f3d279"
+    },
+    {
+      "url": "/crm_dxhub_resources/client-script/Faqs/faq22_594546604f1cb79b7ce74fb1ffa0edff_.md",
+      "logicalPath": "crm_dxhub_resources/client-script/Faqs/faq22.md",
+      "fileName": "faq22.md",
+      "ext": "md",
+      "category": "crm_dxhub_resources",
+      "subCategory": "client-script/Faqs",
+      "hash": "594546604f1cb79b7ce74fb1ffa0edff"
+    },
+    {
+      "url": "/crm_dxhub_resources/client-script/Faqs/faq23_429c8707ef7c6be23dd135a3f9f3d279_.json",
+      "logicalPath": "crm_dxhub_resources/client-script/Faqs/faq23.json",
+      "fileName": "faq23.json",
+      "ext": "json",
+      "category": "crm_dxhub_resources",
+      "subCategory": "client-script/Faqs",
+      "hash": "429c8707ef7c6be23dd135a3f9f3d279"
+    },
+    {
+      "url": "/crm_dxhub_resources/client-script/Faqs/faq23_fca3d95022475726f91a94183ba2ec52_.md",
+      "logicalPath": "crm_dxhub_resources/client-script/Faqs/faq23.md",
+      "fileName": "faq23.md",
+      "ext": "md",
+      "category": "crm_dxhub_resources",
+      "subCategory": "client-script/Faqs",
+      "hash": "fca3d95022475726f91a94183ba2ec52"
+    },
+    {
+      "url": "/crm_dxhub_resources/client-script/Faqs/faq24_429c8707ef7c6be23dd135a3f9f3d279_.json",
+      "logicalPath": "crm_dxhub_resources/client-script/Faqs/faq24.json",
+      "fileName": "faq24.json",
+      "ext": "json",
+      "category": "crm_dxhub_resources",
+      "subCategory": "client-script/Faqs",
+      "hash": "429c8707ef7c6be23dd135a3f9f3d279"
+    },
+    {
+      "url": "/crm_dxhub_resources/client-script/Faqs/faq24_f8dbe6f24abf3c31f26a5e5c5361b5bd_.md",
+      "logicalPath": "crm_dxhub_resources/client-script/Faqs/faq24.md",
+      "fileName": "faq24.md",
+      "ext": "md",
+      "category": "crm_dxhub_resources",
+      "subCategory": "client-script/Faqs",
+      "hash": "f8dbe6f24abf3c31f26a5e5c5361b5bd"
+    },
+    {
+      "url": "/crm_dxhub_resources/client-script/Faqs/faq25_429c8707ef7c6be23dd135a3f9f3d279_.json",
+      "logicalPath": "crm_dxhub_resources/client-script/Faqs/faq25.json",
+      "fileName": "faq25.json",
+      "ext": "json",
+      "category": "crm_dxhub_resources",
+      "subCategory": "client-script/Faqs",
+      "hash": "429c8707ef7c6be23dd135a3f9f3d279"
+    },
+    {
+      "url": "/crm_dxhub_resources/client-script/Faqs/faq25_784db90b2d1452699f7a1808a222890a_.md",
+      "logicalPath": "crm_dxhub_resources/client-script/Faqs/faq25.md",
+      "fileName": "faq25.md",
+      "ext": "md",
+      "category": "crm_dxhub_resources",
+      "subCategory": "client-script/Faqs",
+      "hash": "784db90b2d1452699f7a1808a222890a"
+    },
+    {
+      "url": "/crm_dxhub_resources/client-script/Faqs/faq26_429c8707ef7c6be23dd135a3f9f3d279_.json",
+      "logicalPath": "crm_dxhub_resources/client-script/Faqs/faq26.json",
+      "fileName": "faq26.json",
+      "ext": "json",
+      "category": "crm_dxhub_resources",
+      "subCategory": "client-script/Faqs",
+      "hash": "429c8707ef7c6be23dd135a3f9f3d279"
+    },
+    {
+      "url": "/crm_dxhub_resources/client-script/Faqs/faq26_0e2d3a3db2189299ce7c96bd4155df02_.md",
+      "logicalPath": "crm_dxhub_resources/client-script/Faqs/faq26.md",
+      "fileName": "faq26.md",
+      "ext": "md",
+      "category": "crm_dxhub_resources",
+      "subCategory": "client-script/Faqs",
+      "hash": "0e2d3a3db2189299ce7c96bd4155df02"
+    },
+    {
+      "url": "/crm_dxhub_resources/client-script/Faqs/faq27_429c8707ef7c6be23dd135a3f9f3d279_.json",
+      "logicalPath": "crm_dxhub_resources/client-script/Faqs/faq27.json",
+      "fileName": "faq27.json",
+      "ext": "json",
+      "category": "crm_dxhub_resources",
+      "subCategory": "client-script/Faqs",
+      "hash": "429c8707ef7c6be23dd135a3f9f3d279"
+    },
+    {
+      "url": "/crm_dxhub_resources/client-script/Faqs/faq27_d0ce394ec919ac68a3fd90ebebbc70dc_.md",
+      "logicalPath": "crm_dxhub_resources/client-script/Faqs/faq27.md",
+      "fileName": "faq27.md",
+      "ext": "md",
+      "category": "crm_dxhub_resources",
+      "subCategory": "client-script/Faqs",
+      "hash": "d0ce394ec919ac68a3fd90ebebbc70dc"
+    },
+    {
+      "url": "/crm_dxhub_resources/client-script/Faqs/faq28_429c8707ef7c6be23dd135a3f9f3d279_.json",
+      "logicalPath": "crm_dxhub_resources/client-script/Faqs/faq28.json",
+      "fileName": "faq28.json",
+      "ext": "json",
+      "category": "crm_dxhub_resources",
+      "subCategory": "client-script/Faqs",
+      "hash": "429c8707ef7c6be23dd135a3f9f3d279"
+    },
+    {
+      "url": "/crm_dxhub_resources/client-script/Faqs/faq28_064f119db558eb8c1ddf6fd6a7c399b2_.md",
+      "logicalPath": "crm_dxhub_resources/client-script/Faqs/faq28.md",
+      "fileName": "faq28.md",
+      "ext": "md",
+      "category": "crm_dxhub_resources",
+      "subCategory": "client-script/Faqs",
+      "hash": "064f119db558eb8c1ddf6fd6a7c399b2"
+    },
+    {
+      "url": "/crm_dxhub_resources/client-script/Faqs/faq29_429c8707ef7c6be23dd135a3f9f3d279_.json",
+      "logicalPath": "crm_dxhub_resources/client-script/Faqs/faq29.json",
+      "fileName": "faq29.json",
+      "ext": "json",
+      "category": "crm_dxhub_resources",
+      "subCategory": "client-script/Faqs",
+      "hash": "429c8707ef7c6be23dd135a3f9f3d279"
+    },
+    {
+      "url": "/crm_dxhub_resources/client-script/Faqs/faq29_ba29e1e9df0caccc44b5af6e0584b0e7_.md",
+      "logicalPath": "crm_dxhub_resources/client-script/Faqs/faq29.md",
+      "fileName": "faq29.md",
+      "ext": "md",
+      "category": "crm_dxhub_resources",
+      "subCategory": "client-script/Faqs",
+      "hash": "ba29e1e9df0caccc44b5af6e0584b0e7"
+    },
+    {
+      "url": "/crm_dxhub_resources/client-script/Faqs/faq3_429c8707ef7c6be23dd135a3f9f3d279_.json",
+      "logicalPath": "crm_dxhub_resources/client-script/Faqs/faq3.json",
+      "fileName": "faq3.json",
+      "ext": "json",
+      "category": "crm_dxhub_resources",
+      "subCategory": "client-script/Faqs",
+      "hash": "429c8707ef7c6be23dd135a3f9f3d279"
+    },
+    {
+      "url": "/crm_dxhub_resources/client-script/Faqs/faq3_531ad09e1fa97db7fd2a4873cc30abee_.md",
+      "logicalPath": "crm_dxhub_resources/client-script/Faqs/faq3.md",
+      "fileName": "faq3.md",
+      "ext": "md",
+      "category": "crm_dxhub_resources",
+      "subCategory": "client-script/Faqs",
+      "hash": "531ad09e1fa97db7fd2a4873cc30abee"
+    },
+    {
+      "url": "/crm_dxhub_resources/client-script/Faqs/faq30_429c8707ef7c6be23dd135a3f9f3d279_.json",
+      "logicalPath": "crm_dxhub_resources/client-script/Faqs/faq30.json",
+      "fileName": "faq30.json",
+      "ext": "json",
+      "category": "crm_dxhub_resources",
+      "subCategory": "client-script/Faqs",
+      "hash": "429c8707ef7c6be23dd135a3f9f3d279"
+    },
+    {
+      "url": "/crm_dxhub_resources/client-script/Faqs/faq30_9accea2fdb374cc305686b59cd6d3563_.md",
+      "logicalPath": "crm_dxhub_resources/client-script/Faqs/faq30.md",
+      "fileName": "faq30.md",
+      "ext": "md",
+      "category": "crm_dxhub_resources",
+      "subCategory": "client-script/Faqs",
+      "hash": "9accea2fdb374cc305686b59cd6d3563"
+    },
+    {
+      "url": "/crm_dxhub_resources/client-script/Faqs/faq31_429c8707ef7c6be23dd135a3f9f3d279_.json",
+      "logicalPath": "crm_dxhub_resources/client-script/Faqs/faq31.json",
+      "fileName": "faq31.json",
+      "ext": "json",
+      "category": "crm_dxhub_resources",
+      "subCategory": "client-script/Faqs",
+      "hash": "429c8707ef7c6be23dd135a3f9f3d279"
+    },
+    {
+      "url": "/crm_dxhub_resources/client-script/Faqs/faq31_c6cd4924a6b64d1fcd2f7b49cc50b0d9_.md",
+      "logicalPath": "crm_dxhub_resources/client-script/Faqs/faq31.md",
+      "fileName": "faq31.md",
+      "ext": "md",
+      "category": "crm_dxhub_resources",
+      "subCategory": "client-script/Faqs",
+      "hash": "c6cd4924a6b64d1fcd2f7b49cc50b0d9"
+    },
+    {
+      "url": "/crm_dxhub_resources/client-script/Faqs/faq32_429c8707ef7c6be23dd135a3f9f3d279_.json",
+      "logicalPath": "crm_dxhub_resources/client-script/Faqs/faq32.json",
+      "fileName": "faq32.json",
+      "ext": "json",
+      "category": "crm_dxhub_resources",
+      "subCategory": "client-script/Faqs",
+      "hash": "429c8707ef7c6be23dd135a3f9f3d279"
+    },
+    {
+      "url": "/crm_dxhub_resources/client-script/Faqs/faq32_2f40985b272d0b4e718a6084c0644a95_.md",
+      "logicalPath": "crm_dxhub_resources/client-script/Faqs/faq32.md",
+      "fileName": "faq32.md",
+      "ext": "md",
+      "category": "crm_dxhub_resources",
+      "subCategory": "client-script/Faqs",
+      "hash": "2f40985b272d0b4e718a6084c0644a95"
+    },
+    {
+      "url": "/crm_dxhub_resources/client-script/Faqs/faq33_429c8707ef7c6be23dd135a3f9f3d279_.json",
+      "logicalPath": "crm_dxhub_resources/client-script/Faqs/faq33.json",
+      "fileName": "faq33.json",
+      "ext": "json",
+      "category": "crm_dxhub_resources",
+      "subCategory": "client-script/Faqs",
+      "hash": "429c8707ef7c6be23dd135a3f9f3d279"
+    },
+    {
+      "url": "/crm_dxhub_resources/client-script/Faqs/faq33_e452e87a3a60cb5e1955161bb026dc16_.md",
+      "logicalPath": "crm_dxhub_resources/client-script/Faqs/faq33.md",
+      "fileName": "faq33.md",
+      "ext": "md",
+      "category": "crm_dxhub_resources",
+      "subCategory": "client-script/Faqs",
+      "hash": "e452e87a3a60cb5e1955161bb026dc16"
+    },
+    {
+      "url": "/crm_dxhub_resources/client-script/Faqs/faq34_429c8707ef7c6be23dd135a3f9f3d279_.json",
+      "logicalPath": "crm_dxhub_resources/client-script/Faqs/faq34.json",
+      "fileName": "faq34.json",
+      "ext": "json",
+      "category": "crm_dxhub_resources",
+      "subCategory": "client-script/Faqs",
+      "hash": "429c8707ef7c6be23dd135a3f9f3d279"
+    },
+    {
+      "url": "/crm_dxhub_resources/client-script/Faqs/faq34_8c732d281052f0405af0d5881d7b89df_.md",
+      "logicalPath": "crm_dxhub_resources/client-script/Faqs/faq34.md",
+      "fileName": "faq34.md",
+      "ext": "md",
+      "category": "crm_dxhub_resources",
+      "subCategory": "client-script/Faqs",
+      "hash": "8c732d281052f0405af0d5881d7b89df"
+    },
+    {
+      "url": "/crm_dxhub_resources/client-script/Faqs/faq35_429c8707ef7c6be23dd135a3f9f3d279_.json",
+      "logicalPath": "crm_dxhub_resources/client-script/Faqs/faq35.json",
+      "fileName": "faq35.json",
+      "ext": "json",
+      "category": "crm_dxhub_resources",
+      "subCategory": "client-script/Faqs",
+      "hash": "429c8707ef7c6be23dd135a3f9f3d279"
+    },
+    {
+      "url": "/crm_dxhub_resources/client-script/Faqs/faq35_b60b6f2df78fa79a2b67dc989247aa9e_.md",
+      "logicalPath": "crm_dxhub_resources/client-script/Faqs/faq35.md",
+      "fileName": "faq35.md",
+      "ext": "md",
+      "category": "crm_dxhub_resources",
+      "subCategory": "client-script/Faqs",
+      "hash": "b60b6f2df78fa79a2b67dc989247aa9e"
+    },
+    {
+      "url": "/crm_dxhub_resources/client-script/Faqs/faq36_429c8707ef7c6be23dd135a3f9f3d279_.json",
+      "logicalPath": "crm_dxhub_resources/client-script/Faqs/faq36.json",
+      "fileName": "faq36.json",
+      "ext": "json",
+      "category": "crm_dxhub_resources",
+      "subCategory": "client-script/Faqs",
+      "hash": "429c8707ef7c6be23dd135a3f9f3d279"
+    },
+    {
+      "url": "/crm_dxhub_resources/client-script/Faqs/faq36_5a8fc5730866e0e85910bebd62f2565b_.md",
+      "logicalPath": "crm_dxhub_resources/client-script/Faqs/faq36.md",
+      "fileName": "faq36.md",
+      "ext": "md",
+      "category": "crm_dxhub_resources",
+      "subCategory": "client-script/Faqs",
+      "hash": "5a8fc5730866e0e85910bebd62f2565b"
+    },
+    {
+      "url": "/crm_dxhub_resources/client-script/Faqs/faq37_429c8707ef7c6be23dd135a3f9f3d279_.json",
+      "logicalPath": "crm_dxhub_resources/client-script/Faqs/faq37.json",
+      "fileName": "faq37.json",
+      "ext": "json",
+      "category": "crm_dxhub_resources",
+      "subCategory": "client-script/Faqs",
+      "hash": "429c8707ef7c6be23dd135a3f9f3d279"
+    },
+    {
+      "url": "/crm_dxhub_resources/client-script/Faqs/faq37_684af2f67fd59eea332745ead790b2fa_.md",
+      "logicalPath": "crm_dxhub_resources/client-script/Faqs/faq37.md",
+      "fileName": "faq37.md",
+      "ext": "md",
+      "category": "crm_dxhub_resources",
+      "subCategory": "client-script/Faqs",
+      "hash": "684af2f67fd59eea332745ead790b2fa"
+    },
+    {
+      "url": "/crm_dxhub_resources/client-script/Faqs/faq38_429c8707ef7c6be23dd135a3f9f3d279_.json",
+      "logicalPath": "crm_dxhub_resources/client-script/Faqs/faq38.json",
+      "fileName": "faq38.json",
+      "ext": "json",
+      "category": "crm_dxhub_resources",
+      "subCategory": "client-script/Faqs",
+      "hash": "429c8707ef7c6be23dd135a3f9f3d279"
+    },
+    {
+      "url": "/crm_dxhub_resources/client-script/Faqs/faq38_dec57e603b443b42044650a3892935a9_.md",
+      "logicalPath": "crm_dxhub_resources/client-script/Faqs/faq38.md",
+      "fileName": "faq38.md",
+      "ext": "md",
+      "category": "crm_dxhub_resources",
+      "subCategory": "client-script/Faqs",
+      "hash": "dec57e603b443b42044650a3892935a9"
+    },
+    {
+      "url": "/crm_dxhub_resources/client-script/Faqs/faq39_429c8707ef7c6be23dd135a3f9f3d279_.json",
+      "logicalPath": "crm_dxhub_resources/client-script/Faqs/faq39.json",
+      "fileName": "faq39.json",
+      "ext": "json",
+      "category": "crm_dxhub_resources",
+      "subCategory": "client-script/Faqs",
+      "hash": "429c8707ef7c6be23dd135a3f9f3d279"
+    },
+    {
+      "url": "/crm_dxhub_resources/client-script/Faqs/faq39_fefeae5ae2de28422c7072037728b34d_.md",
+      "logicalPath": "crm_dxhub_resources/client-script/Faqs/faq39.md",
+      "fileName": "faq39.md",
+      "ext": "md",
+      "category": "crm_dxhub_resources",
+      "subCategory": "client-script/Faqs",
+      "hash": "fefeae5ae2de28422c7072037728b34d"
+    },
+    {
+      "url": "/crm_dxhub_resources/client-script/Faqs/faq4_590537dd960f7dcff03ba8ac9dc8e09d_.json",
+      "logicalPath": "crm_dxhub_resources/client-script/Faqs/faq4.json",
+      "fileName": "faq4.json",
+      "ext": "json",
+      "category": "crm_dxhub_resources",
+      "subCategory": "client-script/Faqs",
+      "hash": "590537dd960f7dcff03ba8ac9dc8e09d"
+    },
+    {
+      "url": "/crm_dxhub_resources/client-script/Faqs/faq4_01279bebe37e73943f191e4d5e39c000_.md",
+      "logicalPath": "crm_dxhub_resources/client-script/Faqs/faq4.md",
+      "fileName": "faq4.md",
+      "ext": "md",
+      "category": "crm_dxhub_resources",
+      "subCategory": "client-script/Faqs",
+      "hash": "01279bebe37e73943f191e4d5e39c000"
+    },
+    {
+      "url": "/crm_dxhub_resources/client-script/Faqs/faq40_429c8707ef7c6be23dd135a3f9f3d279_.json",
+      "logicalPath": "crm_dxhub_resources/client-script/Faqs/faq40.json",
+      "fileName": "faq40.json",
+      "ext": "json",
+      "category": "crm_dxhub_resources",
+      "subCategory": "client-script/Faqs",
+      "hash": "429c8707ef7c6be23dd135a3f9f3d279"
+    },
+    {
+      "url": "/crm_dxhub_resources/client-script/Faqs/faq40_3bb39cca643533953723ff5a4090a07c_.md",
+      "logicalPath": "crm_dxhub_resources/client-script/Faqs/faq40.md",
+      "fileName": "faq40.md",
+      "ext": "md",
+      "category": "crm_dxhub_resources",
+      "subCategory": "client-script/Faqs",
+      "hash": "3bb39cca643533953723ff5a4090a07c"
+    },
+    {
+      "url": "/crm_dxhub_resources/client-script/Faqs/faq41_429c8707ef7c6be23dd135a3f9f3d279_.json",
+      "logicalPath": "crm_dxhub_resources/client-script/Faqs/faq41.json",
+      "fileName": "faq41.json",
+      "ext": "json",
+      "category": "crm_dxhub_resources",
+      "subCategory": "client-script/Faqs",
+      "hash": "429c8707ef7c6be23dd135a3f9f3d279"
+    },
+    {
+      "url": "/crm_dxhub_resources/client-script/Faqs/faq41_8592f00929608cc36fb4ceb9aa3c2877_.md",
+      "logicalPath": "crm_dxhub_resources/client-script/Faqs/faq41.md",
+      "fileName": "faq41.md",
+      "ext": "md",
+      "category": "crm_dxhub_resources",
+      "subCategory": "client-script/Faqs",
+      "hash": "8592f00929608cc36fb4ceb9aa3c2877"
+    },
+    {
+      "url": "/crm_dxhub_resources/client-script/Faqs/faq42_429c8707ef7c6be23dd135a3f9f3d279_.json",
+      "logicalPath": "crm_dxhub_resources/client-script/Faqs/faq42.json",
+      "fileName": "faq42.json",
+      "ext": "json",
+      "category": "crm_dxhub_resources",
+      "subCategory": "client-script/Faqs",
+      "hash": "429c8707ef7c6be23dd135a3f9f3d279"
+    },
+    {
+      "url": "/crm_dxhub_resources/client-script/Faqs/faq42_d97e3f7fbd260d5af6e4e91864c47691_.md",
+      "logicalPath": "crm_dxhub_resources/client-script/Faqs/faq42.md",
+      "fileName": "faq42.md",
+      "ext": "md",
+      "category": "crm_dxhub_resources",
+      "subCategory": "client-script/Faqs",
+      "hash": "d97e3f7fbd260d5af6e4e91864c47691"
+    },
+    {
+      "url": "/crm_dxhub_resources/client-script/Faqs/faq43_429c8707ef7c6be23dd135a3f9f3d279_.json",
+      "logicalPath": "crm_dxhub_resources/client-script/Faqs/faq43.json",
+      "fileName": "faq43.json",
+      "ext": "json",
+      "category": "crm_dxhub_resources",
+      "subCategory": "client-script/Faqs",
+      "hash": "429c8707ef7c6be23dd135a3f9f3d279"
+    },
+    {
+      "url": "/crm_dxhub_resources/client-script/Faqs/faq43_df794d7b84350ee6ea595e923f482062_.md",
+      "logicalPath": "crm_dxhub_resources/client-script/Faqs/faq43.md",
+      "fileName": "faq43.md",
+      "ext": "md",
+      "category": "crm_dxhub_resources",
+      "subCategory": "client-script/Faqs",
+      "hash": "df794d7b84350ee6ea595e923f482062"
+    },
+    {
+      "url": "/crm_dxhub_resources/client-script/Faqs/faq44_429c8707ef7c6be23dd135a3f9f3d279_.json",
+      "logicalPath": "crm_dxhub_resources/client-script/Faqs/faq44.json",
+      "fileName": "faq44.json",
+      "ext": "json",
+      "category": "crm_dxhub_resources",
+      "subCategory": "client-script/Faqs",
+      "hash": "429c8707ef7c6be23dd135a3f9f3d279"
+    },
+    {
+      "url": "/crm_dxhub_resources/client-script/Faqs/faq44_78b01ed6ad7e615211bff4558617aa2e_.md",
+      "logicalPath": "crm_dxhub_resources/client-script/Faqs/faq44.md",
+      "fileName": "faq44.md",
+      "ext": "md",
+      "category": "crm_dxhub_resources",
+      "subCategory": "client-script/Faqs",
+      "hash": "78b01ed6ad7e615211bff4558617aa2e"
+    },
+    {
+      "url": "/crm_dxhub_resources/client-script/Faqs/faq45_429c8707ef7c6be23dd135a3f9f3d279_.json",
+      "logicalPath": "crm_dxhub_resources/client-script/Faqs/faq45.json",
+      "fileName": "faq45.json",
+      "ext": "json",
+      "category": "crm_dxhub_resources",
+      "subCategory": "client-script/Faqs",
+      "hash": "429c8707ef7c6be23dd135a3f9f3d279"
+    },
+    {
+      "url": "/crm_dxhub_resources/client-script/Faqs/faq45_5bb3f22af6acdc99737ac4dca65ecd0c_.md",
+      "logicalPath": "crm_dxhub_resources/client-script/Faqs/faq45.md",
+      "fileName": "faq45.md",
+      "ext": "md",
+      "category": "crm_dxhub_resources",
+      "subCategory": "client-script/Faqs",
+      "hash": "5bb3f22af6acdc99737ac4dca65ecd0c"
+    },
+    {
+      "url": "/crm_dxhub_resources/client-script/Faqs/faq46_a6776c98c2d6e849cc3d3f77fe5ff487_.json",
+      "logicalPath": "crm_dxhub_resources/client-script/Faqs/faq46.json",
+      "fileName": "faq46.json",
+      "ext": "json",
+      "category": "crm_dxhub_resources",
+      "subCategory": "client-script/Faqs",
+      "hash": "a6776c98c2d6e849cc3d3f77fe5ff487"
+    },
+    {
+      "url": "/crm_dxhub_resources/client-script/Faqs/faq46_5ae970de6fd020624c4d4eab10d06327_.md",
+      "logicalPath": "crm_dxhub_resources/client-script/Faqs/faq46.md",
+      "fileName": "faq46.md",
+      "ext": "md",
+      "category": "crm_dxhub_resources",
+      "subCategory": "client-script/Faqs",
+      "hash": "5ae970de6fd020624c4d4eab10d06327"
+    },
+    {
+      "url": "/crm_dxhub_resources/client-script/Faqs/faq47_9c787ae57c8a67961efb945c4b935899_.json",
+      "logicalPath": "crm_dxhub_resources/client-script/Faqs/faq47.json",
+      "fileName": "faq47.json",
+      "ext": "json",
+      "category": "crm_dxhub_resources",
+      "subCategory": "client-script/Faqs",
+      "hash": "9c787ae57c8a67961efb945c4b935899"
+    },
+    {
+      "url": "/crm_dxhub_resources/client-script/Faqs/faq47_19c825ecfe9f1785dbcc010500ef65a8_.md",
+      "logicalPath": "crm_dxhub_resources/client-script/Faqs/faq47.md",
+      "fileName": "faq47.md",
+      "ext": "md",
+      "category": "crm_dxhub_resources",
+      "subCategory": "client-script/Faqs",
+      "hash": "19c825ecfe9f1785dbcc010500ef65a8"
+    },
+    {
+      "url": "/crm_dxhub_resources/client-script/Faqs/faq48_1a3935a894ead9195088a3b8bd5da446_.json",
+      "logicalPath": "crm_dxhub_resources/client-script/Faqs/faq48.json",
+      "fileName": "faq48.json",
+      "ext": "json",
+      "category": "crm_dxhub_resources",
+      "subCategory": "client-script/Faqs",
+      "hash": "1a3935a894ead9195088a3b8bd5da446"
+    },
+    {
+      "url": "/crm_dxhub_resources/client-script/Faqs/faq48_79986624301224261350c5ec10649ab4_.md",
+      "logicalPath": "crm_dxhub_resources/client-script/Faqs/faq48.md",
+      "fileName": "faq48.md",
+      "ext": "md",
+      "category": "crm_dxhub_resources",
+      "subCategory": "client-script/Faqs",
+      "hash": "79986624301224261350c5ec10649ab4"
+    },
+    {
+      "url": "/crm_dxhub_resources/client-script/Faqs/faq5_7cee0192adbbfa414e17d1aa44f4c72a_.json",
+      "logicalPath": "crm_dxhub_resources/client-script/Faqs/faq5.json",
+      "fileName": "faq5.json",
+      "ext": "json",
+      "category": "crm_dxhub_resources",
+      "subCategory": "client-script/Faqs",
+      "hash": "7cee0192adbbfa414e17d1aa44f4c72a"
+    },
+    {
+      "url": "/crm_dxhub_resources/client-script/Faqs/faq5_6d2c29e57d21fd289bf6a88733ffd15a_.md",
+      "logicalPath": "crm_dxhub_resources/client-script/Faqs/faq5.md",
+      "fileName": "faq5.md",
+      "ext": "md",
+      "category": "crm_dxhub_resources",
+      "subCategory": "client-script/Faqs",
+      "hash": "6d2c29e57d21fd289bf6a88733ffd15a"
+    },
+    {
+      "url": "/crm_dxhub_resources/client-script/Faqs/faq6_429c8707ef7c6be23dd135a3f9f3d279_.json",
+      "logicalPath": "crm_dxhub_resources/client-script/Faqs/faq6.json",
+      "fileName": "faq6.json",
+      "ext": "json",
+      "category": "crm_dxhub_resources",
+      "subCategory": "client-script/Faqs",
+      "hash": "429c8707ef7c6be23dd135a3f9f3d279"
+    },
+    {
+      "url": "/crm_dxhub_resources/client-script/Faqs/faq6_93d3f13bd599c25d46308e56b3164a4e_.md",
+      "logicalPath": "crm_dxhub_resources/client-script/Faqs/faq6.md",
+      "fileName": "faq6.md",
+      "ext": "md",
+      "category": "crm_dxhub_resources",
+      "subCategory": "client-script/Faqs",
+      "hash": "93d3f13bd599c25d46308e56b3164a4e"
+    },
+    {
+      "url": "/crm_dxhub_resources/client-script/Faqs/faq7_429c8707ef7c6be23dd135a3f9f3d279_.json",
+      "logicalPath": "crm_dxhub_resources/client-script/Faqs/faq7.json",
+      "fileName": "faq7.json",
+      "ext": "json",
+      "category": "crm_dxhub_resources",
+      "subCategory": "client-script/Faqs",
+      "hash": "429c8707ef7c6be23dd135a3f9f3d279"
+    },
+    {
+      "url": "/crm_dxhub_resources/client-script/Faqs/faq7_a93e3d5f3c39d28b604518f28d357fb2_.md",
+      "logicalPath": "crm_dxhub_resources/client-script/Faqs/faq7.md",
+      "fileName": "faq7.md",
+      "ext": "md",
+      "category": "crm_dxhub_resources",
+      "subCategory": "client-script/Faqs",
+      "hash": "a93e3d5f3c39d28b604518f28d357fb2"
+    },
+    {
+      "url": "/crm_dxhub_resources/client-script/Faqs/faq8_a7531e3b0fc5abf4af8238bf5ad83831_.json",
+      "logicalPath": "crm_dxhub_resources/client-script/Faqs/faq8.json",
+      "fileName": "faq8.json",
+      "ext": "json",
+      "category": "crm_dxhub_resources",
+      "subCategory": "client-script/Faqs",
+      "hash": "a7531e3b0fc5abf4af8238bf5ad83831"
+    },
+    {
+      "url": "/crm_dxhub_resources/client-script/Faqs/faq8_369a3166107d41f6749a5ad7135a4640_.md",
+      "logicalPath": "crm_dxhub_resources/client-script/Faqs/faq8.md",
+      "fileName": "faq8.md",
+      "ext": "md",
+      "category": "crm_dxhub_resources",
+      "subCategory": "client-script/Faqs",
+      "hash": "369a3166107d41f6749a5ad7135a4640"
+    },
+    {
+      "url": "/crm_dxhub_resources/client-script/Faqs/faq9_429c8707ef7c6be23dd135a3f9f3d279_.json",
+      "logicalPath": "crm_dxhub_resources/client-script/Faqs/faq9.json",
+      "fileName": "faq9.json",
+      "ext": "json",
+      "category": "crm_dxhub_resources",
+      "subCategory": "client-script/Faqs",
+      "hash": "429c8707ef7c6be23dd135a3f9f3d279"
+    },
+    {
+      "url": "/crm_dxhub_resources/client-script/Faqs/faq9_f69779c2ce481d08b28455e983cc2d14_.md",
+      "logicalPath": "crm_dxhub_resources/client-script/Faqs/faq9.md",
+      "fileName": "faq9.md",
+      "ext": "md",
+      "category": "crm_dxhub_resources",
+      "subCategory": "client-script/Faqs",
+      "hash": "f69779c2ce481d08b28455e983cc2d14"
+    },
+    {
+      "url": "/crm_dxhub_resources/client-script/Samples/Open-pre-populated-quick-create-form_21376d7a02582d826f66aa393d1298ce_.json",
+      "logicalPath": "crm_dxhub_resources/client-script/Samples/Open-pre-populated-quick-create-form.json",
+      "fileName": "Open-pre-populated-quick-create-form.json",
+      "ext": "json",
+      "category": "crm_dxhub_resources",
+      "subCategory": "client-script/Samples",
+      "hash": "21376d7a02582d826f66aa393d1298ce"
+    },
+    {
+      "url": "/crm_dxhub_resources/client-script/Samples/Open-pre-populated-quick-create-form_90ddc60cf7704f002f245841f0dc63fd_.md",
+      "logicalPath": "crm_dxhub_resources/client-script/Samples/Open-pre-populated-quick-create-form.md",
+      "fileName": "Open-pre-populated-quick-create-form.md",
+      "ext": "md",
+      "category": "crm_dxhub_resources",
+      "subCategory": "client-script/Samples",
+      "hash": "90ddc60cf7704f002f245841f0dc63fd"
+    },
+    {
+      "url": "/crm_dxhub_resources/client-script/Samples/add-bulk-notes_3d433f23a9b5b79f9058d1a690524e6c_.json",
+      "logicalPath": "crm_dxhub_resources/client-script/Samples/add-bulk-notes.json",
+      "fileName": "add-bulk-notes.json",
+      "ext": "json",
+      "category": "crm_dxhub_resources",
+      "subCategory": "client-script/Samples",
+      "hash": "3d433f23a9b5b79f9058d1a690524e6c"
+    },
+    {
+      "url": "/crm_dxhub_resources/client-script/Samples/add-bulk-notes_f0c7bb161ba706079d1795bf661e5be2_.md",
+      "logicalPath": "crm_dxhub_resources/client-script/Samples/add-bulk-notes.md",
+      "fileName": "add-bulk-notes.md",
+      "ext": "md",
+      "category": "crm_dxhub_resources",
+      "subCategory": "client-script/Samples",
+      "hash": "f0c7bb161ba706079d1795bf661e5be2"
+    },
+    {
+      "url": "/crm_dxhub_resources/client-script/Samples/add-notes-button-in-list-view_25bf70538f2d931680bf9d890e4efdc2_.json",
+      "logicalPath": "crm_dxhub_resources/client-script/Samples/add-notes-button-in-list-view.json",
+      "fileName": "add-notes-button-in-list-view.json",
+      "ext": "json",
+      "category": "crm_dxhub_resources",
+      "subCategory": "client-script/Samples",
+      "hash": "25bf70538f2d931680bf9d890e4efdc2"
+    },
+    {
+      "url": "/crm_dxhub_resources/client-script/Samples/add-notes-button-in-list-view_fb0de54374fa194b118dcec81477e92c_.md",
+      "logicalPath": "crm_dxhub_resources/client-script/Samples/add-notes-button-in-list-view.md",
+      "fileName": "add-notes-button-in-list-view.md",
+      "ext": "md",
+      "category": "crm_dxhub_resources",
+      "subCategory": "client-script/Samples",
+      "hash": "fb0de54374fa194b118dcec81477e92c"
+    },
+    {
+      "url": "/crm_dxhub_resources/client-script/Samples/auto-assign-vendor-for-overnight-shipping-orders_33fb1ceedc5dd15c6c0389022d559b32_.json",
+      "logicalPath": "crm_dxhub_resources/client-script/Samples/auto-assign-vendor-for-overnight-shipping-orders.json",
+      "fileName": "auto-assign-vendor-for-overnight-shipping-orders.json",
+      "ext": "json",
+      "category": "crm_dxhub_resources",
+      "subCategory": "client-script/Samples",
+      "hash": "33fb1ceedc5dd15c6c0389022d559b32"
+    },
+    {
+      "url": "/crm_dxhub_resources/client-script/Samples/auto-assign-vendor-for-overnight-shipping-orders_332dafd9143948364c18b9e0aa16c47d_.md",
+      "logicalPath": "crm_dxhub_resources/client-script/Samples/auto-assign-vendor-for-overnight-shipping-orders.md",
+      "fileName": "auto-assign-vendor-for-overnight-shipping-orders.md",
+      "ext": "md",
+      "category": "crm_dxhub_resources",
+      "subCategory": "client-script/Samples",
+      "hash": "332dafd9143948364c18b9e0aa16c47d"
+    },
+    {
+      "url": "/crm_dxhub_resources/client-script/Samples/auto-enrich-notes-with-order-details_b61234f644d9e8b980c35c386acebbfa_.json",
+      "logicalPath": "crm_dxhub_resources/client-script/Samples/auto-enrich-notes-with-order-details.json",
+      "fileName": "auto-enrich-notes-with-order-details.json",
+      "ext": "json",
+      "category": "crm_dxhub_resources",
+      "subCategory": "client-script/Samples",
+      "hash": "b61234f644d9e8b980c35c386acebbfa"
+    },
+    {
+      "url": "/crm_dxhub_resources/client-script/Samples/auto-enrich-notes-with-order-details_0b0550edbbd6d75844ad85461a016f0a_.md",
+      "logicalPath": "crm_dxhub_resources/client-script/Samples/auto-enrich-notes-with-order-details.md",
+      "fileName": "auto-enrich-notes-with-order-details.md",
+      "ext": "md",
+      "category": "crm_dxhub_resources",
+      "subCategory": "client-script/Samples",
+      "hash": "0b0550edbbd6d75844ad85461a016f0a"
+    },
+    {
+      "url": "/crm_dxhub_resources/client-script/Samples/contextual-lookup-filter-filtering-product-based-on-product-category_999c9035f37d26d8c90ac7796c3d2243_.json",
+      "logicalPath": "crm_dxhub_resources/client-script/Samples/contextual-lookup-filter-filtering-product-based-on-product-category.json",
+      "fileName": "contextual-lookup-filter-filtering-product-based-on-product-category.json",
+      "ext": "json",
+      "category": "crm_dxhub_resources",
+      "subCategory": "client-script/Samples",
+      "hash": "999c9035f37d26d8c90ac7796c3d2243"
+    },
+    {
+      "url": "/crm_dxhub_resources/client-script/Samples/contextual-lookup-filter-filtering-product-based-on-product-category_4955eeacf846232b57383bd4c1759656_.md",
+      "logicalPath": "crm_dxhub_resources/client-script/Samples/contextual-lookup-filter-filtering-product-based-on-product-category.md",
+      "fileName": "contextual-lookup-filter-filtering-product-based-on-product-category.md",
+      "ext": "md",
+      "category": "crm_dxhub_resources",
+      "subCategory": "client-script/Samples",
+      "hash": "4955eeacf846232b57383bd4c1759656"
+    },
+    {
+      "url": "/crm_dxhub_resources/client-script/Samples/controlling-delete-button-and-field-accessibility-for-portal-user_1295cac55abadfd6a90089e8fdcf6310_.json",
+      "logicalPath": "crm_dxhub_resources/client-script/Samples/controlling-delete-button-and-field-accessibility-for-portal-user.json",
+      "fileName": "controlling-delete-button-and-field-accessibility-for-portal-user.json",
+      "ext": "json",
+      "category": "crm_dxhub_resources",
+      "subCategory": "client-script/Samples",
+      "hash": "1295cac55abadfd6a90089e8fdcf6310"
+    },
+    {
+      "url": "/crm_dxhub_resources/client-script/Samples/controlling-delete-button-and-field-accessibility-for-portal-user_eae97e561ba065ec30fb19b81e752e6e_.md",
+      "logicalPath": "crm_dxhub_resources/client-script/Samples/controlling-delete-button-and-field-accessibility-for-portal-user.md",
+      "fileName": "controlling-delete-button-and-field-accessibility-for-portal-user.md",
+      "ext": "md",
+      "category": "crm_dxhub_resources",
+      "subCategory": "client-script/Samples",
+      "hash": "eae97e561ba065ec30fb19b81e752e6e"
+    },
+    {
+      "url": "/crm_dxhub_resources/client-script/Samples/disable-edit-button-for-portal-user_b5a5f7b2643eb6940e64eaa244438768_.json",
+      "logicalPath": "crm_dxhub_resources/client-script/Samples/disable-edit-button-for-portal-user.json",
+      "fileName": "disable-edit-button-for-portal-user.json",
+      "ext": "json",
+      "category": "crm_dxhub_resources",
+      "subCategory": "client-script/Samples",
+      "hash": "b5a5f7b2643eb6940e64eaa244438768"
+    },
+    {
+      "url": "/crm_dxhub_resources/client-script/Samples/disable-edit-button-for-portal-user_c51033c911b43e3e879cfcc46421d399_.md",
+      "logicalPath": "crm_dxhub_resources/client-script/Samples/disable-edit-button-for-portal-user.md",
+      "fileName": "disable-edit-button-for-portal-user.md",
+      "ext": "md",
+      "category": "crm_dxhub_resources",
+      "subCategory": "client-script/Samples",
+      "hash": "c51033c911b43e3e879cfcc46421d399"
+    },
+    {
+      "url": "/crm_dxhub_resources/client-script/Samples/export-to-zoho-sheets-using-zrc_bfa92741e9cdfe82835f52fe2113156a_.json",
+      "logicalPath": "crm_dxhub_resources/client-script/Samples/export-to-zoho-sheets-using-zrc.json",
+      "fileName": "export-to-zoho-sheets-using-zrc.json",
+      "ext": "json",
+      "category": "crm_dxhub_resources",
+      "subCategory": "client-script/Samples",
+      "hash": "bfa92741e9cdfe82835f52fe2113156a"
+    },
+    {
+      "url": "/crm_dxhub_resources/client-script/Samples/export-to-zoho-sheets-using-zrc_e83a4b8668e82c5e1dc4b2facf0a62a8_.md",
+      "logicalPath": "crm_dxhub_resources/client-script/Samples/export-to-zoho-sheets-using-zrc.md",
+      "fileName": "export-to-zoho-sheets-using-zrc.md",
+      "ext": "md",
+      "category": "crm_dxhub_resources",
+      "subCategory": "client-script/Samples",
+      "hash": "e83a4b8668e82c5e1dc4b2facf0a62a8"
+    },
+    {
+      "url": "/crm_dxhub_resources/client-script/Samples/file-upload-using-zrc_eff0323a499d93956577d6b22102537b_.json",
+      "logicalPath": "crm_dxhub_resources/client-script/Samples/file-upload-using-zrc.json",
+      "fileName": "file-upload-using-zrc.json",
+      "ext": "json",
+      "category": "crm_dxhub_resources",
+      "subCategory": "client-script/Samples",
+      "hash": "eff0323a499d93956577d6b22102537b"
+    },
+    {
+      "url": "/crm_dxhub_resources/client-script/Samples/file-upload-using-zrc_b88a06cf539cde7caec52eaf804935f7_.md",
+      "logicalPath": "crm_dxhub_resources/client-script/Samples/file-upload-using-zrc.md",
+      "fileName": "file-upload-using-zrc.md",
+      "ext": "md",
+      "category": "crm_dxhub_resources",
+      "subCategory": "client-script/Samples",
+      "hash": "b88a06cf539cde7caec52eaf804935f7"
+    },
+    {
+      "url": "/crm_dxhub_resources/client-script/Samples/hide-public-views_a6f06002a7a1b41805b03577bbdf548e_.json",
+      "logicalPath": "crm_dxhub_resources/client-script/Samples/hide-public-views.json",
+      "fileName": "hide-public-views.json",
+      "ext": "json",
+      "category": "crm_dxhub_resources",
+      "subCategory": "client-script/Samples",
+      "hash": "a6f06002a7a1b41805b03577bbdf548e"
+    },
+    {
+      "url": "/crm_dxhub_resources/client-script/Samples/hide-public-views_121f6fd607731e0bc31a0319d89005fa_.md",
+      "logicalPath": "crm_dxhub_resources/client-script/Samples/hide-public-views.md",
+      "fileName": "hide-public-views.md",
+      "ext": "md",
+      "category": "crm_dxhub_resources",
+      "subCategory": "client-script/Samples",
+      "hash": "121f6fd607731e0bc31a0319d89005fa"
+    },
+    {
+      "url": "/crm_dxhub_resources/client-script/Samples/highlight-cards-based-on-order-status-in-list-page-canvas_49cd5e02b09653aa65beebae8da2eb8e_.json",
+      "logicalPath": "crm_dxhub_resources/client-script/Samples/highlight-cards-based-on-order-status-in-list-page-canvas.json",
+      "fileName": "highlight-cards-based-on-order-status-in-list-page-canvas.json",
+      "ext": "json",
+      "category": "crm_dxhub_resources",
+      "subCategory": "client-script/Samples",
+      "hash": "49cd5e02b09653aa65beebae8da2eb8e"
+    },
+    {
+      "url": "/crm_dxhub_resources/client-script/Samples/highlight-cards-based-on-order-status-in-list-page-canvas_b196a9ee4017ff671c50fc63f051938d_.md",
+      "logicalPath": "crm_dxhub_resources/client-script/Samples/highlight-cards-based-on-order-status-in-list-page-canvas.md",
+      "fileName": "highlight-cards-based-on-order-status-in-list-page-canvas.md",
+      "ext": "md",
+      "category": "crm_dxhub_resources",
+      "subCategory": "client-script/Samples",
+      "hash": "b196a9ee4017ff671c50fc63f051938d"
+    },
+    {
+      "url": "/crm_dxhub_resources/client-script/Samples/highlight-orders-cards-with-different-colours-in-list-page_7c79bc9d8f40b2f931677b8776f63e0a_.json",
+      "logicalPath": "crm_dxhub_resources/client-script/Samples/highlight-orders-cards-with-different-colours-in-list-page.json",
+      "fileName": "highlight-orders-cards-with-different-colours-in-list-page.json",
+      "ext": "json",
+      "category": "crm_dxhub_resources",
+      "subCategory": "client-script/Samples",
+      "hash": "7c79bc9d8f40b2f931677b8776f63e0a"
+    },
+    {
+      "url": "/crm_dxhub_resources/client-script/Samples/highlight-orders-cards-with-different-colours-in-list-page_af359c789383e5dfd3ed060395266a3a_.md",
+      "logicalPath": "crm_dxhub_resources/client-script/Samples/highlight-orders-cards-with-different-colours-in-list-page.md",
+      "fileName": "highlight-orders-cards-with-different-colours-in-list-page.md",
+      "ext": "md",
+      "category": "crm_dxhub_resources",
+      "subCategory": "client-script/Samples",
+      "hash": "af359c789383e5dfd3ed060395266a3a"
+    },
+    {
+      "url": "/crm_dxhub_resources/client-script/Samples/highlight_list_page_532b51504d233faf6c5349394409e722_.json",
+      "logicalPath": "crm_dxhub_resources/client-script/Samples/highlight_list_page.json",
+      "fileName": "highlight_list_page.json",
+      "ext": "json",
+      "category": "crm_dxhub_resources",
+      "subCategory": "client-script/Samples",
+      "hash": "532b51504d233faf6c5349394409e722"
+    },
+    {
+      "url": "/crm_dxhub_resources/client-script/Samples/highlight_list_page_21d6a078d9969ca84cfc23335b3d1f25_.md",
+      "logicalPath": "crm_dxhub_resources/client-script/Samples/highlight_list_page.md",
+      "fileName": "highlight_list_page.md",
+      "ext": "md",
+      "category": "crm_dxhub_resources",
+      "subCategory": "client-script/Samples",
+      "hash": "21d6a078d9969ca84cfc23335b3d1f25"
+    },
+    {
+      "url": "/crm_dxhub_resources/client-script/Samples/import-data-from-zoho-sheet_79b8fba1259236f1bbc0e08b90e39242_.json",
+      "logicalPath": "crm_dxhub_resources/client-script/Samples/import-data-from-zoho-sheet.json",
+      "fileName": "import-data-from-zoho-sheet.json",
+      "ext": "json",
+      "category": "crm_dxhub_resources",
+      "subCategory": "client-script/Samples",
+      "hash": "79b8fba1259236f1bbc0e08b90e39242"
+    },
+    {
+      "url": "/crm_dxhub_resources/client-script/Samples/import-data-from-zoho-sheet_8821bd61f0245b42abd0801195105d03_.md",
+      "logicalPath": "crm_dxhub_resources/client-script/Samples/import-data-from-zoho-sheet.md",
+      "fileName": "import-data-from-zoho-sheet.md",
+      "ext": "md",
+      "category": "crm_dxhub_resources",
+      "subCategory": "client-script/Samples",
+      "hash": "8821bd61f0245b42abd0801195105d03"
+    },
+    {
+      "url": "/crm_dxhub_resources/client-script/Samples/invoke-zoho-crm-apis-using-zrc_b19f92355f0a02425a8f072ce85a937f_.json",
+      "logicalPath": "crm_dxhub_resources/client-script/Samples/invoke-zoho-crm-apis-using-zrc.json",
+      "fileName": "invoke-zoho-crm-apis-using-zrc.json",
+      "ext": "json",
+      "category": "crm_dxhub_resources",
+      "subCategory": "client-script/Samples",
+      "hash": "b19f92355f0a02425a8f072ce85a937f"
+    },
+    {
+      "url": "/crm_dxhub_resources/client-script/Samples/invoke-zoho-crm-apis-using-zrc_eda864cb43b1e6bd2f2f5429a6139201_.md",
+      "logicalPath": "crm_dxhub_resources/client-script/Samples/invoke-zoho-crm-apis-using-zrc.md",
+      "fileName": "invoke-zoho-crm-apis-using-zrc.md",
+      "ext": "md",
+      "category": "crm_dxhub_resources",
+      "subCategory": "client-script/Samples",
+      "hash": "eda864cb43b1e6bd2f2f5429a6139201"
+    },
+    {
+      "url": "/crm_dxhub_resources/client-script/Samples/lookup_d771b65e510debb7e347541ef9b5bf44_.json",
+      "logicalPath": "crm_dxhub_resources/client-script/Samples/lookup.json",
+      "fileName": "lookup.json",
+      "ext": "json",
+      "category": "crm_dxhub_resources",
+      "subCategory": "client-script/Samples",
+      "hash": "d771b65e510debb7e347541ef9b5bf44"
+    },
+    {
+      "url": "/crm_dxhub_resources/client-script/Samples/lookup_4abbd659805b34dd5f2eea57c7da4715_.md",
+      "logicalPath": "crm_dxhub_resources/client-script/Samples/lookup.md",
+      "fileName": "lookup.md",
+      "ext": "md",
+      "category": "crm_dxhub_resources",
+      "subCategory": "client-script/Samples",
+      "hash": "4abbd659805b34dd5f2eea57c7da4715"
+    },
+    {
+      "url": "/crm_dxhub_resources/client-script/Samples/managing-order-status-based-on-portal-user-type_07864679e0a5c9dfff52274eaaf81fe9_.json",
+      "logicalPath": "crm_dxhub_resources/client-script/Samples/managing-order-status-based-on-portal-user-type.json",
+      "fileName": "managing-order-status-based-on-portal-user-type.json",
+      "ext": "json",
+      "category": "crm_dxhub_resources",
+      "subCategory": "client-script/Samples",
+      "hash": "07864679e0a5c9dfff52274eaaf81fe9"
+    },
+    {
+      "url": "/crm_dxhub_resources/client-script/Samples/managing-order-status-based-on-portal-user-type_5ae28d2bdc581beed72dd59c24926e37_.md",
+      "logicalPath": "crm_dxhub_resources/client-script/Samples/managing-order-status-based-on-portal-user-type.md",
+      "fileName": "managing-order-status-based-on-portal-user-type.md",
+      "ext": "md",
+      "category": "crm_dxhub_resources",
+      "subCategory": "client-script/Samples",
+      "hash": "5ae28d2bdc581beed72dd59c24926e37"
+    },
+    {
+      "url": "/crm_dxhub_resources/client-script/Samples/mask-field-for-a-profile_f5afbcd22ff0a560151611bd430896f2_.json",
+      "logicalPath": "crm_dxhub_resources/client-script/Samples/mask-field-for-a-profile.json",
+      "fileName": "mask-field-for-a-profile.json",
+      "ext": "json",
+      "category": "crm_dxhub_resources",
+      "subCategory": "client-script/Samples",
+      "hash": "f5afbcd22ff0a560151611bd430896f2"
+    },
+    {
+      "url": "/crm_dxhub_resources/client-script/Samples/mask-field-for-a-profile_665793bb6c6e45f73b115d02e647e991_.md",
+      "logicalPath": "crm_dxhub_resources/client-script/Samples/mask-field-for-a-profile.md",
+      "fileName": "mask-field-for-a-profile.md",
+      "ext": "md",
+      "category": "crm_dxhub_resources",
+      "subCategory": "client-script/Samples",
+      "hash": "665793bb6c6e45f73b115d02e647e991"
+    },
+    {
+      "url": "/crm_dxhub_resources/client-script/Samples/multiple-field-related-functions_7879ace2656e89a9fcdf74af104534c3_.json",
+      "logicalPath": "crm_dxhub_resources/client-script/Samples/multiple-field-related-functions.json",
+      "fileName": "multiple-field-related-functions.json",
+      "ext": "json",
+      "category": "crm_dxhub_resources",
+      "subCategory": "client-script/Samples",
+      "hash": "7879ace2656e89a9fcdf74af104534c3"
+    },
+    {
+      "url": "/crm_dxhub_resources/client-script/Samples/multiple-field-related-functions_0b4521cb9acd5501ceee31e145ced0dd_.md",
+      "logicalPath": "crm_dxhub_resources/client-script/Samples/multiple-field-related-functions.md",
+      "fileName": "multiple-field-related-functions.md",
+      "ext": "md",
+      "category": "crm_dxhub_resources",
+      "subCategory": "client-script/Samples",
+      "hash": "0b4521cb9acd5501ceee31e145ced0dd"
+    },
+    {
+      "url": "/crm_dxhub_resources/client-script/Samples/non-mandatory-blueprint-popup_9d8f0121bab97db98055452d6c3a8fb8_.json",
+      "logicalPath": "crm_dxhub_resources/client-script/Samples/non-mandatory-blueprint-popup.json",
+      "fileName": "non-mandatory-blueprint-popup.json",
+      "ext": "json",
+      "category": "crm_dxhub_resources",
+      "subCategory": "client-script/Samples",
+      "hash": "9d8f0121bab97db98055452d6c3a8fb8"
+    },
+    {
+      "url": "/crm_dxhub_resources/client-script/Samples/non-mandatory-blueprint-popup_01de956a7df44e7fa8522c14dd68012c_.md",
+      "logicalPath": "crm_dxhub_resources/client-script/Samples/non-mandatory-blueprint-popup.md",
+      "fileName": "non-mandatory-blueprint-popup.md",
+      "ext": "md",
+      "category": "crm_dxhub_resources",
+      "subCategory": "client-script/Samples",
+      "hash": "01de956a7df44e7fa8522c14dd68012c"
+    },
+    {
+      "url": "/crm_dxhub_resources/client-script/Samples/open-mailer_06f149582a7dfed0fc9eceefdc61fce0_.json",
+      "logicalPath": "crm_dxhub_resources/client-script/Samples/open-mailer.json",
+      "fileName": "open-mailer.json",
+      "ext": "json",
+      "category": "crm_dxhub_resources",
+      "subCategory": "client-script/Samples",
+      "hash": "06f149582a7dfed0fc9eceefdc61fce0"
+    },
+    {
+      "url": "/crm_dxhub_resources/client-script/Samples/open-mailer_06d23416cbac90e9c6173bc3cdb6460e_.md",
+      "logicalPath": "crm_dxhub_resources/client-script/Samples/open-mailer.md",
+      "fileName": "open-mailer.md",
+      "ext": "md",
+      "category": "crm_dxhub_resources",
+      "subCategory": "client-script/Samples",
+      "hash": "06d23416cbac90e9c6173bc3cdb6460e"
+    },
+    {
+      "url": "/crm_dxhub_resources/client-script/Samples/phone-no-duplicate-check_f1610721725260ed560689668a7d1538_.json",
+      "logicalPath": "crm_dxhub_resources/client-script/Samples/phone-no-duplicate-check.json",
+      "fileName": "phone-no-duplicate-check.json",
+      "ext": "json",
+      "category": "crm_dxhub_resources",
+      "subCategory": "client-script/Samples",
+      "hash": "f1610721725260ed560689668a7d1538"
+    },
+    {
+      "url": "/crm_dxhub_resources/client-script/Samples/phone-no-duplicate-check_6133093261ab00c2b3544caf1c016c49_.md",
+      "logicalPath": "crm_dxhub_resources/client-script/Samples/phone-no-duplicate-check.md",
+      "fileName": "phone-no-duplicate-check.md",
+      "ext": "md",
+      "category": "crm_dxhub_resources",
+      "subCategory": "client-script/Samples",
+      "hash": "6133093261ab00c2b3544caf1c016c49"
+    },
+    {
+      "url": "/crm_dxhub_resources/client-script/Samples/populate_age_7998669bac3c6bff46ba80aa3c4fcd0f_.json",
+      "logicalPath": "crm_dxhub_resources/client-script/Samples/populate_age.json",
+      "fileName": "populate_age.json",
+      "ext": "json",
+      "category": "crm_dxhub_resources",
+      "subCategory": "client-script/Samples",
+      "hash": "7998669bac3c6bff46ba80aa3c4fcd0f"
+    },
+    {
+      "url": "/crm_dxhub_resources/client-script/Samples/populate_age_2be6b2d7d3ae522eaf6ba76a43654790_.md",
+      "logicalPath": "crm_dxhub_resources/client-script/Samples/populate_age.md",
+      "fileName": "populate_age.md",
+      "ext": "md",
+      "category": "crm_dxhub_resources",
+      "subCategory": "client-script/Samples",
+      "hash": "2be6b2d7d3ae522eaf6ba76a43654790"
+    },
+    {
+      "url": "/crm_dxhub_resources/client-script/Samples/real-time-gold-price_4324be2b89e67550c47b14d004f96be1_.json",
+      "logicalPath": "crm_dxhub_resources/client-script/Samples/real-time-gold-price.json",
+      "fileName": "real-time-gold-price.json",
+      "ext": "json",
+      "category": "crm_dxhub_resources",
+      "subCategory": "client-script/Samples",
+      "hash": "4324be2b89e67550c47b14d004f96be1"
+    },
+    {
+      "url": "/crm_dxhub_resources/client-script/Samples/real-time-gold-price_5ce369137ba625b345a2a6e53183db0f_.md",
+      "logicalPath": "crm_dxhub_resources/client-script/Samples/real-time-gold-price.md",
+      "fileName": "real-time-gold-price.md",
+      "ext": "md",
+      "category": "crm_dxhub_resources",
+      "subCategory": "client-script/Samples",
+      "hash": "5ce369137ba625b345a2a6e53183db0f"
+    },
+    {
+      "url": "/crm_dxhub_resources/client-script/Samples/render-widgets-using-client-script_b948a81975eea0af17ad952111262b50_.json",
+      "logicalPath": "crm_dxhub_resources/client-script/Samples/render-widgets-using-client-script.json",
+      "fileName": "render-widgets-using-client-script.json",
+      "ext": "json",
+      "category": "crm_dxhub_resources",
+      "subCategory": "client-script/Samples",
+      "hash": "b948a81975eea0af17ad952111262b50"
+    },
+    {
+      "url": "/crm_dxhub_resources/client-script/Samples/render-widgets-using-client-script_e9d37e7aad2a88797e165593e57541ab_.md",
+      "logicalPath": "crm_dxhub_resources/client-script/Samples/render-widgets-using-client-script.md",
+      "fileName": "render-widgets-using-client-script.md",
+      "ext": "md",
+      "category": "crm_dxhub_resources",
+      "subCategory": "client-script/Samples",
+      "hash": "e9d37e7aad2a88797e165593e57541ab"
+    },
+    {
+      "url": "/crm_dxhub_resources/client-script/Samples/send-bulk-emails_6b1c17544949d2514b16c148260c8653_.json",
+      "logicalPath": "crm_dxhub_resources/client-script/Samples/send-bulk-emails.json",
+      "fileName": "send-bulk-emails.json",
+      "ext": "json",
+      "category": "crm_dxhub_resources",
+      "subCategory": "client-script/Samples",
+      "hash": "6b1c17544949d2514b16c148260c8653"
+    },
+    {
+      "url": "/crm_dxhub_resources/client-script/Samples/send-bulk-emails_235abdc9a55f714325c467e0a209beed_.md",
+      "logicalPath": "crm_dxhub_resources/client-script/Samples/send-bulk-emails.md",
+      "fileName": "send-bulk-emails.md",
+      "ext": "md",
+      "category": "crm_dxhub_resources",
+      "subCategory": "client-script/Samples",
+      "hash": "235abdc9a55f714325c467e0a209beed"
+    },
+    {
+      "url": "/crm_dxhub_resources/client-script/Samples/validate-order-id_9db9171a2dcd092b0bff89b01c977c7a_.json",
+      "logicalPath": "crm_dxhub_resources/client-script/Samples/validate-order-id.json",
+      "fileName": "validate-order-id.json",
+      "ext": "json",
+      "category": "crm_dxhub_resources",
+      "subCategory": "client-script/Samples",
+      "hash": "9db9171a2dcd092b0bff89b01c977c7a"
+    },
+    {
+      "url": "/crm_dxhub_resources/client-script/Samples/validate-order-id_8427223a47d5438cccf6857e0977a71e_.md",
+      "logicalPath": "crm_dxhub_resources/client-script/Samples/validate-order-id.md",
+      "fileName": "validate-order-id.md",
+      "ext": "md",
+      "category": "crm_dxhub_resources",
+      "subCategory": "client-script/Samples",
+      "hash": "8427223a47d5438cccf6857e0977a71e"
+    },
+    {
+      "url": "/crm_dxhub_resources/client-script/Samples/view-invoice-when-the-icon-in-List-Page-is-clicked_7044b14889d29eb1024476d3e2232b19_.json",
+      "logicalPath": "crm_dxhub_resources/client-script/Samples/view-invoice-when-the-icon-in-List-Page-is-clicked.json",
+      "fileName": "view-invoice-when-the-icon-in-List-Page-is-clicked.json",
+      "ext": "json",
+      "category": "crm_dxhub_resources",
+      "subCategory": "client-script/Samples",
+      "hash": "7044b14889d29eb1024476d3e2232b19"
+    },
+    {
+      "url": "/crm_dxhub_resources/client-script/Samples/view-invoice-when-the-icon-in-List-Page-is-clicked_90c26a73b2645181ea9d4ed89d6c4fcd_.md",
+      "logicalPath": "crm_dxhub_resources/client-script/Samples/view-invoice-when-the-icon-in-List-Page-is-clicked.md",
+      "fileName": "view-invoice-when-the-icon-in-List-Page-is-clicked.md",
+      "ext": "md",
+      "category": "crm_dxhub_resources",
+      "subCategory": "client-script/Samples",
+      "hash": "90c26a73b2645181ea9d4ed89d6c4fcd"
+    },
+    {
+      "url": "/crm_dxhub_resources/client-script/Samples/widget-in-flyout_64b84eb4c9c2ccde538874e88376ebda_.json",
+      "logicalPath": "crm_dxhub_resources/client-script/Samples/widget-in-flyout.json",
+      "fileName": "widget-in-flyout.json",
+      "ext": "json",
+      "category": "crm_dxhub_resources",
+      "subCategory": "client-script/Samples",
+      "hash": "64b84eb4c9c2ccde538874e88376ebda"
+    },
+    {
+      "url": "/crm_dxhub_resources/client-script/Samples/widget-in-flyout_ad95c7696937f5edea036a1b865294b0_.md",
+      "logicalPath": "crm_dxhub_resources/client-script/Samples/widget-in-flyout.md",
+      "fileName": "widget-in-flyout.md",
+      "ext": "md",
+      "category": "crm_dxhub_resources",
+      "subCategory": "client-script/Samples",
+      "hash": "ad95c7696937f5edea036a1b865294b0"
+    },
+    {
+      "url": "/crm_dxhub_resources/client-script/Samples/wizard-display-message_3a59009f2249c22148e3040d5081b35b_.json",
+      "logicalPath": "crm_dxhub_resources/client-script/Samples/wizard-display-message.json",
+      "fileName": "wizard-display-message.json",
+      "ext": "json",
+      "category": "crm_dxhub_resources",
+      "subCategory": "client-script/Samples",
+      "hash": "3a59009f2249c22148e3040d5081b35b"
+    },
+    {
+      "url": "/crm_dxhub_resources/client-script/Samples/wizard-display-message_504935ab997c24a35aa4d7ebea8229c8_.md",
+      "logicalPath": "crm_dxhub_resources/client-script/Samples/wizard-display-message.md",
+      "fileName": "wizard-display-message.md",
+      "ext": "md",
+      "category": "crm_dxhub_resources",
+      "subCategory": "client-script/Samples",
+      "hash": "504935ab997c24a35aa4d7ebea8229c8"
+    },
+    {
+      "url": "/crm_dxhub_resources/client-script/Samples/wizard-field-validation_8f0df5ded20c02c8ac945074a541037a_.json",
+      "logicalPath": "crm_dxhub_resources/client-script/Samples/wizard-field-validation.json",
+      "fileName": "wizard-field-validation.json",
+      "ext": "json",
+      "category": "crm_dxhub_resources",
+      "subCategory": "client-script/Samples",
+      "hash": "8f0df5ded20c02c8ac945074a541037a"
+    },
+    {
+      "url": "/crm_dxhub_resources/client-script/Samples/wizard-field-validation_a147e66ca9f55e9341f4eea378725e34_.md",
+      "logicalPath": "crm_dxhub_resources/client-script/Samples/wizard-field-validation.md",
+      "fileName": "wizard-field-validation.md",
+      "ext": "md",
+      "category": "crm_dxhub_resources",
+      "subCategory": "client-script/Samples",
+      "hash": "a147e66ca9f55e9341f4eea378725e34"
+    },
+    {
+      "url": "/crm_dxhub_resources/client-script/Samples/wizard-populate_address_41cc187637984879b62ee010068841ec_.json",
+      "logicalPath": "crm_dxhub_resources/client-script/Samples/wizard-populate_address.json",
+      "fileName": "wizard-populate_address.json",
+      "ext": "json",
+      "category": "crm_dxhub_resources",
+      "subCategory": "client-script/Samples",
+      "hash": "41cc187637984879b62ee010068841ec"
+    },
+    {
+      "url": "/crm_dxhub_resources/client-script/Samples/wizard-populate_address_4aa68e0dcce155c2fc33f335a8cbec9d_.md",
+      "logicalPath": "crm_dxhub_resources/client-script/Samples/wizard-populate_address.md",
+      "fileName": "wizard-populate_address.md",
+      "ext": "md",
+      "category": "crm_dxhub_resources",
+      "subCategory": "client-script/Samples",
+      "hash": "4aa68e0dcce155c2fc33f335a8cbec9d"
+    },
+    {
+      "url": "/crm_dxhub_resources/client-script/Samples/wizard-screen-switch_30bc7b994ed80c3bbf2399bfd2722913_.json",
+      "logicalPath": "crm_dxhub_resources/client-script/Samples/wizard-screen-switch.json",
+      "fileName": "wizard-screen-switch.json",
+      "ext": "json",
+      "category": "crm_dxhub_resources",
+      "subCategory": "client-script/Samples",
+      "hash": "30bc7b994ed80c3bbf2399bfd2722913"
+    },
+    {
+      "url": "/crm_dxhub_resources/client-script/Samples/wizard-screen-switch_01f11db0acbb69e90d499dc6ed0b5205_.md",
+      "logicalPath": "crm_dxhub_resources/client-script/Samples/wizard-screen-switch.md",
+      "fileName": "wizard-screen-switch.md",
+      "ext": "md",
+      "category": "crm_dxhub_resources",
+      "subCategory": "client-script/Samples",
+      "hash": "01f11db0acbb69e90d499dc6ed0b5205"
+    },
+    {
+      "url": "/crm_dxhub_resources/slyteui/Samples/explorecomponents/explorecomponents/explorecomponents/explorecomponents_948bb90267cda9af2aa165f383782520_.css",
+      "logicalPath": "crm_dxhub_resources/slyteui/Samples/explorecomponents/explorecomponents/explorecomponents/explorecomponents.css",
+      "fileName": "explorecomponents.css",
+      "ext": "css",
+      "category": "crm_dxhub_resources",
+      "subCategory": "slyteui/Samples/explorecomponents/explorecomponents/explorecomponents",
+      "hash": "948bb90267cda9af2aa165f383782520"
+    },
+    {
+      "url": "/crm_dxhub_resources/slyteui/Samples/explorecomponents/explorecomponents/explorecomponents/explorecomponents_ad0e9fdb4a65b6237e01fb79a558a46e_.html",
+      "logicalPath": "crm_dxhub_resources/slyteui/Samples/explorecomponents/explorecomponents/explorecomponents/explorecomponents.html",
+      "fileName": "explorecomponents.html",
+      "ext": "html",
+      "category": "crm_dxhub_resources",
+      "subCategory": "slyteui/Samples/explorecomponents/explorecomponents/explorecomponents",
+      "hash": "ad0e9fdb4a65b6237e01fb79a558a46e"
+    },
+    {
+      "url": "/crm_dxhub_resources/slyteui/Samples/explorecomponents/explorecomponents/explorecomponents/explorecomponents_2cfcfc7957b7afbbc2368aed56e160e9_.js",
+      "logicalPath": "crm_dxhub_resources/slyteui/Samples/explorecomponents/explorecomponents/explorecomponents/explorecomponents.js",
+      "fileName": "explorecomponents.js",
+      "ext": "js",
+      "category": "crm_dxhub_resources",
+      "subCategory": "slyteui/Samples/explorecomponents/explorecomponents/explorecomponents",
+      "hash": "2cfcfc7957b7afbbc2368aed56e160e9"
+    },
+    {
+      "url": "/crm_dxhub_resources/slyteui/Samples/explorecomponents/explorecomponents/explorecomponents_948bb90267cda9af2aa165f383782520_.css",
+      "logicalPath": "crm_dxhub_resources/slyteui/Samples/explorecomponents/explorecomponents/explorecomponents.css",
+      "fileName": "explorecomponents.css",
+      "ext": "css",
+      "category": "crm_dxhub_resources",
+      "subCategory": "slyteui/Samples/explorecomponents/explorecomponents",
+      "hash": "948bb90267cda9af2aa165f383782520"
+    },
+    {
+      "url": "/crm_dxhub_resources/slyteui/Samples/explorecomponents/explorecomponents/explorecomponents_ad0e9fdb4a65b6237e01fb79a558a46e_.html",
+      "logicalPath": "crm_dxhub_resources/slyteui/Samples/explorecomponents/explorecomponents/explorecomponents.html",
+      "fileName": "explorecomponents.html",
+      "ext": "html",
+      "category": "crm_dxhub_resources",
+      "subCategory": "slyteui/Samples/explorecomponents/explorecomponents",
+      "hash": "ad0e9fdb4a65b6237e01fb79a558a46e"
+    },
+    {
+      "url": "/crm_dxhub_resources/slyteui/Samples/explorecomponents/explorecomponents/explorecomponents_2cfcfc7957b7afbbc2368aed56e160e9_.js",
+      "logicalPath": "crm_dxhub_resources/slyteui/Samples/explorecomponents/explorecomponents/explorecomponents.js",
+      "fileName": "explorecomponents.js",
+      "ext": "js",
+      "category": "crm_dxhub_resources",
+      "subCategory": "slyteui/Samples/explorecomponents/explorecomponents",
+      "hash": "2cfcfc7957b7afbbc2368aed56e160e9"
+    },
+    {
+      "url": "/crm_dxhub_resources/slyteui/Samples/explorecomponents/explorecomponents_41c1b6d0cca82978e4813da41fd93812_.json",
+      "logicalPath": "crm_dxhub_resources/slyteui/Samples/explorecomponents/explorecomponents.json",
+      "fileName": "explorecomponents.json",
+      "ext": "json",
+      "category": "crm_dxhub_resources",
+      "subCategory": "slyteui/Samples/explorecomponents",
+      "hash": "41c1b6d0cca82978e4813da41fd93812"
+    },
+    {
+      "url": "/crm_dxhub_resources/slyteui/Samples/explorecomponents/explorecomponents_b896229edeb9dd760b1d1c96558b4248_.md",
+      "logicalPath": "crm_dxhub_resources/slyteui/Samples/explorecomponents/explorecomponents.md",
+      "fileName": "explorecomponents.md",
+      "ext": "md",
+      "category": "crm_dxhub_resources",
+      "subCategory": "slyteui/Samples/explorecomponents",
+      "hash": "b896229edeb9dd760b1d1c96558b4248"
+    },
+    {
+      "url": "/crm_dxhub_resources/slyteui/Samples/explorecomponents/explorecomponents_1e5ad9b65316fd667fb56a99b26ac94e_.zip",
+      "logicalPath": "crm_dxhub_resources/slyteui/Samples/explorecomponents/explorecomponents.zip",
+      "fileName": "explorecomponents.zip",
+      "ext": "zip",
+      "category": "crm_dxhub_resources",
+      "subCategory": "slyteui/Samples/explorecomponents",
+      "hash": "1e5ad9b65316fd667fb56a99b26ac94e"
+    },
+    {
+      "url": "/crm_dxhub_resources/slyteui/Samples/explorecomponents/explorecomponents_explorer_00e2e6a55e7b6e6b6299e4048462bfaf_.json",
+      "logicalPath": "crm_dxhub_resources/slyteui/Samples/explorecomponents/explorecomponents_explorer.json",
+      "fileName": "explorecomponents_explorer.json",
+      "ext": "json",
+      "category": "crm_dxhub_resources",
+      "subCategory": "slyteui/Samples/explorecomponents",
+      "hash": "00e2e6a55e7b6e6b6299e4048462bfaf"
+    },
+    {
+      "url": "/crm_dxhub_resources/widgets/Faqs/faq1_429c8707ef7c6be23dd135a3f9f3d279_.json",
+      "logicalPath": "crm_dxhub_resources/widgets/Faqs/faq1.json",
+      "fileName": "faq1.json",
+      "ext": "json",
+      "category": "crm_dxhub_resources",
+      "subCategory": "widgets/Faqs",
+      "hash": "429c8707ef7c6be23dd135a3f9f3d279"
+    },
+    {
+      "url": "/crm_dxhub_resources/widgets/Faqs/faq1_baf757fb35b7ded624dbb8d38585a861_.md",
+      "logicalPath": "crm_dxhub_resources/widgets/Faqs/faq1.md",
+      "fileName": "faq1.md",
+      "ext": "md",
+      "category": "crm_dxhub_resources",
+      "subCategory": "widgets/Faqs",
+      "hash": "baf757fb35b7ded624dbb8d38585a861"
+    },
+    {
+      "url": "/crm_dxhub_resources/widgets/Faqs/faq10_f69ed0bc447bc43595163212ef1328c9_.json",
+      "logicalPath": "crm_dxhub_resources/widgets/Faqs/faq10.json",
+      "fileName": "faq10.json",
+      "ext": "json",
+      "category": "crm_dxhub_resources",
+      "subCategory": "widgets/Faqs",
+      "hash": "f69ed0bc447bc43595163212ef1328c9"
+    },
+    {
+      "url": "/crm_dxhub_resources/widgets/Faqs/faq10_65ae02c3b9e8f69bc4a0832dc780b66b_.md",
+      "logicalPath": "crm_dxhub_resources/widgets/Faqs/faq10.md",
+      "fileName": "faq10.md",
+      "ext": "md",
+      "category": "crm_dxhub_resources",
+      "subCategory": "widgets/Faqs",
+      "hash": "65ae02c3b9e8f69bc4a0832dc780b66b"
+    },
+    {
+      "url": "/crm_dxhub_resources/widgets/Faqs/faq11_429c8707ef7c6be23dd135a3f9f3d279_.json",
+      "logicalPath": "crm_dxhub_resources/widgets/Faqs/faq11.json",
+      "fileName": "faq11.json",
+      "ext": "json",
+      "category": "crm_dxhub_resources",
+      "subCategory": "widgets/Faqs",
+      "hash": "429c8707ef7c6be23dd135a3f9f3d279"
+    },
+    {
+      "url": "/crm_dxhub_resources/widgets/Faqs/faq11_92bc72032016bb4211f2c896ea2b9179_.md",
+      "logicalPath": "crm_dxhub_resources/widgets/Faqs/faq11.md",
+      "fileName": "faq11.md",
+      "ext": "md",
+      "category": "crm_dxhub_resources",
+      "subCategory": "widgets/Faqs",
+      "hash": "92bc72032016bb4211f2c896ea2b9179"
+    },
+    {
+      "url": "/crm_dxhub_resources/widgets/Faqs/faq12_429c8707ef7c6be23dd135a3f9f3d279_.json",
+      "logicalPath": "crm_dxhub_resources/widgets/Faqs/faq12.json",
+      "fileName": "faq12.json",
+      "ext": "json",
+      "category": "crm_dxhub_resources",
+      "subCategory": "widgets/Faqs",
+      "hash": "429c8707ef7c6be23dd135a3f9f3d279"
+    },
+    {
+      "url": "/crm_dxhub_resources/widgets/Faqs/faq12_96127b8f2a5ef2be9658bf39e3647528_.md",
+      "logicalPath": "crm_dxhub_resources/widgets/Faqs/faq12.md",
+      "fileName": "faq12.md",
+      "ext": "md",
+      "category": "crm_dxhub_resources",
+      "subCategory": "widgets/Faqs",
+      "hash": "96127b8f2a5ef2be9658bf39e3647528"
+    },
+    {
+      "url": "/crm_dxhub_resources/widgets/Faqs/faq13_429c8707ef7c6be23dd135a3f9f3d279_.json",
+      "logicalPath": "crm_dxhub_resources/widgets/Faqs/faq13.json",
+      "fileName": "faq13.json",
+      "ext": "json",
+      "category": "crm_dxhub_resources",
+      "subCategory": "widgets/Faqs",
+      "hash": "429c8707ef7c6be23dd135a3f9f3d279"
+    },
+    {
+      "url": "/crm_dxhub_resources/widgets/Faqs/faq13_28cc3552318b21c620c79ab68bba7aca_.md",
+      "logicalPath": "crm_dxhub_resources/widgets/Faqs/faq13.md",
+      "fileName": "faq13.md",
+      "ext": "md",
+      "category": "crm_dxhub_resources",
+      "subCategory": "widgets/Faqs",
+      "hash": "28cc3552318b21c620c79ab68bba7aca"
+    },
+    {
+      "url": "/crm_dxhub_resources/widgets/Faqs/faq2_429c8707ef7c6be23dd135a3f9f3d279_.json",
+      "logicalPath": "crm_dxhub_resources/widgets/Faqs/faq2.json",
+      "fileName": "faq2.json",
+      "ext": "json",
+      "category": "crm_dxhub_resources",
+      "subCategory": "widgets/Faqs",
+      "hash": "429c8707ef7c6be23dd135a3f9f3d279"
+    },
+    {
+      "url": "/crm_dxhub_resources/widgets/Faqs/faq2_0fa4038b828ca408ea01d236d2732b15_.md",
+      "logicalPath": "crm_dxhub_resources/widgets/Faqs/faq2.md",
+      "fileName": "faq2.md",
+      "ext": "md",
+      "category": "crm_dxhub_resources",
+      "subCategory": "widgets/Faqs",
+      "hash": "0fa4038b828ca408ea01d236d2732b15"
+    },
+    {
+      "url": "/crm_dxhub_resources/widgets/Faqs/faq3_429c8707ef7c6be23dd135a3f9f3d279_.json",
+      "logicalPath": "crm_dxhub_resources/widgets/Faqs/faq3.json",
+      "fileName": "faq3.json",
+      "ext": "json",
+      "category": "crm_dxhub_resources",
+      "subCategory": "widgets/Faqs",
+      "hash": "429c8707ef7c6be23dd135a3f9f3d279"
+    },
+    {
+      "url": "/crm_dxhub_resources/widgets/Faqs/faq3_3edc6ff973eae5c6e1cc8affed8464c0_.md",
+      "logicalPath": "crm_dxhub_resources/widgets/Faqs/faq3.md",
+      "fileName": "faq3.md",
+      "ext": "md",
+      "category": "crm_dxhub_resources",
+      "subCategory": "widgets/Faqs",
+      "hash": "3edc6ff973eae5c6e1cc8affed8464c0"
+    },
+    {
+      "url": "/crm_dxhub_resources/widgets/Faqs/faq4_429c8707ef7c6be23dd135a3f9f3d279_.json",
+      "logicalPath": "crm_dxhub_resources/widgets/Faqs/faq4.json",
+      "fileName": "faq4.json",
+      "ext": "json",
+      "category": "crm_dxhub_resources",
+      "subCategory": "widgets/Faqs",
+      "hash": "429c8707ef7c6be23dd135a3f9f3d279"
+    },
+    {
+      "url": "/crm_dxhub_resources/widgets/Faqs/faq4_c2ee4a550c21ae18f232f90070e4014c_.md",
+      "logicalPath": "crm_dxhub_resources/widgets/Faqs/faq4.md",
+      "fileName": "faq4.md",
+      "ext": "md",
+      "category": "crm_dxhub_resources",
+      "subCategory": "widgets/Faqs",
+      "hash": "c2ee4a550c21ae18f232f90070e4014c"
+    },
+    {
+      "url": "/crm_dxhub_resources/widgets/Faqs/faq5_4b76f7c4da1da3d9f56157eb70029582_.json",
+      "logicalPath": "crm_dxhub_resources/widgets/Faqs/faq5.json",
+      "fileName": "faq5.json",
+      "ext": "json",
+      "category": "crm_dxhub_resources",
+      "subCategory": "widgets/Faqs",
+      "hash": "4b76f7c4da1da3d9f56157eb70029582"
+    },
+    {
+      "url": "/crm_dxhub_resources/widgets/Faqs/faq5_f84f37c386c46e1231367d28431feb96_.md",
+      "logicalPath": "crm_dxhub_resources/widgets/Faqs/faq5.md",
+      "fileName": "faq5.md",
+      "ext": "md",
+      "category": "crm_dxhub_resources",
+      "subCategory": "widgets/Faqs",
+      "hash": "f84f37c386c46e1231367d28431feb96"
+    },
+    {
+      "url": "/crm_dxhub_resources/widgets/Faqs/faq6_429c8707ef7c6be23dd135a3f9f3d279_.json",
+      "logicalPath": "crm_dxhub_resources/widgets/Faqs/faq6.json",
+      "fileName": "faq6.json",
+      "ext": "json",
+      "category": "crm_dxhub_resources",
+      "subCategory": "widgets/Faqs",
+      "hash": "429c8707ef7c6be23dd135a3f9f3d279"
+    },
+    {
+      "url": "/crm_dxhub_resources/widgets/Faqs/faq6_82f82588b9efc81fc7d3004423e209b2_.md",
+      "logicalPath": "crm_dxhub_resources/widgets/Faqs/faq6.md",
+      "fileName": "faq6.md",
+      "ext": "md",
+      "category": "crm_dxhub_resources",
+      "subCategory": "widgets/Faqs",
+      "hash": "82f82588b9efc81fc7d3004423e209b2"
+    },
+    {
+      "url": "/crm_dxhub_resources/widgets/Faqs/faq7_429c8707ef7c6be23dd135a3f9f3d279_.json",
+      "logicalPath": "crm_dxhub_resources/widgets/Faqs/faq7.json",
+      "fileName": "faq7.json",
+      "ext": "json",
+      "category": "crm_dxhub_resources",
+      "subCategory": "widgets/Faqs",
+      "hash": "429c8707ef7c6be23dd135a3f9f3d279"
+    },
+    {
+      "url": "/crm_dxhub_resources/widgets/Faqs/faq7_57ea44652d35e78c5b488451a102068f_.md",
+      "logicalPath": "crm_dxhub_resources/widgets/Faqs/faq7.md",
+      "fileName": "faq7.md",
+      "ext": "md",
+      "category": "crm_dxhub_resources",
+      "subCategory": "widgets/Faqs",
+      "hash": "57ea44652d35e78c5b488451a102068f"
+    },
+    {
+      "url": "/crm_dxhub_resources/widgets/Faqs/faq8_ff23416291bc4c05045f305594e227b2_.json",
+      "logicalPath": "crm_dxhub_resources/widgets/Faqs/faq8.json",
+      "fileName": "faq8.json",
+      "ext": "json",
+      "category": "crm_dxhub_resources",
+      "subCategory": "widgets/Faqs",
+      "hash": "ff23416291bc4c05045f305594e227b2"
+    },
+    {
+      "url": "/crm_dxhub_resources/widgets/Faqs/faq8_4a38a5b435eb453c6d22db153d3ed7a5_.md",
+      "logicalPath": "crm_dxhub_resources/widgets/Faqs/faq8.md",
+      "fileName": "faq8.md",
+      "ext": "md",
+      "category": "crm_dxhub_resources",
+      "subCategory": "widgets/Faqs",
+      "hash": "4a38a5b435eb453c6d22db153d3ed7a5"
+    },
+    {
+      "url": "/crm_dxhub_resources/widgets/Faqs/faq9_429c8707ef7c6be23dd135a3f9f3d279_.json",
+      "logicalPath": "crm_dxhub_resources/widgets/Faqs/faq9.json",
+      "fileName": "faq9.json",
+      "ext": "json",
+      "category": "crm_dxhub_resources",
+      "subCategory": "widgets/Faqs",
+      "hash": "429c8707ef7c6be23dd135a3f9f3d279"
+    },
+    {
+      "url": "/crm_dxhub_resources/widgets/Faqs/faq9_ef149e86e37680b42ccf95c66e8e95f3_.md",
+      "logicalPath": "crm_dxhub_resources/widgets/Faqs/faq9.md",
+      "fileName": "faq9.md",
+      "ext": "md",
+      "category": "crm_dxhub_resources",
+      "subCategory": "widgets/Faqs",
+      "hash": "ef149e86e37680b42ccf95c66e8e95f3"
+    },
+    {
+      "url": "/crm_dxhub_resources/widgets/Samples/custom-button-widget/custom-button-widget/app/translations/en_8a80554c91d9fca8acb82f023de02f11_.json",
+      "logicalPath": "crm_dxhub_resources/widgets/Samples/custom-button-widget/custom-button-widget/app/translations/en.json",
+      "fileName": "en.json",
+      "ext": "json",
+      "category": "crm_dxhub_resources",
+      "subCategory": "widgets/Samples/custom-button-widget/custom-button-widget/app/translations",
+      "hash": "8a80554c91d9fca8acb82f023de02f11"
+    },
+    {
+      "url": "/crm_dxhub_resources/widgets/Samples/custom-button-widget/custom-button-widget/app/twilio_a052691669aaedd7b14a098edfe698ba_.js",
+      "logicalPath": "crm_dxhub_resources/widgets/Samples/custom-button-widget/custom-button-widget/app/twilio.js",
+      "fileName": "twilio.js",
+      "ext": "js",
+      "category": "crm_dxhub_resources",
+      "subCategory": "widgets/Samples/custom-button-widget/custom-button-widget/app",
+      "hash": "a052691669aaedd7b14a098edfe698ba"
+    },
+    {
+      "url": "/crm_dxhub_resources/widgets/Samples/custom-button-widget/custom-button-widget/app/widget_00d5f96f699b76aeb46d2082a8ec6593_.html",
+      "logicalPath": "crm_dxhub_resources/widgets/Samples/custom-button-widget/custom-button-widget/app/widget.html",
+      "fileName": "widget.html",
+      "ext": "html",
+      "category": "crm_dxhub_resources",
+      "subCategory": "widgets/Samples/custom-button-widget/custom-button-widget/app",
+      "hash": "00d5f96f699b76aeb46d2082a8ec6593"
+    },
+    {
+      "url": "/crm_dxhub_resources/widgets/Samples/custom-button-widget/custom-button-widget_a3f0d7356dfe2d0977aee52f5ba44d28_.json",
+      "logicalPath": "crm_dxhub_resources/widgets/Samples/custom-button-widget/custom-button-widget.json",
+      "fileName": "custom-button-widget.json",
+      "ext": "json",
+      "category": "crm_dxhub_resources",
+      "subCategory": "widgets/Samples/custom-button-widget",
+      "hash": "a3f0d7356dfe2d0977aee52f5ba44d28"
+    },
+    {
+      "url": "/crm_dxhub_resources/widgets/Samples/custom-button-widget/custom-button-widget_1ac9e9ba5f35b11c5ff7ab5f73526810_.md",
+      "logicalPath": "crm_dxhub_resources/widgets/Samples/custom-button-widget/custom-button-widget.md",
+      "fileName": "custom-button-widget.md",
+      "ext": "md",
+      "category": "crm_dxhub_resources",
+      "subCategory": "widgets/Samples/custom-button-widget",
+      "hash": "1ac9e9ba5f35b11c5ff7ab5f73526810"
+    },
+    {
+      "url": "/crm_dxhub_resources/widgets/Samples/custom-button-widget/custom-button-widget_935521866ebbcef6ed223eb0080f69ac_.zip",
+      "logicalPath": "crm_dxhub_resources/widgets/Samples/custom-button-widget/custom-button-widget.zip",
+      "fileName": "custom-button-widget.zip",
+      "ext": "zip",
+      "category": "crm_dxhub_resources",
+      "subCategory": "widgets/Samples/custom-button-widget",
+      "hash": "935521866ebbcef6ed223eb0080f69ac"
+    },
+    {
+      "url": "/crm_dxhub_resources/widgets/Samples/custom-button-widget/custom-button-widget_explorer_7f4b9a4b760be47c8adac30f1bff8443_.json",
+      "logicalPath": "crm_dxhub_resources/widgets/Samples/custom-button-widget/custom-button-widget_explorer.json",
+      "fileName": "custom-button-widget_explorer.json",
+      "ext": "json",
+      "category": "crm_dxhub_resources",
+      "subCategory": "widgets/Samples/custom-button-widget",
+      "hash": "7f4b9a4b760be47c8adac30f1bff8443"
+    },
+    {
+      "url": "/crm_dxhub_resources/widgets/Samples/dashboard-blogs/dashboard-blogs-widget/app/translations/en_8a80554c91d9fca8acb82f023de02f11_.json",
+      "logicalPath": "crm_dxhub_resources/widgets/Samples/dashboard-blogs/dashboard-blogs-widget/app/translations/en.json",
+      "fileName": "en.json",
+      "ext": "json",
+      "category": "crm_dxhub_resources",
+      "subCategory": "widgets/Samples/dashboard-blogs/dashboard-blogs-widget/app/translations",
+      "hash": "8a80554c91d9fca8acb82f023de02f11"
+    },
+    {
+      "url": "/crm_dxhub_resources/widgets/Samples/dashboard-blogs/dashboard-blogs-widget/app/widget_72c70257deb41e88c49260750e8c5d0d_.html",
+      "logicalPath": "crm_dxhub_resources/widgets/Samples/dashboard-blogs/dashboard-blogs-widget/app/widget.html",
+      "fileName": "widget.html",
+      "ext": "html",
+      "category": "crm_dxhub_resources",
+      "subCategory": "widgets/Samples/dashboard-blogs/dashboard-blogs-widget/app",
+      "hash": "72c70257deb41e88c49260750e8c5d0d"
+    },
+    {
+      "url": "/crm_dxhub_resources/widgets/Samples/dashboard-blogs/dashboard-blogs-widget_ebd309fab40c2b79872ac15b7b3daf0c_.zip",
+      "logicalPath": "crm_dxhub_resources/widgets/Samples/dashboard-blogs/dashboard-blogs-widget.zip",
+      "fileName": "dashboard-blogs-widget.zip",
+      "ext": "zip",
+      "category": "crm_dxhub_resources",
+      "subCategory": "widgets/Samples/dashboard-blogs",
+      "hash": "ebd309fab40c2b79872ac15b7b3daf0c"
+    },
+    {
+      "url": "/crm_dxhub_resources/widgets/Samples/dashboard-blogs/dashboard-blogs-widget_explorer_c99fa53621157a29c9c25c643747e81c_.json",
+      "logicalPath": "crm_dxhub_resources/widgets/Samples/dashboard-blogs/dashboard-blogs-widget_explorer.json",
+      "fileName": "dashboard-blogs-widget_explorer.json",
+      "ext": "json",
+      "category": "crm_dxhub_resources",
+      "subCategory": "widgets/Samples/dashboard-blogs",
+      "hash": "c99fa53621157a29c9c25c643747e81c"
+    },
+    {
+      "url": "/crm_dxhub_resources/widgets/Samples/dashboard-blogs/dashboard-blogs_25875b32d0e550ea1207936812c2889a_.json",
+      "logicalPath": "crm_dxhub_resources/widgets/Samples/dashboard-blogs/dashboard-blogs.json",
+      "fileName": "dashboard-blogs.json",
+      "ext": "json",
+      "category": "crm_dxhub_resources",
+      "subCategory": "widgets/Samples/dashboard-blogs",
+      "hash": "25875b32d0e550ea1207936812c2889a"
+    },
+    {
+      "url": "/crm_dxhub_resources/widgets/Samples/dashboard-blogs/dashboard-blogs_637c6adbe8776ad4dafe31cbb34ce65c_.md",
+      "logicalPath": "crm_dxhub_resources/widgets/Samples/dashboard-blogs/dashboard-blogs.md",
+      "fileName": "dashboard-blogs.md",
+      "ext": "md",
+      "category": "crm_dxhub_resources",
+      "subCategory": "widgets/Samples/dashboard-blogs",
+      "hash": "637c6adbe8776ad4dafe31cbb34ce65c"
+    },
+    {
+      "url": "/crm_dxhub_resources/widgets/Samples/desk-details-zrc/desk-details-zrc_b8e7bb5832da485040f2bdb8d01c7043_.json",
+      "logicalPath": "crm_dxhub_resources/widgets/Samples/desk-details-zrc/desk-details-zrc.json",
+      "fileName": "desk-details-zrc.json",
+      "ext": "json",
+      "category": "crm_dxhub_resources",
+      "subCategory": "widgets/Samples/desk-details-zrc",
+      "hash": "b8e7bb5832da485040f2bdb8d01c7043"
+    },
+    {
+      "url": "/crm_dxhub_resources/widgets/Samples/desk-details-zrc/desk-details-zrc_400093b35147a1fa6dee2b84762324c8_.md",
+      "logicalPath": "crm_dxhub_resources/widgets/Samples/desk-details-zrc/desk-details-zrc.md",
+      "fileName": "desk-details-zrc.md",
+      "ext": "md",
+      "category": "crm_dxhub_resources",
+      "subCategory": "widgets/Samples/desk-details-zrc",
+      "hash": "400093b35147a1fa6dee2b84762324c8"
+    },
+    {
+      "url": "/crm_dxhub_resources/widgets/Samples/desk-details-zrc/deskdetailszrc-new/app/translations/en_8a80554c91d9fca8acb82f023de02f11_.json",
+      "logicalPath": "crm_dxhub_resources/widgets/Samples/desk-details-zrc/deskdetailszrc-new/app/translations/en.json",
+      "fileName": "en.json",
+      "ext": "json",
+      "category": "crm_dxhub_resources",
+      "subCategory": "widgets/Samples/desk-details-zrc/deskdetailszrc-new/app/translations",
+      "hash": "8a80554c91d9fca8acb82f023de02f11"
+    },
+    {
+      "url": "/crm_dxhub_resources/widgets/Samples/desk-details-zrc/deskdetailszrc-new/app/widget_6046a38bd292c285f3001f47a86871a8_.html",
+      "logicalPath": "crm_dxhub_resources/widgets/Samples/desk-details-zrc/deskdetailszrc-new/app/widget.html",
+      "fileName": "widget.html",
+      "ext": "html",
+      "category": "crm_dxhub_resources",
+      "subCategory": "widgets/Samples/desk-details-zrc/deskdetailszrc-new/app",
+      "hash": "6046a38bd292c285f3001f47a86871a8"
+    },
+    {
+      "url": "/crm_dxhub_resources/widgets/Samples/desk-details-zrc/deskdetailszrc-new_fe8d0220589939e1c707cca0dac5f709_.zip",
+      "logicalPath": "crm_dxhub_resources/widgets/Samples/desk-details-zrc/deskdetailszrc-new.zip",
+      "fileName": "deskdetailszrc-new.zip",
+      "ext": "zip",
+      "category": "crm_dxhub_resources",
+      "subCategory": "widgets/Samples/desk-details-zrc",
+      "hash": "fe8d0220589939e1c707cca0dac5f709"
+    },
+    {
+      "url": "/crm_dxhub_resources/widgets/Samples/desk-details-zrc/deskdetailszrc-new_explorer_710adbd42444a72ae1859ce05cda838d_.json",
+      "logicalPath": "crm_dxhub_resources/widgets/Samples/desk-details-zrc/deskdetailszrc-new_explorer.json",
+      "fileName": "deskdetailszrc-new_explorer.json",
+      "ext": "json",
+      "category": "crm_dxhub_resources",
+      "subCategory": "widgets/Samples/desk-details-zrc",
+      "hash": "710adbd42444a72ae1859ce05cda838d"
+    },
+    {
+      "url": "/crm_dxhub_resources/widgets/Samples/end-to-end-embeddedapp_922e59abc6a8959037e80aea78cfe2cd_.json",
+      "logicalPath": "crm_dxhub_resources/widgets/Samples/end-to-end-embeddedapp.json",
+      "fileName": "end-to-end-embeddedapp.json",
+      "ext": "json",
+      "category": "crm_dxhub_resources",
+      "subCategory": "widgets/Samples",
+      "hash": "922e59abc6a8959037e80aea78cfe2cd"
+    },
+    {
+      "url": "/crm_dxhub_resources/widgets/Samples/end-to-end-embeddedapp_7954f93f834ab5c8b1b838115b82a514_.md",
+      "logicalPath": "crm_dxhub_resources/widgets/Samples/end-to-end-embeddedapp.md",
+      "fileName": "end-to-end-embeddedapp.md",
+      "ext": "md",
+      "category": "crm_dxhub_resources",
+      "subCategory": "widgets/Samples",
+      "hash": "7954f93f834ab5c8b1b838115b82a514"
+    },
+    {
+      "url": "/crm_dxhub_resources/widgets/Samples/full-embeded-with-upload_b80184c1123453b0ef0d5aa0ba34a791_.json",
+      "logicalPath": "crm_dxhub_resources/widgets/Samples/full-embeded-with-upload.json",
+      "fileName": "full-embeded-with-upload.json",
+      "ext": "json",
+      "category": "crm_dxhub_resources",
+      "subCategory": "widgets/Samples",
+      "hash": "b80184c1123453b0ef0d5aa0ba34a791"
+    },
+    {
+      "url": "/crm_dxhub_resources/widgets/Samples/full-embeded-with-upload_44d8c6f7faff366644cf985c0d70d9ef_.md",
+      "logicalPath": "crm_dxhub_resources/widgets/Samples/full-embeded-with-upload.md",
+      "fileName": "full-embeded-with-upload.md",
+      "ext": "md",
+      "category": "crm_dxhub_resources",
+      "subCategory": "widgets/Samples",
+      "hash": "44d8c6f7faff366644cf985c0d70d9ef"
+    },
+    {
+      "url": "/crm_dxhub_resources/widgets/Samples/mandate-subform-in-blueprint/mandate-subform/app/data-collection_df642f34a6743ba63497fe0a3dda09b8_.png",
+      "logicalPath": "crm_dxhub_resources/widgets/Samples/mandate-subform-in-blueprint/mandate-subform/app/data-collection.png",
+      "fileName": "data-collection.png",
+      "ext": "png",
+      "category": "crm_dxhub_resources",
+      "subCategory": "widgets/Samples/mandate-subform-in-blueprint/mandate-subform/app",
+      "hash": "df642f34a6743ba63497fe0a3dda09b8"
+    },
+    {
+      "url": "/crm_dxhub_resources/widgets/Samples/mandate-subform-in-blueprint/mandate-subform/app/translations/en_8a80554c91d9fca8acb82f023de02f11_.json",
+      "logicalPath": "crm_dxhub_resources/widgets/Samples/mandate-subform-in-blueprint/mandate-subform/app/translations/en.json",
+      "fileName": "en.json",
+      "ext": "json",
+      "category": "crm_dxhub_resources",
+      "subCategory": "widgets/Samples/mandate-subform-in-blueprint/mandate-subform/app/translations",
+      "hash": "8a80554c91d9fca8acb82f023de02f11"
+    },
+    {
+      "url": "/crm_dxhub_resources/widgets/Samples/mandate-subform-in-blueprint/mandate-subform/app/widget_bc56bb5f2a99314a50f9d60c0b1a08ef_.css",
+      "logicalPath": "crm_dxhub_resources/widgets/Samples/mandate-subform-in-blueprint/mandate-subform/app/widget.css",
+      "fileName": "widget.css",
+      "ext": "css",
+      "category": "crm_dxhub_resources",
+      "subCategory": "widgets/Samples/mandate-subform-in-blueprint/mandate-subform/app",
+      "hash": "bc56bb5f2a99314a50f9d60c0b1a08ef"
+    },
+    {
+      "url": "/crm_dxhub_resources/widgets/Samples/mandate-subform-in-blueprint/mandate-subform/app/widget_970ebc7fcb2fce9814e4c134039a6bee_.html",
+      "logicalPath": "crm_dxhub_resources/widgets/Samples/mandate-subform-in-blueprint/mandate-subform/app/widget.html",
+      "fileName": "widget.html",
+      "ext": "html",
+      "category": "crm_dxhub_resources",
+      "subCategory": "widgets/Samples/mandate-subform-in-blueprint/mandate-subform/app",
+      "hash": "970ebc7fcb2fce9814e4c134039a6bee"
+    },
+    {
+      "url": "/crm_dxhub_resources/widgets/Samples/mandate-subform-in-blueprint/mandate-subform/app/widget_cb97b0df11d8b3dccc1469a1943617ab_.js",
+      "logicalPath": "crm_dxhub_resources/widgets/Samples/mandate-subform-in-blueprint/mandate-subform/app/widget.js",
+      "fileName": "widget.js",
+      "ext": "js",
+      "category": "crm_dxhub_resources",
+      "subCategory": "widgets/Samples/mandate-subform-in-blueprint/mandate-subform/app",
+      "hash": "cb97b0df11d8b3dccc1469a1943617ab"
+    },
+    {
+      "url": "/crm_dxhub_resources/widgets/Samples/mandate-subform-in-blueprint/mandate-subform-in-blueprint_fd1c6f9cedcf310c6ed9b5b852c86de9_.json",
+      "logicalPath": "crm_dxhub_resources/widgets/Samples/mandate-subform-in-blueprint/mandate-subform-in-blueprint.json",
+      "fileName": "mandate-subform-in-blueprint.json",
+      "ext": "json",
+      "category": "crm_dxhub_resources",
+      "subCategory": "widgets/Samples/mandate-subform-in-blueprint",
+      "hash": "fd1c6f9cedcf310c6ed9b5b852c86de9"
+    },
+    {
+      "url": "/crm_dxhub_resources/widgets/Samples/mandate-subform-in-blueprint/mandate-subform-in-blueprint_c9b6f9313c1ad2fda4fd07dd7018436e_.md",
+      "logicalPath": "crm_dxhub_resources/widgets/Samples/mandate-subform-in-blueprint/mandate-subform-in-blueprint.md",
+      "fileName": "mandate-subform-in-blueprint.md",
+      "ext": "md",
+      "category": "crm_dxhub_resources",
+      "subCategory": "widgets/Samples/mandate-subform-in-blueprint",
+      "hash": "c9b6f9313c1ad2fda4fd07dd7018436e"
+    },
+    {
+      "url": "/crm_dxhub_resources/widgets/Samples/mandate-subform-in-blueprint/mandate-subform_846d57dfcc851b4026592697bf145f94_.zip",
+      "logicalPath": "crm_dxhub_resources/widgets/Samples/mandate-subform-in-blueprint/mandate-subform.zip",
+      "fileName": "mandate-subform.zip",
+      "ext": "zip",
+      "category": "crm_dxhub_resources",
+      "subCategory": "widgets/Samples/mandate-subform-in-blueprint",
+      "hash": "846d57dfcc851b4026592697bf145f94"
+    },
+    {
+      "url": "/crm_dxhub_resources/widgets/Samples/mandate-subform-in-blueprint/mandate-subform_explorer_5a5056ac27e8ea277b45d5488c258795_.json",
+      "logicalPath": "crm_dxhub_resources/widgets/Samples/mandate-subform-in-blueprint/mandate-subform_explorer.json",
+      "fileName": "mandate-subform_explorer.json",
+      "ext": "json",
+      "category": "crm_dxhub_resources",
+      "subCategory": "widgets/Samples/mandate-subform-in-blueprint",
+      "hash": "5a5056ac27e8ea277b45d5488c258795"
+    },
+    {
+      "url": "/crm_dxhub_resources/widgets/Samples/map-in-related-list/map-in-related-list/app/translations/en_8a80554c91d9fca8acb82f023de02f11_.json",
+      "logicalPath": "crm_dxhub_resources/widgets/Samples/map-in-related-list/map-in-related-list/app/translations/en.json",
+      "fileName": "en.json",
+      "ext": "json",
+      "category": "crm_dxhub_resources",
+      "subCategory": "widgets/Samples/map-in-related-list/map-in-related-list/app/translations",
+      "hash": "8a80554c91d9fca8acb82f023de02f11"
+    },
+    {
+      "url": "/crm_dxhub_resources/widgets/Samples/map-in-related-list/map-in-related-list/app/widget_a80b662c75ac7fa02eeed8ab3fda39b1_.html",
+      "logicalPath": "crm_dxhub_resources/widgets/Samples/map-in-related-list/map-in-related-list/app/widget.html",
+      "fileName": "widget.html",
+      "ext": "html",
+      "category": "crm_dxhub_resources",
+      "subCategory": "widgets/Samples/map-in-related-list/map-in-related-list/app",
+      "hash": "a80b662c75ac7fa02eeed8ab3fda39b1"
+    },
+    {
+      "url": "/crm_dxhub_resources/widgets/Samples/map-in-related-list/map-in-related-list_8bde6e5a8902dbe954f5d48a95016ae6_.json",
+      "logicalPath": "crm_dxhub_resources/widgets/Samples/map-in-related-list/map-in-related-list.json",
+      "fileName": "map-in-related-list.json",
+      "ext": "json",
+      "category": "crm_dxhub_resources",
+      "subCategory": "widgets/Samples/map-in-related-list",
+      "hash": "8bde6e5a8902dbe954f5d48a95016ae6"
+    },
+    {
+      "url": "/crm_dxhub_resources/widgets/Samples/map-in-related-list/map-in-related-list_0f82a7a86adc6c1ca0ed2e2b73c0c030_.md",
+      "logicalPath": "crm_dxhub_resources/widgets/Samples/map-in-related-list/map-in-related-list.md",
+      "fileName": "map-in-related-list.md",
+      "ext": "md",
+      "category": "crm_dxhub_resources",
+      "subCategory": "widgets/Samples/map-in-related-list",
+      "hash": "0f82a7a86adc6c1ca0ed2e2b73c0c030"
+    },
+    {
+      "url": "/crm_dxhub_resources/widgets/Samples/map-in-related-list/map-in-related-list_3c754f57b24957086b0e71dd92dfec84_.zip",
+      "logicalPath": "crm_dxhub_resources/widgets/Samples/map-in-related-list/map-in-related-list.zip",
+      "fileName": "map-in-related-list.zip",
+      "ext": "zip",
+      "category": "crm_dxhub_resources",
+      "subCategory": "widgets/Samples/map-in-related-list",
+      "hash": "3c754f57b24957086b0e71dd92dfec84"
+    },
+    {
+      "url": "/crm_dxhub_resources/widgets/Samples/map-in-related-list/map-in-related-list_explorer_9774b6af86fa139cda9256840b88d082_.json",
+      "logicalPath": "crm_dxhub_resources/widgets/Samples/map-in-related-list/map-in-related-list_explorer.json",
+      "fileName": "map-in-related-list_explorer.json",
+      "ext": "json",
+      "category": "crm_dxhub_resources",
+      "subCategory": "widgets/Samples/map-in-related-list",
+      "hash": "9774b6af86fa139cda9256840b88d082"
+    },
+    {
+      "url": "/crm_dxhub_resources/widgets/Samples/timer-widget/timer-widget/app/translations/en_8a80554c91d9fca8acb82f023de02f11_.json",
+      "logicalPath": "crm_dxhub_resources/widgets/Samples/timer-widget/timer-widget/app/translations/en.json",
+      "fileName": "en.json",
+      "ext": "json",
+      "category": "crm_dxhub_resources",
+      "subCategory": "widgets/Samples/timer-widget/timer-widget/app/translations",
+      "hash": "8a80554c91d9fca8acb82f023de02f11"
+    },
+    {
+      "url": "/crm_dxhub_resources/widgets/Samples/timer-widget/timer-widget/app/widget_8dcbe5d588a1c6e18c55f7152cd53424_.html",
+      "logicalPath": "crm_dxhub_resources/widgets/Samples/timer-widget/timer-widget/app/widget.html",
+      "fileName": "widget.html",
+      "ext": "html",
+      "category": "crm_dxhub_resources",
+      "subCategory": "widgets/Samples/timer-widget/timer-widget/app",
+      "hash": "8dcbe5d588a1c6e18c55f7152cd53424"
+    },
+    {
+      "url": "/crm_dxhub_resources/widgets/Samples/timer-widget/timer-widget_bfe569a25e53c11cbd22908a6d8c9454_.json",
+      "logicalPath": "crm_dxhub_resources/widgets/Samples/timer-widget/timer-widget.json",
+      "fileName": "timer-widget.json",
+      "ext": "json",
+      "category": "crm_dxhub_resources",
+      "subCategory": "widgets/Samples/timer-widget",
+      "hash": "bfe569a25e53c11cbd22908a6d8c9454"
+    },
+    {
+      "url": "/crm_dxhub_resources/widgets/Samples/timer-widget/timer-widget_5b6bfa747c11b739b94a4f07459f82da_.md",
+      "logicalPath": "crm_dxhub_resources/widgets/Samples/timer-widget/timer-widget.md",
+      "fileName": "timer-widget.md",
+      "ext": "md",
+      "category": "crm_dxhub_resources",
+      "subCategory": "widgets/Samples/timer-widget",
+      "hash": "5b6bfa747c11b739b94a4f07459f82da"
+    },
+    {
+      "url": "/crm_dxhub_resources/widgets/Samples/timer-widget/timer-widget_432a40288e9a8b0a12d957228bae2323_.zip",
+      "logicalPath": "crm_dxhub_resources/widgets/Samples/timer-widget/timer-widget.zip",
+      "fileName": "timer-widget.zip",
+      "ext": "zip",
+      "category": "crm_dxhub_resources",
+      "subCategory": "widgets/Samples/timer-widget",
+      "hash": "432a40288e9a8b0a12d957228bae2323"
+    },
+    {
+      "url": "/crm_dxhub_resources/widgets/Samples/timer-widget/timer-widget_explorer_7cda5bb2f1bc55e7b65822331fec69ec_.json",
+      "logicalPath": "crm_dxhub_resources/widgets/Samples/timer-widget/timer-widget_explorer.json",
+      "fileName": "timer-widget_explorer.json",
+      "ext": "json",
+      "category": "crm_dxhub_resources",
+      "subCategory": "widgets/Samples/timer-widget",
+      "hash": "7cda5bb2f1bc55e7b65822331fec69ec"
+    },
+    {
+      "url": "/crm_dxhub_resources/widgets/Samples/widget-in-blueprint/widget-in-blueprint/app/index_c5a6b2d8d3010ca69bea1512b541e37d_.css",
+      "logicalPath": "crm_dxhub_resources/widgets/Samples/widget-in-blueprint/widget-in-blueprint/app/index.css",
+      "fileName": "index.css",
+      "ext": "css",
+      "category": "crm_dxhub_resources",
+      "subCategory": "widgets/Samples/widget-in-blueprint/widget-in-blueprint/app",
+      "hash": "c5a6b2d8d3010ca69bea1512b541e37d"
+    },
+    {
+      "url": "/crm_dxhub_resources/widgets/Samples/widget-in-blueprint/widget-in-blueprint/app/index_053a538bf61d7b5a234e69b4bc9645bc_.html",
+      "logicalPath": "crm_dxhub_resources/widgets/Samples/widget-in-blueprint/widget-in-blueprint/app/index.html",
+      "fileName": "index.html",
+      "ext": "html",
+      "category": "crm_dxhub_resources",
+      "subCategory": "widgets/Samples/widget-in-blueprint/widget-in-blueprint/app",
+      "hash": "053a538bf61d7b5a234e69b4bc9645bc"
+    },
+    {
+      "url": "/crm_dxhub_resources/widgets/Samples/widget-in-blueprint/widget-in-blueprint/app/index_021d351620e402c58550ac8a266c4655_.js",
+      "logicalPath": "crm_dxhub_resources/widgets/Samples/widget-in-blueprint/widget-in-blueprint/app/index.js",
+      "fileName": "index.js",
+      "ext": "js",
+      "category": "crm_dxhub_resources",
+      "subCategory": "widgets/Samples/widget-in-blueprint/widget-in-blueprint/app",
+      "hash": "021d351620e402c58550ac8a266c4655"
+    },
+    {
+      "url": "/crm_dxhub_resources/widgets/Samples/widget-in-blueprint/widget-in-blueprint/app/translations/en_8a80554c91d9fca8acb82f023de02f11_.json",
+      "logicalPath": "crm_dxhub_resources/widgets/Samples/widget-in-blueprint/widget-in-blueprint/app/translations/en.json",
+      "fileName": "en.json",
+      "ext": "json",
+      "category": "crm_dxhub_resources",
+      "subCategory": "widgets/Samples/widget-in-blueprint/widget-in-blueprint/app/translations",
+      "hash": "8a80554c91d9fca8acb82f023de02f11"
+    },
+    {
+      "url": "/crm_dxhub_resources/widgets/Samples/widget-in-blueprint/widget-in-blueprint_b1e56c797096426bb87a4afa10677425_.json",
+      "logicalPath": "crm_dxhub_resources/widgets/Samples/widget-in-blueprint/widget-in-blueprint.json",
+      "fileName": "widget-in-blueprint.json",
+      "ext": "json",
+      "category": "crm_dxhub_resources",
+      "subCategory": "widgets/Samples/widget-in-blueprint",
+      "hash": "b1e56c797096426bb87a4afa10677425"
+    },
+    {
+      "url": "/crm_dxhub_resources/widgets/Samples/widget-in-blueprint/widget-in-blueprint_21341a108b0d66f10b92561e42425a53_.md",
+      "logicalPath": "crm_dxhub_resources/widgets/Samples/widget-in-blueprint/widget-in-blueprint.md",
+      "fileName": "widget-in-blueprint.md",
+      "ext": "md",
+      "category": "crm_dxhub_resources",
+      "subCategory": "widgets/Samples/widget-in-blueprint",
+      "hash": "21341a108b0d66f10b92561e42425a53"
+    },
+    {
+      "url": "/crm_dxhub_resources/widgets/Samples/widget-in-blueprint/widget-in-blueprint_0ba57c5be3feabe3694c6fcfaa582551_.zip",
+      "logicalPath": "crm_dxhub_resources/widgets/Samples/widget-in-blueprint/widget-in-blueprint.zip",
+      "fileName": "widget-in-blueprint.zip",
+      "ext": "zip",
+      "category": "crm_dxhub_resources",
+      "subCategory": "widgets/Samples/widget-in-blueprint",
+      "hash": "0ba57c5be3feabe3694c6fcfaa582551"
+    },
+    {
+      "url": "/crm_dxhub_resources/widgets/Samples/widget-in-blueprint/widget-in-blueprint_explorer_3ae6a7f7a47766568fc606d9e605e288_.json",
+      "logicalPath": "crm_dxhub_resources/widgets/Samples/widget-in-blueprint/widget-in-blueprint_explorer.json",
+      "fileName": "widget-in-blueprint_explorer.json",
+      "ext": "json",
+      "category": "crm_dxhub_resources",
+      "subCategory": "widgets/Samples/widget-in-blueprint",
+      "hash": "3ae6a7f7a47766568fc606d9e605e288"
+    },
+    {
+      "url": "/crm_dxhub_resources/widgets/Samples/widget-in-pop-up/widget-in-pop-up/app/images/svgicons_86ef32fc12cbcfe58185037a2dfb6b9d_.svg",
+      "logicalPath": "crm_dxhub_resources/widgets/Samples/widget-in-pop-up/widget-in-pop-up/app/images/svgicons.svg",
+      "fileName": "svgicons.svg",
+      "ext": "svg",
+      "category": "crm_dxhub_resources",
+      "subCategory": "widgets/Samples/widget-in-pop-up/widget-in-pop-up/app/images",
+      "hash": "86ef32fc12cbcfe58185037a2dfb6b9d"
+    },
+    {
+      "url": "/crm_dxhub_resources/widgets/Samples/widget-in-pop-up/widget-in-pop-up/app/script/script_4c8e9bd9d8b19695c048d910cf33ce86_.js",
+      "logicalPath": "crm_dxhub_resources/widgets/Samples/widget-in-pop-up/widget-in-pop-up/app/script/script.js",
+      "fileName": "script.js",
+      "ext": "js",
+      "category": "crm_dxhub_resources",
+      "subCategory": "widgets/Samples/widget-in-pop-up/widget-in-pop-up/app/script",
+      "hash": "4c8e9bd9d8b19695c048d910cf33ce86"
+    },
+    {
+      "url": "/crm_dxhub_resources/widgets/Samples/widget-in-pop-up/widget-in-pop-up/app/styles/style_617610da31d4b49684da25675dfa3f21_.css",
+      "logicalPath": "crm_dxhub_resources/widgets/Samples/widget-in-pop-up/widget-in-pop-up/app/styles/style.css",
+      "fileName": "style.css",
+      "ext": "css",
+      "category": "crm_dxhub_resources",
+      "subCategory": "widgets/Samples/widget-in-pop-up/widget-in-pop-up/app/styles",
+      "hash": "617610da31d4b49684da25675dfa3f21"
+    },
+    {
+      "url": "/crm_dxhub_resources/widgets/Samples/widget-in-pop-up/widget-in-pop-up/app/translations/en_8a80554c91d9fca8acb82f023de02f11_.json",
+      "logicalPath": "crm_dxhub_resources/widgets/Samples/widget-in-pop-up/widget-in-pop-up/app/translations/en.json",
+      "fileName": "en.json",
+      "ext": "json",
+      "category": "crm_dxhub_resources",
+      "subCategory": "widgets/Samples/widget-in-pop-up/widget-in-pop-up/app/translations",
+      "hash": "8a80554c91d9fca8acb82f023de02f11"
+    },
+    {
+      "url": "/crm_dxhub_resources/widgets/Samples/widget-in-pop-up/widget-in-pop-up/app/widget_d3b802f57609e3b20ab20f4ba8471dd8_.html",
+      "logicalPath": "crm_dxhub_resources/widgets/Samples/widget-in-pop-up/widget-in-pop-up/app/widget.html",
+      "fileName": "widget.html",
+      "ext": "html",
+      "category": "crm_dxhub_resources",
+      "subCategory": "widgets/Samples/widget-in-pop-up/widget-in-pop-up/app",
+      "hash": "d3b802f57609e3b20ab20f4ba8471dd8"
+    },
+    {
+      "url": "/crm_dxhub_resources/widgets/Samples/widget-in-pop-up/widget-in-pop-up_f4dec44befd97e0215a67dfdc7ec9264_.json",
+      "logicalPath": "crm_dxhub_resources/widgets/Samples/widget-in-pop-up/widget-in-pop-up.json",
+      "fileName": "widget-in-pop-up.json",
+      "ext": "json",
+      "category": "crm_dxhub_resources",
+      "subCategory": "widgets/Samples/widget-in-pop-up",
+      "hash": "f4dec44befd97e0215a67dfdc7ec9264"
+    },
+    {
+      "url": "/crm_dxhub_resources/widgets/Samples/widget-in-pop-up/widget-in-pop-up_b3107ef7e68b46c7b5c09eede82da1bb_.md",
+      "logicalPath": "crm_dxhub_resources/widgets/Samples/widget-in-pop-up/widget-in-pop-up.md",
+      "fileName": "widget-in-pop-up.md",
+      "ext": "md",
+      "category": "crm_dxhub_resources",
+      "subCategory": "widgets/Samples/widget-in-pop-up",
+      "hash": "b3107ef7e68b46c7b5c09eede82da1bb"
+    },
+    {
+      "url": "/crm_dxhub_resources/widgets/Samples/widget-in-pop-up/widget-in-pop-up_64895b60753dbb6a534370e7bfc8759f_.zip",
+      "logicalPath": "crm_dxhub_resources/widgets/Samples/widget-in-pop-up/widget-in-pop-up.zip",
+      "fileName": "widget-in-pop-up.zip",
+      "ext": "zip",
+      "category": "crm_dxhub_resources",
+      "subCategory": "widgets/Samples/widget-in-pop-up",
+      "hash": "64895b60753dbb6a534370e7bfc8759f"
+    },
+    {
+      "url": "/crm_dxhub_resources/widgets/Samples/widget-in-pop-up/widget-in-pop-up_explorer_89cf72fa41677071da415c944a3cc4ce_.json",
+      "logicalPath": "crm_dxhub_resources/widgets/Samples/widget-in-pop-up/widget-in-pop-up_explorer.json",
+      "fileName": "widget-in-pop-up_explorer.json",
+      "ext": "json",
+      "category": "crm_dxhub_resources",
+      "subCategory": "widgets/Samples/widget-in-pop-up",
+      "hash": "89cf72fa41677071da415c944a3cc4ce"
+    },
+    {
+      "url": "/crm_dxhub_resources/widgets/Samples/zdk-methods-sample/zdk-methods-sample/app/escalationdetail_b767e8ccfc9e93c751898ee7c8b633b9_.html",
+      "logicalPath": "crm_dxhub_resources/widgets/Samples/zdk-methods-sample/zdk-methods-sample/app/escalationdetail.html",
+      "fileName": "escalationdetail.html",
+      "ext": "html",
+      "category": "crm_dxhub_resources",
+      "subCategory": "widgets/Samples/zdk-methods-sample/zdk-methods-sample/app",
+      "hash": "b767e8ccfc9e93c751898ee7c8b633b9"
+    },
+    {
+      "url": "/crm_dxhub_resources/widgets/Samples/zdk-methods-sample/zdk-methods-sample/app/tickets_451fbeab0aa83e5825aed667486d45ce_.html",
+      "logicalPath": "crm_dxhub_resources/widgets/Samples/zdk-methods-sample/zdk-methods-sample/app/tickets.html",
+      "fileName": "tickets.html",
+      "ext": "html",
+      "category": "crm_dxhub_resources",
+      "subCategory": "widgets/Samples/zdk-methods-sample/zdk-methods-sample/app",
+      "hash": "451fbeab0aa83e5825aed667486d45ce"
+    },
+    {
+      "url": "/crm_dxhub_resources/widgets/Samples/zdk-methods-sample/zdk-methods-sample/app/translations/en_8a80554c91d9fca8acb82f023de02f11_.json",
+      "logicalPath": "crm_dxhub_resources/widgets/Samples/zdk-methods-sample/zdk-methods-sample/app/translations/en.json",
+      "fileName": "en.json",
+      "ext": "json",
+      "category": "crm_dxhub_resources",
+      "subCategory": "widgets/Samples/zdk-methods-sample/zdk-methods-sample/app/translations",
+      "hash": "8a80554c91d9fca8acb82f023de02f11"
+    },
+    {
+      "url": "/crm_dxhub_resources/widgets/Samples/zdk-methods-sample/zdk-methods-sample/app/widget1_b9d3723dd41ab97b20256074383d78af_.html",
+      "logicalPath": "crm_dxhub_resources/widgets/Samples/zdk-methods-sample/zdk-methods-sample/app/widget1.html",
+      "fileName": "widget1.html",
+      "ext": "html",
+      "category": "crm_dxhub_resources",
+      "subCategory": "widgets/Samples/zdk-methods-sample/zdk-methods-sample/app",
+      "hash": "b9d3723dd41ab97b20256074383d78af"
+    },
+    {
+      "url": "/crm_dxhub_resources/widgets/Samples/zdk-methods-sample/zdk-methods-sample_25c3812256a4c2e939d6b1f4463312ff_.json",
+      "logicalPath": "crm_dxhub_resources/widgets/Samples/zdk-methods-sample/zdk-methods-sample.json",
+      "fileName": "zdk-methods-sample.json",
+      "ext": "json",
+      "category": "crm_dxhub_resources",
+      "subCategory": "widgets/Samples/zdk-methods-sample",
+      "hash": "25c3812256a4c2e939d6b1f4463312ff"
+    },
+    {
+      "url": "/crm_dxhub_resources/widgets/Samples/zdk-methods-sample/zdk-methods-sample_9aab8e4911fa001d1e125835b2842cb6_.md",
+      "logicalPath": "crm_dxhub_resources/widgets/Samples/zdk-methods-sample/zdk-methods-sample.md",
+      "fileName": "zdk-methods-sample.md",
+      "ext": "md",
+      "category": "crm_dxhub_resources",
+      "subCategory": "widgets/Samples/zdk-methods-sample",
+      "hash": "9aab8e4911fa001d1e125835b2842cb6"
+    },
+    {
+      "url": "/crm_dxhub_resources/widgets/Samples/zdk-methods-sample/zdk-methods-sample_b0187bd31a3469250258f77e8fb56ef0_.zip",
+      "logicalPath": "crm_dxhub_resources/widgets/Samples/zdk-methods-sample/zdk-methods-sample.zip",
+      "fileName": "zdk-methods-sample.zip",
+      "ext": "zip",
+      "category": "crm_dxhub_resources",
+      "subCategory": "widgets/Samples/zdk-methods-sample",
+      "hash": "b0187bd31a3469250258f77e8fb56ef0"
+    },
+    {
+      "url": "/crm_dxhub_resources/widgets/Samples/zdk-methods-sample/zdk-methods-sample_explorer_d4497df7b51add5d463e49d8667e5e5d_.json",
+      "logicalPath": "crm_dxhub_resources/widgets/Samples/zdk-methods-sample/zdk-methods-sample_explorer.json",
+      "fileName": "zdk-methods-sample_explorer.json",
+      "ext": "json",
+      "category": "crm_dxhub_resources",
+      "subCategory": "widgets/Samples/zdk-methods-sample",
+      "hash": "d4497df7b51add5d463e49d8667e5e5d"
+    }
+  ]
+}

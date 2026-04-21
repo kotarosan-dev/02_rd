@@ -1,0 +1,27 @@
+{
+  "name": "zoho-slyteui-docs-sync",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Zoho Developer Space (zohocrm.dev) のドキュメントを fingerprint_config.json 経由で git-ops 取得するツール",
+  "scripts": {
+    "inspect": "tsx src/cli/inspect.ts",
+    "list": "tsx src/cli/list.ts",
+    "probe": "tsx src/cli/probe.ts",
+    "pull": "tsx src/cli/pull.ts",
+    "pull:all": "tsx src/cli/pull.ts all",
+    "skill:sync": "tsx src/cli/skill-sync.ts",
+    "test": "vitest run",
+    "build": "tsc -p tsconfig.json"
+  },
+  "dependencies": {
+    "axios": "^1.7.0",
+    "p-limit": "^6.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.6.0",
+    "vitest": "^2.1.0"
+  }
+}
