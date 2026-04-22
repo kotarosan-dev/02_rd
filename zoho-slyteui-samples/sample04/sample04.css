@@ -1,0 +1,1704 @@
+:host {
+    display: grid;
+    grid-auto-columns: minmax(1px, auto);
+    grid-auto-rows: minmax(1px, auto);
+    grid-template-columns: repeat(auto-fill, 1px);
+    grid-template-rows: repeat(auto-fill, 1px);
+    height: 452px;
+    overflow-x: scroll;
+    overflow-y: scroll;
+    position: relative;
+    width: 980px;
+    z-index: 1;
+}
+
+[node-id='containerLayout1'] {
+    border-color: #333333;
+    border-width: 1px;
+    display: grid;
+    grid-area: 18/16/418/966;
+    grid-auto-columns: minmax(1px, auto);
+    grid-auto-rows: minmax(1px, auto);
+    grid-template-columns: repeat(auto-fill, 1px);
+    grid-template-rows: repeat(auto-fill, 1px);
+    height: 400px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    width: 950px;
+    z-index: 2;
+}
+
+[node-id='lyteStep1'] {
+    grid-area: 24/23/auto/944;
+    height: min-content;
+    width: 921px;
+}
+
+[node-id='lyteIfBox1'] {
+    grid-area: 80/23/390/935;
+    height: 310px;
+    overflow-x: auto;
+    overflow-y: auto;
+    white-space: nowrap;
+    width: 912px;
+}
+
+[node-id='lyteIf1'] {
+    display: flex;
+    flex-direction: column;
+    height: min-content;
+    width: 100%;
+}
+
+[node-id='containerLayout13'] {
+    border-color: #DBDBDB;
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 1px;
+    display: grid;
+    flex-shrink: 0;
+    grid-area: 1/1/302/911;
+    grid-auto-columns: minmax(1px, auto);
+    grid-auto-rows: minmax(1px, auto);
+    grid-template-columns: repeat(auto-fill, 1px);
+    grid-template-rows: repeat(auto-fill, 1px);
+    height: 301px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    width: 910px;
+    z-index: 3;
+}
+
+[node-id='containerLayout20'] {
+    align-content: start;
+    align-items: start;
+    display: flex;
+    flex-basis: auto;
+    flex-direction: row;
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-wrap: nowrap;
+    gap: 0px;
+    grid-area: 67/20/217/881;
+    height: 150px;
+    justify-content: start;
+    overflow-x: auto;
+    overflow-y: auto;
+    width: 861px;
+    z-index: 6;
+}
+
+[node-id='containerLayout22'] {
+    display: grid;
+    flex: 1 1 50%;
+    grid-auto-columns: minmax(1px, auto);
+    grid-auto-rows: minmax(1px, auto);
+    grid-template-columns: repeat(auto-fill, 1px);
+    grid-template-rows: repeat(auto-fill, 1px);
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    width: 100%;
+    z-index: 7;
+}
+
+[node-id='containerLayout24'] {
+    align-content: start;
+    align-items: start;
+    display: flex;
+    flex-basis: auto;
+    flex-direction: row;
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-wrap: nowrap;
+    gap: 15px;
+    grid-area: 2/1/74/422;
+    height: 72px;
+    justify-content: start;
+    overflow-x: auto;
+    overflow-y: auto;
+    width: 421px;
+    z-index: 8;
+}
+
+[node-id='containerLayout25'] {
+    align-items: end;
+    column-gap: 0px;
+    display: flex;
+    flex: 1 1 23%;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    height: 100%;
+    justify-content: center;
+    overflow-x: auto;
+    overflow-y: auto;
+    row-gap: 1px;
+    width: 100%;
+    z-index: 9;
+}
+
+[node-id='label7'] {
+    grid-area: 1/1/auto/auto;
+    height: min-content;
+    white-space: nowrap;
+    width: min-content;
+}
+
+[node-id='containerLayout26'] {
+    align-items: center;
+    column-gap: 0px;
+    display: flex;
+    flex: 1 1 77%;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    height: 100%;
+    justify-content: center;
+    overflow-x: auto;
+    overflow-y: auto;
+    row-gap: 0px;
+    width: 100%;
+    z-index: 9;
+}
+
+[node-id='lyteInput13'] {
+    align-self: flex-start;
+    flex-basis: auto;
+    flex-grow: 0;
+    flex-shrink: 0;
+    grid-area: 1/1/51/180;
+    height: 34px;
+    width: 233px;
+}
+
+.lyteInput13 {
+    align-self: flex-start;
+    flex-basis: auto;
+    flex-grow: 0;
+}
+
+[node-id='fixedLayout4'] {
+    align-items: start;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 15px;
+    grid-area: 73/1/145/422;
+    height: 72px;
+    justify-content: start;
+    overflow-x: auto;
+    overflow-y: auto;
+    width: 421px;
+    z-index: 8;
+}
+
+[node-id='containerLayout33'] {
+    align-items: end;
+    column-gap: 0px;
+    display: flex;
+    flex: 1 1 23%;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    height: 100%;
+    justify-content: center;
+    overflow-x: auto;
+    overflow-y: auto;
+    row-gap: 1px;
+    width: 100%;
+    z-index: 9;
+}
+
+[node-id='label9'] {
+    grid-area: 1/1/auto/auto;
+    height: min-content;
+    white-space: nowrap;
+    width: min-content;
+}
+
+[node-id='containerLayout34'] {
+    align-items: center;
+    column-gap: 0px;
+    display: flex;
+    flex: 1 1 77%;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    height: 100%;
+    justify-content: center;
+    overflow-x: auto;
+    overflow-y: auto;
+    row-gap: 0px;
+    width: 100%;
+    z-index: 9;
+}
+
+[node-id='lyteInput15'] {
+    align-self: flex-start;
+    flex-basis: auto;
+    flex-grow: 0;
+    flex-shrink: 0;
+    grid-area: 1/1/51/180;
+    height: 34px;
+    width: 233px;
+}
+
+.lyteInput15 {
+    align-self: flex-start;
+    flex-basis: auto;
+    flex-grow: 0;
+}
+
+[node-id='containerLayout23'] {
+    display: grid;
+    flex: 1 1 50%;
+    grid-auto-columns: minmax(1px, auto);
+    grid-auto-rows: minmax(1px, auto);
+    grid-template-columns: repeat(auto-fill, 1px);
+    grid-template-rows: repeat(auto-fill, 1px);
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    width: 100%;
+    z-index: 7;
+}
+
+[node-id='fixedLayout3'] {
+    align-items: start;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 15px;
+    grid-area: 1/1/73/422;
+    height: 72px;
+    justify-content: start;
+    overflow-x: auto;
+    overflow-y: auto;
+    width: 421px;
+    z-index: 8;
+}
+
+[node-id='containerLayout31'] {
+    align-items: end;
+    column-gap: 0px;
+    display: flex;
+    flex: 1 1 42.6%;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    height: 100%;
+    justify-content: center;
+    overflow-x: auto;
+    overflow-y: auto;
+    row-gap: 1px;
+    width: 100%;
+    z-index: 9;
+}
+
+[node-id='label8'] {
+    grid-area: 1/1/auto/auto;
+    height: min-content;
+    white-space: nowrap;
+    width: min-content;
+}
+
+[node-id='containerLayout32'] {
+    align-items: center;
+    column-gap: 0px;
+    display: flex;
+    flex: 1 1 57.4%;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    height: 100%;
+    justify-content: center;
+    overflow-x: auto;
+    overflow-y: auto;
+    row-gap: 0px;
+    width: 100%;
+    z-index: 9;
+}
+
+[node-id='lyteInput14'] {
+    grid-area: 1/1/51/180;
+    height: 34px;
+    width: 100%;
+}
+
+[node-id='lyteButton24'] {
+    grid-area: 246/802/auto/auto;
+    height: min-content;
+    width: min-content;
+}
+
+[node-id='lyteText27'] {
+    flex-basis: auto;
+    flex-grow: 0;
+    flex-shrink: 0;
+    font-family: var(--crm-font-semibold);
+    font-size: 18px;
+    grid-area: 22/20/42/143;
+    height: 20px;
+    width: 123px;
+}
+
+[node-id='lyteElseIf2'] {
+    display: flex;
+    flex-direction: column;
+    height: min-content;
+    width: min-content;
+}
+
+[node-id='containerLayout14'] {
+    border-color: #DBDBDB;
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 1px;
+    display: grid;
+    flex-basis: auto;
+    flex-grow: 0;
+    flex-shrink: 0;
+    grid-area: 1/1/1/1;
+    grid-auto-columns: minmax(1px, auto);
+    grid-auto-rows: minmax(1px, auto);
+    grid-template-columns: repeat(auto-fill, 1px);
+    grid-template-rows: repeat(auto-fill, 1px);
+    height: 300px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    width: 900px;
+    z-index: 3;
+}
+
+[node-id='fixedLayout5'] {
+    align-content: start;
+    align-items: start;
+    display: flex;
+    flex-basis: auto;
+    flex-direction: row;
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-wrap: nowrap;
+    gap: 0px;
+    grid-area: 69/22/219/882;
+    height: 150px;
+    justify-content: start;
+    overflow-x: auto;
+    overflow-y: auto;
+    width: 860px;
+    z-index: 6;
+}
+
+[node-id='containerLayout35'] {
+    display: grid;
+    flex: 1 1 50%;
+    grid-auto-columns: minmax(1px, auto);
+    grid-auto-rows: minmax(1px, auto);
+    grid-template-columns: repeat(auto-fill, 1px);
+    grid-template-rows: repeat(auto-fill, 1px);
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    width: 100%;
+    z-index: 7;
+}
+
+[node-id='fixedLayout6'] {
+    align-items: start;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 15px;
+    grid-area: 1/1/73/422;
+    height: 72px;
+    justify-content: start;
+    overflow-x: auto;
+    overflow-y: auto;
+    width: 421px;
+    z-index: 8;
+}
+
+[node-id='containerLayout36'] {
+    align-items: end;
+    column-gap: 0px;
+    display: flex;
+    flex: 1 1 25%;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    height: 100%;
+    justify-content: center;
+    overflow-x: auto;
+    overflow-y: auto;
+    row-gap: 1px;
+    width: 100%;
+    z-index: 9;
+}
+
+[node-id='label10'] {
+    grid-area: 1/1/auto/auto;
+    height: min-content;
+    white-space: nowrap;
+    width: min-content;
+}
+
+[node-id='containerLayout37'] {
+    align-items: center;
+    column-gap: 0px;
+    display: flex;
+    flex: 1 1 75%;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    height: 100%;
+    justify-content: center;
+    overflow-x: auto;
+    overflow-y: auto;
+    row-gap: 0px;
+    width: 100%;
+    z-index: 9;
+}
+
+[node-id='lyteInput16'] {
+    align-self: flex-start;
+    flex-basis: auto;
+    flex-grow: 0;
+    flex-shrink: 0;
+    grid-area: 1/1/51/180;
+    height: 34px;
+    width: 233px;
+}
+
+.lyteInput16 {
+    align-self: flex-start;
+    flex-basis: auto;
+    flex-grow: 0;
+}
+
+[node-id='containerLayout40'] {
+    display: grid;
+    flex: 1 1 50%;
+    grid-auto-columns: minmax(1px, auto);
+    grid-auto-rows: minmax(1px, auto);
+    grid-template-columns: repeat(auto-fill, 1px);
+    grid-template-rows: repeat(auto-fill, 1px);
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    width: 100%;
+    z-index: 7;
+}
+
+[node-id='fixedLayout8'] {
+    align-items: start;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 15px;
+    grid-area: 1/1/73/422;
+    height: 72px;
+    justify-content: start;
+    overflow-x: auto;
+    overflow-y: auto;
+    width: 421px;
+    z-index: 8;
+}
+
+[node-id='containerLayout41'] {
+    align-items: end;
+    column-gap: 0px;
+    display: flex;
+    flex: 1 1 42.6%;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    height: 100%;
+    justify-content: center;
+    overflow-x: auto;
+    overflow-y: auto;
+    row-gap: 1px;
+    width: 100%;
+    z-index: 9;
+}
+
+[node-id='label12'] {
+    grid-area: 1/1/auto/auto;
+    height: min-content;
+    white-space: nowrap;
+    width: min-content;
+}
+
+[node-id='containerLayout42'] {
+    align-items: center;
+    column-gap: 0px;
+    display: flex;
+    flex: 1 1 57.4%;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    height: 100%;
+    justify-content: center;
+    overflow-x: auto;
+    overflow-y: auto;
+    row-gap: 0px;
+    width: 100%;
+    z-index: 9;
+}
+
+[node-id='lyteInput18'] {
+    grid-area: 1/1/51/180;
+    height: 34px;
+    width: 100%;
+}
+
+[node-id='lyteButton25'] {
+    grid-area: 243/802/auto/auto;
+    height: min-content;
+    width: min-content;
+}
+
+[node-id='lyteButton15'] {
+    grid-area: 243/684/auto/auto;
+    height: min-content;
+    width: min-content;
+}
+
+[node-id='lyteText28'] {
+    flex-basis: auto;
+    flex-grow: 0;
+    flex-shrink: 0;
+    font-family: var(--crm-font-semibold);
+    font-size: 18px;
+    grid-area: 22/22/42/126;
+    height: 20px;
+    width: 104px;
+}
+
+[node-id='lyteElseIf3'] {
+    display: flex;
+    flex-direction: column;
+    height: min-content;
+    width: min-content;
+}
+
+[node-id='containerLayout18'] {
+    border-color: #DBDBDB;
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 1px;
+    display: grid;
+    flex-basis: auto;
+    flex-grow: 0;
+    flex-shrink: 0;
+    grid-area: 1/1/1/1;
+    grid-auto-columns: minmax(1px, auto);
+    grid-auto-rows: minmax(1px, auto);
+    grid-template-columns: repeat(auto-fill, 1px);
+    grid-template-rows: repeat(auto-fill, 1px);
+    height: 300px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    width: 900px;
+    z-index: 3;
+}
+
+[node-id='lyteButton23'] {
+    grid-area: 243/682/auto/auto;
+    height: min-content;
+    width: min-content;
+}
+
+[node-id='lyteButton26'] {
+    grid-area: 243/800/auto/auto;
+    height: min-content;
+    width: min-content;
+}
+
+[node-id='fixedLayout13'] {
+    align-content: start;
+    align-items: start;
+    display: flex;
+    flex-basis: auto;
+    flex-direction: row;
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-wrap: nowrap;
+    gap: 0px;
+    grid-area: 70/18/220/878;
+    height: 150px;
+    justify-content: start;
+    overflow-x: auto;
+    overflow-y: auto;
+    width: 860px;
+    z-index: 6;
+}
+
+[node-id='containerLayout51'] {
+    display: grid;
+    flex: 1 1 50%;
+    grid-auto-columns: minmax(1px, auto);
+    grid-auto-rows: minmax(1px, auto);
+    grid-template-columns: repeat(auto-fill, 1px);
+    grid-template-rows: repeat(auto-fill, 1px);
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    width: 100%;
+    z-index: 7;
+}
+
+[node-id='fixedLayout14'] {
+    align-items: start;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 15px;
+    grid-area: 1/1/73/422;
+    height: 72px;
+    justify-content: start;
+    overflow-x: auto;
+    overflow-y: auto;
+    width: 421px;
+    z-index: 8;
+}
+
+[node-id='containerLayout52'] {
+    align-items: end;
+    column-gap: 0px;
+    display: flex;
+    flex: 1 1 31.5%;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    height: 100%;
+    justify-content: center;
+    overflow-x: auto;
+    overflow-y: auto;
+    row-gap: 1px;
+    width: 100%;
+    z-index: 9;
+}
+
+[node-id='label16'] {
+    grid-area: 1/1/auto/auto;
+    height: min-content;
+    white-space: nowrap;
+    width: min-content;
+}
+
+[node-id='containerLayout53'] {
+    align-items: center;
+    column-gap: 0px;
+    display: flex;
+    flex: 1 1 68.5%;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    height: 100%;
+    justify-content: center;
+    overflow-x: auto;
+    overflow-y: auto;
+    row-gap: 0px;
+    width: 100%;
+    z-index: 9;
+}
+
+[node-id='lyteInput26'] {
+    align-self: flex-start;
+    flex-basis: auto;
+    flex-grow: 0;
+    flex-shrink: 0;
+    height: 34px;
+    width: 233px;
+}
+
+.lyteInput26 {
+    align-self: flex-start;
+    flex-basis: auto;
+    flex-grow: 0;
+}
+
+[node-id='fixedLayout15'] {
+    align-items: start;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 15px;
+    grid-area: 73/1/145/422;
+    height: 72px;
+    justify-content: start;
+    overflow-x: auto;
+    overflow-y: auto;
+    width: 421px;
+    z-index: 8;
+}
+
+[node-id='containerLayout54'] {
+    align-items: end;
+    column-gap: 0px;
+    display: flex;
+    flex: 1 1 31.5%;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    height: 100%;
+    justify-content: center;
+    overflow-x: auto;
+    overflow-y: auto;
+    row-gap: 1px;
+    width: 100%;
+    z-index: 9;
+}
+
+[node-id='label17'] {
+    grid-area: 1/1/auto/auto;
+    height: min-content;
+    white-space: nowrap;
+    width: min-content;
+}
+
+[node-id='containerLayout55'] {
+    align-items: center;
+    column-gap: 0px;
+    display: flex;
+    flex: 1 1 68.5%;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    height: 100%;
+    justify-content: center;
+    overflow-x: auto;
+    overflow-y: auto;
+    row-gap: 0px;
+    width: 100%;
+    z-index: 9;
+}
+
+[node-id='lyteInput25'] {
+    align-self: flex-start;
+    flex-basis: auto;
+    flex-grow: 0;
+    flex-shrink: 0;
+    height: 34px;
+    width: 233px;
+}
+
+.lyteInput25 {
+    align-self: flex-start;
+    flex-basis: auto;
+    flex-grow: 0;
+}
+
+[node-id='containerLayout56'] {
+    display: grid;
+    flex: 1 1 50%;
+    grid-auto-columns: minmax(1px, auto);
+    grid-auto-rows: minmax(1px, auto);
+    grid-template-columns: repeat(auto-fill, 1px);
+    grid-template-rows: repeat(auto-fill, 1px);
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    width: 100%;
+    z-index: 7;
+}
+
+[node-id='fixedLayout16'] {
+    align-items: start;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 15px;
+    grid-area: 1/1/73/422;
+    height: 72px;
+    justify-content: start;
+    overflow-x: auto;
+    overflow-y: auto;
+    width: 421px;
+    z-index: 8;
+}
+
+[node-id='containerLayout57'] {
+    align-items: end;
+    column-gap: 0px;
+    display: flex;
+    flex: 1 1 42.6%;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    height: 100%;
+    justify-content: center;
+    overflow-x: auto;
+    overflow-y: auto;
+    row-gap: 1px;
+    width: 100%;
+    z-index: 9;
+}
+
+[node-id='label18'] {
+    grid-area: 1/1/auto/auto;
+    height: min-content;
+    white-space: nowrap;
+    width: min-content;
+}
+
+[node-id='containerLayout58'] {
+    align-items: center;
+    column-gap: 0px;
+    display: flex;
+    flex: 1 1 57.4%;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    height: 100%;
+    justify-content: center;
+    overflow-x: auto;
+    overflow-y: auto;
+    row-gap: 0px;
+    width: 100%;
+    z-index: 9;
+}
+
+[node-id='lyteDropdown7'] {
+    flex-basis: auto;
+    flex-grow: 0;
+    flex-shrink: 0;
+    grid-area: 36/1/70/92;
+    height: 34;
+    width: 100%;
+}
+
+.lyteDropdown7 {
+    flex-basis: auto;
+    flex-grow: 0;
+}
+
+[node-id='lyteText29'] {
+    flex-basis: auto;
+    flex-grow: 0;
+    flex-shrink: 0;
+    font-family: var(--crm-font-semibold);
+    font-size: 18px;
+    grid-area: 21/18/41/282;
+    height: 20px;
+    width: 264px;
+}
+
+[node-id='lyteElseIf8'] {
+    display: flex;
+    flex-direction: column;
+    height: min-content;
+    width: min-content;
+}
+
+[node-id='containerLayout16'] {
+    border-color: #DBDBDB;
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 1px;
+    display: grid;
+    flex-basis: auto;
+    flex-grow: 0;
+    flex-shrink: 0;
+    grid-area: 1/1/1/1;
+    grid-auto-columns: minmax(1px, auto);
+    grid-auto-rows: minmax(1px, auto);
+    grid-template-columns: repeat(auto-fill, 1px);
+    grid-template-rows: repeat(auto-fill, 1px);
+    height: 300px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    width: 900px;
+    z-index: 3;
+}
+
+[node-id='lyteText12'] {
+    font-size: 18px;
+    font-weight: 800;
+    grid-area: 108/165/auto/auto;
+    height: min-content;
+    max-width: unset;
+    width: min-content;
+}
+
+[node-id='fixedLayout17'] {
+    align-content: start;
+    align-items: start;
+    display: flex;
+    flex-basis: auto;
+    flex-direction: row;
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-wrap: nowrap;
+    gap: 0px;
+    grid-area: 68/20/218/870;
+    height: 150px;
+    justify-content: start;
+    overflow-x: auto;
+    overflow-y: auto;
+    width: 850px;
+    z-index: 6;
+}
+
+[node-id='containerLayout59'] {
+    display: grid;
+    flex: 1 1 50%;
+    grid-auto-columns: minmax(1px, auto);
+    grid-auto-rows: minmax(1px, auto);
+    grid-template-columns: repeat(auto-fill, 1px);
+    grid-template-rows: repeat(auto-fill, 1px);
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    width: 100%;
+    z-index: 7;
+}
+
+[node-id='fixedLayout18'] {
+    align-items: start;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 15px;
+    grid-area: 1/1/73/422;
+    height: 72px;
+    justify-content: start;
+    overflow-x: auto;
+    overflow-y: auto;
+    width: 421px;
+    z-index: 8;
+}
+
+[node-id='containerLayout60'] {
+    align-items: end;
+    column-gap: 0px;
+    display: flex;
+    flex: 1 1 11.5%;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    height: 100%;
+    justify-content: center;
+    overflow-x: auto;
+    overflow-y: auto;
+    row-gap: 1px;
+    width: 100%;
+    z-index: 9;
+}
+
+[node-id='label19'] {
+    grid-area: 1/1/auto/auto;
+    height: min-content;
+    white-space: nowrap;
+    width: min-content;
+}
+
+[node-id='containerLayout61'] {
+    align-items: center;
+    column-gap: 0px;
+    display: flex;
+    flex: 1 1 88.5%;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    height: 100%;
+    justify-content: center;
+    overflow-x: auto;
+    overflow-y: auto;
+    row-gap: 0px;
+    width: 100%;
+    z-index: 9;
+}
+
+[node-id='lyteDropdown8'] {
+    align-self: flex-start;
+    flex-basis: auto;
+    flex-grow: 0;
+    flex-shrink: 0;
+    grid-area: 36/1/70/92;
+    height: 34;
+    width: 233px;
+}
+
+.lyteDropdown8 {
+    align-self: flex-start;
+    flex-basis: auto;
+    flex-grow: 0;
+}
+
+[node-id='containerLayout64'] {
+    align-content: start;
+    align-items: start;
+    display: flex;
+    flex: 1 1 50%;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    height: 100%;
+    justify-content: start;
+    overflow-x: auto;
+    overflow-y: auto;
+    width: 100%;
+    z-index: 7;
+}
+
+[node-id='fixedLayout20'] {
+    align-items: start;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 15px;
+    grid-area: 1/1/73/423;
+    height: 72px;
+    justify-content: start;
+    overflow-x: auto;
+    overflow-y: auto;
+    width: 422px;
+    z-index: 8;
+}
+
+[node-id='containerLayout65'] {
+    align-items: end;
+    column-gap: 0px;
+    display: flex;
+    flex: 1 1 42%;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    height: 100%;
+    justify-content: center;
+    overflow-x: auto;
+    overflow-y: auto;
+    row-gap: 1px;
+    width: 100%;
+    z-index: 9;
+}
+
+[node-id='label21'] {
+    grid-area: 1/1/auto/auto;
+    height: min-content;
+    white-space: nowrap;
+    width: min-content;
+}
+
+[node-id='containerLayout66'] {
+    align-items: center;
+    column-gap: 0px;
+    display: flex;
+    flex: 1 1 57%;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    height: 100%;
+    justify-content: center;
+    overflow-x: auto;
+    overflow-y: auto;
+    row-gap: 0px;
+    width: 100%;
+    z-index: 9;
+}
+
+[node-id='lyteDropdown9'] {
+    flex-basis: auto;
+    flex-grow: 0;
+    flex-shrink: 0;
+    grid-area: 36/1/70/92;
+    height: 34;
+    width: 100%;
+}
+
+.lyteDropdown9 {
+    flex-basis: auto;
+    flex-grow: 0;
+}
+
+[node-id='containerLayout70'] {
+    display: grid;
+    flex-shrink: 0;
+    grid-area: 108/442/185/865;
+    grid-auto-columns: minmax(1px, auto);
+    grid-auto-rows: minmax(1px, auto);
+    grid-template-columns: repeat(auto-fill, 1px);
+    grid-template-rows: repeat(auto-fill, 1px);
+    height: 77px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    width: 423px;
+    z-index: 8;
+}
+
+[node-id='lyteText25'] {
+    flex-shrink: 0;
+    font-size: 15px;
+    font-weight: 800;
+    grid-area: 12/314/36/auto;
+    height: 24px;
+    max-width: unset;
+    width: min-content;
+}
+
+[node-id='lyteText26'] {
+    flex-shrink: 0;
+    font-family: var(--crm-font-semibold);
+    font-size: 18px;
+    font-weight: 800;
+    grid-area: 36/330/60/auto;
+    height: 24px;
+    max-width: unset;
+    width: min-content;
+}
+
+[node-id='lyteButton28'] {
+    grid-area: 243/798/auto/auto;
+    height: min-content;
+    width: min-content;
+}
+
+[node-id='lyteButton19'] {
+    grid-area: 243/677/auto/auto;
+    height: min-content;
+    width: min-content;
+}
+
+[node-id='lyteText31'] {
+    flex-basis: auto;
+    flex-grow: 0;
+    flex-shrink: 0;
+    font-family: var(--crm-font-semibold);
+    font-size: 18px;
+    grid-area: 20/20/40/246;
+    height: 20px;
+    width: 226px;
+}
+
+[node-id='lyteElseIf9'] {
+    display: flex;
+    flex-direction: column;
+    height: min-content;
+    width: min-content;
+}
+
+[node-id='containerLayout17'] {
+    border-color: #DBDBDB;
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 1px;
+    display: grid;
+    flex-basis: auto;
+    flex-grow: 0;
+    flex-shrink: 0;
+    grid-area: 1/1/1/1;
+    grid-auto-columns: minmax(1px, auto);
+    grid-auto-rows: minmax(1px, auto);
+    grid-template-columns: repeat(auto-fill, 1px);
+    grid-template-rows: repeat(auto-fill, 1px);
+    height: 300px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    width: 900px;
+    z-index: 3;
+}
+
+[node-id='containerLayout71'] {
+    align-content: start;
+    align-items: start;
+    display: flex;
+    flex-basis: auto;
+    flex-direction: row;
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-wrap: nowrap;
+    gap: 0px;
+    grid-area: 66/27/216/877;
+    height: 150px;
+    justify-content: start;
+    overflow-x: auto;
+    overflow-y: auto;
+    width: 850px;
+    z-index: 6;
+}
+
+[node-id='containerLayout72'] {
+    align-content: start;
+    align-items: start;
+    display: flex;
+    flex: 1 1 50%;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 0px;
+    height: 100%;
+    justify-content: start;
+    overflow-x: auto;
+    overflow-y: auto;
+    width: 100%;
+    z-index: 7;
+}
+
+[node-id='containerLayout74'] {
+    align-items: start;
+    display: flex;
+    flex: 1 1 33%;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 15px;
+    height: 100%;
+    justify-content: start;
+    overflow-x: auto;
+    overflow-y: auto;
+    width: 100%;
+    z-index: 8;
+}
+
+[node-id='containerLayout80'] {
+    align-items: end;
+    column-gap: 0px;
+    display: flex;
+    flex: 1 1 23%;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    height: 100%;
+    justify-content: center;
+    overflow-x: auto;
+    overflow-y: auto;
+    row-gap: 0px;
+    width: 100%;
+    z-index: 9;
+}
+
+[node-id='label23'] {
+    grid-area: 1/1/auto/auto;
+    height: min-content;
+    white-space: nowrap;
+    width: min-content;
+}
+
+[node-id='containerLayout81'] {
+    align-items: start;
+    column-gap: 0px;
+    display: flex;
+    flex: 1 1 77%;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    height: 100%;
+    justify-content: center;
+    overflow-x: auto;
+    overflow-y: auto;
+    row-gap: 0px;
+    width: 100%;
+    z-index: 9;
+}
+
+[node-id='span1'] {
+    grid-area: 1/1/auto/auto;
+    height: min-content;
+    white-space: nowrap;
+    width: min-content;
+}
+
+[node-id='containerLayout75'] {
+    align-items: start;
+    display: flex;
+    flex: 1 1 33%;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 15px;
+    height: 100%;
+    justify-content: start;
+    overflow-x: auto;
+    overflow-y: auto;
+    width: 100%;
+    z-index: 8;
+}
+
+[node-id='containerLayout82'] {
+    align-items: end;
+    column-gap: 0px;
+    display: flex;
+    flex: 1 1 23%;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    height: 100%;
+    justify-content: center;
+    overflow-x: auto;
+    overflow-y: auto;
+    row-gap: 0px;
+    width: 100%;
+    z-index: 9;
+}
+
+[node-id='label24'] {
+    grid-area: 15/149/115/249;
+    height: min-content;
+    white-space: nowrap;
+    width: min-content;
+}
+
+[node-id='containerLayout83'] {
+    align-items: start;
+    column-gap: 0px;
+    display: flex;
+    flex: 1 1 77%;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    height: 100%;
+    justify-content: center;
+    overflow-x: auto;
+    overflow-y: auto;
+    row-gap: 0px;
+    width: 100%;
+    z-index: 9;
+}
+
+[node-id='span3'] {
+    grid-area: 17/20/117/120;
+    height: min-content;
+    white-space: nowrap;
+    width: min-content;
+}
+
+[node-id='containerLayout76'] {
+    align-items: start;
+    display: flex;
+    flex: 1 1 34%;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 15px;
+    height: 100%;
+    justify-content: start;
+    overflow-x: auto;
+    overflow-y: auto;
+    width: 100%;
+    z-index: 8;
+}
+
+[node-id='containerLayout84'] {
+    align-items: end;
+    column-gap: 0px;
+    display: flex;
+    flex: 1 1 23%;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    height: 100%;
+    justify-content: center;
+    overflow-x: auto;
+    overflow-y: auto;
+    row-gap: 0px;
+    width: 100%;
+    z-index: 9;
+}
+
+[node-id='label25'] {
+    grid-area: 6/128/106/228;
+    height: min-content;
+    white-space: nowrap;
+    width: min-content;
+}
+
+[node-id='containerLayout85'] {
+    align-items: start;
+    column-gap: 0px;
+    display: flex;
+    flex: 1 1 77%;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    height: 100%;
+    justify-content: center;
+    overflow-x: auto;
+    overflow-y: auto;
+    row-gap: 0px;
+    width: 100%;
+    z-index: 9;
+}
+
+[node-id='span4'] {
+    grid-area: 12/22/112/122;
+    height: min-content;
+    white-space: nowrap;
+    width: min-content;
+}
+
+[node-id='containerLayout73'] {
+    align-content: start;
+    align-items: start;
+    display: flex;
+    flex: 1 1 50%;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 0px;
+    height: 100%;
+    justify-content: start;
+    overflow-x: auto;
+    overflow-y: auto;
+    width: 100%;
+    z-index: 7;
+}
+
+[node-id='containerLayout77'] {
+    align-items: start;
+    display: flex;
+    flex: 1 1 33%;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 15px;
+    height: 100%;
+    justify-content: start;
+    overflow-x: auto;
+    overflow-y: auto;
+    width: 100%;
+    z-index: 8;
+}
+
+[node-id='containerLayout86'] {
+    align-items: end;
+    column-gap: 0px;
+    display: flex;
+    flex: 1 1 25%;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    height: 100%;
+    justify-content: center;
+    overflow-x: auto;
+    overflow-y: auto;
+    row-gap: 0px;
+    width: 100%;
+    z-index: 9;
+}
+
+[node-id='label26'] {
+    grid-area: 29/23/129/123;
+    height: min-content;
+    white-space: nowrap;
+    width: min-content;
+}
+
+[node-id='containerLayout87'] {
+    align-items: start;
+    column-gap: 0px;
+    display: flex;
+    flex: 1 1 75%;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    height: 100%;
+    justify-content: center;
+    overflow-x: auto;
+    overflow-y: auto;
+    row-gap: 0px;
+    width: 100%;
+    z-index: 9;
+}
+
+[node-id='span5'] {
+    grid-area: 26/18/126/118;
+    height: min-content;
+    white-space: nowrap;
+    width: min-content;
+}
+
+[node-id='containerLayout78'] {
+    align-items: start;
+    display: flex;
+    flex: 1 1 33%;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 15px;
+    height: 100%;
+    justify-content: start;
+    overflow-x: auto;
+    overflow-y: auto;
+    width: 100%;
+    z-index: 8;
+}
+
+[node-id='containerLayout88'] {
+    align-items: end;
+    column-gap: 0px;
+    display: flex;
+    flex: 1 1 25%;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    height: 100%;
+    justify-content: center;
+    overflow-x: auto;
+    overflow-y: auto;
+    row-gap: 0px;
+    width: 100%;
+    z-index: 9;
+}
+
+[node-id='label27'] {
+    grid-area: 18/11/118/111;
+    height: min-content;
+    white-space: nowrap;
+    width: min-content;
+}
+
+[node-id='containerLayout89'] {
+    align-items: start;
+    column-gap: 0px;
+    display: flex;
+    flex: 1 1 75%;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    height: 100%;
+    justify-content: center;
+    overflow-x: auto;
+    overflow-y: auto;
+    row-gap: 0px;
+    width: 100%;
+    z-index: 9;
+}
+
+[node-id='span6'] {
+    grid-area: 11/10/111/110;
+    height: min-content;
+    white-space: nowrap;
+    width: min-content;
+}
+
+[node-id='containerLayout79'] {
+    align-items: start;
+    display: flex;
+    flex: 1 1 34%;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 15px;
+    height: 100%;
+    justify-content: start;
+    overflow-x: auto;
+    overflow-y: auto;
+    width: 100%;
+    z-index: 8;
+}
+
+[node-id='containerLayout90'] {
+    align-items: end;
+    column-gap: 0px;
+    display: flex;
+    flex: 1 1 25%;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    height: 100%;
+    justify-content: center;
+    overflow-x: auto;
+    overflow-y: auto;
+    row-gap: 0px;
+    width: 100%;
+    z-index: 9;
+}
+
+[node-id='label28'] {
+    grid-area: 7/18/107/118;
+    height: min-content;
+    white-space: nowrap;
+    width: min-content;
+}
+
+[node-id='containerLayout91'] {
+    align-items: start;
+    column-gap: 0px;
+    display: flex;
+    flex: 1 1 75%;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    height: 100%;
+    justify-content: center;
+    overflow-x: auto;
+    overflow-y: auto;
+    row-gap: 0px;
+    width: 100%;
+    z-index: 9;
+}
+
+[node-id='span7'] {
+    grid-area: 16/15/116/115;
+    height: min-content;
+    white-space: nowrap;
+    width: min-content;
+}
+
+[node-id='lyteText32'] {
+    flex-basis: auto;
+    flex-grow: 0;
+    flex-shrink: 0;
+    font-family: var(--crm-font-semibold);
+    font-size: 18px;
+    grid-area: 21/22/41/212;
+    height: 20px;
+    width: 190px;
+}
+
+[node-id='lyteButton29'] {
+    grid-area: 245/782/auto/auto;
+    height: min-content;
+    width: min-content;
+}
+
+[node-id='lyteButton21'] {
+    grid-area: 245/661/auto/auto;
+    height: min-content;
+    width: min-content;
+}
+
+[node-id='lyteElseIf10'] {
+    display: flex;
+    flex-direction: column;
+    height: min-content;
+    width: min-content;
+}
+
+[node-id='containerLayout19'] {
+    align-content: start;
+    align-items: start;
+    align-self: center;
+    border-color: #DBDBDB;
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 1px;
+    display: flex;
+    flex-basis: auto;
+    flex-direction: column;
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-wrap: nowrap;
+    gap: 0px;
+    grid-area: 1/1/1/1;
+    height: 300px;
+    justify-content: start;
+    overflow-x: auto;
+    overflow-y: auto;
+    width: 900px;
+    z-index: 3;
+}
+
+[node-id='containerLayout67'] {
+    align-content: start;
+    align-items: center;
+    align-self: center;
+    border-color: transparent;
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 1px;
+    display: flex;
+    flex: 1 1 50%;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 0px;
+    grid-area: 1/1/1/1;
+    height: 100%;
+    justify-content: center;
+    overflow-x: auto;
+    overflow-y: auto;
+    row-gap: 15px;
+    width: 100%;
+    z-index: 3;
+}
+
+[node-id='lyteText19'] {
+    font-size: 20px;
+    font-weight: 800;
+    grid-area: 142/2/165/auto;
+    height: 23px;
+    max-width: unset;
+    width: min-content;
+}
+
+[node-id='lyteText20'] {
+    grid-area: 120/295/136/auto;
+    height: 16px;
+    max-width: unset;
+    width: min-content;
+}
+
+.lyteInput1 {
+    gap: 10px;
+}
+.dateTimeInput label {
+    flex-shrink: 0;
+}
+.formContainerActive {
+    display: grid;
+    grid-area: 111/33/411/933;
+}
+.crm-font-semibold {
+    font-family: var(--crm-font-semibold);
+}

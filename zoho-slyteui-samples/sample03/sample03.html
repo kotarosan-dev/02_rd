@@ -1,0 +1,71 @@
+<template width="1280px" height="720px">
+	<div @data="containerLayout1" lyte-layout="fixed" node-id="containerLayout1">
+		<div @data="containerLayout2" lyte-layout="container" node-id="containerLayout2" onclick="{{action('openModal')}}">
+			<lyte-modal @data="lyteModal1" lt-prop-freeze="true" lt-prop-max-height="100%" lt-prop-offset='{"right":"0","top":"0"}' lt-prop-transition='{"animation":"slideFromRight","duration":"0.5s"}' lt-prop-width="500px" lt-prop-wrapper-class="relatedListModal" lyte-pb-event='{"id":"crmListview1","eventName":"on-list-view-row-click","eventType":"methods","funcName":"showOnListViewRowClickLyteModal1"}' node-id="lyteModal1" group-name="lyte-ui-component">
+				<template is="registerYield" node-id="templateNode1" yield-name="modal">
+					<lyte-modal-header lyte-display="grid" node-id="lyteModalHeader1" style="">
+						<lyte-text @data="lyteText1" lt-prop-value="#1002 - Payment not processing" node-id="lyteText1" group-name="lyte-ui-component"></lyte-text>
+					</lyte-modal-header>
+					<lyte-modal-content lyte-display="grid" node-id="lyteModalContent1" style="max-height:unset;">
+						<div @data="containerLayout3" lyte-layout="fixed" node-id="containerLayout3">
+							<div @data="containerLayout5" lyte-layout="container" node-id="containerLayout5">
+								<div @data="containerLayout9" lyte-layout="fixed" node-id="containerLayout9">
+									<div @data="containerLayout10" lyte-layout="container" node-id="containerLayout10">
+										<lyte-text @data="lyteText9" lt-prop-value="Status:" node-id="lyteText9" group-name="lyte-ui-component"></lyte-text>
+										<lyte-text @data="lyteText10" lt-prop-value="Pending" node-id="lyteText10" group-name="lyte-ui-component"></lyte-text>
+									</div>
+									<div @data="containerLayout11" lyte-layout="container" node-id="containerLayout11">
+										<lyte-text @data="lyteText15" lt-prop-value="Priority:" node-id="lyteText15" group-name="lyte-ui-component"></lyte-text>
+										<lyte-text @data="lyteText16" lt-prop-value="Urgent" node-id="lyteText16" group-name="lyte-ui-component"></lyte-text>
+									</div>
+									<div @data="containerLayout12" lyte-layout="container" node-id="containerLayout12">
+										<lyte-text @data="lyteText11" lt-prop-value="Created Date:" node-id="lyteText11" group-name="lyte-ui-component"></lyte-text>
+										<lyte-text @data="lyteText12" lt-prop-value="12-8-2024" node-id="lyteText12" group-name="lyte-ui-component"></lyte-text>
+									</div>
+									<div @data="containerLayout13" lyte-layout="container" node-id="containerLayout13">
+										<lyte-text @data="lyteText17" lt-prop-value="Last update:" node-id="lyteText17" group-name="lyte-ui-component"></lyte-text>
+										<lyte-text @data="lyteText18" lt-prop-value="16-08-2024" node-id="lyteText18" group-name="lyte-ui-component"></lyte-text>
+									</div>
+									<div @data="containerLayout14" lyte-layout="container" node-id="containerLayout14">
+										<lyte-text @data="lyteText19" lt-prop-value="Assigned Agent:" node-id="lyteText19" group-name="lyte-ui-component"></lyte-text>
+										<lyte-text @data="lyteText20" lt-prop-value="Smith" node-id="lyteText20" group-name="lyte-ui-component"></lyte-text>
+									</div>
+								</div>
+							</div>
+							<div @data="containerLayout6" lyte-layout="container" node-id="containerLayout6">
+								<lyte-text @data="lyteText13" lt-prop-tabindex='"-1"' lt-prop-value="Descriptionfghj" node-id="lyteText13" group-name="lyte-ui-component"></lyte-text>
+								<lyte-text @data="lyteText14" lt-prop-value="The customer is experiencing issues with payment processing on the checkout page. Despite entering valid payment details, the transition does not complete, and an error message is displayed. This issue has been affecting many customers, causing a significant distruption in sales." node-id="lyteText14" group-name="lyte-ui-component"></lyte-text>
+							</div>
+							<div @data="containerLayout7" lyte-layout="container" node-id="containerLayout7">
+								<lyte-text @data="lyteText21" lt-prop-value="Other Details" node-id="lyteText21" group-name="lyte-ui-component"></lyte-text>
+								<div @data="containerLayout15" lyte-layout="fixed" node-id="containerLayout15">
+									<div @data="containerLayout16" lyte-layout="container" node-id="containerLayout16">
+										<lyte-text @data="lyteText22" lt-prop-value="Payment Gateway:" node-id="lyteText22" group-name="lyte-ui-component"></lyte-text>
+										<lyte-text @data="lyteText23" lt-prop-tabindex='"-1"' lt-prop-value="Stripe" node-id="lyteText23" group-name="lyte-ui-component"></lyte-text>
+									</div>
+									<div @data="containerLayout17" lyte-layout="container" node-id="containerLayout17">
+										<lyte-text @data="lyteText24" lt-prop-tabindex='"-1"' lt-prop-value="Affected Module:" node-id="lyteText24" group-name="lyte-ui-component"></lyte-text>
+										<lyte-text @data="lyteText25" lt-prop-value="Checkout" node-id="lyteText25" group-name="lyte-ui-component"></lyte-text>
+									</div>
+									<div @data="containerLayout18" lyte-layout="container" node-id="containerLayout18">
+										<lyte-text @data="lyteText26" lt-prop-tabindex='"-1"' lt-prop-value="Error Code:" node-id="lyteText26" group-name="lyte-ui-component"></lyte-text>
+										<lyte-text @data="lyteText27" lt-prop-value="PG1234" node-id="lyteText27" group-name="lyte-ui-component"></lyte-text>
+									</div>
+									<div @data="containerLayout19" lyte-layout="container" node-id="containerLayout19">
+										<lyte-text @data="lyteText28" lt-prop-tabindex='"-1"' lt-prop-value="Error Message:" node-id="lyteText28" group-name="lyte-ui-component"></lyte-text>
+										<lyte-text @data="lyteText29" lt-prop-multi-line="true" lt-prop-value="Transaction counld not be processed. Please try again later" node-id="lyteText29" group-name="lyte-ui-component"></lyte-text>
+									</div>
+								</div>
+							</div>
+							<div @data="containerLayout20" lyte-layout="container" node-id="containerLayout20">
+								<lyte-text @data="lyteText32" lt-prop-tabindex='"-1"' lt-prop-value="Ticket Timeline" node-id="lyteText32" group-name="lyte-ui-component"></lyte-text>
+								<lyte-table @data="lyteTable3" lt-prop-body-label-key="bodyData" lt-prop-border="true" lt-prop-content='[{"cityName" : "Agra","serialNo" : "1"},{"cityName" : "Mysore", "serialNo" : "2"}]' lt-prop-header='[{"data" : "From", "bodyData" : "cityName"},{"data" : "No", "bodyData" : "serialNo"}]' lt-prop-header-label-key="data" node-id="lyteTable3" group-name="lyte-ui-component"></lyte-table>
+							</div>
+						</div>
+					</lyte-modal-content>
+				</template>
+			</lyte-modal>
+            <crm-listview @data="crmListview1" class="cxcomponents-content-overflow" cx-prop-module-api-name="Leads" cx-prop-module-apiname="Leads" cx-prop-module-information-type="moduleApiName" cx-prop-page="1" cx-prop-per-page="10" node-id="crmListview1" on-list-view-row-click="{{method('showOnListViewRowClickLyteModal1')}}" group-name="crux-components"></crm-listview>
+        </div>
+	</div>
+</template>

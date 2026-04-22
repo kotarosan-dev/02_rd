@@ -1,0 +1,166 @@
+<template width="1275px" height="632px">
+	<div @data="containerLayout6" lyte-layout="fixed" node-id="containerLayout6">
+		<div @data="containerLayout7" lyte-layout="container" node-id="containerLayout7">
+			<div @data="containerLayout9" lyte-layout="fixed" node-id="containerLayout9">
+				<div @data="containerLayout10" lyte-layout="container" node-id="containerLayout10">
+					<lyte-search @data="lyteSearch4" node-id="lyteSearch4" style="display:block" group-name="lyte-ui-component"></lyte-search>
+				</div>
+				<div @data="containerLayout11" lyte-layout="container" node-id="containerLayout11">
+					<lyte-dropdown @data="lyteDropdown3" lt-prop-options='[{"name": "Option 1", "value": "1"}, {"name": "Option 2", "value": "2"}]' lt-prop-system-value="value" lt-prop-user-value="name" node-id="lyteDropdown3" group-name="lyte-ui-component"></lyte-dropdown>
+				</div>
+			</div>
+			<lyte-table @data="lyteTable2" lt-prop-body-label-key="bodyData" lt-prop-border="true" lt-prop-content='[{"Product name":"Dental Sterilizer","Unit":"2000","Product category":"Dental Instrument","Qty in stock":"2"},{"Product name":"Dental X-Ray Machine","Unit":"3000","Product category":"Dental Instrument","Qty in stock":"40"},{"Product name":"Dental Curning light","Unit":"200","Product category":"Dental Instrument","Qty in stock":"56"},{"Product name":"Dental Scaler","Unit":"450","Product category":"Dental Instrument","Qty in stock":"33"},{"Product name":"Dental Sterilizer","Unit":"2000","Product category":"Dental Instrument","Qty in stock":"2"},{"Product name":"Dental X-Ray Machine","Unit":"3000","Product category":"Dental Instrument","Qty in stock":"40"},{"Product name":"Dental Curning light","Unit":"200","Product category":"Dental Instrument","Qty in stock":"56"},{"Product name":"Dental Scaler","Unit":"450","Product category":"Dental Instrument","Qty in stock":"33"},{"Product name":"Dental Sterilizer","Unit":"2000","Product category":"Dental Instrument","Qty in stock":"2"},{"Product name":"Dental X-Ray Machine","Unit":"3000","Product category":"Dental Instrument","Qty in stock":"40"},{"Product name":"Dental Curning light","Unit":"200","Product category":"Dental Instrument","Qty in stock":"56"},{"Product name":"Dental Scaler","Unit":"450","Product category":"Dental Instrument","Qty in stock":"33"}]' lt-prop-header='[{"data" : "Product name", "bodyData" : "Product name"},
+	 {"data" : "Unit", "bodyData" : "Unit"},{"data" : "Product category", "bodyData" : "Product category"},{"data" : "Qty in stock", "bodyData" : "Qty in stock"}]' lt-prop-header-label-key="data" node-id="lyteTable2" group-name="lyte-ui-component"></lyte-table>
+		</div>
+		<div @data="containerLayout8" lyte-layout="container" node-id="containerLayout8">
+			<lyte-tabs @data="lyteTabs3" class="crmOuterTab" lt-prop-height="601px" node-id="lyteTabs3" on-open="{{method('chartRerenderMethod')}}" style="width:605px;height:599px;" group-name="lyte-ui-component">
+				<template is="registerYield" node-id="templateNode2" yield-name="tabYield">
+					<lyte-tab-head node-id="lyteTabHead3" style="">
+						<lyte-tab-title lt-prop-id="tabs1" node-id="lyteTabTitle7" style="">
+							<span @data="span20" node-id="span20" group-name="native-html">
+								Product Details
+							</span>
+						</lyte-tab-title>
+						<lyte-tab-title lt-prop-id="tabs2" node-id="lyteTabTitle8" style="">
+							<span @data="span21" node-id="span21" group-name="native-html">
+								Inventory & Analytics
+							</span>
+						</lyte-tab-title>
+					</lyte-tab-head>
+					<lyte-tab-body node-id="lyteTabBody3" style="">
+						<lyte-tab-content id="tabs1" lyte-display="grid" node-id="lyteTabContent7" style="">
+							<div @data="containerLayout59" lyte-layout="fixed" node-id="containerLayout59">
+								<div @data="containerLayout60" lyte-layout="container" node-id="containerLayout60">
+									<div @data="containerLayout62" lyte-layout="fixed" node-id="containerLayout62">
+										<div @data="containerLayout63" lyte-layout="container" node-id="containerLayout63">
+											<lyte-carousel @data="lyteCarousel4" lt-prop-active-index="0" lt-prop-records="2" node-id="lyteCarousel4" group-name="lyte-ui-component">
+												<template is="registerYield" node-id="templateNode4" yield-name="carouselBoxYield">
+													<lyte-carousel-prev node-id="lyteCarouselPrev4" style=""></lyte-carousel-prev>
+													<lyte-carousel-content node-id="lyteCarouselContent4" style="">
+														<lyte-carousel-item node-id="lyteCarouselItem7" style="">
+															<img node-id="img7" src="https://images.unsplash.com/photo-1530092285049-1c42085fd395?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8d2hpdGUlMjBmbG93ZXJ8ZW58MHx8MHx8fDA%3D&w=1000&q=80" group-name="native-html"/>
+														</lyte-carousel-item>
+														<lyte-carousel-item node-id="lyteCarouselItem8" style="">
+															<img node-id="img8" src="https://images.unsplash.com/photo-1530092285049-1c42085fd395?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8d2hpdGUlMjBmbG93ZXJ8ZW58MHx8MHx8fDA%3D&w=1000&q=80" group-name="native-html"/>
+														</lyte-carousel-item>
+													</lyte-carousel-content>
+													<lyte-carousel-indicator node-id="lyteCarouselIndicator4" style="">
+														<lyte-carousel-indicator-item data-value="0" node-id="lyteCarouselIndicatorItem7" style=""></lyte-carousel-indicator-item>
+														<lyte-carousel-indicator-item data-value="1" node-id="lyteCarouselIndicatorItem8" style=""></lyte-carousel-indicator-item>
+													</lyte-carousel-indicator>
+													<lyte-carousel-next node-id="lyteCarouselNext4" style=""></lyte-carousel-next>
+												</template>
+											</lyte-carousel>
+										</div>
+										<div @data="containerLayout64" lyte-layout="container" node-id="containerLayout64">
+											<span @data="span28" node-id="span28" group-name="native-html">
+												Customer Rating
+											</span>
+											<lyte-rating @data="lyteRating5" lt-prop-appearance="star" lt-prop-type="svg" node-id="lyteRating5" group-name="lyte-ui-component"></lyte-rating>
+										</div>
+										<div @data="containerLayout65" lyte-layout="container" node-id="containerLayout65">
+											<span @data="span45" node-id="span45" group-name="native-html">
+												Similar products
+											</span>
+											<lyte-avatar-navigator @data="lyteAvatarNavigator3" lt-prop-image-width="100px" lt-prop-images='[{ "name": "https://images.unsplash.com/photo-1530092285049-1c42085fd395?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8d2hpdGUlMjBmbG93ZXJ8ZW58MHx8MHx8fDA%3D&w=1000&q=80","value": "white"},{ "name": "https://hips.hearstapps.com/hmg-prod/images/types-of-garden-flowers-purple-allium-1674847068.jpeg","value": "purple"},{ "name": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6-k5Trb0iy28JGvvI-5tUHs0G_LrFBqoxNA&usqp=CAU","value": "blue"},{ "name": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAnDgUqPnErS6MQeq_ZdE5qBA6axBNw_Jokg&usqp=CAU","value": "pink"}]' lt-prop-system-value="value" lt-prop-url-value="name" node-id="lyteAvatarNavigator3" group-name="lyte-ui-component"></lyte-avatar-navigator>
+										</div>
+									</div>
+								</div>
+								<div @data="containerLayout61" lyte-layout="container" node-id="containerLayout61">
+									<div @data="containerLayout66" lyte-layout="container" node-id="containerLayout66">
+										<span @data="span29" node-id="span29" group-name="native-html">
+											Dental Sterilizer
+										</span>
+										<lyte-text @data="lyteText15" lt-prop-multi-line="true" lt-prop-tabindex='"-1"' lt-prop-value="Stainless Steel Electric Instrument Sterilizer" node-id="lyteText15" group-name="lyte-ui-component"></lyte-text>
+									</div>
+									<div @data="containerLayout67" lyte-layout="container" node-id="containerLayout67">
+										<div @data="containerLayout73" lyte-layout="container" node-id="containerLayout73">
+											<span @data="span30" node-id="span30" group-name="native-html">
+												Qty in stock
+											</span>
+											<lyte-input @data="lyteInput1" lt-prop-appearance="box" lt-prop-label="" lt-prop-placeholder="Enter number here" lt-prop-type="number" lt-prop-value="2" node-id="lyteInput1" group-name="lyte-ui-component"></lyte-input>
+										</div>
+										<div @data="containerLayout74" lyte-layout="container" node-id="containerLayout74">
+											<span @data="span31" node-id="span31" group-name="native-html">
+												Category
+											</span>
+											<lyte-dropdown @data="lyteDropdown4" lt-prop-options='[{"name": "Option 1", "value": "1"}, {"name": "Option 2", "value": "2"}]' lt-prop-system-value="value" lt-prop-user-value="name" node-id="lyteDropdown4" group-name="lyte-ui-component"></lyte-dropdown>
+										</div>
+										<lyte-text @data="lyteText16" lt-prop-tabindex='"-1"' lt-prop-value="$2000" node-id="lyteText16" group-name="lyte-ui-component"></lyte-text>
+									</div>
+									<lyte-accordion @data="lyteAccordion1" lt-prop-dynamic="false" node-id="lyteAccordion1" group-name="lyte-ui-component">
+										<template is="registerYield" node-id="templateNode1" yield-name="yield">
+											<lyte-accordion-item node-id="lyteAccordionItem1" style="">
+												<lyte-accordion-header lyte-display="grid" node-id="lyteAccordionHeader1" style="">
+													<lyte-icon class="lyteAccordionArrow" node-id="lyteIcon1" style=""></lyte-icon>
+													<span @data="span32" node-id="span32" group-name="native-html">
+														Description
+													</span>
+												</lyte-accordion-header>
+												<lyte-accordion-body lyte-display="grid" node-id="lyteAccordionBody1" style="">
+													<span @data="span33" node-id="span33" group-name="native-html">
+														Electric Instrument Sterilizer & Boiler - made of high quality Stainless Steel used for Sterilization / Disinfection of surgical instruments. It is fitted with thermostat & tray lifting arrangement.Instrument Sterilizers, electric, with hinged lid fitted with immersion rod and water outlet tap.
+													</span>
+												</lyte-accordion-body>
+											</lyte-accordion-item>
+											<lyte-accordion-item node-id="lyteAccordionItem2" style="">
+												<lyte-accordion-header lyte-display="grid" node-id="lyteAccordionHeader2" style="">
+													<lyte-icon class="lyteAccordionArrow" node-id="lyteIcon2" style=""></lyte-icon>
+													<span @data="span34" node-id="span34" group-name="native-html">
+														Features
+													</span>
+												</lyte-accordion-header>
+												<lyte-accordion-body lyte-display="grid" node-id="lyteAccordionBody2" style="">
+													<span @data="span35" node-id="span35" group-name="native-html">
+														Electric Instrument Sterilizer & Boiler - made of high quality Stainless Steel used for Sterilization / Disinfection of surgical instruments. It is fitted with thermostat & tray lifting arrangement.Instrument Sterilizers, electric, with hinged lid fitted with immersion rod and water outlet tap.
+													</span>
+												</lyte-accordion-body>
+											</lyte-accordion-item>
+											<lyte-accordion-item node-id="lyteAccordionItem6" style="">
+												<lyte-accordion-header lyte-display="grid" node-id="lyteAccordionHeader6" style="">
+													<lyte-icon class="lyteAccordionArrow" node-id="lyteIcon6" style=""></lyte-icon>
+													<span @data="span42" node-id="span42" group-name="native-html">
+														Key Specification
+													</span>
+												</lyte-accordion-header>
+												<lyte-accordion-body lyte-display="grid" node-id="lyteAccordionBody6" style="">
+													<span @data="span43" node-id="span43" group-name="native-html">
+														Electric Instrument Sterilizer & Boiler - made of high quality Stainless Steel used for Sterilization / Disinfection of surgical instruments. It is fitted with thermostat & tray lifting arrangement.Instrument Sterilizers, electric, with hinged lid fitted with immersion rod and water outlet tap.
+													</span>
+												</lyte-accordion-body>
+											</lyte-accordion-item>
+											<lyte-accordion-item node-id="lyteAccordionItem5" style="">
+												<lyte-accordion-header lyte-display="grid" node-id="lyteAccordionHeader5" style="">
+													<lyte-icon class="lyteAccordionArrow" node-id="lyteIcon5" style=""></lyte-icon>
+													<span @data="span40" node-id="span40" group-name="native-html">
+														Packaging
+													</span>
+												</lyte-accordion-header>
+												<lyte-accordion-body lyte-display="grid" node-id="lyteAccordionBody5" style="">
+													<span @data="span41" node-id="span41" group-name="native-html">
+														Electric Instrument Sterilizer & Boiler - made of high quality Stainless Steel used for Sterilization / Disinfection of surgical instruments. It is fitted with thermostat & tray lifting arrangement.Instrument Sterilizers, electric, with hinged lid fitted with immersion rod and water outlet tap.
+													</span>
+												</lyte-accordion-body>
+											</lyte-accordion-item>
+										</template>
+									</lyte-accordion>
+								</div>
+							</div>
+						</lyte-tab-content>
+						<lyte-tab-content id="tabs2" lyte-display="grid" node-id="lyteTabContent8" style="">
+							<div @data="containerLayout68" lyte-layout="fixed" node-id="containerLayout68">
+								<div @data="containerLayout69" lyte-layout="container" node-id="containerLayout69">
+                                    <lyte-chart @data="lyteChart1" lt-prop-canvas-style='{"theme":"flatui"}' lt-prop-canvas-subtitle="" lt-prop-canvas-title="Simple bar" lt-prop-chart-xaxis='{"label":{"text":"Year(Date)"},"ticklabel":{"rotation":"auto"},"axisline":{"color":"transparent"}}' lt-prop-chart-yaxis='{"label":{"text":"Sum(Sales)"}}' lt-prop-meta-data-axes='{"x":[0],"y":[[1]],"tooltip":[0,1]}' lt-prop-meta-data-columns='[{"dataindex":0,"columnname":"Year(Date)","datatype":"time","time":{"subfunction":"YEAR"}},{"dataindex":1,"columnname":"Sum(Sales)","datatype":"numeric","numeric":{"format":{"thousandSeperator":",","decimalPlaces":2,"signEnabled":false,"prefix":"$"}}}]' lt-prop-series-data='{"chartdata":[{"data":[[[2004,35881.08],[2005,105881.08],[2006,225881.28],[2007,295881.21],[2008,345881.57],[2009,415881.92],[2010,495881.08],[2011,605881.28],[2012,721588.21],[2013,835881.57],[2014,10033]]]}]}' lt-prop-type="bar" node-id="lyteChart1" group-name="lyte-ui-component"></lyte-chart>
+                                    <lyte-chart @data="lyteChart2" lt-prop-canvas-style='{"theme":"flatui"}' lt-prop-canvas-subtitle="" lt-prop-canvas-title="Pie Chart" lt-prop-chart-xaxis='{"label":{"text":"Year(Date)"},"ticklabel":{"rotation":"auto"},"axisline":{"color":"transparent"}}' lt-prop-chart-yaxis='{"label":{"text":"Sum(Sales)"}}' lt-prop-meta-data-axes='{"x":[0],"y":[[1]],"tooltip":[0,1]}' lt-prop-meta-data-columns='[{"dataindex":0,"columnname":"Year(Date)","datatype":"time","time":{"subfunction":"YEAR"}},{"dataindex":1,"columnname":"Sum(Sales)","datatype":"numeric","numeric":{"format":{"thousandSeperator":",","decimalPlaces":2,"signEnabled":false,"prefix":"$"}}}]' lt-prop-series-data='{"chartdata":[{"data":[[[2004,35881.08],[2005,105881.08],[2006,225881.28],[2007,295881.21],[2008,345881.57],[2009,415881.92],[2010,495881.08],[2011,605881.28],[2012,721588.21],[2013,835881.57],[2014,10033]]]}]}' lt-prop-type="pie" node-id="lyteChart2" group-name="lyte-ui-component"></lyte-chart>								</div>
+                                <div @data="containerLayout70" lyte-layout="container" node-id="containerLayout70">
+                                    <lyte-chart @data="lyteChart3" lt-prop-canvas-style='{"theme":"flatui"}' lt-prop-canvas-subtitle="" lt-prop-canvas-title="Funnel Chart" lt-prop-chart-xaxis='{"label":{"text":"Year(Date)"},"ticklabel":{"rotation":"auto"},"axisline":{"color":"transparent"}}' lt-prop-chart-yaxis='{"label":{"text":"Sum(Sales)"}}' lt-prop-meta-data-axes='{"x":[0],"y":[[1]],"tooltip":[0,1]}' lt-prop-meta-data-columns='[{"dataindex":0,"columnname":"Year(Date)","datatype":"time","time":{"subfunction":"YEAR"}},{"dataindex":1,"columnname":"Sum(Sales)","datatype":"numeric","numeric":{"format":{"thousandSeperator":",","decimalPlaces":2,"signEnabled":false,"prefix":"$"}}}]' lt-prop-series-data='{"chartdata":[{"data":[[[2004,35881.08],[2005,105881.08],[2006,225881.28],[2007,295881.21],[2008,345881.57],[2009,415881.92],[2010,495881.08],[2011,605881.28],[2012,721588.21],[2013,835881.57],[2014,10033]]]}]}' lt-prop-type="funnel" node-id="lyteChart3" group-name="lyte-ui-component"></lyte-chart>
+                                    <lyte-chart @data="lyteChart4" lt-prop-canvas-style='{"theme":"flatui"}' lt-prop-canvas-subtitle="" lt-prop-canvas-title="Donut Chart" lt-prop-chart-plot-options='{"pie":{"innerRadius":"65%"}}' lt-prop-chart-xaxis='{"label":{"text":"Year(Date)"},"ticklabel":{"rotation":"auto"},"axisline":{"color":"transparent"}}' lt-prop-chart-yaxis='{"label":{"text":"Sum(Sales)"}}' lt-prop-meta-data-axes='{"x":[0],"y":[[1]],"tooltip":[0,1]}' lt-prop-meta-data-columns='[{"dataindex":0,"columnname":"Year(Date)","datatype":"time","time":{"subfunction":"YEAR"}},{"dataindex":1,"columnname":"Sum(Sales)","datatype":"numeric","numeric":{"format":{"thousandSeperator":",","decimalPlaces":2,"signEnabled":false,"prefix":"$"}}}]' lt-prop-series-data='{"chartdata":[{"type":"pie","data":[[["2010",225881.08],["2011",297103.28],["2012",338301.21],["2013",351459.57],["2014",87201.92]]]}]}' lt-prop-type="donut" node-id="lyteChart4" group-name="lyte-ui-component"></lyte-chart>
+                                </div>
+							</div>
+						</lyte-tab-content>
+					</lyte-tab-body>
+				</template>
+			</lyte-tabs>
+		</div>
+	</div>
+</template>

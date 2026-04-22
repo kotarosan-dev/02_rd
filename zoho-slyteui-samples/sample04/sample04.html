@@ -1,0 +1,256 @@
+<template width="980px" height="452px">
+	<div @data="containerLayout1" lyte-layout="container" node-id="containerLayout1">
+		<lyte-step @data="lyteStep1" class="crmLyteStep bookRideStep" lt-prop-class="lyteStepFlat1" lt-prop-data='["Client Details","Location",{"name": "Schedule and Vehicle type"}, {"name": "Fare estimate and Vendor"},"Confirm Booking"]' lt-prop-label="name" node-id="lyteStep1" on-click="{{method('stepMethod')}}" group-name="lyte-ui-component"></lyte-step>
+		<div @data="lyteIfBox1" node-id="lyteIfBox1" pb-dynamic-wrapper="true" group-name="native-html">
+			<div @data="lyteIf1" lyte-display="flex" lyte-if="{{stepCheck == 0}}" node-id="lyteIf1" comp-name="lyte-if" group-name="dynamic-components">
+				<div @data="containerLayout13" lyte-layout="container" node-id="containerLayout13">
+					<div @data="containerLayout20" lyte-layout="fixed" node-id="containerLayout20">
+						<div @data="containerLayout22" lyte-layout="container" node-id="containerLayout22">
+							<div @data="containerLayout24" lyte-layout="fixed" node-id="containerLayout24">
+								<div @data="containerLayout25" lyte-layout="container" node-id="containerLayout25">
+									<label class="crmLabelColor" for="title" node-id="label7" group-name="native-html">
+										Contact Name
+									</label>
+								</div>
+								<div @data="containerLayout26" lyte-layout="container" node-id="containerLayout26">
+									<lyte-input @data="lyteInput13" lt-prop-appearance="box" lt-prop-placeholder="enter text here" lt-prop-style="grid-area:1/1/51/180; " lt-prop-type="text" node-id="lyteInput13" group-name="lyte-ui-component"></lyte-input>
+								</div>
+							</div>
+							<div @data="fixedLayout4" lyte-layout="fixed" node-id="fixedLayout4">
+								<div @data="containerLayout33" lyte-layout="container" node-id="containerLayout33">
+									<label class="crmLabelColor" for="title" node-id="label9" group-name="native-html">
+										Email
+									</label>
+								</div>
+								<div @data="containerLayout34" lyte-layout="container" node-id="containerLayout34">
+									<lyte-input @data="lyteInput15" lt-prop-appearance="box" lt-prop-placeholder="enter text here" lt-prop-style="grid-area:1/1/51/180; " lt-prop-type="text" node-id="lyteInput15" group-name="lyte-ui-component"></lyte-input>
+								</div>
+							</div>
+						</div>
+						<div @data="containerLayout23" lyte-layout="container" node-id="containerLayout23">
+							<div @data="fixedLayout3" lyte-layout="fixed" node-id="fixedLayout3">
+								<div @data="containerLayout31" lyte-layout="container" node-id="containerLayout31">
+									<label class="crmLabelColor" for="title" node-id="label8" group-name="native-html">
+										Phone
+									</label>
+								</div>
+								<div @data="containerLayout32" lyte-layout="container" node-id="containerLayout32">
+									<lyte-input @data="lyteInput14" lt-prop-appearance="box" lt-prop-placeholder="enter text here" lt-prop-style="grid-area:1/1/51/180; " lt-prop-type="text" node-id="lyteInput14" group-name="lyte-ui-component"></lyte-input>
+								</div>
+							</div>
+						</div>
+					</div>
+					<lyte-button @data="lyteButton24" lt-prop-appearance="primary" lt-prop-style="width:100%;height:100%;" lt-prop-text="Next" node-id="lyteButton24" onclick="{{action('nextMethod')}}" group-name="lyte-ui-component"></lyte-button>
+					<lyte-text @data="lyteText27" lt-prop-value="Client Details" node-id="lyteText27" group-name="lyte-ui-component"></lyte-text>
+				</div>
+			</div>
+			<div @data="lyteElseIf2" lyte-display="flex" lyte-else-if="{{stepCheck == 1}}" node-id="lyteElseIf2" comp-name="lyte-else-if" group-name="dynamic-components">
+				<div @data="containerLayout14" lyte-layout="container" node-id="containerLayout14">
+					<div @data="fixedLayout5" lyte-layout="fixed" node-id="fixedLayout5">
+						<div @data="containerLayout35" lyte-layout="container" node-id="containerLayout35">
+							<div @data="fixedLayout6" lyte-layout="fixed" node-id="fixedLayout6">
+								<div @data="containerLayout36" lyte-layout="container" node-id="containerLayout36">
+									<label class="crmLabelColor" for="title" node-id="label10" group-name="native-html">
+										Pickup Address
+									</label>
+								</div>
+								<div @data="containerLayout37" lyte-layout="container" node-id="containerLayout37">
+									<lyte-input @data="lyteInput16" lt-prop-appearance="box" lt-prop-placeholder="enter text here" lt-prop-style="grid-area:1/1/51/180; " lt-prop-type="text" node-id="lyteInput16" group-name="lyte-ui-component"></lyte-input>
+								</div>
+							</div>
+						</div>
+						<div @data="containerLayout40" lyte-layout="container" node-id="containerLayout40">
+							<div @data="fixedLayout8" lyte-layout="fixed" node-id="fixedLayout8">
+								<div @data="containerLayout41" lyte-layout="container" node-id="containerLayout41">
+									<label class="crmLabelColor" for="title" node-id="label12" group-name="native-html">
+										Drop Address
+									</label>
+								</div>
+								<div @data="containerLayout42" lyte-layout="container" node-id="containerLayout42">
+									<lyte-input @data="lyteInput18" lt-prop-appearance="box" lt-prop-placeholder="enter text here" lt-prop-style="grid-area:1/1/51/180; " lt-prop-type="text" node-id="lyteInput18" group-name="lyte-ui-component"></lyte-input>
+								</div>
+							</div>
+						</div>
+					</div>
+					<lyte-button @data="lyteButton25" lt-prop-appearance="primary" lt-prop-style="width:100%;height:100%;" lt-prop-text="Next" node-id="lyteButton25" onclick="{{action('nextMethod')}}" group-name="lyte-ui-component"></lyte-button>
+					<lyte-button @data="lyteButton15" lt-prop-appearance="default" lt-prop-style="width:100%;height:100%;" lt-prop-text="Previous" node-id="lyteButton15" onclick="{{action('previousMethod')}}" group-name="lyte-ui-component"></lyte-button>
+					<lyte-text @data="lyteText28" lt-prop-value="Location" node-id="lyteText28" group-name="lyte-ui-component"></lyte-text>
+				</div>
+			</div>
+			<div @data="lyteElseIf3" lyte-display="flex" lyte-else-if="{{stepCheck == 2}}" node-id="lyteElseIf3" comp-name="lyte-else-if" group-name="dynamic-components">
+				<div @data="containerLayout18" lyte-layout="container" node-id="containerLayout18">
+					<lyte-button @data="lyteButton23" lt-prop-appearance="default" lt-prop-style="width:100%;height:100%;" lt-prop-text="Previous" node-id="lyteButton23" onclick="{{action('previousMethod')}}" group-name="lyte-ui-component"></lyte-button>
+					<lyte-button @data="lyteButton26" lt-prop-appearance="primary" lt-prop-style="width:100%;height:100%;" lt-prop-text="Next" node-id="lyteButton26" onclick="{{action('nextMethod')}}" group-name="lyte-ui-component"></lyte-button>
+					<div @data="fixedLayout13" lyte-layout="fixed" node-id="fixedLayout13">
+						<div @data="containerLayout51" lyte-layout="container" node-id="containerLayout51">
+							<div @data="fixedLayout14" lyte-layout="fixed" node-id="fixedLayout14">
+								<div @data="containerLayout52" lyte-layout="container" node-id="containerLayout52">
+									<label class="crmLabelColor" for="title" node-id="label16" group-name="native-html">
+										Date & Time
+									</label>
+								</div>
+								<div @data="containerLayout53" lyte-layout="container" node-id="containerLayout53">
+									<lyte-input @data="lyteInput26" lt-prop-appearance="box" lt-prop-current-date="04/11/2026" lt-prop-default-time="12:00 AM" lt-prop-format="MM/DD/YYYY" lt-prop-placeholder="Select Date" lt-prop-type="datetime" node-id="lyteInput26" group-name="lyte-ui-component"></lyte-input>
+								</div>
+							</div>
+							<div @data="fixedLayout15" lyte-layout="fixed" node-id="fixedLayout15">
+								<div @data="containerLayout54" lyte-layout="container" node-id="containerLayout54">
+									<label class="crmLabelColor" for="title" node-id="label17" group-name="native-html">
+										Special Instructions
+									</label>
+								</div>
+								<div @data="containerLayout55" lyte-layout="container" node-id="containerLayout55">
+									<lyte-input @data="lyteInput25" lt-prop-appearance="box" lt-prop-height="100%" lt-prop-id="lyteinput" lt-prop-placeholder="Enter your comments" lt-prop-style="height: 120px;width: 650px;" lt-prop-type="textarea" node-id="lyteInput25" group-name="lyte-ui-component"></lyte-input>
+								</div>
+							</div>
+						</div>
+						<div @data="containerLayout56" lyte-layout="container" node-id="containerLayout56">
+							<div @data="fixedLayout16" lyte-layout="fixed" node-id="fixedLayout16">
+								<div @data="containerLayout57" lyte-layout="container" node-id="containerLayout57">
+									<label class="crmLabelColor" for="title" node-id="label18" group-name="native-html">
+										Vehicle Type
+									</label>
+								</div>
+								<div @data="containerLayout58" lyte-layout="container" node-id="containerLayout58">
+									<lyte-dropdown @data="lyteDropdown7" lt-prop-options='[{"name": "Default", "value": 500}, {"name": "Sedan", "value": 1000},{"name": "SUV", "value": 1500}, {"name": "Luxury", "value": 2000}]' lt-prop-system-value="value" lt-prop-user-value="name" node-id="lyteDropdown7" group-name="lyte-ui-component"></lyte-dropdown>
+								</div>
+							</div>
+						</div>
+					</div>
+					<lyte-text @data="lyteText29" lt-prop-value="Schedule and Vechile Type" node-id="lyteText29" group-name="lyte-ui-component"></lyte-text>
+				</div>
+			</div>
+			<div @data="lyteElseIf8" lyte-display="flex" lyte-else-if="{{stepCheck == 3}}" node-id="lyteElseIf8" comp-name="lyte-else-if" group-name="dynamic-components">
+				<div @data="containerLayout16" lyte-layout="container" node-id="containerLayout16">
+					<lyte-text @data="lyteText12" lt-prop-value="{{estimatedFees}}" node-id="lyteText12" group-name="lyte-ui-component"></lyte-text>
+					<div @data="fixedLayout17" lyte-layout="fixed" node-id="fixedLayout17">
+						<div @data="containerLayout59" lyte-layout="container" node-id="containerLayout59">
+							<div @data="fixedLayout18" lyte-layout="fixed" node-id="fixedLayout18">
+								<div @data="containerLayout60" lyte-layout="container" node-id="containerLayout60">
+									<label class="crmLabelColor" for="title" node-id="label19" group-name="native-html">
+										Vendor
+									</label>
+								</div>
+								<div @data="containerLayout61" lyte-layout="container" node-id="containerLayout61">
+									<lyte-dropdown @data="lyteDropdown8" lt-prop-display-value=" {{lbind(vendor)}}" lt-prop-options='[{"name": "Uber", "value": "1"}, {"name": "Ola", "value": "2"},{"name": "Rapido", "value": "3"}] ' lt-prop-system-value="value" lt-prop-user-value="name" node-id="lyteDropdown8" group-name="lyte-ui-component"></lyte-dropdown>
+								</div>
+							</div>
+						</div>
+						<div @data="containerLayout64" lyte-layout="container" node-id="containerLayout64">
+							<div @data="fixedLayout20" lyte-layout="fixed" node-id="fixedLayout20">
+								<div @data="containerLayout65" lyte-layout="container" node-id="containerLayout65">
+									<label class="crmLabelColor" for="title" node-id="label21" group-name="native-html">
+										Payment Mode
+									</label>
+								</div>
+								<div @data="containerLayout66" lyte-layout="container" node-id="containerLayout66">
+									<lyte-dropdown @data="lyteDropdown9" lt-prop-display-value="{{lbind(paymentMode)}}" lt-prop-options='[{"name": "Cash", "value": "1"}, {"name": "Card", "value": "2"},{"name": "Wallet", "value": "3"}]' lt-prop-system-value="value" lt-prop-user-value="name" node-id="lyteDropdown9" group-name="lyte-ui-component"></lyte-dropdown>
+								</div>
+							</div>
+							<div @data="containerLayout70" lyte-layout="container" node-id="containerLayout70">
+								<lyte-text @data="lyteText25" class="crm-font-regular crmLabelColor" lt-prop-value="Estimated Fare" node-id="lyteText25" group-name="lyte-ui-component"></lyte-text>
+								<lyte-text @data="lyteText26" lt-prop-value="Rs 200.00" node-id="lyteText26" group-name="lyte-ui-component"></lyte-text>
+							</div>
+						</div>
+					</div>
+					<lyte-button @data="lyteButton28" lt-prop-appearance="primary" lt-prop-style="width:100%;height:100%;" lt-prop-text="Next" node-id="lyteButton28" onclick="{{action('nextMethod')}}" group-name="lyte-ui-component"></lyte-button>
+					<lyte-button @data="lyteButton19" lt-prop-appearance="default" lt-prop-style="width:100%;height:100%;" lt-prop-text="Previous" node-id="lyteButton19" onclick="{{action('previousMethod')}}" group-name="lyte-ui-component"></lyte-button>
+					<lyte-text @data="lyteText31" lt-prop-value="Fare estimate and Vendor" node-id="lyteText31" group-name="lyte-ui-component"></lyte-text>
+				</div>
+			</div>
+			<div @data="lyteElseIf9" lyte-display="flex" lyte-else-if="{{stepCheck == 4}}" node-id="lyteElseIf9" comp-name="lyte-else-if" group-name="dynamic-components">
+				<div @data="containerLayout17" lyte-layout="container" node-id="containerLayout17">
+					<div @data="containerLayout71" lyte-layout="fixed" node-id="containerLayout71">
+						<div @data="containerLayout72" lyte-layout="fixed" node-id="containerLayout72">
+							<div @data="containerLayout74" lyte-layout="fixed" node-id="containerLayout74">
+								<div @data="containerLayout80" lyte-layout="container" node-id="containerLayout80">
+									<label class="crmLabelColor" for="title" node-id="label23" group-name="native-html">
+										Location
+									</label>
+								</div>
+								<div @data="containerLayout81" lyte-layout="container" node-id="containerLayout81">
+									<span @data="span1" node-id="span1" group-name="native-html">
+										Chennai
+									</span>
+								</div>
+							</div>
+							<div @data="containerLayout75" lyte-layout="fixed" node-id="containerLayout75">
+								<div @data="containerLayout82" lyte-layout="container" node-id="containerLayout82">
+									<label class="crmLabelColor" for="title" node-id="label24" group-name="native-html">
+										Contact Name
+									</label>
+								</div>
+								<div @data="containerLayout83" lyte-layout="container" node-id="containerLayout83">
+									<span @data="span3" node-id="span3" group-name="native-html">
+										1234567890
+									</span>
+								</div>
+							</div>
+							<div @data="containerLayout76" lyte-layout="fixed" node-id="containerLayout76">
+								<div @data="containerLayout84" lyte-layout="container" node-id="containerLayout84">
+									<label class="crmLabelColor" for="title" node-id="label25" group-name="native-html">
+										Vechicle Type
+									</label>
+								</div>
+								<div @data="containerLayout85" lyte-layout="container" node-id="containerLayout85">
+									<span @data="span4" node-id="span4" group-name="native-html">
+										SUV
+									</span>
+								</div>
+							</div>
+						</div>
+						<div @data="containerLayout73" lyte-layout="fixed" node-id="containerLayout73">
+							<div @data="containerLayout77" lyte-layout="fixed" node-id="containerLayout77">
+								<div @data="containerLayout86" lyte-layout="container" node-id="containerLayout86">
+									<label class="crmLabelColor" for="title" node-id="label26" group-name="native-html">
+										Time
+									</label>
+								</div>
+								<div @data="containerLayout87" lyte-layout="container" node-id="containerLayout87">
+									<span @data="span5" node-id="span5" group-name="native-html">
+										04/16/2025 12:00 AM
+									</span>
+								</div>
+							</div>
+							<div @data="containerLayout78" lyte-layout="fixed" node-id="containerLayout78">
+								<div @data="containerLayout88" lyte-layout="container" node-id="containerLayout88">
+									<label class="crmLabelColor" for="title" node-id="label27" group-name="native-html">
+										Payment mode
+									</label>
+								</div>
+								<div @data="containerLayout89" lyte-layout="container" node-id="containerLayout89">
+									<span @data="span6" node-id="span6" group-name="native-html">
+										Cash
+									</span>
+								</div>
+							</div>
+							<div @data="containerLayout79" lyte-layout="fixed" node-id="containerLayout79">
+								<div @data="containerLayout90" lyte-layout="container" node-id="containerLayout90">
+									<label class="crmLabelColor" for="title" node-id="label28" group-name="native-html">
+										Estimate Fare
+									</label>
+								</div>
+								<div @data="containerLayout91" lyte-layout="container" node-id="containerLayout91">
+									<span @data="span7" node-id="span7" group-name="native-html">
+										Rs 200.00
+									</span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<lyte-text @data="lyteText32" lt-prop-value="Confirm Booking" node-id="lyteText32" group-name="lyte-ui-component"></lyte-text>
+					<lyte-button @data="lyteButton29" lt-prop-appearance="primary" lt-prop-style="width:100%;height:100%;" lt-prop-text="Confirm" node-id="lyteButton29" onclick="{{action('nextMethod')}}" group-name="lyte-ui-component"></lyte-button>
+					<lyte-button @data="lyteButton21" lt-prop-style="width:100%;height:100%;" lt-prop-text="Previous" node-id="lyteButton21" onclick="{{action('previousMethod')}}" group-name="lyte-ui-component"></lyte-button>
+				</div>
+			</div>
+			<div @data="lyteElseIf10" lyte-display="flex" lyte-else-if="{{stepCheck == 5}}" node-id="lyteElseIf10" comp-name="lyte-else-if" group-name="dynamic-components">
+				<div @data="containerLayout19" lyte-layout="fixed" node-id="containerLayout19">
+					<div @data="containerLayout67" lyte-layout="container" node-id="containerLayout67">
+						<lyte-text @data="lyteText19" lt-prop-value="Booking Confirmed!" node-id="lyteText19" group-name="lyte-ui-component"></lyte-text>
+						<lyte-text @data="lyteText20" class="crmParagraphColor" lt-prop-value="Your booking has been successfully Confirmed" node-id="lyteText20" group-name="lyte-ui-component"></lyte-text>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</template>

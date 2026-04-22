@@ -1,0 +1,55 @@
+<template class="boxShadow" part="rightsection" width="1280px" height="720px">
+	<div @data="containerLayout19" class="boxShadow" lyte-layout="fixed" node-id="containerLayout19">
+		<div @data="containerLayout20" lyte-layout="container" node-id="containerLayout20">
+			<lyte-text @data="lyteText1" lt-prop-value="Enter campaign Details" node-id="lyteText1" group-name="lyte-ui-component"></lyte-text>
+		</div>
+		<div @data="containerLayout21" lyte-layout="container" node-id="containerLayout21">
+			<label class="w40p crmLabelColor" for="title" node-id="label1" group-name="native-html">
+				Campaign Name
+			</label>
+			<lyte-input @data="lyteInput1" class="w100p" lt-prop-appearance="box" lt-prop-dropdown-class="w100p" lt-prop-label="" lt-prop-placeholder="enter text here" lt-prop-type="text" node-id="lyteInput1" group-name="lyte-ui-component"></lyte-input>
+		</div>
+		<div @data="containerLayout22" lyte-layout="container" node-id="containerLayout22">
+			<label class="w40p crmLabelColor" for="title" node-id="label2" group-name="native-html">
+				Description
+			</label>
+			<lyte-input @data="lyteInput3" class="w100p" lt-prop-appearance="box" lt-prop-dropdown-class="w100p" lt-prop-label="" lt-prop-placeholder="enter text here" lt-prop-text-area-resize='{"horizontal" : false, "vertical" : false }' lt-prop-type="textarea" node-id="lyteInput3" part="rightsection" group-name="lyte-ui-component"></lyte-input>
+		</div>
+		<div @data="containerLayout23" lyte-layout="container" node-id="containerLayout23">
+			<label class="w40p crmLabelColor" for="title" node-id="label3" group-name="native-html">
+				Campaign Type
+			</label>
+			<lyte-dropdown @data="lyteDropdown1" class="w100p" lt-prop-box-class="w100p" lt-prop-options='[{"name": "Email Marketing campaing", "value": "1"}, {"name": "Option 2", "value": "2"}]' lt-prop-system-value="value" lt-prop-user-value="name" node-id="lyteDropdown1" part="rightsection" group-name="lyte-ui-component"></lyte-dropdown>
+		</div>
+		<div @data="containerLayout24" lyte-layout="container" node-id="containerLayout24">
+			<label class="w40p crmLabelColor" for="title" node-id="label4" group-name="native-html">
+				Target Audience
+			</label>
+			<lyte-dropdown @data="lyteDropdown2" class="w100p w60p" lt-prop-box-class="w100p w60p" lt-prop-options='[{"name": "Existing Customers", "value": "1"}, {"name": "Option 2", "value": "2"}]' lt-prop-system-value="value" lt-prop-user-value="name" node-id="lyteDropdown2" part="rightsection" group-name="lyte-ui-component"></lyte-dropdown>
+		</div>
+		<div @data="containerLayout25" lyte-layout="container" node-id="containerLayout25">
+			<label class="w40p crmLabelColor" for="title" node-id="label5" group-name="native-html">
+				Schedule
+			</label>
+			<lyte-input @data="lyteInput4" class="w100p" lt-prop-appearance="box" lt-prop-aria="true" lt-prop-dropdown-class="w100p" lt-prop-format="MM/DD/YYYY" lt-prop-id="lyteinput" lt-prop-label="" lt-prop-placeholder="Start Date - End Date" lt-prop-type="date" node-id="lyteInput4" part="rightsection" group-name="lyte-ui-component"></lyte-input>
+		</div>
+		<div @data="containerLayout26" lyte-layout="container" node-id="containerLayout26">
+			<lyte-text @data="lyteText2" lt-prop-value="Communication Channels" node-id="lyteText2" group-name="lyte-ui-component"></lyte-text>
+			<div @data="containerLayout28" lyte-layout="fixed" node-id="containerLayout28">
+				<div @data="containerLayout29" lyte-layout="container" node-id="containerLayout29">
+					<lyte-checkbox @data="lyteCheckbox2" lt-prop-label="Opt-in for email updates only" lt-prop-value="1" node-id="lyteCheckbox2" group-name="lyte-ui-component"></lyte-checkbox>
+				</div>
+				<div @data="containerLayout30" lyte-layout="container" node-id="containerLayout30">
+					<lyte-checkbox @data="lyteCheckbox3" lt-prop-label="Allow sms notifications or push notifications" lt-prop-value="1" node-id="lyteCheckbox3" group-name="lyte-ui-component"></lyte-checkbox>
+				</div>
+				<div @data="containerLayout31" lyte-layout="container" node-id="containerLayout31">
+					<lyte-checkbox @data="lyteCheckbox4" lt-prop-label="Receive updates via social media platforms" lt-prop-value="1" node-id="lyteCheckbox4" group-name="lyte-ui-component"></lyte-checkbox>
+				</div>
+			</div>
+		</div>
+		<div @data="containerLayout27" lyte-layout="container" node-id="containerLayout27">
+			<lyte-text @data="lyteText3" class="w100p w60p crmLabelColor" lt-prop-tabindex='"-1"' lt-prop-value="Budget Allocation" node-id="lyteText3" part="rightsection" group-name="lyte-ui-component"></lyte-text>
+			<lyte-slider @data="lyteSlider1" lt-prop-direction="lyteHorizontal" lt-prop-handler="lyteSquare" lt-prop-height="49px" lt-prop-max="10000" lt-prop-range-handler="true" lt-prop-scale-interval="2000" lt-prop-width="289px" node-id="lyteSlider1" style="width:320px;height:100%;" group-name="lyte-ui-component"></lyte-slider>
+		</div>
+	</div>
+</template>

@@ -1,0 +1,33 @@
+<template width="640px" height="320px">
+	<div @data="containerLayout1" lyte-layout="container" node-id="containerLayout1">
+
+		<lyte-text @data="lyteText1" lt-prop-value="現在のステータス:" node-id="lyteText1" group-name="lyte-ui-component"></lyte-text>
+		<lyte-text @data="lyteText2" lt-prop-value="{{currentStatus}}" node-id="lyteText2" group-name="lyte-ui-component"></lyte-text>
+
+		<lyte-button @data="lyteButton1" lt-prop-appearance="default" lt-prop-text="ステータスを読み込み" node-id="lyteButton1" onclick="{{action('loadStatus')}}" group-name="lyte-ui-component"></lyte-button>
+
+		<div @data="lyteIfBox1" node-id="lyteIfBox1" pb-dynamic-wrapper="true" group-name="native-html">
+
+			<div @data="lyteIf1" lyte-display="flex" lyte-if="{{canMarkContacted(currentStatus)}}" node-id="lyteIf1" comp-name="lyte-if" group-name="dynamic-components">
+				<lyte-button @data="lyteButton2" lt-prop-appearance="primary" lt-prop-text="📞 コンタクト済みに変更" node-id="lyteButton2" onclick="{{action('markContacted')}}" group-name="lyte-ui-component"></lyte-button>
+			</div>
+
+			<div @data="lyteIf2" lyte-display="flex" lyte-if="{{canPreQualify(currentStatus)}}" node-id="lyteIf2" comp-name="lyte-if" group-name="dynamic-components">
+				<lyte-button @data="lyteButton3" lt-prop-appearance="primary" lt-prop-text="✅ Pre-Qualified に変更" node-id="lyteButton3" onclick="{{action('markPreQualified')}}" group-name="lyte-ui-component"></lyte-button>
+			</div>
+
+			<div @data="lyteIf3" lyte-display="flex" lyte-if="{{canConvert(currentStatus)}}" node-id="lyteIf3" comp-name="lyte-if" group-name="dynamic-components">
+				<lyte-button @data="lyteButton4" lt-prop-appearance="primary" lt-prop-text="💰 Deal に変換" node-id="lyteButton4" onclick="{{action('convertToDeal')}}" group-name="lyte-ui-component"></lyte-button>
+			</div>
+
+			<div @data="lyteIf4" lyte-display="flex" lyte-if="{{canMarkLost(currentStatus)}}" node-id="lyteIf4" comp-name="lyte-if" group-name="dynamic-components">
+				<lyte-button @data="lyteButton5" lt-prop-appearance="default" lt-prop-text="❌ Lost Lead に変更" node-id="lyteButton5" onclick="{{action('markLost')}}" group-name="lyte-ui-component"></lyte-button>
+			</div>
+
+			<div @data="lyteIf5" lyte-display="flex" lyte-if="{{canReopen(currentStatus)}}" node-id="lyteIf5" comp-name="lyte-if" group-name="dynamic-components">
+				<lyte-button @data="lyteButton6" lt-prop-appearance="primary" lt-prop-text="🔄 Lead を再オープン" node-id="lyteButton6" onclick="{{action('reopenLead')}}" group-name="lyte-ui-component"></lyte-button>
+			</div>
+
+		</div>
+	</div>
+</template>

@@ -1,0 +1,66 @@
+:host {
+    display: grid;
+    grid-auto-columns: minmax(1px, auto);
+    grid-auto-rows: minmax(1px, auto);
+    grid-template-columns: repeat(auto-fill, 1px);
+    grid-template-rows: repeat(auto-fill, 1px);
+    height: 320px;
+    position: relative;
+    width: 640px;
+    z-index: 1;
+}
+
+[node-id='containerLayout1'] {
+    align-items: start;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 12px;
+    grid-area: 16/16/304/624;
+    height: 288px;
+    overflow-x: auto;
+    overflow-y: auto;
+    padding: 16px;
+    width: 608px;
+    z-index: 2;
+}
+
+[node-id='lyteText1'] {
+    font-size: 14px;
+    color: #666;
+}
+
+[node-id='lyteText2'] {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+[node-id='lyteButton1'] {
+    height: 36px;
+    width: 200px;
+}
+
+[node-id='lyteIfBox1'] {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+}
+
+[node-id='lyteIf1'],
+[node-id='lyteIf2'],
+[node-id='lyteIf3'],
+[node-id='lyteIf4'],
+[node-id='lyteIf5'] {
+    display: flex;
+    width: 100%;
+}
+
+[node-id='lyteButton2'],
+[node-id='lyteButton3'],
+[node-id='lyteButton4'],
+[node-id='lyteButton5'],
+[node-id='lyteButton6'] {
+    height: 40px;
+    width: 100%;
+}

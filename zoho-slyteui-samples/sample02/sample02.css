@@ -1,0 +1,644 @@
+:host {
+    display: grid;
+    grid-auto-columns: minmax(1px, auto);
+    grid-auto-rows: minmax(1px, auto);
+    grid-template-columns: repeat(auto-fill, 1px);
+    grid-template-rows: repeat(auto-fill, 1px);
+    height: 632px;
+    position: relative;
+    width: 1275px;
+    z-index: 1;
+}
+
+[node-id='containerLayout6'] {
+    align-content: start;
+    align-items: start;
+    display: flex;
+    flex-basis: auto;
+    flex-direction: row;
+    flex-grow: 0;
+    flex-shrink: 1;
+    flex-wrap: nowrap;
+    gap: 0px;
+    grid-area: 1/1/631/1273;
+    height: 630px;
+    justify-content: start;
+    overflow-x: auto;
+    overflow-y: auto;
+    width: 1272px;
+    z-index: 2;
+}
+
+[node-id='containerLayout7'] {
+    align-content: start;
+    align-items: center;
+    display: flex;
+    flex: 1 1 50%;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    height: 100%;
+    justify-content: start;
+    overflow-x: auto;
+    overflow-y: auto;
+    padding: 16px;
+    row-gap: 16px;
+    width: 100%;
+    z-index: 3;
+}
+
+[node-id='containerLayout9'] {
+    align-content: start;
+    align-items: start;
+    align-self: flex-start;
+    display: flex;
+    flex-basis: auto;
+    flex-direction: row;
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-wrap: nowrap;
+    gap: 13px;
+    grid-area: 1/1/32/605;
+    height: 31px;
+    justify-content: start;
+    overflow-x: auto;
+    overflow-y: auto;
+    width: 604px;
+    z-index: 4;
+}
+
+[node-id='containerLayout10'] {
+    align-content: start;
+    align-items: start;
+    display: flex;
+    flex: 1 1 50%;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    height: 100%;
+    justify-content: start;
+    overflow-x: auto;
+    overflow-y: auto;
+    width: 100%;
+    z-index: 5;
+}
+
+[node-id='lyteSearch4'] {
+    flex-shrink: 0;
+    grid-area: 1/1/32/196;
+    height: 31px;
+    width: 195px;
+}
+
+[node-id='containerLayout11'] {
+    align-content: start;
+    align-items: end;
+    display: flex;
+    flex: 1 1 50%;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    height: 100%;
+    justify-content: start;
+    overflow-x: auto;
+    overflow-y: auto;
+    width: 100%;
+    z-index: 5;
+}
+
+[node-id='lyteDropdown3'] {
+    flex-basis: auto;
+    flex-grow: 0;
+    flex-shrink: 0;
+    grid-area: 1/1/-1/202;
+    height: 100%;
+    width: 201px;
+}
+
+.lyteDropdown3 {
+    flex-basis: auto;
+    flex-grow: 0;
+    flex-shrink: 0;
+}
+
+[node-id='lyteTable2'] {
+    flex-shrink: 0;
+    grid-area: 1/1/549/612;
+    height: 548px;
+    width: 600px;
+}
+
+[node-id='containerLayout8'] {
+    border-color: var(--tabBorder);
+    border-style: solid;
+    border-width: 1px;
+    box-sizing: border-box;
+    display: flex;
+    flex: 1 1 50%;
+    flex-direction: column;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    padding: 0px 15px 15px 15px;
+    width: 100%;
+    z-index: 3;
+}
+
+[node-id='lyteTabs3'] {
+    flex-basis: auto;
+    flex-grow: 0;
+    flex-shrink: 0;
+    grid-area: 1/1/602/593;
+    height: 601px;
+    width: 615px;
+}
+
+[node-id='lyteTabTitle7'] {
+    border-style: none;
+    border-width: 1px;
+}
+
+[node-id='span20'] {
+    font-size: 16px;
+    grid-area: 1/1/27/592;
+    height: 100%;
+    padding: 7px 0px 0px 0px;
+    white-space: nowrap;
+    width: 100%;
+}
+
+[node-id='span21'] {
+    font-size: 16px;
+    height: min-content;
+    padding: 7px 0px 0px 0px;
+    white-space: nowrap;
+    width: min-content;
+}
+
+[node-id='lyteTabBody3'] {
+    height: 580px !important;
+}
+
+[node-id='lyteTabContent7'] {
+    height: 100%;
+    width: 634px;
+}
+
+[node-id='containerLayout59'] {
+    display: flex;
+    flex-direction: row;
+    gap: 0px;
+    grid-area: 1/1/500/-1;
+    height: 570px;
+    overflow-x: auto;
+    overflow-y: auto;
+    width: 100%;
+    z-index: 8;
+}
+
+[node-id='containerLayout60'] {
+    display: grid;
+    flex: 1 1 50%;
+    grid-auto-columns: minmax(1px, auto);
+    grid-auto-rows: minmax(1px, auto);
+    grid-template-columns: repeat(auto-fill, 1px);
+    grid-template-rows: repeat(auto-fill, 1px);
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    width: 100%;
+    z-index: 9;
+}
+
+[node-id='containerLayout62'] {
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 1;
+    flex-wrap: nowrap;
+    gap: 0px;
+    grid-area: 1/1/-1/-1;
+    height: 100%;
+    overflow-x: auto;
+    overflow-y: auto;
+    width: 100%;
+    z-index: 10;
+}
+
+[node-id='containerLayout63'] {
+    display: grid;
+    flex: 1 1 64%;
+    grid-auto-columns: minmax(1px, auto);
+    grid-auto-rows: minmax(1px, auto);
+    grid-template-columns: repeat(auto-fill, 1px);
+    grid-template-rows: repeat(auto-fill, 1px);
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    width: 100%;
+    z-index: 11;
+}
+
+[node-id='lyteCarousel4'] {
+    grid-area: 1/1/353/305;
+    height: 352px;
+    width: 304px;
+}
+
+
+
+[node-id='img7'] {
+    white-space: nowrap;
+}
+
+[node-id='img8'] {
+    white-space: nowrap;
+}
+
+
+
+
+[node-id='containerLayout64'] {
+    align-items: center;
+    column-gap: 0px;
+    display: flex;
+    flex: 1 1 14%;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    height: 100%;
+    justify-content: space-around;
+    overflow-x: auto;
+    overflow-y: auto;
+    row-gap: 0px;
+    width: 100%;
+    z-index: 11;
+}
+
+[node-id='span28'] {
+    grid-area: 1/1/auto/auto;
+    height: min-content;
+    white-space: nowrap;
+    width: min-content;
+}
+
+[node-id='lyteRating5'] {
+    grid-area: 17/1/auto/auto;
+    height: min-content;
+    width: NaNpx;
+}
+
+[node-id='containerLayout65'] {
+    align-content: start;
+    align-items: center;
+    column-gap: 0px;
+    display: flex;
+    flex: 1 1 22%;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    height: 100%;
+    justify-content: center;
+    overflow: hidden;
+    row-gap: 12px;
+    width: 100%;
+    z-index: 11;
+}
+
+[node-id='span45'] {
+    flex-basis: auto;
+    flex-grow: 0;
+    flex-shrink: 0;
+    grid-area: 24/1/36/282;
+    height: 14px;
+    white-space: nowrap;
+    width: 281px;
+}
+
+[node-id='lyteAvatarNavigator3'] {
+    flex-shrink: 0;
+    grid-area: 76/1/160/280;
+    height: 84px;
+    width: 279px;
+}
+
+[node-id='containerLayout61'] {
+    align-items: start;
+    column-gap: 0px;
+    display: flex;
+    flex: 1 1 50%;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    height: 100%;
+    justify-content: start;
+    overflow-x: auto;
+    overflow-y: auto;
+    row-gap: 0px;
+    width: 100%;
+    z-index: 9;
+}
+
+[node-id='containerLayout66'] {
+    display: grid;
+    flex-shrink: 0;
+    grid-area: 1/1/93/307;
+    grid-auto-columns: minmax(1px, auto);
+    grid-auto-rows: minmax(1px, auto);
+    grid-template-columns: repeat(auto-fill, 1px);
+    grid-template-rows: repeat(auto-fill, 1px);
+    height: 92px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding: 10px;
+    width: 306px;
+    z-index: 10;
+}
+
+[node-id='span29'] {
+    font-family: var(--crm-font-semibold);
+    font-size: 20px;
+    font-weight: 800;
+    grid-area: 1/1/21/289;
+    height: 20px;
+    white-space: nowrap;
+    width: 288px;
+}
+
+[node-id='lyteText15'] {
+    color: var(--paragraphColor);
+    grid-area: 34/1/70/249;
+    height: 36px;
+    overflow-x: auto;
+    overflow-y: auto;
+    width: 248px;
+    word-wrap: break-word;
+}
+
+[node-id='containerLayout67'] {
+    display: grid;
+    flex-shrink: 0;
+    grid-area: 1/1/99/311;
+    grid-auto-columns: minmax(1px, auto);
+    grid-auto-rows: minmax(1px, auto);
+    grid-template-columns: repeat(auto-fill, 1px);
+    grid-template-rows: repeat(auto-fill, 1px);
+    height: 98px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding: 10px;
+    width: 310px;
+    z-index: 10;
+}
+
+[node-id='containerLayout73'] {
+    align-items: center;
+    column-gap: 0px;
+    display: flex;
+    flex-direction: row;
+    flex-shrink: 0;
+    flex-wrap: nowrap;
+    grid-area: 2/88/37/282;
+    height: 35px;
+    justify-content: space-between;
+    overflow-x: auto;
+    overflow-y: auto;
+    row-gap: 0px;
+    width: 194px;
+    z-index: 11;
+}
+
+[node-id='span30'] {
+    align-self: center;
+    flex-shrink: 0;
+    grid-area: 3/142/21/247;
+    height: 18px;
+    text-align: right;
+    white-space: nowrap;
+    width: 105px;
+}
+
+[node-id='lyteInput1'] {
+    flex-shrink: 0;
+    grid-area: 1/1/31/79;
+    height: 31px;
+    width: 78px;
+}
+
+.lyteInput1 {
+    flex-shrink: 0;
+}
+
+[node-id='containerLayout74'] {
+    align-content: start;
+    align-items: center;
+    column-gap: 20px;
+    display: flex;
+    flex-basis: auto;
+    flex-direction: row;
+    flex-grow: 0;
+    flex-shrink: 1;
+    flex-wrap: nowrap;
+    grid-area: 44/1/77/284;
+    height: 33px;
+    justify-content: start;
+    overflow-x: auto;
+    overflow-y: auto;
+    padding: 0px;
+    row-gap: 0px;
+    width: 283px;
+    z-index: 11;
+}
+
+[node-id='span31'] {
+    flex-shrink: 0;
+    grid-area: 1/1/18/68;
+    height: 17px;
+    white-space: nowrap;
+    width: 67px;
+}
+
+[node-id='lyteDropdown4'] {
+    flex-shrink: 0;
+    grid-area: 1/72/33/167;
+    height: 32px;
+    width: 95px;
+}
+
+.lyteDropdown4 {
+    flex-shrink: 0;
+}
+
+[node-id='lyteText16'] {
+    font-size: 18px;
+    font-weight: bolder;
+    grid-area: 11/1/28/65;
+    height: 17px;
+    width: 64px;
+}
+
+[node-id='lyteAccordion1'] {
+    flex-shrink: 0;
+    grid-area: 1/1/265/293;
+    height: 264px;
+    width: 292px;
+}
+
+[node-id='lyteAccordionHeader1'] {
+    height: 50px;
+    width: 100%;
+}
+
+[node-id='span32'] {
+    grid-area: 1/1/auto/auto;
+    height: min-content;
+    white-space: nowrap;
+    width: min-content;
+}
+
+[node-id='lyteAccordionBody1'] {
+    height: min-content;
+    width: 100%;
+}
+
+[node-id='span33'] {
+    grid-area: 10/1/110/-1;
+    height: min-content;
+    white-space: normal;
+    width: 100%;
+}
+
+[node-id='lyteAccordionHeader2'] {
+    height: 50px;
+    width: 100%;
+}
+
+[node-id='span34'] {
+    grid-area: 1/1/auto/auto;
+    height: min-content;
+    white-space: nowrap;
+    width: min-content;
+}
+
+[node-id='lyteAccordionBody2'] {
+    height: min-content;
+    width: 100%;
+}
+
+[node-id='span35'] {
+    grid-area: 10/1/auto/-1;
+    height: min-content;
+    white-space: normal;
+    width: 100%;
+}
+
+[node-id='lyteAccordionHeader6'] {
+    height: 50px;
+    width: 100%;
+}
+
+[node-id='span42'] {
+    grid-area: 1/1/auto/auto;
+    height: min-content;
+    white-space: nowrap;
+    width: min-content;
+}
+
+[node-id='lyteAccordionBody6'] {
+    height: min-content;
+    width: 100%;
+}
+
+[node-id='span43'] {
+    grid-area: 10/1/auto/-1;
+    height: min-content;
+    white-space: normal;
+    width: 100%;
+}
+
+[node-id='lyteAccordionHeader5'] {
+    height: 50px;
+    width: 100%;
+}
+
+[node-id='span40'] {
+    grid-area: 1/1/auto/auto;
+    height: min-content;
+    white-space: nowrap;
+    width: min-content;
+}
+
+[node-id='lyteAccordionBody5'] {
+    height: min-content;
+    width: 100%;
+}
+
+[node-id='span41'] {
+    grid-area: 10/1/auto/-1;
+    height: min-content;
+    white-space: normal;
+    width: 100%;
+}
+
+[node-id='containerLayout68'] {
+    display: flex;
+    flex-direction: row;
+    flex-shrink: 1;
+    flex-wrap: nowrap;
+    gap: 0px;
+    grid-area: 1/1/-1/-1;
+    height: 100%;
+    overflow-x: auto;
+    overflow-y: auto;
+    width: 100%;
+    z-index: 8;
+}
+
+[node-id='containerLayout69'] {
+    align-items: center;
+    column-gap: 0px;
+    display: flex;
+    flex: 1 1 50%;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    height: 100%;
+    justify-content: space-around;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    row-gap: 0px;
+    width: 100%;
+    z-index: 9;
+}
+
+[node-id='lyteChart1'] {
+    grid-area: 291/1/443/197;
+    height: 280px;
+    width: 279px;
+}
+
+[node-id='lyteChart2'] {
+    grid-area: 1/1/53/267;
+    height: 280px;
+    width: 280px;
+}
+
+[node-id='containerLayout70'] {
+    align-items: start;
+    column-gap: 0px;
+    display: flex;
+    flex: 1 1 50%;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    height: 100%;
+    justify-content: space-around;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    row-gap: 0px;
+    width: 100%;
+    z-index: 9;
+}
+
+[node-id='lyteChart3'] {
+    grid-area: 1/1/129/295;
+    height: 280px;
+    width: 280px;
+}
+
+[node-id='lyteChart4'] {
+    grid-area: 1/1/277/299;
+    height: 280px;
+    width: 280px;
+}
