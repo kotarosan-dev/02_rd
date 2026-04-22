@@ -10,7 +10,9 @@
     "probe": "tsx src/cli/probe.ts",
     "pull": "tsx src/cli/pull.ts",
     "pull:all": "tsx src/cli/pull.ts all",
+    "pull:components": "tsx src/cli/pull-components.ts",
     "skill:sync": "tsx src/cli/skill-sync.ts",
+    "skill:sync:components": "tsx src/cli/skill-sync-components.ts",
     "test": "vitest run",
     "build": "tsc -p tsconfig.json"
   },
