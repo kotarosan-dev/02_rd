@@ -1,0 +1,171 @@
+string standalone.calculate_lead_score(map crmAPIRequest)
+{
+    /*
+    function_name    : calculate_lead_score
+    label_name       : Calculate Lead Score
+    return_type      : string  (Standalone カテゴリは string 固定。map を返すと
+                       "Invalid return Type map. Category standalone returns string" エラー。
+                       Map は .toString() で JSON 文字列化して返す。)
+    motivation       : SlyteUI コンポーネント (leadDelugeRunner) から ZRC 経由で呼ばれる PoC。
+                       Lead のフィールドから架空のスコア・ラベル・推奨アクションを算出して返す。
+    processing_flow  :
+      - 1. body から record_id を取得
+      - 2. zoho.crm.getRecordById で Lead を取得
+      - 3. Industry / Annual_Revenue / No_of_Employees / Lead_Source からスコア算出
+      - 4. ラベル判定 (Hot/Warm/Cold) と推奨アクションを生成
+      - 5. レスポンス Map を JSON 文字列化して返す
+    related_functions: none
+
+    呼び出し方 (ZRC):
+      const res = await zrc.post(
+        "/crm/v7/functions/calculate_lead_score/actions/execute?auth_type=oauth",
+        { record_id: $Page.record_id }
+      );
+      // res.data.details.output は JSON 文字列。JSON.parse でパースする。
+      const output = JSON.parse(res.data.details.output);
+
+    設定手順 (Zoho CRM):
+      1. Setup > Developer Hub > Functions > New Function
+      2. Display Name = "Calculate Lead Score"
+      3. API Name     = "calculate_lead_score"
+      4. Category     = Standalone
+      5. ARGUMENT 追加: 名前 = crmAPIRequest, type = Map  (必須)
+      6. このファイルの中身をエディタに貼り付け (戻り値型は string)
+      7. Save → REST API ダイアログ > OAuth2 を ON
+    */
+
+    /* 1. レスポンスの初期化 */
+    response = Map();
+
+    /* 2. body をパース */
+    body_text = ifnull(crmAPIRequest.get("body"), "{}");
+    body = body_text.toMap();
+    record_id_str = ifnull(body.get("record_id"), "");
+    info "処理開始 record_id_str=" + record_id_str;
+
+    if(record_id_str == "")
+    {
+        response.put("error", "record_id is required in body");
+        info "ERROR: record_id missing";
+        return response;
+    }
+
+    /* 3. Lead 取得 */
+    record_id = record_id_str.toLong();
+    lead = zoho.crm.getRecordById("Leads", record_id);
+    info "Lead 取得 lead=" + lead;
+
+    industry = ifnull(lead.get("Industry"), "");
+    annual_revenue = ifnull(lead.get("Annual_Revenue"), 0).toLong();
+    no_of_employees = ifnull(lead.get("No_of_Employees"), 0).toLong();
+    lead_source = ifnull(lead.get("Lead_Source"), "");
+    last_name = ifnull(lead.get("Last_Name"), "(no name)");
+
+    /* 4. スコア算出 (基礎点 10) */
+    score = 10;
+    reason_parts = List();
+
+    if(industry == "Technology" || industry == "IT" || industry == "ASP (Application Service Provider)")
+    {
+        score = score + 30;
+        reason_parts.add("Technology 系業種で +30");
+    }
+    else if(industry != "")
+    {
+        score = score + 10;
+        msg_industry = industry + " 業種で +10";
+        reason_parts.add(msg_industry);
+    }
+
+    if(annual_revenue >= 100000000)
+    {
+        score = score + 25;
+        reason_parts.add("年商 1 億円以上で +25");
+    }
+    else if(annual_revenue >= 10000000)
+    {
+        score = score + 15;
+        reason_parts.add("年商 1000 万円以上で +15");
+    }
+
+    if(no_of_employees >= 100)
+    {
+        score = score + 20;
+        reason_parts.add("従業員 100 名以上で +20");
+    }
+    else if(no_of_employees >= 20)
+    {
+        score = score + 10;
+        reason_parts.add("従業員 20 名以上で +10");
+    }
+
+    if(lead_source == "Trade Show" || lead_source == "Web Research")
+    {
+        score = score + 15;
+        msg_source_active = "能動的リードソース (" + lead_source + ") で +15";
+        reason_parts.add(msg_source_active);
+    }
+    else if(lead_source != "")
+    {
+        score = score + 5;
+        msg_source_other = lead_source + " 経由で +5";
+        reason_parts.add(msg_source_other);
+    }
+
+    if(score > 100)
+    {
+        score = 100;
+    }
+    info "スコア算出完了 score=" + score;
+
+    /* 5. ラベル判定 */
+    label = "Cold";
+    if(score >= 80)
+    {
+        label = "Hot";
+    }
+    else if(score >= 50)
+    {
+        label = "Warm";
+    }
+
+    /* 6. 推奨アクション */
+    recommendations = List();
+    if(label == "Hot")
+    {
+        recommendations.add("即日電話アプローチを推奨");
+        recommendations.add("デモミーティングを今週中に設定");
+        recommendations.add("経営層直接の提案資料を準備");
+    }
+    else if(label == "Warm")
+    {
+        recommendations.add("3 営業日以内にメールフォロー");
+        recommendations.add("業界事例を共有");
+        recommendations.add("オンラインセミナーへ招待");
+    }
+    else
+    {
+        recommendations.add("ナーチャリングメール配信に追加");
+        recommendations.add("月 1 回のニュースレター対象に");
+        recommendations.add("行動変化があれば再評価");
+    }
+
+    /* 7. inputs Map を構築 (Map リテラル禁止のため put で組み立て) */
+    inputs_map = Map();
+    inputs_map.put("industry", industry);
+    inputs_map.put("annual_revenue", annual_revenue);
+    inputs_map.put("no_of_employees", no_of_employees);
+    inputs_map.put("lead_source", lead_source);
+
+    /* 8. レスポンス組立 */
+    reason_text = reason_parts.toString(" / ");
+    response.put("score", score);
+    response.put("label", label);
+    response.put("lead_name", last_name);
+    response.put("reason", reason_text);
+    response.put("recommendations", recommendations);
+    response.put("inputs", inputs_map);
+
+    info "処理完了 score=" + score + " label=" + label;
+    return response.toString();
+}

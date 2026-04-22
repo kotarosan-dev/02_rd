@@ -1,0 +1,202 @@
+:host {
+    display: block;
+    width: 720px;
+    height: 520px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Hiragino Sans", "Yu Gothic", sans-serif;
+    color: #1f2937;
+}
+
+/* lyte-text の内部要素まで折り返し強制 */
+lyte-text,
+lyte-text * {
+    white-space: normal !important;
+    word-break: break-word !important;
+    overflow-wrap: anywhere !important;
+    text-overflow: clip !important;
+    overflow: visible !important;
+    max-width: 100%;
+}
+
+[node-id='containerLayout1'] {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 20px;
+    background: linear-gradient(180deg, #f8fafc 0%, #eef2f7 100%);
+    border-radius: 12px;
+    overflow: auto;
+}
+
+/* ====== ヘッダー ====== */
+[node-id='headerBox'] {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    padding: 14px 18px;
+    background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+    border-radius: 10px;
+    color: #ffffff;
+    box-shadow: 0 4px 12px rgba(79, 70, 229, 0.25);
+}
+
+[node-id='headerTitle'] {
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    color: #ffffff;
+}
+
+[node-id='headerSub'] {
+    font-size: 12px;
+    opacity: 0.9;
+    color: #ffffff;
+}
+
+/* ====== タブバー ====== */
+[node-id='tabBar'] {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    padding: 4px;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+}
+
+[node-id='btnTabBasic'],
+[node-id='btnTabNotes'],
+[node-id='btnTabTasks'] {
+    flex: 1;
+    height: 36px;
+}
+
+/* ====== パネル共通 ====== */
+[node-id='paneWrap'] {
+    display: flex;
+    flex-direction: column;
+}
+
+[node-id='paneBasic'],
+[node-id='paneNotes'],
+[node-id='paneTasks'] {
+    flex-direction: column;
+    gap: 12px;
+    padding: 16px;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+}
+
+/* ====== 取得ボタン ====== */
+[node-id='reloadBasicBtn'],
+[node-id='reloadNotesBtn'],
+[node-id='reloadTasksBtn'] {
+    width: 180px;
+    height: 36px;
+    align-self: flex-start;
+}
+
+/* ====== 基本情報カード ====== */
+[node-id='basicCard'] {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #ffffff;
+}
+
+[node-id='rowName'],
+[node-id='rowCompany'],
+[node-id='rowEmail'],
+[node-id='rowPhone'],
+[node-id='rowIndustry'],
+[node-id='rowStatus'] {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px 14px;
+    border-bottom: 1px solid #f1f5f9;
+    background: #ffffff;
+}
+
+[node-id='rowStatus'] {
+    border-bottom: none;
+    background: linear-gradient(90deg, #f0f9ff 0%, #ffffff 100%);
+}
+
+[node-id='rowName']:hover,
+[node-id='rowCompany']:hover,
+[node-id='rowEmail']:hover,
+[node-id='rowPhone']:hover,
+[node-id='rowIndustry']:hover {
+    background: #f9fafb;
+}
+
+[node-id='lblName'],
+[node-id='lblCompany'],
+[node-id='lblEmail'],
+[node-id='lblPhone'],
+[node-id='lblIndustry'],
+[node-id='lblStatus'] {
+    width: 110px;
+    flex-shrink: 0;
+    font-size: 12px;
+    font-weight: 600;
+    color: #6b7280;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+[node-id='valName'],
+[node-id='valCompany'],
+[node-id='valEmail'],
+[node-id='valPhone'],
+[node-id='valIndustry'],
+[node-id='valStatus'] {
+    font-size: 14px;
+    color: #111827;
+    font-weight: 500;
+    flex: 1;
+}
+
+[node-id='valName'] {
+    font-size: 16px;
+    font-weight: 700;
+    color: #4f46e5;
+}
+
+[node-id='valStatus'] {
+    color: #059669;
+    font-weight: 600;
+}
+
+/* ====== メモ・タスク ====== */
+[node-id='notesCountTxt'],
+[node-id='tasksCountTxt'] {
+    display: inline-block;
+    align-self: flex-start;
+    padding: 4px 12px;
+    background: #eef2ff;
+    color: #4f46e5;
+    font-size: 12px;
+    font-weight: 700;
+    border-radius: 999px;
+}
+
+[node-id='notesTextTxt'],
+[node-id='tasksTextTxt'] {
+    font-size: 13px;
+    line-height: 1.7;
+    color: #374151;
+    background: #f9fafb;
+    padding: 14px;
+    border-radius: 8px;
+    border-left: 3px solid #4f46e5;
+    white-space: pre-wrap;
+    min-height: 120px;
+}

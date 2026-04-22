@@ -1,0 +1,62 @@
+<template width="720px" height="520px">
+	<div @data="containerLayout1" lyte-layout="container" node-id="containerLayout1">
+
+		<div @data="headerBox" node-id="headerBox" group-name="native-html">
+			<lyte-text @data="headerTitle" lt-prop-value="Lead Insights" node-id="headerTitle" group-name="lyte-ui-component"></lyte-text>
+			<lyte-text @data="headerSub"   lt-prop-value="現在のタブ: {{activeLabel}}" node-id="headerSub"   group-name="lyte-ui-component"></lyte-text>
+		</div>
+
+		<div @data="tabBar" node-id="tabBar" group-name="native-html">
+			<lyte-button @data="btnTabBasic" lt-prop-appearance="default" lt-prop-text="基本情報" node-id="btnTabBasic" onclick="{{action('showBasic')}}" group-name="lyte-ui-component"></lyte-button>
+			<lyte-button @data="btnTabNotes" lt-prop-appearance="default" lt-prop-text="メモ"     node-id="btnTabNotes" onclick="{{action('showNotes')}}" group-name="lyte-ui-component"></lyte-button>
+			<lyte-button @data="btnTabTasks" lt-prop-appearance="default" lt-prop-text="タスク"   node-id="btnTabTasks" onclick="{{action('showTasks')}}" group-name="lyte-ui-component"></lyte-button>
+		</div>
+
+		<div @data="paneWrap" node-id="paneWrap" pb-dynamic-wrapper="true" group-name="native-html">
+
+			<div @data="paneBasic" lyte-display="flex" lyte-if="{{isBasic}}" node-id="paneBasic" comp-name="lyte-if" group-name="dynamic-components">
+				<lyte-button @data="reloadBasicBtn" lt-prop-appearance="primary" lt-prop-text="基本情報を取得" node-id="reloadBasicBtn" onclick="{{action('loadBasic')}}" group-name="lyte-ui-component"></lyte-button>
+
+				<div @data="basicCard" node-id="basicCard" group-name="native-html">
+					<div @data="rowName"     node-id="rowName"     group-name="native-html">
+						<lyte-text @data="lblName"  lt-prop-value="氏名"     node-id="lblName"  group-name="lyte-ui-component"></lyte-text>
+						<lyte-text @data="valName"  lt-prop-value="{{leadName}}"     node-id="valName"  group-name="lyte-ui-component"></lyte-text>
+					</div>
+					<div @data="rowCompany"  node-id="rowCompany"  group-name="native-html">
+						<lyte-text @data="lblCompany" lt-prop-value="会社"  node-id="lblCompany" group-name="lyte-ui-component"></lyte-text>
+						<lyte-text @data="valCompany" lt-prop-value="{{leadCompany}}" node-id="valCompany" group-name="lyte-ui-component"></lyte-text>
+					</div>
+					<div @data="rowEmail"    node-id="rowEmail"    group-name="native-html">
+						<lyte-text @data="lblEmail" lt-prop-value="メール" node-id="lblEmail" group-name="lyte-ui-component"></lyte-text>
+						<lyte-text @data="valEmail" lt-prop-value="{{leadEmail}}" node-id="valEmail" group-name="lyte-ui-component"></lyte-text>
+					</div>
+					<div @data="rowPhone"    node-id="rowPhone"    group-name="native-html">
+						<lyte-text @data="lblPhone" lt-prop-value="電話"   node-id="lblPhone" group-name="lyte-ui-component"></lyte-text>
+						<lyte-text @data="valPhone" lt-prop-value="{{leadPhone}}" node-id="valPhone" group-name="lyte-ui-component"></lyte-text>
+					</div>
+					<div @data="rowIndustry" node-id="rowIndustry" group-name="native-html">
+						<lyte-text @data="lblIndustry" lt-prop-value="業種" node-id="lblIndustry" group-name="lyte-ui-component"></lyte-text>
+						<lyte-text @data="valIndustry" lt-prop-value="{{leadIndustry}}" node-id="valIndustry" group-name="lyte-ui-component"></lyte-text>
+					</div>
+					<div @data="rowStatus"   node-id="rowStatus"   group-name="native-html">
+						<lyte-text @data="lblStatus" lt-prop-value="ステータス" node-id="lblStatus" group-name="lyte-ui-component"></lyte-text>
+						<lyte-text @data="valStatus" lt-prop-value="{{leadStatus}}" node-id="valStatus" group-name="lyte-ui-component"></lyte-text>
+					</div>
+				</div>
+			</div>
+
+			<div @data="paneNotes" lyte-display="flex" lyte-if="{{isNotes}}" node-id="paneNotes" comp-name="lyte-if" group-name="dynamic-components">
+				<lyte-button @data="reloadNotesBtn" lt-prop-appearance="primary" lt-prop-text="メモを取得" node-id="reloadNotesBtn" onclick="{{action('loadNotes')}}" group-name="lyte-ui-component"></lyte-button>
+				<lyte-text @data="notesCountTxt" lt-prop-value="メモ {{notesCountText}} 件" node-id="notesCountTxt" group-name="lyte-ui-component"></lyte-text>
+				<lyte-text @data="notesTextTxt"  lt-prop-value="{{notesText}}" node-id="notesTextTxt"  group-name="lyte-ui-component"></lyte-text>
+			</div>
+
+			<div @data="paneTasks" lyte-display="flex" lyte-if="{{isTasks}}" node-id="paneTasks" comp-name="lyte-if" group-name="dynamic-components">
+				<lyte-button @data="reloadTasksBtn" lt-prop-appearance="primary" lt-prop-text="タスクを取得" node-id="reloadTasksBtn" onclick="{{action('loadTasks')}}" group-name="lyte-ui-component"></lyte-button>
+				<lyte-text @data="tasksCountTxt" lt-prop-value="タスク {{tasksCountText}} 件" node-id="tasksCountTxt" group-name="lyte-ui-component"></lyte-text>
+				<lyte-text @data="tasksTextTxt"  lt-prop-value="{{tasksText}}" node-id="tasksTextTxt"  group-name="lyte-ui-component"></lyte-text>
+			</div>
+
+		</div>
+	</div>
+</template>

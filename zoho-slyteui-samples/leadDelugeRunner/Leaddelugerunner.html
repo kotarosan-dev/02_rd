@@ -1,0 +1,48 @@
+<template width="720px" height="520px">
+	<div @data="containerLayout1" lyte-layout="container" node-id="containerLayout1">
+
+		<div @data="headerBox" node-id="headerBox" group-name="native-html">
+			<lyte-text @data="headerTitle" lt-prop-value="AI Lead Score" node-id="headerTitle" group-name="lyte-ui-component"></lyte-text>
+			<lyte-text @data="headerSub"   lt-prop-value="Deluge 関数 calculate_lead_score を実行してリード優先度を算出します" node-id="headerSub" group-name="lyte-ui-component"></lyte-text>
+		</div>
+
+		<div @data="actionBar" node-id="actionBar" group-name="native-html">
+			<lyte-button @data="runBtn" lt-prop-appearance="primary" lt-prop-text="スコアを計算する" node-id="runBtn" onclick="{{action('runScore')}}" group-name="lyte-ui-component"></lyte-button>
+			<lyte-text @data="statusTxt" lt-prop-value="状態: {{statusText}}" node-id="statusTxt" group-name="lyte-ui-component"></lyte-text>
+		</div>
+
+		<div @data="paneWrap" node-id="paneWrap" pb-dynamic-wrapper="true" group-name="native-html">
+
+			<div @data="paneLoading" lyte-display="flex" lyte-if="{{isLoading}}" node-id="paneLoading" comp-name="lyte-if" group-name="dynamic-components">
+				<lyte-text @data="loadingTxt" lt-prop-value="計算中... Deluge 関数の応答を待っています" node-id="loadingTxt" group-name="lyte-ui-component"></lyte-text>
+			</div>
+
+			<div @data="paneResult" lyte-display="flex" lyte-if="{{hasResult}}" node-id="paneResult" comp-name="lyte-if" group-name="dynamic-components">
+
+				<div @data="scoreCard" node-id="scoreCard" group-name="native-html">
+					<lyte-text @data="scoreLabel" lt-prop-value="SCORE" node-id="scoreLabel" group-name="lyte-ui-component"></lyte-text>
+					<lyte-text @data="scoreValue" lt-prop-value="{{scoreText}}" node-id="scoreValue" group-name="lyte-ui-component"></lyte-text>
+					<lyte-text @data="scoreOutOf" lt-prop-value="/ 100" node-id="scoreOutOf" group-name="lyte-ui-component"></lyte-text>
+					<lyte-text @data="judgeBadge" lt-prop-value="{{label}}" node-id="judgeBadge" group-name="lyte-ui-component"></lyte-text>
+				</div>
+
+				<div @data="reasonCard" node-id="reasonCard" group-name="native-html">
+					<lyte-text @data="reasonLabel" lt-prop-value="判定根拠" node-id="reasonLabel" group-name="lyte-ui-component"></lyte-text>
+					<lyte-text @data="reasonValue" lt-prop-value="{{reason}}" node-id="reasonValue" group-name="lyte-ui-component"></lyte-text>
+				</div>
+
+				<div @data="recsCard" node-id="recsCard" group-name="native-html">
+					<lyte-text @data="recsLabel" lt-prop-value="推奨アクション" node-id="recsLabel" group-name="lyte-ui-component"></lyte-text>
+					<lyte-text @data="recsValue" lt-prop-value="{{recommendations}}" node-id="recsValue" group-name="lyte-ui-component"></lyte-text>
+				</div>
+
+			</div>
+
+			<div @data="paneError" lyte-display="flex" lyte-if="{{hasError}}" node-id="paneError" comp-name="lyte-if" group-name="dynamic-components">
+				<lyte-text @data="errorTitle" lt-prop-value="エラーが発生しました" node-id="errorTitle" group-name="lyte-ui-component"></lyte-text>
+				<lyte-text @data="errorBody"  lt-prop-value="{{errorMessage}}"   node-id="errorBody"  group-name="lyte-ui-component"></lyte-text>
+			</div>
+
+		</div>
+	</div>
+</template>
