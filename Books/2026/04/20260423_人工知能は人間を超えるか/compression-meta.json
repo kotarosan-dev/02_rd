@@ -1,0 +1,20 @@
+{
+  "title": "人工知能は人間を超えるか――ディープラーニングの先にあるもの",
+  "author": "松尾 豊",
+  "publisher": "KADOKAWA（角川EPUB選書021）",
+  "published": "2015-03-10",
+  "genre": "D",
+  "genre_label": "学術書・思想書（一般向け技術解説）",
+  "source_file": "source.txt",
+  "original_lines": 4133,
+  "original_chars": 135946,
+  "compressed_lines": 353,
+  "compressed_chars_no_newlines": 14044,
+  "structure_map_lines": 315,
+  "structure_map_chars_no_newlines": 6599,
+  "total_output": 20643,
+  "required_min_chars": 10000,
+  "ratio_floor": 0.02,
+  "compression_ratio": 0.103,
+  "notes": "改行除き文字数はPythonで text.replace('\\n','').replace('\\r','') で算出。original_charsはsource.txt全体の改行除き文字数。total_outputはcompressed-reading.mdとstructure-map.mdの改行除き文字数の合計。compressed-reading.mdは300行以上・10000字以上の基準を満たす（353行・14044字）。末尾改行あり。"
+}

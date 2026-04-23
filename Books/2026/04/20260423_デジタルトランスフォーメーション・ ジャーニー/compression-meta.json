@@ -1,0 +1,69 @@
+{
+  "book": {
+    "title": "デジタルトランスフォーメーション・ジャーニー",
+    "author": "市谷聡啓",
+    "publisher": "翔泳社",
+    "year": 2021,
+    "isbn": "978-4-7981-6910-2",
+    "pages_estimated": 257
+  },
+  "compression": {
+    "genre": "C",
+    "genre_label": "ビジネス書・組織変革",
+    "skill_version": "book-compressor-v1",
+    "compressed_at": "2026-04-23",
+    "operator": "cursor-agent-sonnet4.6",
+    "safety_flag": "normal",
+    "restricted_meta_only": false
+  },
+  "metrics": {
+    "original_chars": 252270,
+    "compressed_reading_chars": 13351,
+    "structure_map_chars": 6269,
+    "total_output_chars": 19620,
+    "compression_ratio_percent": 5.29,
+    "compressed_reading_lines": 441,
+    "required_min_chars": 5045,
+    "gate_pass": true
+  },
+  "quality_checks": {
+    "min_300_lines": true,
+    "min_10000_chars": true,
+    "checklist_items": 20,
+    "checklist_min_15": true,
+    "genre_c_checks_pass": true,
+    "quotes_included": 3,
+    "all_chapters_covered": true,
+    "frameworks_visualized": true,
+    "critical_perspective_included": true,
+    "concrete_details_included": true
+  },
+  "structure": {
+    "total_chapters": 9,
+    "parts": 5,
+    "key_frameworks": [
+      "DXの3段階構造（デジタイゼーション・デジタライゼーション・DX）",
+      "デジタルトランスフォーメーション・ジャーニー4段階",
+      "二項動態",
+      "適応課題vs技術的課題",
+      "仮説検証型アジャイル開発の5ジャーニー",
+      "アジャイルブリゲード",
+      "アジャイルディビジョン",
+      "アジャイルハウス（3フロア）",
+      "アジャイルの縦糸・横糸"
+    ],
+    "key_concepts": [
+      "ターンアラウンド", "PSfit", "PMfit", "CPfit", "CoE",
+      "二項動態", "深化と探索", "ブリッツトラスト",
+      "ものわかり", "ハンガーフライト", "星取表",
+      "DXクライテリア", "イネーブルメントアプローチ",
+      "インセプションデッキ", "ジャーニーマップ", "ブリゲードバックログ"
+    ]
+  },
+  "output_files": {
+    "compressed_reading": "compressed-reading.md",
+    "structure_map": "structure-map.md",
+    "meta": "compression-meta.json"
+  },
+  "notes": "全9章・あとがき・参考文献を完全読了後に生成。Chapter 6（仮説検証型アジャイル開発）とChapter 8（アジャイルブリゲード）が本書の核心。source.txtはOCRノイズあり（数字・記号の誤認識）だが内容把握に支障なし。ジャンルCの必須要件（チェックリスト15項以上）を20項で満足。"
+}

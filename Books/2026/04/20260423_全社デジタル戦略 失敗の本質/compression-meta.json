@@ -1,0 +1,34 @@
+{
+  "book_title": "全社デジタル戦略 失敗の本質",
+  "authors": "北川寛樹・有本憲司 ほか（ボストン コンサルティング グループ）",
+  "publisher": "日経BP",
+  "publication_date": "2025-06-30",
+  "genre": "C",
+  "genre_label": "ビジネス書（IT戦略・DX）",
+  "compressor_version": "book-compressor v1",
+  "generated_at": "2026-04-23",
+  "compressed_lines": 419,
+  "compressed_chars_no_newlines": 10882,
+  "structure_map_chars_no_newlines": 3433,
+  "total_output_chars_no_newlines": 14315,
+  "required_min_chars": 11403,
+  "original_chars": 114031,
+  "compression_ratio_percent": 9.5,
+  "quality_check": {
+    "compressed_lines_ge_300": true,
+    "compressed_chars_ge_10000": true,
+    "total_output_ge_required_min": true,
+    "all_chapters_covered": true,
+    "min_12_lines_per_chapter": true,
+    "original_quotes_ge_2": true,
+    "checklist_items_ge_15": true
+  },
+  "notes": {
+    "original_chars": "source.txt の全文字数から改行文字（\\n, \\r）を除外した文字数。Python の str.replace('\\n','').replace('\\r','') で計測。計測値: 114031",
+    "compressed_chars_no_newlines": "compressed-reading.md の本文テキストから改行文字を除外した文字数。同上の方法で計測。計測値: 10882",
+    "structure_map_chars_no_newlines": "structure-map.md から改行文字を除外した文字数。計測値: 3433",
+    "total_output_chars_no_newlines": "compressed_chars_no_newlines + structure_map_chars_no_newlines の合計。計測値: 14315",
+    "required_min_chars": "original_chars × 10% と 10000 の大きい方。max(114031 × 0.1, 10000) = max(11403, 10000) = 11403",
+    "compression_ratio_percent": "compressed_chars_no_newlines ÷ original_chars × 100 ≈ 9.5%"
+  }
+}

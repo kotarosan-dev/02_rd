@@ -1,0 +1,81 @@
+{
+  "book_title": "オアシスの階級闘争——《Definitely Maybe》で読み解く、音楽とポピュリズム",
+  "original_title": "OASIS' DEFINITELY MAYBE",
+  "author": "アレックス・ニヴン（Alex Niven）",
+  "translator": "中村明美",
+  "publisher": "DU BOOKS（ディスクユニオン）",
+  "original_publisher": "Bloomsbury Publishing Inc.",
+  "original_year": 2014,
+  "series": "33⅓シリーズ",
+  "genre": "D",
+  "genre_label": "学術書・思想書（音楽批評／文化社会批評）",
+  "genre_notes": "D/Fの境界領域。文化批評エッセイの要素を含みつつ、学術的論証構造・広範な参照系・概念装置の明示的構築を持つためDと判定",
+  "compression_strategy": "D型：論証の骨格保持・概念装置の完全記述・批判的読解補助線の付加・原文引用の精選・論争点の明示",
+  "source_metrics": {
+    "lines": 2293,
+    "chars_with_newlines": 119862,
+    "chars_no_newlines": 117570
+  },
+  "compressed_reading_metrics": {
+    "lines": 321,
+    "chars_with_newlines": 17344,
+    "chars_no_newlines": 17024,
+    "sections_count": 17
+  },
+  "structure_map_metrics": {
+    "lines": 189,
+    "chars_with_newlines": 4776,
+    "chars_no_newlines": 4588
+  },
+  "total_output_metrics": {
+    "total_chars_no_newlines": 21612,
+    "note": "compressed-reading.md + structure-map.md の合算"
+  },
+  "compression_ratio_percent": 14.5,
+  "reading_time_estimate_minutes": 65,
+  "required_min_chars": 10000,
+  "min_lines_300_passed": true,
+  "min_chars_10000_passed": true,
+  "quality_checks": {
+    "genre_auto_detected": true,
+    "source_fully_read": true,
+    "source_chunks_read": 5,
+    "core_framework_sections_present": true,
+    "argument_structure_described": true,
+    "key_concepts_table_present": true,
+    "key_quotes_included": true,
+    "key_quotes_count": 6,
+    "chapters_covered": 7,
+    "chapters_total": 7,
+    "controversy_points_included": true,
+    "critical_perspective_included": true,
+    "practical_checklist_included": true,
+    "common_mistakes_included": true,
+    "concrete_details_present": true,
+    "no_speculation": true,
+    "utf8_encoding": true
+  },
+  "key_themes": [
+    "サッチャリズムと労働者階級の解体",
+    "ラジカルなポジティブさ（Radical positivity）",
+    "海洋的感覚（Oceanic feeling）とフロイト的連帯",
+    "コラージュ文化とヒップホップの平行性",
+    "ジョン・スミス的瞬間と政治的空白",
+    "蒸発（Evaporation）——成功による本物性の喪失",
+    "批評的冷笑主義への反駁"
+  ],
+  "referenced_scholars": [
+    "ヴァルター・ベンヤミン",
+    "ジークムント・フロイト",
+    "カール・マルクス",
+    "シモーヌ・ヴェイユ",
+    "フランシス・フクヤマ",
+    "エズラ・パウンド",
+    "マーク・フィッシャー",
+    "オーウェン・ハザリー",
+    "ジョン・ハリス",
+    "トム・ユイング"
+  ],
+  "generated_at": "2026-04-23",
+  "skill_version": "book-compressor v1"
+}

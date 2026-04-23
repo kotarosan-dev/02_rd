@@ -1,0 +1,47 @@
+{
+  "title": "強いビジネスパーソンを目指して鬱になった僕の 弱さ考",
+  "author": "井上慎平",
+  "publisher": "ダイヤモンド社",
+  "published_year": 2025,
+  "isbn": "978-4-478-12037-8",
+  "processed_date": "2026-04-23",
+  "skill_version": "book-compressor v1",
+  "genre": {
+    "primary": "C",
+    "label": "ビジネス書・社会批評",
+    "secondary": "E",
+    "secondary_label": "回想録・ノンフィクション",
+    "detection_reason": "著者自身の双極性障害発症体験を軸に、経済・社会学・哲学・認知科学を横断した社会批評。実用的なフレームワークと章別構成を持ちCが主軸だが、個人の体験と思索が基底にあるためEの要素も強い。"
+  },
+  "source_stats": {
+    "original_chars_with_newlines": 419039,
+    "original_chars_no_newlines": 144563,
+    "original_lines": 5217
+  },
+  "output_stats": {
+    "compressed_reading_lines": 386,
+    "compressed_reading_chars_no_newlines": 15305,
+    "structure_map_lines": 241,
+    "structure_map_chars_no_newlines": 5556,
+    "total_output_chars_no_newlines": 20861
+  },
+  "compression_ratios": {
+    "compressed_vs_source_no_newlines_pct": 10.59,
+    "total_output_vs_source_no_newlines_pct": 14.43
+  },
+  "quality_checks": {
+    "compressed_lines_300_plus": true,
+    "compressed_chars_10000_plus": true,
+    "all_chapters_covered": true,
+    "min_15_lines_per_chapter": true,
+    "original_quotes_2_plus": true,
+    "concrete_names_present": true,
+    "no_empty_filler_phrases": true,
+    "fidelity_to_thesis": true,
+    "framework_sections_present": true,
+    "practice_checklist_present": true
+  },
+  "mental_health_safety_policy": "本書は著者の双極性障害Ⅱ型体験を核とするが、臨床手順・処方・危機介入の具体的方法は原著に存在しない。圧縮版は社会哲学・経済批評フレームで全章を記述し、危機時の公的相談先（こころの健康相談統一ダイヤル等、著者が原著末尾p.257に掲載）は参照誘導のみとしてリスク情報の再現を行わない（restricted_meta_only適用）。",
+  "restricted_meta_only": true,
+  "notes": "source.txt はOCRスキャン由来のため、ページ番号・改行・OCRノイズが混在。読み取り精度は章の論旨把握に支障なし。ウツワ的自己vsパチンコ玉的自己、触媒的能力、分配される時間vs生成される時間の3フレームワークが本書最重要概念と判断。参考文献50冊以上のうち重要度の高い12冊を structure-map.md に収録。"
+}

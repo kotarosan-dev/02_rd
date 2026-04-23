@@ -1,0 +1,106 @@
+{
+  "book": {
+    "title": "物語の作り方 ガルシア=マルケスのシナリオ教室",
+    "original_title": "Cómo se cuenta un cuento",
+    "author": "ガブリエル・ガルシア=マルケス",
+    "translator": "旦敬介",
+    "publisher": "岩波現代文庫",
+    "workshop_location": "サンアントニオ・デ・ロス・バニョス（キューバ）",
+    "workshop_period": "1980年代後半"
+  },
+  "source": {
+    "filename": "source.txt",
+    "total_characters": 1065095,
+    "estimated_lines": 9825,
+    "encoding": "UTF-8"
+  },
+  "genre": {
+    "primary": "D",
+    "label": "学術書・思想書（創作論）",
+    "confidence": 0.88,
+    "reasoning": "ガルシア=マルケスによる脚本創作ワークショップの記録。創作方法論・物語理論・視点の倫理など学術的・思想的な議論を含む。ワークショップ形式により実践と理論が交錯する創作論の傑作。純粋な学術書ではなく、実践的創作論（applied narratology）に分類。",
+    "secondary_genre_signals": ["E: 伝記・回顧録（ガボ自身の創作体験の語りを含む）", "B: ジャンル小説（各ワークショップ物語がジャンル分析を含む）"]
+  },
+  "compression_strategy": {
+    "applied": "D型: 学術書・思想書戦略",
+    "compression_ratio": 0.022,
+    "priority_elements": [
+      "ガボの核心的創作原則（十戒）",
+      "各物語ワークショップの問いと学び",
+      "フラッシュバック禁止論・葛藤三層論・視点倫理論",
+      "第二部の創作哲学（才能論・書き直し論）",
+      "引用・名言の保持"
+    ],
+    "deletion_policy": [
+      "個別参加者名（匿名の討論進行には不要）",
+      "反復する討論の細部（学びの核心のみ抽出）",
+      "出版情報・翻訳ノート（メタ情報として別管理）",
+      "物語の詳細なシーン描写（物語案の概要のみ保持）"
+    ]
+  },
+  "output_metrics": {
+    "compressed_reading": {
+      "filename": "compressed-reading.md",
+      "line_count_target": 300,
+      "char_count_target": 10000,
+      "sections": [
+        "一文で言うなら",
+        "本書の構造と読み方",
+        "ガボとは何者か",
+        "ワークショップの方法論",
+        "第一部主要14の物語と学び（10本詳述）",
+        "フラッシュバック禁止令とその理由",
+        "物語の核心部としての葛藤",
+        "視点の倫理",
+        "第二部: 語るという幸せなマニア",
+        "ブラジル人経済官僚の物語",
+        "エピローグ: 良識礼賛",
+        "ガボの物語作りの十戒",
+        "本書が創作論の名著である理由",
+        "現代の創作者へ",
+        "名言・引用集",
+        "類書との比較",
+        "読後の実践ガイド"
+      ],
+      "quote_count": 12
+    },
+    "structure_map": {
+      "filename": "structure-map.md",
+      "includes": [
+        "全体ツリー構造",
+        "テーマ別構造マップ（A: 技法論 / B: 哲学論）",
+        "物語案の問題類型マップ（表形式）",
+        "ワークショップ・フロー図",
+        "キーコンセプト相関図",
+        "原著・翻訳情報表"
+      ]
+    }
+  },
+  "quality_gates": {
+    "all_parts_covered": true,
+    "part1_workshop_coverage": "14本中10本詳述、4本言及",
+    "part2_coverage": true,
+    "epilogue_coverage": true,
+    "min_quotes": 12,
+    "key_concepts_included": [
+      "フラッシュバック禁止令",
+      "葛藤の三層構造",
+      "視点のイデオロギー論",
+      "ジャンル=観客との約束",
+      "ファンタジーの内的一貫性",
+      "才能と技術の関係",
+      "書き直し三段階論",
+      "モンタージュの詩学",
+      "30分の制約論",
+      "悪人の内的論理"
+    ],
+    "reading_experience_preserved": true,
+    "safety_flag": null
+  },
+  "compression_timestamp": "2026-04-23",
+  "compressor_version": "book-compressor-v1",
+  "skill_references": [
+    "C:\\Users\\user\\.claude\\skills\\book-compressor\\SKILL.md",
+    "C:\\Users\\user\\.claude\\skills\\book-compressor\\references\\genre-strategies.md"
+  ]
+}

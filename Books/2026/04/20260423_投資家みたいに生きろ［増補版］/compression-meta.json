@@ -1,0 +1,150 @@
+{
+  "schema_version": "1.0",
+  "compression_info": {
+    "skill_version": "book-compressor v1",
+    "generated_at": "2026-04-23",
+    "generator": "Claude Sonnet 4.6 (Cursor Agent)"
+  },
+  "book_info": {
+    "title": "投資家みたいに生きろ [増補版]",
+    "title_reading": "とうしかみたいにいきろ ぞうほばん",
+    "author": "藤野英人",
+    "author_reading": "ふじの・ひでと",
+    "author_profile": "レオス・キャピタルワークス株式会社 代表取締役社長兼最高投資責任者。ひふみ投信・ひふみプラス・ひふみワールド等の運用責任者。東大EMP修了（2024年）。将棋アマ六段。",
+    "publisher": "株式会社日経BP 日本経済新聞出版",
+    "published_date": "2025-12-03",
+    "edition": "文庫版・増補版（第1刷）",
+    "isbn": "978-4-296-12554-8",
+    "original_title": "投資家みたいに生きろ",
+    "original_publisher": "ダイヤモンド社",
+    "original_published_date": "2019-09",
+    "series": "日経ビジネス人文庫"
+  },
+  "genre_detection": {
+    "primary_genre": "C",
+    "genre_label": "ビジネス書・自己啓発",
+    "confidence": 0.97,
+    "detection_basis": [
+      "著者がファンドマネージャーであり投資哲学を人生論として展開",
+      "フレームワーク提示（エネルギー5要素、リターン3種類、3バイアス、PERMA）が多数",
+      "具体的企業名・人名・数値による事例が豊富（ドン・キホーテ、LITALICO、本多静六等）",
+      "行動変容を目的とした習慣化フレームワーク（習慣1〜3）で構成",
+      "アクションチェックリスト・実践的なtips群が明示的に提示される"
+    ],
+    "secondary_genre": null
+  },
+  "source_analysis": {
+    "source_file": "source.txt",
+    "total_lines": 5799,
+    "estimated_chars_with_newlines": 175000,
+    "note": "OCRスキャン由来のため短行・空行・ページ番号行が多数混在。実質的な本文文字数は推定150,000〜175,000字相当",
+    "structure": {
+      "sections": [
+        "プロローグ：リスクと向き合う",
+        "思考1：投資家の考え方を授けよう",
+        "思考2：動かさないものの正体（3つのバイアス）",
+        "思考3：社会の変化を恐れず成長し続ける思考法",
+        "習慣1：今日の過ごし方が未来へとつながる",
+        "習慣2：長い人生で必要な資産を増やす",
+        "習慣3：主観の牢獄からの逃れ方",
+        "おわりに：イジンとヘンジンの生き方を学ぼう",
+        "文庫版読者特典コラム（おまけ）",
+        "参考図書リスト"
+      ],
+      "chapter_count": 10,
+      "has_bibliography": true,
+      "has_appendix": true
+    }
+  },
+  "compression_strategy": {
+    "applied_genre_strategy": "C_business_selfhelp",
+    "target_compression_ratio": "10-15%",
+    "actual_compression_ratio_approx": "8-10%",
+    "prioritized_elements": [
+      "コアフレームワーク（投資の拡張定義・5要素・3リターン）",
+      "3バイアスの構造と克服法",
+      "各習慣の具体的実践メソッド",
+      "著名企業・人物を使った事例（ドン・キホーテ、LITALICO、ユーグレナ等）",
+      "著者自身の実体験（3240円売却、東大EMP参加、南米出張等）",
+      "引用された研究・理論（PERMA、Dark Horse、ワイズマン実験等）",
+      "アクションチェックリスト・よくある誤解表"
+    ],
+    "pruned_elements": [
+      "重複する概念説明の繰り返し",
+      "ページ番号・章ヘッダー等のOCRアーティファクト",
+      "文庫版特典コラム（おまけ）の詳細内容（存在のみ言及）",
+      "参考図書の書誌詳細（タイトル・著者名のみ圧縮読本に収録）"
+    ],
+    "quotation_policy": "著者の発言・主張を意味が変わらない範囲で要約。重要な格言・キーフレーズは引用符で保持"
+  },
+  "output_metrics": {
+    "compressed_reading_md": {
+      "file": "compressed-reading.md",
+      "encoding": "UTF-8",
+      "trailing_newline": true,
+      "sections": 10,
+      "has_tables": true,
+      "has_checklists": true,
+      "has_quotes": true,
+      "estimated_lines": 380,
+      "estimated_chars_no_newlines": 16000
+    },
+    "structure_map_md": {
+      "file": "structure-map.md",
+      "encoding": "UTF-8",
+      "trailing_newline": true,
+      "has_tree_diagram": true,
+      "has_concept_map": true,
+      "has_tables": true
+    },
+    "compression_meta_json": {
+      "file": "compression-meta.json",
+      "encoding": "UTF-8",
+      "trailing_newline": true,
+      "schema": "book-compressor v1"
+    }
+  },
+  "quality_check": {
+    "all_content_source_grounded": true,
+    "no_speculation": true,
+    "key_examples_verified": [
+      "本多静六：月給の四分の一貯金→東大教授・資産家",
+      "ドン・キホーテ：1996年上場・過小評価→5年後株価大幅上昇",
+      "LITALICO：障がい者就労支援企業・企業理念と投資判断",
+      "ISTロケット（堀江貴文）：MOMO3号機・人工衛星打上げ成功",
+      "ユーグレナ出雲充：黄緑ネクタイ自己ブランディング",
+      "著者レオス経営危機：3240円で株を手放した体験",
+      "東大EMP：著者が2024年4〜9月参加",
+      "南米出張：2025年8月",
+      "セリグマン3goodthings：1週間で6ヶ月間幸福度向上",
+      "シベリア抑留兵：長期楽観×短期全力の教訓",
+      "ワイズマン実験：幸運な人と不運な人の違い",
+      "松下幸之助：採用面接での運の良い人のみ採用"
+    ],
+    "frameworks_accurately_captured": [
+      "エネルギー5要素（主体性・時間・お金・決断・運）",
+      "リターン3種類（目に見える資産・見えない資産・明るい未来）",
+      "3バイアス（リスクゼロ幻想・貯金善投資悪・給料は我慢料）",
+      "PERMA（P・E・R・M・A）",
+      "八ヶ岳戦法（5分野×8割・ニッパチの法則）",
+      "イジン（偉人・異人・遺人）",
+      "ヘンジン（変人・偏人・編人）"
+    ]
+  },
+  "safety_policy": {
+    "restricted_meta_only": false,
+    "restricted_reason": null,
+    "content_warnings": []
+  },
+  "references_cited_in_book": [
+    { "title": "ライフ・シフト", "authors": ["リンダ・グラットン", "アンドリュー・スコット"], "publisher": "東洋経済新報社" },
+    { "title": "ファスト＆スロー", "authors": ["ダニエル・カーネマン"], "publisher": "ハヤカワ文庫NF" },
+    { "title": "7つの習慣", "authors": ["スティーブン・R・コヴィー"], "publisher": "キングベアー出版" },
+    { "title": "Dark Horse", "authors": ["トッド・ローズ", "オギ・オーガス"], "publisher": "三笠書房" },
+    { "title": "私の財産告白", "authors": ["本多静六"], "publisher": "実業之日本社文庫" },
+    { "title": "運のいい人の法則", "authors": ["リチャード・ワイズマン"], "publisher": "角川文庫" },
+    { "title": "立花隆のすべて", "authors": ["文藝春秋編"], "publisher": "文春文庫" },
+    { "title": "藤原和博の必ず食える1%の人になる方法", "authors": ["藤原和博"], "publisher": "東洋経済新報社" },
+    { "title": "僕は君たちに武器を配りたい", "authors": ["瀧本哲史"], "publisher": "講談社" }
+  ]
+}
