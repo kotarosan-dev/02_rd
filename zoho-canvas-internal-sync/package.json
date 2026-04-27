@@ -3,14 +3,15 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
-  "description": "Zoho CRM Canvas views (HomeView/ListView/DetailView) を内部API（Cookie+CSRF）でgit-ops管理するハック実装。公式OAuthでは未対応のCRUDを実現する。",
+  "description": "Zoho CRM Canvas views (HomeView/ListView/DetailView) を OAuth + 内部APIで管理し、クローン/クロスOrgデプロイ/デザイン起点生成を行うツール群。",
   "scripts": {
     "list": "node scripts/list.mjs",
     "pull": "node scripts/pull.mjs",
     "push": "node scripts/push.mjs",
     "delete": "node scripts/delete.mjs",
     "clone": "node scripts/clone.mjs",
-    "deploy": "node scripts/deploy.mjs"
+    "deploy": "node scripts/deploy.mjs",
+    "design-to-canvas": "node scripts/design-to-canvas.mjs"
   },
   "dependencies": {
     "dotenv": "^16.4.5"

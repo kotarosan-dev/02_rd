@@ -61,6 +61,16 @@ export async function getLayouts(token, moduleApiName) {
   return r.json?.layouts || [];
 }
 
+export async function getFields(token, moduleApiName) {
+  const r = await call('GET', `/crm/v8/settings/fields?module=${encodeURIComponent(moduleApiName)}`, { token });
+  return r.json?.fields || [];
+}
+
+export async function getRelatedLists(token, moduleApiName) {
+  const r = await call('GET', `/crm/v8/settings/related_lists?module=${encodeURIComponent(moduleApiName)}`, { token });
+  return r.json?.related_lists || [];
+}
+
 export const canvas = {
   list: (token, params = {}) => {
     const q = new URLSearchParams(params).toString();

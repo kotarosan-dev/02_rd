@@ -1,0 +1,337 @@
+{
+  "template": "deals-detail-v1",
+  "description": "Screenshot-like Deals DetailView scaffold for design-to-canvas prototype.",
+  "canvas": {
+    "feature": "DetailView",
+    "module_api_name": "Deals",
+    "layout_name": "Standard",
+    "base_width": 1100,
+    "base_height": 1863
+  },
+  "sections": [
+    {
+      "id": "hero_header",
+      "x": 0,
+      "y": 0,
+      "w": 1100,
+      "h": 190,
+      "class": "zc-lsection",
+      "style": {
+        "_section_version_": 1,
+        "border": "none",
+        "background_image": "linear-gradient(163deg, rgb(12,148,171) 0%, rgb(140,12,171) 100%)",
+        "background_size": "cover",
+        "background_repeat": "repeat-y",
+        "border_radius": "0",
+        "box_shadow": "none"
+      },
+      "fields": [
+        {
+          "api_name": "Deal_Name",
+          "x": 92,
+          "y": 34,
+          "w": 460,
+          "h": 34,
+          "class": "zcanvas-field zc-ta-left",
+          "field_style": {
+            "color": "rgba(255, 255, 255, 1)",
+            "font_size": "22px"
+          }
+        },
+        {
+          "api_name": "Stage",
+          "x": 92,
+          "y": 78,
+          "w": 180,
+          "h": 24,
+          "class": "zcanvas-field zc-ta-left",
+          "field_style": {
+            "color": "rgba(255, 255, 255, 0.92)",
+            "font_size": "14px"
+          }
+        },
+        {
+          "api_name": "Probability",
+          "x": 300,
+          "y": 78,
+          "w": 90,
+          "h": 24,
+          "class": "zcanvas-field zc-ta-left",
+          "field_style": {
+            "color": "rgba(255, 255, 255, 0.92)",
+            "font_size": "14px"
+          }
+        },
+        {
+          "api_name": "Amount_Custom",
+          "x": 420,
+          "y": 78,
+          "w": 150,
+          "h": 24,
+          "class": "zcanvas-field zc-ta-left",
+          "field_style": {
+            "color": "rgba(255, 255, 255, 0.92)",
+            "font_size": "14px"
+          }
+        },
+        {
+          "api_name": "Stage_Modified_Time",
+          "x": 600,
+          "y": 78,
+          "w": 150,
+          "h": 24,
+          "class": "zcanvas-field zc-ta-left",
+          "field_style": {
+            "color": "rgba(255, 255, 255, 0.92)",
+            "font_size": "14px"
+          }
+        },
+        {
+          "api_name": "Account_Name",
+          "x": 760,
+          "y": 78,
+          "w": 210,
+          "h": 24,
+          "class": "zcanvas-field zc-ta-left",
+          "field_style": {
+            "color": "rgba(255, 255, 255, 0.92)",
+            "font_size": "14px"
+          }
+        },
+        {
+          "api_name": "Owner",
+          "x": 760,
+          "y": 118,
+          "w": 210,
+          "h": 24,
+          "class": "zcanvas-field zc-ta-left",
+          "field_style": {
+            "color": "rgba(255, 255, 255, 0.92)",
+            "font_size": "14px"
+          }
+        }
+      ]
+    },
+    {
+      "id": "pipeline_strip",
+      "x": 20,
+      "y": 208,
+      "w": 760,
+      "h": 48,
+      "class": "zc-lsection",
+      "style": {
+        "_section_version_": 1,
+        "background_color": "#ffffff",
+        "border": "1px solid #e5e7eb",
+        "border_radius": "8px"
+      }
+    },
+    {
+      "id": "side_actions_top",
+      "x": 800,
+      "y": 208,
+      "w": 280,
+      "h": 92,
+      "class": "zc-lsection",
+      "style": {
+        "_section_version_": 1,
+        "background_color": "#ffffff",
+        "border": "1px solid #e5e7eb",
+        "border_radius": "8px"
+      }
+    },
+    {
+      "id": "risk_card",
+      "x": 540,
+      "y": 274,
+      "w": 240,
+      "h": 248,
+      "class": "zc-lsection",
+      "style": {
+        "_section_version_": 1,
+        "background_color": "#ffffff",
+        "border": "1px solid #e5e7eb",
+        "border_radius": "8px",
+        "box_shadow": "0px 1px 2px rgba(0,0,0,0.06)"
+      },
+      "fields": [
+        {
+          "api_name": "Description",
+          "x": 18,
+          "y": 54,
+          "w": 196,
+          "h": 52,
+          "class": "zcanvas-field zc-ta-left",
+          "field_style": {
+            "font_size": "13px",
+            "color": "#111827"
+          }
+        }
+      ]
+    },
+    {
+      "id": "issues_card",
+      "x": 20,
+      "y": 274,
+      "w": 240,
+      "h": 248,
+      "class": "zc-lsection",
+      "style": {
+        "_section_version_": 1,
+        "background_color": "#ffffff",
+        "border": "1px solid #e5e7eb",
+        "border_radius": "8px",
+        "box_shadow": "0px 1px 2px rgba(0,0,0,0.06)"
+      },
+      "fields": [
+        {
+          "api_name": "Description",
+          "x": 18,
+          "y": 54,
+          "w": 196,
+          "h": 92,
+          "class": "zcanvas-field zc-ta-left",
+          "field_style": {
+            "font_size": "13px",
+            "color": "#111827"
+          }
+        }
+      ]
+    },
+    {
+      "id": "proposal_card",
+      "x": 280,
+      "y": 274,
+      "w": 240,
+      "h": 248,
+      "class": "zc-lsection",
+      "style": {
+        "_section_version_": 1,
+        "background_color": "#ffffff",
+        "border": "1px solid #e5e7eb",
+        "border_radius": "8px",
+        "box_shadow": "0px 1px 2px rgba(0,0,0,0.06)"
+      }
+    },
+    {
+      "id": "tasks_panel",
+      "x": 800,
+      "y": 320,
+      "w": 280,
+      "h": 248,
+      "class": "zc-lsection",
+      "style": {
+        "_section_version_": 1,
+        "background_color": "#ffffff",
+        "border": "1px solid #e5e7eb",
+        "border_radius": "8px",
+        "box_shadow": "0px 1px 2px rgba(0,0,0,0.06)"
+      }
+    },
+    {
+      "id": "next_actions_card",
+      "x": 20,
+      "y": 542,
+      "w": 240,
+      "h": 248,
+      "class": "zc-lsection",
+      "style": {
+        "_section_version_": 1,
+        "background_color": "#ffffff",
+        "border": "1px solid #e5e7eb",
+        "border_radius": "8px",
+        "box_shadow": "0px 1px 2px rgba(0,0,0,0.06)"
+      }
+    },
+    {
+      "id": "activity_card",
+      "x": 280,
+      "y": 542,
+      "w": 240,
+      "h": 248,
+      "class": "zc-lsection",
+      "style": {
+        "_section_version_": 1,
+        "background_color": "#ffffff",
+        "border": "1px solid #e5e7eb",
+        "border_radius": "8px",
+        "box_shadow": "0px 1px 2px rgba(0,0,0,0.06)"
+      }
+    },
+    {
+      "id": "stakeholders_card",
+      "x": 540,
+      "y": 542,
+      "w": 240,
+      "h": 248,
+      "class": "zc-lsection",
+      "style": {
+        "_section_version_": 1,
+        "background_color": "#ffffff",
+        "border": "1px solid #e5e7eb",
+        "border_radius": "8px",
+        "box_shadow": "0px 1px 2px rgba(0,0,0,0.06)"
+      }
+    },
+    {
+      "id": "related_summary_panel",
+      "x": 800,
+      "y": 586,
+      "w": 280,
+      "h": 306,
+      "class": "zc-lsection",
+      "style": {
+        "_section_version_": 1,
+        "background_color": "#ffffff",
+        "border": "1px solid #e5e7eb",
+        "border_radius": "8px",
+        "box_shadow": "0px 1px 2px rgba(0,0,0,0.06)"
+      }
+    },
+    {
+      "id": "quotes_board",
+      "x": 20,
+      "y": 810,
+      "w": 520,
+      "h": 315,
+      "class": "zc-lsection",
+      "style": {
+        "_section_version_": 1,
+        "background_color": "#ffffff",
+        "border": "1px solid #e5e7eb",
+        "border_radius": "8px",
+        "box_shadow": "0px 1px 2px rgba(0,0,0,0.06)"
+      }
+    },
+    {
+      "id": "products_board",
+      "x": 560,
+      "y": 810,
+      "w": 220,
+      "h": 315,
+      "class": "zc-lsection",
+      "style": {
+        "_section_version_": 1,
+        "background_color": "#ffffff",
+        "border": "1px solid #e5e7eb",
+        "border_radius": "8px",
+        "box_shadow": "0px 1px 2px rgba(0,0,0,0.06)"
+      }
+    },
+    {
+      "id": "deal_info_panel",
+      "x": 800,
+      "y": 914,
+      "w": 280,
+      "h": 282,
+      "class": "zc-lsection",
+      "style": {
+        "_section_version_": 1,
+        "background_color": "#ffffff",
+        "border": "1px solid #e5e7eb",
+        "border_radius": "8px",
+        "box_shadow": "0px 1px 2px rgba(0,0,0,0.06)"
+      }
+    }
+  ]
+}

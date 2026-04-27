@@ -54,6 +54,33 @@ node scripts/deploy.mjs <pulled_canvas.json> --name "tenant_A_v1" \
 
 `.env`（このリポ）に内部API用のCookie/CSRF、親 `02_R&D/.env` にOAuth資格情報（`ZOHO_CLIENT_ID` / `ZOHO_CLIENT_SECRET` / `ZOHO_ORG_ID` / `ZOHO_DC`）を置けば自動で両方ロードされる。
 
+### 4. CLI: `npm run design-to-canvas`（スクショ起点の自動生成プロト）
+
+「デザイン画像 -> Canvas JSON」を自動生成する最小プロトタイプ。  
+まずは Deals DetailView の画面構造（カード/サイドバー/見積ブロック）を画像アスペクトに合わせて再構成する。
+
+```bash
+# 1) 画像から Canvas JSON を生成（ファイル出力）
+npm run design-to-canvas -- "<design.png>" \
+  --name "Deals_Detail_Auto_v1" \
+  --module Deals \
+  --layout Standard
+
+# 2) そのまま OAuth で作成まで実行
+npm run design-to-canvas -- "<design.png>" \
+  --name "Deals_Detail_Auto_v1" \
+  --module Deals \
+  --layout Standard \
+  --create
+```
+
+補足:
+- 既定テンプレート: `templates/canvas-skeleton/deals-detail-v1.json`
+- 生成結果（createなし）: `_generated/<name>__canvas.json`
+- `--create` 時は module/layout の ID を API で動的解決して POST
+- `--create` 時は `GET /settings/fields?module=Deals` で主要フィールドIDも動的解決し、`Deal_Name` / `Stage` / `Probability` / `Amount_Custom` / `Stage_Modified_Time` / `Account_Name` / `Owner` / `Description` を自動バインド
+- 現段階は「スクショ相当の構造 + 主要フィールドの自動配置」が主目的。完全な関連リスト/ボタン/ラベル再現は次段
+
 ## 2系統のクライアント
 
 このリポジトリは2つの認証経路を提供する：
