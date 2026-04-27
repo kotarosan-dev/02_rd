@@ -1,0 +1,78 @@
+name:        隧ｳ邏ｰ繝・Φ繝励Ξ繝ｼ繝・
+feature:     DetailView
+module:      Leads (12343000000000042)
+layout:      Standard (12343000000000834)
+top-level children: 3
+total nodes: 330   max depth: 7
+unique componentids: 330
+
+--- node types ---
+   111  field
+    75  component
+    71  componentid_node
+    20  static_content
+    20  relatedlist
+    14  row
+    12  action
+     4  section
+     3  separator
+
+--- CSS class on ui.value ---
+    44  zcanvas-field
+    37  zcanvas-field zc-rl-field zc-ta-left
+    20  zc-list-component
+    20  zcanvas-title-editor
+    20  zc_disabled
+    16  zc-tab-section zc-tabrl-container
+    15  zcanvas-field  zcclinkvalue
+    14  zcanvas-row
+     9  zcanvas-non-delete
+     5  zc-ta-center
+     5  zcanvas-field  zctextarea
+     3  zc-lsection
+     3  zcanvas-seperator
+     3  zcanvas-field zcanvas-no-img-default zc-ta-center zccbutton zccrlaction zc-rl-field zccbuttonicon zccbuttonnotext zc-only-icon
+     2  zcanvas-field zc-ta-left
+     2  zcanvas-row-seperator
+     2  zcanvas-field zcanvas-no-img-default zccbutton zc-ta-center
+     2  zcanvas-field zcanvas-no-img-default zccbutton zccrlaction zc-rl-field zccbuttonicon zccbuttonnotext zc-only-icon zc-ta-center
+     2  zclayout-table zc-no-theme
+     2  zcanvas-field zcanvas-no-img-default zc-ta-center zccbutton zccrlaction zc-rl-field zccbuttonicon zccbuttonnotext
+     1  zcanvas-field zcanvas-no-img-default zccbutton zcanvas-nav zc-ta-right
+     1  zc-merge-hright
+     1  zcanvas-field zcanvas-no-img-default zccbutton zc-only-icon zccbuttonicon zc-ta-right
+     1  zcanvas-field zcbdrbox
+     1  zcanvas-no-img-default zccbutton zc-restricted-icon zc-ta-right zcanvas-field
+     1  zcanvas-horizantol-top zcanvas-subtab-push
+     1  zc-tab-section
+     1  zclayout-table zcanvas-editor
+     1  zcanvas-field zc-rl-field zc-ta-left  zcclinkvalue
+     1  zc-tab-section zc-tab-all-fields zc-tabrl-container
+
+--- style.default keys (top 30) ---
+    45  field.font_size
+    35  border
+    30  border_radius
+    25  box_shadow
+    24  field.margin_left
+    20  field.font_family
+    17  background_color
+    16  font_family
+    14  padding
+    13  font_size
+    12  field.color
+     9  color
+     4  padding_left
+     4  padding_top
+     4  padding_bottom
+     4  padding_right
+     3  background_image
+     2  _show_
+     1  background_size
+     1  background_repeat
+     1  field.border
+     1  field.padding
+     1  field.border_radius
+     1  field.box_shadow
+
+--- ui_type ---

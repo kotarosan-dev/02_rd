@@ -1,0 +1,24 @@
+{
+  "name": "zoho-canvas-internal-sync",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Zoho CRM Canvas views (HomeView/ListView/DetailView) を内部API（Cookie+CSRF）でgit-ops管理するハック実装。公式OAuthでは未対応のCRUDを実現する。",
+  "scripts": {
+    "list": "node scripts/list.mjs",
+    "pull": "node scripts/pull.mjs",
+    "push": "node scripts/push.mjs",
+    "delete": "node scripts/delete.mjs",
+    "clone": "node scripts/clone.mjs",
+    "deploy": "node scripts/deploy.mjs"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "devDependencies": {
+    "@dotenvx/dotenvx": "^1.63.0"
+  }
+}

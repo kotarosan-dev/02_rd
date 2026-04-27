@@ -1,0 +1,86 @@
+{
+  "canvas_view": [
+    {
+      "name": "営業ホーム_テンプレ",
+      "ui": {
+        "value": {
+          "style": {},
+          "custom_style": {},
+          "position": {"start_x": 0, "start_y": 0, "end_x": 5040, "width": 1680, "height": 1100, "depth": 1}
+        },
+        "canvas_rules": [],
+        "script_info": {"mapping": {}, "deleted": []}
+      },
+      "feature": "HomeView",
+      "module": {"id": "12343000000000040", "api_name": "Home"},
+      "children": [
+        {
+          "type": "component",
+          "theme": "Custom Layout",
+          "ui": {"value": {
+            "style": {"default": {"_section_version_": 1, "background-color": "#1f4ed8", "color": "#ffffff", "border-radius": "8px"}},
+            "custom_style": {},
+            "position": {"start_x": 40, "start_y": 40, "end_x": 1640, "width": 1600, "height": 120, "depth": 1},
+            "class": "zc-lsection",
+            "zcode": {"name": "section_header"}
+          }},
+          "children": []
+        },
+        {
+          "type": "component",
+          "theme": "Custom Layout",
+          "ui": {"value": {
+            "style": {"default": {"_section_version_": 1, "background-color": "#f8fafc", "border": "1px solid #e2e8f0", "border-radius": "8px"}},
+            "custom_style": {},
+            "position": {"start_x": 40, "start_y": 200, "end_x": 820, "width": 780, "height": 420, "depth": 1},
+            "class": "zc-lsection",
+            "zcode": {"name": "section_today_actions"}
+          }},
+          "children": []
+        },
+        {
+          "type": "component",
+          "theme": "Custom Layout",
+          "ui": {"value": {
+            "style": {"default": {"_section_version_": 1, "background-color": "#ecfeff", "border": "1px solid #a5f3fc", "border-radius": "8px"}},
+            "custom_style": {},
+            "position": {"start_x": 860, "start_y": 200, "end_x": 1640, "width": 780, "height": 420, "depth": 1},
+            "class": "zc-lsection",
+            "zcode": {"name": "section_kpi"}
+          }},
+          "children": []
+        },
+        {
+          "type": "component",
+          "theme": "Custom Layout",
+          "ui": {"value": {
+            "style": {"default": {"_section_version_": 1, "background-color": "#ffffff", "border": "1px dashed #cbd5e1", "border-radius": "8px"}},
+            "custom_style": {},
+            "position": {"start_x": 40, "start_y": 660, "end_x": 1640, "width": 1600, "height": 340, "depth": 1},
+            "class": "zc-lsection",
+            "zcode": {"name": "section_recent"}
+          }},
+          "children": []
+        },
+        {
+          "id": "view_selector",
+          "datatype": "field",
+          "type": "create_page_comp",
+          "name": "view_selector",
+          "ui": {
+            "value": {
+              "style": {"default": {}},
+              "custom_style": {},
+              "position": {"start_x": 40, "start_y": 1020, "end_x": 380, "width": 340, "height": 40, "depth": 1},
+              "class": "zcanvas-create-page-comp zcanvas-create-page-comp-layout"
+            },
+            "field": {"style": {}, "custom_style": {}, "class": ""}
+          },
+          "children": []
+        }
+      ],
+      "action": "create",
+      "related_to": {"data_hub_associations": null, "lookup_associations": null, "homepage_associations": []}
+    }
+  ]
+}
