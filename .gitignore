@@ -37,3 +37,12 @@ temp_*
 *.tmp
 .claude/settings.local.json
 **/temp/
+
+# Cursor / MCP キャッシュ（リポジトリに不要）
+.playwright-mcp/
+
+# ハーネス作業セッション（tasks / artifacts はローカルまたは別保管）
+harness_*/
+
+# スクリプト試行・ログ（資産は scripts/assets のみ追跡）
+03_ソースコード管理/scripts/_scratch/
