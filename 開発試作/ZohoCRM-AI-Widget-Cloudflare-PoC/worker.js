@@ -173,6 +173,42 @@ function summarizeApiError(result) {
   return JSON.stringify(result.data || {}).slice(0, 500);
 }
 
+function listFromResponse(data) {
+  if (Array.isArray(data)) {
+    return data;
+  }
+  if (data && Array.isArray(data.data)) {
+    return data.data;
+  }
+  if (data && Array.isArray(data.items)) {
+    return data.items;
+  }
+  if (data && Array.isArray(data.events)) {
+    return data.events;
+  }
+  return [];
+}
+
+function textFromContent(content) {
+  if (!Array.isArray(content)) {
+    return "";
+  }
+  return content
+    .filter((block) => block && block.type === "text")
+    .map((block) => block.text || "")
+    .join("\n")
+    .trim();
+}
+
+function extractAgentMessage(events) {
+  const agentMessages = events.filter((event) => event && event.type === "agent.message");
+  return agentMessages
+    .map((event) => textFromContent(event.content))
+    .filter((text) => text.length > 0)
+    .join("\n\n")
+    .slice(0, 2000);
+}
+
 async function managedAgentProbe(env) {
   const [agents, environments] = await Promise.all([
     anthropicJson(env, "/v1/agents?limit=1"),
@@ -327,6 +363,50 @@ async function managedAgentReview(request, env) {
   });
 }
 
+async function managedAgentResult(request, env) {
+  let body = {};
+  try {
+    body = await request.json();
+  } catch (error) {
+    body = {};
+  }
+  const sessionId = String(body.sessionId || "").trim();
+  if (!/^sesn_/.test(sessionId)) {
+    return jsonResponse({
+      status: "error",
+      message: "Valid sessionId is required."
+    }, 400);
+  }
+
+  const [session, events] = await Promise.all([
+    anthropicJson(env, `/v1/sessions/${encodeURIComponent(sessionId)}`),
+    anthropicJson(env, `/v1/sessions/${encodeURIComponent(sessionId)}/events?limit=80`)
+  ]);
+  if (!session.ok) {
+    return jsonResponse({
+      status: "error",
+      message: `Session fetch failed: ${session.status} ${summarizeApiError(session)}`
+    }, 502);
+  }
+  if (!events.ok) {
+    return jsonResponse({
+      status: "error",
+      message: `Events fetch failed: ${events.status} ${summarizeApiError(events)}`
+    }, 502);
+  }
+
+  const eventList = listFromResponse(events.data);
+  return jsonResponse({
+    status: "ok",
+    sessionId,
+    sessionStatus: session.data && session.data.status ? session.data.status : "unknown",
+    eventCount: eventList.length,
+    message: extractAgentMessage(eventList),
+    lastEventType: eventList.length > 0 && eventList[eventList.length - 1] ? eventList[eventList.length - 1].type : "",
+    usage: session.data && session.data.usage ? session.data.usage : null
+  });
+}
+
 async function insightResponse(request, env = {}) {
   let body = {};
   if (request.method === "POST") {
@@ -389,6 +469,12 @@ export default {
     if (url.pathname === "/api/managed-agent/review") {
       if (request.method === "POST") {
         return managedAgentReview(request, env);
+      }
+      return jsonResponse({ error: "Method Not Allowed" }, 405);
+    }
+    if (url.pathname === "/api/managed-agent/result") {
+      if (request.method === "POST") {
+        return managedAgentResult(request, env);
       }
       return jsonResponse({ error: "Method Not Allowed" }, 405);
     }

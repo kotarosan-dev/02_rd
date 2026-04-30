@@ -27,6 +27,7 @@ const state = {
   records: { Deals: [], Accounts: [], Leads: [], Tasks: [] },
   tickers: [],
   aiRequestId: 0,
+  managedSessionId: "",
   root: null,
   renderer: null,
   camera: null,
@@ -50,6 +51,7 @@ const el = {
   aiQuestionList: document.getElementById("aiQuestionList"),
   agentProbeButton: document.getElementById("agentProbeButton"),
   agentReviewButton: document.getElementById("agentReviewButton"),
+  agentFetchButton: document.getElementById("agentFetchButton"),
   agentProbeStatus: document.getElementById("agentProbeStatus"),
   agentProbeResult: document.getElementById("agentProbeResult")
 };
@@ -474,6 +476,8 @@ async function startManagedReview() {
     if (!response.ok || result.status !== "started") {
       throw new Error(result.message || `Managed review failed with ${response.status}`);
     }
+    state.managedSessionId = result.sessionId || "";
+    el.agentFetchButton.disabled = !state.managedSessionId;
     el.agentProbeStatus.textContent = "Started";
     el.agentProbeResult.textContent = [
       "Managed review session を開始しました。",
@@ -487,6 +491,44 @@ async function startManagedReview() {
     el.agentProbeResult.textContent = safeValue(error && error.message ? error.message : error, "Managed review failed.");
   } finally {
     el.agentReviewButton.disabled = false;
+  }
+}
+
+async function fetchManagedReviewResult() {
+  if (!state.managedSessionId) {
+    el.agentProbeResult.textContent = "sessionId がありません。先に Start managed review を実行してください。";
+    return;
+  }
+  el.agentFetchButton.disabled = true;
+  el.agentProbeStatus.textContent = "Fetching";
+  el.agentProbeResult.textContent = "Managed Agent session の結果を取得しています...";
+  try {
+    const response = await fetch("/api/managed-agent/result", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        sessionId: state.managedSessionId
+      })
+    });
+    const result = await response.json();
+    if (!response.ok || result.status === "error") {
+      throw new Error(result.message || `Fetch result failed with ${response.status}`);
+    }
+    el.agentProbeStatus.textContent = result.sessionStatus || "Result";
+    el.agentProbeResult.textContent = [
+      `session=${result.sessionId}`,
+      `status=${result.sessionStatus}`,
+      `events=${result.eventCount}`,
+      "",
+      result.message || "まだ agent.message はありません。数秒後にもう一度 Fetch result を押してください。"
+    ].join("\n");
+  } catch (error) {
+    el.agentProbeStatus.textContent = "Error";
+    el.agentProbeResult.textContent = safeValue(error && error.message ? error.message : error, "Fetch result failed.");
+  } finally {
+    el.agentFetchButton.disabled = false;
   }
 }
 
@@ -808,6 +850,7 @@ async function boot() {
   el.refresh.addEventListener("click", refreshData);
   el.agentProbeButton.addEventListener("click", probeManagedAgentAccess);
   el.agentReviewButton.addEventListener("click", startManagedReview);
+  el.agentFetchButton.addEventListener("click", fetchManagedReviewResult);
   window.addEventListener("resize", resizeRenderer);
   window.requestAnimationFrame(renderLoop);
 }
