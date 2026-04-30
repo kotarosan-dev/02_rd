@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zoho CRM Three.js Widget Demos</title>
+    <script src="https://live.zwidgets.com/js-sdk/1.5/ZohoEmbededAppSDK.min.js"></script>
+    <script src="js/zoho-mock.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <script type="module" src="js/main.js"></script>
+  </head>
+  <body>
+    <div class="widget-shell">
+      <header class="toolbar">
+        <div class="brand">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <div>
+            <p class="eyebrow">Zoho CRM Widget</p>
+            <h1>Three CRM Lens</h1>
+          </div>
+        </div>
+        <nav id="demoTabs" class="demo-tabs" aria-label="Demo modes"></nav>
+        <button id="refreshButton" class="icon-button" type="button" title="再読み込み" aria-label="再読み込み">↻</button>
+      </header>
+
+      <main class="workspace">
+        <section class="stage-panel" aria-label="3D CRM visualization">
+          <canvas id="crmCanvas"></canvas>
+          <div class="scene-caption">
+            <p id="sceneTitle"></p>
+            <span id="sceneStatus"></span>
+          </div>
+        </section>
+
+        <aside class="inspector" aria-label="CRM summary">
+          <section class="summary-block">
+            <p class="block-label">Context</p>
+            <dl id="contextList" class="info-list"></dl>
+          </section>
+          <section class="summary-block">
+            <p class="block-label">Metrics</p>
+            <dl id="metricList" class="info-list"></dl>
+          </section>
+          <section class="summary-block">
+            <p class="block-label">Records</p>
+            <ol id="recordList" class="record-list"></ol>
+          </section>
+        </aside>
+      </main>
+    </div>
+  </body>
+</html>
+

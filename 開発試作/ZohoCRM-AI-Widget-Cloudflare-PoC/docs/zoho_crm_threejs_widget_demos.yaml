@@ -1,0 +1,67 @@
+project:
+  name: zoho_crm_threejs_widget_demos
+  project_root: C:\Users\user\Desktop\etika\開発\etika-izumida-dev
+  implementation_path: 03_実装/zoho-crm-threejs-widget-demos
+  purpose: Zoho CRM widget iframe 内で軽量 three.js デモを複数確認する
+
+widget:
+  service: CRM
+  entrypoint: app/widget.html
+  sdk:
+    version: 1.5
+    init_order:
+      - ZOHO.embeddedApp.on("PageLoad") を登録
+      - ZOHO.embeddedApp.init() を実行
+      - PageLoad context を受けて CRM API を呼び出す
+  local_mock:
+    file: app/js/zoho-mock.js
+    entities:
+      - Deals
+      - Accounts
+      - Leads
+      - Tasks
+
+threejs:
+  runtime: app/lib/three-adapter.js
+  load_order:
+    - app/lib/three.module.min.js
+    - https://cdn.jsdelivr.net/npm/three@0.184.0/build/three.module.min.js
+    - app/lib/three-lite.js
+  policy:
+    - no_textures
+    - no_postprocessing
+    - no_framework_runtime
+    - one_renderer_shared_by_all_demo_modes
+    - renderer_pixel_ratio_capped_at_1_5
+  scenes:
+    - id: deal-orbit
+      entity: Deals
+      visual: stage columns and deal orbit nodes
+    - id: account-towers
+      entity: Accounts
+      visual: low-poly tower map
+    - id: activity-pulse
+      entity: Tasks
+      visual: status rings and task nodes
+    - id: lead-focus
+      entity: Leads
+      visual: central record lens and completeness spokes
+    - id: forecast-grid
+      entity: Deals
+      visual: probability bucket bars
+
+security:
+  crm_data_rendering:
+    - use textContent
+    - create DOM nodes explicitly
+    - reject direct innerHTML assignment for CRM-derived values
+  external_secrets:
+    policy: no client-side API keys
+
+verification:
+  static_check: npm run check:files
+  local_server: npm run serve
+  browser_target: http://127.0.0.1:5174/widget.html
+  zoho_packaging:
+    - zet validate
+    - zet pack

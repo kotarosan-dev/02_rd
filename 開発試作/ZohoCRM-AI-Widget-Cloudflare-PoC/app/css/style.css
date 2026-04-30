@@ -1,0 +1,358 @@
+:root {
+  color-scheme: light;
+  --bg: #f6f7f4;
+  --surface: #ffffff;
+  --surface-soft: #eef4f0;
+  --ink: #1d2630;
+  --muted: #657076;
+  --line: #d8ded5;
+  --teal: #0f766e;
+  --orange: #f97316;
+  --blue: #2563eb;
+  --yellow: #eab308;
+  --danger: #dc2626;
+  --shadow: 0 18px 45px rgba(40, 49, 44, 0.12);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #141816;
+  --surface: #1d241f;
+  --surface-soft: #263129;
+  --ink: #ecf1ed;
+  --muted: #a7b3ad;
+  --line: #334139;
+  --shadow: 0 18px 45px rgba(0, 0, 0, 0.34);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  min-width: 320px;
+  height: 100%;
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+}
+
+button {
+  font: inherit;
+}
+
+.widget-shell {
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  gap: 12px;
+  padding: 14px;
+}
+
+.toolbar {
+  min-height: 64px;
+  display: grid;
+  grid-template-columns: minmax(185px, 260px) minmax(0, 1fr) 40px;
+  gap: 12px;
+  align-items: center;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+}
+
+.brand-mark {
+  width: 34px;
+  height: 34px;
+  flex: 0 0 auto;
+  border-radius: 8px;
+  background:
+    linear-gradient(135deg, rgba(15, 118, 110, 0.92), rgba(37, 99, 235, 0.78)),
+    radial-gradient(circle at 78% 24%, rgba(249, 115, 22, 0.86), transparent 38%);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.28), 0 10px 22px rgba(15, 118, 110, 0.2);
+}
+
+.eyebrow {
+  margin: 0;
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+
+h1 {
+  margin: 2px 0 0;
+  font-size: 20px;
+  line-height: 1.1;
+  font-weight: 720;
+  letter-spacing: 0;
+}
+
+.demo-tabs {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(88px, 1fr));
+  gap: 6px;
+  min-width: 0;
+}
+
+.tab-button,
+.icon-button {
+  min-height: 38px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+  color: var(--ink);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.36);
+  cursor: pointer;
+}
+
+.tab-button {
+  padding: 0 10px;
+  overflow-wrap: anywhere;
+}
+
+.tab-button[aria-selected="true"] {
+  border-color: rgba(15, 118, 110, 0.36);
+  background: linear-gradient(180deg, rgba(15, 118, 110, 0.13), rgba(255, 255, 255, 0.4));
+  color: var(--teal);
+}
+
+.icon-button {
+  width: 40px;
+  display: grid;
+  place-items: center;
+  font-size: 21px;
+}
+
+.workspace {
+  min-height: 520px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(260px, 330px);
+  gap: 12px;
+}
+
+.stage-panel {
+  position: relative;
+  min-height: 520px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.72), rgba(238, 244, 240, 0.76)),
+    radial-gradient(circle at 18% 18%, rgba(15, 118, 110, 0.14), transparent 28%),
+    radial-gradient(circle at 88% 16%, rgba(249, 115, 22, 0.12), transparent 24%);
+  box-shadow: var(--shadow);
+  touch-action: none;
+}
+
+#crmCanvas {
+  width: 100%;
+  height: 100%;
+  min-height: 520px;
+  display: block;
+}
+
+.scene-caption {
+  position: absolute;
+  left: 16px;
+  bottom: 14px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 10px;
+  max-width: calc(100% - 32px);
+  padding: 8px 10px;
+  border: 1px solid rgba(255, 255, 255, 0.54);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.76);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 12px 30px rgba(40, 49, 44, 0.12);
+}
+
+:root[data-theme="dark"] .scene-caption {
+  background: rgba(29, 36, 31, 0.78);
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+.scene-caption p,
+.scene-caption span {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.35;
+}
+
+.scene-caption p {
+  font-weight: 700;
+}
+
+.scene-caption span {
+  color: var(--muted);
+}
+
+.inspector {
+  min-width: 0;
+  display: grid;
+  grid-auto-rows: min-content;
+  gap: 10px;
+}
+
+.summary-block {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+  box-shadow: 0 10px 26px rgba(40, 49, 44, 0.08);
+  padding: 12px;
+}
+
+.block-label {
+  margin: 0 0 8px;
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.info-list {
+  display: grid;
+  grid-template-columns: minmax(90px, 1fr) minmax(80px, 1fr);
+  gap: 8px 10px;
+  margin: 0;
+}
+
+.info-list dt,
+.info-list dd {
+  min-width: 0;
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.35;
+}
+
+.info-list dt {
+  color: var(--muted);
+}
+
+.info-list dd {
+  text-align: right;
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}
+
+.record-list {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.record-item {
+  display: grid;
+  grid-template-columns: 10px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 8px;
+  min-height: 38px;
+  padding: 8px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface-soft);
+}
+
+.record-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+}
+
+.record-title,
+.record-meta {
+  margin: 0;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.record-title {
+  font-size: 13px;
+  line-height: 1.25;
+  font-weight: 700;
+}
+
+.record-meta {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.25;
+}
+
+.record-value {
+  color: var(--teal);
+  font-size: 12px;
+  font-weight: 760;
+  white-space: nowrap;
+}
+
+@media (max-width: 900px) {
+  .toolbar {
+    grid-template-columns: 1fr 40px;
+  }
+
+  .demo-tabs {
+    grid-column: 1 / -1;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .workspace {
+    grid-template-columns: 1fr;
+  }
+
+  .stage-panel,
+  #crmCanvas {
+    min-height: 430px;
+  }
+}
+
+@media (max-width: 520px) {
+  .widget-shell {
+    padding: 10px;
+  }
+
+  .toolbar {
+    gap: 10px;
+  }
+
+  .brand {
+    gap: 8px;
+  }
+
+  h1 {
+    font-size: 18px;
+  }
+
+  .demo-tabs {
+    grid-template-columns: 1fr;
+  }
+
+  .tab-button {
+    min-height: 34px;
+  }
+
+  .stage-panel,
+  #crmCanvas {
+    min-height: 360px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.001ms !important;
+    animation-duration: 0.001ms !important;
+  }
+}
+

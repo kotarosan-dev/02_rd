@@ -1,0 +1,10 @@
+priority,hypothesis_id,buyer_persona,crm_surface,problem,widget_value,demo_mode,validation_test,success_signal,risk,offer_package,evidence_note,next_test
+1,UC-001,営業責任者,Dashboard / Web tab / Deals custom button,商談レビューがCRM外の資料に分散している,案件ステージ・金額・確度の偏りをCRM内で即時把握する,Deals Orbit + Forecast Grid,10分デモで週次会議の確認項目を聞く,自社Deals項目で見たい項目が5つ以上出る,Zoho標準レポートで足りる可能性,Pipeline Lens Pilot,,3社にデモして会議名・利用者・頻度を記録
+2,UC-002,経営者 / 営業責任者,Dashboard,売上見込みの確度別判断が遅い,確度帯ごとの重み付き売上と偏りを1画面にする,Forecast Grid,現在のforecast管理方法を聞く,確度定義・金額項目・締め日の具体名が出る,既存BIが強い会社では不要,Forecast Review Pilot,,Deals項目を1社分で実データ接続
+3,UC-003,営業 / CS責任者,Business Card / Related List,取引先訪問前の確認が複数タブに分散する,取引先規模・活動・商談状況を1つの詳細画面に集約する,Account Towers + Activity Pulse,取引先詳細で最初に見たい項目を聞く,Account/Deals/Tasksを横断したい要望が出る,データ結合が重くなりやすい,Account 360 Pilot,,訪問前確認フローを観察
+4,UC-004,インサイドセールス責任者,Leads custom button / Business Card,リードの入力不足と優先順位が見えない,接点情報と入力充足度を視覚化して次アクションを決める,Lead Focus,リード流入経路と対応優先ルールを聞く,必須項目・除外条件・スコア条件が出る,入力品質改善が先に必要,Lead Quality Pilot,,フォーム/CSV/展示会名刺の流入別に聞く
+5,UC-005,業務設計者 / CRM管理者,Blueprint,ステージ遷移や承認で差戻しが多い,遷移前に不足情報・リスク・次アクションを可視化する,Activity Pulse + Forecast Grid,差戻しが多いTransitionを聞く,Blueprint名とTransition条件が具体化する,Blueprint未運用の会社では刺さらない,Blueprint Assistant Pilot,,Blueprint運用会社だけに提示
+6,UC-006,Zoho管理者,Settings widget,導入後の項目マッピングや重み付け変更が開発者依存になる,表示項目・スコア重み・色分けを管理画面化する,Settings concept,保守時の変更頻度を聞く,管理者が自分で変えたい項目が出る,初期pilotでは過剰機能,Admin Config Add-on,,pilot後の追加提案に回す
+7,UC-007,営業担当者,Custom button on Deals,商談前に見るべきリスク情報が散らばる,商談詳細から1クリックでリスク・活動・確度を確認する,Deals Orbit + Activity Pulse,商談前チェックの実作業を聞く,商談準備チェックリストが出る,ボタンを押す習慣が定着しない,Deal Prep Button,,実際の商談前5分で使わせる
+8,UC-008,導入支援会社 / Zoho Partner,Extension package,顧客ごとに似たCRM可視化を毎回作っている,widget packとして短納期導入できる型を持つ,All demos,Zoho支援者に再販・共同提案可能性を聞く,顧客業種別に横展開案が出る,汎用化しすぎて価値が薄まる,Partner Demo Kit,,Zoho支援者2名に見せる
+

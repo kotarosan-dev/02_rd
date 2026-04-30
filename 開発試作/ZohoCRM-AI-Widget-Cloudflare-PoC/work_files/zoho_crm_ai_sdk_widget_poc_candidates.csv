@@ -1,0 +1,8 @@
+priority,poc_id,name,target_user,crm_surface,ai_runtime,widget_role,backend_role,first_test,success_signal,do_not_do_yet
+1,AI-001,AI Pipeline Lens,営業責任者,Dashboard / Web tab,OpenAI Responses API or Anthropic API,Deals OrbitとForecast GridにAI Insightを表示,Deals集計とAI JSON生成,mock Deals 50件でsummary/risks/questionsを返す,会議で確認したい質問が具体化する,CRM writeback
+2,AI-002,AI Deal Coach,営業担当者,Deals custom button,OpenAI Agents SDK or Anthropic API,商談詳細から要約と次アクションを表示,CRM record/notes/tasksを要約し構造化,1商談のmock recordでBANTCH不足を出す,次回アクションが営業の言葉で修正される,メール自動送信
+3,AI-003,AI Data Quality Lens,CRM管理者 / インサイドセールス,Leads / Accounts related list,OpenAI Responses API or Anthropic API,入力不足と重複候補を表示,項目ルールとrecord batchを評価,mock Leadsで不足項目と補完候補を出す,必須項目ルールが顧客から出る,自動上書き更新
+4,AI-004,AI Blueprint Transition Assistant,営業責任者 / 承認者,Blueprint transition,OpenAI Agents SDK,遷移前チェック結果を表示,不足条件・リスク・承認コメント案を生成,mock transition contextで承認前チェックを出す,差戻し条件が明文化される,自動承認
+5,AI-005,AI Zoho Builder for Partners,Zoho導入支援者 / 開発者,Settings / external admin app,Cursor SDK / Claude Code SDK / OpenAI Agents SDK,生成結果とレビュー導線を表示,widget/Deluge/Client Scriptのbranch or draftを生成,CRM要件YAMLからdemo派生版を生成する,1時間以内に顧客別demoが作れる,本番CRM直接変更
+6,AI-006,CRM MCP Bridge,開発者 / 管理者,Backend only,OpenAI Agents SDK / Claude Code SDK / Cursor SDK,tool実行状況を表示,Zoho CRM read/write toolsをMCPで公開,read-only toolsでdeal searchとsummaryを試す,複数SDKから同じCRM toolを呼べる,write toolの無確認実行
+

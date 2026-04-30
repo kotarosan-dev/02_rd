@@ -1,0 +1,13 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "02rd",
+  "compatibility_date": "2026-04-30",
+  "main": "開発試作/ZohoCRM-AI-Widget-Cloudflare-PoC/worker.js",
+  "assets": {
+    "directory": "開発試作/ZohoCRM-AI-Widget-Cloudflare-PoC/app",
+    "binding": "ASSETS"
+  },
+  "observability": {
+    "enabled": true
+  }
+}

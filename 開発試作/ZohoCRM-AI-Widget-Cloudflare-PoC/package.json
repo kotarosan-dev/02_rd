@@ -1,0 +1,15 @@
+{
+  "name": "zoho-crm-ai-widget-cloudflare-poc",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "node scripts/serve.js",
+    "cf:dev": "wrangler pages dev app --compatibility-date=2026-04-30",
+    "cf:deploy": "wrangler pages deploy app --project-name zoho-crm-ai-widget-cloudflare-poc",
+    "worker:dev": "npx wrangler dev --config ../../wrangler.jsonc",
+    "worker:deploy": "npx wrangler deploy --config ../../wrangler.jsonc",
+    "check:files": "node scripts/check-files.js",
+    "zet:validate": "zet validate",
+    "zet:pack": "zet pack"
+  }
+}
