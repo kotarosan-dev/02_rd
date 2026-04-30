@@ -47,7 +47,10 @@ const el = {
   aiInsightStatus: document.getElementById("aiInsightStatus"),
   aiInsightSummary: document.getElementById("aiInsightSummary"),
   aiRiskList: document.getElementById("aiRiskList"),
-  aiQuestionList: document.getElementById("aiQuestionList")
+  aiQuestionList: document.getElementById("aiQuestionList"),
+  agentProbeButton: document.getElementById("agentProbeButton"),
+  agentProbeStatus: document.getElementById("agentProbeStatus"),
+  agentProbeResult: document.getElementById("agentProbeResult")
 };
 
 function formatMoney(value) {
@@ -418,6 +421,35 @@ async function loadAiInsight() {
   }
 }
 
+async function probeManagedAgentAccess() {
+  el.agentProbeButton.disabled = true;
+  el.agentProbeStatus.textContent = "Checking";
+  el.agentProbeResult.textContent = "Managed Agents beta API を確認しています...";
+  try {
+    const response = await fetch("/api/managed-agent/probe", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        entity: state.activeDemo.entity,
+        demo: state.activeDemo.id
+      })
+    });
+    const result = await response.json();
+    if (!response.ok || result.status !== "ready") {
+      throw new Error(result.message || `Probe failed with ${response.status}`);
+    }
+    el.agentProbeStatus.textContent = "Ready";
+    el.agentProbeResult.textContent = `Managed Agents API に接続できました。agents=${result.agents.status} / environments=${result.environments.status}`;
+  } catch (error) {
+    el.agentProbeStatus.textContent = "Error";
+    el.agentProbeResult.textContent = safeValue(error && error.message ? error.message : error, "Managed Agents probe failed.");
+  } finally {
+    el.agentProbeButton.disabled = false;
+  }
+}
+
 function buildTabs() {
   el.tabs.replaceChildren();
   DEMOS.forEach((demo) => {
@@ -734,6 +766,7 @@ async function boot() {
   await Promise.all([applyZohoTheme(), loadCrmData(), loadCurrentUser().then((user) => { state.user = user; })]);
   activateDemo(state.activeDemo.id);
   el.refresh.addEventListener("click", refreshData);
+  el.agentProbeButton.addEventListener("click", probeManagedAgentAccess);
   window.addEventListener("resize", resizeRenderer);
   window.requestAnimationFrame(renderLoop);
 }

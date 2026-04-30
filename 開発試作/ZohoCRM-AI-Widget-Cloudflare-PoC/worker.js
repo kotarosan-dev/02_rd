@@ -24,6 +24,7 @@ const mockInsight = {
 };
 
 const ANTHROPIC_MODEL = "claude-haiku-4-5-20251001";
+const MANAGED_AGENTS_BETA = "managed-agents-2026-04-01";
 
 function jsonResponse(payload, status = 200) {
   return new Response(JSON.stringify(payload), {
@@ -133,6 +134,58 @@ async function callAnthropic(env, entity, records) {
   return parseInsight(extractText(message));
 }
 
+async function anthropicJson(env, path, options = {}) {
+  if (!env.ANTHROPIC_API_KEY) {
+    return {
+      ok: false,
+      status: 400,
+      data: { error: "ANTHROPIC_API_KEY is not configured." }
+    };
+  }
+  const response = await fetch(`https://api.anthropic.com${path}`, {
+    method: options.method || "GET",
+    headers: {
+      "Content-Type": "application/json",
+      "x-api-key": env.ANTHROPIC_API_KEY,
+      "anthropic-version": "2023-06-01",
+      "anthropic-beta": MANAGED_AGENTS_BETA
+    },
+    body: options.body ? JSON.stringify(options.body) : undefined
+  });
+  const text = await response.text();
+  let data = {};
+  try {
+    data = text ? JSON.parse(text) : {};
+  } catch (error) {
+    data = { raw: text.slice(0, 500) };
+  }
+  return {
+    ok: response.ok,
+    status: response.status,
+    data
+  };
+}
+
+async function managedAgentProbe(env) {
+  const [agents, environments] = await Promise.all([
+    anthropicJson(env, "/v1/agents?limit=1"),
+    anthropicJson(env, "/v1/environments?limit=1")
+  ]);
+  const ready = agents.ok && environments.ok;
+  return jsonResponse({
+    status: ready ? "ready" : "error",
+    message: ready ? "Managed Agents beta API is available." : "Managed Agents beta API probe failed.",
+    agents: {
+      status: agents.status,
+      error: agents.ok ? null : agents.data
+    },
+    environments: {
+      status: environments.status,
+      error: environments.ok ? null : environments.data
+    }
+  }, ready ? 200 : 502);
+}
+
 async function insightResponse(request, env = {}) {
   let body = {};
   if (request.method === "POST") {
@@ -183,6 +236,12 @@ export default {
     if (url.pathname === "/api/insight") {
       if (request.method === "GET" || request.method === "POST") {
         return insightResponse(request, env);
+      }
+      return jsonResponse({ error: "Method Not Allowed" }, 405);
+    }
+    if (url.pathname === "/api/managed-agent/probe") {
+      if (request.method === "POST") {
+        return managedAgentProbe(env);
       }
       return jsonResponse({ error: "Method Not Allowed" }, 405);
     }

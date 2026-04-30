@@ -130,6 +130,24 @@ h1 {
   font-size: 21px;
 }
 
+.action-button {
+  width: 100%;
+  min-height: 34px;
+  margin: 0 0 10px;
+  border: 1px solid rgba(15, 118, 110, 0.34);
+  border-radius: 8px;
+  background: rgba(15, 118, 110, 0.1);
+  color: var(--teal);
+  font-size: 13px;
+  font-weight: 720;
+  cursor: pointer;
+}
+
+.action-button:disabled {
+  opacity: 0.62;
+  cursor: wait;
+}
+
 .workspace {
   min-height: 520px;
   display: grid;
