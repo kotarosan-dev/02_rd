@@ -23,6 +23,8 @@ const mockInsight = {
   provider: "mock"
 };
 
+const ANTHROPIC_MODEL = "claude-haiku-4-5";
+
 function jsonResponse(payload, status = 200) {
   return new Response(JSON.stringify(payload), {
     status,
@@ -33,6 +35,104 @@ function jsonResponse(payload, status = 200) {
   });
 }
 
+function safeRecords(records) {
+  if (!Array.isArray(records)) {
+    return [];
+  }
+  return records.slice(0, 50).map((record) => {
+    const result = {};
+    Object.entries(record || {}).slice(0, 12).forEach(([key, value]) => {
+      if (value === null || value === undefined) {
+        return;
+      }
+      result[key] = String(value).slice(0, 180);
+    });
+    return result;
+  });
+}
+
+function buildMockInsight(entity, recordCount) {
+  return {
+    ...mockInsight,
+    summary: `${entity} ${recordCount}件を受け取りました。Cloudflare Pages Functions 経由で Zoho CRM の表示データを AI Insight API に渡せています。`,
+    generatedAt: new Date().toISOString(),
+    input: {
+      entity,
+      recordCount
+    }
+  };
+}
+
+function extractText(message) {
+  if (!message || !Array.isArray(message.content)) {
+    return "";
+  }
+  return message.content
+    .filter((part) => part && part.type === "text")
+    .map((part) => part.text || "")
+    .join("\n")
+    .trim();
+}
+
+function parseInsight(text) {
+  const trimmed = String(text || "").trim();
+  const start = trimmed.indexOf("{");
+  const end = trimmed.lastIndexOf("}");
+  if (start === -1 || end === -1 || end <= start) {
+    throw new Error("Claude response did not contain JSON.");
+  }
+  const parsed = JSON.parse(trimmed.slice(start, end + 1));
+  return {
+    summary: String(parsed.summary || "").slice(0, 360),
+    risks: Array.isArray(parsed.risks) ? parsed.risks.slice(0, 3).map((risk) => ({
+      recordId: String(risk.recordId || "").slice(0, 80),
+      label: String(risk.label || "Record").slice(0, 80),
+      severity: String(risk.severity || "medium").slice(0, 20),
+      reason: String(risk.reason || "").slice(0, 220)
+    })) : [],
+    questions: Array.isArray(parsed.questions) ? parsed.questions.slice(0, 3).map((question) => String(question).slice(0, 160)) : []
+  };
+}
+
+async function callAnthropic(env, entity, records) {
+  const response = await fetch("https://api.anthropic.com/v1/messages", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      "x-api-key": env.ANTHROPIC_API_KEY,
+      "anthropic-version": "2023-06-01"
+    },
+    body: JSON.stringify({
+      model: env.ANTHROPIC_MODEL || ANTHROPIC_MODEL,
+      max_tokens: 700,
+      system: [
+        "You are an assistant embedded in a Zoho CRM analytics widget.",
+        "Return only compact JSON with keys summary, risks, and questions.",
+        "Write Japanese business prose. Do not mention that you are an AI model.",
+        "Do not suggest CRM writeback, automated email sending, or destructive actions.",
+        "risks must be an array of up to 3 objects: recordId, label, severity, reason.",
+        "questions must be an array of up to 3 short strings."
+      ].join(" "),
+      messages: [
+        {
+          role: "user",
+          content: JSON.stringify({
+            task: "Review the CRM records and generate practical meeting insight.",
+            entity,
+            records
+          })
+        }
+      ]
+    })
+  });
+  if (!response.ok) {
+    const text = await response.text();
+    throw new Error(`Anthropic API returned ${response.status}: ${text.slice(0, 240)}`);
+  }
+  const message = await response.json();
+  return parseInsight(extractText(message));
+}
+
 export async function onRequestPost(context) {
   let body = {};
   try {
@@ -41,12 +141,29 @@ export async function onRequestPost(context) {
     body = {};
   }
   const entity = body.entity || "Deals";
-  const recordCount = Array.isArray(body.records) ? body.records.length : 0;
+  const records = safeRecords(body.records);
+  const recordCount = records.length;
+
+  let insight = null;
+  let provider = "mock";
+  try {
+    if (context.env.ANTHROPIC_API_KEY) {
+      insight = await callAnthropic(context.env, entity, records);
+      provider = context.env.ANTHROPIC_MODEL || ANTHROPIC_MODEL;
+    }
+  } catch (error) {
+    insight = {
+      ...buildMockInsight(entity, recordCount),
+      summary: `${entity} ${recordCount}件を受け取りました。Anthropic API 呼び出しに失敗したため mock insight を表示しています。`,
+      error: String(error && error.message ? error.message : error).slice(0, 240)
+    };
+    provider = "mock-fallback";
+  }
 
   return jsonResponse({
-    ...mockInsight,
-    summary: `${entity} ${recordCount}件を受け取りました。Cloudflare Pages Functions 経由で Zoho CRM の表示データを AI Insight API に渡せています。`,
+    ...(insight || buildMockInsight(entity, recordCount)),
     generatedAt: new Date().toISOString(),
+    provider,
     input: {
       entity,
       recordCount

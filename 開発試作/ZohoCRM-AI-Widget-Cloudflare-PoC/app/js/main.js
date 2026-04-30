@@ -303,9 +303,16 @@ function renderRecords(records, mapRecord) {
   });
 }
 
-function compactRecord(record) {
+function compactRecord(record, entity) {
   const result = {};
-  Object.entries(record || {}).slice(0, 16).forEach(([key, value]) => {
+  const fieldMap = {
+    Deals: ["id", "Deal_Name", "Stage", "Amount", "Probability", "Closing_Date", "Next_Step"],
+    Accounts: ["id", "Account_Name", "Industry", "Annual_Revenue", "Employees"],
+    Leads: ["id", "Company", "Lead_Status", "Lead_Source"],
+    Tasks: ["id", "Status", "Priority", "Due_Date"]
+  };
+  (fieldMap[entity] || ["id"]).forEach((key) => {
+    const value = record ? record[key] : null;
     if (value === null || value === undefined) {
       return;
     }
@@ -319,6 +326,10 @@ function compactRecord(record) {
     }
     result[key] = String(value).slice(0, 140);
   });
+  if (entity === "Leads") {
+    result.hasEmail = safeValue(record && record.Email, "") !== "";
+    result.hasPhone = safeValue(record && record.Phone, "") !== "";
+  }
   return result;
 }
 
@@ -378,7 +389,7 @@ async function loadAiInsight() {
         entity,
         context: state.context,
         demo: state.activeDemo.id,
-        records: records.slice(0, 50).map(compactRecord)
+        records: records.slice(0, 50).map((record) => compactRecord(record, entity))
       })
     });
     if (!response.ok) {
