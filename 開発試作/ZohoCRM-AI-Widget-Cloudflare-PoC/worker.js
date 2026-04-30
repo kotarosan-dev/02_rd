@@ -233,7 +233,7 @@ async function createManagedEnvironment(env) {
       name: "zoho-crm-readonly-review-env",
       config: {
         type: "cloud",
-        networking: { type: "none" }
+        networking: { type: "limited" }
       }
     }
   });
