@@ -166,6 +166,13 @@ async function anthropicJson(env, path, options = {}) {
   };
 }
 
+function summarizeApiError(result) {
+  if (!result || result.ok) {
+    return "";
+  }
+  return JSON.stringify(result.data || {}).slice(0, 500);
+}
+
 async function managedAgentProbe(env) {
   const [agents, environments] = await Promise.all([
     anthropicJson(env, "/v1/agents?limit=1"),
@@ -184,6 +191,140 @@ async function managedAgentProbe(env) {
       error: environments.ok ? null : environments.data
     }
   }, ready ? 200 : 502);
+}
+
+async function createManagedAgent(env) {
+  if (env.MANAGED_AGENT_ID) {
+    return {
+      ok: true,
+      status: 200,
+      data: { id: env.MANAGED_AGENT_ID }
+    };
+  }
+  return anthropicJson(env, "/v1/agents", {
+    method: "POST",
+    body: {
+      name: "Zoho CRM Read-only Review",
+      model: { id: env.ANTHROPIC_AGENT_MODEL || "claude-haiku-4-5-20251001" },
+      system: [
+        "You are a read-only Zoho CRM review agent.",
+        "Use the provided CRM snapshot only.",
+        "Do not write back to CRM, send email, create records, delete records, or call external systems.",
+        "Produce a concise Japanese review with risks, questions, and draft actions that require human approval."
+      ].join(" "),
+      tools: [
+        { type: "agent_toolset_20260401" }
+      ]
+    }
+  });
+}
+
+async function createManagedEnvironment(env) {
+  if (env.MANAGED_ENVIRONMENT_ID) {
+    return {
+      ok: true,
+      status: 200,
+      data: { id: env.MANAGED_ENVIRONMENT_ID }
+    };
+  }
+  return anthropicJson(env, "/v1/environments", {
+    method: "POST",
+    body: {
+      name: "zoho-crm-readonly-review-env",
+      config: {
+        type: "cloud",
+        networking: { type: "none" }
+      }
+    }
+  });
+}
+
+async function createManagedSession(env, agentId, environmentId) {
+  return anthropicJson(env, "/v1/sessions", {
+    method: "POST",
+    body: {
+      agent: agentId,
+      environment_id: environmentId,
+      title: "Zoho CRM read-only review"
+    }
+  });
+}
+
+async function sendManagedReviewEvent(env, sessionId, body) {
+  return anthropicJson(env, `/v1/sessions/${sessionId}/events`, {
+    method: "POST",
+    body: {
+      events: [
+        {
+          type: "user.message",
+          content: [
+            {
+              type: "text",
+              text: JSON.stringify({
+                task: "Review this Zoho CRM snapshot. Return a short Japanese plan, draft actions, and questions. Do not perform writeback.",
+                entity: body.entity,
+                demo: body.demo,
+                context: body.context,
+                records: safeRecords(body.records)
+              })
+            }
+          ]
+        }
+      ]
+    }
+  });
+}
+
+async function managedAgentReview(request, env) {
+  let body = {};
+  try {
+    body = await request.json();
+  } catch (error) {
+    body = {};
+  }
+
+  const agent = await createManagedAgent(env);
+  if (!agent.ok || !agent.data || !agent.data.id) {
+    return jsonResponse({
+      status: "error",
+      message: `Agent creation failed: ${agent.status} ${summarizeApiError(agent)}`
+    }, 502);
+  }
+
+  const environment = await createManagedEnvironment(env);
+  if (!environment.ok || !environment.data || !environment.data.id) {
+    return jsonResponse({
+      status: "error",
+      message: `Environment creation failed: ${environment.status} ${summarizeApiError(environment)}`
+    }, 502);
+  }
+
+  const session = await createManagedSession(env, agent.data.id, environment.data.id);
+  if (!session.ok || !session.data || !session.data.id) {
+    return jsonResponse({
+      status: "error",
+      message: `Session creation failed: ${session.status} ${summarizeApiError(session)}`
+    }, 502);
+  }
+
+  const event = await sendManagedReviewEvent(env, session.data.id, body);
+  if (!event.ok) {
+    return jsonResponse({
+      status: "error",
+      message: `Session event failed: ${event.status} ${summarizeApiError(event)}`,
+      agentId: agent.data.id,
+      environmentId: environment.data.id,
+      sessionId: session.data.id
+    }, 502);
+  }
+
+  return jsonResponse({
+    status: "started",
+    agentId: agent.data.id,
+    environmentId: environment.data.id,
+    sessionId: session.data.id,
+    eventStatus: event.status
+  });
 }
 
 async function insightResponse(request, env = {}) {
@@ -242,6 +383,12 @@ export default {
     if (url.pathname === "/api/managed-agent/probe") {
       if (request.method === "POST") {
         return managedAgentProbe(env);
+      }
+      return jsonResponse({ error: "Method Not Allowed" }, 405);
+    }
+    if (url.pathname === "/api/managed-agent/review") {
+      if (request.method === "POST") {
+        return managedAgentReview(request, env);
       }
       return jsonResponse({ error: "Method Not Allowed" }, 405);
     }

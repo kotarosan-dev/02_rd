@@ -49,6 +49,7 @@ const el = {
   aiRiskList: document.getElementById("aiRiskList"),
   aiQuestionList: document.getElementById("aiQuestionList"),
   agentProbeButton: document.getElementById("agentProbeButton"),
+  agentReviewButton: document.getElementById("agentReviewButton"),
   agentProbeStatus: document.getElementById("agentProbeStatus"),
   agentProbeResult: document.getElementById("agentProbeResult")
 };
@@ -450,6 +451,45 @@ async function probeManagedAgentAccess() {
   }
 }
 
+async function startManagedReview() {
+  const entity = state.activeDemo.entity;
+  const records = state.records[entity] || [];
+  el.agentReviewButton.disabled = true;
+  el.agentProbeStatus.textContent = "Starting";
+  el.agentProbeResult.textContent = "Managed Agent session を作成しています...";
+  try {
+    const response = await fetch("/api/managed-agent/review", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        entity,
+        demo: state.activeDemo.id,
+        context: state.context,
+        records: records.slice(0, 30).map((record) => compactRecord(record, entity))
+      })
+    });
+    const result = await response.json();
+    if (!response.ok || result.status !== "started") {
+      throw new Error(result.message || `Managed review failed with ${response.status}`);
+    }
+    el.agentProbeStatus.textContent = "Started";
+    el.agentProbeResult.textContent = [
+      "Managed review session を開始しました。",
+      `agent=${result.agentId}`,
+      `environment=${result.environmentId}`,
+      `session=${result.sessionId}`,
+      `event=${result.eventStatus}`
+    ].join("\n");
+  } catch (error) {
+    el.agentProbeStatus.textContent = "Error";
+    el.agentProbeResult.textContent = safeValue(error && error.message ? error.message : error, "Managed review failed.");
+  } finally {
+    el.agentReviewButton.disabled = false;
+  }
+}
+
 function buildTabs() {
   el.tabs.replaceChildren();
   DEMOS.forEach((demo) => {
@@ -767,6 +807,7 @@ async function boot() {
   activateDemo(state.activeDemo.id);
   el.refresh.addEventListener("click", refreshData);
   el.agentProbeButton.addEventListener("click", probeManagedAgentAccess);
+  el.agentReviewButton.addEventListener("click", startManagedReview);
   window.addEventListener("resize", resizeRenderer);
   window.requestAnimationFrame(renderLoop);
 }
