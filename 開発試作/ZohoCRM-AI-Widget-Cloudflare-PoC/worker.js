@@ -23,7 +23,7 @@ const mockInsight = {
   provider: "mock"
 };
 
-const ANTHROPIC_MODEL = "claude-haiku-4-5";
+const ANTHROPIC_MODEL = "claude-haiku-4-5-20251001";
 
 function jsonResponse(payload, status = 200) {
   return new Response(JSON.stringify(payload), {

@@ -367,6 +367,12 @@ function renderInsight(insight) {
     title: `Question ${index + 1}`,
     body: safeValue(question, "-")
   }));
+  if (insight.error) {
+    renderInsightList(el.aiQuestionList, [insight.error], () => ({
+      title: "API Error",
+      body: safeValue(insight.error, "-")
+    }));
+  }
 }
 
 async function loadAiInsight() {
