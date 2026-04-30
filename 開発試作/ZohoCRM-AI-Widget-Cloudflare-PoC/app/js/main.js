@@ -26,6 +26,7 @@ const state = {
   activeDemo: DEMOS[0],
   records: { Deals: [], Accounts: [], Leads: [], Tasks: [] },
   tickers: [],
+  aiRequestId: 0,
   root: null,
   renderer: null,
   camera: null,
@@ -42,7 +43,11 @@ const el = {
   sceneStatus: document.getElementById("sceneStatus"),
   contextList: document.getElementById("contextList"),
   metricList: document.getElementById("metricList"),
-  recordList: document.getElementById("recordList")
+  recordList: document.getElementById("recordList"),
+  aiInsightStatus: document.getElementById("aiInsightStatus"),
+  aiInsightSummary: document.getElementById("aiInsightSummary"),
+  aiRiskList: document.getElementById("aiRiskList"),
+  aiQuestionList: document.getElementById("aiQuestionList")
 };
 
 function formatMoney(value) {
@@ -296,6 +301,104 @@ function renderRecords(records, mapRecord) {
     item.append(dot, body, value);
     el.recordList.append(item);
   });
+}
+
+function compactRecord(record) {
+  const result = {};
+  Object.entries(record || {}).slice(0, 16).forEach(([key, value]) => {
+    if (value === null || value === undefined) {
+      return;
+    }
+    if (typeof value === "object") {
+      try {
+        result[key] = value.name || value.id || JSON.stringify(value).slice(0, 140);
+      } catch (error) {
+        result[key] = "[object]";
+      }
+      return;
+    }
+    result[key] = String(value).slice(0, 140);
+  });
+  return result;
+}
+
+function setInsightStatus(label) {
+  el.aiInsightStatus.textContent = label;
+}
+
+function renderInsightList(container, items, mapItem) {
+  container.replaceChildren();
+  items.slice(0, 3).forEach((item, index) => {
+    const mapped = mapItem(item, index);
+    const li = document.createElement("li");
+    li.className = "ai-item";
+
+    const title = document.createElement("p");
+    title.className = "ai-item-title";
+    title.textContent = mapped.title;
+
+    const body = document.createElement("p");
+    body.className = "ai-item-body";
+    body.textContent = mapped.body;
+
+    li.append(title, body);
+    container.append(li);
+  });
+}
+
+function renderInsight(insight) {
+  el.aiInsightSummary.textContent = safeValue(insight.summary, "No insight returned.");
+  renderInsightList(el.aiRiskList, Array.isArray(insight.risks) ? insight.risks : [], (risk) => ({
+    title: `${safeValue(risk.severity, "risk").toUpperCase()} / ${safeValue(risk.label || risk.recordId, "Record")}`,
+    body: safeValue(risk.reason, "-")
+  }));
+  renderInsightList(el.aiQuestionList, Array.isArray(insight.questions) ? insight.questions : [], (question, index) => ({
+    title: `Question ${index + 1}`,
+    body: safeValue(question, "-")
+  }));
+}
+
+async function loadAiInsight() {
+  const requestId = state.aiRequestId + 1;
+  state.aiRequestId = requestId;
+  const entity = state.activeDemo.entity;
+  const records = state.records[entity] || [];
+  setInsightStatus("Loading");
+  el.aiInsightSummary.textContent = "Loading insight...";
+  el.aiRiskList.replaceChildren();
+  el.aiQuestionList.replaceChildren();
+
+  try {
+    const response = await fetch("/api/insight", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        entity,
+        context: state.context,
+        demo: state.activeDemo.id,
+        records: records.slice(0, 50).map(compactRecord)
+      })
+    });
+    if (!response.ok) {
+      throw new Error(`AI Insight API returned ${response.status}`);
+    }
+    const insight = await response.json();
+    if (requestId !== state.aiRequestId) {
+      return;
+    }
+    renderInsight(insight);
+    setInsightStatus(safeValue(insight.provider, "Ready"));
+  } catch (error) {
+    if (requestId !== state.aiRequestId) {
+      return;
+    }
+    el.aiInsightSummary.textContent = "AI Insight API に接続できませんでした。Cloudflare Worker の /api/insight を確認してください。";
+    el.aiRiskList.replaceChildren();
+    el.aiQuestionList.replaceChildren();
+    setInsightStatus("Error");
+  }
 }
 
 function buildTabs() {
@@ -559,6 +662,7 @@ function activateDemo(demoId) {
   renderContext();
   requestZohoResize(nextDemo.resizeHeight);
   builders[nextDemo.id]();
+  loadAiInsight();
 }
 
 function bindPointerRotation() {

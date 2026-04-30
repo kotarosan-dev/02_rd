@@ -40,12 +40,16 @@ export async function onRequestPost(context) {
   } catch (error) {
     body = {};
   }
+  const entity = body.entity || "Deals";
+  const recordCount = Array.isArray(body.records) ? body.records.length : 0;
 
   return jsonResponse({
     ...mockInsight,
+    summary: `${entity} ${recordCount}件を受け取りました。Cloudflare Pages Functions 経由で Zoho CRM の表示データを AI Insight API に渡せています。`,
+    generatedAt: new Date().toISOString(),
     input: {
-      entity: body.entity || "Deals",
-      recordCount: Array.isArray(body.records) ? body.records.length : 0
+      entity,
+      recordCount
     }
   });
 }
@@ -53,4 +57,3 @@ export async function onRequestPost(context) {
 export async function onRequestGet() {
   return jsonResponse(mockInsight);
 }
-
